@@ -1,0 +1,91 @@
+{
+  "topic": "长上下文场景结构化记忆建模—组2",
+  "course_reference": "NLP初步课设与平时作业安排-贺瑞芳-20260920.pdf，第9页",
+  "papers": [
+    {
+      "file": "01_StructMem.pdf",
+      "title": "StructMem: Structured Memory for Long-Horizon Behavior in LLMs",
+      "anthology_id": "2026.acl-short.12",
+      "source_page": "https://aclanthology.org/2026.acl-short.12/",
+      "pdf_url": "https://aclanthology.org/2026.acl-short.12.pdf",
+      "download_url": "https://aclanthology.org/2026.acl-short.12.pdf",
+      "downloaded_date": "2026-10-13",
+      "bytes": 3377010,
+      "pages": 25,
+      "sha256": "884debb15d20b1e5799607b52357401823cdfe8f63a05cc0322d63301eb1bc84",
+      "title_verified": true,
+      "full_text_parse_verified": true
+    },
+    {
+      "file": "02_Hindsight.pdf",
+      "title": "Hindsight: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "anthology_id": "2026.acl-demo.27",
+      "source_page": "https://aclanthology.org/2026.acl-demo.27/",
+      "pdf_url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "download_url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "downloaded_date": "2026-10-13",
+      "bytes": 3161781,
+      "pages": 11,
+      "sha256": "c1bc58396f754197c5383f1978495077e0d94a5e6f10c6eabeec2337ac8184c6",
+      "title_verified": true,
+      "full_text_parse_verified": true
+    },
+    {
+      "file": "03_Semantic_XPath.pdf",
+      "title": "Semantic XPath: Structured Agentic Memory Access for Conversational AI",
+      "anthology_id": "2026.acl-demo.28",
+      "source_page": "https://aclanthology.org/2026.acl-demo.28/",
+      "pdf_url": "https://aclanthology.org/2026.acl-demo.28.pdf",
+      "download_url": "https://aclanthology.org/2026.acl-demo.28.pdf",
+      "downloaded_date": "2026-10-13",
+      "bytes": 3713378,
+      "pages": 11,
+      "sha256": "a1309c4b789bef966b64e465fe5c1cebeef944b442ad85ef90a341d1978278fc",
+      "title_verified": true,
+      "full_text_parse_verified": true
+    },
+    {
+      "file": "04_Hybrid_Self-evolving_Structured_Memory.pdf",
+      "title": "Hybrid Self-evolving Structured Memory for Computer-Use Agents",
+      "anthology_id": "2026.findings-acl.549",
+      "source_page": "https://aclanthology.org/2026.findings-acl.549/",
+      "pdf_url": "https://aclanthology.org/2026.findings-acl.549.pdf",
+      "download_url": "https://aclanthology.org/2026.findings-acl.549.pdf",
+      "downloaded_date": "2026-10-13",
+      "bytes": 4322862,
+      "pages": 18,
+      "sha256": "13e83314073fb3a8205f1f2d06fbd1acf994b0ac56455d95a0113df3ad06d33b",
+      "title_verified": true,
+      "full_text_parse_verified": true
+    },
+    {
+      "file": "05_MetaMem.pdf",
+      "title": "MetaMem: Evolving Meta-Memory for Knowledge Utilization through Self-Reflective Symbolic Optimization",
+      "anthology_id": "2026.findings-acl.270",
+      "source_page": "https://aclanthology.org/2026.findings-acl.270/",
+      "pdf_url": "https://aclanthology.org/2026.findings-acl.270.pdf",
+      "download_url": "https://aclanthology.org/2026.findings-acl.270.pdf",
+      "downloaded_date": "2026-10-13",
+      "bytes": 3796997,
+      "pages": 20,
+      "sha256": "d51f68adc7fd535a0fc23adfaa1ea8aa65aa448b22a5112128957df257a424c6",
+      "title_verified": true,
+      "full_text_parse_verified": true
+    },
+    {
+      "file": "06_Text2Mem.pdf",
+      "title": "Text2Mem: A Unified Memory Operation Language for Memory Operating System",
+      "anthology_id": "2026.findings-acl.100",
+      "source_page": "https://aclanthology.org/2026.findings-acl.100/",
+      "pdf_url": "https://aclanthology.org/2026.findings-acl.100.pdf",
+      "download_url": "https://aclanthology.org/2026.findings-acl.100.pdf",
+      "downloaded_date": "2026-10-13",
+      "bytes": 675015,
+      "pages": 15,
+      "sha256": "b7c8f38fa2009a1f3c54d89d3b3115b5ba044898349fa0d0d21bd229d5e5a3cd",
+      "title_verified": true,
+      "full_text_parse_verified": true
+    }
+  ],
+  "errors": []
+}

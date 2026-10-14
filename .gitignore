@@ -218,3 +218,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Course project: local data, generated output, and temporary files
+/data/
+/output/
+/tmp/
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+~$*
+*.aux
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.synctex.gz
