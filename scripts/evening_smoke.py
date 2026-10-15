@@ -32,8 +32,12 @@ def service(action, expected_pid=None):
                str(ROOT / "scripts/ollama_service.ps1"), action]
     if expected_pid is not None:
         command += ["-ExpectedProcessId", str(expected_pid)]
-    return subprocess.run(command, cwd=ROOT,
-                          capture_output=True, timeout=45, check=True)
+    # A detached Windows server may inherit pipe handles, preventing communicate() from finishing.
+    log = ROOT / "output/ollama-service/control.log"
+    log.parent.mkdir(parents=True, exist_ok=True)
+    with log.open("ab") as stream:
+        return subprocess.run(command, cwd=ROOT, stdin=subprocess.DEVNULL,
+                              stdout=stream, stderr=subprocess.STDOUT, timeout=45, check=True)
 
 
 def stop_reason(child, stop_file, deadline, now=time.monotonic):

@@ -37,6 +37,16 @@ class SequenceClient:
 
 
 class EveningTests(unittest.TestCase):
+    def test_service_uses_files_instead_of_inherited_output_pipes(self):
+        with tempfile.TemporaryDirectory() as d, patch.object(evening_smoke, "ROOT", Path(d)), \
+                patch.object(evening_smoke.subprocess, "run") as run:
+            evening_smoke.service("StartRuntime")
+            options = run.call_args.kwargs
+            self.assertEqual(options["stdin"], subprocess.DEVNULL)
+            self.assertNotEqual(options["stdout"], subprocess.PIPE)
+            self.assertEqual(options["stderr"], subprocess.STDOUT)
+            self.assertTrue((Path(d) / "output/ollama-service/control.log").exists())
+
     def test_context_is_server_capacity_not_output_limit(self):
         config = read(ROOT / "configs/qwen-library.json")
         validate_config(config)
