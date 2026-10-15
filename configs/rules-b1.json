@@ -1,0 +1,11 @@
+{
+  "kind": "manual-fixed",
+  "fixed_date": "2026-10-15",
+  "fixed_before": "dataset download and any test answer inspection",
+  "rules": [
+    "Match each fact to its entity, event, and context before combining evidence.",
+    "Distinguish totals from their parts and avoid counting the same event twice.",
+    "Use the question date to interpret relative dates. Prefer newer states only for questions asking about the current state; preserve historical states for historical questions.",
+    "When evidence is missing or genuinely inconsistent, state what cannot be determined instead of inventing details."
+  ]
+}

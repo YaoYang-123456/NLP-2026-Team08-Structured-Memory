@@ -1,0 +1,15 @@
+{
+  "backend": "disabled",
+  "answer": {"base_url": "http://127.0.0.1:11434/v1", "model": ""},
+  "judge": {"base_url": "http://127.0.0.1:11434/v1", "model": ""},
+  "timeout_seconds": 60,
+  "rule_max_bytes": 2048,
+  "stages": {
+    "answer_train": {"temperature": 0.7, "top_p": 0.95, "max_tokens": 512},
+    "answer_eval": {"temperature": 0, "top_p": 0.8, "max_tokens": 512},
+    "judge": {"temperature": 0, "top_p": 1, "max_tokens": 32},
+    "reflect": {"temperature": 0.7, "top_p": 0.95, "max_tokens": 512},
+    "propose": {"temperature": 0.7, "top_p": 0.95, "max_tokens": 1024},
+    "merge": {"temperature": 0.7, "top_p": 0.95, "max_tokens": 1024}
+  }
+}
