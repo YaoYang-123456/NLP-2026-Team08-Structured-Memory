@@ -1,5 +1,6 @@
 """Local OpenAI-compatible HTTP calls with per-stage provenance; no response cache."""
 import json
+import os
 import time
 import urllib.error
 import urllib.parse
@@ -7,12 +8,17 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .data import digest
+from .data import digest, write_atomic
 
 STAGES = {"answer_train", "answer_eval", "judge", "reflect", "propose", "merge"}
 
 
 class CallError(RuntimeError):
+    pass
+
+
+class RunStopped(RuntimeError):
+    """A user stop/deadline, not a model or service error."""
     pass
 
 
@@ -43,14 +49,21 @@ def validate_config(config):
 
 
 class Client:
-    def __init__(self, config, log):
+    def __init__(self, config, log, deadline_epoch=None, stop_file=None):
         validate_config(config)
         self.config = config
         self.log = Path(log)
+        self.deadline_epoch = deadline_epoch
+        self.stop_file = Path(stop_file) if stop_file else None
         # Ignore system proxy settings for loopback; do not alter the machine's network configuration.
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
 
     def call(self, stage, prompt, qid, attempt=0):
+        if self.stop_file and self.stop_file.exists():
+            raise RunStopped("User requested stop")
+        remaining = self.deadline_epoch - time.time() if self.deadline_epoch else None
+        if remaining is not None and remaining <= 0:
+            raise RunStopped("Active inference window ended; reserve cleanup time")
         role = "judge" if stage == "judge" else "answer"
         service = self.config[role]
         payload = {"model": service["model"], "messages": [{"role": "user", "content": prompt}],
@@ -61,6 +74,8 @@ class Client:
                  "prompt": prompt, "started_utc": datetime.now(timezone.utc).isoformat(),
                  "usage": None, "status": "pending"}
         start = time.perf_counter()
+        pending = self.log.with_name("pending-call.json")
+        write_atomic(pending, event)
         try:
             if self.config["backend"] == "mock":
                 if stage == "judge":
@@ -74,7 +89,8 @@ class Client:
                 request = urllib.request.Request(service["base_url"].rstrip("/") + "/chat/completions",
                                                  data=json.dumps(payload).encode(),
                                                  headers={"Content-Type": "application/json"})
-                with self.opener.open(request, timeout=self.config["timeout_seconds"]) as response:
+                timeout = min(self.config["timeout_seconds"], remaining) if remaining is not None else self.config["timeout_seconds"]
+                with self.opener.open(request, timeout=timeout) as response:
                     body = json.load(response)
                 event["usage"] = body.get("usage")
                 event["returned_model"] = body.get("model")
@@ -90,7 +106,14 @@ class Client:
                 event["status"] = "ok"
             event["response"] = answer
             return answer
+        except KeyboardInterrupt:
+            event["status"] = "interrupted"
+            raise
         except (urllib.error.URLError, TimeoutError, OSError, ValueError, KeyError, IndexError, TypeError, CallError) as exc:
+            if (self.stop_file and self.stop_file.exists()) or (self.deadline_epoch and time.time() >= self.deadline_epoch):
+                event["status"] = "interrupted"
+                event["error_type"] = type(exc).__name__
+                raise RunStopped("Request interrupted by stop/deadline") from exc
             event["status"] = "call_failed"
             event["error_type"] = type(exc).__name__
             if isinstance(exc, urllib.error.HTTPError):
@@ -100,3 +123,6 @@ class Client:
             event["seconds"] = time.perf_counter() - start
             with self.log.open("a", encoding="utf-8", newline="\n") as stream:
                 stream.write(json.dumps(event, ensure_ascii=False) + "\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+            pending.unlink(missing_ok=True)

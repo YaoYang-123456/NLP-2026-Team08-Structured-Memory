@@ -8,8 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / "src")]
-from metamem_pilot.client import Client, validate_config
-from metamem_pilot.data import digest, file_hash, read, write
+from metamem_pilot.client import Client, RunStopped, validate_config
+from metamem_pilot.data import digest, file_hash, read, write_atomic as write
 from metamem_pilot.pipeline import learn, load_rules, select, test
 
 
@@ -34,14 +34,34 @@ def fingerprint(config, data):
                    "B1": file_hash(ROOT / "configs/rules-b1.json")})
 
 
+def call_events(log):
+    raw = log.read_bytes() if log.exists() else b""
+    lines = raw.splitlines()
+    events = []
+    for index, line in enumerate(lines):
+        try:
+            events.append(json.loads(line))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            if index != len(lines) - 1 or raw.endswith(b"\n"):
+                raise
+            # A process killed during the final append can leave a partial final line.
+    return events
+
+
 def usage_summary(log):
-    events = [json.loads(line) for line in log.read_text(encoding="utf-8").splitlines()] if log.exists() else []
+    events = call_events(log)
+    pending_path = log.with_name("pending-call.json")
+    pending = read(pending_path) if pending_path.exists() else None
+    if pending and any(all(e.get(k) == pending.get(k) for k in ("started_utc", "stage", "question_id", "attempt")) for e in events):
+        pending = None
     real = [e for e in events if e["backend"] != "mock"]
     usage = [e["usage"] for e in real if e["usage"] is not None]
     prompt_tokens = [u["prompt_tokens"] for u in usage if isinstance(u.get("prompt_tokens"), int)]
     completion_tokens = [u["completion_tokens"] for u in usage if isinstance(u.get("completion_tokens"), int)]
     return {"calls_logged": len(events), "real_requests": len(real), "simulated_calls": len(events) - len(real),
+            "possibly_inflight_requests": int(pending is not None),
             "failed_calls": sum(e["status"] == "call_failed" for e in events),
+            "interrupted_calls": sum(e["status"] == "interrupted" for e in events),
             "calls_with_reported_usage": len(usage), "calls_without_reported_usage": len(real) - len(usage),
             "reported_prompt_tokens": sum(prompt_tokens) if prompt_tokens else None,
             "reported_completion_tokens": sum(completion_tokens) if completion_tokens else None,
@@ -59,10 +79,15 @@ def main():
     p.add_argument("--training-run", type=Path)
     p.add_argument("--selection-run", type=Path)
     p.add_argument("--mock", action="store_true", help="Flow validation only; no real calls or model scores")
+    p.add_argument("--deadline-epoch", type=float, help="Stop starting calls at this explicit run deadline")
+    p.add_argument("--stop-file", type=Path, help="Stop when this file is created by the user")
+    p.add_argument("--warmup", action="store_true", help="Explicit smoke-only load/warmup; never automatic")
     p.add_argument("--max-tokens", type=int, help="Override ALL stages, including judge/reflection/proposal/merge")
     p.add_argument("--temperature", type=float, help="Override ALL stages")
     p.add_argument("--top-p", type=float, help="Override ALL stages")
     args = p.parse_args()
+    if args.warmup and args.command != "smoke":
+        p.error("--warmup is only available for an explicitly started smoke")
     config = effective_config(args)
     manifest = read(args.data / "manifest.json")
     if file_hash(ROOT / "configs/rules-b1.json") != manifest["manual_rules_sha256"]:
@@ -80,9 +105,21 @@ def main():
            "started_utc": datetime.now(timezone.utc).isoformat(), "status": "running",
            "simulated": config["backend"] == "mock"}
     write(args.out / "run.json", run)
-    client = Client(config, args.out / "calls.jsonl")
+    client = Client(config, args.out / "calls.jsonl", args.deadline_epoch, args.stop_file)
     start = time.perf_counter()
     try:
+        if args.warmup:
+            warmup_config = json.loads(json.dumps(config))
+            warmup_config["stages"]["answer_eval"]["max_tokens"] = 8
+            warmup = Client(warmup_config, args.out / "calls.jsonl", args.deadline_epoch, args.stop_file)
+            warmup.call("answer_eval", "Reply with just OK.", "__warmup__")
+            if config["backend"] == "local":
+                with client.opener.open(config["answer"]["base_url"].removesuffix("/v1") + "/api/ps", timeout=5) as response:
+                    loaded = json.load(response)
+                write(args.out / "loaded-after-warmup.json", loaded)
+                match = [m for m in loaded["models"] if m["name"] == config["answer"]["model"]]
+                if not match or match[0].get("context_length") != config["server_context_length"]:
+                    raise ValueError("Loaded context length differs from the explicit server configuration")
         if args.command in ("smoke", "learn"):
             result = learn(args.data, args.out, client, 5 if args.command == "smoke" else None)
             run["outcome"] = result["outcome"]
@@ -91,6 +128,9 @@ def main():
         else:
             test(args.data, args.out, client, args.selection_run, fp)
         run["status"] = "completed"
+    except (RunStopped, KeyboardInterrupt) as exc:
+        run["status"] = "interrupted"
+        run["error"] = str(exc) or "KeyboardInterrupt"
     except Exception as exc:
         run["status"] = "failed"
         run["error"] = str(exc)

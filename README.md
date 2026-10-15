@@ -38,6 +38,7 @@
 
 - [运行入口与接口说明](docs/metamem-local-pilot.md)：独立环境、官方数据、B0/B1/B2、五题 smoke、错误统计及调用量。
 - [2026-10-15 实际执行记录](docs/metamem-local-run-20261015.md)：真实数据已核验并划分；模拟流程已验证；没有真实模型性能结果。
+- [模型下载与晚间五题入口](docs/metamem-evening-preparation.md)：Qwen2.5 7B 已下载；一小时手动试跑、及时保存、停止和人工复核已准备。本轮真实调用仍为 0，等待明确启动。
 
 源码使用 Python 标准库，位于 `src/metamem_pilot/`；官方提示词的独立副本及许可证位于 `third_party/`。这仍是个人 MetaMem 的 BM25 RAG 试点，不是 LightMem 完整复现或全组选型决定。
 

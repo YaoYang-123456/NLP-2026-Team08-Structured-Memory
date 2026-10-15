@@ -9,8 +9,8 @@ from third_party.metamem_templates import (
     PROBLEM_WITH_META_MEMORY_TEMPLATE, TRAJECTORY_SUMMARY_TEMPLATE,
     META_MEMORY_UPDATE_TEMPLATE, BATCH_META_MEMORY_UPDATE_TEMPLATE,
 )
-from .client import CallError
-from .data import digest, file_hash, read, write
+from .client import CallError, RunStopped
+from .data import digest, file_hash, read, write, write_atomic
 
 
 def load_rules(path, kind, budget):
@@ -71,20 +71,35 @@ def load_labels(data, split):
     return labels
 
 
-def evaluate(rows, rules, client, labels_loader, stage="answer_eval", samples=1, condition="B2"):
+def evaluate(rows, rules, client, labels_loader, stage="answer_eval", samples=1, condition="B2", progress_path=None):
     outputs = []
     for row in rows:
         for attempt in range(samples):
             result = {"question_id": row["question_id"], "task": row["task"], "attempt": attempt,
                       "condition": condition, "rules_sha256": digest(rules),
                       "simulated": client.config["backend"] == "mock",
-                      "facts_sha256": digest(row["facts"]), "status": "pending", "correct": None}
-            try:
-                result["response"] = client.call(stage, answer_prompt(row, rules), row["question_id"], attempt)
-                result["status"] = "generated"
-            except CallError:
-                result["status"] = "generation_failed"
+                      "facts_sha256": digest(row["facts"]), "status": "not_started", "correct": None}
             outputs.append(result)
+
+    def save_progress():
+        if progress_path:
+            write_atomic(progress_path, outputs)
+
+    save_progress()
+    for result in outputs:
+        row = next(r for r in rows if r["question_id"] == result["question_id"])
+        result["status"] = "generating"
+        save_progress()
+        try:
+            result["response"] = client.call(stage, answer_prompt(row, rules), row["question_id"], result["attempt"])
+            result["status"] = "generated"
+        except CallError:
+            result["status"] = "generation_failed"
+        except (RunStopped, KeyboardInterrupt):
+            result["status"] = "generation_interrupted"
+            raise
+        finally:
+            save_progress()
     # Reference answers are loaded only after all answer requests for this evaluation.
     labels = labels_loader()
     for result in outputs:
@@ -93,6 +108,8 @@ def evaluate(rows, rules, client, labels_loader, stage="answer_eval", samples=1,
         row = next(r for r in rows if r["question_id"] == result["question_id"])
         prompt = get_anscheck_prompt(row["task"], row["question"], labels[row["question_id"]],
                                      result["response"], row["question_id"].endswith("_abs"))
+        result["status"] = "judging"
+        save_progress()
         try:
             result["judge_response"] = client.call("judge", prompt, row["question_id"], result["attempt"])
             parsed = result["judge_response"].strip().lower()
@@ -103,6 +120,11 @@ def evaluate(rows, rules, client, labels_loader, stage="answer_eval", samples=1,
                 result["status"] = "valid"
         except CallError:
             result["status"] = "judge_failed"
+        except (RunStopped, KeyboardInterrupt):
+            result["status"] = "judge_interrupted"
+            raise
+        finally:
+            save_progress()
     return outputs
 
 
@@ -198,8 +220,9 @@ def learn(data, out, client, limit=None):
     checkpoint(0)
     for start in range(0, len(rows), 5):
         batch = rows[start:start + 5]
-        rollouts = evaluate(batch, rules, client, lambda: labels, "answer_train", 2)
-        write(out / f"rollouts-{start // 5:02d}.json", rollouts)
+        rollouts = evaluate(batch, rules, client, lambda: labels, "answer_train", 2,
+                            progress_path=out / f"rollouts-{start // 5:02d}.json")
+        write_atomic(out / f"rollouts-{start // 5:02d}.json", rollouts)
         eligible, skipped = partial_groups(rollouts, 2)
         record = {"batch": start // 5, "eligible_ids": list(eligible), "skipped": skipped,
                   "failures": [], "updated": False}
