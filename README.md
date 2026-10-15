@@ -25,6 +25,15 @@
 
 论文来源、下载日期、页数和 SHA-256 记录在 [sources.json](papers/structured-memory-group2/sources.json)。认领论文和后续任务请使用 issue，负责人以 issue 的 assignee 为准。
 
+## 阅读准备与课设试点
+
+- [六篇论文比较](notes/paper-comparison.md)：方法、官方代码、实现负担和选题依据。
+- [MetaMem 阅读笔记](notes/05-metamem-YaoYang-123456.md)：杨垚负责论文的 AI 辅助草稿，含方法、实验、局限和汇报结构。
+- [MetaMem 官方代码审阅](docs/metamem-code-review.md)：默认划分、实际运行检查和实验前需处理的问题。
+- [小规模实验方案](docs/metamem-pilot.md)：无规则、固定规则、学习规则三组对照及成本估算。
+
+以上是 2026-10-15 的准备材料；尚未运行真实模型实验，也未确定为全组最终课设方案。
+
 ## 目录约定
 
 | 路径 | 用途 |
