@@ -12,6 +12,14 @@ from third_party.metamem_templates import (
 from .client import CallError, RunStopped
 from .data import digest, file_hash, read, write, write_atomic
 
+JUDGE_PARSER_VERSION = "single-label-v2"
+
+
+def parse_judge_label(text):
+    """Accept one complete ASCII yes/no label with optional terminal period."""
+    match = re.fullmatch(r"(yes|no)\.?", text.strip(), flags=re.IGNORECASE | re.ASCII)
+    return match.group(1).lower() == "yes" if match else None
+
 
 def load_rules(path, kind, budget):
     obj = read(path)  # Missing or malformed files are fatal, including B0.
@@ -112,11 +120,12 @@ def evaluate(rows, rules, client, labels_loader, stage="answer_eval", samples=1,
         save_progress()
         try:
             result["judge_response"] = client.call("judge", prompt, row["question_id"], result["attempt"])
-            parsed = result["judge_response"].strip().lower()
-            if parsed not in ("yes", "no"):
+            result["judge_parser_version"] = JUDGE_PARSER_VERSION
+            parsed = parse_judge_label(result["judge_response"])
+            if parsed is None:
                 result["status"] = "judge_parse_failed"
             else:
-                result["correct"] = parsed == "yes"
+                result["correct"] = parsed
                 result["status"] = "valid"
         except CallError:
             result["status"] = "judge_failed"

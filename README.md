@@ -41,6 +41,7 @@
 - [模型下载与晚间五题入口](docs/metamem-evening-preparation.md)：Qwen2.5 7B 已下载；一小时手动试跑、及时保存、停止和人工复核已准备。本轮真实调用仍为 0，等待明确启动。
 - [首次真实五题试跑](docs/metamem-real-smoke-20261015.md)：后续获授权完成 22 次真实调用，9 次有效判分；两次输出达到长度上限，没有学出规则，模型已卸载。这是训练 smoke，不是正式测试结果。
 - [输出预算诊断复跑](docs/metamem-budget-diagnostic-20261015.md)：同五题 21 次真实调用，无截断，9 次有效判分；没有合格混合组、规则仍为空，清理核验成功。[五题 AI 辅助复核](docs/metamem-five-question-ai-review.md) 已记录判分与检索问题，尚未完成人工复核。
+- [Judge 离线格式诊断与人工复核卡](docs/metamem-judge-diagnostic-review.md)：单标签允许句末英文句号，第二轮派生判分覆盖变为 10/10；原始记录保持不变，无新增模型调用或语义改判。
 
 源码使用 Python 标准库，位于 `src/metamem_pilot/`；官方提示词的独立副本及许可证位于 `third_party/`。这仍是个人 MetaMem 的 BM25 RAG 试点，不是 LightMem 完整复现或全组选型决定。
 
