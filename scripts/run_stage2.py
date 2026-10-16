@@ -8,23 +8,12 @@ import uuid
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / "src"), str(ROOT / "scripts")]
-from metamem_pilot.data import read, write_atomic as _write_atomic, file_hash, digest
+from metamem_pilot.data import read, write_atomic, file_hash, digest
 from metamem_pilot.pipeline import answer_prompt, load_labels
 from metamem_pilot.external_review import make_item
 from metamem_pilot.client import Client, CallError, RunStopped
 from run_pilot import usage_summary, call_events
 from evening_smoke import api
-
-
-def write_atomic(path, obj):
-    # Windows readers can briefly deny replacement. Retry only this observed I/O failure.
-    for attempt in range(20):
-        try:
-            return _write_atomic(path, obj)
-        except PermissionError:
-            if attempt == 19:
-                raise
-            time.sleep(0.05)
 
 
 def recover_logged_answers(slots, events, by, learned):
