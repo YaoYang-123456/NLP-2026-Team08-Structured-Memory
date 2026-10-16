@@ -65,7 +65,7 @@ def cleanup_ok(cleanup):
     return bool(cleanup.get("server_stopped")) and not any(key.endswith("_error") for key in cleanup)
 
 
-def start(session, config_path=None):
+def start(session, config_path=None, worker_script=None):
     # All setup, loading and warmup count against the explicit user's start time.
     started = time.monotonic()
     epoch = time.time()
@@ -97,6 +97,10 @@ def start(session, config_path=None):
         command = [sys.executable, "-X", "utf8", str(ROOT / "scripts/run_pilot.py"), "smoke",
                    "--config", str(config_path), "--out", str(session / "smoke"), "--warmup",
                    "--deadline-epoch", str(epoch + ACTIVE_SECONDS), "--stop-file", str(session / "STOP")]
+        if worker_script:
+            command = [sys.executable, "-X", "utf8", str(worker_script),
+                       "--config", str(config_path), "--out", str(session / "smoke"),
+                       "--deadline-epoch", str(epoch + ACTIVE_SECONDS), "--stop-file", str(session / "STOP")]
         with (session / "worker.log").open("wb") as log:
             child = subprocess.Popen(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT)
             state.update(status="running", worker_pid=child.pid, command=command)
@@ -152,7 +156,8 @@ def start(session, config_path=None):
         except (OSError, subprocess.TimeoutExpired) as exc:
             state["gpu_check_error"] = str(exc)
         write_atomic(session / "session.json", state)
-        export_review(session)
+        if not worker_script:
+            export_review(session)
     print(json.dumps(state, ensure_ascii=False, indent=2))
     return 0 if state["run_status"] == "completed" and cleanup_ok(state["cleanup"]) else 2
 

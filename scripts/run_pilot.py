@@ -81,6 +81,7 @@ def main():
     p.add_argument("--mock", action="store_true", help="Flow validation only; no real calls or model scores")
     p.add_argument("--deadline-epoch", type=float, help="Stop starting calls at this explicit run deadline")
     p.add_argument("--stop-file", type=Path, help="Stop when this file is created by the user")
+    p.add_argument("--max-requests", type=int, help="Hard generation-request cap for this invocation")
     p.add_argument("--warmup", action="store_true", help="Explicit smoke-only load/warmup; never automatic")
     p.add_argument("--max-tokens", type=int, help="Override ALL stages, including judge/reflection/proposal/merge")
     p.add_argument("--temperature", type=float, help="Override ALL stages")
@@ -88,6 +89,8 @@ def main():
     args = p.parse_args()
     if args.warmup and args.command != "smoke":
         p.error("--warmup is only available for an explicitly started smoke")
+    if args.max_requests is not None and args.max_requests < 1:
+        p.error("--max-requests must be positive")
     config = effective_config(args)
     manifest = read(args.data / "manifest.json")
     if file_hash(ROOT / "configs/rules-b1.json") != manifest["manual_rules_sha256"]:
@@ -105,14 +108,17 @@ def main():
            "started_utc": datetime.now(timezone.utc).isoformat(), "status": "running",
            "simulated": config["backend"] == "mock"}
     write(args.out / "run.json", run)
-    client = Client(config, args.out / "calls.jsonl", args.deadline_epoch, args.stop_file)
+    client = Client(config, args.out / "calls.jsonl", args.deadline_epoch, args.stop_file,
+                    max_requests=args.max_requests)
     start = time.perf_counter()
     try:
         if args.warmup:
             warmup_config = json.loads(json.dumps(config))
             warmup_config["stages"]["answer_eval"]["max_tokens"] = 8
-            warmup = Client(warmup_config, args.out / "calls.jsonl", args.deadline_epoch, args.stop_file)
+            warmup = Client(warmup_config, args.out / "calls.jsonl", args.deadline_epoch, args.stop_file,
+                            max_requests=args.max_requests)
             warmup.call("answer_eval", "Reply with just OK.", "__warmup__")
+            client.dispatched += warmup.dispatched
             if config["backend"] == "local":
                 with client.opener.open(config["answer"]["base_url"].removesuffix("/v1") + "/api/ps", timeout=5) as response:
                     loaded = json.load(response)

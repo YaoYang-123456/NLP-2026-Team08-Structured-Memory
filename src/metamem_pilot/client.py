@@ -49,12 +49,14 @@ def validate_config(config):
 
 
 class Client:
-    def __init__(self, config, log, deadline_epoch=None, stop_file=None):
+    def __init__(self, config, log, deadline_epoch=None, stop_file=None, max_requests=None):
         validate_config(config)
         self.config = config
         self.log = Path(log)
         self.deadline_epoch = deadline_epoch
         self.stop_file = Path(stop_file) if stop_file else None
+        self.max_requests = max_requests
+        self.dispatched = 0
         # Ignore system proxy settings for loopback; do not alter the machine's network configuration.
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
 
@@ -64,6 +66,8 @@ class Client:
         remaining = self.deadline_epoch - time.time() if self.deadline_epoch else None
         if remaining is not None and remaining <= 0:
             raise RunStopped("Active inference window ended; reserve cleanup time")
+        if self.max_requests is not None and self.dispatched >= self.max_requests:
+            raise RunStopped("Generation request budget exhausted")
         role = "judge" if stage == "judge" else "answer"
         service = self.config[role]
         payload = {"model": service["model"], "messages": [{"role": "user", "content": prompt}],
@@ -76,6 +80,7 @@ class Client:
         start = time.perf_counter()
         pending = self.log.with_name("pending-call.json")
         write_atomic(pending, event)
+        self.dispatched += 1
         try:
             if self.config["backend"] == "mock":
                 if stage == "judge":

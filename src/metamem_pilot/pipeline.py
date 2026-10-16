@@ -4,7 +4,7 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from third_party.metamem_judge import get_anscheck_prompt
+from .judge import ORIGINAL, judge_prompt
 from third_party.metamem_templates import (
     PROBLEM_WITH_META_MEMORY_TEMPLATE, TRAJECTORY_SUMMARY_TEMPLATE,
     META_MEMORY_UPDATE_TEMPLATE, BATCH_META_MEMORY_UPDATE_TEMPLATE,
@@ -114,8 +114,10 @@ def evaluate(rows, rules, client, labels_loader, stage="answer_eval", samples=1,
         if result["status"] != "generated":
             continue
         row = next(r for r in rows if r["question_id"] == result["question_id"])
-        prompt = get_anscheck_prompt(row["task"], row["question"], labels[row["question_id"]],
-                                     result["response"], row["question_id"].endswith("_abs"))
+        result["judge_prompt_version"] = client.config.get("judge_prompt_version", ORIGINAL)
+        prompt = judge_prompt(row["task"], row["question"], labels[row["question_id"]],
+                              result["response"], row["question_id"].endswith("_abs"),
+                              result["judge_prompt_version"])
         result["status"] = "judging"
         save_progress()
         try:
