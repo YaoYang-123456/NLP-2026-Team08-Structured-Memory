@@ -5,3 +5,5 @@
 *.json text eol=lf
 *.md text eol=lf
 third_party/MetaMem-LICENSE text eol=lf
+configs/evidence-answer-v1.txt text eol=lf
+reports/metamem-stage3-comparison.svg text eol=lf

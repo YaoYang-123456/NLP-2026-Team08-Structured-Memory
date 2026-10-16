@@ -1,0 +1,52 @@
+{
+  "version": "evidence-quality-v1",
+  "reviewer_type": "external_ai_app",
+  "human_gold": false,
+  "basis": "Actual supplied facts only; correctness scored separately under strict-abstention-v2. No long reasoning required.",
+  "dimensions": {
+    "factual_support": [
+      "supported",
+      "unsupported",
+      "uncertain",
+      "not_applicable"
+    ],
+    "temporal_count": [
+      "valid",
+      "invalid",
+      "uncertain",
+      "not_applicable"
+    ],
+    "citation_existence": [
+      "valid",
+      "invalid",
+      "none"
+    ],
+    "citation_support": [
+      "supported",
+      "unsupported",
+      "uncertain",
+      "not_applicable"
+    ],
+    "insufficient_stop": [
+      "yes",
+      "no",
+      "uncertain",
+      "not_applicable"
+    ],
+    "unnecessary_refusal": [
+      "yes",
+      "no",
+      "uncertain",
+      "not_applicable"
+    ]
+  },
+  "instructions": [
+    "Judge complete response, not keywords. Any substantive unsupported personal/factual assertion makes factual_support unsupported; general recommendations explicitly presented as suggestions are allowed.",
+    "Assess time/count reasoning against supplied facts, separately from reference correctness. Correct number with invalid reason stays visible.",
+    "No citations is none, not automatically factual error. Existing ID is not proof of support.",
+    "insufficient_stop applies where essential input evidence is missing: yes only if response stops unsupported guesses; uncertainty about sufficiency remains uncertain.",
+    "unnecessary_refusal applies where input suffices; missing retrieval despite answerable reference is not unnecessary refusal.",
+    "Maintain clothing reference ambiguity and bird as-of anomaly separately; do not silently rewrite correctness rubric."
+  ],
+  "adjudication": "One independent review of all abstention/anomaly cases, paired correctness changes, correctness-quality conflicts and uncertain judgments. Preserve initial and review; unresolved label/dimension disagreements uncertain (citation existence checked mechanically). Human acceptance null."
+}
