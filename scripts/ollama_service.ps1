@@ -17,7 +17,8 @@ function Get-OwnedProcess {
     if (-not $candidate) { return $null }
     if ($candidate.Path -ne $saved.executable -or
         $candidate.StartTime.ToUniversalTime().Ticks -ne ([datetime]$saved.process_started_utc).ToUniversalTime().Ticks) {
-        throw 'Saved process identity differs; refusing to stop another process.'
+        # Windows reused the PID: the recorded server is gone; never act on its replacement.
+        return $null
     }
     return $candidate
 }
@@ -28,16 +29,43 @@ if ($Action -eq 'Status') {
     exit
 }
 if ($Action -eq 'Stop') {
+    $saved = if (Test-Path -LiteralPath $stateFile) { Get-Content -Raw -LiteralPath $stateFile | ConvertFrom-Json } else { $null }
     $owned = Get-OwnedProcess
     if ($owned) {
         if ($ExpectedProcessId -and $owned.Id -ne $ExpectedProcessId) {
             throw 'This session does not own the current project server.'
         }
-        # The dedicated server and its own runner only; never stop all Ollama processes.
+        # Remember descendants before taskkill: an already-exiting child can make it return nonzero.
+        $processes = @(Get-CimInstance Win32_Process)
+        $ids = @([int]$owned.Id)
+        for ($i = 0; $i -lt $ids.Count; $i++) {
+            $ids += @($processes | Where-Object { $_.ParentProcessId -eq $ids[$i] } | ForEach-Object { [int]$_.ProcessId })
+        }
+        $targets = @($processes | Where-Object { $_.ProcessId -in $ids } | ForEach-Object {
+            $targetProcess = Get-Process -Id $_.ProcessId -ErrorAction SilentlyContinue
+            if ($targetProcess) {
+                [ordered]@{pid=$targetProcess.Id; started_ticks=$targetProcess.StartTime.ToUniversalTime().Ticks}
+            }
+        })
+        $saved | Add-Member -NotePropertyName stop_targets -NotePropertyValue $targets -Force
+        [IO.File]::WriteAllText($stateFile, ($saved | ConvertTo-Json -Depth 6) + "`n", [Text.UTF8Encoding]::new($false))
         & taskkill.exe /PID $owned.Id /T /F | Out-Null
-        if ($LASTEXITCODE -ne 0) { throw 'Could not stop the project server process tree.' }
     }
-    exit
+    # Check actual postconditions even when taskkill returned zero or the server was already gone.
+    for ($check = 0; $check -lt 5; $check++) {
+        $remaining = @($saved.stop_targets | ForEach-Object {
+            $candidate = Get-Process -Id $_.pid -ErrorAction SilentlyContinue
+            if ($candidate -and $candidate.StartTime.ToUniversalTime().Ticks -eq $_.started_ticks) { $candidate.Id }
+        })
+        $server = Get-OwnedProcess
+        $listening = @(Get-NetTCPConnection -LocalPort 11436 -State Listen -ErrorAction SilentlyContinue)
+        if (-not $server -and -not $remaining.Count -and -not $listening.Count) {
+            Write-Output 'Verified stopped: owned processes exited and project port released.'
+            exit 0
+        }
+        Start-Sleep -Milliseconds 250
+    }
+    throw "Cleanup incomplete: server=$([bool]$server), remaining=$($remaining -join ','), listeners=$($listening.Count)"
 }
 if (Get-OwnedProcess) { throw 'Project server already exists; inspect/stop it explicitly before changing mode.' }
 if (Get-NetTCPConnection -LocalPort 11436 -State Listen -ErrorAction SilentlyContinue) {

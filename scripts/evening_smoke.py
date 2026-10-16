@@ -61,12 +61,16 @@ def finish_run_record(session, reason):
             write_atomic(path, run)
 
 
-def start(session):
+def cleanup_ok(cleanup):
+    return bool(cleanup.get("server_stopped")) and not any(key.endswith("_error") for key in cleanup)
+
+
+def start(session, config_path=None):
     # All setup, loading and warmup count against the explicit user's start time.
     started = time.monotonic()
     epoch = time.time()
     session.mkdir(parents=True, exist_ok=False)
-    config_path = ROOT / "configs/qwen-library.json"
+    config_path = Path(config_path).resolve() if config_path else ROOT / "configs/qwen-library.json"
     config = read(config_path)
     state = {"started_utc": datetime.fromtimestamp(epoch, timezone.utc).isoformat(),
              "active_deadline_epoch": epoch + ACTIVE_SECONDS, "total_deadline_epoch": epoch + TOTAL_SECONDS,
@@ -120,6 +124,8 @@ def start(session):
                     # Empty request with keep_alive=0 unloads this model; no generation prompt.
                     cleanup["unload"] = api("/api/generate", {"model": config["answer"]["model"], "keep_alive": 0, "stream": False})
                     cleanup["loaded_after_unload"] = api("/api/ps")
+                    if cleanup["unload"].get("done_reason") != "unload" or cleanup["loaded_after_unload"]["models"]:
+                        raise RuntimeError("Model unload not confirmed or models remain loaded")
             except Exception as exc:
                 cleanup["unload_error"] = str(exc)
             finally:
@@ -148,7 +154,7 @@ def start(session):
         write_atomic(session / "session.json", state)
         export_review(session)
     print(json.dumps(state, ensure_ascii=False, indent=2))
-    return 0 if state["run_status"] == "completed" and state["cleanup"].get("server_stopped") else 2
+    return 0 if state["run_status"] == "completed" and cleanup_ok(state["cleanup"]) else 2
 
 
 def stop(session):
@@ -168,9 +174,10 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("action", choices=["start", "stop"])
     p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--config", type=Path, help="Explicit run configuration; defaults to the original smoke config")
     args = p.parse_args()
     session = args.out.resolve()
     if args.action == "start":
-        sys.exit(start(session))
+        sys.exit(start(session, args.config))
     else:
         stop(session)
