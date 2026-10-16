@@ -110,6 +110,10 @@ def evaluate(rows, rules, client, labels_loader, stage="answer_eval", samples=1,
             save_progress()
     # Reference answers are loaded only after all answer requests for this evaluation.
     labels = labels_loader()
+    if hasattr(client, "review"):
+        outputs = client.review(rows, outputs, labels)
+        save_progress()
+        return outputs
     for result in outputs:
         if result["status"] != "generated":
             continue
@@ -165,7 +169,9 @@ def partial_groups(rollouts, samples):
         grouped[row["question_id"]].append(row)
     eligible, skipped = {}, {}
     for qid, group in grouped.items():
-        if len(group) != samples or any(r["status"] != "valid" for r in group):
+        if any(r["status"] == "judge_uncertain" for r in group):
+            skipped[qid] = "uncertain_judgment"
+        elif len(group) != samples or any(r["status"] != "valid" for r in group):
             skipped[qid] = "incomplete_or_service_failure"
         elif 0 < sum(r["correct"] for r in group) < samples:
             eligible[qid] = group

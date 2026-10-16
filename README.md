@@ -44,6 +44,8 @@
 - [Judge 离线格式诊断与人工复核卡](docs/metamem-judge-diagnostic-review.md)：单标签允许句末英文句号，第二轮派生判分覆盖变为 10/10；原始记录保持不变，无新增模型调用或语义改判。
 - [固定19条回答的 judge 校准](docs/metamem-judge-calibration-20261015.md)：旧、新模板各19次判分，均解析有效但两个语义误判未修正；40次真实调用含两次预热，按采用条件停止，没有进入20条训练或10条验证。
 
+- [外部 AI 判分探索实验](docs/metamem-external-ai-run-20261015.md)：完成20条训练与三组10条验证，生成一条规则；因uncertain导致无候选满足完整覆盖，没有选定最终B2。[文件式协议](docs/metamem-external-ai-protocol.md)与此前7B自判实验分开，尚无人工金标准。
+
 源码使用 Python 标准库，位于 `src/metamem_pilot/`；官方提示词的独立副本及许可证位于 `third_party/`。这仍是个人 MetaMem 的 BM25 RAG 试点，不是 LightMem 完整复现或全组选型决定。
 
 ## 目录约定
