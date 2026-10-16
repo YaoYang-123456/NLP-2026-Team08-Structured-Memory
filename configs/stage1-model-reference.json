@@ -1,0 +1,56 @@
+{
+  "model": {
+    "name": "qwen2.5:7b-instruct-q4_K_M",
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "modified_at": "2026-10-15T07:42:43.6690183-04:00",
+    "size": 4683087332,
+    "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 3584
+    },
+    "capabilities": [
+      "completion",
+      "tools"
+    ]
+  },
+  "ollama_version": "0.34.0",
+  "provenance": "Reference from verified 2026-10-15 local download; not a claim about another machine",
+  "source": "https://ollama.com/library/qwen2.5:7b-instruct-q4_K_M",
+  "verified_utc_on_original_machine": "2026-10-15T11:45:11.608378+00:00",
+  "blobs": [
+    {
+      "name": "sha256-2f15b3218f0552c60647ce60ada83632d2c09755b16259b13e3e4458e9ae419d",
+      "bytes": 487,
+      "sha256": "2f15b3218f0552c60647ce60ada83632d2c09755b16259b13e3e4458e9ae419d"
+    },
+    {
+      "name": "sha256-2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730",
+      "bytes": 4683073952,
+      "sha256": "2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730"
+    },
+    {
+      "name": "sha256-66b9ea09bd5b7099cbb4fc820f31b575c0366fa439b08245566692c6784e281e",
+      "bytes": 68,
+      "sha256": "66b9ea09bd5b7099cbb4fc820f31b575c0366fa439b08245566692c6784e281e"
+    },
+    {
+      "name": "sha256-eb4402837c7829a690fa845de4d7f3fd842c2adee476d5341da8a46ea9255175",
+      "bytes": 1482,
+      "sha256": "eb4402837c7829a690fa845de4d7f3fd842c2adee476d5341da8a46ea9255175"
+    },
+    {
+      "name": "sha256-832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    }
+  ]
+}

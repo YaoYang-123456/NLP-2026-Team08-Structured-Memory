@@ -1,0 +1,28 @@
+{
+  "kind": "learned",
+  "rules": [
+    "Prioritize recent memories, cross-validate facts, and understand context and chronology unless historical context is required."
+  ],
+  "training_ids": [
+    "6aeb4375_abs",
+    "9bbe84a2",
+    "gpt4_a56e767c",
+    "8464fc84",
+    "8a2466db",
+    "1faac195",
+    "gpt4_0b2f1d21",
+    "031748ae_abs",
+    "618f13b2",
+    "gpt4_d84a3211",
+    "f523d9fe",
+    "a89d7624",
+    "66f24dbb",
+    "af082822",
+    "88432d0a_abs",
+    "6a1eabeb",
+    "87f22b4a",
+    "6222b6eb",
+    "b0479f84",
+    "e01b8e2f"
+  ]
+}
