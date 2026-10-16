@@ -1,9 +1,9 @@
 {
   "date_timezone": "2026-10-16 Asia/Shanghai",
-  "verified_utc": "2026-10-16T04:27:55.115059+00:00",
+  "verified_utc": "2026-10-16T04:32:57.897531+00:00",
   "issue": 8,
-  "base_commit": "e32bc3fc26d8ae233ffa9b1cd3a588c4de77433a",
-  "scope": "Current-machine offline recovery and preparation; no new model experiment",
+  "base_commit": "5afb9641d9a7ad2aaf1e0c5233196911d70bcd58",
+  "scope": "Current-machine offline recovery of stages one through three and shared progress-save fix; no new model experiment",
   "environment": {
     "python": "3.12.14",
     "isolated_venv": true,
@@ -56,8 +56,8 @@
     "sent_to_group_confirmed": false
   },
   "verification": {
-    "tests_passed": 56,
-    "test_log_sha256": "c32072f00f9ece00e71959b442ad82410619cc58d3574e2047d835d26896879d",
+    "tests_passed": 60,
+    "test_log_sha256": "0c5197a7dd265fee13d0fae78beae2af825918ab07ecebdb5425f4345c93b0be",
     "loopback_fixture": "synthetic local HTTP, not a model",
     "mock_runs": {
       "smoke": {
@@ -80,26 +80,10 @@
       }
     },
     "mock_test_stage_run": false,
-    "formal_test_run": false
+    "formal_test_run": false,
+    "shared_save_implementation_sha256": "b80436b4a65ae83bab7df393b1459448db3df411e475e23bff7e4a1bee27247f"
   },
-  "diagnostic": {
-    "status": "prepared_offline_not_run",
-    "question_ids": [
-      "9d25d4e0",
-      "01493427",
-      "a96c20ee_abs",
-      "2311e44b_abs"
-    ],
-    "planned_answers": 24,
-    "completed_answers": 0,
-    "real_requests": 0,
-    "prompt_payloads_rebuilt": 24,
-    "references_read_by_preparation": false,
-    "test_files_read_by_preparation": false,
-    "rules_and_facts_shared": true,
-    "plan_sha256": "bd56d0db307446d3d4bf428127ea7fde0c3d642838fa489bd499fe8101f479ed"
-  },
-  "fix": "Bounded PermissionError retry on atomic replacement shared with ordinary progress saving; no model request retry",
+  "fix": "Bounded PermissionError retry only for atomic replacement shared by ordinary and stage-two/three progress saves; duplicate private wrappers removed; no request retry",
   "blockers": [
     "Qwen answer model not present in checked local stores",
     "Local Ollama differs from original 0.34.0; inference compatibility not checked",
@@ -108,5 +92,22 @@
   ],
   "model_downloads": 0,
   "paid_api_requests": 0,
-  "human_acceptance": null
+  "human_acceptance": null,
+  "withdrawn_offline_preparation": {
+    "status": "superseded_not_for_execution",
+    "completed_answers": 0,
+    "reason": "Upstream stage three completed the research direction while this machine prepared offline; duplicate code/config/tests removed",
+    "superseded_by": "5afb9641d9a7ad2aaf1e0c5233196911d70bcd58"
+  },
+  "upstream_stage3": {
+    "source_commit": "5afb9641d9a7ad2aaf1e0c5233196911d70bcd58",
+    "source_file": "docs/metamem-stage3.md",
+    "source_sha256": "932721f12433cd89337a32806444dfb30297fcd4086afa3fa3f65147ae3f5fdf",
+    "baseline_correct": 17,
+    "candidate_correct": 15,
+    "answers_per_condition": 30,
+    "independent_development_questions": 10,
+    "source": "Repository report; historical raw outputs unavailable on this machine",
+    "reexecuted_here": false
+  }
 }
