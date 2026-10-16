@@ -1,0 +1,107 @@
+{
+  "experiment": "stage2-evidence-and-role-budget-v1",
+  "frozen_epoch": 1792119989.0761287,
+  "goal_start_epoch": 1792119847,
+  "total_deadline_epoch": 1792134247,
+  "inference_deadline_epoch": 1792133647,
+  "max_local_requests": 180,
+  "planned_answers": 132,
+  "planned_local_requests": 133,
+  "reserve_requests": 47,
+  "oracle": {
+    "questions": [
+      "06f04340",
+      "9d25d4e0"
+    ],
+    "conditions": [
+      "original",
+      "oracle"
+    ],
+    "repeats": 3,
+    "answers": 12,
+    "rules": [],
+    "nature": "reference-assisted source-only diagnostic; not automatic retrieval"
+  },
+  "main": {
+    "conditions": {
+      "A": [
+        "original",
+        "none"
+      ],
+      "B": [
+        "original",
+        "learned"
+      ],
+      "C": [
+        "role-balanced",
+        "none"
+      ],
+      "D": [
+        "role-balanced",
+        "learned"
+      ]
+    },
+    "repeats": 3,
+    "answers": 120,
+    "round_orders": [
+      [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      [
+        "C",
+        "A",
+        "D",
+        "B"
+      ]
+    ],
+    "selection": "No model score based tuning; candidate selected from training character-role imbalance and audit"
+  },
+  "generation_config": "configs/qwen-stability-sampling.json",
+  "generation_config_sha256": "971b49d4985cc3c4a073b3dddd28fa2ace7f3a5e4d4b7fa14c8e5cae7bb6f336",
+  "policy_file": "configs/external-ai-strict-abstention-v2.json",
+  "policy_sha256": "2db521412b66bd8d9bf16f75b37cbf04b49a58dbd4c11a063c2f4fa5e29d6aea",
+  "rules_file": "configs/rules-stage1-frozen.json",
+  "rules_file_sha256": "60f3e30726203ed560fa50fe435d08ec865065314f91842bd71678910ceaf42c",
+  "baseline_inputs_sha256": "c4bdb96baaf0651ae8b73d5b9b3b755e740c07a028af459b8033b30bc07cbbca",
+  "retrieval": {
+    "method": "BM25 role budget; user vs non-user each 10 blocks/6000 characters; global BM25 display order; no unused quota transfer",
+    "top_k": 20,
+    "max_chars": 12000,
+    "chunk_words": 180,
+    "candidates_considered": [
+      "role-balanced budget",
+      "session neighborhood expansion"
+    ],
+    "selected": "role-balanced budget",
+    "not_selected_reason": "neighborhood cannot recover entire absent sessions and may multiply long advice; no training evidence justifies added mechanism"
+  },
+  "review": {
+    "primary": "hidden condition labels; external AI; exact deployment unknown",
+    "independent_scope": "all abstention, clothing and bird responses; all answers in any qid/round having discordant primary labels in four planned comparisons; all oracle responses for quality",
+    "resolution": "Preserve primary and audit; conflicting labels become uncertain in separate conservative derived statistics. No relabeling loops.",
+    "human_acceptance": null
+  },
+  "dinner_quality": {
+    "policy_file": "output/stage2-preparation/oracle-quality-policy.json",
+    "policy_sha256": "0b00e1e6e8733c5548362d8629303cd2f566349f864e2db47bb5f820bb2e437a",
+    "note": "Two ingredient groups: basil OR mint, and cherry tomatoes; combined yes requires both. Separate from correctness rubric."
+  },
+  "comparisons": [
+    "C-A",
+    "D-B",
+    "B-A",
+    "D-C"
+  ],
+  "scope": "fixed development only; no training rules, no test contents, no new model",
+  "budget_note": "132 answers +1 warmup; failed requests count. No automatic retries; reserve not a target.",
+  "inputs_manifest_sha256": "aef25b62f2e0b9358c176bd67ea09dbe9a1a2068576477f2a04011b636bf7aa7"
+}
