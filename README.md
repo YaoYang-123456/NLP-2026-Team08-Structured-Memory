@@ -46,6 +46,8 @@
 
 - [外部 AI 判分探索实验](docs/metamem-external-ai-run-20261015.md)：完成20条训练与三组10条验证，生成一条规则；因uncertain导致无候选满足完整覆盖，没有选定最终B2。[文件式协议](docs/metamem-external-ai-protocol.md)与此前7B自判实验分开，尚无人工金标准。
 
+- [严格拒答 v2 离线敏感性分析](docs/metamem-strict-abstention-v2-analysis.md)：12条适用回答重评、58条沿用v1；9条uncertain变No，判对数不变。只作事后选择分析，未重训、未覆盖历史结论，本地模型调用0。
+
 源码使用 Python 标准库，位于 `src/metamem_pilot/`；官方提示词的独立副本及许可证位于 `third_party/`。这仍是个人 MetaMem 的 BM25 RAG 试点，不是 LightMem 完整复现或全组选型决定。
 
 ## 目录约定
