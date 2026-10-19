@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-19",
+  "owner": "lanshuheng9-oss",
+  "status": "offline_main_integration_passed",
+  "integrated_main": "8b6fcd73c3a15acea4dcc00e52a4b2debc50146d",
+  "F_original_commit": "4206096a2929256b4be55d28c105e441e367ad63",
+  "resolved_conflict": "README.md: retained both D handoff and F QA entry links",
+  "shared_files": {
+    "src/llm_client.py": {
+      "same_as_main": true,
+      "sha256": "17230503f43be2b1e134baa29e81dfba053b2726b308b18777bf7f5f70f887e6"
+    },
+    "scripts/run_qa.py": {
+      "same_as_main": true,
+      "sha256": "2a317fd4d614661e923aec9c01e472bd50f670c550f6848da8b046af51896c30"
+    },
+    "configs/qa.example.json": {
+      "same_as_main": true,
+      "sha256": "4f503851b161b43ce134faeea38174b91d5c393cc2c6c9d8368c0dc9512d86d8"
+    }
+  },
+  "tests": {
+    "D": 10,
+    "F": 14,
+    "failed": 0
+  },
+  "integration": {
+    "input": "output/structmem-d-offline-20261019/synthetic5.retrieval.jsonl",
+    "input_sha256": "c5d30067a1534a7780d9139eed231b26c36fb4053fb59970b62e3795cd71a21a",
+    "question_set_sha256": "a5108b7645af41f8b257d3033e968be47160f2e696789c0c85a21c14250b9ac5",
+    "memory_and_vectors": "synthetic; not real model memory or embeddings",
+    "planned_questions": 5,
+    "simulated_questions": 5,
+    "real_successful_answers": 0,
+    "output_directory": "output/structmem-d-main-integration-20261019"
+  },
+  "D_code_sha256": {
+    "src/structmem_retrieve.py": "0b419a21731bb1ccd7f030654c6f3d182d86634b5113b814c40acc389a987f1a",
+    "scripts/retrieve_structmem.py": "187b359c920ea9c454c8303aee079e566a5cb41dc7be819dfae675953209440b",
+    "tests/test_structmem_retrieve.py": "766c8128dcee57dcbf9dee7f1059428d761e83539cc855d102cdecadf5ec380c"
+  },
+  "real_api_calls": 0,
+  "new_model_downloads": 0,
+  "human_review_completed": false,
+  "remaining": [
+    "C real event snapshot and native construction config are not published",
+    "Full LightMem runtime and local MiniLM loading remain unverified here",
+    "S2 method prompt must be aligned with F before real execution"
+  ],
+  "commands": [
+    ".venv/Scripts/python.exe -W error::ResourceWarning -m unittest discover -s tests -p test_structmem_retrieve.py -v",
+    ".venv/Scripts/python.exe -W error::ResourceWarning -m unittest discover -s tests -p test_qa.py -v",
+    ".venv/Scripts/python.exe scripts/run_qa.py --mock --method S2 --input output/structmem-d-offline-20261019/synthetic5.retrieval.jsonl --config configs/qa.example.json --out output/structmem-d-main-integration-20261019"
+  ]
+}

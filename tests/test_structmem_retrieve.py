@@ -162,6 +162,29 @@ class StructMemTests(unittest.TestCase):
         memory.summarize.assert_called_once_with(retrieval_scope="global", time_window=3600,
                                                 top_k_seeds=15, process_all=True, enable_cross_event=True)
 
+    def test_merged_f_consumes_d_output_without_network(self):
+        from run_qa import load_inputs, run
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            make_index(root, synthetic=True)
+            memories, _ = sm.load_memory_index(root / "index.json", ["conv-48"], allow_synthetic=True)
+            question = {"sample_id": "conv-48", "qa_index": 86, "question": "SYNTHETIC: When?", "category": 1}
+            rows, _ = sm.prepare_inputs([question], memories, lambda _: vector())
+            inputs = root / "retrieval.jsonl"
+            inputs.write_text(json.dumps(rows[0]) + "\n", encoding="utf-8", newline="\n")
+            self.assertEqual(load_inputs(inputs), rows)
+            with patch("urllib.request.OpenerDirector.open", side_effect=AssertionError("Unexpected network")), \
+                    patch("builtins.print"):
+                status = run(inputs, ROOT / "configs/qa.example.json", "S2", root / "qa", mock=True)
+            result = sm.read_json(root / "qa/run.json")
+            prediction = json.loads((root / "qa/predictions.jsonl").read_text(encoding="utf-8"))
+            self.assertEqual(status, 0)
+            self.assertEqual(result["simulated_questions"], 1)
+            self.assertEqual(result["successful_questions"], 0)
+            self.assertEqual(prediction["contexts"], rows[0]["contexts"])
+            self.assertEqual(prediction["status"], "simulated")
+            self.assertIsNone(prediction["usage"])
+
 
 if __name__ == "__main__":
     unittest.main()

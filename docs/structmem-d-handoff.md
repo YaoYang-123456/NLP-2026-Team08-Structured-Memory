@@ -110,7 +110,11 @@ A 合并后，`--frozen-config` 改用仓库中的 `configs/locomo-smoke.json`�
 
 ## 5. D → F 与本轮实际验证
 
-F 固定版本为 [PR #35](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/35) 的 `4206096a2929256b4be55d28c105e441e367ad63`。本轮使用 `tmp/structmem-d-deps/f/` 固定副本，没有合并或改动 F 客户端。
+F 固定版本为 [PR #35](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/35) 的 `4206096a2929256b4be55d28c105e441e367ad63`。首次离线核验使用 `tmp/structmem-d-deps/f/` 固定副本，当时未合并或改动 F 客户端。
+
+后续检查确认 PR #35 已合并到 main `8b6fcd73c3a15acea4dcc00e52a4b2debc50146d`。D 分支已同步这次 main，保留 README 中双方的入口；当前直接使用仓库内的 `scripts/run_qa.py`、`src/llm_client.py` 和 `configs/qa.example.json`，不再依赖 F 临时副本。新增一个 D→F 离线测试，检验 D 产物可以被当前 F 入口读取并保持模拟状态；本次仍未改动 F 的客户端行为。
+
+F 另在 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) 交付了 S0 的 30 题真实回答，等待 E 评分。这是 F/S0 的进度，不是 D/S2 的真实实验，也不消除 C 真实事件记忆缺失的依赖。D PR #41 仍待 C 审核，未请求重复审核或催审。
 
 - `contexts` 每项仅含 `source_ids`、`kind`、`text`；kind 为 `event` 或 `synthesis`。
 - ID 使用 `<sample_id>/event/<point_id>` 或 `<sample_id>/synthesis/<point_id>`；综合项同时列出原生 covered/seed 事件 ID。不将这些 ID 冒称原始 `dia_id`。
@@ -133,6 +137,8 @@ F 固定版本为 [PR #35](https://github.com/YaoYang-123456/NLP-2026-Team08-Str
 ```powershell
 python -W error::ResourceWarning -m unittest discover -s tests -p test_structmem_retrieve.py -v
 ```
+
+上表保留首次检查的 9 项 D 测试和 14 项 F 测试历史。同步 main 后，D 测试增加到 10 项、F 仍为 14 项，全部通过；另用当前正式入口对先前明确构造的 5 题文件执行 `--mock`，得到 5 simulated、真实成功回答 0。补充记录见 [main 接入核验](../reports/structmem-d-main-integration-20261019.json)。
 
 ## 6. 下一次真实验收所需交接
 
