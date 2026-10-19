@@ -116,7 +116,6 @@ class FlatRagTests(unittest.TestCase):
                 load_questions(select)
 
 
-
     def test_accepts_as_frozen_json_array_and_rejects_labels(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "smoke.inputs.json"
