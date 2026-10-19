@@ -1,0 +1,37 @@
+% Two content frames for F to insert into the shared Beamer deck.
+% Uses the existing preamble's \source, \presenter and \aside commands.
+\section{S0 普通检索基线}
+\presenter{YaoYang-123456}
+\source{B 本机真实检索记录 reports/s0-local-run-20261019.md；A/F PR38、35}
+\begin{frame}{S0：原始对话向量检索已真实跑通}
+\small
+\textbf{基线流程}\par\vspace{2mm}
+原始会话分块 $\longrightarrow$ 固定 MiniLM 嵌入 $\longrightarrow$
+top-60 余弦检索 $\longrightarrow$ F 回答 $\longrightarrow$ E 评分\par\vspace{3mm}
+\begin{tabularx}{\linewidth}{@{}p{34mm}Y@{}}
+\toprule
+固定数据 & 3个开发会话，30题；前5题用于联调，四类题数8/8/7/7\\[1mm]
+嵌入与检索 & all-MiniLM-L6-v2固定revision；384维、归一化、CPU；480字符分块、256-token保护\\[1mm]
+真实运行 & 5/5、30/30题检索完成，每题60块；5题与30题对应结果完全一致\\[1mm]
+必要检查 & A/B/F共29项通过；来源、原始时间、排名、答案隔离及F格式通过\\\bottomrule
+\end{tabularx}
+\aside{这是1973条原始消息的向量RAG。未构建StructMem事件记忆，未用旧MetaMem成绩代替S0。}
+\note{建议约50秒。S0建立简单可解释的对照，回答入口沿用F，评分由E负责。本机真实加载固定MiniLM模型，5题与30题检索均完成，不能把这一步讲成问答实验已经完成。}
+\end{frame}
+
+\source{真实检索样例 conv-42/qa\_index=15；本机 s0.retrieval.jsonl，未读取评分标签}
+\begin{frame}{时间线索已取回，回答与评分仍待执行}
+\small
+\textbf{例：When did Nate get purple hair?}\par\vspace{2mm}
+\begin{tabularx}{\linewidth}{@{}p{12mm}p{28mm}Y@{}}
+\toprule
+排名 & 原始消息 & 真实取回内容\\\midrule
+1 & session7 / D7:1 & 4月15日会话中说“Dyed my hair last week”\\
+2 & session7 / D7:3 & 同会话的已有图片说明包含紫色头发\\
+3 & session10 / D10:4 & 另一场游戏对话也有紫发图片描述，可能干扰\\\bottomrule
+\end{tabularx}\par\vspace{3mm}
+\textbf{状态：}F模拟5＋30行通过；真实回答0，真实评分0，准确率未产生。\par\vspace{2mm}
+\textbf{下一步：}配置项目DeepSeek凭据及明确本轮额度，冻结F配置，完成5/30题回答后交E（\#31）。\par
+\aside{“last week”必须依附原会话时间；当前没有标准答案核查或回答，不能据检索排名宣布正确。}
+\note{建议约50秒。展示一个真实来源追踪案例，说明相似度排序同时带回证据与干扰。独立检索命令5题16.822秒、30题8.949秒，后者复用缓存，不做速度排名。当前无项目凭据，未花费API费用，模拟回答不进入成绩。}
+\end{frame}

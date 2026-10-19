@@ -1,6 +1,6 @@
 # B：S0 普通检索基线——与 A/F 正式交接对齐
 
-负责人：`YaoYang-123456`；任务 [#24](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/24)。B 只负责原始对话向量检索；F 生成回答；E 评分。当前尚无真实 S0 5/30 题的准确率。
+负责人：`YaoYang-123456`；任务 [#24](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/24)。B 只负责原始对话向量检索；F 生成回答；E 评分。2026-10-19已完成真实5/30题检索与F模拟读取，真实回答及评分仍为0。实际命令与案例见[本机运行记录](../reports/s0-local-run-20261019.md)。
 
 ## A 的数据与嵌入契约（PR #38）
 
@@ -21,7 +21,7 @@
 - `s0.retrieval.jsonl`：每题来源 ID、排名与余弦分数，分数不进入回答提示词。
 - `s0.manifest.json`：源文件哈希、固定模型与版本、top-k、分块参数、题数和检索记录。此文件中 `accuracy=null`，回答生成调用数为0。
 
-## 真实运行指令（待 A/F 可用后执行）
+## 真实运行指令（需要 A/F 兼容文件与本地模型）
 
 先按 [A 环境说明](../docs/locomo-data-environment.md) 在具备缓存的机器运行 `scripts/prepare_locomo.py` 并复验模型；不能拿构造数据当真实题。模型文件达到20MB时，请将该文件发送到小组微信群。
 
@@ -42,4 +42,6 @@ python scripts/run_qa.py --method S0 --execute --input output/s0-smoke5/s0.input
 
 ## 实际验收边界
 
-当前 **8项离线测试通过**，覆盖来源与时间、BLIP描述、分块和排序、嵌入缓存、A 的 JSON 数组和源 SHA 校验、匿名 QA 字段隔离、模型 revision/维度与256-token防截断。F 的公共接口已作静态复核；A 已有冻结准备，但本运行环境尚未取得真实数据、固定模型权重及依赖，因此**还没有真实的5/30题检索、问答或评分记录**。本人进展见 `reports/s0-progress-20261019.md`。
+本机独立Python3.12 CPU环境下，A/B/F **7＋8＋14＝29项针对性测试通过**。固定MiniLM真实加载，5/30题检索完成，每题60块；原始ID、时间、排序、字段隔离及题集哈希检查通过。5题是30题的子集，真实独立题数仍为30。没有触发256-token截断保护，未改变480字符分块设置。
+
+F仅执行`--mock`，5/30行均为simulated，不计入模型成绩；真实回答/评分为0。缺少本机项目凭据及明确的本次付费额度，未调用付费API。F示例提示词须在真实生成前核对冻结。小型核验为 `reports/s0-local-verification-20261019.json`，个人两页材料见 `reports/s0-progress-20261019.md` 及 `reports/s0-seminar-20261019.tex`。完整日志、原始检索与模型权重保留本地，不提交Git。
