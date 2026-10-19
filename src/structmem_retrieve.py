@@ -128,12 +128,26 @@ def load_memory_index(path, sample_ids, allow_synthetic=False):
             result[sid][kind] = load_points(source, kind)
             hashes[sid][kind] = actual
         event_ids = {str(p["id"]) for p in result[sid]["event"]}
+        for point in result[sid]["event"]:
+            original_source_ids(sid, point)
         for point in result[sid]["synthesis"]:
             payload = point["payload"]
             references = payload["covered_entry_ids"] + payload.get("seed_entry_ids", [])
             if any(str(pid) not in event_ids for pid in references):
                 raise ValueError(f"Synthesis refers to an event outside the {sid} snapshot")
     return result, hashes
+
+
+def original_source_ids(sample_id, point):
+    payload = point["payload"]
+    fields = ("source_sample_id", "source_message_id", "source_key")
+    if not any(field in payload for field in fields):
+        return []
+    if (any(not isinstance(payload.get(field), str) or not payload[field].strip() for field in fields) or
+            payload["source_sample_id"] != sample_id or
+            payload["source_key"] != f"{sample_id}/{payload['source_message_id']}"):
+        raise ValueError("Event source binding does not match its conversation")
+    return [payload["source_key"]]
 
 
 def rank_points(points, query_vector, limit):
@@ -151,6 +165,7 @@ def prepare_inputs(questions, memories, embed):
     rows, traces = [], []
     for question in questions:
         sid = question["sample_id"]
+        events = {str(point["id"]): point for point in memories[sid]["event"]}
         vector = embed(question["question"])
         contexts, hits = [], {}
         for kind, limit in (("event", 60), ("synthesis", 5)):
@@ -159,8 +174,11 @@ def prepare_inputs(questions, memories, embed):
             for point in selected:
                 ids = [f"{sid}/{kind}/{point['id']}"]
                 if kind == "synthesis":
-                    ids.extend(f"{sid}/event/{pid}" for pid in
-                               point["payload"]["covered_entry_ids"] + point["payload"].get("seed_entry_ids", []))
+                    for pid in point["payload"]["covered_entry_ids"] + point["payload"].get("seed_entry_ids", []):
+                        ids.append(f"{sid}/event/{pid}")
+                        ids.extend(original_source_ids(sid, events[str(pid)]))
+                else:
+                    ids.extend(original_source_ids(sid, point))
                 contexts.append({"source_ids": list(dict.fromkeys(ids)), "kind": kind,
                                  "text": memory_text(point, kind)})
         rows.append({**question, "contexts": contexts})

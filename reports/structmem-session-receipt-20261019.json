@@ -1,0 +1,130 @@
+{
+  "status": "single_session_receipt_verified",
+  "sample_id": "conv-48",
+  "session_id": "session_1",
+  "conversation_complete": false,
+  "completed_sessions": 1,
+  "total_sessions": 30,
+  "entry_count": 34,
+  "entry_types": {
+    "factual": 22,
+    "relational": 12
+  },
+  "source_messages": 18,
+  "bundle_handoff_sha256": "82fc63282eb0af24eba68476a91bbebee791bca6d4a49aa07645038e6edcd990",
+  "manifest_files_verified": 14,
+  "received_bundle_unchanged": true,
+  "database_matches_export": true,
+  "A_source_conversations_sha256": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+  "all_source_bindings_match_A": true,
+  "memory_reembedding_max_difference": 1.4156103134155273e-07,
+  "embedding": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimensions": 384,
+    "normalize_embeddings": true,
+    "max_seq_length": 256
+  },
+  "device": "cpu",
+  "query_count": 3,
+  "top_k": 5,
+  "formal_dataset_questions": 0,
+  "generation_api_calls": 0,
+  "synthesis_api_calls": 0,
+  "scoring_api_calls": 0,
+  "accuracy": null,
+  "runtime": {
+    "python": "3.13.9",
+    "qdrant-client": "1.15.1",
+    "sentence-transformers": "5.1.1",
+    "transformers": "4.57.0",
+    "torch": "2.11.0",
+    "numpy": "2.2.6",
+    "huggingface-hub": "0.35.3"
+  },
+  "code_sha256": {
+    "verify_structmem_session.py": "72e3d9333daa530d0161c54bd3f5c55d480430f0395313bf1251a8e36e8a79f8",
+    "structmem_retrieve.py": "2fe6c501abb9cd1f132175270e8e6efb5e8d3c03659681fa5467751236632831"
+  },
+  "date": "2026-10-19",
+  "owner": "lanshuheng9-oss",
+  "archive": {
+    "filename": "conv-48-session-001-20261019.zip",
+    "bytes": 229007,
+    "sha256": "39a4efd0eb2c246372e1b103b9cc248070942fdbf37065adcdaa275a355a4c07"
+  },
+  "model_file": {
+    "filename": "model.safetensors",
+    "bytes": 90868376,
+    "sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "group_sent_date": null
+  },
+  "sender_validator_status": "verified",
+  "D_tests_passed": 12,
+  "F_tests_passed": 14,
+  "inspection_cases": [
+    {
+      "query": "What reminds Deborah of her mother?",
+      "top1": {
+        "point_id": "0c18f630-c1b9-4a81-bfea-6fe5d6d300ff",
+        "score": 0.7929980154336234,
+        "source_key": "conv-48/D1:9",
+        "memory": "Deborah also has a pendant that reminds her of her mother.",
+        "entry_type": "factual",
+        "time_stamp": "2023-01-23T16:06:08.000"
+      },
+      "qdrant_order_matches": true,
+      "max_score_difference": 3.3306690738754696e-16
+    },
+    {
+      "query": "Where and when did Jolene's mother give her the pendant?",
+      "top1": {
+        "point_id": "64cd6e7f-1973-4a52-a4e5-b7d17c9e231f",
+        "score": 0.8993723592986738,
+        "source_key": "conv-48/D1:8",
+        "memory": "Jolene's mother gave her the pendant in 2010 in Paris.",
+        "entry_type": "factual",
+        "time_stamp": "2023-01-23T16:06:07.000"
+      },
+      "qdrant_order_matches": true,
+      "max_score_difference": 3.3306690738754696e-16
+    },
+    {
+      "query": "How does Deborah want to support her community?",
+      "top1": {
+        "point_id": "9c442643-1b7e-47f0-8b00-c3ee9f2d34db",
+        "score": 0.6514651449483119,
+        "source_key": "conv-48/D1:13",
+        "memory": "One of Deborah's goals is to keep teaching yoga and supporting her community.",
+        "entry_type": "factual",
+        "time_stamp": "2023-01-23T16:06:12.000"
+      },
+      "qdrant_order_matches": true,
+      "max_score_difference": 1.1102230246251565e-16
+    }
+  ],
+  "original_receipt": "output/structmem-session-acceptance-20261019/receipt.json",
+  "original_bundle": "output/structmem-session-receive-20261019/conv-48-session-001",
+  "preserved_zip": "data/structmem-received/conv-48-session-001-20261019.zip",
+  "scope": "One complete session; no complete-conversation S2 run and no formal question accuracy",
+  "human_semantic_review": null,
+  "runtime_difference_from_C": {
+    "C_python": "3.11",
+    "D_python": "3.13.9",
+    "C_torch": "2.8.0",
+    "D_torch": "2.11.0",
+    "C_and_D_sentence_transformers": "5.1.1",
+    "note": "Vector reproduction was measured; this does not establish full LightMem runtime compatibility"
+  },
+  "environment_repair": {
+    "initial_error": "OMP Error 15: duplicate OpenMP runtime from inherited Conda scientific libraries",
+    "resolution": "Install pip wheels of numpy 2.2.6, scipy 1.15.3, scikit-learn 1.7.2 inside isolated venv; reuse system CPU torch 2.11.0",
+    "KMP_DUPLICATE_LIB_OK_used": false
+  },
+  "command": "tmp/structmem-receive-venv/Scripts/python.exe scripts/verify_structmem_session.py --bundle output/structmem-session-receive-20261019/conv-48-session-001 --out output/structmem-session-acceptance-20261019",
+  "remaining": [
+    "conv-48 is 1/30 sessions; conv-42 and conv-41 event memory have not been received",
+    "No synthesis has been executed",
+    "Formal S2 prompt/config remains to be aligned with F before real QA"
+  ]
+}

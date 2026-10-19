@@ -162,6 +162,26 @@ class StructMemTests(unittest.TestCase):
         memory.summarize.assert_called_once_with(retrieval_scope="global", time_window=3600,
                                                 top_k_seeds=15, process_all=True, enable_cross_event=True)
 
+    def test_native_original_source_keys_reach_f_contexts(self):
+        event = point("e1")
+        event["payload"].update(source_sample_id="conv-48", source_message_id="D1:9",
+                                source_key="conv-48/D1:9", source_session_id="session_1")
+        memories = {"conv-48": {"event": [event], "synthesis": [point("s1", summary=True)]}}
+        questions = [{"sample_id": "conv-48", "qa_index": 86, "question": "When?", "category": 1}]
+        rows, _ = sm.prepare_inputs(questions, memories, lambda _: vector())
+        self.assertEqual(rows[0]["contexts"][0]["source_ids"], ["conv-48/event/e1", "conv-48/D1:9"])
+        self.assertEqual(rows[0]["contexts"][1]["source_ids"],
+                         ["conv-48/synthesis/s1", "conv-48/event/e1", "conv-48/D1:9"])
+
+    def test_original_source_binding_rejects_other_conversations(self):
+        event = point("e1")
+        for fields in ({"source_key": "conv-48/D1:9"},
+                       {"source_sample_id": "conv-42", "source_message_id": "D1:9", "source_key": "conv-42/D1:9"},
+                       {"source_sample_id": "conv-48", "source_message_id": "D1:9", "source_key": "conv-48/D1:8"}):
+            event["payload"] = {**point("e1")["payload"], **fields}
+            with self.assertRaises(ValueError):
+                sm.original_source_ids("conv-48", event)
+
     def test_merged_f_consumes_d_output_without_network(self):
         from run_qa import load_inputs, run
         with tempfile.TemporaryDirectory() as temp:

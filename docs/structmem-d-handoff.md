@@ -2,7 +2,9 @@
 
 负责人：`lanshuheng9-oss`；技术任务 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)。日期：2026-10-19。
 
-当前完成的是原生 point 读取、检索适配、固定参数调用和离线接口检查。**真实事件记忆、真实综合、真实 S2 问答均未完成。** 本文是基于上游代码的交接提案，尚未得到 C/F 的人工确认；不能把读取公开交付理解为成员已经共同确认接口。
+当前已完成原生 point 读取、检索适配、固定参数调用、离线接口检查，以及首个真实 session 的接收验收。**真实综合、完整会话 S2 问答仍未完成。** 首次准备与后续接收进展分别记录；交接提案尚未得到 C/F 的人工确认。
+
+2026-10-19 已收到 C 的 `conv-48/session_1` 包：34 条真实事件记忆的独立数据库读回、全部来源核对及 3 个检查问题本地检索通过。详见[接收验收记录](structmem-session-receipt-20261019.md)。这只覆盖 conv-48 的 1/30 个 session，不能替代完整开发会话记忆和正式 S2 评测。
 
 ## 1. 已核对的 A 输入
 
@@ -22,11 +24,11 @@
 | 上游 | LightMem `8449d574df6bae1bdf3314a1564da65e2f37e046` |
 | 嵌入 | all-MiniLM-L6-v2 `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`，384 维、归一化、最大长度 256 |
 
-A 的所有输出文件哈希与冻结配置一致；D 的后续入口只读题目与记忆，不加载 `*.labels.json`。标准答案仅由 E 评分时关联。完整 LightMem/CUDA 依赖、本机 MiniLM 加载未在本轮验证；已下载的是小型数据及上游源码，没有新模型权重。
+A 的所有输出文件哈希与冻结配置一致；D 的后续入口只读题目与记忆，不加载 `*.labels.json`。标准答案仅由 E 评分时关联。首次准备只下载小型数据与上游源码；接收 C 的首个真实 session 后已下载并实际加载固定 MiniLM、验证记忆向量。完整 LightMem/CUDA 依赖仍未验证，模型文件信息见接收记录。
 
 ## 2. C → D：沿用原生格式交接
 
-C 负责人为 `oioioi-521`（[#32](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/32)）。当前 issue 尚未提供真实记忆或构建配置。请先交一份完整 session 的真实事件记忆，随后交三个开发会话的完整版本，并保留构建命令、配置、状态及来源映射。
+C 负责人为 `oioioi-521`（[#32](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/32)）。首份完整 session 的真实记忆已通过用户文件接收并验收；随后仍需三个开发会话的完整版本及可加载的构建配置、状态与来源映射。早先 issue 尚未更新为本次文件交接的状态，不再据旧 issue 断言没有任何真实记忆。
 
 1. C 使用 A 的完整开发对话，保留时间、说话人和消息 ID；不使用问题答案、评分 evidence 或数据集预生成总结来构建记忆。
 2. C 关闭相关 Qdrant 客户端后交付明确版本的数据库副本，说明实际 `collection_name`、目录、条目数和文件哈希。D 使用自己的副本运行综合，不写 C 的工作目录。
@@ -104,7 +106,7 @@ A 合并后，`--frozen-config` 改用仓库中的 `configs/locomo-smoke.json`�
 
 入口在加载嵌入前检查 A 的有序 5/30 题和精确文件哈希、开发会话、上游/模型版本、原始对话哈希及 point 文件哈希。缺少摘要、无向量、错误维度、非有限数、零向量、重复 ID、标签字段、摘要悬空引用都会报错，不静默跳过。CLI 拒绝构造记忆，无自动下载、API 调用或覆盖旧输出。
 
-排序是固定版 `VectorRetriever` 全会话 combined cosine 排序的标准库移植；60 个事件条目与 5 个综合记忆分别取 top-k，条目不足时保留实际数目。没有加入 BM25、重排、额外补齐或说话人配额。模型仅在已有固定 revision 缓存中通过 SentenceTransformer 加载，查询归一化；本机未实际运行此模型路径。
+排序是固定版 `VectorRetriever` 全会话 combined cosine 排序的标准库移植；60 个事件条目与 5 个综合记忆分别取 top-k，条目不足时保留实际数目。没有加入 BM25、重排、额外补齐或说话人配额。模型仅在已有固定 revision 缓存中通过 SentenceTransformer 加载，查询归一化；该模型路径已在首个真实 session 的接收验收中实际运行，完整 S2 CLI 仍未执行。
 
 输出：`retrieval.jsonl` 符合 F 的四个题目字段加 `contexts`；`provenance.json` 保存逐题分数及完整 payload；`run.json` 保存配置/输入/point/代码哈希和 `retrieval_only` 状态。检索完成不等于回答、评分或 S2 验收完成。
 
@@ -114,10 +116,10 @@ F 固定版本为 [PR #35](https://github.com/YaoYang-123456/NLP-2026-Team08-Str
 
 后续检查确认 PR #35 已合并到 main `8b6fcd73c3a15acea4dcc00e52a4b2debc50146d`。D 分支已同步这次 main，保留 README 中双方的入口；当前直接使用仓库内的 `scripts/run_qa.py`、`src/llm_client.py` 和 `configs/qa.example.json`，不再依赖 F 临时副本。新增一个 D→F 离线测试，检验 D 产物可以被当前 F 入口读取并保持模拟状态；本次仍未改动 F 的客户端行为。
 
-F 另在 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) 交付了 S0 的 30 题真实回答，等待 E 评分。这是 F/S0 的进度，不是 D/S2 的真实实验，也不消除 C 真实事件记忆缺失的依赖。D PR #41 仍待 C 审核，未请求重复审核或催审。
+F 另在 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) 交付了 S0 的 30 题真实回答，等待 E 评分。这是 F/S0 的进度，不是 D/S2 的真实实验，也不消除完整开发会话事件记忆缺失的依赖。D PR #41 仍待 C 审核，未请求重复审核或催审。
 
 - `contexts` 每项仅含 `source_ids`、`kind`、`text`；kind 为 `event` 或 `synthesis`。
-- ID 使用 `<sample_id>/event/<point_id>` 或 `<sample_id>/synthesis/<point_id>`；综合项同时列出原生 covered/seed 事件 ID。不将这些 ID 冒称原始 `dia_id`。
+- ID 使用 `<sample_id>/event/<point_id>` 或 `<sample_id>/synthesis/<point_id>`；综合项同时列出原生 covered/seed 事件 ID。收到原始来源映射后，同时保留经校验的 `<sample_id>/<source_message_id>`。UUID 与消息 ID 分开保存，不从评分标签推断来源。
 - 文本保留说话人、完整来源时间、事件内容和综合时间范围；所有原生 payload 保存在 provenance。
 - F 当前只序列化 JSON 上下文，不能直接套用上游双说话人分组模板。**本轮没有冻结 S2 正式提示词**；真实调用前与 F 保留上游时间推理指令，明确 JSON 展示与原版分组格式的差异，再统一审阅配置。示例提示词只用于 mock。
 
@@ -142,7 +144,7 @@ python -W error::ResourceWarning -m unittest discover -s tests -p test_structmem
 
 ## 6. 下一次真实验收所需交接
 
-1. C 给出完整 session 的真实事件副本、实际构建配置和 point 导出，确认模型/时间/来源映射；当前不是要求用户代写 C 的代码。
+1. 首个完整 session 的真实事件副本和来源映射已验收。C 继续交开发会话完整事件库与可加载构建配置；当前不是要求用户代写 C 的代码。
 2. D 在独立副本和匹配的完整上游环境运行综合，导出真实摘要并记录调用与失败；本轮没有可据以填写的真实调用成绩。
 3. F 与 D 对齐正式 S2 提示词及项目调用条件，再跑冻结 5 题，经 E 评分后推进同一 30 题。
 4. 各人准备自己的 1–2 页进展；D 当前材料见 [进展页](../reports/structmem-d-progress.md)，尚未作人工案例核查或整组研讨定稿。
