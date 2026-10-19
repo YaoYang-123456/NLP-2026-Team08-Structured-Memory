@@ -100,7 +100,7 @@
     "bytes": 662513,
     "sha256": "62a7f1da68590f7b80f2a753e1c60307a22620b84d0d6c81b92177500d19a3aa",
     "recipient": "onlysonder",
-    "group_sent_date": null,
-    "status": "prepared_local_group_transfer_pending"
+    "status": "committed_to_task_branch",
+    "repository_path": "reports/artifacts/s0-predictions-for-E-20261019.zip"
   }
 }
