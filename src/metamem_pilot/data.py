@@ -4,6 +4,7 @@ import json
 import re
 import math
 import random
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -36,7 +37,15 @@ def write_atomic(path, obj):
     path = Path(path)
     temp = path.with_name(path.name + ".partial")
     write(temp, obj)
-    temp.replace(path)
+    # Windows readers can briefly deny replacement of a progress file.
+    for attempt in range(20):
+        try:
+            temp.replace(path)
+            return
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(0.05)
 
 
 def normalize(text):

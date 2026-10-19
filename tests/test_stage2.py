@@ -1,10 +1,11 @@
 import sys
 import unittest
+import tempfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT/"src"), str(ROOT/"scripts")]
 from metamem_pilot.role_retrieval import retrieve_balanced
-from metamem_pilot.data import digest
+from metamem_pilot.data import digest, read
 from run_stage2 import prepare_slots, recover_logged_answers, write_atomic
 from metamem_pilot.pipeline import answer_prompt
 from unittest.mock import patch
@@ -31,11 +32,33 @@ class Stage2Tests(unittest.TestCase):
         self.assertEqual(recover_logged_answers(slots,[event],{'original':{'q':row}},[]),['s'])
         self.assertEqual(slots[0]['status'],'generated')
         self.assertEqual(slots[0]['response'],'saved')
-        with patch('run_stage2._write_atomic',side_effect=[PermissionError(),None]) as save, patch('run_stage2.time.sleep'):
-            write_atomic('unused',{})
-            self.assertEqual(save.call_count,2)
-        with patch('run_stage2._write_atomic',side_effect=ValueError('bad')):
-            with self.assertRaises(ValueError):write_atomic('unused',{})
+
+    def test_atomic_replace_retries_only_permission_and_preserves_snapshot(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'progress.json'
+            write_atomic(path, {'old': True})
+            replace = Path.replace
+            attempts = []
+
+            def transient(source, destination):
+                attempts.append(source)
+                if len(attempts) == 1:
+                    raise PermissionError('temporary reader')
+                return replace(source, destination)
+
+            with patch.object(Path, 'replace', transient), patch('metamem_pilot.data.time.sleep'):
+                write_atomic(path, {'new': True})
+            self.assertEqual(len(attempts), 2)
+            self.assertEqual(read(path), {'new': True})
+            with patch.object(Path, 'replace', side_effect=PermissionError('persistent')) as save, patch('metamem_pilot.data.time.sleep'):
+                with self.assertRaises(PermissionError):
+                    write_atomic(path, {'lost': True})
+                self.assertEqual(save.call_count, 20)
+            self.assertEqual(read(path), {'new': True})
+            with patch.object(Path, 'replace', side_effect=ValueError('bad')) as save:
+                with self.assertRaises(ValueError):
+                    write_atomic(path, {})
+                self.assertEqual(save.call_count, 1)
 
     def test_statistics_preserve_uncertain_and_missing(self):
         rows=[{'phase':'main','round':0,'question_id':'q','condition':c,**({'label':v} if v else {})} for c,v in [('A','Yes'),('B','No'),('C','uncertain'),('D',None)]]

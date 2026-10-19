@@ -58,6 +58,8 @@
 
 ## 当前个人试点交付
 
+[本机接回与验证记录](docs/metamem-local-handoff-20261016.md)：2026-10-16 接回前三阶段材料，重建相同数据清单，60 项测试与三阶段模拟通过；修复共用进度保存的 Windows 权限错误。本轮真实模型请求为 0，历史原始日志未迁移。
+
 [前三阶段统一总报告](docs/metamem-integrated-report.md)串起规则学习、稳定性、检索诊断与回答约束；[组员上手](docs/metamem-team-start.md)、[课程差距](docs/metamem-course-readiness.md)和[十分钟/两分钟讲稿](docs/metamem-integrated-talk.md)提供整合入口。
 
 [第三阶段研究包](docs/metamem-stage3.md)：同原BM25、无规则，两提示词各30条新回答；原17对、候选15对。候选更短且部分依据质量改善，但拒答未改善、晚餐三轮退步，保留可选候选，不切换默认。两组完整覆盖，独立AI复核并非人工金标准。
