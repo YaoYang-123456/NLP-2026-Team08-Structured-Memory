@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-18",
+  "files": [
+    {
+      "file": "262701NLP-平时作业提交验收说明-2026-文字版.md",
+      "bytes": 3583,
+      "sha256": "7978a82072f6718a566c2fb46049bbc43dbb4f39138dcf622cda909c5ba53592",
+      "source_url": "https://pan.tju.edu.cn/link/AABA36B295D0754F22BAE2EC489FA324C5",
+      "kind": "preview_transcription"
+    },
+    {
+      "file": "262701NLP-平时作业提交验收说明-2026-本地复制版.pdf",
+      "bytes": 678422,
+      "sha256": "17bd57f1e95cec8ac087fefbeed20e56c59a990619fab0c9b06e5efe4e7bc045",
+      "source_url": "https://pan.tju.edu.cn/link/AABA36B295D0754F22BAE2EC489FA324C5",
+      "kind": "preview_image_copy"
+    },
+    {
+      "file": "软件学报排版样例2025年版.doc",
+      "bytes": 3027456,
+      "sha256": "6dd6d9f75609d4e6dc270fcc459a40fd14d46789c16c7a85a9c230eba815ffd0",
+      "source_url": "https://www.jos.org.cn/uploadfile/news_images/jos/2026-04-02/软件学报排版样例2025年版.doc",
+      "kind": "official_word_layout_reference"
+    }
+  ]
+}
