@@ -49,6 +49,7 @@ def load_questions(path):
         raise ValueError("Empty selected question list")
     return rows
 
+
 def load_samples(path):
     """Load official LoCoMo; caller only accesses conversation, never qa labels."""
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -170,6 +171,7 @@ class SentenceTransformerEmbeddings:
         if len(rows) != len(texts) or any(len(v) != self.dimensions for v in rows):
             raise ValueError("Embedding count/dimensions mismatch")
         return rows
+
 
 def embed_chunks(chunks, encoder, cache_dir=None):
     """Cache by embedding model and exact source text; never cache answer labels."""
