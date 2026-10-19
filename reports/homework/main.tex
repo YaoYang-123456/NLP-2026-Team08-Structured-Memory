@@ -1,0 +1,49 @@
+% !TeX program = xelatex
+\documentclass{jos}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta,positioning}
+\pgfplotsset{compat=1.18}
+
+% Course metadata replaces the journal publication placeholders in the template.
+\makeatletter
+\renewcommand{\jos@topmatter}{\noindent 天津大学 NLP 平时作业\hfill 第 8 队\par}
+\renewcommand{\jos@citationbox}[2]{}
+\makeatother
+\fancyhead[RO]{\joskaiti 长上下文场景结构化记忆建模\quad 第 8 队}
+\setlength{\headheight}{16pt}
+
+\begin{document}
+\Year{2026}
+\BeginPage{1}
+\CLC{TP18}
+\title{长上下文场景结构化记忆建模：六篇论文阅读与比较}{结构化记忆论文阅读与比较}
+\entitle{Structured Memory for Long-Context Scenarios: A Review of Six Papers}{Structured Memory Review}
+\author{第 8 队（成员待填写）}{Team 8}{}
+\AuthorMark{第 8 队}
+\address{天津大学}{Tianjin University}
+\abstract{待填写：研究背景、六篇论文的共同问题、主要比较结论和局限。当前为写作框架，尚未形成最终阅读报告。}
+\keywords{大语言模型；长上下文；结构化记忆；论文综述}
+\maketitle
+
+\section{背景与阅读范围}
+待填写：长上下文记忆的需求、六篇论文的选取范围和本文比较维度。
+
+\input{sections/01-structmem}
+\input{sections/02-hindsight}
+\input{sections/03-semantic-xpath}
+\input{sections/04-hymem}
+\input{sections/05-metamem}
+\input{sections/06-text2mem}
+
+\section{跨论文的系统性比较与讨论}
+待各成员完成个人论文章节后，再由全组共同讨论和整理。现有综合分析草稿暂不编入主稿。
+
+\section{总结}
+待填写：共同认识、适用条件、局限和对课设的启发。
+
+\bibliographystyle{jos}
+\bibliography{references}
+
+\section*{成员分工与贡献}
+待填写：六位成员姓名、负责论文、报告章节、PPT 与讲解工作及实际贡献百分比，总和为 100\%。
+\end{document}
