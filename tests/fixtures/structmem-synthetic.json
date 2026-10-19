@@ -1,0 +1,19 @@
+[
+  {
+    "sample_id": "synthetic-smoke",
+    "conversation": {
+      "speaker_a": "Alice",
+      "speaker_b": "Bob",
+      "session_1_date_time": "1:00 pm on 19 October, 2026",
+      "session_1": [
+        {"dia_id": "S1:1", "speaker": "Alice", "text": "Yesterday I visited Tianjin Museum with my sister Lily."},
+        {"dia_id": "S1:2", "speaker": "Bob", "text": "That sounds wonderful, Alice. Which exhibition did you enjoy?"},
+        {"dia_id": "S1:3", "speaker": "Alice", "text": "We enjoyed the porcelain exhibition. Lily bought two postcards."},
+        {"dia_id": "S1:4", "speaker": "Bob", "text": "I am glad you had a good day. I am preparing for a mathematics exam on Friday."},
+        {"dia_id": "S1:5", "speaker": "Alice", "text": "Good luck, Bob! I can help you revise on Wednesday afternoon."},
+        {"dia_id": "S1:6", "speaker": "Bob", "text": "Thank you for offering to help me, Alice. Let us meet at the university library."}
+      ]
+    },
+    "qa": [{"answer": "EXCLUDED_ANSWER_CANARY", "question": "Not used in the build"}]
+  }
+]

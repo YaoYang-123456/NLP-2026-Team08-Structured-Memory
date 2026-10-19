@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-19",
+  "owner": "oioioi-521",
+  "task": 32,
+  "a_dependency_pr": 38,
+  "a_head_revision": "1d651da44cd1bf101ead69794a74f45f91c507a3",
+  "a_pr_merged_by_this_task": false,
+  "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "development_conversations_sha256": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+  "conversations": [
+    {
+      "sample_id": "conv-48",
+      "sessions": 30,
+      "messages": 681
+    },
+    {
+      "sample_id": "conv-42",
+      "sessions": 29,
+      "messages": 629
+    },
+    {
+      "sample_id": "conv-41",
+      "sessions": 32,
+      "messages": 663
+    }
+  ],
+  "input_sessions_prepared": 91,
+  "input_messages_prepared": 1973,
+  "source_for_extraction": "development.conversations.json only",
+  "preflight": {
+    "session_count": 91,
+    "max_session_input_tokens": 1300,
+    "total_message_tokens": 58073,
+    "normalized_embedding_check": "passed",
+    "python": "3.11",
+    "device": "cpu",
+    "real_extraction_requests": 0
+  },
+  "python": "3.11.17",
+  "dependencies": {
+    "torch": "2.8.0",
+    "sentence-transformers": "5.1.1",
+    "qdrant-client": "1.15.1"
+  },
+  "offline_tests_passed": 14,
+  "synthetic_database_assembly_and_independent_readback": "passed, test fixtures only",
+  "existing_real_response_replay": {
+    "execution": "replay",
+    "synthetic_input": true,
+    "entry_count": 12,
+    "disk_readback_verified": true,
+    "new_model_requests": 0
+  },
+  "this_round_real_development_extraction_requests": 0,
+  "real_development_memories_complete": false,
+  "original_d_drive_checkout_modified_this_round": false,
+  "remaining": [
+    "Apply reviewed patch in the D-drive project",
+    "Run first real session, inspect outputs, then resume full conversations",
+    "Confirm no-compression/no-topic-segmentation difference before formal S2 comparison",
+    "Assemble successful complete conversations and hand independent copies to D"
+  ],
+  "execution_limits": "Current terminal has restricted network and no write permission for D-drive checkout"
+}

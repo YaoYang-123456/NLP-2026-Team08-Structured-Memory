@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-19",
+  "task": 32,
+  "base_commit": "6b00770",
+  "patch_applied": true,
+  "a_inputs": {
+    "development.conversations.json": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+    "locomo-smoke.json": "fbd66c73b325a7b82500622984c27a3915a99ecc4ac7ad7785b54d9f783af105"
+  },
+  "offline_tests_passed": 14,
+  "planned_sessions": 91,
+  "planned_messages": 1973,
+  "network_retry": {
+    "executed": true,
+    "status": "authorized_and_executed",
+    "reason": "User explicitly authorized sending these 18 messages to https://api.deepseek.com/v1 after the initial approval rejection",
+    "user_confirmation_requested": true,
+    "user_explicit_authorization_received": true
+  },
+  "real_sessions_completed": 1,
+  "method_difference": "Compression and topic segmentation remain disabled",
+  "first_session_failed_attempt": {
+    "sample_id": "conv-48",
+    "session_id": "session_1",
+    "message_count": 18,
+    "execution": "live",
+    "synthetic": false,
+    "status": "failed",
+    "checkpoint": "output/structmem/development/conv-48/session-001/attempt-001",
+    "elapsed_seconds": 7.594,
+    "request_attempts": 2,
+    "request_errors": [
+      "APIConnectionError",
+      "APIConnectionError"
+    ],
+    "model_responses_received": 0,
+    "memories_export_present": false,
+    "token_usage": null
+  },
+  "first_session": {
+    "sample_id": "conv-48",
+    "session_id": "session_1",
+    "message_count": 18,
+    "execution": "live",
+    "synthetic": false,
+    "status": "success",
+    "entry_count": 34,
+    "entry_types": {
+      "factual": 22,
+      "relational": 12
+    },
+    "elapsed_seconds": 13.375,
+    "collection": "structmem_events",
+    "disk_readback_verified": true,
+    "memories_sha256": "9c246de83f541fdc6ea4e4c3e90c0f22777fc335f1f033e3c24dd29201a5d27e",
+    "config": {
+      "profile": "complete-conversation-session-events-no-compression-no-topic-segmentation",
+      "model": "deepseek-flash",
+      "temperature": 0,
+      "top_p": 1,
+      "max_tokens": 8192,
+      "max_input_tokens": 12000,
+      "embedding_dims": 384,
+      "normalize_embeddings": true
+    },
+    "api_calls": [
+      {
+        "entry_type": "factual",
+        "status": "success",
+        "new_model_request": true,
+        "actual_model": "deepseek-flash",
+        "request_id": "c5c2915e-97ce-416a-abbe-bd61e631c3c5",
+        "usage": {
+          "completion_tokens": 702,
+          "prompt_tokens": 2342,
+          "total_tokens": 3044,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 1280
+          },
+          "prompt_cache_hit_tokens": 1280,
+          "prompt_cache_miss_tokens": 1062
+        },
+        "elapsed_seconds": 3.828
+      },
+      {
+        "entry_type": "relational",
+        "status": "success",
+        "new_model_request": true,
+        "actual_model": "deepseek-flash",
+        "request_id": "432718e0-dfea-4e95-9267-3a303e1b64b8",
+        "usage": {
+          "completion_tokens": 394,
+          "prompt_tokens": 2175,
+          "total_tokens": 2569,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 1152
+          },
+          "prompt_cache_hit_tokens": 1152,
+          "prompt_cache_miss_tokens": 1023
+        },
+        "elapsed_seconds": 2.859
+      }
+    ],
+    "checkpoint": "output/structmem/development/conv-48/session-001/attempt-002",
+    "request_attempts": 2,
+    "model_responses_received": 2,
+    "source_messages_referenced": 18,
+    "independent_readback_verified": true,
+    "all_source_bindings_verified": true,
+    "normalized_384_dimensional_vectors_verified": true,
+    "token_usage": {
+      "prompt_tokens": 4517,
+      "completion_tokens": 1096,
+      "total_tokens": 5613
+    }
+  },
+  "remaining_sessions": 90,
+  "complete_conversation_assembled": false,
+  "manual_inspection": "Read all 34 extracted memory texts; formal quality evaluation not performed"
+}

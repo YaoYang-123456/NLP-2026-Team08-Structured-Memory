@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-19",
+  "owner": "oioioi-521",
+  "task": 32,
+  "scope": "synthetic complete-session smoke, not team LoCoMo evaluation",
+  "upstream_revision": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+  "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "embedding_weights_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+  "requested_and_returned_model": "deepseek-flash",
+  "thinking": "disabled",
+  "live_generation_attempts_total": 4,
+  "live_generation_responses_observed": 2,
+  "connection_failures_without_usage": 2,
+  "observed_usage_not_including_failed_requests": {
+    "prompt_tokens": 3247,
+    "completion_tokens": 344,
+    "total_tokens": 3591
+  },
+  "api_elapsed_seconds_for_observed_responses": 4.719,
+  "failure_history": [
+    "run-01: two legacy-model requests ended with APIConnectionError; no usage returned; consumption unknown",
+    "run-02: two Flash responses saved; own validator initially rejected official relation field; no insertion",
+    "replay-03/debug-04: persisted entries, but readback used unsupported Qdrant context-manager API; status failed",
+    "verified-05: corrected field parsing and explicit client close; replayed saved responses; independent readback passed"
+  ],
+  "final_execution": "replay",
+  "final_new_generation_requests": 0,
+  "final_status": "success",
+  "entry_count": 12,
+  "entry_types": {
+    "factual": 8,
+    "relational": 4
+  },
+  "embedding_dimensions": 384,
+  "disk_readback_verified": true,
+  "source_id_mapping_checked": true,
+  "qa_canary_excluded_from_inputs": true,
+  "offline_tests_passed": 6,
+  "powershell_syntax_checked": true,
+  "memories_sha256": "3665fe947fdb6abd6de050eff78576beaedeabeca43ef0b6ff89cdc420c6f9da",
+  "config_sha256": "541114e058214a4b689ef4d136a26c860c6abb06a1372ceb92fe716d3e9a9fc5",
+  "limits": [
+    "compression and topic segmentation disabled for smoke",
+    "no real LoCoMo session or team 30-question experiment",
+    "no cross-event summaries, retrieval, answers or evaluation",
+    "source_id is an anchor, not full evidence validation",
+    "response alias does not establish exact deployed model version",
+    "failed requests without usage cannot be reported as zero cost",
+    "C full implementation/acceptance remains open"
+  ]
+}
