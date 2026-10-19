@@ -1,13 +1,14 @@
 import json
 import sys
+import types
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "src"), str(ROOT / "scripts")]
-from flat_rag import (OllamaEmbeddings, embed_chunks, load_questions, normalized,
+from flat_rag import (SentenceTransformerEmbeddings, embed_chunks, load_questions, normalized,
                       prepare_retrieval, rank_chunks, raw_chunks)
 from run_s0 import run
 
@@ -44,6 +45,9 @@ class FlatRagTests(unittest.TestCase):
         self.assertIn("Sam: My cat", chunks[0]["text"])
         self.assertIn("2026-10-02", chunks[-1]["text"])
         self.assertNotIn("GOLD", json.dumps(chunks))
+        data["conversation"]["session_1"][0]["blip_caption"] = "a cat in a window"
+        self.assertIn("(image description: a cat in a window)",
+                      raw_chunks(data["sample_id"], data["conversation"])[0]["text"])
 
     def test_char_splitting_reconstructs_turn_and_stable_ids(self):
         data = sample()
@@ -73,8 +77,6 @@ class FlatRagTests(unittest.TestCase):
             rank_chunks([{"text": "x"}], [[1, 0]], [0, 1], top_k=0)
         with self.assertRaisesRegex(ValueError, "Missing selected"):
             prepare_retrieval({}, [{"sample_id": "none"}], FakeEncoder())
-        with self.assertRaises(ValueError):
-            OllamaEmbeddings("model", "https://api.example.com/api/embed")
 
     def test_cache_avoids_embedding_repeated_turns(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -96,6 +98,9 @@ class FlatRagTests(unittest.TestCase):
             output = d / "s0"
             report = run(conv, select, output, FakeEncoder(), top_k=60)
             self.assertEqual(report["status"], "retrieval_only_no_answers")
+            with self.assertRaisesRegex(ValueError, "frozen SHA-256"):
+                run(conv, select, d / "bad", FakeEncoder(),
+                    expected_hashes={"locomo10.json": "not-a-hash", "selected.jsonl": "x"})
             self.assertEqual(report["answer_generation_calls"], 0)
             result = json.loads((output / "s0.inputs.jsonl").read_text())
             self.assertNotIn("GOLD", json.dumps(result))
@@ -110,6 +115,55 @@ class FlatRagTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "only"):
                 load_questions(select)
 
+
+
+    def test_accepts_as_frozen_json_array_and_rejects_labels(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "smoke.inputs.json"
+            row = {"sample_id": "conv-A", "qa_index": 4, "question": "Cat?", "category": 1}
+            path.write_text(json.dumps([row], ensure_ascii=False), encoding="utf-8")
+            self.assertEqual(load_questions(path), [row])
+            path.write_text(json.dumps([{**row, "answer": "forbidden"}]), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_questions(path)
+            path.write_text(json.dumps({"questions": [row]}), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_questions(path)
+
+    def test_pinned_sentence_transformer_encoder_and_dimensions(self):
+        class FakeArray:
+            def __init__(self, rows):
+                self.rows = rows
+            def tolist(self):
+                return self.rows
+
+        fake_model = MagicMock()
+        fake_model.get_sentence_embedding_dimension.return_value = 3
+        fake_model.max_seq_length = 256
+        fake_model.tokenizer.return_value = {"input_ids": [[1, 2, 3], [1, 2, 3]]}
+        fake_model.encode.return_value = FakeArray([[1., 0., 0.], [0., 1., 0.]])
+        module = types.ModuleType("sentence_transformers")
+        module.SentenceTransformer = MagicMock(return_value=fake_model)
+        frozen = {"model_id": "sentence-transformers/all-MiniLM-L6-v2", "revision": "pin-test",
+                  "dimensions": 3, "normalize_embeddings": True, "max_seq_length": 256,
+                  "device_for_check": "cpu"}
+        with patch.dict(sys.modules, {"sentence_transformers": module}):
+            encoder = SentenceTransformerEmbeddings(frozen, "data/model-cache")
+            actual = encoder.encode(["one", "two"])
+            self.assertEqual(actual, [[1., 0., 0.], [0., 1., 0.]])
+            module.SentenceTransformer.assert_called_once_with(frozen["model_id"],
+                revision="pin-test", device="cpu", cache_folder="data/model-cache",
+                local_files_only=True, trust_remote_code=False)
+            self.assertTrue(fake_model.encode.call_args.kwargs["normalize_embeddings"])
+            fake_model.tokenizer.return_value = {"input_ids": [list(range(257))]}
+            with self.assertRaisesRegex(ValueError, "256-token limit"):
+                encoder.encode(["too many tokens"])
+            with self.assertRaises(ValueError):
+                SentenceTransformerEmbeddings({**frozen, "normalize_embeddings": False},
+                                               "data/model-cache")
+            with self.assertRaises(ValueError):
+                SentenceTransformerEmbeddings({**frozen, "dimensions": 384},
+                                               "data/model-cache")
 
 if __name__ == "__main__":
     unittest.main()
