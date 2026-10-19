@@ -13,6 +13,7 @@
 - [软件学报 LaTeX 模板](reports/templates/jos/README.md)：社区模板、字体适配和编译方法；[官方 Word 样例](docs/course/软件学报排版样例2025年版.doc)只作版式参考。
 - [协作与文件约定](docs/collaboration.md)：issue 分工、分支、PR、自查与审核、大文件传输。
 - [项目方案与任务认领](docs/project-plan.md)：六个并行任务包，负责人自行填写；10 月 22 日研讨前完成 30 题基线，争取 StructMem 同题对照。
+- [统一回答入口与联调说明](docs/qa-integration.md)：F 的 DeepSeek 调用、B/D 输入和 E 评分交接；当前完成离线验证，真实数据集实验仍暂停。
 - [六篇论文复现条件核查](notes/six-paper-comparison.md)：原文数字、固定代码版本与复现注意事项。
 - [AGENTS.md](AGENTS.md)：给 GPT 等编程助手的工作约定，也适用于成员协作。
 
