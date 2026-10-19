@@ -12,7 +12,7 @@
 - [小组 Beamer 汇报模板](reports/homework/slides/README.md)：开场、六人各 7–9 分钟讲解、10–15 分钟系统总结；共享蓝色学术版式，导出 PDF。
 - [软件学报 LaTeX 模板](reports/templates/jos/README.md)：社区模板、字体适配和编译方法；[官方 Word 样例](docs/course/软件学报排版样例2025年版.doc)只作版式参考。
 - [协作与文件约定](docs/collaboration.md)：issue 分工、分支、PR、自查与审核、大文件传输。
-- [项目方案](docs/project-plan.md)：StructMem 小规模复现、三组必要对照、约 50 元预算与一个可选调整。
+- [项目方案与任务认领](docs/project-plan.md)：六个并行任务包，负责人自行填写；10 月 22 日研讨前完成 30 题基线，争取 StructMem 同题对照。
 - [六篇论文复现条件核查](notes/six-paper-comparison.md)：原文数字、固定代码版本与复现注意事项。
 - [AGENTS.md](AGENTS.md)：给 GPT 等编程助手的工作约定，也适用于成员协作。
 
