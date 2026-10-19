@@ -223,6 +223,7 @@ __marimo__/
 /data/
 /output/
 /tmp/
+/third_party/MetaMem/
 .env.*
 !.env.example
 .DS_Store
