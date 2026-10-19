@@ -1,6 +1,6 @@
 # MetaMem 本地最小试点入口
 
-本入口是杨垚的 **BM25 RAG＋元记忆小规模验证**，不是 LightMem 主实验复现，也不是全组已确定的最终方案。实际运行证据见 [2026-10-15 记录](metamem-local-run-20261015.md)，原方案见 [metamem-pilot.md](metamem-pilot.md)。
+本入口是 YaoYang-123456 的 **BM25 RAG＋元记忆小规模验证**，不是 LightMem 主实验复现，也不是全组已确定的最终方案。实际运行证据见 [2026-10-15 记录](metamem-local-run-20261015.md)，原方案见 [metamem-pilot.md](metamem-pilot.md)。
 
 ## 路线和接口
 
