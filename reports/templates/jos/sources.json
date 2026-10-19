@@ -1,0 +1,30 @@
+{
+  "retrieved_at": "2026-10-18",
+  "repository": "https://github.com/CodingYuanLiu/JOS-Template",
+  "commit": "7f1031f2ab948a8d778719da3159cfc532d27664",
+  "license": "Upstream does not declare a license. Preserve source attribution; third-party files are not relicensed by this project.",
+  "changes": [
+    "jos.cls: disable ctex automatic font selection and replace required external Windows fonts with TeX Live Fandol and TeX Gyre Termes fonts; jos.bst and UPSTREAM-README.md unchanged.",
+    "Include only class, bibliography style and upstream README; group report main.tex supplies the working example. Do not vendor upstream fonts, sample article, figures, PDF, build scripts, or duplicate Word sample."
+  ],
+  "files": [
+    {
+      "path": "UPSTREAM-README.md",
+      "upstream_path": "README.md",
+      "upstream_sha256": "83f1a4a775410865586c310816f7dc11582c5c3fa837dffe9239de36afda17ee",
+      "local_sha256": "83f1a4a775410865586c310816f7dc11582c5c3fa837dffe9239de36afda17ee"
+    },
+    {
+      "path": "jos.cls",
+      "upstream_path": "jos.cls",
+      "upstream_sha256": "83e6b0227ec45b69a347021178510b3864decdb17a38b1daffd0e32fb3389c46",
+      "local_sha256": "7465b4eb1580ff6f0096c03c8aee4c55d94f6a96be7c82a2ff1b7264e0736fbd"
+    },
+    {
+      "path": "jos.bst",
+      "upstream_path": "jos.bst",
+      "upstream_sha256": "849a1233295f0a10191f56557d783c525396f8723140d349f8914ec038e602f2",
+      "local_sha256": "849a1233295f0a10191f56557d783c525396f8723140d349f8914ec038e602f2"
+    }
+  ]
+}
