@@ -1,0 +1,2 @@
+{"sample_id":"synthetic-conversation","qa_index":0,"question":"When did Alex join the club?","category":1,"contexts":[{"source_ids":["synthetic:D1:1"],"kind":"raw","text":"2026-10-01 Alex: I joined the reading club yesterday."}]}
+{"sample_id":"synthetic-conversation","qa_index":1,"question":"Which club did Alex join?","category":1,"contexts":[{"source_ids":["synthetic:D1:1"],"kind":"raw","text":"2026-10-01 Alex: I joined the reading club yesterday."}]}
