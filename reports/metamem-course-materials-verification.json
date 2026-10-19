@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "issue": 10,
+  "scope": "Personal reading materials and existing pilot summary; no new model experiment",
+  "outputs": {
+    "reports\\metamem-reading-and-pilot-20261019.docx": {
+      "bytes": 295114,
+      "sha256": "743aaaa77efd82a839701d00ef89f4e4b8106d3ab65f7ee1b893c0525d6ff380"
+    },
+    "reports\\metamem-reading-and-pilot-20261019-v2.pptx": {
+      "bytes": 338723,
+      "sha256": "5dad2c4c7ef378c5d0ca52b8a460dcc0d6c939e2ec299b3cf9bf6ed5ecdbf486"
+    }
+  },
+  "word": {
+    "pages": 8,
+    "tables": 10,
+    "figures": 1,
+    "renderer": "WPS COM ExportAsFixedFormat then Poppler",
+    "default_skill_renderer": "failed: LibreOffice soffice.exe absent; diagnostic retained privately",
+    "all_pages_visually_inspected": true,
+    "native_pdf_sha256": "3d630217aeb7212cde1e6132df9928c5b20b82a761ecc7d6d59ca17cbbb24798",
+    "title_rule_removed": true,
+    "identity_fields": "blank",
+    "unchanged_pages_2_to_8_pixel_match": true
+  },
+  "presentation": {
+    "slides": 18,
+    "speaker_notes": 18,
+    "native_tables": 4,
+    "native_charts": 3,
+    "embedded_chart_workbooks": 3,
+    "all_slides_visually_inspected": true,
+    "renderer": "Artifact Tool PNG previews",
+    "structure_layout_fonts_import": "passed",
+    "literal_chart_workbook_validation": "passed",
+    "axes_from_zero": true,
+    "microsoft_powerpoint_opened": false,
+    "validation_receipt_sha256": "f37d7da6bdd0e7d958b21f34cc2aed83ad748109d22faecbc16882a0bb5a03b6",
+    "final_pptx_imported_and_all_slides_rendered": true,
+    "final_render_changed_slides": [
+      14
+    ]
+  },
+  "sources": {
+    "papers\\structured-memory-group2\\05_MetaMem.pdf": "d51f68adc7fd535a0fc23adfaa1ea8aa65aa448b22a5112128957df257a424c6",
+    "docs\\course\\NLP初步课设与平时作业安排-贺瑞芳-20260920.pdf": "ab23994c21bb205dda9ec06a1cccf244ad16fac14422791ff39ea217aaa08dd4",
+    "docs\\metamem-integrated-report.md": "b31059b1f2da98010c5b8cc8a3d572098919f1ca56e7c5e8f66bdfd7705238d9",
+    "reports\\metamem-stage1-results.json": "9e9134cee04c2e750c212184c1f8eb178c14835bb3f0fbc93c30e171212dd723",
+    "reports\\metamem-stage2-results.json": "3176c828a8c98b6711c8489c22ab739d9798c7f110974502fec41ecb14a96bed",
+    "reports\\metamem-stage3-results.json": "5d814b843940eb684406458577997cf8f6391a04a8a86dabd98e478ddb38b442"
+  },
+  "new_model_requests": 0,
+  "new_model_tests_run": false,
+  "video_recorded": false,
+  "human_reading_acceptance": null,
+  "team_final_deliverables_completed": false,
+  "submission_performed": false
+}

@@ -52,6 +52,8 @@
 
 ## 当前个人试点交付
 
+[MetaMem 个人阅读 Word 与 PPT](reports/metamem-course-materials-guide.md)：2026-10-19 整理的 8 页报告、18 页可编辑幻灯片及备注讲稿，覆盖论文与已有三阶段试点；署名和本人阅读验收待完成，视频未录制，尚非全组最终材料。
+
 [本机接回与验证记录](docs/metamem-local-handoff-20261016.md)：2026-10-16 接回前三阶段材料，重建相同数据清单，60 项测试与三阶段模拟通过；修复共用进度保存的 Windows 权限错误。本轮真实模型请求为 0，历史原始日志未迁移。
 
 [前三阶段统一总报告](docs/metamem-integrated-report.md)串起规则学习、稳定性、检索诊断与回答约束；[组员上手](docs/metamem-team-start.md)、[课程差距](docs/metamem-course-readiness.md)和[十分钟/两分钟讲稿](docs/metamem-integrated-talk.md)提供整合入口。
