@@ -1,0 +1,224 @@
+{
+  "status": "complete_event_snapshot_verified",
+  "date": "2026-10-20",
+  "conversations": {
+    "conv-48": {
+      "collection": "conv_48_events",
+      "entry_count": 1277,
+      "entry_types": {
+        "factual": 799,
+        "relational": 478
+      },
+      "session_count": 30,
+      "message_count": 681,
+      "source_messages_referenced": 664,
+      "source_messages_without_direct_entry": 17,
+      "events_sha256": "008f0dd70855b82732d35e52c23a5613f7b044f19d3ef224cf40ad829ec4bba2",
+      "database_count": 1277
+    },
+    "conv-42": {
+      "collection": "conv_42_events",
+      "entry_count": 1160,
+      "entry_types": {
+        "relational": 427,
+        "factual": 733
+      },
+      "session_count": 29,
+      "message_count": 629,
+      "source_messages_referenced": 612,
+      "source_messages_without_direct_entry": 17,
+      "events_sha256": "11dfaf72e6df19d839d128363003bf1ac8d8dcf38399bae1462321f1c62a4407",
+      "database_count": 1160
+    },
+    "conv-41": {
+      "collection": "conv_41_events",
+      "entry_count": 1275,
+      "entry_types": {
+        "factual": 777,
+        "relational": 498
+      },
+      "session_count": 32,
+      "message_count": 663,
+      "source_messages_referenced": 660,
+      "source_messages_without_direct_entry": 3,
+      "events_sha256": "d93b3568ec2f97bcac91b37f3e545ec9df32798f2fb4c926b33f54f5ccfe0cc9",
+      "database_count": 1275
+    }
+  },
+  "declared_files_verified": 103,
+  "received_bundle_unchanged": true,
+  "A_source_sha256": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+  "frozen_config_sha256": "ec7cfdeca766905be35642d456ff930be843370e7f2abe6dc125491525c3b659",
+  "event_count": 3712,
+  "session_count": 91,
+  "message_count": 1973,
+  "source_messages_without_direct_entry": 37,
+  "memory_reembedding_max_difference": 1.8998980522155762e-07,
+  "embedding": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimensions": 384,
+    "normalize_embeddings": true,
+    "max_seq_length": 256
+  },
+  "device": "cpu",
+  "embedding_batch_size": 64,
+  "retrieval_questions": 30,
+  "events_per_question": 60,
+  "summaries_per_question": 0,
+  "retrieval_stage": "event_only_preparation_not_complete_S2",
+  "synthesis_api_calls": 0,
+  "answer_api_calls": 0,
+  "scoring_api_calls": 0,
+  "accuracy": null,
+  "runtime": {
+    "python": "3.13.9",
+    "torch": "2.11.0",
+    "sentence-transformers": "5.1.1",
+    "transformers": "4.57.0",
+    "qdrant-client": "1.15.1",
+    "numpy": "2.2.6"
+  },
+  "code_sha256": {
+    "verify_structmem_development.py": "a999a024673c52a784922651e3d9c30ca835fc119e805e71c9ac424e7cd6219f",
+    "structmem_retrieve.py": "d55ddee7ab979e1edee7e12c7cadd5f062d8b76034ae32acb30a8cceb62fad2a",
+    "verify_structmem_session.py": "72e3d9333daa530d0161c54bd3f5c55d480430f0395313bf1251a8e36e8a79f8"
+  },
+  "owner": "lanshuheng9-oss",
+  "archive": {
+    "filename": "complete-handoff-20261019.zip",
+    "bytes": 7895794,
+    "sha256": "8c26e24fa7be2e6b19dbec91f3647d563e1145e909866e939f1b2b4e70427885"
+  },
+  "source_messages_referenced": 1936,
+  "retrieval_comparison": {
+    "questions": 30,
+    "same_order": 29,
+    "same_id_set": 30,
+    "all_cosine_orders_valid": true,
+    "max_score_difference": 4.440892098500626e-16,
+    "equal_score_order_differences": [
+      {
+        "sample_id": "conv-48",
+        "qa_index": 11,
+        "same_order": false,
+        "same_id_set": true,
+        "valid_cosine_order_including_ties": true,
+        "max_score_difference": 3.3306690738754696e-16
+      }
+    ]
+  },
+  "F_mock_30": {
+    "status": "simulated",
+    "input_sha256": "18b59046da6c21fa70413a13a65a1f41ac601fa56c772d426f787b89a7de1832",
+    "question_set_sha256": "99ebf28b673b715886b13d8f88768cc82b1775033b37d59ffae0893b285c0a26",
+    "planned_questions": 30,
+    "successful_questions": 0,
+    "simulated_questions": 30
+  },
+  "F_candidate_mock_5": {
+    "status": "simulated",
+    "planned_questions": 5,
+    "successful_questions": 0,
+    "simulated_questions": 5
+  },
+  "native_synthesis_preparation": {
+    "per_conversation": {
+      "conv-48": {
+        "status": "offline_native_synthesis_prepared",
+        "sample_id": "conv-48",
+        "upstream_revision": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "time_window": 3600,
+        "top_k_seeds": 15,
+        "retrieval_scope": "global",
+        "process_all": true,
+        "synthetic": true,
+        "proposed_calls": 30,
+        "placeholder_summaries": 30,
+        "covered_event_count": 1277,
+        "actual_api_calls": 0,
+        "usage": null,
+        "accuracy": null,
+        "proposal_sha256": "259fded18132ce5df866579e80d292b29f56a5800294972e08bf2f88bfb08901",
+        "code_sha256": "c4ec692aab6ab2b9e86b551ae8beff2e674e10850146702cb69bf9652b711690"
+      },
+      "conv-42": {
+        "status": "offline_native_synthesis_prepared",
+        "sample_id": "conv-42",
+        "upstream_revision": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "time_window": 3600,
+        "top_k_seeds": 15,
+        "retrieval_scope": "global",
+        "process_all": true,
+        "synthetic": true,
+        "proposed_calls": 29,
+        "placeholder_summaries": 29,
+        "covered_event_count": 1160,
+        "actual_api_calls": 0,
+        "usage": null,
+        "accuracy": null,
+        "proposal_sha256": "439ec03d861bddf798731e32cb7cf1ca7cee4452a991717137444e8224736569",
+        "code_sha256": "c4ec692aab6ab2b9e86b551ae8beff2e674e10850146702cb69bf9652b711690"
+      },
+      "conv-41": {
+        "status": "offline_native_synthesis_prepared",
+        "sample_id": "conv-41",
+        "upstream_revision": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "time_window": 3600,
+        "top_k_seeds": 15,
+        "retrieval_scope": "global",
+        "process_all": true,
+        "synthetic": true,
+        "proposed_calls": 32,
+        "placeholder_summaries": 32,
+        "covered_event_count": 1275,
+        "actual_api_calls": 0,
+        "usage": null,
+        "accuracy": null,
+        "proposal_sha256": "db1a08972bdf066c1eb970af80e8cc3bfffccb8665c65f3d99f85e8e25a83e00",
+        "code_sha256": "c4ec692aab6ab2b9e86b551ae8beff2e674e10850146702cb69bf9652b711690"
+      }
+    },
+    "proposed_requests": 91,
+    "synthetic_summaries": 91,
+    "covered_events": 3712,
+    "actual_api_calls": 0,
+    "outputs_must_not_be_used_as_real_summaries": true
+  },
+  "prompt_candidate": {
+    "path": "configs/qa-structmem-candidate.json",
+    "sha256": "5c26490902627d5199cd0194fd65b725275efe8844eb07b678daa467ad495abe",
+    "F_base_commit": "49d8a6762cb7c51ae9b3f9ebdbcd1d8ead23e76d",
+    "S0_and_shared_settings_unchanged": true,
+    "S1_and_S2_prompts_identical": true,
+    "F_review_pending": true
+  },
+  "tests": {
+    "D_retrieval": 12,
+    "D_complete_and_candidate": 4,
+    "F": 14,
+    "total_passed": 30
+  },
+  "first_native_attempt": {
+    "sample_id": "conv-48",
+    "result": "missing socksio while constructing the existing proxy client",
+    "resolved_by": "install socksio==1.0.0 inside the isolated venv",
+    "real_requests_sent": 0,
+    "replacement_output": "output/structmem-synthesis-preparation-20261020/conv-48-r2"
+  },
+  "local_paths": {
+    "received": "output/structmem-development-receive-20261020/complete-handoff",
+    "accepted": "output/structmem-development-acceptance-20261020",
+    "offline_synthesis": "output/structmem-synthesis-preparation-20261020"
+  },
+  "external_summary_matches_package_record": true,
+  "human_semantic_review": null,
+  "real_synthesis_completed": false,
+  "real_S2_QA_completed": false,
+  "remaining": [
+    "Project DEEPSEEK_API_KEY is absent from this process; no local .env exists",
+    "Confirm the current paid-run allowance before live synthesis",
+    "F to review candidate answer prompts; C preprocessing difference remains reported"
+  ],
+  "runtime_scope": "Native LightMemory import and offline synthesis exercised on Python 3.13.9; upstream advertises Python >=3.10,<3.12, so this is not an exact advertised-environment reproduction"
+}

@@ -1,10 +1,10 @@
 # D：综合、检索与 C/F 交接准备
 
-负责人：`lanshuheng9-oss`；技术任务 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)。日期：2026-10-19。
+负责人：`lanshuheng9-oss`；技术任务 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)。更新日期：2026-10-20。
 
-当前已完成原生 point 读取、检索适配、固定参数调用、离线接口检查，以及首个真实 session 的接收验收。**真实综合、完整会话 S2 问答仍未完成。** 首次准备与后续接收进展分别记录；交接提案尚未得到 C/F 的人工确认。
+当前已完成三个完整开发会话的真实事件记忆接收、30 题事件检索及原生综合入口离线预演。**真实跨事件综合、S2 问答和评分仍未完成。** 最新状态见 [2026-10-20 完整接收与下一阶段准备](structmem-development-receipt-20261020.md)；不再缺 C 的开发会话事件库，待补的是项目调用凭据、额度与正式回答配置。
 
-2026-10-19 已收到 C 的 `conv-48/session_1` 包：34 条真实事件记忆的独立数据库读回、全部来源核对及 3 个检查问题本地检索通过。详见[接收验收记录](structmem-session-receipt-20261019.md)。这只覆盖 conv-48 的 1/30 个 session，不能替代完整开发会话记忆和正式 S2 评测。
+2026-10-19 首次收到 C 的 conv-48/session_1，历史记录见[首个 session 接收验收](structmem-session-receipt-20261019.md)。2026-10-20 已收到并验证 91 个 session、3712 条完整开发事件；旧记录的 1/30 范围仅描述首次交接。
 
 ## 1. 已核对的 A 输入
 
@@ -24,11 +24,11 @@
 | 上游 | LightMem `8449d574df6bae1bdf3314a1564da65e2f37e046` |
 | 嵌入 | all-MiniLM-L6-v2 `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`，384 维、归一化、最大长度 256 |
 
-A 的所有输出文件哈希与冻结配置一致；D 的后续入口只读题目与记忆，不加载 `*.labels.json`。标准答案仅由 E 评分时关联。首次准备只下载小型数据与上游源码；接收 C 的首个真实 session 后已下载并实际加载固定 MiniLM、验证记忆向量。完整 LightMem/CUDA 依赖仍未验证，模型文件信息见接收记录。
+A 的输出哈希与冻结配置一致；D 只读题目与记忆，不加载标签。固定 MiniLM 已实际加载并重算全部事件向量；原生 LightMemory 已导入并完成无网络综合预演。实际 Python 3.13 与上游声明版本不同，CUDA 未验证，环境差异见最新接收记录。
 
 ## 2. C → D：沿用原生格式交接
 
-C 负责人为 `oioioi-521`（[#32](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/32)）。首份完整 session 的真实记忆已通过用户文件接收并验收；随后仍需三个开发会话的完整版本及可加载的构建配置、状态与来源映射。早先 issue 尚未更新为本次文件交接的状态，不再据旧 issue 断言没有任何真实记忆。
+C 负责人为 `oioioi-521`（[#32](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/32)，实现 [PR #43](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/43)）。三个开发会话的完整事件库已通过用户文件交接，来源与 91 个 session 输入均已独立验收。以实际收到文件为依据，不据旧 issue 断言记忆仍缺失。
 
 1. C 使用 A 的完整开发对话，保留时间、说话人和消息 ID；不使用问题答案、评分 evidence 或数据集预生成总结来构建记忆。
 2. C 关闭相关 Qdrant 客户端后交付明确版本的数据库副本，说明实际 `collection_name`、目录、条目数和文件哈希。D 使用自己的副本运行综合，不写 C 的工作目录。
@@ -55,14 +55,14 @@ memory.summarize(
 )
 ```
 
-此函数只有参数转交测试，**未实际加载 LightMemory 或发起综合请求**。真实执行前仍需 C 的可加载构建配置、事件数据库副本，以及与 F 对齐的 DeepSeek 抽取/综合客户端设置和明确调用条件；本次没有生成带凭据的配置或新增模型客户端。
+该函数已在固定版 LightMemory 上完成三个会话的原生离线预演：91 个窗口覆盖全部 3712 条事件。生成回调只返回明确的占位文本，**真实综合 API 请求仍为 0**。调用提案保存在本地 proposed-calls.jsonl；真实运行需要项目凭据、本次额度和经核对的调用设置，不能复用预演已标记 consolidated 的副本或占位摘要。
 
 固定版代码核对发现：
 
 - `StructMem.md` 的示例参数写作 `top_k`，实际 `LightMemory.summarize` 和 `add_locomo.py` 使用 **`top_k_seeds`**；D 使用实际签名。
 - `add_locomo.py::load_lightmem` 的摘要集合及目录使用 **`<sample_id>_summary`**，`QdrantEntryLoader` 默认后缀却是 `_summaries`。应读取实例实际的 `summary_retriever` 导出；不按默认后缀猜路径，也不以空集合当作 S2 成功。
 - 上游综合会修改事件的 `consolidated` 标记，并使用模块级 `GLOBAL_LAST_SUMMARY_TIME`。每个会话应在新进程、D 独立数据库副本中运行；不在同一进程连续处理三份会话而继承时间指针，不通过重置 C 的原库标记来重跑。
-- 上游完整包声明 Python `>=3.10,<3.12`。本轮标准库适配在 Python 3.12.14 检查通过，不能据此声称完整 LightMem 可导入或 CUDA 构建通过。
+- 上游完整包声明 Python >=3.10,<3.12。标准库适配测试使用 Python 3.12.14；本机 Python 3.13.9 的原生导入与离线综合也已实际通过，但不声称与上游声明环境一致，CUDA 仍未验证。
 
 原文位置：[综合签名](https://github.com/zjunlp/LightMem/blob/8449d574df6bae1bdf3314a1564da65e2f37e046/src/lightmem/memory/lightmem.py#L752)、[摘要存储](https://github.com/zjunlp/LightMem/blob/8449d574df6bae1bdf3314a1564da65e2f37e046/src/lightmem/memory/utils.py#L547)、[构建入口](https://github.com/zjunlp/LightMem/blob/8449d574df6bae1bdf3314a1564da65e2f37e046/experiments/locomo/add_locomo.py)、[读取及向量排序](https://github.com/zjunlp/LightMem/blob/8449d574df6bae1bdf3314a1564da65e2f37e046/experiments/locomo/retrievers.py)。文件 SHA-256 见核验 JSON。
 
@@ -116,7 +116,7 @@ F 固定版本为 [PR #35](https://github.com/YaoYang-123456/NLP-2026-Team08-Str
 
 后续检查确认 PR #35 已合并到 main `8b6fcd73c3a15acea4dcc00e52a4b2debc50146d`。D 分支已同步这次 main，保留 README 中双方的入口；当前直接使用仓库内的 `scripts/run_qa.py`、`src/llm_client.py` 和 `configs/qa.example.json`，不再依赖 F 临时副本。新增一个 D→F 离线测试，检验 D 产物可以被当前 F 入口读取并保持模拟状态；本次仍未改动 F 的客户端行为。
 
-F 另在 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) 交付了 S0 的 30 题真实回答，等待 E 评分。这是 F/S0 的进度，不是 D/S2 的真实实验，也不消除完整开发会话事件记忆缺失的依赖。D PR #41 仍待 C 审核，未请求重复审核或催审。
+F 在 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) 的 S0 真实回答不计作 D/S2 成绩。D 已收到完整事件库，原交接审核继续保留；新增 configs/qa-structmem-candidate.json 交 F 核对，不将候选写成已统一配置。
 
 - `contexts` 每项仅含 `source_ids`、`kind`、`text`；kind 为 `event` 或 `synthesis`。
 - ID 使用 `<sample_id>/event/<point_id>` 或 `<sample_id>/synthesis/<point_id>`；综合项同时列出原生 covered/seed 事件 ID。收到原始来源映射后，同时保留经校验的 `<sample_id>/<source_message_id>`。UUID 与消息 ID 分开保存，不从评分标签推断来源。
@@ -144,9 +144,9 @@ python -W error::ResourceWarning -m unittest discover -s tests -p test_structmem
 
 ## 6. 下一次真实验收所需交接
 
-1. 首个完整 session 的真实事件副本和来源映射已验收。C 继续交开发会话完整事件库与可加载构建配置；当前不是要求用户代写 C 的代码。
-2. D 在独立副本和匹配的完整上游环境运行综合，导出真实摘要并记录调用与失败；本轮没有可据以填写的真实调用成绩。
-3. F 与 D 对齐正式 S2 提示词及项目调用条件，再跑冻结 5 题，经 E 评分后推进同一 30 题。
+1. 完整开发事件库与来源映射已验收，C 数据依赖已解除；无需用户再次索要或重跑抽取。
+2. 项目凭据和本次额度就绪后，从接收原件复制新库执行真实综合；当前占位摘要不得交作真实结果。
+3. F 与 D 核对候选提示词及调用设置，再做固定 5 题与同一 30 题真实回答，交 E 评分。
 4. 各人准备自己的 1–2 页进展；D 当前材料见 [进展页](../reports/structmem-d-progress.md)，尚未作人工案例核查或整组研讨定稿。
 
 如记忆数据库、模型或日志单文件达到 20 MB，请将该文件发送到小组微信群；仓库只保留版本、大小、用途、获取方式及哈希，未发送时不填写发送日期。本轮没有代发群消息。

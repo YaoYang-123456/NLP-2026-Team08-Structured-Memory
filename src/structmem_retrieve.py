@@ -186,12 +186,17 @@ def prepare_inputs(questions, memories, embed):
     return rows, traces
 
 
-def local_embedder(cache):
+def load_local_model(cache):
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer(EMBEDDING["model_id"], revision=EMBEDDING["revision"],
                                 cache_folder=str(cache), device="cpu", local_files_only=True)
     if model.get_sentence_embedding_dimension() != 384 or model.max_seq_length != 256:
         raise ValueError("Local embedding model dimensions or maximum sequence length changed")
+    return model
+
+
+def local_embedder(cache):
+    model = load_local_model(cache)
 
     def embed(text):
         return model.encode(text, normalize_embeddings=True, convert_to_numpy=True).tolist()
