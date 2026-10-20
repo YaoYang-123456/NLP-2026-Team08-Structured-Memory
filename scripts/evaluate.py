@@ -2,6 +2,7 @@
 """Join frozen QA predictions with private E judgments and report fixed-denominator metrics."""
 import argparse
 import csv
+import hashlib
 import http.client
 import json
 import os
@@ -29,8 +30,47 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise urllib.error.HTTPError(req.full_url, code, "Redirect refused", headers, fp)
 
 
-def run_judge_api(prediction_paths, labels_path):
+def save_judgments(path, document):
+    """Replace only this run's checkpoint; callers reserve a fresh output directory."""
+    if path is None:
+        return
+    path = Path(path)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8", newline="\n") as stream:
+        json.dump(document, stream, ensure_ascii=False, indent=2)
+        stream.write("\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+    os.replace(temporary, path)
+
+
+def validate_judgment_input(prediction, label, judgment):
+    expected = {"question": prediction.get("question", ""),
+                "reference_answer": label["answer"],
+                "model_answer": prediction.get("prediction", "")}
+    if label.get("question", expected["question"]) != expected["question"]:
+        raise ValueError("Prediction question does not match frozen label")
+    request = judgment.get("request")
+    if not isinstance(request, dict):
+        raise ValueError("Saved judgment has no request to verify its input binding")
+    messages = request.get("messages", [])
+    user_messages = [m for m in messages if m.get("role") == "user"]
+    try:
+        actual = json.loads(user_messages[0]["content"]) if len(user_messages) == 1 else None
+    except (ValueError, KeyError, TypeError):
+        actual = None
+    if actual != expected:
+        raise ValueError("Saved judgment input does not match current question/reference/prediction")
+    if judgment.get("status") == "scored":
+        tag = judgment.get("judgment")
+        if tag not in ("yes", "no") or type(judgment.get("correct")) is not bool or judgment["correct"] != (tag == "yes"):
+            raise ValueError("Saved judgment label and correctness disagree")
+
+
+def run_judge_api(prediction_paths, labels_path, output_path=None):
     """Run one fixed DeepSeek judgment per successfully generated prediction, with no retries."""
+    if output_path is not None and Path(output_path).exists():
+        raise ValueError("Judgment output already exists; never overwrite a previous run")
     api_key = os.environ.get("DEEPSEEK_API_KEY")
     if not api_key or not api_key.strip():
         raise ValueError("Set DEEPSEEK_API_KEY in the local environment before --judge-api")
@@ -45,8 +85,16 @@ def run_judge_api(prediction_paths, labels_path):
 
     opener = urllib.request.build_opener(NoRedirect())
     items = []
+    document = {"metadata": {
+        "adjudicator": JUDGE_MODEL, "status": "running", "endpoint": JUDGE_URL,
+        "temperature": 0, "top_p": 1, "max_tokens": 16, "thinking": "disabled",
+        "retries": 0, "prompt": JUDGE_SYSTEM,
+        "started_by": "scripts/evaluate.py --judge-api",
+    }, "items": items}
+    save_judgments(output_path, document)
     for key, label in labels.items():
         item = {"sample_id": key[0], "qa_index": key[1], "methods": {}}
+        items.append(item)
         for method, by_key in predictions.items():
             prediction = by_key.get(key)
             if prediction is None or prediction.get("status") != "ok":
@@ -55,6 +103,7 @@ def run_judge_api(prediction_paths, labels_path):
                     "raw_response": None, "usage": prediction.get("usage") if prediction else None,
                     "seconds": None,
                 }
+                save_judgments(output_path, document)
                 continue
 
             user_data = {
@@ -81,6 +130,9 @@ def run_judge_api(prediction_paths, labels_path):
                 "error": None, "request": payload,
                 "started_utc": datetime.now(timezone.utc).isoformat(),
             }
+            result["input_sha256"] = hashlib.sha256(json.dumps(user_data, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+            item["methods"][method] = result
+            save_judgments(output_path, document)
             started = time.perf_counter()
             try:
                 request = urllib.request.Request(
@@ -106,6 +158,10 @@ def run_judge_api(prediction_paths, labels_path):
                     result.update(status="scored", judgment=normalized, correct=(normalized == "yes"))
                 if result["error"]:
                     result["status"] = "judge_failed"
+            except KeyboardInterrupt:
+                result.update(status="interrupted", error="KeyboardInterrupt")
+                document["metadata"]["status"] = "interrupted"
+                raise
             except (urllib.error.URLError, http.client.HTTPException, OSError,
                     ValueError, KeyError, IndexError, TypeError) as exc:
                 result.update(status="judge_failed", error=type(exc).__name__)
@@ -114,24 +170,11 @@ def run_judge_api(prediction_paths, labels_path):
                     exc.close()
             finally:
                 result["seconds"] = time.perf_counter() - started
-            item["methods"][method] = result
-        items.append(item)
+                save_judgments(output_path, document)
 
-    return {
-        "metadata": {
-            "adjudicator": JUDGE_MODEL,
-            "status": "external_fixed_judge",
-            "endpoint": JUDGE_URL,
-            "temperature": 0,
-            "top_p": 1,
-            "max_tokens": 16,
-            "thinking": "disabled",
-            "retries": 0,
-            "prompt": JUDGE_SYSTEM,
-            "started_by": "scripts/evaluate.py --judge-api",
-        },
-        "items": items,
-    }
+    document["metadata"]["status"] = "external_fixed_judge"
+    save_judgments(output_path, document)
+    return document
 
 
 def read_jsonl(path):
@@ -202,6 +245,8 @@ def evaluate(prediction_paths, labels_path, judgments_path, adjudications_path=N
             if judgment is None:
                 raise ValueError(f"Missing {method} judgment for {key}")
             generation_status = prediction.get("status", "missing") if prediction else "missing"
+            if generation_status == "ok":
+                validate_judgment_input(prediction, label, judgment)
             scored = generation_status == "ok" and judgment.get("status") == "scored"
             raw_judge_correct = judgment.get("correct") if scored else None
             adjudication = adjudications.get((method, key))
@@ -309,13 +354,14 @@ def main():
     parser.add_argument("--judge-api", action="store_true", help="Call DeepSeek Flash once per successful prediction; requires DEEPSEEK_API_KEY")
     parser.add_argument("--out", type=Path, required=True, help="Output directory")
     args = parser.parse_args()
+    if args.out.exists() and any(args.out.iterdir()):
+        parser.error("Output directory contains existing artifacts; choose a new directory")
     args.out.mkdir(parents=True, exist_ok=True)
     if args.judge_api:
         if args.judgments:
             parser.error("Use either --judgments or --judge-api, not both")
         judgments_path = args.out / "deepseek-judge-results.json"
-        judgments_path.write_text(json.dumps(run_judge_api({"S0": args.s0, "S2": args.s2}, args.labels),
-                                             ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        run_judge_api({"S0": args.s0, "S2": args.s2}, args.labels, judgments_path)
     else:
         if not args.judgments:
             parser.error("Provide --judgments or set up DEEPSEEK_API_KEY and pass --judge-api")
