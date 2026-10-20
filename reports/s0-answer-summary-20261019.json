@@ -1,0 +1,106 @@
+{
+  "owner": "hycx233",
+  "method": "S0",
+  "date": "2026-10-19",
+  "status": "real_answers_complete_scoring_pending",
+  "planned_questions": 30,
+  "successful_questions": 30,
+  "failed_questions": 0,
+  "simulated_questions": 0,
+  "unique_questions": 30,
+  "paid_answer_requests": 30,
+  "retries": 0,
+  "stages": [
+    5,
+    25
+  ],
+  "category_counts": {
+    "1": 8,
+    "2": 8,
+    "3": 7,
+    "4": 7
+  },
+  "config_file": "configs/qa-s0-20261019.json",
+  "config_sha256": "42ae848bd919065e0faf62b0f357e3a1bd620cba5ad9d35786e958b36a8fd421",
+  "question_set_sha256": "99ebf28b673b715886b13d8f88768cc82b1775033b37d59ffae0893b285c0a26",
+  "retrieval_input_sha256": "17237f37ca5a6bcf867b4aead8b73eec88cf6c5dc86189c1e1bbf317381faac5",
+  "versions": {
+    "a": "1d651da44cd1bf101ead69794a74f45f91c507a3",
+    "b": "62410cdd231d4af2438eefdcd423e988f1471acc",
+    "f": "4206096a2929256b4be55d28c105e441e367ad63",
+    "f_merged_main": "8b6fcd73c3a15acea4dcc00e52a4b2debc50146d"
+  },
+  "request_model": "deepseek-flash",
+  "returned_models": [
+    "deepseek-flash"
+  ],
+  "thinking": "disabled",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 512,
+  "finish_reasons": {
+    "stop": 30
+  },
+  "usage": {
+    "prompt_tokens": 132531,
+    "completion_tokens": 421,
+    "total_tokens": 132952,
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 132531
+  },
+  "sum_call_seconds": 30.448816861999603,
+  "started_beijing": "2026-10-19T16:09:27.875476+08:00",
+  "finished_beijing": "2026-10-19T16:10:15.101511+08:00",
+  "budget_cny": 5,
+  "estimated_cost_cny": 0.26843,
+  "billing_reconciled": false,
+  "pricing": {
+    "period": "peak",
+    "cny_per_million": {
+      "cache_hit": 0.04,
+      "cache_miss": 2,
+      "output": 8
+    },
+    "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "checked_date": "2026-10-19"
+  },
+  "checks": {
+    "tests_a": 7,
+    "tests_b": 8,
+    "tests_f": 14,
+    "contexts_bound_to_pinned_source": 1800,
+    "all_questions_match_a": true,
+    "input_matches_b_report": true,
+    "config_same_across_stages": true,
+    "real_minilm_retrieval_rerun_in_this_session": false
+  },
+  "scoring": {
+    "owner": "onlysonder",
+    "issue": 31,
+    "scored_questions": 0,
+    "accuracy": null,
+    "human_reviewed_cases": 0
+  },
+  "source_runs": [
+    {
+      "directory": "first5",
+      "questions": 5,
+      "input_sha256": "c2b7ad0e66ea4512e7123eb311b376006a5a21f18ea46c6cdb47883226b42365",
+      "question_set_sha256": "a5108b7645af41f8b257d3033e968be47160f2e696789c0c85a21c14250b9ac5"
+    },
+    {
+      "directory": "remaining25",
+      "questions": 25,
+      "input_sha256": "e08f181ae660e5e1c4e2a3b02f62bd45e69f7b40a7b2e42cbcf5e68ecd5fb949",
+      "question_set_sha256": "e3bf817ac46ed958c6e67b9921a24b3923dd16c072afce62072b5d83f9658124"
+    }
+  ],
+  "handoff_bundle": {
+    "filename": "s0-predictions-for-E-20261019.zip",
+    "bytes": 662513,
+    "sha256": "62a7f1da68590f7b80f2a753e1c60307a22620b84d0d6c81b92177500d19a3aa",
+    "recipient": "onlysonder",
+    "status": "committed_to_task_branch",
+    "repository_path": "reports/artifacts/s0-predictions-for-E-20261019.zip"
+  }
+}

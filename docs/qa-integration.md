@@ -1,14 +1,14 @@
 # F：统一回答入口与 B/D/E 交接
 
-负责人：hycx233；关联 [#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19)。2026-10-19 提供首版入口与离线检查，随后完成 S0 的 30 题真实回答；D 已使用同一入口完成 S2 的 30 题回答。2026-10-20，E 在 [PR #46](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/46) 提交自动评分与案例草稿，人工复核仍待完成。最新证据与审核边界见[项目方案](project-plan.md#10-当前进展与下一步)；构造题、模拟响应和测试均不是实验结果。
+负责人：hycx233；关联 [#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19)。2026-10-19 提供首版入口与离线检查，随后完成 S0 的 30 题真实回答；D 已使用同一入口完成 S2 的 30 题回答。2026-10-20，E 在 [PR #46](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/46) 提交自动评分与案例；2026-10-21，F已逐条核验60个输入指纹并复算原始/裁定后分数，成员本人核查仍待完成。最新证据与审核边界见[项目方案](project-plan.md#10-当前进展与下一步)；构造题、模拟响应和测试均不是实验结果。
 
 ## 交付与下一步
 
 - `src/llm_client.py`、`scripts/run_qa.py`：B/D 共用的 DeepSeek 回答入口，无新增第三方依赖，使用 Python 3.11+。
 - `configs/qa.example.json`、`configs/qa-smoke.inputs.jsonl`：参数与提示词示例、两道构造题；`tests/test_qa.py` 验证输入隔离、API 处理及结果交接。
 - A 的固定题单、B 的真实检索和 F 的回答入口已合并；S0 按 5＋25 题完成真实回答。D 已交同题 S2 预测，F 核对原始请求、响应、预测与用量并保存评分包，见[交接入口](../reports/artifacts/README.md)。
-- 已完成的配置与输出交接审核不重复进行；当前由 E 收齐自动评分的人工复核及 PR #42 交接审核，C 对 D 的事件/数值审核仍按原分工推进。
-- slide 制作、视频录制和实际汇报准备暂缓，现有页面保留；F 先同步进展与接口交接记录。自动评分已提交不代表人工验收或最终材料完成，#19 不据此全部结项。
+- E已批准PR #42的S0交接，C已批准PR #41的事件/数值范围；F已完成PR #46逐题评分复算，见[验收记录](../reports/e-score-verification-20261021.json)。已验收范围不重复审核。
+- PR #48已归档候选幻灯片和讲稿；真实署名、贡献比例、成员本人核查及正式视频/上传仍待确认，#19不据此全部结项。
 
 ## B/D 输入
 
@@ -115,4 +115,4 @@ python3 -m unittest discover -s tests -p test_qa.py -v
 
 覆盖联合主键、标签隔离、整批预检、提示词/来源保留、关闭思考、原始响应/用量、截断及网络失败、中断、防覆盖、模拟模式、跨方法题集哈希。HTTP 成功和失败由离线替身提供，没有真实 API 请求。旧 MetaMem 测试需要本工作目录中不存在的 `data/pilot`，本次不下载其数据或重跑研究实验。
 
-当前 S0/S2 真实回答及固定裁判汇总已有记录，下一步由 E 完成人工案例复核与标签证据回查，F 汇总可追溯的交接状态。本文不将自动评分或已有页面视作全组最终验收；slide、录制与汇报准备按[当前项目安排](project-plan.md#10-当前进展与下一步)暂缓。
+当前S0/S2真实回答与60条固定裁判已完成输入指纹核对及离线复算。S0原始16/30、日期裁定后15/30，S2为19/30；成员本人案例核查和最终交付仍待完成。S0的[运行记录](../reports/s0-answer-run-20261019.md)及[原始评分交接包](../reports/artifacts/s0-predictions-for-E-20261019.zip)保留，后续见[当前项目安排](project-plan.md#10-当前进展与下一步)。
