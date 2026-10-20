@@ -212,5 +212,19 @@
     "reviewer": "Codex evidence review",
     "status": "completed",
     "score_policy": "Preserve every frozen question and denominator. Keep raw DeepSeek judgments; apply a documented correction only when the answer contradicts the frozen reference. Evidence concerns in a frozen label are disclosed without silently changing that label."
+  },
+  "judge_record_handoff": {
+    "path": "reports/e-judge-audit-handoff-20261021.json",
+    "sha256": "e3ada6f69512c1120651e07c375f8feb5eed578fe45fb46ac62eb6aa05a17e5f",
+    "records": 60,
+    "scored": 60,
+    "failed": 0,
+    "raw_yes_counts": {
+      "S0": 16,
+      "S2": 19
+    },
+    "input_binding_verified_offline": true,
+    "offline_recalculation_matches_published_summary": true,
+    "full_judge_requests_or_answer_text_committed": false
   }
 }
