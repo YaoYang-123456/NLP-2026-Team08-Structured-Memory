@@ -21,6 +21,15 @@
       "sha256": "6dd6d9f75609d4e6dc270fcc459a40fd14d46789c16c7a85a9c230eba815ffd0",
       "source_url": "https://www.jos.org.cn/uploadfile/news_images/jos/2026-04-02/软件学报排版样例2025年版.doc",
       "kind": "official_word_layout_reference"
+    },
+    {
+      "file": "seminar-notice-20261020.md",
+      "bytes": 3353,
+      "sha256": "e9e72302a53fa90ce5b0950fb252c8ad2518a2462c5321b65737a15b6cfd0d84",
+      "source_url": "https://pan.tju.edu.cn/link/AA98B18F3C26B64C538713EF8C31ECC812",
+      "kind": "user_forwarded_notice_with_local_notes",
+      "received_at": "2026-10-20",
+      "source_note": "用户转发老师的研讨通知及当日视频补充通知；正文保留，另附本组适用说明。未独立读取云盘或 Excel。"
     }
   ]
 }
