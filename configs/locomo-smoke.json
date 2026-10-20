@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "seed": 42,
+  "source": {
+    "repository": "snap-research/locomo",
+    "revision": "cbfbc1dba6bc53d00625212a0f22d55ffee7c1fc",
+    "path": "data/locomo10.json",
+    "url": "https://raw.githubusercontent.com/snap-research/locomo/cbfbc1dba6bc53d00625212a0f22d55ffee7c1fc/data/locomo10.json",
+    "bytes": 2805274,
+    "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "git_blob_sha1": "d95b872480b413d935821fdc3c84f8a8f5f29e73"
+  },
+  "lightmem": {
+    "repository": "zjunlp/LightMem",
+    "revision": "8449d574df6bae1bdf3314a1564da65e2f37e046"
+  },
+  "embedding": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimensions": 384,
+    "normalize_embeddings": true,
+    "max_seq_length": 256,
+    "device_for_check": "cpu"
+  },
+  "selection": "sorted conversation IDs; Random(42) shuffle; first 3 development; category/conversation round-robin from seeded shuffled pools; original zero-based qa_index",
+  "splits": {
+    "development": [
+      "conv-48",
+      "conv-42",
+      "conv-41"
+    ],
+    "heldout": [
+      "conv-49",
+      "conv-44",
+      "conv-47",
+      "conv-50",
+      "conv-43",
+      "conv-26",
+      "conv-30"
+    ]
+  },
+  "questions": [
+    {
+      "sample_id": "conv-48",
+      "qa_index": 86,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 15,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 71,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 11,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 89,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 36,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 29,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 0,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 94,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 80,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 57,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 45,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 173,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 61,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 53,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 23,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 146,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 49,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 66,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 90,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 6,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 39,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 133,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 55,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 4,
+      "category": 2
+    }
+  ],
+  "smoke_question_keys": [
+    [
+      "conv-48",
+      86
+    ],
+    [
+      "conv-42",
+      15
+    ],
+    [
+      "conv-41",
+      41
+    ],
+    [
+      "conv-48",
+      104
+    ],
+    [
+      "conv-42",
+      71
+    ]
+  ],
+  "output_sha256": {
+    "development.conversations.json": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+    "development.inputs.json": "8244dff6123ea8479561bfbe6ad5a36d655b2926d4acbf6fdd0d2ddf356abb63",
+    "smoke.inputs.json": "7340e360455e2b643dc63f4945bcd79ba3a28cf8fb06ee14a04d25c2af1e7de7",
+    "development.labels.json": "21c2a7b7bb1805b231e2404bf17df407898e63af36b793962912b66711a4dd60",
+    "smoke.labels.json": "4e174921befab3827ae93abdf55f5f2fd4fe7f2f4a81b53124dfd4001c36f36c"
+  }
+}
