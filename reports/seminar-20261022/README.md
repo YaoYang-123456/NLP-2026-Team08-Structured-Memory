@@ -35,11 +35,11 @@ S0/S2 是整套系统对照，方法提示词和输入形态存在差异；不�
 | A / ngocnamd93-spec | [main bf716a4 的个人进展](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/bf716a49a7f0b0655fef898b0694e010514892bc/reports/locomo-a-progress.md) | PR #38 已合并；合稿只选固定数据和隔离口径 |
 | B / YaoYang-123456 | [main bf716a4 的两页 Beamer](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/bf716a49a7f0b0655fef898b0694e010514892bc/reports/s0-seminar-20261019.tex) | PR #37/#45 已合并；短讲只选第一页 |
 | C / oioioi-521 | [PR #43 / 433de349 的个人进展](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/433de349595a54e4f0f0f2073d745bb1d830a4ea/reports/structmem-progress-20261019.md) | 完整事件与材料已提交；原 PR 尚未合并，数值审核沿用指定 C/D 分工 |
-| D / lanshuheng9-oss | [PR #41 / 43dc389 的两页进展](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/43dc38916b8c7acdc834e00bf5095cf6700ec9f6/reports/structmem-d-progress.md) | D 记录91次真实综合与30题 S2 回答；F 要求实际评分包入库后再核对逐题数据 |
+| D / lanshuheng9-oss | [PR #41 / 43dc389 的两页进展](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/43dc38916b8c7acdc834e00bf5095cf6700ec9f6/reports/structmem-d-progress.md) | D 已微信交付评分包；F 已核对30题请求、预测、响应及用量并批准 F 范围 |
 | E / onlysonder | [任务 #31](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/31) | 暂无真实评分、至少4个核查案例及个人页，不填准确率 |
-| F / hycx233 | 本目录及 [S0 交接 PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) | S0 30题预测和评分包可从仓库获取，PR #42 仍等 E 审核；本合稿继续待 E 和交接验收 |
+| F / hycx233 | 本目录及 [S0 交接 PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) | S0 30题预测和评分包可从仓库获取，PR #42 仍等 E 审核；S2交接已核验并入库；本合稿继续待 E 与整组排练 |
 
-D 的约1.05 MB包目前只在其本地，F 本机和仓库均未取得。已在 [PR #41 正式审核](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5581148679) 直接要求 lanshuheng9-oss 将现有无密钥/标签的包加入 reports/artifacts/，附大小、SHA-256、清单与读取入口；不让用户转传，也不重新付费生成。该汇总的代码哈希与加总检查通过，不等于逐条原始记录验收。
+D 已通过微信发送约1.05 MB评分包，F 已取得并完成实际逐条核验，原包直接入库，见[包、哈希和 E 读取入口](../artifacts/README.md)及[机器核验记录](../s2-handoff-verification-20261020.json)。先前把“仓库没有包”推断成“D未交付”不准确，[原请求修改](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5581148679)已撤回，并提交[新的 F 范围批准](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5581231548)。不要求 D 重复发送，原包内关于“未发送”的文字保留为打包时快照。
 
 ## 固定回答配置
 
@@ -50,7 +50,7 @@ D 的约1.05 MB包目前只在其本地，F 本机和仓库均未取得。已在
 ## 验证与编译
 
 - 上一轮 [PR #40 审核](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/40#pullrequestreview-5579766040) 核对论文和排版；PR #40 已合并。[PR #41 旧配置审核](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5579766167) 通过30项针对性测试，保留原有范围结论。
-- 本轮仅复核 #41 新增范围：隔离提交43dc389的 runner 4项及 F QA 14项共18项通过；6个代码哈希、阶段 token 加总和事件/摘要/题型分母算术通过。缺少实际包，未声称完成30题逐条或原生数据库回填复验。
+- 本轮仅复核 #41 新增范围：隔离提交43dc389的 runner 4项及 F QA 14项共18项通过；6个代码哈希、阶段 token 加总和事件/摘要/题型分母算术通过。随后取得微信包，CRC及9文件哈希通过，逐条核对同一30题、5＋25批次指纹、冻结配置、60＋5上下文、完整请求重建、原始响应与预测及usage一致，4次弃答保留；四类候选均对应题目上下文。包内没有91条原始综合调用或完整原生库，未独立回放这些数据，来源核验不替代 E 语义人工验收。
 - 两页个人预览和六页合稿使用共享 XeLaTeX/Beamer 模板编译，导出后逐页渲染检查。成员原稿哈希、B摘录一致性、UTF-8/LF、相对链接和 diff 检查见本轮 PR 验证。
 
 在本目录执行：
@@ -62,4 +62,4 @@ latexmk -xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error assemb
 cp ../../output/seminar-20261022-f/assembly-draft.pdf assembly-draft-preview.pdf
 ```
 
-缓存留 output/，两个小型预览 PDF 直接入库。没有新增真实 API 请求，没有重跑 S0、D 综合/回答或接管 E 评分；未进行整组实际排练。21日晚应补齐评分及案例、复核实际交接、更新受影响页面后冻结。
+缓存留 output/，两个小型预览 PDF 直接入库。没有新增真实 API 请求，没有重跑 S0、D 综合/回答或接管 E 评分；未进行整组实际排练。21日晚应补齐评分及案例、完成实际排练并更新受影响页面后冻结。
