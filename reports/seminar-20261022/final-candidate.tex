@@ -79,7 +79,7 @@ F / E & S0 回答 30/30 · E 报告裁判 60/60 & 逐题裁判交接待完整复
 \small
 \begin{columns}[T]
 \begin{column}{0.48\textwidth}
-\textbf{相对时间：记录日期 ≠ 事件年份}\par\vspace{3mm}
+\textbf{相对时间：记录日期 $\ne$ 事件年份}\par\vspace{3mm}
 \begin{itemize}
 \item conv-41/20：问太平洋西北旅行时间
 \item 2023-04-10 的 D11:3：“a road trip we took last year”（节选）
@@ -123,15 +123,17 @@ F / E & S0 回答 30/30 · E 报告裁判 60/60 & 逐题裁判交接待完整复
 \source{项目方案 §8；Issues \#19/\#24/\#26/\#28/\#31/\#32；成员原稿}
 \begin{frame}{六人已交付内容与剩余协作事项}
 \small
-\begin{tabularx}{\linewidth}{@{}YYY@{}}\toprule
-任务 / 账号 & 实际贡献 & 当前比例\\[1.5mm]\midrule
-A · ngocnamd93-spec & 冻结题单、答案隔离、嵌入环境 & 待全组确认\\[1.5mm]
-B · YaoYang-123456 & 原始块 top-60、真实检索、MetaMem 阅读 & 待全组确认\\[1.5mm]
-C · oioioi-521 & 事实/关系抽取、事件绑定与持久化 & 待全组确认\\[1.5mm]
-D · lanshuheng9-oss & 真实综合、S2 检索与回答 & 待全组确认\\[1.5mm]
-E · onlysonder & 固定裁判、结果表与案例复核材料 & 待全组确认\\[1.5mm]
-F · hycx233 & 统一客户端、S0 回答、交接及全组整合 & 待全组确认\\[1.5mm]
+{\footnotesize\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.02}
+\begin{tabularx}{\linewidth}{@{}p{43mm}Yp{22mm}@{}}\toprule
+任务 / 账号 & 实际贡献 & 当前比例\\[0.3mm]\midrule
+A · ngocnamd93-spec & 冻结题单、答案隔离、嵌入环境 & 待全组确认\\[0.3mm]
+B · YaoYang-123456 & 原始块 top-60、真实检索、MetaMem 阅读 & 待全组确认\\[0.3mm]
+C · oioioi-521 & 事实/关系抽取、事件绑定与持久化 & 待全组确认\\[0.3mm]
+D · lanshuheng9-oss & 真实综合、S2 检索与回答 & 待全组确认\\[0.3mm]
+E · onlysonder & 固定裁判、结果表与案例复核材料 & 待全组确认\\[0.3mm]
+F · hycx233 & 统一客户端、S0 回答、交接及全组整合 & 待全组确认\\[0.3mm]
 \bottomrule\end{tabularx}
+}
 \aside{贡献比例不按发言时长或提交数推算。主讲、录制、上传负责人尚未确认。}
 \note{六位成员的实际分工在表中列出。A 负责数据冻结和环境；B 负责原始对话检索及个人 MetaMem 阅读；C 构建事件记忆；D 做综合、检索和完整系统回答；E 固定评分并整理案例；F 提供统一调用、完成基线回答并负责材料整合。我们没有按提交数量或发言时间自动分摊贡献比例，这一栏需要全组根据实际工作确认。当前风险也很具体：评分程序的输入绑定和中断保存需要补丁审核，逐题裁判交接需要补全，真人排练与视频负责人尚未确认。这些交付事项与继续调模型是两回事。}
 \end{frame}
@@ -168,7 +170,7 @@ E 自动裁判 & 60 次；9,353 tokens & 未核账，未纳入小计\\[1.5mm]
 \begin{itemize}
 \item S0：原始块向量检索；S1：仅事件记忆；S2：事件 + 跨事件综合\vspace{4mm}
 \item S1 未运行；S0/S2 还存在方法提示词与上下文体量差异\vspace{4mm}
-\item 原始裁判 ≠ AI 证据复核 ≠ 成员人工验收\vspace{4mm}
+\item 原始裁判 $\ne$ AI 证据复核 $\ne$ 成员人工验收\vspace{4mm}
 \item 尚待：逐题裁判交接、真实署名/比例、Excel 顺序、场次、格式与视频负责人\vspace{4mm}
 \end{itemize}
 \aside{8 分钟课设研讨视频与 11 月 1 日约 60 分钟阅读视频是不同交付。}
