@@ -1,0 +1,175 @@
+{
+  "status": "real_synthesis_retrieval_answering_completed_unscored",
+  "date": "2026-10-20",
+  "owner": "lanshuheng9-oss",
+  "synthetic": false,
+  "upstream_revision": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+  "embedding": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimensions": 384,
+    "normalize_embeddings": true,
+    "max_seq_length": 256
+  },
+  "scope": "three_frozen_development_conversations_only_no_holdout",
+  "received_bundle_sha256": "8c26e24fa7be2e6b19dbec91f3647d563e1145e909866e939f1b2b4e70427885",
+  "received_hashes_checked_unchanged": 103,
+  "memory_counts": {
+    "conv-48": {
+      "events": 1277,
+      "real_summaries": 30
+    },
+    "conv-42": {
+      "events": 1160,
+      "real_summaries": 29
+    },
+    "conv-41": {
+      "events": 1275,
+      "real_summaries": 32
+    }
+  },
+  "memory_sha256": {
+    "conv-48": {
+      "event": "74e67ea72503b1f33dc959ec6bb1e31b6ed4ab55ef409a1d2a14827521007bca",
+      "synthesis": "c0c9afe44efbd19e545fa81d08baa2e05b1750660d1cc3616347b6d10aef3739"
+    },
+    "conv-42": {
+      "event": "40fb1c3e30235ec22f3f14d68518dcf9d1c87193906f15bc9e2ed78885caf5e4",
+      "synthesis": "10bf7fd72dc0f2df91a5129c54d7fa1fcaa97141cf92a1fc94e7f555208e7475"
+    },
+    "conv-41": {
+      "event": "513a2f9de38f04ec5fecb7ef4f4fab1a65ceca31babd45f5a54e59575cb47399",
+      "synthesis": "dbbb64f66996b9f9583a186f7b7fb32929573e7226e11639a7457f23b27c4abe"
+    }
+  },
+  "memory_index_sha256": "ed685d4f9fa563eb4daf607b690c55dfd04e6043e85ba843a2101dfdf26f601f",
+  "native_parameters": {
+    "time_window": 3600,
+    "top_k_seeds": 15,
+    "retrieval_scope": "global",
+    "process_all": true,
+    "enable_cross_event": true
+  },
+  "native_replay": {
+    "fresh_database_and_process_per_conversation": true,
+    "all_91_messages_exactly_matched_native_reconstruction": true,
+    "additional_api_calls_for_materialization": 0,
+    "original_event_content_unchanged": true,
+    "export_vector_max_component_differences": {
+      "conv-48": 1.7314976424875894e-08,
+      "conv-42": 1.90479550743472e-08,
+      "conv-41": 1.8173900995233083e-08
+    },
+    "normalized_vector_component_difference_below": 1e-14,
+    "coverage_each_event_exactly_once": true
+  },
+  "synthesis": {
+    "successful_requests": 91,
+    "failures": 0,
+    "truncations": 0,
+    "automatic_retries": 0,
+    "model": "deepseek-flash",
+    "max_tokens": 8192,
+    "timeout_seconds": 120,
+    "usage": {
+      "prompt_tokens": 304025,
+      "completion_tokens": 35834,
+      "total_tokens": 339859,
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 304025
+    },
+    "calls_sha256": "c92bcd45108ee61905de12d27f08a7b81022b6cba2c6cd1ec591d89d29a5cd72"
+  },
+  "answers": {
+    "successful_requests": 30,
+    "planned_denominator": 30,
+    "failures": 0,
+    "truncations": 0,
+    "automatic_retries": 0,
+    "max_tokens": 512,
+    "model": "deepseek-flash",
+    "batch_sizes": [
+      5,
+      25
+    ],
+    "retrieved_each": {
+      "event": 60,
+      "synthesis": 5
+    },
+    "by_category": {
+      "1": 8,
+      "2": 8,
+      "3": 7,
+      "4": 7
+    },
+    "abstentions": 4,
+    "usage": {
+      "prompt_tokens": 586282,
+      "completion_tokens": 178,
+      "total_tokens": 586460
+    },
+    "config_sha256": "5c26490902627d5199cd0194fd65b725275efe8844eb07b678daa467ad495abe",
+    "config_source_commit": "14b7b41b561fde1ed5193422ed3084211572e15a",
+    "F_approval_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5579766167",
+    "predictions_sha256": "307d5eb3c92940a12a3e33e9d4b38ac77685497e37e3b68403fe27d9becc3b79",
+    "calls_sha256": "d7f5692bc83be8566e0e4bde9e32efa23db5b25b1f0147711aebd7443b61adda"
+  },
+  "total_successful_requests": 121,
+  "total_usage": {
+    "prompt_tokens": 890307,
+    "completion_tokens": 36012,
+    "total_tokens": 926319
+  },
+  "actual_billed_cost": null,
+  "scored_questions": 0,
+  "accuracy": null,
+  "E_manual_case_acceptance": false,
+  "S1_executed": false,
+  "local_failures": [
+    {
+      "stage": "first_connection",
+      "error": "sandbox WinError10013 before provider response",
+      "paid_successes": 0,
+      "usage": null,
+      "resolution": "same fixed request with reviewed network permission"
+    },
+    {
+      "stage": "first_materialization",
+      "error": "tiktoken cache missing under redirected temp",
+      "additional_model_calls": 0,
+      "resolution": "copy existing hash-verified o200k cache; restart fresh native copy"
+    }
+  ],
+  "validation": {
+    "targeted_tests_passed": 34,
+    "groups": {
+      "D_retrieval": 12,
+      "complete_receipt_and_config": 4,
+      "F_QA": 14,
+      "paid_runner": 4
+    }
+  },
+  "handoff": {
+    "filename": "s2-predictions-for-E-20261020.zip",
+    "bytes": 1051426,
+    "sha256": "21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6",
+    "zip_crc_verified": true,
+    "files_sha256_verified": 9,
+    "sent_to_group": false,
+    "scored_by_E": false
+  },
+  "limitations": [
+    "C pre_compress/topic_segment disabled, retained and disclosed",
+    "Python3.13 actual environment differs from upstream >=3.10,<3.12",
+    "F JSON display differs from native grouped-speaker QA prompt",
+    "no judge scores, accuracy claim, S1 ablation or holdout run"
+  ],
+  "code_sha256": {
+    "scripts/run_structmem_synthesis.py": "ee668fdc591d2226e98c28e223de478f928814854a860f5e2e6bae43669936e0",
+    "scripts/prepare_structmem_synthesis.py": "414730d189a6f6dc60e162f3adeb0e249d8ed7e12bf2f7e8b38de9157ddd5c68",
+    "scripts/retrieve_structmem.py": "187b359c920ea9c454c8303aee079e566a5cb41dc7be819dfae675953209440b",
+    "scripts/run_qa.py": "2a317fd4d614661e923aec9c01e472bd50f670c550f6848da8b046af51896c30",
+    "src/llm_client.py": "17230503f43be2b1e134baa29e81dfba053b2726b308b18777bf7f5f70f887e6",
+    "src/structmem_retrieve.py": "d55ddee7ab979e1edee7e12c7cadd5f062d8b76034ae32acb30a8cceb62fad2a"
+  }
+}

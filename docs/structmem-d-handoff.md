@@ -2,7 +2,7 @@
 
 负责人：`lanshuheng9-oss`；技术任务 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)。更新日期：2026-10-20。
 
-当前已完成三个完整开发会话的真实事件记忆接收、30 题事件检索及原生综合入口离线预演。**真实跨事件综合、S2 问答和评分仍未完成。** 最新状态见 [2026-10-20 完整接收与下一阶段准备](structmem-development-receipt-20261020.md)；不再缺 C 的开发会话事件库，待补的是项目调用凭据、额度与正式回答配置。
+当前已完成完整事件接收、91 次真实综合、同一 30 题的 60＋5 检索与真实 S2 回答。**E 评分及人工案例验收仍未完成。** 最新记录见 [真实运行与交接](structmem-real-run-20261020.md)；原事件包接收与离线准备保留为历史证据。
 
 2026-10-19 首次收到 C 的 conv-48/session_1，历史记录见[首个 session 接收验收](structmem-session-receipt-20261019.md)。2026-10-20 已收到并验证 91 个 session、3712 条完整开发事件；旧记录的 1/30 范围仅描述首次交接。
 
@@ -55,7 +55,7 @@ memory.summarize(
 )
 ```
 
-该函数已在固定版 LightMemory 上完成三个会话的原生离线预演：91 个窗口覆盖全部 3712 条事件。生成回调只返回明确的占位文本，**真实综合 API 请求仍为 0**。调用提案保存在本地 proposed-calls.jsonl；真实运行需要项目凭据、本次额度和经核对的调用设置，不能复用预演已标记 consolidated 的副本或占位摘要。
+该函数先完成 91 窗口离线预演，随后官方输入已实际调用模型，91 次全部成功。真实响应在三个新进程、新副本中回填原生综合流程，全部请求与重建消息逐字一致，3712 条事件恰好覆盖一次；回填不新增 API 调用。占位摘要及预演库没有用于真实检索。完整调用、原生导出及验证见最新真实运行记录。
 
 固定版代码核对发现：
 
@@ -68,7 +68,7 @@ memory.summarize(
 
 ## 4. D 的读取索引与命令
 
-完成真实综合、导出 events 和 summaries 后，在本地 `data/structmem-d/memory-index.json` 登记以下结构；三个开发会话分别登记，下面只展开一项。路径相对该 index 文件；占位哈希必须替换为实际值。此提案待 C 审核，不表示 C 已交付这些文件。
+真实综合已完成，实际索引为 `output/structmem-live-20261020/memory-index.json`。下方保留结构说明，实际三个会话的 events/summaries 路径、哈希均由原生导出生成；示例占位哈希不用于运行。C 的数据/数值审核仍由指定 reviewer 核对。
 
 ```json
 {
@@ -91,22 +91,22 @@ memory.summarize(
 }
 ```
 
-已有 A 固定模型离线缓存和完整真实记忆后运行；当前未执行这条真实命令：
+完整 30 题已使用实际 memory-index 完成检索。下方为需要时另建输出目录的 5 题复跑命令，本轮没有为演示命令再次运行：
 
 ```powershell
 python scripts/retrieve_structmem.py `
   --input data/locomo/smoke.inputs.json `
   --frozen-config tmp/structmem-d-deps/a/configs/locomo-smoke.json `
-  --memory-index data/structmem-d/memory-index.json `
+  --memory-index output/structmem-live-20261020/memory-index.json `
   --model-cache data/model-cache `
-  --out output/structmem-d-real5
+  --out output/structmem-d-recheck5
 ```
 
 A 合并后，`--frozen-config` 改用仓库中的 `configs/locomo-smoke.json`。真实 30 题仅将 input 改为 `development.inputs.json`，使用新输出目录。
 
 入口在加载嵌入前检查 A 的有序 5/30 题和精确文件哈希、开发会话、上游/模型版本、原始对话哈希及 point 文件哈希。缺少摘要、无向量、错误维度、非有限数、零向量、重复 ID、标签字段、摘要悬空引用都会报错，不静默跳过。CLI 拒绝构造记忆，无自动下载、API 调用或覆盖旧输出。
 
-排序是固定版 `VectorRetriever` 全会话 combined cosine 排序的标准库移植；60 个事件条目与 5 个综合记忆分别取 top-k，条目不足时保留实际数目。没有加入 BM25、重排、额外补齐或说话人配额。模型仅在已有固定 revision 缓存中通过 SentenceTransformer 加载，查询归一化；该模型路径已在首个真实 session 的接收验收中实际运行，完整 S2 CLI 仍未执行。
+排序是固定版 `VectorRetriever` 全会话 combined cosine 排序的标准库移植；60 个事件条目与 5 个综合记忆分别取 top-k，条目不足时保留实际数目。没有加入 BM25、重排、额外补齐或说话人配额。模型仅在已有固定 revision 缓存中通过 SentenceTransformer 加载，查询归一化；该模型已实际完成全部事件重嵌入、原生综合向量生成及完整 30 题 S2 CLI 检索。
 
 输出：`retrieval.jsonl` 符合 F 的四个题目字段加 `contexts`；`provenance.json` 保存逐题分数及完整 payload；`run.json` 保存配置/输入/point/代码哈希和 `retrieval_only` 状态。检索完成不等于回答、评分或 S2 验收完成。
 
@@ -116,14 +116,14 @@ F 固定版本为 [PR #35](https://github.com/YaoYang-123456/NLP-2026-Team08-Str
 
 后续检查确认 PR #35 已合并到 main `8b6fcd73c3a15acea4dcc00e52a4b2debc50146d`。D 分支已同步这次 main，保留 README 中双方的入口；当前直接使用仓库内的 `scripts/run_qa.py`、`src/llm_client.py` 和 `configs/qa.example.json`，不再依赖 F 临时副本。新增一个 D→F 离线测试，检验 D 产物可以被当前 F 入口读取并保持模拟状态；本次仍未改动 F 的客户端行为。
 
-F 在 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) 的 S0 真实回答不计作 D/S2 成绩。D 已收到完整事件库，原交接审核继续保留；新增 configs/qa-structmem-candidate.json 交 F 核对，不将候选写成已统一配置。
+F 在 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42) 的 S0 真实回答不计作 D/S2 成绩。F 已批准本轮候选原内容，PR #44 固定配置与候选逐字节相同；本轮实际使用其固定提交 14b7b41b561fde1ed5193422ed3084211572e15a 的副本完成 5＋25 题回答。C 数据/数值审核仍保留。
 
 - `contexts` 每项仅含 `source_ids`、`kind`、`text`；kind 为 `event` 或 `synthesis`。
 - ID 使用 `<sample_id>/event/<point_id>` 或 `<sample_id>/synthesis/<point_id>`；综合项同时列出原生 covered/seed 事件 ID。收到原始来源映射后，同时保留经校验的 `<sample_id>/<source_message_id>`。UUID 与消息 ID 分开保存，不从评分标签推断来源。
 - 文本保留说话人、完整来源时间、事件内容和综合时间范围；所有原生 payload 保存在 provenance。
-- F 当前只序列化 JSON 上下文，不能直接套用上游双说话人分组模板。**本轮没有冻结 S2 正式提示词**；真实调用前与 F 保留上游时间推理指令，明确 JSON 展示与原版分组格式的差异，再统一审阅配置。示例提示词只用于 mock。
+- F 使用 JSON 上下文，保留已核对的上游时间推理指令；与原版双说话人分组格式的差异继续明示。本轮使用 F 已接受的固定配置；S1/S2 指令完全相同，回答 max_tokens 512，与综合上限 8192 分开记录。
 
-实际结果：
+以下表格保留 2026-10-19 首次离线检查历史；最新真实完成状态见本文首段和真实运行记录：
 
 | 验证 | 结果与边界 |
 | --- | --- |
@@ -145,8 +145,8 @@ python -W error::ResourceWarning -m unittest discover -s tests -p test_structmem
 ## 6. 下一次真实验收所需交接
 
 1. 完整开发事件库与来源映射已验收，C 数据依赖已解除；无需用户再次索要或重跑抽取。
-2. 项目凭据和本次额度就绪后，从接收原件复制新库执行真实综合；当前占位摘要不得交作真实结果。
-3. F 与 D 核对候选提示词及调用设置，再做固定 5 题与同一 30 题真实回答，交 E 评分。
-4. 各人准备自己的 1–2 页进展；D 当前材料见 [进展页](../reports/structmem-d-progress.md)，尚未作人工案例核查或整组研讨定稿。
+2. 本轮用户已授权实际执行，91 次真实综合与新库回填完成；占位摘要未使用。密钥不持久保存，未来重跑仍由本机环境提供。
+3. F 正式配置已核对，固定 5＋25 题真实回答完成；E 交接 ZIP 已核验，尚需用户发给 E，E 完成评分和至少四例人工验收。
+4. D 的 [进展页](../reports/structmem-d-progress.md) 已更新真实结果；准确率仍为 null，四类来源展示候选不等于 E 的人工验收，整组材料尚未定稿。
 
 如记忆数据库、模型或日志单文件达到 20 MB，请将该文件发送到小组微信群；仓库只保留版本、大小、用途、获取方式及哈希，未发送时不填写发送日期。本轮没有代发群消息。
