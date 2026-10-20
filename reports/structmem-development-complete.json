@@ -1,0 +1,948 @@
+{
+  "date": "2026-10-19",
+  "task": 32,
+  "status": "all_development_sessions_completed",
+  "execution": "live",
+  "synthetic": false,
+  "planned_sessions": 91,
+  "completed_sessions": 91,
+  "planned_messages": 1973,
+  "input_messages_processed": 1973,
+  "entry_count": 3712,
+  "entry_types": {
+    "factual": 2309,
+    "relational": 1403
+  },
+  "conversations": {
+    "conv-48": {
+      "session_count": 30,
+      "message_count": 681,
+      "entry_count": 1277,
+      "entry_types": {
+        "factual": 799,
+        "relational": 478
+      },
+      "source_messages_referenced": 664
+    },
+    "conv-42": {
+      "session_count": 29,
+      "message_count": 629,
+      "entry_count": 1160,
+      "entry_types": {
+        "factual": 733,
+        "relational": 427
+      },
+      "source_messages_referenced": 612
+    },
+    "conv-41": {
+      "session_count": 32,
+      "message_count": 663,
+      "entry_count": 1275,
+      "entry_types": {
+        "factual": 777,
+        "relational": 498
+      },
+      "source_messages_referenced": 660
+    }
+  },
+  "successful_generation_requests": 182,
+  "actual_models": {
+    "deepseek-flash": 182
+  },
+  "token_usage": {
+    "prompt_tokens": 467831,
+    "completion_tokens": 126984,
+    "total_tokens": 594815
+  },
+  "sum_successful_session_elapsed_seconds": 783.885,
+  "this_batch": {
+    "new_sessions": 90,
+    "successful_generation_requests": 180,
+    "failed_sessions": 0,
+    "skipped_existing_successful_sessions": 1,
+    "token_usage": {
+      "prompt_tokens": 463314,
+      "completion_tokens": 125888,
+      "total_tokens": 589202
+    },
+    "sum_session_elapsed_seconds": 770.51
+  },
+  "failed_attempt_history": [
+    {
+      "checkpoint": "output/structmem/development/conv-48/session-001/attempt-001",
+      "status": "failed",
+      "error_type": "RuntimeError",
+      "api_calls": [
+        {
+          "entry_type": "factual",
+          "status": "failed",
+          "error_type": "APIConnectionError",
+          "elapsed_seconds": 0.796
+        },
+        {
+          "entry_type": "relational",
+          "status": "failed",
+          "error_type": "APIConnectionError",
+          "elapsed_seconds": 0.063
+        }
+      ],
+      "superseded_by_success": true
+    }
+  ],
+  "unresolved_sessions": 0,
+  "plan_sha256": "eb272cc4cb69ade9471f4f6cedd1e9ac9c0940b0b485a6bd3cd8b29e2021ba15",
+  "source_sha256": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+  "profile": {
+    "profile": "complete-conversation-session-events-no-compression-no-topic-segmentation",
+    "model": "deepseek-flash",
+    "temperature": 0,
+    "top_p": 1,
+    "max_tokens": 8192,
+    "max_input_tokens": 12000,
+    "embedding_dims": 384,
+    "normalize_embeddings": true
+  },
+  "upstream_revision": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+  "user_authorized_batch": true,
+  "team_preprocessing_acceptance": "not confirmed; group silence is not recorded as approval",
+  "method_difference": "No compression or topic segmentation; formal S2 configuration remains to be aligned",
+  "verification": {
+    "all_checkpoint_identities_and_export_hashes": true,
+    "all_source_bindings": true,
+    "all_normalized_384_dimensional_vectors": true,
+    "all_session_disk_readbacks": true,
+    "assembled_disk_readbacks": true
+  },
+  "handoff_root": "output/structmem/handoff",
+  "sent_to_d": true,
+  "d_acceptance": "complete-conversation package acceptance pending; first-session acceptance recorded in issue #28",
+  "formal_quality_evaluation": "not performed",
+  "checkpoints": [
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_1",
+      "checkpoint": "output/structmem/development/conv-48/session-001/attempt-002",
+      "entry_count": 34,
+      "summary_sha256": "2221a2fff7328bc5d73d90c638cce8cf8924e6f13bbf24da7ce881b5cfb16984",
+      "memories_sha256": "9c246de83f541fdc6ea4e4c3e90c0f22777fc335f1f033e3c24dd29201a5d27e",
+      "input_sha256": "d43e00d36dd9ebce1c3d2b13df3fe89cb339f6a52b94af4c4b0c6888cf9aac50"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_2",
+      "checkpoint": "output/structmem/development/conv-48/session-002/attempt-001",
+      "entry_count": 49,
+      "summary_sha256": "cfa55765441f54a994aebca8ecc3b780448c9501f5db571fc955316ac0482f49",
+      "memories_sha256": "e0d749e99ddd44d3117e612e04c4215e2945c13d4209df2dd8f31ff0024077f0",
+      "input_sha256": "ee89f22aea4430840528af93694656c7519b922488000e708fd0511373566f9b"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_3",
+      "checkpoint": "output/structmem/development/conv-48/session-003/attempt-001",
+      "entry_count": 15,
+      "summary_sha256": "efef9fc5ba9070b447b726974e67141ca1f88c913712f6ef432c390340cf53ed",
+      "memories_sha256": "2dd93b2edfedf2f58f31397e4536df66468f4176cb1726d7318783e7ed521e89",
+      "input_sha256": "2e345d237e0ba0c10e04508e7388d510eb15e23cbff0f1067153dee077284ff3"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_4",
+      "checkpoint": "output/structmem/development/conv-48/session-004/attempt-001",
+      "entry_count": 60,
+      "summary_sha256": "314814317e0f701d2213476849d425a29890b73ca301829ac144b7cc54951548",
+      "memories_sha256": "5bea24019c29e51dca6a1fb8ffca02f52d1a100b4f478fd887c1b4c6e346c43e",
+      "input_sha256": "edacc01ba7ba70a9bcd8ab3e1323f135f44a6d208dfc44740fd88e46c0b7f1a1"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_5",
+      "checkpoint": "output/structmem/development/conv-48/session-005/attempt-001",
+      "entry_count": 23,
+      "summary_sha256": "1030a1aa19f0ce1d6f7e1af4b1942f96c369a0b445f0c8e4cf5181b3a4da8434",
+      "memories_sha256": "25353ecac64495ce12735aa57dfc8c042a061d3b2c59fa3ba614dfcd7bb6b9d0",
+      "input_sha256": "44a298e097a5fe192dc2417f1ab51e6668c4e090b12f13e2892052128e096503"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_6",
+      "checkpoint": "output/structmem/development/conv-48/session-006/attempt-001",
+      "entry_count": 36,
+      "summary_sha256": "cbf4937b0bb5afc0ec18e97a65b69c2b7229a7b0de80bcf59c0fe33aec9366f2",
+      "memories_sha256": "c0b4f7cb069776349e9c6cc431c2d861b37331b3c74851f73520b3bf978b6b8d",
+      "input_sha256": "ebafeff103ea85fdb3a01fd8bd4806b551c2bb44941adfee0e55a922e56ff290"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_7",
+      "checkpoint": "output/structmem/development/conv-48/session-007/attempt-001",
+      "entry_count": 48,
+      "summary_sha256": "13cff97a3dcf07fd0a3413b9d3ae0e0eb64a17a9df1d9674f31022dc7d49b40a",
+      "memories_sha256": "5161c4f19613dd2c599bb77a2b68cddcff83c921f258cca9b56d0fc543b1a693",
+      "input_sha256": "8a2427c6afd3204174104732874f0e393f186315edbee603d3a44d0b4f7bc880"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_8",
+      "checkpoint": "output/structmem/development/conv-48/session-008/attempt-001",
+      "entry_count": 56,
+      "summary_sha256": "55b30b6bda4478113361f1c8d15c21247546126371f602c776cc7a267a949780",
+      "memories_sha256": "fce0820a1bffb7c304fdd615661f46306162632ecada6d926231a1b9661fc7cf",
+      "input_sha256": "ca0e06a57061dbed39be1d6c94d0b07a74e8881a71cd4d2b5c851285e86857b1"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_9",
+      "checkpoint": "output/structmem/development/conv-48/session-009/attempt-001",
+      "entry_count": 37,
+      "summary_sha256": "6fec0f1d17b669b5a60308bc71ed2884b59fe4df15c2ffe5ea8352a1a0adc0c6",
+      "memories_sha256": "75372593c5422d394f1bba949d7fe4ba0ebd027996c05f7d82bd7c0ee3e072cd",
+      "input_sha256": "0de38e7fed16fd11780272ab46d21641039e84258843178e9ab7704f1ce5b9d8"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_10",
+      "checkpoint": "output/structmem/development/conv-48/session-010/attempt-001",
+      "entry_count": 46,
+      "summary_sha256": "bc54a692378cfa32445e7e313b324799534050d252dcec088debecfe5b7cb62d",
+      "memories_sha256": "dbfd918b7a827234b41d03380ae5869bb1900decd43448e2a74dfa6d610dc9ef",
+      "input_sha256": "aad6c5436337b7d93ca66fd6b833e37c6886634658b151271b65ae52579dfc36"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_11",
+      "checkpoint": "output/structmem/development/conv-48/session-011/attempt-001",
+      "entry_count": 34,
+      "summary_sha256": "2a1802248cbc91f4cc01094da9d6428af35691360928024051be07f3f6f83022",
+      "memories_sha256": "998a09664b6642d398e9502d7434fc07bad55644048d7f5feb04c22be26130a4",
+      "input_sha256": "d09f434478a685bdef91acea28a41cacedb6c5fa888e041b290ec62d8213bad4"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_12",
+      "checkpoint": "output/structmem/development/conv-48/session-012/attempt-001",
+      "entry_count": 27,
+      "summary_sha256": "f8d27070edc6c892e4d60b76c38e1feab7f8e7e0486ea26ee61d6ad77179c278",
+      "memories_sha256": "2ed3da835c976d7e24ad036c30016331c2432f95297abd13336a88112a00a035",
+      "input_sha256": "73936438943e772e53f66288c48e643f1d65e854ce6068038a0064475d1dc2ac"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_13",
+      "checkpoint": "output/structmem/development/conv-48/session-013/attempt-001",
+      "entry_count": 36,
+      "summary_sha256": "cb48288724e36d2ef3a610ac160c27fadf48e47dd0b8b19d9f865f4b69d1d222",
+      "memories_sha256": "ae5cffe3eae4c58e02e6b2b7bea1cfbeb6ed3c1e2d2d8b60f634c404272ee5c0",
+      "input_sha256": "21c2af30010cb36b01d63ba488fe1ab11f6baaf8e1496a82d18a0349f314ed3b"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_14",
+      "checkpoint": "output/structmem/development/conv-48/session-014/attempt-001",
+      "entry_count": 49,
+      "summary_sha256": "b68de284924706470ef6995a8a7380d328e24eb10b4a8661953e4a060b84ef63",
+      "memories_sha256": "77f7dd5593a452cfc7316fb31d7e06a92751c642ff46eb95b943255c0594e320",
+      "input_sha256": "1536c40bca4e2b646a16ac5e0bbe75dbf868be22a84b9427bec665791a5e2f1d"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_15",
+      "checkpoint": "output/structmem/development/conv-48/session-015/attempt-001",
+      "entry_count": 63,
+      "summary_sha256": "3ce7e016fa56f215f88f859d6e7e38db1887c329e53ddd1dc3f949e8aac9d214",
+      "memories_sha256": "b38974a52845d70fd37e1d159684e14727a01d5cdda499ae6e51bb73f659c8f3",
+      "input_sha256": "eb8267be5f4071b40b4b8ee7334701d192723afeafd8897ff7950a150171e679"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_16",
+      "checkpoint": "output/structmem/development/conv-48/session-016/attempt-001",
+      "entry_count": 36,
+      "summary_sha256": "368b1e8260797119e118859c8e507b0b2051a74ad2e37d42335238f4999005e4",
+      "memories_sha256": "32862b5bb0c7764335f7123488dd09678b4c542d37d309f11dd5cbc989267b84",
+      "input_sha256": "eb6baaf8f674d2c49710b4c877727dfec2b3c9a68dba1fcc874f0e8b853e79bf"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_17",
+      "checkpoint": "output/structmem/development/conv-48/session-017/attempt-001",
+      "entry_count": 28,
+      "summary_sha256": "41c6c1c9c0559a0269fd2b14b410634c4677ad4444c14d585cd8ec70ff7b57ac",
+      "memories_sha256": "27156fa4f18cbc535c807611eacd4c0cd592223c212cdf73faa40ef9d704cc6c",
+      "input_sha256": "1e49072686c8ef9b5eaebc3371c1544898c75867aebf0d8581c81452548b5e55"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_18",
+      "checkpoint": "output/structmem/development/conv-48/session-018/attempt-001",
+      "entry_count": 31,
+      "summary_sha256": "9732ebe456e269fbe56ad607cc170eaf84aea994ffd4aea6ac101fa6e2b9d9b1",
+      "memories_sha256": "0efb96d54f14c64fb3619a04686824bc719c3285780a81f614e64ac361971df0",
+      "input_sha256": "977db944c4e74bb754633f0c7ede700a23df97f39176c03b493718eb10bd2c55"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_19",
+      "checkpoint": "output/structmem/development/conv-48/session-019/attempt-001",
+      "entry_count": 60,
+      "summary_sha256": "c0807b32e2e2a75254351ba3d640b182ddb5901554f41978535f201882dd8c96",
+      "memories_sha256": "7d10bfca27c750ba6ce65378e26039b504b5374d784a35108c489eeda6ee476d",
+      "input_sha256": "c1a11d234524abfe8b8e1ee14768557fd17bd441b02e3b25097760de92627599"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_20",
+      "checkpoint": "output/structmem/development/conv-48/session-020/attempt-001",
+      "entry_count": 45,
+      "summary_sha256": "043dd86800a9dac313c79191b54178bdaf86f1bbf42baa9a7b3b7f3e6a1b2824",
+      "memories_sha256": "1f60ad41248d1428b0c12076a797ac1e676ef198d9efa1462cf80d14bc06a5b9",
+      "input_sha256": "40328bb5d8428c21cd4de095d40a0c191e5a4db29e222e9bce74752a435ca640"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_21",
+      "checkpoint": "output/structmem/development/conv-48/session-021/attempt-001",
+      "entry_count": 32,
+      "summary_sha256": "e6f72a4dac2a4fc371cc4de01474758b00e11b2b68334945c71a71ab877836df",
+      "memories_sha256": "65822d3f42037fd6d06742cdd2d42c9db2ea5910c7f344bdb06b5a4d191f9a5e",
+      "input_sha256": "786c85544e4c855ac4137e2e1629478953b41a00f634dcbd143d3d2802639ffe"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_22",
+      "checkpoint": "output/structmem/development/conv-48/session-022/attempt-001",
+      "entry_count": 69,
+      "summary_sha256": "1658f7adf14e1ad5074596cb09d99a2981739010507763010256247873b96f5c",
+      "memories_sha256": "8d2ef2509c99e255271f2a59661359f56337393ccc53e1acdfe35bbfb9466be8",
+      "input_sha256": "39ad10be07fc44ed8baf7265b7cf93b296884967fdc09a2fd16875ec6058ebd0"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_23",
+      "checkpoint": "output/structmem/development/conv-48/session-023/attempt-001",
+      "entry_count": 52,
+      "summary_sha256": "0e9c043641f8ab8845b9471379774bfe5e50783df0abcdc4b230910542ea3d36",
+      "memories_sha256": "46eb72b6e73535127862350f37d1e44c3b494c7159fdd678e41a2b82719fb280",
+      "input_sha256": "b5b7f6e9553fa4020b186624fdcb770449ff4328e7c6e350af1447f03e12911f"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_24",
+      "checkpoint": "output/structmem/development/conv-48/session-024/attempt-001",
+      "entry_count": 42,
+      "summary_sha256": "6e1a4623e12f2ba06d091ce95ac415ec8926303beaf46ca142979d6a659e5be7",
+      "memories_sha256": "bd471e45a3eb23f7de44d59ea4f782416be021d0ca05068687ac62af81a3ad3e",
+      "input_sha256": "1da7b797fe4d96e1f14d084eee687ebe2fb32f15127b6123436746e5c8852c85"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_25",
+      "checkpoint": "output/structmem/development/conv-48/session-025/attempt-001",
+      "entry_count": 38,
+      "summary_sha256": "04f4fefe2a4e2cfb881eaacdcd137dcdeef79071190d70378926f0ac6b55f171",
+      "memories_sha256": "c56817e33cecf2eaa7a03f1a9f767ac36538db2b282d95fbee06fc20eaceffbb",
+      "input_sha256": "8a19392f5a81dbded8ca7a85809b123412d7bbfd2a99b351754ecb80eabb5502"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_26",
+      "checkpoint": "output/structmem/development/conv-48/session-026/attempt-001",
+      "entry_count": 38,
+      "summary_sha256": "c8e4d5ec5ec166ca2549eadcf1cb4ecd78ca8aa3def40341effc6c74a8b2e1ba",
+      "memories_sha256": "f747bbceedd156b82627fdf00e5ae31579221ca75dfc5fcdbfc45ff129c71d3f",
+      "input_sha256": "ad7286e2e260e2f2345156b422bd809d63daea0018d20cc02dc5812e7f0feaf9"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_27",
+      "checkpoint": "output/structmem/development/conv-48/session-027/attempt-001",
+      "entry_count": 37,
+      "summary_sha256": "eefac66839c851810eb602c9e5163679322c4017de3bad87e883bdddf9aab5f1",
+      "memories_sha256": "512fbc96999a67205313921b61a21bce89ea4f0ba8b959cce9319bbff5490104",
+      "input_sha256": "8afaf6a32a7b7517c7a11a4cb0c0f2d0b25de8bbd279c774b397ad0f647bb1c5"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_28",
+      "checkpoint": "output/structmem/development/conv-48/session-028/attempt-001",
+      "entry_count": 33,
+      "summary_sha256": "e807560c6bf2c90b772ff2a0a46c9867476bcdb3a7e9d0c47b387f61c4112b1d",
+      "memories_sha256": "3fe0478c7b6cd3993df1db141497cc6f78c1fc237e51a19dd26be798519b7893",
+      "input_sha256": "5ce9cd3f2c5607169979b6ffe0ee8548385c9077ca4715d5fdc5e971850f3c78"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_29",
+      "checkpoint": "output/structmem/development/conv-48/session-029/attempt-001",
+      "entry_count": 73,
+      "summary_sha256": "884154303b0975dfd288acb40095d9b7eb91ae122aa79f2837b274d17e7681ad",
+      "memories_sha256": "bd3c7e03bfb1ed8636be76b371a9c07fb53cb28f30f0c11c5cfe930e84353e56",
+      "input_sha256": "810521a867a4f7fc1ddfee7b833ec9473bf486df64cc3d1e965aeabfbeeb53f3"
+    },
+    {
+      "sample_id": "conv-48",
+      "session_id": "session_30",
+      "checkpoint": "output/structmem/development/conv-48/session-030/attempt-001",
+      "entry_count": 50,
+      "summary_sha256": "20a52692b88df3aab3074dc6fdbdeb8dab1ed222cb325a7abf19ecfe365f8f77",
+      "memories_sha256": "c6f6ac5e7ddaf58ccccae3cd57d0a30369fe824441f3adff27838719edcb3441",
+      "input_sha256": "2ca781e78a82e42939827133c9baa5ed28ba0197f1f5ce7477af7b184cc44845"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_1",
+      "checkpoint": "output/structmem/development/conv-42/session-001/attempt-001",
+      "entry_count": 29,
+      "summary_sha256": "1ddeced5a44711eca8b6fe9a5aeeca46627a28da5d9ecdf60c35c3d5b3893cfb",
+      "memories_sha256": "85e8516bc672d3c6c7ef022ce5dc105c2a483096c95b3ceeff34ce2c44e2b732",
+      "input_sha256": "d208245fbb0ed620aabef6659696ce7d5fcdebf6ea05a523d91edc70f2b8d9df"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_2",
+      "checkpoint": "output/structmem/development/conv-42/session-002/attempt-001",
+      "entry_count": 43,
+      "summary_sha256": "2246f33542ba595f800fed585fa32dd263ae1489c9695dba1617510f708b6f99",
+      "memories_sha256": "e675616778c1fae5bab47a9b9812bf33dd5bb217c9d47a0b8afd96ccd2868b2b",
+      "input_sha256": "ecaebe17ef9a6bf0b97e6f11e00f4b906b5514518949ea24c36d1028ecc44e7c"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_3",
+      "checkpoint": "output/structmem/development/conv-42/session-003/attempt-001",
+      "entry_count": 40,
+      "summary_sha256": "ac39ab58f9f1ad26dd0a7644fbda1ee414abda7dc8d23a3058f18bd8a315dade",
+      "memories_sha256": "e468eadb64a9cbe39071b978ba0e23b52233feb4ab5fcb7ebfaf9522c66ebea0",
+      "input_sha256": "abbbcbcd9d816469a8a29ed504f01ec665c4100302f3a97848efa72ebfd8d494"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_4",
+      "checkpoint": "output/structmem/development/conv-42/session-004/attempt-001",
+      "entry_count": 47,
+      "summary_sha256": "4166d96f8c0c55de519dc44363fc2c8e591b24194f2077e9a573bf16bbad39ad",
+      "memories_sha256": "0a95609c8e722140b1b12d49cafef8154ef4a7c98268ab95b3f480d899ccbe3c",
+      "input_sha256": "a278fd9cf4541a59d4ac0eda293cb283e67def2b62c0702406a0cd7ba8522732"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_5",
+      "checkpoint": "output/structmem/development/conv-42/session-005/attempt-001",
+      "entry_count": 34,
+      "summary_sha256": "3e0fc336e9cfa74c0475f71ec4c9a733613b6b01179e21b225d4219aa2ce8fd6",
+      "memories_sha256": "c71b5219f1805bdfbe1ca484b2515d80f9c5bdfee5d2a296ead682d83e48e54b",
+      "input_sha256": "7cd6f005810cc88195c0bc46770720ed5aea6e7ee34f6151f36df4c14fbb4810"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_6",
+      "checkpoint": "output/structmem/development/conv-42/session-006/attempt-001",
+      "entry_count": 19,
+      "summary_sha256": "2602999f3001c35591889a682783d860391fd7fe2bc8e2e3c81b32326b94cf9b",
+      "memories_sha256": "ac8af9b5c2c653909c93107b1fd925903dfac375b53dfbfe8abaf7e8fc6c4801",
+      "input_sha256": "91e4ad8ab0ee12e3788f0c8090f822111fa2620e0fca44242f45e94008784163"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_7",
+      "checkpoint": "output/structmem/development/conv-42/session-007/attempt-001",
+      "entry_count": 34,
+      "summary_sha256": "e42db44d1fe12bf67c598b1ca941a3462ba1781c7b4055bb854dfb5c82fa4337",
+      "memories_sha256": "7ef2137e6c687dfb8087561d40317cdaae70729337e5b5720b6a2a101a573016",
+      "input_sha256": "d4c00269db8238131147fbae380413accd089d16820c7b7ce4e3d9215a450955"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_8",
+      "checkpoint": "output/structmem/development/conv-42/session-008/attempt-001",
+      "entry_count": 41,
+      "summary_sha256": "ab8d95685543fbde8bf8401111c810c6e4f7892efe26ff74234841154a60c73b",
+      "memories_sha256": "d2c47ac7c0be41699662af5645b2a787da1bbd8b630e107a98f6346152560b48",
+      "input_sha256": "7ee8103ceb5ad68c5bf3e21a07363f0440d69fb0487833af2a549f4a9b10f6ae"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_9",
+      "checkpoint": "output/structmem/development/conv-42/session-009/attempt-001",
+      "entry_count": 40,
+      "summary_sha256": "75783389a14d6096a9a70306ce235818e0c2b7fa49fbfaa5d281db542ce2cbf9",
+      "memories_sha256": "004ee5e6fc1f2b5965a985cbc32b7bfe9a94e1a91e571e26b617e07fd07edcef",
+      "input_sha256": "c9552e2fe6217eaf99af2f37d55c778c35a18c36b7c05e8a3ed0405153fa5623"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_10",
+      "checkpoint": "output/structmem/development/conv-42/session-010/attempt-001",
+      "entry_count": 37,
+      "summary_sha256": "0eb43144aa58f28856d9adabbe67868be63a3d5f4998853be164952a6aa92627",
+      "memories_sha256": "d6a967d569cb660ccf3698a2edb3aea3b8095c059281df54989d679872f7ffc7",
+      "input_sha256": "e990cdc10ff86e9e64b71a43a726fb86b9db0f001d74c1ac38381e14ba62949f"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_11",
+      "checkpoint": "output/structmem/development/conv-42/session-011/attempt-001",
+      "entry_count": 25,
+      "summary_sha256": "f2421fcde301ea22c430e4cfdccd42b3e0a5bd9a2abf1ed78585d88d049759f7",
+      "memories_sha256": "872010abc01a446da27e132589552f2ab6c4448547a6bedb740061899de217b8",
+      "input_sha256": "b287416b2df2e6a5a671c9813e45b9dd2723dc07c93aea8d1df671012ddbbb1c"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_12",
+      "checkpoint": "output/structmem/development/conv-42/session-012/attempt-001",
+      "entry_count": 41,
+      "summary_sha256": "78f00352acc7979b4e76e66306c73b0523469ef85d8373ddfa08dccf14c4d1b4",
+      "memories_sha256": "46a76d39ae065db6333b53d7ca6a2d92e241d5fe57a03a124d646bf73e377d1d",
+      "input_sha256": "72d38dd8d1be54ca7ae3de967de7ceccf32ee7f116e3015154eaefab8c7c83d4"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_13",
+      "checkpoint": "output/structmem/development/conv-42/session-013/attempt-001",
+      "entry_count": 40,
+      "summary_sha256": "957c861f3ab384a2b8e910aea56863c3618ca94042ef8af4d68063d3cbecc3c3",
+      "memories_sha256": "52deb5ebf8d85d0e1c367fbf9717b50aee02f597f3be5165d1b5c7be56c39387",
+      "input_sha256": "dacc8b8aa496aebddb16a57b303e0f5984f4227eda457eec38eeed666da33a66"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_14",
+      "checkpoint": "output/structmem/development/conv-42/session-014/attempt-001",
+      "entry_count": 44,
+      "summary_sha256": "579f7f12b6832491584c7b4efc035b6f70f0f01e4547b72609324ea23a5bf19e",
+      "memories_sha256": "3ab72eaff208a3bcfb2c2acf8b8c6a6135c9e61383171ea768f6a12bf13613b3",
+      "input_sha256": "ce0b346d7250da589fbb22abac6a8582cbec676b8c0a8b8c1587cef6929e220f"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_15",
+      "checkpoint": "output/structmem/development/conv-42/session-015/attempt-001",
+      "entry_count": 34,
+      "summary_sha256": "79b9cf87e442a4de0e9b0d6e86187f7347dade9ce15781113dddfe6972bdeadd",
+      "memories_sha256": "f161c272a837f7f46c62fcb8d4f12e7dd74e3412bf81a09e4cf452285822003b",
+      "input_sha256": "129efc4f738ef275fb2e5009e6ca915a0a48b56238cf6dfa45f3dd67517bc5f0"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_16",
+      "checkpoint": "output/structmem/development/conv-42/session-016/attempt-001",
+      "entry_count": 27,
+      "summary_sha256": "4ca2f4f54d0605d461648e3a2450d159ec1cfdcf9f5bbdf4e83d9374b44ac6ec",
+      "memories_sha256": "2270fa94606ab5f15e197300077d8b657514a5bcd810c867b28651e7306f0998",
+      "input_sha256": "22950a099f81455b018aec1f150503c3a94885e67f6bbf304fcc308978ce0338"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_17",
+      "checkpoint": "output/structmem/development/conv-42/session-017/attempt-001",
+      "entry_count": 33,
+      "summary_sha256": "8c99f0ba67442a47b09b2c06a9d7d601aa86e54afa22e96479037b094a722972",
+      "memories_sha256": "c7f2242c2dbf3c8eee79fd71f70c75e705404a6697e83a58d608addf9045b29a",
+      "input_sha256": "801b5a0006eacfa9808c47f8f438de5f241664dd1a159aaeb0a23a35ba4e062c"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_18",
+      "checkpoint": "output/structmem/development/conv-42/session-018/attempt-001",
+      "entry_count": 42,
+      "summary_sha256": "92c6824ed2425b23792ef81f20a82cc0d503d2776c9241905b7f80b2db28a258",
+      "memories_sha256": "1789ba38078a27b1fe4e0277e78ae12b918fcd1c736ae426521c6827371f4c9a",
+      "input_sha256": "bef57a619444559049d4c9cc74fc3172eaa43951339b621a05eb9f59e9755694"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_19",
+      "checkpoint": "output/structmem/development/conv-42/session-019/attempt-001",
+      "entry_count": 56,
+      "summary_sha256": "d1bfe15c6305834facf546cc3c94d83b02ad523114a6715e46a6abdbed1d50c8",
+      "memories_sha256": "9ead73082d354dde7f5d0ddc8f604d5b8714db1da31ad6c86b3e81e40d51fc02",
+      "input_sha256": "9dc767684a2e5485789d42cd36e5ca8891362eb5d5c097553e36b6af11fdf94e"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_20",
+      "checkpoint": "output/structmem/development/conv-42/session-020/attempt-001",
+      "entry_count": 39,
+      "summary_sha256": "51b92314a0ccb394180518a5dabcf76b29ef416098e5ff891a84ac1e4822b933",
+      "memories_sha256": "4aafdaf51f91c67e7fd5cb6d3a6a075a41438e9a8e4d9964780459d2be577313",
+      "input_sha256": "c4bbecdab8c42bff4eb47946687cbd6b4129481c38512c1cb345405da8e7bac8"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_21",
+      "checkpoint": "output/structmem/development/conv-42/session-021/attempt-001",
+      "entry_count": 53,
+      "summary_sha256": "64b78fcf1241159a29c6ef2098a8d051ef2f553c398256ddbca60920f087a8d6",
+      "memories_sha256": "5b1d7ed674684871b3a4d37ca0a0d483d08f1967616e792399933d2997768036",
+      "input_sha256": "790389921c00888931f6b5d15cd5363e1e4a51931bd7fad28a2b5351ff392143"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_22",
+      "checkpoint": "output/structmem/development/conv-42/session-022/attempt-001",
+      "entry_count": 50,
+      "summary_sha256": "a8adb2eb47559e0cfb39bf24aa5e724029abd12b15ee15fca58082b64297cd89",
+      "memories_sha256": "51714d4b8be20df00d0d9af5dd022b9dd0ae05a7fae26c5abaaffc2bd776ba72",
+      "input_sha256": "a3e522878eb2d6c76eefb3efe80516c9beddc7b16219313b10227ac0976a712a"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_23",
+      "checkpoint": "output/structmem/development/conv-42/session-023/attempt-001",
+      "entry_count": 38,
+      "summary_sha256": "648d7f766d45705b77023dc0a376c8fbc356e18188b02a01e280df880179f026",
+      "memories_sha256": "4bebf932ca0cf63a6dc02ac1b69f05777c39ad2f21839c08435816605d575867",
+      "input_sha256": "7fc9517c10caa9d89e1dc963096fd3c0783016064211cf3df42a2664fab8ff89"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_24",
+      "checkpoint": "output/structmem/development/conv-42/session-024/attempt-001",
+      "entry_count": 32,
+      "summary_sha256": "eebd8daa9b0c8d8043c83e5b605800b942cbe1e3fb8e52ba155e174fa8c7b4de",
+      "memories_sha256": "4b5ebf98ce26eb46fb9faa263d732fa6a2428d696edcf5a574b542c96d0452f4",
+      "input_sha256": "2e1e8cd446eab5d202acb5f4b8a83ecff3328d412652d139bb95923cade8a3c5"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_25",
+      "checkpoint": "output/structmem/development/conv-42/session-025/attempt-001",
+      "entry_count": 42,
+      "summary_sha256": "5b1dbf24e0e6cdb06e85cae3974c973a7b32895ac713457e1cb33d3cec3c0cc9",
+      "memories_sha256": "771364d0337e9485aaa07c5e82f10201a3b056e2b54b8401d7f2d1d403d4d905",
+      "input_sha256": "03ca151cce33d04a46a85aa7bdb0f59d847d9e9e35a6f50e5c4bf8efb44d0682"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_26",
+      "checkpoint": "output/structmem/development/conv-42/session-026/attempt-001",
+      "entry_count": 42,
+      "summary_sha256": "22deaf6262729d2a33ad816f858d10f8c0a0f63fc64509ad450d5616fbb4f91f",
+      "memories_sha256": "419b01900997705e11816728a80e12d60887926aa44f7a294abf9f72ddda41b4",
+      "input_sha256": "ac1905ae1dc4d1d445f27ac965ca0635bf033e21aa21b709b75e32ee3eb9c243"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_27",
+      "checkpoint": "output/structmem/development/conv-42/session-027/attempt-001",
+      "entry_count": 59,
+      "summary_sha256": "937189fdae5ca5c3a955be70c0eb5f7fe50c36bf15b67a4eb2d500275a9c7619",
+      "memories_sha256": "b91fddc107f6a552ccdc6d66ce11cce6e0d57ba97f7647138c82f0c8c6b49a8d",
+      "input_sha256": "45a5192f2b7268c174251cea748e56087f7ecaa470c017d60cd247fd5662a6dc"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_28",
+      "checkpoint": "output/structmem/development/conv-42/session-028/attempt-001",
+      "entry_count": 68,
+      "summary_sha256": "934d0628bf6132a1a6d0633960436f7016f6e45e1a1c1f9d2227c6a0a1ff5277",
+      "memories_sha256": "a911f602986542e13b28005efbb11d0e52d381892b9b64678ca72bb6208e003b",
+      "input_sha256": "5c3e2ec41691c1b1182929105cabf2f2edde035dd275001ec940bc0f1f7d4d0c"
+    },
+    {
+      "sample_id": "conv-42",
+      "session_id": "session_29",
+      "checkpoint": "output/structmem/development/conv-42/session-029/attempt-001",
+      "entry_count": 31,
+      "summary_sha256": "a158a18438322f2437fc69dcf9881f2daf9b26425802f9252ea290801af72957",
+      "memories_sha256": "a368315119ffde78ee571dcd72364724ef7bc6d091e489c315cd3f521a6b80cb",
+      "input_sha256": "079dc9a571a022e811f3417b81b4f90f48d2037d24c8bd6952eaf95f38f48172"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_1",
+      "checkpoint": "output/structmem/development/conv-41/session-001/attempt-001",
+      "entry_count": 27,
+      "summary_sha256": "693ed178143843ffd18dd9d8ae6b5bcb325be8a2d95444ca2b3e11f04acda5ed",
+      "memories_sha256": "63629a0a4e114a2a9ee18aa7d69b5d9fe297d62f71b953ce81c2438f629f33f0",
+      "input_sha256": "4b28ffc005c5af9e49c23381c20bc5b67737ddf9c72832e91d61959308f74cb6"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_2",
+      "checkpoint": "output/structmem/development/conv-41/session-002/attempt-001",
+      "entry_count": 61,
+      "summary_sha256": "57affd4625cb21e45c18256313e71f24b054f6d4f31e3341e474266a4d8ecec4",
+      "memories_sha256": "6994a2fd35e38022be826320720930be9c98d395ade4dcccd19ad4e80f4bbe2c",
+      "input_sha256": "48fbbefe248bde2c78eb35975c2b1e5ce7b3118e1abf0228cab62f458f3e3032"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_3",
+      "checkpoint": "output/structmem/development/conv-41/session-003/attempt-001",
+      "entry_count": 43,
+      "summary_sha256": "5b1dd45a86372b0c3ce96b0a238e7f50b87e3b31687135ebf33735a19d687107",
+      "memories_sha256": "79f8b833204c0ac457e78435aa6ed019ab956fa7fec2e2a35db06402bed450c4",
+      "input_sha256": "f2e187c6495ae74a5ab71417d944d3a6b832e89e6d3796b14392514dbb4c4483"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_4",
+      "checkpoint": "output/structmem/development/conv-41/session-004/attempt-001",
+      "entry_count": 51,
+      "summary_sha256": "821980540218125070e3930f5b9ae8d95ee13ecdc14b5d3c657b3cdcb1344708",
+      "memories_sha256": "9a1ee856670f7d318199babb584da011161275cc31630b32603af175daa5d778",
+      "input_sha256": "a1f8d042e938be2456780a450e7b631bd2cdbbb71726a05c578e83cc99e270bd"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_5",
+      "checkpoint": "output/structmem/development/conv-41/session-005/attempt-001",
+      "entry_count": 49,
+      "summary_sha256": "6f32e3f14b14c370742e2d9e11b9eb5c69f76f8ac3bb0f67beda00874acb9861",
+      "memories_sha256": "024f88c555e72f9667da464ecd061b6ee68b9382ba0173cf2fc06ea30f5f7b34",
+      "input_sha256": "f1e511b773405e4a0f936369c2ae8cfc9b64cc89f7966fe1fb70727053688726"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_6",
+      "checkpoint": "output/structmem/development/conv-41/session-006/attempt-001",
+      "entry_count": 45,
+      "summary_sha256": "25fcb4db163bf245f0bfe03403c3083cb9fdf7781b94a97444c49eeb7a215e7a",
+      "memories_sha256": "3e8064dc263b2c06cee92f5ce95cd5aecd41192246b0bb5c9bcc741c3dda9209",
+      "input_sha256": "aa9844f3dd51b2f77ccac04d5147b5d0cd08d8a0d54cc419929665529e84921c"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_7",
+      "checkpoint": "output/structmem/development/conv-41/session-007/attempt-001",
+      "entry_count": 39,
+      "summary_sha256": "d91412c993d00eca954917ad8eb2941b4cecde6485c561d5aff7e2188d453986",
+      "memories_sha256": "172f77d4a62a42ff3f112f32b52596dab11a78b3536d4baa1e6913691a0a54b4",
+      "input_sha256": "201eead7840a1b181c274a463300a49129d9af1a05c41f0bba3135cd72472330"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_8",
+      "checkpoint": "output/structmem/development/conv-41/session-008/attempt-001",
+      "entry_count": 59,
+      "summary_sha256": "1c994ce1b6865133aad1d8b895262fb9621bc2064e018965847df4b15350086d",
+      "memories_sha256": "cebce6e528e3578c2c04336a2bdc25061beeac6971afeb26f9e5380411227137",
+      "input_sha256": "c5ee52d9837f36023317d1d8098b342ceba5eb75e358d688344fa6a3a506fd80"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_9",
+      "checkpoint": "output/structmem/development/conv-41/session-009/attempt-001",
+      "entry_count": 33,
+      "summary_sha256": "150f9d90e25a172d47a2d4684bd0f9777b67f08237d3fc2c598c7b1e9fb081c2",
+      "memories_sha256": "7a335d64736f78a87df108a09d67d80780cdfbd0c528785cc8f03446bef37ebf",
+      "input_sha256": "44978ddff697b41cc5fec930bdd4a6f431a7a6e96521fde0f49ca75fd1035882"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_10",
+      "checkpoint": "output/structmem/development/conv-41/session-010/attempt-001",
+      "entry_count": 33,
+      "summary_sha256": "eb731be5016166836aa985bdb276d501e5d30d61440ad64cfde70de7762bcd3e",
+      "memories_sha256": "7530705917879e500c8aa994ed41429e76d7dd2967094933480851fa9c24d69e",
+      "input_sha256": "efd8a2cb7a53635e1f315981da51de9a39fee87589a4cab495ef7548106e9a7e"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_11",
+      "checkpoint": "output/structmem/development/conv-41/session-011/attempt-001",
+      "entry_count": 33,
+      "summary_sha256": "6f287c8e85500f9ee0aeaebf4f982e4dca5d55b15aae6bfa8bb85896bbad2a11",
+      "memories_sha256": "249eb6a314c4257d91de6e48718dca11b5cea7e7465e1e20a04cba1f27be19bc",
+      "input_sha256": "cd0693563e626438c361a8aa12262e2429bc54bace829eb9251036c752bba68a"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_12",
+      "checkpoint": "output/structmem/development/conv-41/session-012/attempt-001",
+      "entry_count": 40,
+      "summary_sha256": "19cd800e7a9b38ff2777c5aba60c16b73eeae937dfd3a56356802a69867b14ff",
+      "memories_sha256": "8a42ee25d9b58108bb28db7cde5dd6decc5a09cec3f8e54898f79c2c04d09c39",
+      "input_sha256": "9b042eb305a15ad82bddfd6b92e9def86e8786d56dd0f3b85deedee503d6a64b"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_13",
+      "checkpoint": "output/structmem/development/conv-41/session-013/attempt-001",
+      "entry_count": 57,
+      "summary_sha256": "1ceee46e60f7275b6d2f582c72a33709d06960aa59f78ceb35768dd243878bdb",
+      "memories_sha256": "9bdd377e87e4ea53a2e3f85896d572fca916ca7a25b210277749aa4fae33fdc5",
+      "input_sha256": "85c27e9d4b885323463047f71d7ec2735e886e8ee2de649097066155731f097b"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_14",
+      "checkpoint": "output/structmem/development/conv-41/session-014/attempt-001",
+      "entry_count": 53,
+      "summary_sha256": "6f09e4073607c43fd579c2ba92ff0f2b40649a30a584dfa3fa5dee606b0cabd7",
+      "memories_sha256": "a7f603192e9e703747da703d796d8d98c4c30664ac22722766190d0dfa277eaa",
+      "input_sha256": "78e0a26193fa0d59555670fb6b73ebfd611d2e449bf7d713f4ca6fbab82b976a"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_15",
+      "checkpoint": "output/structmem/development/conv-41/session-015/attempt-001",
+      "entry_count": 29,
+      "summary_sha256": "bc73e6d16b781a87057983d37da187eb22d9d64f77b0dea18d967e32d9063ce7",
+      "memories_sha256": "5324595c13f9b8f710557a10dd811e5480379a74b98f9565539f2bdd6bf4a9b1",
+      "input_sha256": "50630b010656cd60128c33fb1b594cc9e76f5e54c91114546dc4ab62565fa2d0"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_16",
+      "checkpoint": "output/structmem/development/conv-41/session-016/attempt-001",
+      "entry_count": 37,
+      "summary_sha256": "398111130964d89cd16985c433df60e1172070514aad9e0327d4b468044709ef",
+      "memories_sha256": "89717dd66aa557a04b7e25cc4b06bb751f91ac98171ac4f02a3fa6e1aa540a84",
+      "input_sha256": "8992b4f1c3e4cae8ba84dd1bce17498da9601439d3a26a5fbd2dbfa115071831"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_17",
+      "checkpoint": "output/structmem/development/conv-41/session-017/attempt-001",
+      "entry_count": 29,
+      "summary_sha256": "8c0cd932b2b36afd5a0f563bc577897e5df5b002d68e65c3179c7ba4525bd6e8",
+      "memories_sha256": "6843fa7c6c73425d555f1002329c8cdc338206ef6fd469cfb592bd36c14f92a6",
+      "input_sha256": "d72ee0d633f29da1692572beaf32c9f24ff6ccd6bfac96a3250abe268089832f"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_18",
+      "checkpoint": "output/structmem/development/conv-41/session-018/attempt-001",
+      "entry_count": 43,
+      "summary_sha256": "80e55527c996d1a2c46dcf89b7e5c355c9562384d31f16c1195e85c32dd5a112",
+      "memories_sha256": "dcb72a1e98f48091ed7a1050478cea0f87233a19538f3f02de99fbdfc1c31b11",
+      "input_sha256": "9caee0e1cc16c297fbd62139a04cfbce310cb4a499892eea882e6d5c0cd5d3f6"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_19",
+      "checkpoint": "output/structmem/development/conv-41/session-019/attempt-001",
+      "entry_count": 49,
+      "summary_sha256": "84bac525f49bfec64962f9fd3de7eb59e70c96a508efd29faeef13dacc9ec9b3",
+      "memories_sha256": "89ae5522a399c9dbc33a0d18b3d56e2f6334fb9d125157083997f854ceb5569e",
+      "input_sha256": "6f6ff5219485cd04af57c194a7c181eb982344787a5deb7e3770859becb6f6c2"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_20",
+      "checkpoint": "output/structmem/development/conv-41/session-020/attempt-001",
+      "entry_count": 26,
+      "summary_sha256": "bdc77bda1200c6f35b6c097677db05902504066771fc8c5165204588527e8114",
+      "memories_sha256": "4c0320f20451b54c603e7da02182322961d0d0a2cb189aa2f3cdc9bd11fc7449",
+      "input_sha256": "74fa444ee445479eb68afbf842edd367f7debbd96288b93bdf6b823e05f4bab5"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_21",
+      "checkpoint": "output/structmem/development/conv-41/session-021/attempt-001",
+      "entry_count": 44,
+      "summary_sha256": "f2cde7d9d4921dc2b1ef9e52971a14bbae68061ff2e8681d81664a70d00cd371",
+      "memories_sha256": "f6cc9c47246fcf89c6c280a330acf1ea7a035ed9981ff3ea1dbef016d4abcf92",
+      "input_sha256": "e51c4d7c8d12a3270a926c5e2768d96c2b6e11f4b0440100fd54126f7a821d95"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_22",
+      "checkpoint": "output/structmem/development/conv-41/session-022/attempt-001",
+      "entry_count": 53,
+      "summary_sha256": "c6e4bb86fb63443b0fa92f93e1920e1aa2d4f274091e31249a330267a24e6155",
+      "memories_sha256": "5eb2be44f5ad4bfe388f5e7795178c26f854e17a64dc9c1894a05fc06ce03f2a",
+      "input_sha256": "08d039a8752a4524d878a3c847ccf86d54626b2889245e2676f35657a428ca97"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_23",
+      "checkpoint": "output/structmem/development/conv-41/session-023/attempt-001",
+      "entry_count": 40,
+      "summary_sha256": "bc22e5d98bb7a637f6affb154a6ec375b09219d6f8a216902d96bf0e298f8fd2",
+      "memories_sha256": "9bd07831db4745f7c4b628a5a7f7dea77da87a3900b4d472bc64c834f4bc785a",
+      "input_sha256": "657f81500a50b471b24fafc7f4ae51ebe0c3544e547cc3b50edd0bb12f8c168d"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_24",
+      "checkpoint": "output/structmem/development/conv-41/session-024/attempt-001",
+      "entry_count": 27,
+      "summary_sha256": "44bdcd8c4dc998736e53f39f402871cf376f60821e90b6a9bca58b0f110f6028",
+      "memories_sha256": "0675b66bd2b9e6b8e649a79557695f9b0cc6eee5b509b67ceefe5d5906a891b9",
+      "input_sha256": "2e4e9162b88a71b9034f92b85cc9a69912896528b3a8f91865605a782affac6c"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_25",
+      "checkpoint": "output/structmem/development/conv-41/session-025/attempt-001",
+      "entry_count": 36,
+      "summary_sha256": "121f9c9a0472a72051048a43293936a150bda4783f206289f010a89ebaf88c95",
+      "memories_sha256": "79d02092a63cd6b9d58ad8d7c029df33531a3feb6b69326da0e934c4916f6a42",
+      "input_sha256": "0b56494143d39cebc431c372f18dbeecb967792def8d175d2aeae66d8fa6db47"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_26",
+      "checkpoint": "output/structmem/development/conv-41/session-026/attempt-001",
+      "entry_count": 36,
+      "summary_sha256": "ea22b2f6f35e805f48fbfcadd8b9c9dd209ffe5959d83ec4f9d8d5291138ff17",
+      "memories_sha256": "64430804691fd2cc6accc2ea6f02c6d86d9d0e89b1f490cc4e246965136fbf26",
+      "input_sha256": "9f733c87be2dd2453f393fc342bda30c3f6f2d297e7453bf0e3b7da995a122b3"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_27",
+      "checkpoint": "output/structmem/development/conv-41/session-027/attempt-001",
+      "entry_count": 30,
+      "summary_sha256": "a4cfcedb07a66e4c8bdee4df79c3225ce42407d72352a64e787d1bbdcb03ce0e",
+      "memories_sha256": "9163badd6ebb6f3e2c6739213285637102ad28bf4d207427c58e75580e024196",
+      "input_sha256": "3611cdf719d73a899afbcfd7324f94a2f6361894ba533cf330edcb4939b0261d"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_28",
+      "checkpoint": "output/structmem/development/conv-41/session-028/attempt-001",
+      "entry_count": 36,
+      "summary_sha256": "f576b8a08f71217601f010c6f13fd5fb809be84d456c83fea729b6523f5f5e41",
+      "memories_sha256": "83e6104a402b8601c65369231dbb27466a388b703769ab1ad99ecadd6e6d1d8c",
+      "input_sha256": "7320f7de2518c481bbaa62ba0b8519d06fe7223fc56a9be14ee7c3320b5dca95"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_29",
+      "checkpoint": "output/structmem/development/conv-41/session-029/attempt-001",
+      "entry_count": 32,
+      "summary_sha256": "30c6e972ae1927199c1b6f9772e3aefb2c95a0e7eb672070fc0921d163b9c486",
+      "memories_sha256": "d5c5dfa305564a982dc41be7e6b53ba03a8fa936310f86fe7604c72af3a99e26",
+      "input_sha256": "c0d477fda6eb9454a3531faeec9c4501d285c2e717292520c0b6836f61f92106"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_30",
+      "checkpoint": "output/structmem/development/conv-41/session-030/attempt-001",
+      "entry_count": 45,
+      "summary_sha256": "f19497e02164c45789210b88c6c6ec2e72f0e5bc3fdd998aa0c933cd4750258b",
+      "memories_sha256": "1d9e651ef831de72147595e210ab3dc21adc2b231a9d238cb15f09066bad573b",
+      "input_sha256": "343a81ed9fb48bdee3138386a09eb4312c2a0e0063c448e61b9417a38f46b143"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_31",
+      "checkpoint": "output/structmem/development/conv-41/session-031/attempt-001",
+      "entry_count": 36,
+      "summary_sha256": "f74d8ddca4e71d419110eadd6edaf1be448ebf129eb31c0bf2e6e4c20784f745",
+      "memories_sha256": "ea382d424e24c3bff2742643419b1ae3f413c749991293e3322f66d0a6273e90",
+      "input_sha256": "c6828bb3624c90cf8405d0dc6e1ad72af69f6c9ca2003000885d7f5d4145bfab"
+    },
+    {
+      "sample_id": "conv-41",
+      "session_id": "session_32",
+      "checkpoint": "output/structmem/development/conv-41/session-032/attempt-001",
+      "entry_count": 24,
+      "summary_sha256": "1f3700ab3b1b0774d279d8c3fbc43476331b38de19be6a987db93d209093fd70",
+      "memories_sha256": "a768476d2dc01ed9335f946371531ae8895f787f6f87f7fb3f747a891ee795dd",
+      "input_sha256": "758b5bdefd2ed9787d6eb4eaf19d26db667946e3d2331b48ab9c86aa84e04756"
+    }
+  ],
+  "delivery": {
+    "channel": "WeChat",
+    "date": "2026-10-19",
+    "recipient_role": "D",
+    "reported_by": "user",
+    "full_package_receipt_verified": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "model": "deepseek-flash",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 2048,
+  "max_input_tokens": 6000,
+  "embedding_dims": 384
+}
