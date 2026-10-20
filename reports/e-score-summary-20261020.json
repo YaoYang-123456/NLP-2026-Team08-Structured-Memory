@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-20",
+  "status": "provisional_pending_independent_judge_and_human_case_review",
+  "dataset": {
+    "freeze_commit": "1d651da44cd1bf101ead69794a74f45f91c507a3",
+    "planned_questions": 30,
+    "category_counts": {
+      "1": 8,
+      "2": 8,
+      "3": 7,
+      "4": 7
+    },
+    "join_key": [
+      "sample_id",
+      "qa_index"
+    ]
+  },
+  "judgment": {
+    "adjudicator": "in-session Codex semantic adjudication",
+    "status": "provisional_pending_independent_judge_and_human_case_review",
+    "rubric": "Count correct when the response contains all required answer content or a semantically equivalent answer. A subset of a multi-part reference is incorrect. Abstention is incorrect when the frozen reference is answerable.",
+    "prompt": "For each question, compare the model response with the frozen reference answer. Answer yes only if the response contains the required answer content or is semantically equivalent. If the reference requires multiple items, a partial subset is no. Do not reward unsupported detail that changes the answer. Return yes or no.",
+    "note": "These are in-session provisional judgments, not raw responses from an external fixed judge API. They must not be reported as final human-reviewed results."
+  },
+  "methods": {
+    "S0": {
+      "planned": 30,
+      "generated_successfully": 30,
+      "generation_failed_or_missing": 0,
+      "scored": 30,
+      "judge_failed_or_missing": 0,
+      "correct": 15,
+      "accuracy_on_scored": 0.5,
+      "correct_over_planned": 0.5,
+      "scoring_coverage": 1.0,
+      "usage": {
+        "prompt_tokens": 132531,
+        "completion_tokens": 421,
+        "total_tokens": 132952,
+        "calls_with_usage": 30,
+        "calls_without_usage": 0
+      },
+      "sum_answer_call_seconds": 30.448816861999603,
+      "by_category": {
+        "1": {
+          "correct": 4,
+          "planned": 8,
+          "scored": 8,
+          "accuracy_on_scored": 0.5,
+          "scoring_coverage": 1.0
+        },
+        "2": {
+          "correct": 5,
+          "planned": 8,
+          "scored": 8,
+          "accuracy_on_scored": 0.625,
+          "scoring_coverage": 1.0
+        },
+        "3": {
+          "correct": 2,
+          "planned": 7,
+          "scored": 7,
+          "accuracy_on_scored": 0.2857142857142857,
+          "scoring_coverage": 1.0
+        },
+        "4": {
+          "correct": 4,
+          "planned": 7,
+          "scored": 7,
+          "accuracy_on_scored": 0.5714285714285714,
+          "scoring_coverage": 1.0
+        }
+      }
+    },
+    "S2": {
+      "planned": 30,
+      "generated_successfully": 30,
+      "generation_failed_or_missing": 0,
+      "scored": 30,
+      "judge_failed_or_missing": 0,
+      "correct": 19,
+      "accuracy_on_scored": 0.6333333333333333,
+      "correct_over_planned": 0.6333333333333333,
+      "scoring_coverage": 1.0,
+      "usage": {
+        "prompt_tokens": 586282,
+        "completion_tokens": 178,
+        "total_tokens": 586460,
+        "calls_with_usage": 30,
+        "calls_without_usage": 0
+      },
+      "sum_answer_call_seconds": 29.93284969998058,
+      "by_category": {
+        "1": {
+          "correct": 4,
+          "planned": 8,
+          "scored": 8,
+          "accuracy_on_scored": 0.5,
+          "scoring_coverage": 1.0
+        },
+        "2": {
+          "correct": 7,
+          "planned": 8,
+          "scored": 8,
+          "accuracy_on_scored": 0.875,
+          "scoring_coverage": 1.0
+        },
+        "3": {
+          "correct": 3,
+          "planned": 7,
+          "scored": 7,
+          "accuracy_on_scored": 0.42857142857142855,
+          "scoring_coverage": 1.0
+        },
+        "4": {
+          "correct": 5,
+          "planned": 7,
+          "scored": 7,
+          "accuracy_on_scored": 0.7142857142857143,
+          "scoring_coverage": 1.0
+        }
+      }
+    }
+  },
+  "judge_api": {
+    "calls": 0,
+    "tokens": null,
+    "cost_cny": 0,
+    "status": "not_run"
+  },
+  "generation_cost_estimates_cny": {
+    "S0_answers": 0.26843,
+    "S2_answers": 1.173988,
+    "S2_synthesis": 0.894722,
+    "S2_total": 2.06871,
+    "S0_plus_S2_recorded": 2.33714,
+    "billing_reconciled": false
+  },
+  "limitations": [
+    "Preliminary in-session semantic judgments are not a fixed external judge result.",
+    "At least four cases and the potentially ambiguous conv-41/41 label need owner review.",
+    "The 30-question development set is too small to support a stable-improvement claim."
+  ]
+}
