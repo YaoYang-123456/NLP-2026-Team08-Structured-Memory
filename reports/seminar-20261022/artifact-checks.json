@@ -1,0 +1,20 @@
+{
+  "pptx_slides": 11,
+  "notes": 11,
+  "hidden_backup_slides": [
+    10,
+    11
+  ],
+  "pdf_pages": 11,
+  "native_chart_workbook": true,
+  "planned_seconds": 480,
+  "video_container_seconds": 480.02,
+  "video_decode_passed": true,
+  "new_paid_calls": 0,
+  "scores_independently_recomputed": false,
+  "human_acceptance": null,
+  "course_submitted": false,
+  "beamer_compile": "timed_out",
+  "visual_review": "all_11_slide_pngs_reviewed",
+  "desktop_powerpoint_tested": false
+}
