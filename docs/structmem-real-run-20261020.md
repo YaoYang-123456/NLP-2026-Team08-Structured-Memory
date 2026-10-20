@@ -41,7 +41,7 @@ F 已在[正式审核](https://github.com/YaoYang-123456/NLP-2026-Team08-Structu
 - `qa5/`、`qa25/`：F 原入口的原始预测、调用和批次记录。
 - `handoff-for-E/`：按 A 原始顺序合并的 30 条预测/调用、配置、批次记录及四类来源展示候选。
 
-小型机器证据见 [structmem-real-run-20261020.json](../reports/structmem-real-run-20261020.json)。原始逐题内容、数据库和 ZIP 保留在忽略目录，不提交公开仓库。
+小型机器证据见 [structmem-real-run-20261020.json](../reports/structmem-real-run-20261020.json)。D 的原始调用与数据库继续保留本地忽略目录；F 已在 PR #44 归档必要评分包，当前获取入口见下文。
 
 若需要重新调用模型，先在本机配置 `DEEPSEEK_API_KEY`，并使用新的输出目录；已有真实成功记录可通过 `--recorded-calls` 校验后复用，不重复发送。以下命令属于付费执行入口，本记录不会自动再次运行：
 
@@ -58,7 +58,7 @@ python scripts/run_structmem_synthesis.py --execute `
 
 ## E 交接与剩余验收
 
-交接包：`output/structmem-live-20261020/s2-predictions-for-E-20261020.zip`，**1,051,426 字节**；SHA-256 `21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6`。CRC 与包内 9 个文件哈希全部通过，没有密钥或标签。用户可发给 E；本次没有代发群消息，不表示 E 已接收或已评分。
+交接包原件仍在 `output/structmem-live-20261020/s2-predictions-for-E-20261020.zip`，**1,051,426 字节**；SHA-256 `21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6`。F 已[确认微信接收并完成逐题核验](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5581231548)，并将原包放入 PR #44；现在可直接从 GitHub [获取评分包](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/s2-predictions-for-E-20261020.zip)和[读取说明](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/README.md)。本次独立核对 GitHub 文件与 D 本地原包逐字节一致，CRC 与包内 9 个文件哈希通过，无须用户重复发送。F 已接收不代表 E 已下载或已评分；包内“未发送”是打包时快照，原字节保留。
 
 E 读取 `predictions30.jsonl`，按 `(sample_id, qa_index)` 关联 A 的同版本标签，统一评分并核查至少 4 个案例。四类展示候选含真实预测及事件/摘要片段，只做来源展示，**没有标准答案判定，不冒称 E 已人工验收**。当前 `accuracy=null`，不与 S0 作准确率排名；S1 仍按原计划研讨后补齐。
 
@@ -67,3 +67,9 @@ E 读取 `predictions30.jsonl`，按 `(sample_id, qa_index)` 关联 A 的同版�
 首次默认沙箱连接被 WinError 10013 拒绝，未收到服务响应；定位后以已获授权的网络权限执行，成功请求仍为 121 次。第一次原生回填因临时目录变化而缺少 tiktoken 缓存失败；复制已有、官方哈希一致的 o200k 缓存后从新副本完成，没有重复生成。所有失败记录与旧目录保留。
 
 方法限制继续明示：C 关闭压缩/话题切分；实际 Python 3.13 与上游声明 `>=3.10,<3.12` 不同；F 的 JSON 展示与原版双说话人模板有差异。调用成功与数值校验不替代语义评分、人工验收或论文严格复现。
+
+## 本轮指定审核收口
+
+D 已批准 [C PR #43 的固定版本](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/43#pullrequestreview-5582200937)：完整包验收、来源/格式与检查点/装配代码通过，独立快照中 C 的 14 项离线测试通过；统计及 91 个检查点与接收记录一致，交接状态字段保留各自时间快照。
+
+D 已批准 [F PR #44 的固定版本](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/44#pullrequestreview-5582201694)：正式配置、评分包、30 条请求/预测/usage、成员来源哈希和 D 页选排通过核对。未代替 C 审核 D 的事件/数值范围，未代替 E 评分或批准整组最终定稿。本轮新增模型请求为 0。

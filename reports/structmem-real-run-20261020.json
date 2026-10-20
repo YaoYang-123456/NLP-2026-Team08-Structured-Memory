@@ -155,8 +155,16 @@
     "sha256": "21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6",
     "zip_crc_verified": true,
     "files_sha256_verified": 9,
-    "sent_to_group": false,
-    "scored_by_E": false
+    "sent_to_group": true,
+    "scored_by_E": false,
+    "group_send_evidence": "reported by F after receiving the original WeChat package",
+    "received_by_F": true,
+    "F_receipt_review": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5581231548",
+    "github_artifact_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/s2-predictions-for-E-20261020.zip",
+    "github_readme_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/README.md",
+    "github_commit": "0a6e8942acda346342203a51d61cc731e62c08fd",
+    "github_archive_identical_to_D_original": true,
+    "received_by_E": null
   },
   "limitations": [
     "C pre_compress/topic_segment disabled, retained and disclosed",
@@ -171,5 +179,29 @@
     "scripts/run_qa.py": "2a317fd4d614661e923aec9c01e472bd50f670c550f6848da8b046af51896c30",
     "src/llm_client.py": "17230503f43be2b1e134baa29e81dfba053b2726b308b18777bf7f5f70f887e6",
     "src/structmem_retrieve.py": "d55ddee7ab979e1edee7e12c7cadd5f062d8b76034ae32acb30a8cceb62fad2a"
+  },
+  "follow_up_review": {
+    "date": "2026-10-20",
+    "C_PR_43": {
+      "commit": "433de349595a54e4f0f0f2073d745bb1d830a4ea",
+      "action": "APPROVE",
+      "review_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/43#pullrequestreview-5582200937",
+      "offline_tests_passed": 14,
+      "received_103_hashes_rechecked": true,
+      "run_statistics_and_91_checkpoints_match": true
+    },
+    "F_PR_44": {
+      "commit": "0a6e8942acda346342203a51d61cc731e62c08fd",
+      "action": "APPROVE",
+      "review_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/44#pullrequestreview-5582201694",
+      "configuration_bytes_identical": true,
+      "repository_zip_bytes_identical": true,
+      "all_30_requests_predictions_usage_match": true,
+      "four_member_source_hashes_match": true,
+      "D_selected_slide_matches_source": true
+    },
+    "new_API_requests": 0,
+    "E_scoring_pending": true,
+    "C_review_of_D_PR41_pending": true
   }
 }
