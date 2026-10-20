@@ -87,7 +87,7 @@
         "raw_judgment": "no",
         "prediction": "Turtles"
       },
-      "conclusion": "Turtles are reptiles, which conflicts with the allergy evidence; S2 is not supported by the frozen reference or cited context."
+      "conclusion": "Turtles does not match the frozen reference. The cited statement concerns most reptiles, not all reptiles; it does not establish that turtles are a safe exception. This evidence review is AI-assisted, not teammate manual acceptance."
     },
     {
       "sample_id": "conv-41",
