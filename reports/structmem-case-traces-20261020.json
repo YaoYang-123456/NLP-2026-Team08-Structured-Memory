@@ -1,0 +1,294 @@
+{
+  "date": "2026-10-20",
+  "reviewer": "Codex source-and-context audit for D",
+  "status": "four_frozen_answer_traces_checked_not_human_acceptance",
+  "source_conversations_sha256": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+  "predictions_sha256": "307d5eb3c92940a12a3e33e9d4b38ac77685497e37e3b68403fe27d9becc3b79",
+  "source_run_code_commit": "43dc38916b8c7acdc834e00bf5095cf6700ec9f6",
+  "E_reference_commit": "cbab772de77d8cca65eb3a2868d1147c204b48fa",
+  "raw_judge_records_available": false,
+  "judge_scores_independently_recomputed": false,
+  "new_API_requests": 0,
+  "predictions_or_scores_changed": false,
+  "human_acceptance": false,
+  "note": "Source links in a summary can include seed provenance; links alone do not prove that every source fact occurs in its summary text. Text excerpts are checked separately.",
+  "items": [
+    {
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "question": "What activity did Jolene and her partner plan to do together instead of resuming yoga?",
+      "prediction": "Play the console",
+      "category": 4,
+      "finding": "synthesis_only_retrieved_support",
+      "original_messages": [
+        {
+          "source_key": "conv-48/D3:11",
+          "session_date": "7:03 pm on 1 February, 2023",
+          "speaker": "Jolene",
+          "text": "Well... we planned to play the console with my partner."
+        }
+      ],
+      "source_links": [
+        {
+          "source_key": "conv-48/D3:11",
+          "event_positions0": [],
+          "synthesis_positions0": [
+            1
+          ]
+        }
+      ],
+      "matching_context_excerpts": [
+        {
+          "context_position0": 61,
+          "kind": "synthesis",
+          "kind_rank1": 2,
+          "point_source_id": "conv-48/synthesis/ab4f8b72-ef2e-4194-a16f-190d59b7ba4b",
+          "excerpt": " of community. Deborah then asked whether Jolene had considered resuming yoga, but Jolene planned to play the console with her partner, which Deborah validated as good shared activity, and Jolene thanked her for the kind words.\n\nThe connection deepened over months: by February 9, Jolene had come "
+        }
+      ],
+      "score_changed": false,
+      "human_accepted": false
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "question": "When did John take a road trip to the Pacific Northwest?",
+      "prediction": "Last year (2022)",
+      "category": 2,
+      "finding": "relative_year_supported_in_context",
+      "original_messages": [
+        {
+          "source_key": "conv-41/D11:3",
+          "session_date": "6:13 pm on 10 April, 2023",
+          "speaker": "John",
+          "text": "Thanks, Maria. Your kind words mean a lot. Yeah, it's been tough with car trouble and money problems, but I stay positive and find a way. This picture reminds me of a road trip we took last year; even with bumps along the way, there's still beauty and hope.",
+          "blip_caption": "a photography of a mountain with a sunset and flowers in the foreground"
+        },
+        {
+          "source_key": "conv-41/D11:5",
+          "session_date": "6:13 pm on 10 April, 2023",
+          "speaker": "John",
+          "text": "Thanks! We explored the coast up in the Pacific Northwest and hit some cool national parks. The beauty of nature was absolutely breathtaking!"
+        }
+      ],
+      "source_links": [
+        {
+          "source_key": "conv-41/D11:3",
+          "event_positions0": [
+            1,
+            36
+          ],
+          "synthesis_positions0": [
+            0
+          ]
+        },
+        {
+          "source_key": "conv-41/D11:5",
+          "event_positions0": [
+            0,
+            6
+          ],
+          "synthesis_positions0": [
+            0
+          ]
+        }
+      ],
+      "matching_context_excerpts": [
+        {
+          "context_position0": 0,
+          "kind": "event",
+          "kind_rank1": 1,
+          "point_source_id": "conv-41/event/a9812bd1-a4a5-955a-ba7d-3f074f01ab95",
+          "excerpt": "Speaker: John\nRecorded: 2023-04-10T18:13:04.000, Mon\nJohn explored the coast in the Pacific Northwest and visited some cool national parks on his road trip."
+        },
+        {
+          "context_position0": 1,
+          "kind": "event",
+          "kind_rank1": 2,
+          "point_source_id": "conv-41/event/c8ad5c19-b852-b1d5-6027-d4e1dfc1068a",
+          "excerpt": "Speaker: John\nRecorded: 2023-04-10T18:13:02.000, Mon\nJohn went on a road trip last year that included a mountain with a sunset and flowers in the foreground, as shown in a picture he shared."
+        },
+        {
+          "context_position0": 19,
+          "kind": "event",
+          "kind_rank1": 20,
+          "point_source_id": "conv-41/event/390210cf-4edd-a701-6f82-c731aa4d1f06",
+          "excerpt": "Speaker: John\nRecorded: 2023-07-05T18:59:06.000, Wed\nJohn's family picture was from a trip they took last year for his daughter Sara's birthday."
+        },
+        {
+          "context_position0": 60,
+          "kind": "synthesis",
+          "kind_rank1": 1,
+          "point_source_id": "conv-41/synthesis/43068b61-faa9-4c38-9b12-0cc989675b73",
+          "excerpt": "reminded him to find beauty and hope even with bumps along the way. The picture came from a road trip he took last year through the Pacific Northwest coast and several national parks, where the views struck him as breathtaking and thought-provoking. Maria asked where he went and shared his apprecia"
+        }
+      ],
+      "score_changed": false,
+      "human_accepted": false
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "question": "What pets wouldn't cause any discomfort to Joanna?",
+      "prediction": "Turtles",
+      "category": 3,
+      "finding": "answer_conflicts_with_retrieved_counterevidence",
+      "original_messages": [
+        {
+          "source_key": "conv-42/D2:23",
+          "session_date": "2:01 pm on 23 January, 2022",
+          "speaker": "Joanna",
+          "text": "I'm allergic to most reptiles and animals with fur. It can be a bit of a drag, but I find other ways to be happy."
+        },
+        {
+          "source_key": "conv-42/D5:11",
+          "session_date": "6:59 pm on 18 March, 2022",
+          "speaker": "Joanna",
+          "text": "I wish I wasn't allergic! I would get two turtles today if I could! I found out recently I'm allergic to cockroaches as well, so who knows if I'll ever get a pet."
+        }
+      ],
+      "source_links": [
+        {
+          "source_key": "conv-42/D2:23",
+          "event_positions0": [
+            2,
+            32
+          ],
+          "synthesis_positions0": []
+        },
+        {
+          "source_key": "conv-42/D5:11",
+          "event_positions0": [
+            7
+          ],
+          "synthesis_positions0": [
+            4
+          ]
+        }
+      ],
+      "matching_context_excerpts": [
+        {
+          "context_position0": 1,
+          "kind": "event",
+          "kind_rank1": 2,
+          "point_source_id": "conv-42/event/a0f55857-4328-36da-c120-a01ebb5b2dfe",
+          "excerpt": "2-01-23T14:01:14.000, Sun\nJoanna will think about getting pets of her own soon if she can find any she is not allergic to."
+        },
+        {
+          "context_position0": 2,
+          "kind": "event",
+          "kind_rank1": 3,
+          "point_source_id": "conv-42/event/1a5d2052-6915-5483-e4f1-47131737a218",
+          "excerpt": "Speaker: Joanna\nRecorded: 2022-01-23T14:01:22.000, Sun\nJoanna is allergic to most reptiles and animals with fur."
+        },
+        {
+          "context_position0": 5,
+          "kind": "event",
+          "kind_rank1": 6,
+          "point_source_id": "conv-42/event/3a6389a8-3b6f-33b4-8194-1820a76937e4",
+          "excerpt": "Speaker: Joanna\nRecorded: 2022-10-21T14:01:05.000, Fri\nJoanna became allergic to her dog and had to get rid of her."
+        },
+        {
+          "context_position0": 7,
+          "kind": "event",
+          "kind_rank1": 8,
+          "point_source_id": "conv-42/event/6a1d7984-1c3c-552d-d8c6-07a356c3dd7f",
+          "excerpt": "Speaker: Joanna\nRecorded: 2022-03-18T18:59:10.000, Fri\nJoanna wishes she weren't allergic; she would get two turtles today if she could, and she recently found out she is allergic to cockroaches as well, so she is unsure if she will ever get a pet."
+        },
+        {
+          "context_position0": 60,
+          "kind": "synthesis",
+          "kind_rank1": 1,
+          "point_source_id": "conv-42/synthesis/5d7e4dd2-3039-4f2b-9aee-98aa021f1a48",
+          "excerpt": "d the emotional story: Tilly honors her childhood dog from Michigan, whom she had to give away after becoming allergic. Nate responded with empathy, saying her story was touching and he was glad the stuffed animal means so much; Joanna explained Tilly brings her joy and helps her stay focused, and"
+        },
+        {
+          "context_position0": 61,
+          "kind": "synthesis",
+          "kind_rank1": 2,
+          "point_source_id": "conv-42/synthesis/0455facc-9c00-4c87-a01d-8b9594712afe",
+          "excerpt": "a shift from January 23, 2022, when she said she'd think about getting a pet if she could find one she wasn't allergic to. Nate empathized and asked how she finds comfort without pets. Joanna said she relies on writing, creative projects, and supportive friends during tough times. Nate praised her"
+        },
+        {
+          "context_position0": 64,
+          "kind": "synthesis",
+          "kind_rank1": 5,
+          "point_source_id": "conv-42/synthesis/e8bef209-cb06-48be-83c0-08adf4ee41db",
+          "excerpt": "d that it's fun. When Joanna lamented her allergies (including a recent cockroach allergy) and said she'd get two turtles today if she could, Nate empathized, suggested other animals, and offered to send turtle photos so she could watch them grow; Joanna enthusiastically accepted, saying she's alread"
+        }
+      ],
+      "score_changed": false,
+      "human_accepted": false
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "question": "Does John live close to a beach or the mountains?",
+      "prediction": "I don't know.",
+      "category": 3,
+      "finding": "residence_inference_requires_human_adjudication",
+      "original_messages": [
+        {
+          "source_key": "conv-41/D22:15",
+          "session_date": "6:59 pm on 5 July, 2023",
+          "speaker": "John",
+          "text": "Yeah, Maria. Little things like this can make a big impact in how we think. Oh, and here's a pic I got from my walk last week. It always reminds me to take a break, breathe, and appreciate nature.",
+          "blip_caption": "a photo of a sunset over the ocean with a sailboat in the distance"
+        },
+        {
+          "source_key": "conv-41/D22:17",
+          "session_date": "6:59 pm on 5 July, 2023",
+          "speaker": "John",
+          "text": "Thanks, Maria! I see them at least once a week. It's a good way to disconnect, think, and find peace in this crazy world."
+        }
+      ],
+      "source_links": [
+        {
+          "source_key": "conv-41/D22:15",
+          "event_positions0": [
+            6
+          ],
+          "synthesis_positions0": [
+            0,
+            3
+          ]
+        },
+        {
+          "source_key": "conv-41/D22:17",
+          "event_positions0": [
+            25,
+            27
+          ],
+          "synthesis_positions0": [
+            3
+          ]
+        }
+      ],
+      "matching_context_excerpts": [
+        {
+          "context_position0": 6,
+          "kind": "event",
+          "kind_rank1": 7,
+          "point_source_id": "conv-41/event/f69ca11b-6c53-8c7f-61f7-2813a6cb4e03",
+          "excerpt": "ohn\nRecorded: 2023-07-05T18:59:14.000, Wed\nJohn shares a picture from his walk last week of a sunset over the ocean with a sailboat in the distance, which reminds him to take a break, breathe, and appreciate nature."
+        },
+        {
+          "context_position0": 20,
+          "kind": "event",
+          "kind_rank1": 21,
+          "point_source_id": "conv-41/event/cbcd2b2b-88a7-8bcb-30f2-debf1025e4f6",
+          "excerpt": "2023-05-25T13:24:10.000, Thu\nJohn shared a photo of his family at the beach showing a couple walking into the ocean at sunset."
+        },
+        {
+          "context_position0": 27,
+          "kind": "event",
+          "kind_rank1": 28,
+          "point_source_id": "conv-41/event/6c95675a-caea-f2c5-11a3-995627891fdf",
+          "excerpt": "Speaker: John\nRecorded: 2023-07-05T18:59:16.000, Wed\nJohn sees sunsets like the one in the picture at least once a week on his walks."
+        }
+      ],
+      "score_changed": false,
+      "human_accepted": false
+    }
+  ]
+}
