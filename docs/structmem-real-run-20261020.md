@@ -1,6 +1,6 @@
 # D：真实综合、30 题 S2 回答与 E 交接
 
-负责人：`lanshuheng9-oss`；2026-10-20；关联 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)、[PR #41](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41)。**91 次真实综合和同一固定 30 题的 S2 回答已完成，E 评分及人工案例验收尚未完成。** 本记录接续[完整事件包验收与离线准备](structmem-development-receipt-20261020.md)，不将早先占位摘要计入本次结果。
+负责人：`lanshuheng9-oss`；2026-10-20；关联 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)、[PR #41](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41)。**91 次真实综合和同一固定 30 题的 S2 回答已完成；E 已报告自动评分，逐题裁判独立复算及成员人工案例验收尚未完成。** 本记录接续[完整事件包验收与离线准备](structmem-development-receipt-20261020.md)，不将早先占位摘要计入本次结果。
 
 ## 运行结果
 
@@ -60,7 +60,7 @@ python scripts/run_structmem_synthesis.py --execute `
 
 交接包原件仍在 `output/structmem-live-20261020/s2-predictions-for-E-20261020.zip`，**1,051,426 字节**；SHA-256 `21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6`。F 已[确认微信接收并完成逐题核验](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5581231548)，并将原包放入 PR #44；现在可直接从 GitHub [获取评分包](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/s2-predictions-for-E-20261020.zip)和[读取说明](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/README.md)。本次独立核对 GitHub 文件与 D 本地原包逐字节一致，CRC 与包内 9 个文件哈希通过，无须用户重复发送。F 已接收不代表 E 已下载或已评分；包内“未发送”是打包时快照，原字节保留。
 
-E 读取 `predictions30.jsonl`，按 `(sample_id, qa_index)` 关联 A 的同版本标签，统一评分并核查至少 4 个案例。四类展示候选含真实预测及事件/摘要片段，只做来源展示，**没有标准答案判定，不冒称 E 已人工验收**。当前 `accuracy=null`，不与 S0 作准确率排名；S1 仍按原计划研讨后补齐。
+E 读取 `predictions30.jsonl`，按 `(sample_id, qa_index)` 关联 A 的同版本标签，统一评分并核查至少 4 个案例。四类展示候选含真实预测及事件/摘要片段，只做来源展示，**没有标准答案判定，不冒称 E 已人工验收**。D 独立验收字段仍为 `accuracy=null`；E 报告口径与原始逐题证据尚待复算，不能把该报告写成 D 已验收的准确率。S1 仍按原计划研讨后补齐。
 
 实际校验：原 30 项针对性测试和新增付费执行入口 4 项共 **34 项通过**；新增测试覆盖首错停止、不重复付费、输入哈希变化及缓存请求不一致。真实运行又验证了全部原生消息一致、完整事件覆盖、同一 30 题、60＋5 上下文、调用/预测联合主键和成功状态。
 
@@ -73,3 +73,11 @@ E 读取 `predictions30.jsonl`，按 `(sample_id, qa_index)` 关联 A 的同版�
 D 已批准 [C PR #43 的固定版本](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/43#pullrequestreview-5582200937)：完整包验收、来源/格式与检查点/装配代码通过，独立快照中 C 的 14 项离线测试通过；统计及 91 个检查点与接收记录一致，交接状态字段保留各自时间快照。
 
 D 已批准 [F PR #44 的固定版本](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/44#pullrequestreview-5582201694)：正式配置、评分包、30 条请求/预测/usage、成员来源哈希和 D 页选排通过核对。未代替 C 审核 D 的事件/数值范围，未代替 E 评分或批准整组最终定稿。本轮新增模型请求为 0。
+
+## 主分支同步与评分报告核对
+
+C PR #43 与 F PR #44 已分别以 `7f3065d`、`e43a4bb` 合并。D 分支同步至 main `48b552c`，仅 README 导航存在冲突，已保留主分支最新状态及 D 的真实交接入口；同步后 34 项 D/F 针对性测试通过，实验代码、配置、原始包和预测均未修改。C 对 D PR #41 的事件/数值审核仍待完成。
+
+E 固定提交 `cbab772de77d8cca65eb3a2868d1147c204b48fa` 报告原始自动判分 S0 16/30、S2 19/30；一次日期裁决后为 15/30、19/30。两者不是同一评分口径，分别保留。汇总算术和 D 的回答用量一致，但本机尚无 60 条逐题原始裁判与输入指纹，未独立复算这些分数，也未将 AI 案例核查记作成员人工验收。
+
+本轮补齐[四例 D 实际输入与原文证据链](structmem-case-traces-20261020.md)，包括综合独有的相关事实、相对年份、已经取回的乌龟过敏反证及每周海景散步的推断边界。原有预测、标签、分数均不改。模型请求为 0，不重跑已成功的实验，不制作新的幻灯片或视频。

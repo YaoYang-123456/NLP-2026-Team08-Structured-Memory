@@ -1,6 +1,6 @@
 # D：StructMem 综合与检索进展
 
-负责人：`lanshuheng9-oss`；2026-10-20；关联 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)。供 F 整合为个人约两页内容。真实综合与 S2 的 30 题回答完成，E 评分尚未完成。
+负责人：`lanshuheng9-oss`；2026-10-20；关联 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)。供 F 整合为个人约两页内容。真实综合与 S2 的 30 题回答完成，E 已报告自动评分；逐题裁判独立复算及成员人工验收尚未完成。
 
 ## 第 1 页：从 C 事件记忆到真实综合与检索
 
@@ -31,8 +31,10 @@ F 已接受固定配置，正式副本与原候选逐字节一致；公共参数
 
 30 题类别分母为 8/8/7/7；4 题回答 I don't know，原样保留给 E。总用量 **926319 tokens**，未核对账户实际账单；C 历史抽取和 F 的 S0 不混入本轮。34 项针对性测试通过，原始日志、配置、逐题来源已保存。本轮完成指定 C/F 审核及状态同步，没有新增 API 请求。
 
-E 交接 ZIP 约 1.05 MB，含按 A 顺序合并的 30 条完整预测/调用、配置、原始批次记录和四类来源展示候选。F 已确认接收并核验，在 PR #44 提供[GitHub 读取入口](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/README.md)，原包字节与 D 一致；无需重复发送。尚未确认 E 接收或评分，**accuracy=null，不能将 30 次成功回答写成 30 题正确**。E 仍需统一评分及至少 4 个案例人工验收，F 再合并结果；S1 按原计划研讨后补齐。
+E 交接 ZIP 约 1.05 MB，含按 A 顺序合并的 30 条完整预测/调用、配置、原始批次记录和四类来源展示候选。F 已确认接收并核验，在 PR #44 提供[GitHub 读取入口](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/README.md)，原包字节与 D 一致；无需重复发送。E 已在 PR #46 提交自动评分报告：原始 S0 16/30、S2 19/30；日期裁决后 15/30、19/30。本机尚未取得60条原始裁判记录和输入指纹，独立验收的 accuracy 仍为 null，不将报告算术核对写成逐题复算通过。至少4例成员人工验收仍待完成；S1按原计划研讨后补齐。
 
 已处理本机沙箱连接与分词器缓存问题，保留失败目录，没有重复付费生成。C 关闭压缩/话题切分、Python 版本差异与 JSON 提示展示差异仍明示，不声称严格复现原论文。
 
 入口：[真实运行与交接](../docs/structmem-real-run-20261020.md)、[机器证据](structmem-real-run-20261020.json)、[完整事件包验收](../docs/structmem-development-receipt-20261020.md)。
+
+补充：[四例实际输入证据链](../docs/structmem-case-traces-20261020.md)已核对。其中游戏机事实只出现在取回综合记忆中；乌龟过敏的直接条件句已在事件第8项，模型仍答Turtles；海景散步每周一次只能支持有边界的居住推断。均为AI辅助分析，不代替成员人工验收。同步最新main后34项相关测试通过，无新增API请求。

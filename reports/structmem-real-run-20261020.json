@@ -1,5 +1,5 @@
 {
-  "status": "real_synthesis_retrieval_answering_completed_unscored",
+  "status": "real_synthesis_retrieval_answering_completed_E_scores_reported_independent_judge_verification_pending",
   "date": "2026-10-20",
   "owner": "lanshuheng9-oss",
   "synthetic": false,
@@ -156,7 +156,7 @@
     "zip_crc_verified": true,
     "files_sha256_verified": 9,
     "sent_to_group": true,
-    "scored_by_E": false,
+    "scored_by_E": true,
     "group_send_evidence": "reported by F after receiving the original WeChat package",
     "received_by_F": true,
     "F_receipt_review": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5581231548",
@@ -164,13 +164,13 @@
     "github_readme_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/0a6e8942acda346342203a51d61cc731e62c08fd/reports/artifacts/README.md",
     "github_commit": "0a6e8942acda346342203a51d61cc731e62c08fd",
     "github_archive_identical_to_D_original": true,
-    "received_by_E": null
+    "received_by_E": true
   },
   "limitations": [
     "C pre_compress/topic_segment disabled, retained and disclosed",
     "Python3.13 actual environment differs from upstream >=3.10,<3.12",
     "F JSON display differs from native grouped-speaker QA prompt",
-    "no judge scores, accuracy claim, S1 ablation or holdout run"
+    "E judge scores are reported; no independently recomputed judge scores, S1 ablation or holdout run"
   ],
   "code_sha256": {
     "scripts/run_structmem_synthesis.py": "ee668fdc591d2226e98c28e223de478f928814854a860f5e2e6bae43669936e0",
@@ -201,7 +201,40 @@
       "D_selected_slide_matches_source": true
     },
     "new_API_requests": 0,
-    "E_scoring_pending": true,
-    "C_review_of_D_PR41_pending": true
+    "E_scoring_pending": false,
+    "C_review_of_D_PR41_pending": true,
+    "E_independent_judge_verification_and_human_acceptance_pending": true
+  },
+  "reported_E_scoring": {
+    "source_commit": "cbab772de77d8cca65eb3a2868d1147c204b48fa",
+    "source_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/cbab772de77d8cca65eb3a2868d1147c204b48fa/reports/e-score-summary-20261020.json",
+    "raw_correct": {
+      "S0": 16,
+      "S2": 19
+    },
+    "adjudicated_correct": {
+      "S0": 15,
+      "S2": 19
+    },
+    "planned_per_method": 30,
+    "reported_judge_successes": 60,
+    "raw_judge_records_available_to_D": false,
+    "independently_recomputed_by_D": false,
+    "human_case_acceptance": false,
+    "note": "Top-level accuracy remains null for D independent acceptance. Reported E counts do not imply 60 raw judge records have been independently verified."
+  },
+  "continuation_check": {
+    "date": "2026-10-20",
+    "main_synced": "48b552c",
+    "merge_commit": "8511a34",
+    "conflict_resolved": "README.md; preserved main status and D delivery entry",
+    "targeted_tests_after_sync": 34,
+    "C_PR43_merged": true,
+    "F_PR44_merged": true,
+    "case_trace_record": "reports/structmem-case-traces-20261020.json",
+    "case_traces_checked": 4,
+    "new_API_requests": 0,
+    "original_predictions_and_scores_unchanged": true,
+    "raw_judge_records_still_missing": true
   }
 }
