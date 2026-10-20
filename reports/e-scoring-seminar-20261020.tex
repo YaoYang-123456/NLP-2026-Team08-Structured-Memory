@@ -1,26 +1,26 @@
 % E's two frames for the October 22 seminar; F may include this module.
-% Scores are provisional in-session semantic judgments, not final judge API results.
+% Scores are DeepSeek-Flash fixed-judge results; human case review is pending.
 \section{E：评分与结果分析}
 \presenter{onlysonder}
-\source{A 冻结 30 题与标签（提交 1d651da）；S0 交接 PR \#42；S2 交接 PR \#44；E 初步判定，2026-10-20}
-\begin{frame}{E：同一 30 题上的初步评分}
+\source{A 冻结 30 题与标签（提交 1d651da）；S0 交接 PR \#42；S2 交接 PR \#44；DeepSeek-Flash 固定裁判，2026-10-20}
+\begin{frame}{E：同一 30 题上的固定裁判评分}
 \small
 \begin{tabularx}{\linewidth}{@{}p{30mm}YY@{}}
 \toprule
 题型 & S0 普通检索 & S2 结构化记忆\\\midrule
 单跳（8题） & 4/8（50.0\%） & 4/8（50.0\%）\\[1mm]
-时间（8题） & 5/8（62.5\%） & 7/8（87.5\%）\\[1mm]
+时间（8题） & 6/8（75.0\%） & 7/8（87.5\%）\\[1mm]
 多跳（7题） & 2/7（28.6\%） & 3/7（42.9\%）\\[1mm]
 开放域（7题） & 4/7（57.1\%） & 5/7（71.4\%）\\\midrule
-总体（30题） & 15/30（50.0\%） & 19/30（63.3\%）\\
+总体（30题） & 16/30（53.3\%） & 19/30（63.3\%）\\
 \bottomrule
 \end{tabularx}\par\vspace{3mm}
-两种方法均完成 30/30 条回答生成；S2 初步多答对 4 题。\par\vspace{2mm}
-\aside{暂定结果：当前为 Codex 会话内语义初判；独立固定裁判 API 与人工案例核查尚未完成。}
-\note{建议约45秒。S0 和 S2 使用 A 冻结的同一批30题，题目主键逐项核对。当前语义初判是 S0 15题、S2 19题，差4题。类别上主要差在时间推理；单跳持平。样本只有30题，所以这里只描述开发集，不称稳定提升。生成成功不等于回答正确，独立裁判与人工复核还要完成。}
+两种方法均完成 30/30 条回答生成；固定裁判 60/60 次成功，S2 多答对 3 题。\par\vspace{2mm}
+\aside{自动裁判已完成；负责人仍需人工核查至少4例及一条可疑标签。}
+\note{建议约45秒。S0 和 S2 使用 A 冻结的同一批30题，按题目主键逐项核对。DeepSeek-Flash 固定裁判结果为 S0 16题、S2 19题，差3题。类别上时间、多跳、开放域各差一题，单跳持平。样本只有30题，所以这里只描述开发集，不称稳定提升。生成成功不等于回答正确；负责人仍需人工核查至少4例及一条可疑标签。}
 \end{frame}
 
-\source{LoCoMo 冻结来源证据与 S0/S2 原始检索上下文；逐题判定及限制见 reports/e-score-preliminary-20261020.md}
+\source{LoCoMo 冻结来源证据与 S0/S2 原始检索上下文；逐题判定及限制见 reports/e-score-20261020.md}
 \begin{frame}{E：案例解释了分差来自哪里}
 \small
 \begin{tabularx}{\linewidth}{@{}p{23mm}p{44mm}YY@{}}
@@ -33,6 +33,6 @@ conv-42 / 4 & 无毛猫或猪 & 弃答 & 回答 turtles\\
 \bottomrule
 \end{tabularx}\par\vspace{2mm}
 \textbf{观察：}S2 改善了部分时间题，但多项答案仍会漏项；错误检索或无依据补全仍会造成答错。\par\vspace{2mm}
-\aside{下一步：固定裁判模型/提示词后复评全部60条判断，并由 E 负责人核查至少4例和可疑标签。}
-\note{建议约45秒。第一例 S0 捞到九月的露营计划，S2 给出二月问题的正确活动。第二例 S0 把消息日期当成旅行时间，S2正确解释 last year。后两例说明结构化记忆也会漏掉多项平台或给出无证据的 turtle。另有一个冻结答案标成 beach 的题，其证据似乎不足以支持“住得近”，需要回看标签。用量和案例详情在配套进展稿。}
+\aside{待完成：由 E 负责人核查至少4例及可疑标签。}
+\note{建议约45秒。第一例 S0 捞到后续露营计划，S2 给出正确活动。第二例 S0 把消息日期当成旅行时间，S2 正确解释 last year。后两例说明结构化记忆也会漏掉多项平台或给出与上下文冲突的 turtles。另有一个冻结答案标成 beach 的题，其证据似乎不足以支持“住得近”，负责人需回看标签。用量和案例详情在配套进展稿。}
 \end{frame}
