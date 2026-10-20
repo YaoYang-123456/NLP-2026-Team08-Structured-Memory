@@ -1,0 +1,75 @@
+{
+  "voice": "Microsoft Huihui Desktop",
+  "rate": -1,
+  "human_rehearsal": false,
+  "submitted": false,
+  "raw_narration_seconds": 477.8663038548753,
+  "target_video_seconds": 480,
+  "total_frames": 4800,
+  "decode_returncode": 0,
+  "pages": [
+    {
+      "page": 1,
+      "wav_seconds": 25.662766439909298,
+      "video_seconds": 25.9,
+      "frames": 259,
+      "synthetic": true
+    },
+    {
+      "page": 2,
+      "wav_seconds": 47.073786848072565,
+      "video_seconds": 47.3,
+      "frames": 473,
+      "synthetic": true
+    },
+    {
+      "page": 3,
+      "wav_seconds": 54.498231292517005,
+      "video_seconds": 54.7,
+      "frames": 547,
+      "synthetic": true
+    },
+    {
+      "page": 4,
+      "wav_seconds": 51.91609977324263,
+      "video_seconds": 52.2,
+      "frames": 522,
+      "synthetic": true
+    },
+    {
+      "page": 5,
+      "wav_seconds": 71.57741496598639,
+      "video_seconds": 71.8,
+      "frames": 718,
+      "synthetic": true
+    },
+    {
+      "page": 6,
+      "wav_seconds": 62.22253968253968,
+      "video_seconds": 62.5,
+      "frames": 625,
+      "synthetic": true
+    },
+    {
+      "page": 7,
+      "wav_seconds": 52.90063492063492,
+      "video_seconds": 53.2,
+      "frames": 532,
+      "synthetic": true
+    },
+    {
+      "page": 8,
+      "wav_seconds": 62.20961451247165,
+      "video_seconds": 62.4,
+      "frames": 624,
+      "synthetic": true
+    },
+    {
+      "page": 9,
+      "wav_seconds": 49.80521541950113,
+      "video_seconds": 50.0,
+      "frames": 500,
+      "synthetic": true
+    }
+  ]
+}
