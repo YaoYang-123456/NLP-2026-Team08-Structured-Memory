@@ -1,0 +1,14 @@
+\section{A：数据与环境}
+\presenter{ngocnamd93-spec}
+\source{A 本人进展：reports/locomo-a-progress.md；main bf716a4；摘录选排}
+\begin{frame}{A：固定开发数据和评价题单}
+\small
+\begin{itemize}
+\item 固定官方 LoCoMo 原文件、来源提交、SHA-256 和 LightMem 上游版本；输入文件校验与官方 blob 一致。
+\item 按 seed 42 固定 3 个开发会话和 7 个留出会话。开发为 conv-48、conv-42、conv-41，保留 91 个 session、1,973 条消息及原始时间和消息 ID。
+\item 冻结 30 题，每会话 10 题，category 1/2/3/4 为 8/8/7/7；其中 5 题用于联调，覆盖四类题型与三个开发会话。不含 category 5。
+\item 单独生成对话、问题和评分标签。问答输入严格限定字段；不带答案、评分证据或数据集预先生成的总结。
+\end{itemize}
+\aside{本部分为数据与环境准备，不是问答性能实验。}
+\note{建议35秒。按A原稿说明固定数据、开发与留出隔离、30题及标签隔离；其他环境细节留问答。本页仅选排A已有内容。}
+\end{frame}

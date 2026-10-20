@@ -1,0 +1,18 @@
+\section{C：事件记忆}
+\presenter{oioioi-521}
+\source{C 本人进展：PR 43 / 433de349，reports/structmem-progress-20261019.md；摘录选排}
+\begin{frame}{C：事实、关系与来源绑定}
+\small
+C 负责复用固定版本 LightMem/StructMem 的事实与关系双路抽取、事件绑定及入库，交付可读取、可追溯的事件记忆。\par\vspace{2mm}
+\begin{tabularx}{\linewidth}{@{}Yrrrrr@{}}
+\toprule
+开发会话 & session & 输入消息 & 事实 & 关系 & 总记忆\\\midrule
+conv-48 & 30 & 681 & 799 & 478 & 1277\\
+conv-42 & 29 & 629 & 733 & 427 & 1160\\
+conv-41 & 32 & 663 & 777 & 498 & 1275\\\midrule
+合计 & 91 & 1973 & 2309 & 1403 & 3712\\\bottomrule
+\end{tabularx}\par\vspace{2mm}
+91 个 session 均真实抽取成功，全部输入消息均进入相应请求。1936 条消息被至少一条记忆引用，37 条没有直接对应条目；这是来源覆盖统计，不代表正式准确率或召回率。
+\aside{本轮按完整 session 抽取，关闭压缩和话题切分。成员记录，完整交接与配置审核仍待收口。}
+\note{建议50秒。按C原稿讲清职责和表格，说明来源覆盖不是语义质量。完整个人原稿及案例仍在PR43，不在本页补写C的技术结论。}
+\end{frame}

@@ -1,0 +1,19 @@
+\section{D：综合与检索}
+\presenter{lanshuheng9-oss}
+\source{D 本人进展：PR 41 / 43dc389，reports/structmem-d-progress.md；摘录选排，交接待复核}
+\begin{frame}{D：真实综合与同一 30 题 S2 回答}
+\small
+综合调用固定 LightMemory：1 小时窗口、15 种子、global、process\_all、跨事件。\par\vspace{2mm}
+\begin{tabularx}{\linewidth}{@{}Yrr@{}}
+\toprule
+阶段 & 成功请求 & 输入 / 输出 tokens\\\midrule
+真实综合 & 91 & 304025 / 35834\\
+S2 回答 & 30 & 586282 / 178\\\midrule
+合计 & 121 & 890307 / 36012\\\bottomrule
+\end{tabularx}\par\vspace{2mm}
+完整 S2 检索已生成同一固定 30 题，每题 \textbf{60 条事件＋5 条真实综合记忆}。
+30 题类别分母为 8/8/7/7；4 题回答 I don't know，原样保留给 E。\par\vspace{2mm}
+总用量 \textbf{926319 tokens}，未核对账户实际账单；C 历史抽取和 F 的 S0 不混入本轮。
+\aside{以上为D提交的运行记录；F已要求补齐约1.05 MB评分包。准确率暂无，E尚未人工验收。}
+\note{建议60秒。沿D原稿介绍真实综合与30题回答，不把调用成功视作正确率。F本轮只检查了新增代码、测试和汇总算术，实际交接包仍待D入库，逐题验证没有完成。}
+\end{frame}

@@ -1,0 +1,113 @@
+{
+  "frozen_data_hashes_match": true,
+  "datasets": {
+    "smoke5": {
+      "questions": 5,
+      "contexts_per_question": 60,
+      "question_set_sha256": "a5108b7645af41f8b257d3033e968be47160f2e696789c0c85a21c14250b9ac5",
+      "f_load_inputs_passed": true,
+      "source_binding_passed": true,
+      "descending_rank_passed": true,
+      "mock_rows": 5,
+      "real_answers": 0,
+      "real_scored": 0,
+      "input_sha256": "c2b7ad0e66ea4512e7123eb311b376006a5a21f18ea46c6cdb47883226b42365"
+    },
+    "dev30": {
+      "questions": 30,
+      "contexts_per_question": 60,
+      "question_set_sha256": "99ebf28b673b715886b13d8f88768cc82b1775033b37d59ffae0893b285c0a26",
+      "f_load_inputs_passed": true,
+      "source_binding_passed": true,
+      "descending_rank_passed": true,
+      "mock_rows": 30,
+      "real_answers": 0,
+      "real_scored": 0,
+      "input_sha256": "17237f37ca5a6bcf867b4aead8b73eec88cf6c5dc86189c1e1bbf317381faac5"
+    }
+  },
+  "paid_api_calls": 0,
+  "real_answers": 0,
+  "real_scores": 0,
+  "human_acceptance": null,
+  "five_rows_equal_full_run_subset": true,
+  "corpus_chunks": {
+    "conv-48": 681,
+    "conv-42": 629,
+    "conv-41": 663
+  },
+  "status": "real_retrieval_passed_answering_blocked",
+  "blocker": "No project DeepSeek credential present; no unambiguous local paid-run allocation found. F shared example prompt is not a finalized StructMem protocol.",
+  "checked_date": "2026-10-19",
+  "owner": "YaoYang-123456",
+  "embedding": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimensions": 384,
+    "normalize_embeddings": true,
+    "max_seq_length": 256,
+    "device_for_check": "cpu"
+  },
+  "packages": {
+    "torch": "2.11.0+cpu",
+    "sentence-transformers": "5.1.2",
+    "transformers": "4.57.1",
+    "huggingface-hub": "0.36.0",
+    "numpy": "2.5.4"
+  },
+  "test_counts": {
+    "A": 7,
+    "B": 8,
+    "F": 14
+  },
+  "steps": [
+    {
+      "name": "tests-A",
+      "returncode": 0,
+      "seconds": 0.753
+    },
+    {
+      "name": "tests-B",
+      "returncode": 0,
+      "seconds": 0.451
+    },
+    {
+      "name": "tests-F",
+      "returncode": 0,
+      "seconds": 1.112
+    },
+    {
+      "name": "environment",
+      "returncode": 0,
+      "seconds": 19.924
+    },
+    {
+      "name": "retrieval-smoke5",
+      "returncode": 0,
+      "seconds": 16.822
+    },
+    {
+      "name": "qa-mock-smoke5",
+      "returncode": 0,
+      "seconds": 0.247
+    },
+    {
+      "name": "retrieval-dev30",
+      "returncode": 0,
+      "seconds": 8.949
+    },
+    {
+      "name": "qa-mock-dev30",
+      "returncode": 0,
+      "seconds": 0.266
+    },
+    {
+      "name": "verify-binding",
+      "returncode": 0,
+      "seconds": 0.429
+    }
+  ],
+  "zip_sha256": "3b8a57c65fb7e5254941938dda3a84f2a6fd0a4df1528e56a34964c61e36b96b",
+  "gpu_end_memory_MiB": 0,
+  "ollama_started": false
+}

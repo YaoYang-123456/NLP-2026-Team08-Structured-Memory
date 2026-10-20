@@ -1,97 +1,104 @@
-\source{https://aclanthology.org/2026.findings-acl.270/；逐页补充原文页码与图表编号}
-\papersection{MetaMem}{通过反思优化知识利用经验}{讲解人待填写}
+\source{Xin et al., Findings of ACL 2026，PDF p.1，图1}
+\papersection{MetaMem}{让模型正确使用已取回的事实}{讲解人待填写}
 
-\begin{frame}{研究问题与任务范围}
-    \large\key{待补充：论文解决的具体问题}\par
-    \vspace{5mm}\normalsize
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 任务、输入与预期输出是什么？
-        \item 既有方法在哪种情形下失败？
-        \item 论文提出什么可检验的改进目标？
-    \end{itemize}
-    \note{建议约 45 秒。用一个具体问题或案例说明动机，避免用过长的背景综述占用时间。}
+\source{原文 PDF p.1，图1；图中里程数字按论文示例整理}
+\begin{frame}{检索到了事实，为什么还会答错？}
+\small
+\textbf{问题：四次旅行共走了多少英里？}\par\vspace{3mm}
+\begin{tabularx}{\linewidth}{@{}p{34mm}Y@{}}
+\toprule
+事实 A & 前三次旅行合计\key{1800}英里\\[1mm]
+事实 B & 第四次旅行总计\key{1200}英里\\[1mm]
+事实 C & 第四次旅行第一天走了\key{300}英里\\\bottomrule
+\end{tabularx}\par\vspace{4mm}
+正确：$1800+1200=\mathbf{3000}$\quad 错误：$1800+1200+300=3300$\par
+\aside{错误未必来自检索：事实可能全部存在，模型却把“总量”和“部分”重复相加。}
+\note{约55秒。引入例子：三次旅行1800英里，第四次1200英里；第四次的第一天300英里已包含在1200中。因此应当是3000，而非3300。MetaMem研究的不只是能否检索到事实，更是找到后能否正确判断关系。}
 \end{frame}
 
-\begin{frame}{核心方法与整体流程}
-    \begin{columns}[T,onlytextwidth]
-        \column{.54\textwidth}
-        \textbf{核心流程图：待替换}\par\vspace{5mm}
-        {\color{muted}放入原论文核心图或可编辑重绘图。\par
-        保留关键标签，标明输入、操作与输出。}
-        % \includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{images/paper-method.pdf}
-        \column{.42\textwidth}
-        \textbf{需要解释的机制}\par\vspace{4mm}
-        \begin{enumerate}\setlength{\itemsep}{4mm}
-            \item 待补充：信息如何进入系统。
-            \item 待补充：核心操作与设计原因。
-            \item 待补充：结果如何被后续使用。
-        \end{enumerate}
-    \end{columns}
-    \note{建议约 90 秒。先沿流程讲一遍，再解释核心机制。需要复杂图示时拆页，不把整篇系统图缩成不可读的小图。}
+\source{原文 PDF p.3，§3.1，式(1)--(3)}
+\begin{frame}{事实记忆 $M$ 与元记忆 $E$}
+\small
+\begin{tabularx}{\linewidth}{@{}p{23mm}YY@{}}
+\toprule
+对象 & 保存什么 & 例子\\\midrule
+事实记忆 $M$ & 具体经历、数字、时间、人物 & 第四次旅行总计1200英里\\
+元记忆 $E$ & 可迁移的知识使用策略 & 总量与部分不可重复计数\\\bottomrule
+\end{tabularx}\par\vspace{5mm}
+\[\hat y=\mathrm{LLM}(\operatorname{Prompt}(q,M,E))\]
+\vspace{2mm}
+\textbf{训练对象：}自然语言规则集合 $E$；不通过反向传播更新基础模型权重。\par
+\aside{信息不足时，规则也不能补出原本没有检索到的关键事实。}
+\note{约55秒。说明两个不同功能的记忆：M负责记录发生了什么，E负责积累怎样使用记忆的经验。公式表示同样的问题和事实，回答阶段还得到可迁移规则。规则以自然语言编辑，不是对模型权重进行微调。}
 \end{frame}
 
-\begin{frame}{关键机制与方法细节}
-    \[
-        \text{输入}\quad\longrightarrow\quad
-        \text{核心操作}\quad\longrightarrow\quad\text{输出}
-    \]
-    \vspace{4mm}
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 待补充：关键公式、结构或操作，说明符号与含义。
-        \item 待补充：一个小例子，解释机制怎样改变处理结果。
-        \item 待补充：与基线的具体差别，以及依赖的条件。
-    \end{itemize}
-    \note{建议约 90 秒。聚焦最重要的一项设计；公式要解释符号和直觉。其余实现细节可放到备用页。}
+\source{原文 PDF pp.3--5，Figure 2，式(4)--(10)}
+\begin{frame}{元记忆如何学出来？}
+\small
+\begin{enumerate}\setlength{\itemsep}{2mm}
+\item \textbf{多次回答：}在同一事实记忆下采样若干候选回答。
+\item \textbf{评价与反思：}使用训练标准答案判断对错并归纳原因。
+\item \textbf{编辑规则：}提出 ADD / DEL / MOD，处理重复与冲突。
+\item \textbf{验证与冻结：}用验证集选取规则版本；测试时不再更新。
+\end{enumerate}
+\vspace{2mm}
+\begin{center}
+\key{回答} $\rightarrow$ \key{反馈} $\rightarrow$ \key{反思} $\rightarrow$ \key{规则} $\rightarrow$ \key{新回答}
+\end{center}
+\aside{训练时可以看到标准答案；测试回答时不能看到答案，更不能用测试答案改规则。}
+\note{约65秒。这是论文Figure 2的核心学习流程。对训练题多次采样，用答案判分，反思成功失败原因，产生添加删除修改建议，再合并冲突。规则在验证集上选好后冻结，测试答案不允许进入回答或反思。训练成本仍有多次模型调用。}
 \end{frame}
 
-\begin{frame}{实验设置与评价范围}
-    \begin{tabularx}{\linewidth}{@{}p{29mm}Y@{}}
-        \toprule
-        项目 & 依据原论文补充 \\
-        \midrule
-        任务与数据 & 待填写：数据来源、划分与任务范围 \\
-        模型与基线 & 待填写：模型角色、基线与主要配置 \\
-        评价指标 & 待填写：指标含义、评价者与计分方式 \\
-        预算与成本 & 待填写：上下文预算、构建或推理开销 \\
-        \bottomrule
-    \end{tabularx}
-    \aside{实验条件解释到足以理解结果；训练、优化与测试时可用信息分别说明。}
-    \note{建议约 60 秒。不要逐项念参数，重点解释影响结果理解和可比性的条件。}
+\source{原文 PDF pp.5、11，§4，附录 A.3、A.5}
+\begin{frame}{实验条件决定结果能否比较}
+\small
+\begin{tabularx}{\linewidth}{@{}p{34mm}Y@{}}
+\toprule
+数据和划分 & LongMemEval 500题；每折350训练＋50验证＋100测试，共五折\\[1mm]
+事实记忆 & LightMem；规则以外还存在检索模块\\[1mm]
+生成模型 & Qwen3-30B-A3B-Instruct、Llama3.1-70B-Instruct\\[1mm]
+评价模型 & Qwen3-235B-A22B；判分是实验的一部分\\[1mm]
+学习设置 & 5 epochs，每批50题，每题采样5次\\\bottomrule
+\end{tabularx}
+\aside{模型、数据划分、评价标准不一致时，不能直接把准确率差异归因到元记忆。}
+\note{约65秒。原文采用LongMemEval五折，350训练50验证100测试；构建和判分涉及较大模型，学习阶段每题多次采样。没有权重微调不等于零成本。换成7B模型或其他数据只能称简化试点，不能称复刻原主表。}
 \end{frame}
 
-\begin{frame}{关键结果与证据}
-    \textbf{待补充：这一页数据支持的一项结论}\par\vspace{5mm}
-    \begin{tabularx}{\linewidth}{@{}Yrrr@{}}
-        \toprule
-        配置 & 主指标 & 关键分项 & 成本 \\
-        \midrule
-        基线 & 待填 & 待填 & 待填 \\
-        本文方法 & 待填 & 待填 & 待填 \\
-        关键消融 & 待填 & 待填 & 待填 \\
-        \bottomrule
-    \end{tabularx}\par
-    \vspace{5mm}
-    \key{待补充：提升出现在哪些条件下，哪里没有改善}
-    \aside{用原表数值或图表替换占位，写清单位；论文结果与本组实验分开。}
-    \note{建议约 90 秒。解释一个关键对照或消融，不逐格朗读主表；图表较复杂时可分成结果和消融两页。}
+\source{原文 PDF p.6 Table 1、p.7 Table 2；均为论文结果}
+\begin{frame}{结果：有提升，但不是每项都好}
+\small
+\textbf{原论文 LongMemEval 平均值（\%）}\par\vspace{2mm}
+\begin{tabularx}{\linewidth}{@{}Yrrr@{}}
+\toprule
+生成模型 & LightMem & MetaMem & 提升（点）\\\midrule
+Qwen3-30B-A3B & 67.50 & \key{71.90} & +4.40\\
+Llama3.1-70B & 66.17 & \key{69.08} & +2.91\\\bottomrule
+\end{tabularx}\par\vspace{4mm}
+\textbf{Qwen 消融：}完整方法 71.90；无反思 70.02；无演化 68.33。\par\vspace{3mm}
+\aside{两组模型的增幅不同，整体提升不等于所有题型改善；这些数字不是本组试点成绩。}
+\note{约70秒。主表显示基于LightMem加入MetaMem后整体提升4.40和2.91个百分点；这不是两个都提升3.6个百分点。Qwen消融中移除反思或规则演化都下降，支持这两个模块的作用，但仍需要注意模型、任务和评判条件。}
 \end{frame}
 
-\begin{frame}{局限、阅读判断与后续问题}
-    \begin{columns}[T,onlytextwidth]
-        \column{.47\textwidth}
-        \textbf{论文支持的结论}\par\vspace{4mm}
-        \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最重要的贡献与证据。
-            \item 待补充：尚未解决的局限。
-        \end{itemize}
-        \column{.47\textwidth}
-        \textbf{个人阅读思考}\par\vspace{4mm}
-        \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最值得借鉴的设计。
-            \item 待补充：需要进一步验证的问题。
-        \end{itemize}
-    \end{columns}
-    \vspace{5mm}
-    \aside{与后续讲解的衔接：待各成员填写完成后统一整理。}
-    \note{建议约 75 秒。个人判断与论文结论分别表达，并用一句话交接给下一位成员。连同章节页，本模块约 8 分钟。}
+\source{原文 PDF §Limitations、附录 A.6；本组方案 docs/project-plan.md}
+\begin{frame}{优点、局限与本组课设联系}
+\small
+\begin{columns}[T,onlytextwidth]
+\column{.47\textwidth}
+\textbf{优势与价值}\par\vspace{2mm}
+\begin{itemize}\setlength{\itemsep}{2mm}
+\item 分离“检索缺失”和“利用错误”
+\item 规则可读、可修改，无须微调权重
+\item 消融实验提供一定证据
+\end{itemize}
+\column{.48\textwidth}
+\textbf{限制与风险}\par\vspace{2mm}
+\begin{itemize}\setlength{\itemsep}{2mm}
+\item 依赖带答案数据与评判质量
+\item 多次采样和反思有成本
+\item 过度泛化、冲突与事实缺失
+\end{itemize}
+\end{columns}
+\vspace{3mm}
+\aside{StructMem 侧重组织和检索证据；MetaMem 侧重检索后的事实利用。两者不可直接混算实验成绩。}
+\note{约75秒。优势是把检索后推理单独拿出来优化；局限是规则学习仍需评估、标准答案、多次调用。我们已有个人简化试点，但没有做LightMem完整复现，也没有独立泛化结论。当前小组课设主线为StructMem，MetaMem适合帮助解释证据利用错误，而不是另立一套必须完成的实验。}
 \end{frame}
