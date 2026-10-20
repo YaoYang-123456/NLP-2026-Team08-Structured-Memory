@@ -1,0 +1,10 @@
+{
+  "profile": "complete-conversation-session-events-no-compression-no-topic-segmentation",
+  "model": "deepseek-flash",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 8192,
+  "max_input_tokens": 12000,
+  "embedding_dims": 384,
+  "normalize_embeddings": true
+}

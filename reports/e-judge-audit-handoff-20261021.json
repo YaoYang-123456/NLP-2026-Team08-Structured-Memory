@@ -1,0 +1,826 @@
+{
+  "date": "2026-10-21",
+  "purpose": "Minimal per-question audit handoff; full requests, labels, questions, predictions, and raw response text are intentionally omitted.",
+  "source_record": "Private local DeepSeek judge output; no API calls were made to create this handoff.",
+  "judge": {
+    "model": "deepseek-flash",
+    "parameters": {
+      "temperature": 0,
+      "top_p": 1,
+      "max_tokens": 16,
+      "thinking": "disabled",
+      "retries": 0
+    },
+    "input_sha256_definition": "SHA-256 of UTF-8 canonical JSON for the saved user input object (question, reference_answer, model_answer), serialized with sorted keys and compact separators. The object itself is not included."
+  },
+  "summary": {
+    "records": 60,
+    "scored": 60,
+    "failed": 0,
+    "raw_yes_no_counts": {
+      "S0": {
+        "no": 14,
+        "yes": 16
+      },
+      "S2": {
+        "no": 11,
+        "yes": 19
+      }
+    },
+    "usage_totals": {
+      "S0": {
+        "prompt_tokens": 4769,
+        "completion_tokens": 30,
+        "total_tokens": 4799
+      },
+      "S2": {
+        "prompt_tokens": 4524,
+        "completion_tokens": 30,
+        "total_tokens": 4554
+      }
+    },
+    "input_binding": "All 60 saved judge inputs exactly match the current frozen question, reference, and prediction when replayed through the updated evaluator."
+  },
+  "records": [
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 4,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 170,
+        "completion_tokens": 1,
+        "total_tokens": 171
+      },
+      "input_sha256": "ce4974a0f07b52ed474a185f0f54f88fd4ff37f8d91db58761bb344b19d29190"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 1,
+        "total_tokens": 147
+      },
+      "input_sha256": "87a6a4cd208dd41a8d5ad7748a2bece7c9170e590b7933a3e23bef5d0ad4a8d9"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 36,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 176,
+        "completion_tokens": 1,
+        "total_tokens": 177
+      },
+      "input_sha256": "2e854d99a6ba6baeec2b4b74b064c867cb99f47b977c84a3f024a9202d69f347"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 39,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 1,
+        "total_tokens": 147
+      },
+      "input_sha256": "e007537e4f97c2866904a1a615df21cb2e660bfdec4e6c7fd8e96b1e34a9e118"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 144,
+        "completion_tokens": 1,
+        "total_tokens": 145
+      },
+      "input_sha256": "5849d8262f2e97b3c0e7f373487cec4703f985730003cfb639a3ee5255f23eb0"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 45,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 160,
+        "completion_tokens": 1,
+        "total_tokens": 161
+      },
+      "input_sha256": "40d9008f1cff7b8c5ee79d711d211630571c3fa3e9a3dfac6a8bb7822054cee8"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 49,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 1,
+        "total_tokens": 146
+      },
+      "input_sha256": "2d097684b7dd784a4c9f8571be3d9865bfe396609682b9e204706858f747e05c"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 53,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 1,
+        "total_tokens": 154
+      },
+      "input_sha256": "3c671d226f5d809908a3e59725c07165c7b32d7d741b78f4a77a384fb7a62868"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 90,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 152,
+        "completion_tokens": 1,
+        "total_tokens": 153
+      },
+      "input_sha256": "d96e9449a5c5e33ef0a8fac2d81a972fe91a54ba97fc0a2be278df59f1e19c5f"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-41",
+      "qa_index": 94,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 166,
+        "completion_tokens": 1,
+        "total_tokens": 167
+      },
+      "input_sha256": "4cd7dfe5f110f78b17658ef42d356c438aa17d4b5634886ff6ba5ea82309399c"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 0,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 147,
+        "completion_tokens": 1,
+        "total_tokens": 148
+      },
+      "input_sha256": "828dd14c28e9bc081c1a83d0022c697867b3ecd92e617fa7ea8d84d20d0356cc"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 166,
+        "completion_tokens": 1,
+        "total_tokens": 167
+      },
+      "input_sha256": "0606d3a5311b4b3a714cfcffa0a8a72e0df00fd6882dca9b674109cc7e692a46"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 15,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 182,
+        "completion_tokens": 1,
+        "total_tokens": 183
+      },
+      "input_sha256": "86e79240838cf00ca3be5b1104b69bb4b4ea42f40eefd2a9c99bb3ebbb20a280"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 178,
+        "completion_tokens": 1,
+        "total_tokens": 179
+      },
+      "input_sha256": "b0d5f3075c8d341faffbe02faaf3386a92091176f01d0c6d6581cc8ecd508c1d"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 55,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 186,
+        "completion_tokens": 1,
+        "total_tokens": 187
+      },
+      "input_sha256": "ae8c5645b260156e7f1c1399f7d9ae59db7c9a832aeb476158ca02f4ddef3eac"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 57,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 151,
+        "completion_tokens": 1,
+        "total_tokens": 152
+      },
+      "input_sha256": "d784631465a483cf2d52b9ad364460261371f8d0048803ccd22365fa0991539f"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 61,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 147,
+        "completion_tokens": 1,
+        "total_tokens": 148
+      },
+      "input_sha256": "2f6b61b3dc15aece5cc1977a654fbccf9545aacd2734313b0f08bbad66e4a81f"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 71,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 139,
+        "completion_tokens": 1,
+        "total_tokens": 140
+      },
+      "input_sha256": "2cbef6bba286f4f38348d45f2b935836b8e6ed2630ca262ca3d48553e85091b9"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 89,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 140,
+        "completion_tokens": 1,
+        "total_tokens": 141
+      },
+      "input_sha256": "f9178f551e10747529f14bbd80b1a78820dd628c151f4afbb7f52001a087b429"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-42",
+      "qa_index": 146,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 162,
+        "completion_tokens": 1,
+        "total_tokens": 163
+      },
+      "input_sha256": "97b5cf99875ee3af99f00789ed1d3c7b0ee3c044ad09c358b9b4daaf621c86ea"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 6,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 178,
+        "completion_tokens": 1,
+        "total_tokens": 179
+      },
+      "input_sha256": "cfc5fb1222198456d892ce3706acba0a0976e0006541e34928d8946b14ad9256"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 11,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 133,
+        "completion_tokens": 1,
+        "total_tokens": 134
+      },
+      "input_sha256": "95259b861eb9c2659cf82a72a100b30f32cb6fa76af861f25f25f872a418900f"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 23,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 149,
+        "completion_tokens": 1,
+        "total_tokens": 150
+      },
+      "input_sha256": "9771c6abd294753a04c55586e459817704369af3468315df0ad8c3bef30c3564"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 29,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 173,
+        "completion_tokens": 1,
+        "total_tokens": 174
+      },
+      "input_sha256": "ef6866f35268fe40095536900d25fbad6a3f2661b408b5a58420fa401d041591"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 66,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 165,
+        "completion_tokens": 1,
+        "total_tokens": 166
+      },
+      "input_sha256": "5145601ae4ebb2e527571ac93c84d256aea6d17e864fc0c87ea348c2b0c9ebf9"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 80,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 156,
+        "completion_tokens": 1,
+        "total_tokens": 157
+      },
+      "input_sha256": "5a6fabc2033c67272d864dcf686fc7373d8f452f3c6d001ed13f7d75632dfb35"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 86,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 174,
+        "completion_tokens": 1,
+        "total_tokens": 175
+      },
+      "input_sha256": "a44a9516ce4d0d97176cafdc514a82381e781e771c76b58fc315a11dcf704c78"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 158,
+        "completion_tokens": 1,
+        "total_tokens": 159
+      },
+      "input_sha256": "38b45e72512dad336d5635a488c8991841b84b20d870cacb7fd26188ca14aece"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 133,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 178,
+        "completion_tokens": 1,
+        "total_tokens": 179
+      },
+      "input_sha256": "c056f3b0f01676b377fd8fc22cbd0cae32aae047d83627828d2a2ae1f4dbfa62"
+    },
+    {
+      "method": "S0",
+      "sample_id": "conv-48",
+      "qa_index": 173,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 149,
+        "completion_tokens": 1,
+        "total_tokens": 150
+      },
+      "input_sha256": "c9017bfcf69e8ab90caa952509e494bf60b6238982d258acec82492c46f429f0"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 4,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 154,
+        "completion_tokens": 1,
+        "total_tokens": 155
+      },
+      "input_sha256": "15336b8e73aa173a4cf7cad00264148d563a1efad08c02ecf7c967eb385b4070"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 1,
+        "total_tokens": 147
+      },
+      "input_sha256": "cfd938b5e34e3f0fd7cab433d5e255e3670f0483d7fbc812d3bd487457984d18"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 36,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 1,
+        "total_tokens": 147
+      },
+      "input_sha256": "dbc9c78cda9b03219dece600d6003a8e36b2028830aa2a57e745b7ecb74ea525"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 39,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 149,
+        "completion_tokens": 1,
+        "total_tokens": 150
+      },
+      "input_sha256": "256e33ee11af24ae6286da734d02c22046fde6751918639352665e089031eb84"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 144,
+        "completion_tokens": 1,
+        "total_tokens": 145
+      },
+      "input_sha256": "5849d8262f2e97b3c0e7f373487cec4703f985730003cfb639a3ee5255f23eb0"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 45,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 160,
+        "completion_tokens": 1,
+        "total_tokens": 161
+      },
+      "input_sha256": "40d9008f1cff7b8c5ee79d711d211630571c3fa3e9a3dfac6a8bb7822054cee8"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 49,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 143,
+        "completion_tokens": 1,
+        "total_tokens": 144
+      },
+      "input_sha256": "e9f602e4c0233ffc880313a8dd41b3613ef5c40710ba35e58a3144f4d321a40a"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 53,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 149,
+        "completion_tokens": 1,
+        "total_tokens": 150
+      },
+      "input_sha256": "1aab052570c9b2beaf9f3492355a4397db81aa7952a2857bd0e2f56de2a1b826"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 90,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 150,
+        "completion_tokens": 1,
+        "total_tokens": 151
+      },
+      "input_sha256": "794de3ad8e63bea040543d094305034084ea56bb7d5d11287b8c76f207c69f6c"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-41",
+      "qa_index": 94,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 159,
+        "completion_tokens": 1,
+        "total_tokens": 160
+      },
+      "input_sha256": "96030945c5d192dffd20ec2df44066a2df3305de6c1775213177995718a3450c"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 0,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 1,
+        "total_tokens": 147
+      },
+      "input_sha256": "2f090cc91dc8afd17e695052d673401c104b60a02a246bed9c31879b38b8f790"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 164,
+        "completion_tokens": 1,
+        "total_tokens": 165
+      },
+      "input_sha256": "e5f13a8e564c22fdbccd6ab6b52720b77abb7129ce8e7dacfed50ea10ee9abfe"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 15,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 154,
+        "completion_tokens": 1,
+        "total_tokens": 155
+      },
+      "input_sha256": "cb24b07b6bf28958f1ace9846ca1ad16c84ef36f6e40661c667c53edddb921ca"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 161,
+        "completion_tokens": 1,
+        "total_tokens": 162
+      },
+      "input_sha256": "4fc0e8c04305628a3e31e0d6fc415feb4b6d94a038808b2a2e51a514187ba100"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 55,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 173,
+        "completion_tokens": 1,
+        "total_tokens": 174
+      },
+      "input_sha256": "36305a99ffc7b3383853808f9ef6ad8fd90ccaa5d878a4e76ac8119532db7812"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 57,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 1,
+        "total_tokens": 154
+      },
+      "input_sha256": "b31482e5caa75d41324d5c8a24fc4cdb7619cca87a7bf2fba944d3838e76ba22"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 61,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 147,
+        "completion_tokens": 1,
+        "total_tokens": 148
+      },
+      "input_sha256": "30744948ca48ec8ea44ed28bcb135e2cca2560c8ee9d648d98797a35b67989f7"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 71,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 139,
+        "completion_tokens": 1,
+        "total_tokens": 140
+      },
+      "input_sha256": "2cbef6bba286f4f38348d45f2b935836b8e6ed2630ca262ca3d48553e85091b9"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 89,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 139,
+        "completion_tokens": 1,
+        "total_tokens": 140
+      },
+      "input_sha256": "27974d8d61fd8be1c4ee75a8f4e0148d6b7febe8cca0443805205fb91f9e3c4c"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-42",
+      "qa_index": 146,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 1,
+        "total_tokens": 154
+      },
+      "input_sha256": "39b39117612f13ae31d2845e4ce181e3110a6e8897d8148aef9f6499aed5e9e7"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 6,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 144,
+        "completion_tokens": 1,
+        "total_tokens": 145
+      },
+      "input_sha256": "2fa21623e87a3234071e6eae53952d284ffa63f120b44db4f43f70aa20035305"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 11,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 133,
+        "completion_tokens": 1,
+        "total_tokens": 134
+      },
+      "input_sha256": "95259b861eb9c2659cf82a72a100b30f32cb6fa76af861f25f25f872a418900f"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 23,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 149,
+        "completion_tokens": 1,
+        "total_tokens": 150
+      },
+      "input_sha256": "9771c6abd294753a04c55586e459817704369af3468315df0ad8c3bef30c3564"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 29,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 160,
+        "completion_tokens": 1,
+        "total_tokens": 161
+      },
+      "input_sha256": "46c328c408c3f14d8eb18a3890ad9fef4aa13031f3e93204fcf1ffdf8f1b4a4f"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 66,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 156,
+        "completion_tokens": 1,
+        "total_tokens": 157
+      },
+      "input_sha256": "2c60e78b592797bcb3ed9d7aeaf5fb1d36a190d8fa210cdc4e0305085ef3d8ab"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 80,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 142,
+        "completion_tokens": 1,
+        "total_tokens": 143
+      },
+      "input_sha256": "bfb84d3d6ea6c21b85eb6dcb25dcb6b418cfabe0f3a203fe744379d1b0455c2b"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 86,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 160,
+        "completion_tokens": 1,
+        "total_tokens": 161
+      },
+      "input_sha256": "db78a2d2ab6f8328a683a6b66bbc1bdb0f41f3f151238b51133e4ac4e83db920"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 150,
+        "completion_tokens": 1,
+        "total_tokens": 151
+      },
+      "input_sha256": "572a87c4ae37b72837265d933d773fc8ad71eb21b9385b8572cf538f8e97bf5a"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 133,
+      "status": "scored",
+      "raw_judgment": "yes",
+      "usage": {
+        "prompt_tokens": 152,
+        "completion_tokens": 1,
+        "total_tokens": 153
+      },
+      "input_sha256": "f3ad2f3c8711c44969c5409724522c8bffd79af2124802339fa66e8aad64bfab"
+    },
+    {
+      "method": "S2",
+      "sample_id": "conv-48",
+      "qa_index": 173,
+      "status": "scored",
+      "raw_judgment": "no",
+      "usage": {
+        "prompt_tokens": 149,
+        "completion_tokens": 1,
+        "total_tokens": 150
+      },
+      "input_sha256": "c9017bfcf69e8ab90caa952509e494bf60b6238982d258acec82492c46f429f0"
+    }
+  ]
+}

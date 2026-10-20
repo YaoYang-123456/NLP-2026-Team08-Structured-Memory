@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-19",
+  "task": 32,
+  "status": "prepared_and_locally_verified",
+  "archive": "output/structmem/session-handoff/conv-48-session-001-20261019.zip",
+  "bytes": 229007,
+  "sha256": "39a4efd0eb2c246372e1b103b9cc248070942fdbf37065adcdaa275a355a4c07",
+  "manifest_sha256": "82fc63282eb0af24eba68476a91bbebee791bca6d4a49aa07645038e6edcd990",
+  "entry_count": 34,
+  "message_count": 18,
+  "conversation_complete": false,
+  "sent_to_d": true,
+  "d_acceptance": "first session independently accepted by D; see issue #28",
+  "new_generation_api_requests": 0,
+  "contains_credentials": false,
+  "verification": {
+    "archive_extracted_to_independent_copy": true,
+    "file_hashes_verified": true,
+    "all_34_payloads_and_vectors_match": true,
+    "source_bindings_verified": true,
+    "source_messages_referenced": 18,
+    "local_retrieval": {
+      "query": "What reminds Deborah of her mother?",
+      "returned_count": 5,
+      "expected_source_in_top_5": true,
+      "hits": [
+        {
+          "score": 0.7929979650130983,
+          "source_key": "conv-48/D1:9",
+          "memory": "Deborah also has a pendant that reminds her of her mother."
+        },
+        {
+          "score": 0.7619880933253818,
+          "source_key": "conv-48/D1:3",
+          "memory": "Deborah's mother's old house holds a lot of memories for her."
+        },
+        {
+          "score": 0.6858224406879994,
+          "source_key": "conv-48/D1:4",
+          "memory": "Jolene showed curiosity about the significance of Deborah's mother's house."
+        },
+        {
+          "score": 0.6481500357549999,
+          "source_key": "conv-48/D1:7",
+          "memory": "Deborah's mother's house had a special bench near the window where her mother loved to sit every morning and take in the view."
+        },
+        {
+          "score": 0.6445190289685747,
+          "source_key": "conv-48/D1:6",
+          "memory": "Jolene expressed sympathy for Deborah's loss and connected by sharing that her own mother also passed away last year, then invited Deborah to share a special memory."
+        }
+      ]
+    }
+  },
+  "d_acceptance_evidence": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28"
+}

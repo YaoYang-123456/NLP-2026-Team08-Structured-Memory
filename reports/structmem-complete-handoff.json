@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-19",
+  "task": 32,
+  "status": "prepared_and_locally_verified",
+  "archive": "output/structmem/complete-handoff-20261019.zip",
+  "bytes": 7895794,
+  "sha256": "8c26e24fa7be2e6b19dbec91f3647d563e1145e909866e939f1b2b4e70427885",
+  "file_manifest_sha256": "0ef4b6f5a87f4b8b822a5966c9a6270650d97e9f30a4d2d7b12e181df206a5ea",
+  "file_count": 104,
+  "session_count": 91,
+  "message_count": 1973,
+  "entry_count": 3712,
+  "conversations": {
+    "conv-48": {
+      "collection": "conv_48_events",
+      "entry_count": 1277,
+      "all_payloads_and_vectors_verified": true
+    },
+    "conv-42": {
+      "collection": "conv_42_events",
+      "entry_count": 1160,
+      "all_payloads_and_vectors_verified": true
+    },
+    "conv-41": {
+      "collection": "conv_41_events",
+      "entry_count": 1275,
+      "all_payloads_and_vectors_verified": true
+    }
+  },
+  "verification": {
+    "archive_integrity": true,
+    "all_file_hashes": true,
+    "independently_extracted_database_copies": true,
+    "all_payloads_and_vectors": true
+  },
+  "contains_credentials": false,
+  "new_generation_api_requests_for_packaging": 0,
+  "sent_to_d": true,
+  "d_acceptance": "complete-conversation package acceptance pending; first-session acceptance recorded in issue #28",
+  "method_difference": "Compression and topic segmentation remain disabled",
+  "team_preprocessing_acceptance": "not confirmed",
+  "delivery": {
+    "channel": "WeChat",
+    "date": "2026-10-19",
+    "recipient_role": "D",
+    "reported_by": "user",
+    "full_package_receipt_verified": false
+  }
+}

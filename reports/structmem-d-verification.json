@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-19",
+  "owner": "lanshuheng9-oss",
+  "status": "offline_handoff_only",
+  "base_main": "9e2e0d650456bbf36b91cfb5850c037c07352b25",
+  "dependencies": {
+    "A_PR_38": "1d651da44cd1bf101ead69794a74f45f91c507a3",
+    "F_PR_35": "4206096a2929256b4be55d28c105e441e367ad63",
+    "LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046"
+  },
+  "upstream_files_sha256": {
+    "experiments\\locomo\\retrievers.py": "144b4ebf65bef5387cc7c4335da3acd662b38ea84d2e8a66d890c6abad7cb05f",
+    "src\\lightmem\\memory\\lightmem.py": "660ad548e87f28f4c9be4783b943d25a0aec4eaf3b051d8de0cd61b7381ccd15",
+    "src\\lightmem\\memory\\utils.py": "378c53ed228720331eea90fc929503ba52e973e044e2661f6fdbd9507de81844",
+    "experiments\\locomo\\add_locomo.py": "2744ec1ad161d81c03d584635f11c596cb0195b9996c61af5e50e278e8eab184",
+    "experiments\\locomo\\prompts.py": "332de9cce1852998f2c14303ca8e76b22a7b2e688cd1be779b4a90acfeadc0cd"
+  },
+  "A_data": {
+    "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "development": [
+      "conv-48",
+      "conv-42",
+      "conv-41"
+    ],
+    "all_output_hashes_match": true
+  },
+  "D_tests": {
+    "passed": 9
+  },
+  "F_tests": {
+    "passed": 14,
+    "initial_fixture_copy_missing": "qa-smoke.inputs.jsonl was omitted when extracting the temporary F copy; restored from the same pinned commit, then all 14 passed"
+  },
+  "upstream_cosine_comparison": {
+    "reference": "Unmodified VectorRetriever class AST from the pinned retrievers.py, executed with NumPy",
+    "rankings_identical": true,
+    "scores_compared": 2275,
+    "max_absolute_score_difference": 5.551115123125783e-17
+  },
+  "integration": {
+    "5": {
+      "question_input_sha256": "7340e360455e2b643dc63f4945bcd79ba3a28cf8fb06ee14a04d25c2af1e7de7",
+      "fixture_retrieval_sha256": "c5d30067a1534a7780d9139eed231b26c36fb4053fb59970b62e3795cd71a21a",
+      "questions": 5,
+      "contexts_per_question": {
+        "event": 60,
+        "synthesis": 5
+      },
+      "f_status": "simulated",
+      "f_simulated_questions": 5,
+      "real_successful_answers": 0
+    },
+    "30": {
+      "question_input_sha256": "8244dff6123ea8479561bfbe6ad5a36d655b2926d4acbf6fdd0d2ddf356abb63",
+      "fixture_retrieval_sha256": "4abdcd789f079e3e79b21902bf6352367c649c0c7c46d8292741cd3048c503a7",
+      "questions": 30,
+      "contexts_per_question": {
+        "event": 60,
+        "synthesis": 5
+      },
+      "f_status": "simulated",
+      "f_simulated_questions": 30,
+      "real_successful_answers": 0
+    }
+  },
+  "real_event_memories": 0,
+  "real_synthesis_calls": 0,
+  "real_answer_api_calls": 0,
+  "real_judge_calls": 0,
+  "new_model_downloads": 0,
+  "real_embedding_model_loaded": false,
+  "human_review_completed": false,
+  "accuracy": null,
+  "method_prompt_frozen": false,
+  "limitations": [
+    "C has not published a real event snapshot/native construction config",
+    "Full LightMem imports, local MiniLM loading and actual summarize have not been executed here",
+    "F example prompt is only used for mock interface validation; team must freeze S2 prompt before real QA",
+    "Native point IDs do not establish original dia_id provenance without C extraction mapping"
+  ],
+  "artifact_directory": "output/structmem-d-offline-20261019",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "win32",
+    "upstream_full_environment_tested": false
+  },
+  "code_sha256": {
+    "src/structmem_retrieve.py": "0b419a21731bb1ccd7f030654c6f3d182d86634b5113b814c40acc389a987f1a",
+    "scripts/retrieve_structmem.py": "187b359c920ea9c454c8303aee079e566a5cb41dc7be819dfae675953209440b",
+    "tests/test_structmem_retrieve.py": "8bd36c66f6f48993ac22300d9c39a2c0d556b25539272298bc2e33e86ce996d7"
+  },
+  "validation_commands": [
+    ".venv/Scripts/python.exe -W error::ResourceWarning -m unittest discover -s tests -p test_structmem_retrieve.py -v",
+    ".venv/Scripts/python.exe -W error::ResourceWarning -m unittest discover -s tmp/structmem-d-deps/f/tests -p test_qa.py -v",
+    "bundled-python tmp/check_structmem_d.py"
+  ]
+}
