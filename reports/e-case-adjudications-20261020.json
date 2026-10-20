@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-20",
+  "reviewer": "Codex evidence review",
+  "status": "completed",
+  "score_policy": "Preserve every frozen question and denominator. Keep raw DeepSeek judgments; apply a documented correction only when the answer contradicts the frozen reference. Evidence concerns in a frozen label are disclosed without silently changing that label.",
+  "overrides": [
+    {
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "method": "S0",
+      "raw_judgment": "yes",
+      "correct": false,
+      "rationale": "The answer states 24 June as the event date, contradicting the frozen reference ('the Friday before 24 June') and the source message ('last Friday') recorded on 24 June."
+    }
+  ],
+  "items": [
+    {
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "finding": "confirmed",
+      "frozen_answer": "play the console",
+      "evidence": [
+        "D3:11 says Jolene and her partner planned to play the console."
+      ],
+      "S0": {
+        "raw_judgment": "no",
+        "prediction": "Camping trip to connect with nature and practice yoga."
+      },
+      "S2": {
+        "raw_judgment": "yes",
+        "prediction": "Play the console"
+      },
+      "conclusion": "The label and both fixed-judge outcomes agree with the cited conversation."
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "finding": "confirmed",
+      "frozen_answer": "2022",
+      "evidence": [
+        "D11:3, recorded on 10 April 2023, says the road trip happened last year.",
+        "D11:5 identifies the trip as being to the Pacific Northwest."
+      ],
+      "S0": {
+        "raw_judgment": "no",
+        "prediction": "10 April, 2023"
+      },
+      "S2": {
+        "raw_judgment": "yes",
+        "prediction": "Last year (2022)"
+      },
+      "conclusion": "S0 returns the message date; S2 resolves the relative year correctly."
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 61,
+      "finding": "frozen_reference_evidence_incomplete",
+      "frozen_answer": "Gamecube, PC, Playstation.",
+      "evidence": [
+        "D22:2 mentions a video-game tournament and shows a game controller.",
+        "D27:21 mentions gaming equipment and shows headphones/controller.",
+        "D27:15 shows a computer setup; the adjacent D27:16-D27:17 exchange confirms Nate uses that computer for gaming."
+      ],
+      "S0": {
+        "raw_judgment": "no",
+        "prediction": "I don't know."
+      },
+      "S2": {
+        "raw_judgment": "no",
+        "prediction": "Computer, Nintendo, controller"
+      },
+      "conclusion": "The cited evidence supports gaming and PC use, but does not identify GameCube or PlayStation. Keep both raw scores against the frozen reference and denominator, but do not use this case alone to claim a memory-retrieval failure."
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "finding": "confirmed",
+      "frozen_answer": "Hairless cats or pigs, since they don't have fur, which is one of the main causes of Joanna's allergy.",
+      "evidence": [
+        "D2:23 says Joanna is allergic to most reptiles and animals with fur."
+      ],
+      "S0": {
+        "raw_judgment": "no",
+        "prediction": "I don't know."
+      },
+      "S2": {
+        "raw_judgment": "no",
+        "prediction": "Turtles"
+      },
+      "conclusion": "Turtles are reptiles, which conflicts with the allergy evidence; S2 is not supported by the frozen reference or cited context."
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "finding": "frozen_reference_evidence_incomplete",
+      "frozen_answer": "beach",
+      "evidence": [
+        "D22:15 is a photo from a walk, with an ocean/beach image description; the text does not say John lives near a beach."
+      ],
+      "S0": {
+        "raw_judgment": "no",
+        "prediction": "I don't know."
+      },
+      "S2": {
+        "raw_judgment": "no",
+        "prediction": "I don't know."
+      },
+      "conclusion": "The fixed reference is not established by the cited evidence. Retain the frozen score and denominator, but do not interpret this as evidence that abstention is wrong."
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "finding": "judge_override",
+      "frozen_answer": "The Friday before 24 June, 2022.",
+      "evidence": [
+        "D16:8 is recorded on Friday, 24 June 2022 and says Nate made and shared the ice cream last Friday, referring to 17 June."
+      ],
+      "S0": {
+        "raw_judgment": "yes",
+        "adjudicated_correct": false,
+        "prediction": "Friday, 24 June 2022 (the Friday before 10:55 am on 24 June, 2022).",
+        "rationale": "The answer states 24 June as the event date, which contradicts the frozen reference and the phrase 'last Friday' in the 24 June message. The parenthetical does not resolve the answer unambiguously."
+      },
+      "S2": {
+        "raw_judgment": "yes",
+        "adjudicated_correct": true,
+        "prediction": "Friday, 2022-06-17"
+      },
+      "conclusion": "Preserve DeepSeek's raw yes for S0, but use no in the audited score because the answer contains a conflicting date."
+    }
+  ]
+}

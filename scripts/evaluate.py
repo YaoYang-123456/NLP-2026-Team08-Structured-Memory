@@ -154,7 +154,7 @@ def keyed(rows, label):
     return out
 
 
-def evaluate(prediction_paths, labels_path, judgments_path):
+def evaluate(prediction_paths, labels_path, judgments_path, adjudications_path=None):
     labels = keyed(read_json(labels_path), "label")
     if not labels:
         raise ValueError("The frozen label file is empty")
@@ -162,6 +162,27 @@ def evaluate(prediction_paths, labels_path, judgments_path):
     judgments = keyed(judgment_document["items"], "judgment")
     if set(judgments) != set(labels):
         raise ValueError("Judgment keys must exactly match the frozen label keys")
+    adjudication_document = read_json(adjudications_path) if adjudications_path else None
+    adjudications = {}
+    if adjudication_document:
+        for item in adjudication_document.get("overrides", []):
+            key = (item["sample_id"], item["qa_index"])
+            method = item["method"]
+            if key not in labels or method not in prediction_paths:
+                raise ValueError(f"Adjudication references an unknown method or frozen key: {method} {key}")
+            override_key = (method, key)
+            if override_key in adjudications:
+                raise ValueError(f"Duplicate adjudication: {method} {key}")
+            raw = judgments[key]["methods"].get(method)
+            if not raw or raw.get("status") != "scored":
+                raise ValueError(f"Only a successfully scored judgment can be adjudicated: {method} {key}")
+            if item.get("raw_judgment") != raw.get("judgment"):
+                raise ValueError(f"Adjudication raw_judgment does not match saved judge output: {method} {key}")
+            if type(item.get("correct")) is not bool or item["correct"] == raw.get("correct"):
+                raise ValueError(f"Adjudication must explicitly change a boolean judgment: {method} {key}")
+            if not item.get("rationale"):
+                raise ValueError(f"Adjudication rationale is required: {method} {key}")
+            adjudications[override_key] = item
 
     predictions = {}
     for method, path in prediction_paths.items():
@@ -182,7 +203,9 @@ def evaluate(prediction_paths, labels_path, judgments_path):
                 raise ValueError(f"Missing {method} judgment for {key}")
             generation_status = prediction.get("status", "missing") if prediction else "missing"
             scored = generation_status == "ok" and judgment.get("status") == "scored"
-            correct = judgment.get("correct") if scored else None
+            raw_judge_correct = judgment.get("correct") if scored else None
+            adjudication = adjudications.get((method, key))
+            correct = adjudication["correct"] if scored and adjudication else raw_judge_correct
             if scored and type(correct) is not bool:
                 raise ValueError(f"Scored judgment must have boolean correct value for {method} {key}")
             if generation_status != "ok" and correct is not None:
@@ -196,10 +219,12 @@ def evaluate(prediction_paths, labels_path, judgments_path):
                 "gold_answer": label["answer"],
                 "prediction": prediction.get("prediction") if prediction else None,
                 "generation_status": generation_status,
-                "score_status": judgment.get("status", "not_scored") if generation_status == "ok" else "not_scored_generation_failed",
+                "score_status": ("adjudicated" if adjudication else judgment.get("status", "not_scored")) if generation_status == "ok" else "not_scored_generation_failed",
                 "correct": correct,
+                "raw_judge_correct": raw_judge_correct,
                 "judgment": judgment.get("judgment"),
                 "rationale": judgment.get("rationale"),
+                "adjudication_rationale": adjudication.get("rationale") if adjudication else None,
                 "usage": prediction.get("usage") if prediction else None,
                 "seconds": prediction.get("seconds") if prediction else None,
             })
@@ -234,6 +259,8 @@ def evaluate(prediction_paths, labels_path, judgments_path):
             "scored": len(valid),
             "judge_failed_or_missing": sum(row["generation_status"] == "ok" and row["correct"] is None for row in rows),
             "correct": correct,
+            "raw_judge_correct": sum(row["raw_judge_correct"] is True for row in rows),
+            "adjudicated": sum(row["score_status"] == "adjudicated" for row in rows),
             "accuracy_on_scored": correct / len(valid) if valid else None,
             "correct_over_planned": correct / len(rows) if rows else None,
             "scoring_coverage": len(valid) / len(rows) if rows else None,
@@ -260,7 +287,14 @@ def evaluate(prediction_paths, labels_path, judgments_path):
             },
             "by_category": per_category,
         }
+    adjudication_metadata = None
+    if adjudication_document:
+        adjudication_metadata = dict(adjudication_document.get("metadata", {}))
+        for field in ("reviewer", "status", "score_policy"):
+            if field in adjudication_document:
+                adjudication_metadata[field] = adjudication_document[field]
     return {"judgment_metadata": judgment_document.get("metadata", {}),
+            "adjudication_metadata": adjudication_metadata,
             "planned_category_counts": {str(k): v for k, v in sorted(Counter(row["category"] for row in labels.values()).items())},
             "methods": summaries}, merged
 
@@ -271,6 +305,7 @@ def main():
     parser.add_argument("--s2", type=Path, required=True, help="S2 predictions JSONL")
     parser.add_argument("--labels", type=Path, required=True, help="A frozen labels JSON (keep local; do not commit)")
     parser.add_argument("--judgments", type=Path, help="Existing judgments JSON; omitted with --judge-api")
+    parser.add_argument("--adjudications", type=Path, help="Optional saved case-audit decisions that override raw judge labels")
     parser.add_argument("--judge-api", action="store_true", help="Call DeepSeek Flash once per successful prediction; requires DEEPSEEK_API_KEY")
     parser.add_argument("--out", type=Path, required=True, help="Output directory")
     args = parser.parse_args()
@@ -285,7 +320,7 @@ def main():
         if not args.judgments:
             parser.error("Provide --judgments or set up DEEPSEEK_API_KEY and pass --judge-api")
         judgments_path = args.judgments
-    summary, rows = evaluate({"S0": args.s0, "S2": args.s2}, args.labels, judgments_path)
+    summary, rows = evaluate({"S0": args.s0, "S2": args.s2}, args.labels, judgments_path, args.adjudications)
     (args.out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     fields = list(rows[0])
     with (args.out / "per-question.csv").open("w", encoding="utf-8-sig", newline="") as stream:
