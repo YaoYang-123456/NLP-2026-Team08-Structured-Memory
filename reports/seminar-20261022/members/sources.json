@@ -1,0 +1,30 @@
+[
+  {
+    "owner": "A",
+    "commit": "bf716a49a7f0b0655fef898b0694e010514892bc",
+    "path": "reports/locomo-a-progress.md",
+    "sha256": "c2602e52062999f10bfe6422242b4092ea2cfd452520719dcf6877332486cfe8",
+    "selected_file": "a-data.tex"
+  },
+  {
+    "owner": "B",
+    "commit": "bf716a49a7f0b0655fef898b0694e010514892bc",
+    "path": "reports/s0-seminar-20261019.tex",
+    "sha256": "7e237facda26291d906edc860b621e4cd295421d2d89b3ec1de23ec99f2a330b",
+    "selected_file": "b-s0.tex"
+  },
+  {
+    "owner": "C",
+    "commit": "433de349595a54e4f0f0f2073d745bb1d830a4ea",
+    "path": "reports/structmem-progress-20261019.md",
+    "sha256": "bee6b24759bef6695bb7b05d1a04508e16e6c58c494660a80f219e61876ecd34",
+    "selected_file": "c-events.tex"
+  },
+  {
+    "owner": "D",
+    "commit": "43dc38916b8c7acdc834e00bf5095cf6700ec9f6",
+    "path": "reports/structmem-d-progress.md",
+    "sha256": "540f736f2a165a56f60d29f0c5b69e25597afbdbba9c3210c1bf30735a5ed0ca",
+    "selected_file": "d-synthesis.tex"
+  }
+]

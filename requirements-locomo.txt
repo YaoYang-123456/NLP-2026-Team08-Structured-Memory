@@ -1,0 +1,5 @@
+# Data preparation itself uses only Python's standard library (Python >= 3.11).
+# Install a suitable CPU/CUDA PyTorch wheel separately; never replace teammates' CUDA setup.
+sentence-transformers==5.1.2
+transformers==4.57.1
+huggingface-hub==0.36.0

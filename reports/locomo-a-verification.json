@@ -1,0 +1,175 @@
+{
+  "checked_date": "2026-10-19",
+  "owner": "ngocnamd93-spec",
+  "issue": 26,
+  "scope": "data preparation and local embedding only",
+  "source": {
+    "repository": "snap-research/locomo",
+    "revision": "cbfbc1dba6bc53d00625212a0f22d55ffee7c1fc",
+    "path": "data/locomo10.json",
+    "url": "https://raw.githubusercontent.com/snap-research/locomo/cbfbc1dba6bc53d00625212a0f22d55ffee7c1fc/data/locomo10.json",
+    "bytes": 2805274,
+    "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "git_blob_sha1": "d95b872480b413d935821fdc3c84f8a8f5f29e73"
+  },
+  "lightmem": {
+    "repository": "zjunlp/LightMem",
+    "revision": "8449d574df6bae1bdf3314a1564da65e2f37e046"
+  },
+  "splits": {
+    "development": [
+      "conv-48",
+      "conv-42",
+      "conv-41"
+    ],
+    "heldout": [
+      "conv-49",
+      "conv-44",
+      "conv-47",
+      "conv-50",
+      "conv-43",
+      "conv-26",
+      "conv-30"
+    ]
+  },
+  "question_count": 30,
+  "smoke_count": 5,
+  "category_counts": {
+    "1": 8,
+    "2": 8,
+    "3": 7,
+    "4": 7
+  },
+  "conversation_question_counts": {
+    "conv-48": 10,
+    "conv-42": 10,
+    "conv-41": 10
+  },
+  "sessions": 91,
+  "messages": 1973,
+  "image_captions": 392,
+  "checks": {
+    "targeted_tests_passed": 7,
+    "real_data_test_skipped": false,
+    "source_exact_hash": true,
+    "cross_split_conversation_overlap": 0,
+    "question_keys_unique": true,
+    "smoke_is_subset": true,
+    "answer_input_field_whitelist": true,
+    "original_messages_and_times_preserved": true,
+    "selected_evidence_missing": [],
+    "second_directory_byte_equal": true
+  },
+  "output_sha256": {
+    "development.conversations.json": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+    "development.inputs.json": "8244dff6123ea8479561bfbe6ad5a36d655b2926d4acbf6fdd0d2ddf356abb63",
+    "smoke.inputs.json": "7340e360455e2b643dc63f4945bcd79ba3a28cf8fb06ee14a04d25c2af1e7de7",
+    "development.labels.json": "21c2a7b7bb1805b231e2404bf17df407898e63af36b793962912b66711a4dd60",
+    "smoke.labels.json": "4e174921befab3827ae93abdf55f5f2fd4fe7f2f4a81b53124dfd4001c36f36c"
+  },
+  "environment_local": {
+    "python": "3.13.13",
+    "platform": "Windows",
+    "status": "passed",
+    "local_files_only": true,
+    "data": {
+      "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+      "development_conversations": [
+        "conv-48",
+        "conv-42",
+        "conv-41"
+      ],
+      "heldout_conversations": [
+        "conv-49",
+        "conv-44",
+        "conv-47",
+        "conv-50",
+        "conv-43",
+        "conv-26",
+        "conv-30"
+      ],
+      "questions": 30,
+      "smoke_questions": 5,
+      "category_counts": {
+        "1": 8,
+        "2": 8,
+        "3": 7,
+        "4": 7
+      },
+      "conversation_overlap": 0,
+      "output_sha256": {
+        "development.conversations.json": "87cc2e08c7c32344a9f0c17aa6d2729520e5156a9062c9d04d8e85de2ccbc136",
+        "development.inputs.json": "8244dff6123ea8479561bfbe6ad5a36d655b2926d4acbf6fdd0d2ddf356abb63",
+        "smoke.inputs.json": "7340e360455e2b643dc63f4945bcd79ba3a28cf8fb06ee14a04d25c2af1e7de7",
+        "development.labels.json": "21c2a7b7bb1805b231e2404bf17df407898e63af36b793962912b66711a4dd60",
+        "smoke.labels.json": "4e174921befab3827ae93abdf55f5f2fd4fe7f2f4a81b53124dfd4001c36f36c"
+      }
+    },
+    "embedding": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "dimensions": 384,
+      "normalize_embeddings": true,
+      "max_seq_length": 256,
+      "device_for_check": "cpu"
+    },
+    "packages": {
+      "torch": "2.11.0",
+      "sentence-transformers": "5.1.2",
+      "transformers": "4.57.1",
+      "huggingface-hub": "0.36.0",
+      "numpy": "2.4.4"
+    },
+    "cuda_available": false,
+    "shape": [
+      2,
+      384
+    ],
+    "vector_norms": [
+      0.9999999403953552,
+      1.0
+    ],
+    "actual_device": "cpu",
+    "checked_message_id": "D1:1",
+    "independent_member_verification": "pending",
+    "elapsed_seconds": 18.609
+  },
+  "large_files": [
+    {
+      "filename": "model.safetensors",
+      "bytes": 90868376,
+      "sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+      "purpose": "Pinned local 384-dimensional embedding weights",
+      "source": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/tree/1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "group_sent_date": null
+    }
+  ],
+  "model_answer_or_scoring_api_calls": 0,
+  "paid_api_calls": 0,
+  "full_structmem_execution": "not_run",
+  "cuda_verification": "not_run",
+  "heldout_evaluation": "not_run",
+  "interface_member_review": "pending",
+  "independent_member_verification": {
+    "status": "pending",
+    "github_username": null
+  },
+  "local_git_fetch": "failed: direct GitHub connection; delivery branch uses connected GitHub API from latest main",
+  "f_contract_check": {
+    "pull_request": 35,
+    "revision": "4206096a2929256b4be55d28c105e441e367ad63",
+    "question_identity": [
+      "sample_id",
+      "qa_index"
+    ],
+    "status": "simulated",
+    "questions": 5,
+    "successful_real_answers": 0,
+    "contexts": "empty (interface check only, no retrieval)",
+    "question_set_sha256": "a5108b7645af41f8b257d3033e968be47160f2e696789c0c85a21c14250b9ac5",
+    "f_code_sha256": {
+      "scripts/run_qa.py": "2a317fd4d614661e923aec9c01e472bd50f670c550f6848da8b046af51896c30",
+      "src/llm_client.py": "17230503f43be2b1e134baa29e81dfba053b2726b308b18777bf7f5f70f887e6"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+﻿method,category,name,correct,scored,planned,score_version,evidence_status
+S0,1,多跳,4,8,8,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
+S0,2,时间,5,8,8,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
+S0,3,开放域,2,7,7,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
+S0,4,单跳,4,7,7,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
+S2,1,多跳,4,8,8,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
+S2,2,时间,7,8,8,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
+S2,3,开放域,3,7,7,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
+S2,4,单跳,5,7,7,E_adjudicated_1cfd177,E_reported_not_independently_recomputed
