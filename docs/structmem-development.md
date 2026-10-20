@@ -55,7 +55,7 @@
 
 三个开发会话现已全部完成，91 个 session、1973 条输入消息共生成 3712 条记忆。完整库及独立压缩包的读取方式见 [D 读取完整开发会话事件记忆的说明](structmem-complete-handoff.md)，运行统计见 `reports/structmem-development-complete.json`。本次继续运行由用户授权，群内沉默不记作团队确认。
 
-首个真实 session 的独立样例包已准备，路径为 `output/structmem/session-handoff/conv-48-session-001-20261019.zip`。解压、校验、来源示例及检索方式见 [D 读取首个真实 session 的说明](structmem-session-handoff.md)，包大小与 SHA-256 见 `reports/structmem-session-handoff.json`。首样已由 D 独立验收（任务 #28）；完整三会话包已通过微信发送，完整包验收待确认。
+首个真实 session 的独立样例包已准备，路径为 `output/structmem/session-handoff/conv-48-session-001-20261019.zip`。解压、校验、来源示例及检索方式见 [D 读取首个真实 session 的说明](structmem-session-handoff.md)，包大小与 SHA-256 见 `reports/structmem-session-handoff.json`。首样和完整三会话包均已由 D 独立验收，完整包已用于 D 真实综合与回答；PR #43 已合并，C 任务 #32 已按原范围结项。
 
 完整交接位于 `output/structmem/handoff/`：
 

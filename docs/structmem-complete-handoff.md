@@ -11,7 +11,7 @@ C 已完成 A 冻结的三个开发会话，共 91 个 session、1973 条输入�
 | conv-41 | 32 | 663 | 777 | 498 | 1275 | `conv_41_events` |
 | 合计 | 91 | 1973 | 2309 | 1403 | 3712 | 三个独立库 |
 
-本地原始装配目录为 `output/structmem/handoff/`。便于交给 D 的压缩包为 `output/structmem/complete-handoff-20261019.zip`；包大小、SHA-256 和副本验证记录见 `reports/structmem-complete-handoff.json`。用户已确认通过微信发送给 D，完整包验收待确认。已发送的 ZIP 原样保留，包内 README 保留打包时状态，最新交接状态以仓库交接索引为准。
+本地原始装配目录为 `output/structmem/handoff/`。便于交给 D 的压缩包为 `output/structmem/complete-handoff-20261019.zip`；包大小、SHA-256 和副本验证记录见 `reports/structmem-complete-handoff.json`。D 已完成完整包接收、来源/向量/读取及检索验收，并在 [C PR #43 审核](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/43#pullrequestreview-5582200937) 中批准，C 任务 #32 已结项。已发送的 ZIP 原样保留，包内 README 保留打包时状态，最新交接状态以仓库交接索引为准。
 
 解压后根目录 `complete-handoff/` 包含三个会话各自的 `qdrant/`、装配记录 `handoff.json`、完整运行记录 `run-record.json`、包内文件校验表 `files.sha256.json`、来源消息 `inputs/<会话>/session-001.json` 等 91 份输入，以及本说明。没有 `.env`、QA、答案或 evidence 标签。模型权重由 D 按下述约定在本机准备。
 
@@ -63,4 +63,4 @@ for cid, info in handoff["conversations"].items():
 
 包含首个 session 后，91 个 session 共 182 次成功生成请求，实际返回模型均为 `deepseek-flash`；可见输入 467831、输出 126984、总计 594815 tokens。成功 session 构建耗时之和为 783.885 秒，此值不含入口校验、装配和打包耗时，不是端到端墙钟时间。此前首个 session 的两次连接失败保留在运行历史中，其用量未知，不能记为零费用。合成 smoke 运行不计入上述开发会话统计。
 
-C 已核对全部检查点身份及导出哈希、3712 条记忆的来源映射、384 维向量归一化，以及三个装配数据库的完整 payload 和向量读回。压缩包重新解压后的副本也独立验证。D 仍需反馈收到的版本、三个库的实际条目数及检索是否可用；跨事件综合由 D 负责，正式评分由 E 负责。
+C 已核对全部检查点身份及导出哈希、3712 条记忆的来源映射、384 维向量归一化，以及三个装配数据库的完整 payload 和向量读回。压缩包重新解压后的副本也独立验证。D 已验收本版本并用于真实综合和回答；跨事件综合由 D 负责，正式评分由 E 负责。C 于 2026 年 10 月 21 日完成对 D PR #41 的指定来源/数值审核，范围及复核边界见 `reports/structmem-c-review-d-20261021.json`。

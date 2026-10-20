@@ -1,0 +1,74 @@
+{
+  "reviewed_commit": "8e3e338caff7bf2e01e14bc48b6fe8bd5f3bd7e2",
+  "date": "2026-10-21",
+  "reviewer": "oioioi-521",
+  "C_bundle_hashes_verified": 103,
+  "C_event_source_bindings_verified": 3712,
+  "conversation_event_counts": {
+    "conv-48": 1277,
+    "conv-42": 1160,
+    "conv-41": 1275
+  },
+  "questions": 30,
+  "actual_event_contexts_verified_against_C": 1800,
+  "distinct_retrieved_C_events": 1161,
+  "actual_synthesis_contexts_checked": 150,
+  "same_conversation_event_references_in_synthesis_contexts": 9536,
+  "answer_requests_rebuilt_and_usage_verified": 30,
+  "answer_usage": {
+    "prompt_tokens": 586282,
+    "completion_tokens": 178,
+    "total_tokens": 586460
+  },
+  "synthesis_summary_usage_checked": {
+    "prompt_tokens": 304025,
+    "completion_tokens": 35834,
+    "total_tokens": 339859,
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 304025
+  },
+  "synthesis_raw_91_calls_available": false,
+  "raw_synthesis_responses_independently_replayed": false,
+  "targeted_offline_tests_passed": 34,
+  "code_hashes_verified": {
+    "scripts/run_structmem_synthesis.py": "ee668fdc591d2226e98c28e223de478f928814854a860f5e2e6bae43669936e0",
+    "scripts/prepare_structmem_synthesis.py": "414730d189a6f6dc60e162f3adeb0e249d8ed7e12bf2f7e8b38de9157ddd5c68",
+    "scripts/retrieve_structmem.py": "187b359c920ea9c454c8303aee079e566a5cb41dc7be819dfae675953209440b",
+    "scripts/run_qa.py": "2a317fd4d614661e923aec9c01e472bd50f670c550f6848da8b046af51896c30",
+    "src/llm_client.py": "17230503f43be2b1e134baa29e81dfba053b2726b308b18777bf7f5f70f887e6",
+    "src/structmem_retrieve.py": "d55ddee7ab979e1edee7e12c7cadd5f062d8b76034ae32acb30a8cceb62fad2a"
+  },
+  "scoring_or_human_semantic_acceptance": false,
+  "new_API_requests": 0,
+  "native_input_reconstruction": {
+    "conv-48": {
+      "proposed_calls": 30,
+      "covered_events_once": 1277,
+      "proposal_sha256_matches_D": true,
+      "proposal_sha256": "259fded18132ce5df866579e80d292b29f56a5800294972e08bf2f88bfb08901",
+      "actual_api_calls": 0,
+      "summaries_are_offline_placeholders": true
+    },
+    "conv-42": {
+      "proposed_calls": 29,
+      "covered_events_once": 1160,
+      "proposal_sha256_matches_D": true,
+      "proposal_sha256": "439ec03d861bddf798731e32cb7cf1ca7cee4452a991717137444e8224736569",
+      "actual_api_calls": 0,
+      "summaries_are_offline_placeholders": true
+    },
+    "conv-41": {
+      "proposed_calls": 32,
+      "covered_events_once": 1275,
+      "proposal_sha256_matches_D": true,
+      "proposal_sha256": "db1a08972bdf066c1eb970af80e8cc3bfffccb8665c65f3d99f85e8e25a83e00",
+      "actual_api_calls": 0,
+      "summaries_are_offline_placeholders": true
+    }
+  },
+  "native_proposal_windows_reproduced": 91,
+  "native_events_covered_once": 3712,
+  "action": "APPROVE",
+  "review_url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41#pullrequestreview-5588031125",
+  "scope": "C event sources and numerical consistency; no semantic scoring or full real-synthesis response replay"
+}
