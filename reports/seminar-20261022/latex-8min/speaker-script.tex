@@ -1,0 +1,93 @@
+% !TeX program = xelatex
+\documentclass[UTF8,fontset=fandol,12pt]{ctexart}
+\usepackage[a4paper,margin=22mm,headheight=16pt]{geometry}
+\usepackage{booktabs,tabularx,array,xcolor,fancyhdr,hyperref}
+\definecolor{accent}{HTML}{28649A}
+\hypersetup{colorlinks=true,linkcolor=accent,urlcolor=accent,pdftitle={第8队研讨汇报：8分钟逐页讲稿},pdfauthor={NLP 第8队}}
+\input{speeches}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 第 8 队 · 第一次课设研讨}
+\fancyhead[R]{\small 逐页讲稿}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\linespread{1.3}
+\newcommand{\talk}[4]{%
+  {\color{accent}\large\bfseries 第 #1 页\quad #2}\par
+  {\small #3}\par\vspace{2mm}
+  #4\par}
+\begin{document}
+{\LARGE\bfseries 长对话结构化记忆复现与优化}\par
+\vspace{2mm}{\Large 8 分钟逐页讲稿}\par
+2026 年 10 月 22 日研讨\quad 内容更新至 2026 年 10 月 21 日\par
+线下汇报：A（ngocnamd93-spec）\quad 视频录制：F（hycx233）
+
+\vspace{4mm}
+\textbf{使用方式}
+
+讲稿对应幻灯片正文第 1--12 页，可直接朗读。补充说明与问答准备见独立的《补充说明与答辩准备》。下表为计划节奏，合计 480 秒；它不是实际录音计时。建议完整排练一次，为翻页、停顿和较慢的数字读法留出时间。
+
+\vspace{4mm}
+\begin{tabularx}{\linewidth}{@{}rXrr@{}}
+\toprule 页 & 主题 & 本页时长 & 累计时间\\\midrule
+1 & 题目与汇报范围 & 15 秒 & 0:15\\
+2 & 研究问题 & 35 秒 & 0:50\\
+3 & 六篇论文的系统性提炼 & 60 秒 & 1:50\\
+4 & StructMem 方法 & 40 秒 & 2:30\\
+5 & 实验设计 & 40 秒 & 3:10\\
+6 & 实际进展 & 30 秒 & 3:40\\
+7 & 初步结果与输入成本 & 55 秒 & 4:35\\
+8 & 共同案例与论文视角 & 45 秒 & 5:20\\
+9 & 创新性论证与后续方案 & 45 秒 & 6:05\\
+10 & 六人分工与贡献 & 40 秒 & 6:45\\
+11 & 小组协作方式 & 50 秒 & 7:35\\
+12 & 阶段结论与下一步 & 25 秒 & 8:00\\\bottomrule
+\end{tabularx}
+
+\vspace{4mm}
+\textbf{统一读法与事实口径}
+\begin{itemize}
+\item S0 / S1 / S2 读作“S 零 / S 一 / S 二”；tokens 可读“token 数”，第一次可解释为模型输入量。
+\item S0 原始自动裁判为 16/30，应用既有证据裁决后为 15/30；S2 两者均为 19/30。正文统一展示裁决后结果。
+\item 60 条输入指纹核对与评分离线复算已经完成；总体和分类分数与汇总一致。
+\item 分工表展示目前大致贡献，成员沿用 GitHub 账号。
+\item 协作方式统一表述为 GitHub 协作、微信群沟通和线下讨论，结合共同题集与实验链路说明。
+\end{itemize}
+
+\newpage
+\talk{1}{题目与汇报范围}{15 秒\quad 0:00--0:15}{\speechOne}
+
+\vspace{7mm}
+\talk{2}{研究问题}{35 秒\quad 0:15--0:50}{\speechTwo}
+
+\newpage
+\talk{3}{六篇论文的系统性提炼}{60 秒\quad 0:50--1:50}{\speechSynthesis}
+
+\vspace{7mm}
+\talk{4}{StructMem 方法}{40 秒\quad 1:50--2:30}{\speechThree}
+
+\newpage
+\talk{5}{实验设计}{40 秒\quad 2:30--3:10}{\speechFour}
+
+\vspace{7mm}
+\talk{6}{实际进展}{30 秒\quad 3:10--3:40}{\speechFive}
+
+\newpage
+\talk{7}{初步结果与输入成本}{55 秒\quad 3:40--4:35}{\speechSix}
+
+\vspace{7mm}
+\talk{8}{共同案例与论文视角}{45 秒\quad 4:35--5:20}{\speechSeven}
+
+\newpage
+\talk{9}{创新性论证与后续方案}{45 秒\quad 5:20--6:05}{\speechEight}
+
+\vspace{7mm}
+\talk{10}{六人分工与贡献}{40 秒\quad 6:05--6:45}{\speechNine}
+
+\newpage
+\talk{11}{小组协作方式}{50 秒\quad 6:45--7:35}{\speechCollaboration}
+
+\vspace{7mm}
+\talk{12}{阶段结论与下一步}{25 秒\quad 7:35--8:00}{\speechTen}
+\end{document}
