@@ -1,5 +1,7 @@
 # D：真实综合、30 题 S2 回答与 E 交接
 
+> 2026-10-21 更新：D 的 C/F 审核已通过，PR #41 已合并、任务 #28 已结项；60 条裁判输入已离线核对和复算，结果为原始 S0 16/30、S2 19/30，日期裁定后 15/30、19/30。E 任务记录已确认本人至少四例核查。当前状态见[个人结项进展](../reports/structmem-d-progress.md)及[结项机器记录](../reports/structmem-d-closeout-20261021.json)。下文保留 10 月 20 日技术交接与当时待办的历史快照，旧 accuracy=null 不改写。
+
 负责人：`lanshuheng9-oss`；2026-10-20；关联 [#28](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/28)、[PR #41](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/41)。**91 次真实综合和同一固定 30 题的 S2 回答已完成；E 已报告自动评分，逐题裁判独立复算及成员人工案例验收尚未完成。** 本记录接续[完整事件包验收与离线准备](structmem-development-receipt-20261020.md)，不将早先占位摘要计入本次结果。
 
 ## 运行结果
