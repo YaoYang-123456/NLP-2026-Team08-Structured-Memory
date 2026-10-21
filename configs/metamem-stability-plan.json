@@ -1,0 +1,34 @@
+{
+  "experiment": "sampling-stability-v1",
+  "frozen_utc": "2026-10-16T02:23:28.809095+00:00",
+  "goal_start_epoch": 1792117292,
+  "inference_deadline_epoch": 1792123892,
+  "total_deadline_epoch": 1792124492,
+  "repeats": 3,
+  "independent_questions": 10,
+  "answers": 60,
+  "planned_local_requests": 61,
+  "max_local_requests": 70,
+  "generation_config_sha256": "971b49d4985cc3c4a073b3dddd28fa2ace7f3a5e4d4b7fa14c8e5cae7bb6f336",
+  "validation_inputs_sha256": "c4bdb96baaf0651ae8b73d5b9b3b755e740c07a028af459b8033b30bc07cbbca",
+  "policy_sha256": "2db521412b66bd8d9bf16f75b37cbf04b49a58dbd4c11a063c2f4fa5e29d6aea",
+  "conditions": {
+    "B0": {
+      "file": "configs/rules-b0.json",
+      "file_sha256": "3b6f8843e2951cb2dc541625fc263f262c8bd9c51e4455def26eca5067bf1e9a",
+      "rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "B2": {
+      "file": "output/external-ai-experiment-20261015-2143/smoke/training/rules-01.json",
+      "file_sha256": "60f3e30726203ed560fa50fe435d08ec865065314f91842bd71678910ceaf42c",
+      "rules_sha256": "985d5e424f8ae9f932ee19fedfb7b592e6cde16d69b4bdb88ecc6fdb6f530cb6"
+    }
+  },
+  "pairing": "question_id and repeat; B0-B2 order rounds 0/2, B2-B0 round 1",
+  "sampling": "temperature0.7 top_p0.95 max_tokens1024; seed omitted, no claim of controlled common RNG",
+  "purpose": "independent nonzero-temperature sampling diagnosis; not pooled with old temperature0 results",
+  "selection": "none; all three repeats reported; no retraining or rule selection",
+  "deadline_note": "User revoked 50-minute cutoff before generation; reserve final ten minutes within original two-hour budget",
+  "executed_generation_config_sha256": "f6c91360b93d73d1f74a3275586e1c9ecf3f3bd272149203fc45a15f7ab1467f",
+  "packaging_note": "After execution, CRLF configuration normalized to repository LF. JSON settings unchanged; raw run/plan.frozen.json retains original executed byte hash."
+}

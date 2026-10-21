@@ -1,0 +1,60 @@
+{
+  "version": "stage3-evidence-prompt-v1",
+  "goal_start_epoch": 1792123281,
+  "total_deadline_epoch": 1792134081,
+  "inference_deadline_epoch": 1792133481,
+  "max_local_requests": 100,
+  "planned_answers": 60,
+  "planned_requests": 61,
+  "reserve_requests": 39,
+  "generation_config": "configs/qwen-stability-sampling.json",
+  "generation_config_sha256": "971b49d4985cc3c4a073b3dddd28fa2ace7f3a5e4d4b7fa14c8e5cae7bb6f336",
+  "policy_file": "configs/external-ai-strict-abstention-v2.json",
+  "policy_sha256": "2db521412b66bd8d9bf16f75b37cbf04b49a58dbd4c11a063c2f4fa5e29d6aea",
+  "frozen_files": {
+    "data/pilot/validation.inputs.json": "c4bdb96baaf0651ae8b73d5b9b3b755e740c07a028af459b8033b30bc07cbbca",
+    "configs/evidence-answer-v1.txt": "bc3502122b3d7373855bebdb831608e281f2650f9dc142f89895a49c93678468",
+    "configs/evidence-quality-v1.json": "b25478fc03c39905f0a7977428499e55de3d94a8587a5e13833f9bf5c2258ba6",
+    "third_party/metamem_templates.py": "87e98b09be05c5bf024f472261e4ee3833666d7480851b19ec5771020210c071"
+  },
+  "question_ids": [
+    "a96c20ee_abs",
+    "7a87bd0c",
+    "9d25d4e0",
+    "4388e9dd",
+    "06f04340",
+    "ad7109d1",
+    "cc6d1ec1",
+    "2311e44b_abs",
+    "01493427",
+    "0a995998"
+  ],
+  "initial_question_ids": [
+    "9d25d4e0",
+    "01493427",
+    "a96c20ee_abs",
+    "2311e44b_abs"
+  ],
+  "round_orders": [
+    [
+      "baseline",
+      "candidate"
+    ],
+    [
+      "candidate",
+      "baseline"
+    ],
+    [
+      "baseline",
+      "candidate"
+    ]
+  ],
+  "retrieval": "unchanged original BM25; identical fact hashes within each question",
+  "rules": [],
+  "seed": "not supplied; no determinism claim",
+  "design_provenance": "Designed using previous development diagnostics; exploratory development evaluation, not independent generalization. Frozen before new generation.",
+  "initial_gate": "24 answers only operational checks, no scores; remaining36 proceed unchanged. Systematic implementation/truncation failure preserves records and invalid comparisons, never selective failed-score retry.",
+  "adoption_principle": "Consider correctness, factual support, unsupported guessing, unnecessary refusal, consistency across questions and rounds, and token/time cost together. Retain as candidate only with coherent benefit without systematic harm; no automatic default switch and no posthoc weighted score. Negative result is acceptable; no fourth scheme.",
+  "review": "Correctness inputs hide arm/rules/history; quality uses actual input facts. Prompt signature may reveal arm: label-hidden, not fully blind. Once independent review per evidence-quality-v1. No human gold.",
+  "test_access": false
+}

@@ -1,0 +1,15 @@
+{
+  "version": "external-ai-strict-abstention-v2",
+  "origin": "本项目新增政策，不是原论文标准",
+  "clauses": {
+    "S1": "本就不可回答的题：正确承认信息不足，且不对所问事实作无依据判断，判Yes。",
+    "S2": "承认不足后仍对所问事实给出无依据具体值、范围、零值或倾向性判断，判No；可能、似乎等措辞不免责。直接无依据作答亦判No。",
+    "S3": "解释缺失信息、请求补充、给出不冒充实际答案的条件公式或演示可接受；把任意假设的计算结果当作用户实际答案仍判No。",
+    "S4": "结合完整回答判断，不靠关键词分类；确有无法消解的歧义保留uncertain并说明。",
+    "S5": "其他题型沿用v1标准；可回答题仅因检索不足而拒答，不能获得Yes。"
+  },
+  "reviewer_type": "external_ai_app",
+  "human_gold": false,
+  "analysis_only": true,
+  "training_labels_used_to_generate_existing_rules": "upstream-66232c1-external-ai-v1"
+}

@@ -1,7 +1,10 @@
 # Keep hashed source/config files byte-stable on Windows and Unix checkouts.
 .gitattributes text eol=lf
 *.py text eol=lf
+*.ps1 text eol=lf
 *.json text eol=lf
 *.md text eol=lf
 third_party/MetaMem-LICENSE text eol=lf
+configs/evidence-answer-v1.txt text eol=lf
+reports/metamem-stage3-comparison.svg text eol=lf
 *.pdf binary

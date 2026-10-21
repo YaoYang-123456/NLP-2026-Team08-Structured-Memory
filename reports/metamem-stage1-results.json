@@ -1,0 +1,431 @@
+{
+  "experiment": "sampling-stability-v1",
+  "scoring_version": "external-ai-strict-abstention-v2",
+  "independent_questions": 10,
+  "repeats": 3,
+  "rounds": {
+    "0": {
+      "scores": {
+        "B0": {
+          "planned": 10,
+          "Yes": 5,
+          "No": 5,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 10
+        },
+        "B2": {
+          "planned": 10,
+          "Yes": 5,
+          "No": 5,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 10
+        }
+      },
+      "paired": {
+        "both_wrong": [
+          "a96c20ee_abs",
+          "9d25d4e0",
+          "2311e44b_abs",
+          "01493427",
+          "0a995998"
+        ],
+        "both_correct": [
+          "7a87bd0c",
+          "4388e9dd",
+          "06f04340",
+          "ad7109d1",
+          "cc6d1ec1"
+        ]
+      },
+      "abstention": {
+        "B0": {
+          "planned": 2,
+          "Yes": 0,
+          "No": 2,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 2
+        },
+        "B2": {
+          "planned": 2,
+          "Yes": 0,
+          "No": 2,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 2
+        }
+      }
+    },
+    "1": {
+      "scores": {
+        "B0": {
+          "planned": 10,
+          "Yes": 6,
+          "No": 4,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 10
+        },
+        "B2": {
+          "planned": 10,
+          "Yes": 6,
+          "No": 4,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 10
+        }
+      },
+      "paired": {
+        "both_wrong": [
+          "a96c20ee_abs",
+          "9d25d4e0",
+          "0a995998"
+        ],
+        "both_correct": [
+          "7a87bd0c",
+          "4388e9dd",
+          "06f04340",
+          "ad7109d1",
+          "cc6d1ec1"
+        ],
+        "only_B2": [
+          "2311e44b_abs"
+        ],
+        "only_B0": [
+          "01493427"
+        ]
+      },
+      "abstention": {
+        "B0": {
+          "planned": 2,
+          "Yes": 0,
+          "No": 2,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 2
+        },
+        "B2": {
+          "planned": 2,
+          "Yes": 1,
+          "No": 1,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 2
+        }
+      }
+    },
+    "2": {
+      "scores": {
+        "B0": {
+          "planned": 10,
+          "Yes": 6,
+          "No": 4,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 10
+        },
+        "B2": {
+          "planned": 10,
+          "Yes": 7,
+          "No": 2,
+          "uncertain": 1,
+          "missing_or_failed": 0,
+          "valid": 9
+        }
+      },
+      "paired": {
+        "both_wrong": [
+          "a96c20ee_abs",
+          "9d25d4e0"
+        ],
+        "both_correct": [
+          "7a87bd0c",
+          "4388e9dd",
+          "06f04340",
+          "ad7109d1",
+          "cc6d1ec1",
+          "01493427"
+        ],
+        "incomparable": [
+          "2311e44b_abs"
+        ],
+        "only_B2": [
+          "0a995998"
+        ]
+      },
+      "abstention": {
+        "B0": {
+          "planned": 2,
+          "Yes": 0,
+          "No": 2,
+          "uncertain": 0,
+          "missing_or_failed": 0,
+          "valid": 2
+        },
+        "B2": {
+          "planned": 2,
+          "Yes": 0,
+          "No": 1,
+          "uncertain": 1,
+          "missing_or_failed": 0,
+          "valid": 1
+        }
+      }
+    }
+  },
+  "per_question": {
+    "a96c20ee_abs": {
+      "0": {
+        "B0": "No",
+        "B2": "No",
+        "pair": "both_wrong"
+      },
+      "1": {
+        "B2": "No",
+        "B0": "No",
+        "pair": "both_wrong"
+      },
+      "2": {
+        "B0": "No",
+        "B2": "No",
+        "pair": "both_wrong"
+      }
+    },
+    "7a87bd0c": {
+      "0": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      },
+      "1": {
+        "B2": "Yes",
+        "B0": "Yes",
+        "pair": "both_correct"
+      },
+      "2": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      }
+    },
+    "9d25d4e0": {
+      "0": {
+        "B0": "No",
+        "B2": "No",
+        "pair": "both_wrong"
+      },
+      "1": {
+        "B2": "No",
+        "B0": "No",
+        "pair": "both_wrong"
+      },
+      "2": {
+        "B0": "No",
+        "B2": "No",
+        "pair": "both_wrong"
+      }
+    },
+    "4388e9dd": {
+      "0": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      },
+      "1": {
+        "B2": "Yes",
+        "B0": "Yes",
+        "pair": "both_correct"
+      },
+      "2": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      }
+    },
+    "06f04340": {
+      "0": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      },
+      "1": {
+        "B2": "Yes",
+        "B0": "Yes",
+        "pair": "both_correct"
+      },
+      "2": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      }
+    },
+    "ad7109d1": {
+      "0": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      },
+      "1": {
+        "B2": "Yes",
+        "B0": "Yes",
+        "pair": "both_correct"
+      },
+      "2": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      }
+    },
+    "cc6d1ec1": {
+      "0": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      },
+      "1": {
+        "B2": "Yes",
+        "B0": "Yes",
+        "pair": "both_correct"
+      },
+      "2": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      }
+    },
+    "2311e44b_abs": {
+      "0": {
+        "B0": "No",
+        "B2": "No",
+        "pair": "both_wrong"
+      },
+      "1": {
+        "B2": "Yes",
+        "B0": "No",
+        "pair": "only_B2"
+      },
+      "2": {
+        "B0": "No",
+        "B2": "uncertain",
+        "pair": "incomparable"
+      }
+    },
+    "01493427": {
+      "0": {
+        "B0": "No",
+        "B2": "No",
+        "pair": "both_wrong"
+      },
+      "1": {
+        "B2": "No",
+        "B0": "Yes",
+        "pair": "only_B0"
+      },
+      "2": {
+        "B0": "Yes",
+        "B2": "Yes",
+        "pair": "both_correct"
+      }
+    },
+    "0a995998": {
+      "0": {
+        "B0": "No",
+        "B2": "No",
+        "pair": "both_wrong"
+      },
+      "1": {
+        "B2": "No",
+        "B0": "No",
+        "pair": "both_wrong"
+      },
+      "2": {
+        "B0": "No",
+        "B2": "Yes",
+        "pair": "only_B2"
+      }
+    }
+  },
+  "overall": {
+    "B0": {
+      "planned": 30,
+      "Yes": 17,
+      "No": 13,
+      "uncertain": 0,
+      "missing_or_failed": 0,
+      "valid": 30
+    },
+    "B2": {
+      "planned": 30,
+      "Yes": 18,
+      "No": 11,
+      "uncertain": 1,
+      "missing_or_failed": 0,
+      "valid": 29
+    }
+  },
+  "usage": {
+    "calls_logged": 61,
+    "real_requests": 61,
+    "simulated_calls": 0,
+    "possibly_inflight_requests": 0,
+    "failed_calls": 0,
+    "interrupted_calls": 0,
+    "calls_with_reported_usage": 61,
+    "calls_without_reported_usage": 0,
+    "reported_prompt_tokens": 195742,
+    "reported_completion_tokens": 21961,
+    "calls_missing_prompt_token_count": 0,
+    "calls_missing_completion_token_count": 0,
+    "call_seconds": 228.97900449996814
+  },
+  "external_ai_reviews": 78,
+  "primary_review_count": 60,
+  "targeted_review_count": 18,
+  "disagreements": 1,
+  "human_acceptance": null,
+  "candidate_selection": "not performed",
+  "primary_overall": {
+    "B0": {
+      "planned": 30,
+      "Yes": 17,
+      "No": 13,
+      "uncertain": 0,
+      "missing_or_failed": 0,
+      "valid": 30
+    },
+    "B2": {
+      "planned": 30,
+      "Yes": 19,
+      "No": 11,
+      "uncertain": 0,
+      "missing_or_failed": 0,
+      "valid": 30
+    }
+  },
+  "rule": [
+    "Prioritize recent memories, cross-validate facts, and understand context and chronology unless historical context is required."
+  ],
+  "rule_training_source": "9bbe84a2; v1 mixed group only",
+  "raw_directory": "output\\stage1-stability-20261015",
+  "model_wall_seconds": 242.031,
+  "gpu_sample_peak_mib": 5142,
+  "source_hashes": {
+    "output\\stage1-stability-20261015\\smoke\\answers.json": "3451b246b3ec3ab74b79d7196cc057b1f49dee8a7967f7b39dab13ef649fbaf8",
+    "output\\stage1-stability-20261015\\smoke\\queue.hidden.json": "b042d8d795a64006b897c0af4aa233c1a24de1946f94f3c253b4c62da9374d81",
+    "output\\stage1-stability-20261015\\smoke\\reviews.json": "5df5232e82719cf2d6c669cbe4af946a0494731fc7b0b689b9844a75643cc5f7",
+    "output\\stage1-stability-20261015\\smoke\\summary.json": "da564d098e19aafae6f537ce44544994517dc35fed4d5c6d61d00a8739011053",
+    "output\\stage1-stability-20261015\\smoke\\summary.reviewed.json": "31cbc26dafaad54ecaabebdc100ce067195486773cf511f747e4036f8d4a6b5f",
+    "output\\stage1-independent-review\\reviews.json": "c241034887efb16db69938edad6bbde848e13e722337d7f52fd6d1c6b04775c0"
+  },
+  "cleanup": {
+    "checked_utc": "2026-10-16T02:28:22.9345568Z",
+    "owned_processes_remaining": [],
+    "port_listeners": [],
+    "other_ollama": [],
+    "gpu": "0 MiB, 0 %"
+  },
+  "old_source_files_unchanged": 51,
+  "interpretation": "Exploratory repeated observations on ten development questions, no stable benefit established; not human gold or test results"
+}

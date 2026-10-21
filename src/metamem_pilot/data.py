@@ -31,6 +31,14 @@ def write(path, obj):
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
+def write_atomic(path, obj):
+    """Keep the previous progress snapshot intact if a running process is stopped."""
+    path = Path(path)
+    temp = path.with_name(path.name + ".partial")
+    write(temp, obj)
+    temp.replace(path)
+
+
 def normalize(text):
     return " ".join(text.lower().split())
 
