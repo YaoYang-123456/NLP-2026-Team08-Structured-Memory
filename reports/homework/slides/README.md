@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | 开场 | `sections/00-opening.tex` | 主题、共同问题和路线，约 3 分钟 |
 | StructMem | `sections/01-structmem.tex` | 7–9 分钟；已迁入本地既有演示稿正文和讲稿备注 |
-| Hindsight | `sections/02-hindsight.tex` | 7–9 分钟，待对应成员填写 |
+| Hindsight | `sections/02-hindsight.tex` | 8 分钟讲解稿已整理，9 页个人模块已编译；录制前由本人过稿并计时；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
 | Semantic XPath | `sections/03-semantic-xpath.tex` | 7–9 分钟，待对应成员填写 |
 | HyMEM | `sections/04-hymem.tex` | 7页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md) |
 | MetaMem | `sections/05-metamem.tex` | 7–9 分钟，待对应成员填写 |
@@ -46,7 +46,7 @@
 \includeonlylecture{structmem}
 ```
 
-可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。HyMEM另有 `hymem-preview.tex`，可直接编译个人模块而不改动全组主文件；当前状态见[个人指南](../hymem-reading-guide.md)。
+可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。Hindsight 和 HyMEM 都有独立预览入口，可直接编译个人模块而不改动全组主文件。Hindsight 预览 PDF 为 9 页，大小 208,722 字节，SHA-256 为 `e0b443a40ca858d5f19f9b01f2ca9644c848a991a0abf95eeacbf9d0716dd88b`。
 
 ## 编译
 
