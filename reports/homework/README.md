@@ -13,6 +13,30 @@
 
 本组报告统一使用 **LaTeX 写作、PDF 交付**，演示材料使用 [Beamer 模板](slides/README.md)并导出 PDF；[官方 Word 样例](../../docs/course/软件学报排版样例2025年版.doc)只作报告版式参考。
 
+## 当前进展（2026-10-26）
+
+截至北京时间 **14:25**，已核对主分支 `fde4f86`、相关 issue / PR 及材料交接说明：**3 篇个人材料已合入、1 篇已提 PR 待审核、1 篇已认领待交稿、1 篇尚未登记阅读负责人及交稿。** 这反映仓库可见交付，不把未上传的个人工作判定为未开展。
+
+| 论文 | 阅读负责人 | 材料交付 | 本人过稿与视频状态 |
+| --- | --- | --- | --- |
+| StructMem | hycx233 | 报告、幻灯片和备注已由 [PR #15](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/15) 合入 | 本次约 60 分钟作业的个人录制及实测时长尚无登记 |
+| Hindsight | 尚未在仓库登记 | 主分支报告与幻灯片仍为占位内容；未查到对应交稿 PR | 待确认负责人、个人稿件与录制进度 |
+| Semantic XPath | oioioi-521 | [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 已提交 4 页个人报告、13 页幻灯片及讲稿，指定 F 审核，尚未合入 | [#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 记录本人确认视频已录制，时长 **8 分 55 秒**；视频文件未交验，音画、拼接与上传未确认 |
+| HyMEM | lanshuheng9-oss | [PR #54](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54) 已由 F 审核并合入，7 页个人幻灯片及全组预览已编译检查；见[过稿指南](hymem-reading-guide.md) | [#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人理解过稿、计时排练及录制待办 |
+| MetaMem | YaoYang-123456 | [PR #40](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/40) 已审核合入报告及个人模块 | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保留本人过稿与录制待办；备注估时约 6 分 25 秒，尚非本人实测的 7–9 分钟 |
+| Text2Mem | ngocnamd93-spec | 已在 [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 认领；主分支仍为占位内容，尚未查到交稿 PR | 报告、个人幻灯片、过稿、排练与录制按 #56 推进 |
+
+PR #57 的[验证记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/6d42ed653bbccc755f8d848c8d74861243a7ea9b/reports/homework/semantic-xpath-verification.json)由作者提供，记录其个人报告 / 幻灯片及全组报告 / 幻灯片分别为 4 / 13 / 15 / 67 页；本次进度核查没有重新编译或核看视频。主分支当前仍是 #54 检查过的 12 页报告与 61 页全组演示，不能把 PR 内的 67 页预览当作已经合入。
+
+### 接下来的交付
+
+1. F 集中审核 PR #57 的论文数字与来源、共享材料编译，以及视频第 12 页的历史分工说明；通过后再合入。视频已有本人录制确认，待实际取得文件后检查音画和合稿衔接。
+2. 确认 Hindsight 阅读负责人并收取稿件；Text2Mem 沿用 #56 交稿。各人已完成的课设技术任务不替代对应阅读模块。
+3. 收齐个人材料后共同完成系统性比较、摘要、总结和贡献说明；当前综合草稿仍未编入报告，幻灯片总结仍为结构模板。
+4. 收集个人视频及实际时长，安排开场和共同总结，核验整段约 60 分钟视频；记录文件版本、交接和最终上传状态。当前只有 Semantic XPath 的 8 分 55 秒录制确认，尚无整组视频完成记录。
+
+10 月 22 日的研讨阶段已由负责人确认完成：[PR #52](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/52) 已合入，[#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19) 与 [#31](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/31) 已按阶段验收结项。这些旧任务不再作为研讨阻塞；11 月 1 日的阅读报告、约 60 分钟视频及最终上传继续按本页跟踪。
+
 ## 共同编辑
 
 `main.tex` 是阅读报告入口，`sections/01-structmem.tex` 至 `sections/06-text2mem.tex` 分别对应六篇论文，成员在 issue 中认领后编辑对应章节。文件里的“待填写”标明尚未完成的内容，不代表已有阅读或实验成果。当前先完善各自的论文章节，待大家完成后再推进共同总结；`sections/07-synthesis.tex` 保留为综合分析草稿，暂不编入主稿。摘要、总结与贡献说明由相关成员整合，合并前请一位相关成员集中复核。`references.bib` 的六篇条目来自 ACL Anthology 官方 BibTeX 导出。

@@ -15,12 +15,14 @@
 | Hindsight | `sections/02-hindsight.tex` | 7–9 分钟，待对应成员填写 |
 | Semantic XPath | `sections/03-semantic-xpath.tex` | 7–9 分钟，待对应成员填写 |
 | HyMEM | `sections/04-hymem.tex` | 7页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md) |
-| MetaMem | `sections/05-metamem.tex` | 7–9 分钟，待对应成员填写 |
-| Text2Mem | `sections/06-text2mem.tex` | 7–9 分钟，待对应成员填写 |
+| MetaMem | `sections/05-metamem.tex` | YaoYang-123456；材料已由 PR #40 合入，待本人过稿、计时及录制；[任务 #39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) |
+| Text2Mem | `sections/06-text2mem.tex` | ngocnamd93-spec 已认领，7–9 分钟模块待交稿；[任务 #56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) |
 | 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
 | 备用资料 | `sections/99-backup.tex` | 问答时按需使用，不计入正文页码；已迁入 StructMem 备用页 |
 
 默认分配为 **3＋6×8＋12＝63 分钟**。若六人分别使用 7–9 分钟、总结使用 10–15 分钟，在开场 3 分钟的条件下，总长约 55–72 分钟，不含额外问答。需要控制在 60 分钟时，采用 **2＋6×8＋10＝60 分钟**，并更新开场时间页和讲稿备注。页数只作内容组织参考，最终以排练计时为准。
+
+截至北京时间 2026-10-26 14:25，Semantic XPath 已在 [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 提交 13 页个人模块，尚待 F 审核合入，因此上表对应的主分支文件仍为占位。作者确认视频已录制 8 分 55 秒，视频文件尚未交验。主分支当前预览为 61 页，PR 内候选为 67 页；其余材料和视频状态见[平时作业进度](../README.md#当前进展2026-10-26)。
 
 ## 编辑方式
 
