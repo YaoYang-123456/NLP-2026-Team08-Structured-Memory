@@ -15,7 +15,7 @@
 
 ## 个人阅读材料
 
-HyMEM负责人 `lanshuheng9-oss` 的[个人报告PDF](hymem-reading-report.pdf)、[个人演示PDF](slides/hymem-preview.pdf)和[讲稿及阅读指南](hymem-reading-guide.md)已整理并完成个人模块编译与逐页检查；[文件大小及SHA-256](hymem-artifacts.json)随材料保存。当前待本人过稿、排练、录制及F审核，不能据此标记全组作业已定稿或提交。
+HyMEM负责人 `lanshuheng9-oss` 的[个人报告PDF](hymem-reading-report.pdf)、[个人演示PDF](slides/hymem-preview.pdf)和[讲稿及阅读指南](hymem-reading-guide.md)已整理并完成个人模块编译与逐页检查；[文件大小及SHA-256](hymem-artifacts.json)随材料保存。F已完成审核，当前待本人过稿、排练及录制，不能据此标记全组作业已定稿或提交。
 
 ## 共同编辑
 

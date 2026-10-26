@@ -1,6 +1,6 @@
 # HyMEM 个人过稿与讲解指南
 
-负责人：`lanshuheng9-oss`。关联任务：[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53)。状态：报告与演示PDF已编译并逐页检查，待本人过稿、排练及 F 审核；不代表本人已完成阅读或录制，不填写全组贡献百分比。
+负责人：`lanshuheng9-oss`。关联任务：[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53)。状态：报告与演示PDF已编译并逐页检查，F（hycx233）已完成内容及整合审核，待本人过稿、排练及录制；不代表本人已完成阅读或录制，不填写全组贡献百分比。
 
 ## 阅读入口与证据
 
@@ -11,6 +11,7 @@
 - [报告正文](sections/04-hymem.tex)：可并入小组报告，沿用现有参考文献键 `zhu-etal-2026-hybrid`。
 - [7页 Beamer 模块](slides/sections/04-hymem.tex)：章节页加6页正文；含可编辑流程图、结果表及讲稿备注。
 - [个人编译入口](slides/hymem-preview.tex)：复用共享样式，只包含 HyMEM，不改全组主文件。
+- [全组演示预览](slides/preview.pdf)：F已更新的61页版本，HyMEM对应第30–36页；其他模块仍按全组实际状态推进。
 - [原文](../../papers/structured-memory-group2/04_Hybrid_Self-evolving_Structured_Memory.pdf)；[官方页面](https://aclanthology.org/2026.findings-acl.549/)。PDF共18页，印刷页11287–11304；下列页码均为PDF文件页码。
 - 原文大小4,322,862字节，SHA-256：`13e83314073fb3a8205f1f2d06fbd1acf994b0ac56455d95a0113df3ad06d33b`。本次核对本地原文第3–7页的表示、流程、设置和结果。
 
@@ -92,7 +93,7 @@ HyMEM包含记忆编码器训练，更新Q-Former和LoRA，作者称约1.2%的�
 
 ## 编译和交接
 
-共享报告仍使用 `main.tex` 引入本节。个人报告入口是 `reports/homework/hymem-preview.tex`，演示入口是 `reports/homework/slides/hymem-preview.tex`，都直接读取共享的 HyMEM 正文。全组的 `slides/preview.pdf` 仍是旧模板；请看上方单独的个人演示PDF。
+共享报告仍使用 `main.tex` 引入本节。个人报告入口是 `reports/homework/hymem-preview.tex`，演示入口是 `reports/homework/slides/hymem-preview.tex`，都直接读取共享的 HyMEM 正文。全组的 `slides/preview.pdf` 已由F同步HyMEM内容；个人录制可直接使用上方7页个人演示PDF。
 
 已有XeLaTeX/latexmk环境时：
 
@@ -114,7 +115,11 @@ tectonic reports/homework/slides/hymem-preview.tex --outdir output/homework-slid
 
 编译器和下载缓存位于忽略目录 `tmp/hymem-20261026/`，没有修改系统TeX配置或项目依赖。两次编译退出码均为0。已检查全部2页报告与7页演示，修正表格后文字间距及报告跨页断词；最终日志没有Overfull/Underfull、未解析引用或缺字提示。报告依赖的 `algorithm.sty`、`algorithmic.sty` 有两类非致命UTF-8警告，Fontconfig也提示未找到默认配置；显式字体已正常加载，实际PDF中英文字体、复制文本与数值经核对正常。没有把这些依赖警告写成零警告。
 
-本次验收仅覆盖个人模块，未编译或替全组验收完整报告、共享演示、视频或上传记录。PR仍待 F（`hycx233`）集中审核，并入全组材料后需按实际整合版本确认。
+F（`hycx233`）已在[PR审核记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54#pullrequestreview-5647106761)批准提交 `f52f96b261b55eca732e0ddc4290b654f96812a4`：核对原文，修正本组数据集名称为LoCoMo及结果表等宽列，并用XeLaTeX验证整份报告12页、个人演示7页和全组演示61页。F记录三项编译无Overfull、缺字或未定义引用；整份报告仅有原有StructMem章节的Underfull和数学字体尺寸替代提示。此为F的审核与整合验证记录，不冒充本机全组编译结果。
+
+本机保留F全部正文修正及共享预览，重新编译个人两份PDF，追加个人报告入口、PDF元数据、跨页段落排版及交接记录；属于同一审核范围的配套整理。本机只验收个人模块。两份个人PDF与F共享预览的当前大小、SHA-256均记录在 `hymem-artifacts.json`；没有用旧个人PDF校验值替代新版本。
+
+材料审核和编译不代替本人阅读、排练、录制，也不代表全组作业已定稿或已上传。
 
 本人仍需：
 
@@ -125,4 +130,4 @@ tectonic reports/homework/slides/hymem-preview.tex --outdir output/homework-slid
 
 发群可用文字：
 
-> 我的HyMEM个人材料已整理好：2页报告、7页演示PDF、约8分钟讲稿和答辩要点，原文出处与作者实验条件已标清。PDF已编译并逐页检查，文件直接在PR #54里；仍待本人过稿排练、录制和F审核整合，未把论文作者实验算成本组复现。
+> 我的HyMEM个人材料已整理好：2页报告、7页演示PDF、约8分钟讲稿和答辩要点，原文出处与作者实验条件已标清。PDF已编译并逐页检查，文件直接在仓库里；F已完成内容及整合审核，仍待本人过稿排练和录制，未把论文作者实验算成本组复现。

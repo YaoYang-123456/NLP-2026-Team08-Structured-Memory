@@ -14,7 +14,7 @@
 | StructMem | `sections/01-structmem.tex` | 7–9 分钟；已迁入本地既有演示稿正文和讲稿备注 |
 | Hindsight | `sections/02-hindsight.tex` | 7–9 分钟，待对应成员填写 |
 | Semantic XPath | `sections/03-semantic-xpath.tex` | 7–9 分钟，待对应成员填写 |
-| HyMEM | `sections/04-hymem.tex` | [7页个人PDF](hymem-preview.pdf)已编译检查，待本人过稿、排练及F审核；[个人指南](../hymem-reading-guide.md) |
+| HyMEM | `sections/04-hymem.tex` | 7页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md) |
 | MetaMem | `sections/05-metamem.tex` | 7–9 分钟，待对应成员填写 |
 | Text2Mem | `sections/06-text2mem.tex` | 7–9 分钟，待对应成员填写 |
 | 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
