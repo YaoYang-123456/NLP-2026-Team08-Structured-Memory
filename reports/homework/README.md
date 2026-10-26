@@ -15,31 +15,36 @@
 
 ## 当前进展（2026-10-26）
 
-截至北京时间 **14:39**，已核对主分支 `fde4f86`、相关 issue / PR 及材料交接说明：**3 篇个人材料已合入、2 篇已提 PR 待审核、1 篇尚未登记阅读负责人及交稿。** 这反映仓库可见交付，不把未上传的个人工作判定为未开展。
+截至北京时间 **21:48**，已核对主分支 `1850da7`、相关 issue / PR 及交接文件：**六篇论文均已有稿件记录，4 篇已合入、2 篇初稿待审核；另有 MetaMem 修订稿待审核。** 当前材料审核队列为 #57、#59、#63。这反映仓库可见交付，不把材料完成等同于本人阅读、录制或最终提交。
 
 | 论文 | 阅读负责人 | 材料交付 | 本人过稿与视频状态 |
 | --- | --- | --- | --- |
 | StructMem | hycx233 | 报告、幻灯片和备注已由 [PR #15](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/15) 合入 | 本次约 60 分钟作业的个人录制及实测时长尚无登记 |
-| Hindsight | 尚未在仓库登记 | 主分支报告与幻灯片仍为占位内容；未查到对应交稿 PR | 待确认负责人、个人稿件与录制进度 |
-| Semantic XPath | oioioi-521 | [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 已提交 4 页个人报告、13 页幻灯片及讲稿，指定 F 审核，尚未合入 | **本次作业视频暂按未交付计**。据 F 补充，[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 所述 **8 分 55 秒**为此前录制，需先检查与当前幻灯片的内容衔接、呈现风格及音画效果，再确认能否复用或需要补录 / 重录 |
-| HyMEM | lanshuheng9-oss | [PR #54](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54) 已由 F 审核并合入，7 页个人幻灯片及全组预览已编译检查；见[过稿指南](hymem-reading-guide.md) | [#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人理解过稿、计时排练及录制待办 |
-| MetaMem | YaoYang-123456 | [PR #40](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/40) 已审核合入报告及个人模块 | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保留本人过稿与录制待办；备注估时约 6 分 25 秒，尚非本人实测的 7–9 分钟 |
-| Text2Mem | ngocnamd93-spec | [PR #59](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/59) 已提交 3 页个人报告、8 页幻灯片及约 8 分钟讲稿，指定 F 审核，尚未合入 | [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 保留本人过稿、实际计时排练与录制待办；480 秒为计划时长，视频尚未录制 |
+| Hindsight | onlysonder | [PR #60](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/60) 已合入报告章节、9 页个人幻灯片及[8 分钟讲稿](scripts/02-hindsight-8min.md)；不再记为未认领或未交稿 | 讲稿标注建议时长，录制前仍需本人过稿与实际计时；尚无本次视频交付记录 |
+| Semantic XPath | oioioi-521 | [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 已提交 4 页个人报告、13 页幻灯片及讲稿，指定 F 审核，尚未合入 | **本次视频暂按未交付计**。[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 所述 8 分 55 秒为此前录制，待 F 检查与当前幻灯片的内容衔接、风格及音画效果后决定能否复用 |
+| HyMEM | lanshuheng9-oss | [PR #54](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54) 已由 F 审核合入；[PR #61](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/61) 已补交 2 页个人报告、7 页幻灯片及校验记录；PDF 中文兼容问题由 [#62](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/62) 跟踪 | [#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人过稿、实际计时排练及录制待办 |
+| MetaMem | YaoYang-123456 | [PR #40](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/40) 已合入正文和原模块；新增 [PR #63](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/63) 提交 8 页模块、规则编辑示例、完整讲稿、2 页个人报告及中文映射修复，指定 F 审核，尚未合入 | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保留本人过稿与录制；新核心稿估计 7 分 59 秒，仍非实际排练记录，替代此前仅约 6 分 25 秒的备注估时 |
+| Text2Mem | ngocnamd93-spec | [PR #59](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/59) 已提交 3 页个人报告、8 页幻灯片及讲稿，指定 F 审核，尚未合入 | [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 保留本人过稿、实际计时排练与录制；480 秒为计划时长，视频尚未录制 |
 
-PR #57 的[验证记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/6d42ed653bbccc755f8d848c8d74861243a7ea9b/reports/homework/semantic-xpath-verification.json)由作者提供，记录其个人报告 / 幻灯片及全组报告 / 幻灯片分别为 4 / 13 / 15 / 67 页。主分支当前仍是 12 页报告与 61 页全组演示，不能把 PR 内的 67 页预览当作已经合入。
+### 预览版本与已知问题
 
-PR #59 的[验证记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/f8863c1d89968fc1c52fa074a351a0c1b9cc407f/reports/homework/text2mem-verification.json)由作者提供：个人报告 / 幻灯片为 3 / 8 页，基于主分支单独加入 Text2Mem 的候选为 14 / 62 页。作者使用 Tectonic 0.17.0 编译并检查新模块版式，未替换共享预览；这些记录不代表 F 已审核通过。
-
-F 本次在隔离目录用 XeLaTeX 重新编译主分支，以及加入 PR #57 / `6d42ed6` 和 PR #59 / `f8863c1` 四份论文章节源文件的本地合稿，分别得到 **12 / 61 页**和 **17 / 68 页**的报告 / 幻灯片。新合稿的 Semantic XPath 位于幻灯片第 23–35 页，Text2Mem 位于第 50–57 页；68 页包含 4 页备用资料。新模块页面已渲染检查，未见遮挡、溢出或缺字；报告仍有 underfull 和字体大小替代提示。此为查看当前材料的编译预览，尚未完成两份 PR 的论文内容审核，也未核看视频，不作为批准或最终定稿。
+- 仓库 [全组预览](slides/preview.pdf) 仍是 #54 的 **61 页旧快照**，SHA-256 为 `1abab03db0ea939a91bf3025c324bad60a31d6a12ed554b296b054646bfdf44e`，未反映已合入的 Hindsight。此前 F 基于 `fde4f86` 编译的 12 / 61 页主分支版及 17 / 68 页本地候选也已是历史预览，不能继续称为当前完整合稿。
+- HyMEM 的 [#62](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/62) 记录：缺少内嵌 ToUnicode 时，未配置外部 CMap 的 PDF.js 会丢失中文；此前单一渲染器检查不足以证明跨预览器兼容。修复已推送到 [分支提交 b64f1cf](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/commit/b64f1cf)，尚未见修复 PR 或合入记录，issue 仍开放。
+- MetaMem [PR #63 的交接说明](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/caca33885628bd99771ecddc26a44db52c2b01de/reports/homework/metamem-handoff.md)报告已为个人 PDF 补齐中文映射，并完成 PDF.js 与 PDFium 检查；作者基于 `1850da7` 接入该修订后编译的全组报告 / 幻灯片为 14 / 64 页。此为作者验证记录，不是 F 本轮复验，也未包含 #57 / #59 的待审模块。
+- 本轮只核对进度与交接记录，没有重新编译合稿、复验字体修复或审核三份待审 PR 的论文内容，也未核看视频。
 
 ### 接下来的交付
 
-1. F 集中审核 PR #57 和 #59 的论文数字与来源、共享材料编译及版式，重点核对 Semantic XPath 第 12 页的历史分工说明和 Text2Mem 的指标口径；通过后再合入。Semantic XPath 旧视频待 F 核看与当前幻灯片的内容衔接、呈现风格及音画效果；确认可用并完成交接前，按本次作业视频未交付跟踪。
-2. 确认 Hindsight 阅读负责人并收取稿件；Text2Mem 沿用 #56 跟踪本人过稿、排练与录制。各人已完成的课设技术任务不替代对应阅读模块。
-3. 收齐个人材料后共同完成系统性比较、摘要、总结和贡献说明；当前综合草稿仍未编入报告，幻灯片总结仍为结构模板。
-4. 收集个人视频及实际时长，安排开场和共同总结，核验整段约 60 分钟视频；记录文件版本、交接和最终上传状态。当前尚无本次作业可计为已交付的个人视频，也无整组视频完成记录。
+1. F 集中审核 #57、#59、#63：论文数字与来源、共享材料编译和版式、讲稿页序与时长安排；特别核对 Semantic XPath 的历史分工说明、Text2Mem 指标口径和 MetaMem 规则示例与 PDF 中文兼容。
+2. 跟进 HyMEM #62 的修复交付和验收；整合稿重新导出时也检查 PDF.js 无外部 CMap 的中文显示，避免只依据编译成功或单一渲染器结果。
+3. 六篇稿件完成审核后共同补齐系统性比较、摘要、总结与实际贡献说明，重新编译并同步全组预览；当前综合草稿仍未编入报告，幻灯片总结仍为结构模板。
+4. 收集个人视频及实际时长，安排开场和共同总结，核验约 60 分钟合稿，记录文件版本、交接与最终上传状态。当前尚无本次作业可计为已交付的个人视频；Semantic XPath 的旧视频继续按未交付跟踪。
 
-10 月 22 日的研讨阶段已由负责人确认完成：[PR #52](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/52) 已合入，[#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19) 与 [#31](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/31) 已按阶段验收结项。这些旧任务不再作为研讨阻塞；11 月 1 日的阅读报告、约 60 分钟视频及最终上传继续按本页跟踪。
+10 月 22 日研讨阶段已结项：[PR #52](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/52) 已合入，[#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19) 与 [#31](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/31) 已关闭；11 月 1 日的阅读报告、约 60 分钟视频及课程上传仍按本页跟踪。
+
+## 个人阅读材料
+
+HyMEM负责人 `lanshuheng9-oss` 的[个人报告PDF](hymem-reading-report.pdf)、[个人演示PDF](slides/hymem-preview.pdf)和[讲稿及阅读指南](hymem-reading-guide.md)已整理并完成个人模块编译与逐页检查；[文件大小及SHA-256](hymem-artifacts.json)随材料保存。正文已由 F 在 #54 审核，PDF 的跨预览器中文兼容问题继续由 [#62](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/62) 跟踪。当前仍待本人过稿、排练及录制，不能据此标记全组作业已定稿或提交。
 
 ## 共同编辑
 

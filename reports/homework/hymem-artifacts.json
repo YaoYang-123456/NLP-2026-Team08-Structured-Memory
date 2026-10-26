@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "owner": "lanshuheng9-oss",
+  "issue": 53,
+  "status": "compiled_and_visually_checked_F_reviewed_pending_personal_work",
+  "compiler": {
+    "name": "Tectonic",
+    "version": "0.17.0",
+    "engine": "XeTeX",
+    "windows_release_archive_sha256": "f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f",
+    "release_url": "https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0"
+  },
+  "outputs": [
+    {
+      "path": "reports/homework/hymem-reading-report.pdf",
+      "bytes": 223872,
+      "sha256": "7dadd388422a926dead0497b32d951971b11883450260980aa5d47584dac0849",
+      "pages": 2,
+      "purpose": "HyMEM individual report for reading and team integration"
+    },
+    {
+      "path": "reports/homework/slides/hymem-preview.pdf",
+      "bytes": 184290,
+      "sha256": "179b40e42abbec11c3d5cc93b174d2d5d5fae9c4cc20df2b9f9f15561eb5ba35",
+      "pages": 7,
+      "purpose": "HyMEM individual lecture; editable Beamer source kept alongside"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "reports/homework/hymem-preview.tex",
+      "bytes": 546,
+      "sha256": "be1b8e9ab47f255e6661b11a6cc89e9eca57580804f8f125894f2b0ebaca20c7"
+    },
+    {
+      "path": "reports/homework/sections/04-hymem.tex",
+      "bytes": 7364,
+      "sha256": "45fe45b2ab97650a9503f1a4842fa714c6af1ef38a8cd7001ae3283ce2cb8ec6"
+    },
+    {
+      "path": "reports/homework/slides/hymem-preview.tex",
+      "bytes": 303,
+      "sha256": "7f16174bbcada0acda06fc81034e831d4778d50b0e87d9f7d56a46dcf8aa3e0a"
+    },
+    {
+      "path": "reports/homework/slides/sections/04-hymem.tex",
+      "bytes": 7750,
+      "sha256": "cb795a8b8cfb062105177c60a7be11856358833c43328d82c207c6165e7df857"
+    },
+    {
+      "path": "reports/homework/slides/preamble.tex",
+      "bytes": 2604,
+      "sha256": "645a429b5feda7c573e936adbe95149ade08985cdd9d97363a8cc1380bdf76d2"
+    },
+    {
+      "path": "reports/homework/references.bib",
+      "bytes": 5225,
+      "sha256": "adb080b30be19d2b0d73c972c5dcdfc43f10e1228fe72b738d9cba916285b042"
+    },
+    {
+      "path": "reports/templates/jos/jos.cls",
+      "bytes": 17773,
+      "sha256": "5a3e4a008578a7be8e3eb83fa6443897b65dab65cb80bc06e4451141c84b170d"
+    },
+    {
+      "path": "reports/templates/jos/jos.bst",
+      "bytes": 26518,
+      "sha256": "afa8769a8bbc0671c2ecc1620144cd2e856d8b785be9985886449d0a3ccde168"
+    }
+  ],
+  "original_paper": {
+    "path": "papers/structured-memory-group2/04_Hybrid_Self-evolving_Structured_Memory.pdf",
+    "bytes": 4322862,
+    "sha256": "13e83314073fb3a8205f1f2d06fbd1acf994b0ac56455d95a0113df3ad06d33b"
+  },
+  "validation": {
+    "report_compile_exit_code": 0,
+    "slides_compile_exit_code": 0,
+    "visually_checked_report_pages": [
+      1,
+      2
+    ],
+    "visually_checked_slide_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "result_numbers_checked_against_original_paper": true,
+    "cjk_and_numeric_text_checked_with_pdfium": true,
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "unresolved_references": 0,
+    "missing_character_messages": 0,
+    "non_fatal_warnings": [
+      "Fontconfig default configuration was unavailable; explicit document fonts rendered normally.",
+      "algorithm.sty:11 and algorithmic.sty:11 emitted invalid UTF-8 warnings; compiled document text contained no replacement character."
+    ]
+  },
+  "not_completed": [
+    "personal reading acceptance",
+    "timed rehearsal",
+    "personal video recording",
+    "team final submission"
+  ],
+  "review_pull_request": 54,
+  "delivery_branch": "lanshuheng9-oss/53-hymem-pdf-delivery",
+  "F_review": {
+    "reviewer": "hycx233",
+    "state": "APPROVED",
+    "reviewed_commit": "f52f96b261b55eca732e0ddc4290b654f96812a4",
+    "url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54#pullrequestreview-5647106761",
+    "post_review_changes": "Shared chapter and slide content match F-reviewed main exactly. Added the personal report wrapper/PDF, personal slide metadata, individual-preview title spacing and delivery records."
+  },
+  "integration_preview": {
+    "path": "reports/homework/slides/preview.pdf",
+    "bytes": 455751,
+    "sha256": "1abab03db0ea939a91bf3025c324bad60a31d6a12ed554b296b054646bfdf44e",
+    "pages": 61,
+    "producer": "F; preserved without regeneration on this host"
+  }
+}

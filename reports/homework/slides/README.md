@@ -4,7 +4,7 @@
 
 当前按录屏讲解调整为 10pt 基准字号，正文行距系数 1.12，默认表格行距系数 1.15，并为正文与来源脚注保留独立留白。标题与章节页字号也相应收敛；表格后的解释文字留出明确间隔。
 
-[当前 PDF 预览](preview.pdf)随源码保存，便于直接查看版式。它仍是工作模板，其他成员的个人部分和共同总结尚待填写；修改后重新编译并同步预览。
+[仓库 PDF 预览](preview.pdf)目前仍是 #54 的 61 页旧快照，未反映已合入的 Hindsight。最新源码、待审模块及 PDF 中文兼容状态见下方进度说明；整合后需重新编译、检查并同步预览。
 
 ## 结构与时间
 
@@ -12,17 +12,17 @@
 | --- | --- | --- |
 | 开场 | `sections/00-opening.tex` | 主题、共同问题和路线，约 3 分钟 |
 | StructMem | `sections/01-structmem.tex` | 7–9 分钟；已迁入本地既有演示稿正文和讲稿备注 |
-| Hindsight | `sections/02-hindsight.tex` | 7–9 分钟，待对应成员填写 |
-| Semantic XPath | `sections/03-semantic-xpath.tex` | 7–9 分钟，待对应成员填写 |
-| HyMEM | `sections/04-hymem.tex` | 7页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md) |
-| MetaMem | `sections/05-metamem.tex` | YaoYang-123456；材料已由 PR #40 合入，待本人过稿、计时及录制；[任务 #39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) |
+| Hindsight | `sections/02-hindsight.tex` | 8 分钟讲解稿已整理，9 页个人模块已编译；录制前由本人过稿并计时；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
+| Semantic XPath | `sections/03-semantic-xpath.tex` | oioioi-521；13 页模块已在 [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 提交，待审核合入；旧视频暂按本次未交付计 |
+| HyMEM | `sections/04-hymem.tex` | 7 页模块和个人材料已合入，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md)；中文显示修复由 [#62](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/62) 跟踪 |
+| MetaMem | `sections/05-metamem.tex` | YaoYang-123456；#40 原模块已合入，[PR #63](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/63) 新交 8 页修订稿及中文兼容 PDF，待 F 审核；核心稿估计 7 分 59 秒，本人尚未实际计时或录制 |
 | Text2Mem | `sections/06-text2mem.tex` | ngocnamd93-spec；8 页模块已在 [PR #59](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/59) 提交，待审核合入；本人过稿、排练及录制按 [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 推进 |
 | 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
 | 备用资料 | `sections/99-backup.tex` | 问答时按需使用，不计入正文页码；已迁入 StructMem 备用页 |
 
 默认分配为 **3＋6×8＋12＝63 分钟**。若六人分别使用 7–9 分钟、总结使用 10–15 分钟，在开场 3 分钟的条件下，总长约 55–72 分钟，不含额外问答。需要控制在 60 分钟时，采用 **2＋6×8＋10＝60 分钟**，并更新开场时间页和讲稿备注。页数只作内容组织参考，最终以排练计时为准。
 
-截至北京时间 2026-10-26 14:39，Semantic XPath 已在 [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 提交 13 页个人模块，Text2Mem 已在 [PR #59](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/59) 提交 8 页个人模块，两者均待 F 审核合入，因此上表对应的主分支文件仍为占位。据 F 补充，Semantic XPath 的 8 分 55 秒视频是此前录制，需先检查与当前幻灯片的内容衔接、呈现风格及音画效果；本次作业视频暂按未交付计。Text2Mem 尚未录制，480 秒仅为讲稿计划。主分支当前预览为 61 页，分别单独加入 PR #57 或 #59 的候选为 67 或 62 页；其余材料和视频状态见[平时作业进度](../README.md#当前进展2026-10-26)。
+截至北京时间 2026-10-26 21:48，主分支 `1850da7` 已有 StructMem、Hindsight、HyMEM、MetaMem 四篇材料；Semantic XPath #57、Text2Mem #59 初稿和 MetaMem #63 修订稿待 F 审核。六篇均有稿件记录。此前 17 页报告 / 68 页幻灯片仅是旧主分支加 #57/#59 的本地预览，已不代表最新合稿。#63 作者报告的 14 / 64 页也未包含 #57/#59，不当作当前完整组稿。本人计时、视频、字体兼容和后续安排见[平时作业进度](../README.md#当前进展2026-10-26)。
 
 ## 编辑方式
 
@@ -48,7 +48,7 @@
 \includeonlylecture{structmem}
 ```
 
-可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。HyMEM另有 `hymem-preview.tex`，可直接编译个人模块而不改动全组主文件；当前状态见[个人指南](../hymem-reading-guide.md)。
+可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。Hindsight 和 HyMEM 都有独立预览入口，可直接编译个人模块而不改动全组主文件。Hindsight 预览 PDF 为 9 页，大小 208,722 字节，SHA-256 为 `e0b443a40ca858d5f19f9b01f2ca9644c848a991a0abf95eeacbf9d0716dd88b`。
 
 ## 编译
 
