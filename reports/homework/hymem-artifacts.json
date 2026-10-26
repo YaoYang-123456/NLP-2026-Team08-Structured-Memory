@@ -14,8 +14,8 @@
   "outputs": [
     {
       "path": "reports/homework/hymem-reading-report.pdf",
-      "bytes": 226002,
-      "sha256": "e13c6cfdd3c338058e716c582ee5f83bad745f6b84120cfc1a58e06d82a7881d",
+      "bytes": 223872,
+      "sha256": "7dadd388422a926dead0497b32d951971b11883450260980aa5d47584dac0849",
       "pages": 2,
       "purpose": "HyMEM individual report for reading and team integration"
     },
@@ -30,13 +30,13 @@
   "source_inputs": [
     {
       "path": "reports/homework/hymem-preview.tex",
-      "bytes": 665,
-      "sha256": "8658eb72e2a20ecf08b2a4fd62d6d2130967f92415e891118a81ed49aef101f2"
+      "bytes": 546,
+      "sha256": "be1b8e9ab47f255e6661b11a6cc89e9eca57580804f8f125894f2b0ebaca20c7"
     },
     {
       "path": "reports/homework/sections/04-hymem.tex",
-      "bytes": 7400,
-      "sha256": "2b4d0a701d218fa222a032fbd9107bfb1055c07d9c4808a3002eab30e4e08693"
+      "bytes": 7364,
+      "sha256": "45fe45b2ab97650a9503f1a4842fa714c6af1ef38a8cd7001ae3283ce2cb8ec6"
     },
     {
       "path": "reports/homework/slides/hymem-preview.tex",
@@ -114,7 +114,7 @@
     "state": "APPROVED",
     "reviewed_commit": "f52f96b261b55eca732e0ddc4290b654f96812a4",
     "url": "https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54#pullrequestreview-5647106761",
-    "post_review_changes": "Preserved F content corrections and shared preview; rebuilt personal PDFs, added individual report entry and metadata, kept a report paragraph on one page, updated delivery records."
+    "post_review_changes": "Shared chapter and slide content match F-reviewed main exactly. Added the personal report wrapper/PDF, personal slide metadata, individual-preview title spacing and delivery records."
   },
   "integration_preview": {
     "path": "reports/homework/slides/preview.pdf",

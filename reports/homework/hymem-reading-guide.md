@@ -117,7 +117,7 @@ tectonic reports/homework/slides/hymem-preview.tex --outdir output/homework-slid
 
 F（`hycx233`）已在[PR审核记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54#pullrequestreview-5647106761)批准提交 `f52f96b261b55eca732e0ddc4290b654f96812a4`：核对原文，修正本组数据集名称为LoCoMo及结果表等宽列，并用XeLaTeX验证整份报告12页、个人演示7页和全组演示61页。F记录三项编译无Overfull、缺字或未定义引用；整份报告仅有原有StructMem章节的Underfull和数学字体尺寸替代提示。此为F的审核与整合验证记录，不冒充本机全组编译结果。
 
-本机保留F全部正文修正及共享预览，重新编译个人两份PDF，追加个人报告入口、PDF元数据、跨页段落排版及交接记录；属于同一审核范围的配套整理。本机只验收个人模块。两份个人PDF与F共享预览的当前大小、SHA-256均记录在 `hymem-artifacts.json`；没有用旧个人PDF校验值替代新版本。
+本机保留F全部正文修正及共享预览，重新编译个人两份PDF，追加个人报告入口、PDF元数据、个人预览标题留白及交接记录；属于同一审核范围的配套整理。本机只验收个人模块。两份个人PDF与F共享预览的当前大小、SHA-256均记录在 `hymem-artifacts.json`；没有用旧个人PDF校验值替代新版本。
 
 材料审核和编译不代替本人阅读、排练、录制，也不代表全组作业已定稿或已上传。
 
