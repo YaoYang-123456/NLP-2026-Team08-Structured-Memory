@@ -1,13 +1,17 @@
 # HyMEM 个人过稿与讲解指南
 
-负责人：`lanshuheng9-oss`。关联任务：[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53)。状态：2026-10-26 已由 F（hycx233）核对原文并完成编译与版式检查，待本人过稿、排练及录制；不代表本人已完成阅读或录制，不填写全组贡献百分比。
+负责人：`lanshuheng9-oss`。关联任务：[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53)。状态：报告与演示PDF已编译并逐页检查，F（hycx233）已完成内容及整合审核，待本人过稿、排练及录制；不代表本人已完成阅读或录制，不填写全组贡献百分比。
 
 ## 阅读入口与证据
+
+- [2页个人阅读报告PDF](hymem-reading-report.pdf)。
+- [7页个人演示PDF](slides/hymem-preview.pdf)。
+- [交接校验信息](hymem-artifacts.json)：两份PDF的大小、SHA-256、编译工具和源码指纹。均小于20 MB，随PR直接保存在仓库，无需另传本地文件。
 
 - [报告正文](sections/04-hymem.tex)：可并入小组报告，沿用现有参考文献键 `zhu-etal-2026-hybrid`。
 - [7页 Beamer 模块](slides/sections/04-hymem.tex)：章节页加6页正文；含可编辑流程图、结果表及讲稿备注。
 - [个人编译入口](slides/hymem-preview.tex)：复用共享样式，只包含 HyMEM，不改全组主文件。
-- [个人PDF预览](slides/hymem-preview.pdf)：7页；[全组PDF预览](slides/preview.pdf)中对应第30--36页。
+- [全组演示预览](slides/preview.pdf)：F已更新的61页版本，HyMEM对应第30–36页；其他模块仍按全组实际状态推进。
 - [原文](../../papers/structured-memory-group2/04_Hybrid_Self-evolving_Structured_Memory.pdf)；[官方页面](https://aclanthology.org/2026.findings-acl.549/)。PDF共18页，印刷页11287–11304；下列页码均为PDF文件页码。
 - 原文大小4,322,862字节，SHA-256：`13e83314073fb3a8205f1f2d06fbd1acf994b0ac56455d95a0113df3ad06d33b`。本次核对本地原文第3–7页的表示、流程、设置和结果。
 
@@ -89,32 +93,41 @@ HyMEM包含记忆编码器训练，更新Q-Former和LoRA，作者称约1.2%的�
 
 ## 编译和交接
 
-在 `reports/homework/slides/` 中运行：
+共享报告仍使用 `main.tex` 引入本节。个人报告入口是 `reports/homework/hymem-preview.tex`，演示入口是 `reports/homework/slides/hymem-preview.tex`，都直接读取共享的 HyMEM 正文。全组的 `slides/preview.pdf` 已由F同步HyMEM内容；个人录制可直接使用上方7页个人演示PDF。
+
+已有XeLaTeX/latexmk环境时：
 
 ```sh
+# 在 reports/homework/ 中编译个人报告
+latexmk -xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error hymem-preview.tex
+# 在 reports/homework/slides/ 中编译个人演示
 latexmk -xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error hymem-preview.tex
 ```
 
-输出按该目录既有 `.latexmkrc` 写入 `output/homework-slides/`。报告章节由小组报告 `main.tex` 引入，不单独当作完整TeX文档编译。
+两处的 `.latexmkrc` 分别将结果放入 `output/homework/` 和 `output/homework-slides/`。个人报告有独立页眉、页码和参考文献；共享正文不带这些个人预览信息。
 
-初稿提交时，作者本机缺少XeLaTeX/latexmk，未完成编译。2026-10-26，F在独立副本中用XeLaTeX及上述参数编译了小组报告（12页）、个人幻灯片（7页）和全组幻灯片（61页），均成功。原文表2、图2及训练/检索条件已核对；修正报告中本组数据集名称为LoCoMo，并调整结果页数值列间距及表后留白。
+本次实际使用 **Tectonic 0.17.0（XeTeX引擎）** 完成编译，以下命令从仓库根目录执行：
 
-个人7页、报告HyMEM所在第9--10页及结果页的全组排版已检查。三项编译均无Overfull、缺字或未定义引用；整份报告保留未修改的StructMem章节中已有的Underfull和数学字体尺寸替代提示。修正前后逐页渲染对比仅报告第10页、全组幻灯片第35页发生变化。共享预览已同步，报告编译输出仍留在忽略目录，不作为全组最终报告。
+```sh
+tectonic reports/homework/hymem-preview.tex -Z search-path=reports/templates/jos --outdir output/homework-hymem --keep-logs --keep-intermediates
+tectonic reports/homework/slides/hymem-preview.tex --outdir output/homework-slides --keep-logs --keep-intermediates
+```
 
-预览交接（2026-10-26，均小于20 MB）：
+编译器和下载缓存位于忽略目录 `tmp/hymem-20261026/`，没有修改系统TeX配置或项目依赖。两次编译退出码均为0。已检查全部2页报告与7页演示，修正表格后文字间距及报告跨页断词；最终日志没有Overfull/Underfull、未解析引用或缺字提示。报告依赖的 `algorithm.sty`、`algorithmic.sty` 有两类非致命UTF-8警告，Fontconfig也提示未找到默认配置；显式字体已正常加载，实际PDF中英文字体、复制文本与数值经核对正常。没有把这些依赖警告写成零警告。
 
-| 文件 | 页数 | 字节数 | SHA-256 |
-| --- | ---: | ---: | --- |
-| `slides/hymem-preview.pdf` | 7 | 183848 | `7f0e9711397cc54656965c5ece6c91f05fe7b16a19590d6f1a2b4dcbb5e6ad65` |
-| `slides/preview.pdf` | 61 | 455751 | `1abab03db0ea939a91bf3025c324bad60a31d6a12ed554b296b054646bfdf44e` |
+F（`hycx233`）已在[PR审核记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54#pullrequestreview-5647106761)批准提交 `f52f96b261b55eca732e0ddc4290b654f96812a4`：核对原文，修正本组数据集名称为LoCoMo及结果表等宽列，并用XeLaTeX验证整份报告12页、个人演示7页和全组演示61页。F记录三项编译无Overfull、缺字或未定义引用；整份报告仅有原有StructMem章节的Underfull和数学字体尺寸替代提示。此为F的审核与整合验证记录，不冒充本机全组编译结果。
+
+本机保留F全部正文修正及共享预览，重新编译个人两份PDF，追加个人报告入口、PDF元数据、个人预览标题留白及交接记录；属于同一审核范围的配套整理。本机只验收个人模块。两份个人PDF与F共享预览的当前大小、SHA-256均记录在 `hymem-artifacts.json`；没有用旧个人PDF校验值替代新版本。
+
+材料审核和编译不代替本人阅读、排练、录制，也不代表全组作业已定稿或已上传。
 
 本人仍需：
 
 - [ ] 对照原文看懂混合表示、两种更新和结果表，改写不符合本人表达的讲稿。
 - [ ] 实际计时排练到7–9分钟，并记录时长。
-- [ ] 检查F导出的新PDF并完成个人视频录制；团队汇总后确认最终上传。
+- [ ] 看过导出的个人PDF，完成个人视频录制；团队汇总后确认最终上传。
 - [ ] 本人确认分工描述，和全组共同确定贡献百分比。
 
-发群可用文字（本人录制前）：
+发群可用文字：
 
-> 我的HyMEM阅读部分已提交报告正文、7页Beamer和约8分钟讲稿初稿，包含原文页码、主结果及与StructMem的区别。F已完成原文核对、编译和版式检查，个人PDF及全组预览已更新。目前待我本人过稿、计时排练和录制；没有把作者实验写成团队复现。
+> 我的HyMEM个人材料已整理好：2页报告、7页演示PDF、约8分钟讲稿和答辩要点，原文出处与作者实验条件已标清。PDF已编译并逐页检查，文件直接在仓库里；F已完成内容及整合审核，仍待本人过稿排练和录制，未把论文作者实验算成本组复现。
