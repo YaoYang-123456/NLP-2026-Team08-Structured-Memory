@@ -15,7 +15,7 @@
 
 ## 当前进展（2026-10-26）
 
-截至北京时间 **14:25**，已核对主分支 `fde4f86`、相关 issue / PR 及材料交接说明：**3 篇个人材料已合入、1 篇已提 PR 待审核、1 篇已认领待交稿、1 篇尚未登记阅读负责人及交稿。** 这反映仓库可见交付，不把未上传的个人工作判定为未开展。
+截至北京时间 **14:39**，已核对主分支 `fde4f86`、相关 issue / PR 及材料交接说明：**3 篇个人材料已合入、2 篇已提 PR 待审核、1 篇尚未登记阅读负责人及交稿。** 这反映仓库可见交付，不把未上传的个人工作判定为未开展。
 
 | 论文 | 阅读负责人 | 材料交付 | 本人过稿与视频状态 |
 | --- | --- | --- | --- |
@@ -24,14 +24,18 @@
 | Semantic XPath | oioioi-521 | [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 已提交 4 页个人报告、13 页幻灯片及讲稿，指定 F 审核，尚未合入 | **本次作业视频暂按未交付计**。据 F 补充，[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 所述 **8 分 55 秒**为此前录制，需先检查与当前幻灯片的内容衔接、呈现风格及音画效果，再确认能否复用或需要补录 / 重录 |
 | HyMEM | lanshuheng9-oss | [PR #54](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/54) 已由 F 审核并合入，7 页个人幻灯片及全组预览已编译检查；见[过稿指南](hymem-reading-guide.md) | [#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人理解过稿、计时排练及录制待办 |
 | MetaMem | YaoYang-123456 | [PR #40](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/40) 已审核合入报告及个人模块 | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保留本人过稿与录制待办；备注估时约 6 分 25 秒，尚非本人实测的 7–9 分钟 |
-| Text2Mem | ngocnamd93-spec | 已在 [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 认领；主分支仍为占位内容，尚未查到交稿 PR | 报告、个人幻灯片、过稿、排练与录制按 #56 推进 |
+| Text2Mem | ngocnamd93-spec | [PR #59](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/59) 已提交 3 页个人报告、8 页幻灯片及约 8 分钟讲稿，指定 F 审核，尚未合入 | [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 保留本人过稿、实际计时排练与录制待办；480 秒为计划时长，视频尚未录制 |
 
-PR #57 的[验证记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/6d42ed653bbccc755f8d848c8d74861243a7ea9b/reports/homework/semantic-xpath-verification.json)由作者提供，记录其个人报告 / 幻灯片及全组报告 / 幻灯片分别为 4 / 13 / 15 / 67 页；本次进度核查没有重新编译或核看视频。主分支当前仍是 #54 检查过的 12 页报告与 61 页全组演示，不能把 PR 内的 67 页预览当作已经合入。
+PR #57 的[验证记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/6d42ed653bbccc755f8d848c8d74861243a7ea9b/reports/homework/semantic-xpath-verification.json)由作者提供，记录其个人报告 / 幻灯片及全组报告 / 幻灯片分别为 4 / 13 / 15 / 67 页。主分支当前仍是 12 页报告与 61 页全组演示，不能把 PR 内的 67 页预览当作已经合入。
+
+PR #59 的[验证记录](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/f8863c1d89968fc1c52fa074a351a0c1b9cc407f/reports/homework/text2mem-verification.json)由作者提供：个人报告 / 幻灯片为 3 / 8 页，基于主分支单独加入 Text2Mem 的候选为 14 / 62 页。作者使用 Tectonic 0.17.0 编译并检查新模块版式，未替换共享预览；这些记录不代表 F 已审核通过。
+
+F 本次在隔离目录用 XeLaTeX 重新编译主分支，以及加入 PR #57 / `6d42ed6` 和 PR #59 / `f8863c1` 四份论文章节源文件的本地合稿，分别得到 **12 / 61 页**和 **17 / 68 页**的报告 / 幻灯片。新合稿的 Semantic XPath 位于幻灯片第 23–35 页，Text2Mem 位于第 50–57 页；68 页包含 4 页备用资料。新模块页面已渲染检查，未见遮挡、溢出或缺字；报告仍有 underfull 和字体大小替代提示。此为查看当前材料的编译预览，尚未完成两份 PR 的论文内容审核，也未核看视频，不作为批准或最终定稿。
 
 ### 接下来的交付
 
-1. F 集中审核 PR #57 的论文数字与来源、共享材料编译，以及第 12 页的历史分工说明；通过后再合入。Semantic XPath 旧视频待 F 核看与当前幻灯片的内容衔接、呈现风格及音画效果；确认可用并完成交接前，按本次作业视频未交付跟踪。
-2. 确认 Hindsight 阅读负责人并收取稿件；Text2Mem 沿用 #56 交稿。各人已完成的课设技术任务不替代对应阅读模块。
+1. F 集中审核 PR #57 和 #59 的论文数字与来源、共享材料编译及版式，重点核对 Semantic XPath 第 12 页的历史分工说明和 Text2Mem 的指标口径；通过后再合入。Semantic XPath 旧视频待 F 核看与当前幻灯片的内容衔接、呈现风格及音画效果；确认可用并完成交接前，按本次作业视频未交付跟踪。
+2. 确认 Hindsight 阅读负责人并收取稿件；Text2Mem 沿用 #56 跟踪本人过稿、排练与录制。各人已完成的课设技术任务不替代对应阅读模块。
 3. 收齐个人材料后共同完成系统性比较、摘要、总结和贡献说明；当前综合草稿仍未编入报告，幻灯片总结仍为结构模板。
 4. 收集个人视频及实际时长，安排开场和共同总结，核验整段约 60 分钟视频；记录文件版本、交接和最终上传状态。当前尚无本次作业可计为已交付的个人视频，也无整组视频完成记录。
 
