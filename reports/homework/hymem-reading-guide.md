@@ -1,12 +1,13 @@
 # HyMEM 个人过稿与讲解指南
 
-负责人：`lanshuheng9-oss`。关联任务：[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53)。状态：基于原文整理的个人材料初稿，待本人过稿、排练及 F 审核；不代表本人已完成阅读或录制，不填写全组贡献百分比。
+负责人：`lanshuheng9-oss`。关联任务：[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53)。状态：2026-10-26 已由 F（hycx233）核对原文并完成编译与版式检查，待本人过稿、排练及录制；不代表本人已完成阅读或录制，不填写全组贡献百分比。
 
 ## 阅读入口与证据
 
 - [报告正文](sections/04-hymem.tex)：可并入小组报告，沿用现有参考文献键 `zhu-etal-2026-hybrid`。
 - [7页 Beamer 模块](slides/sections/04-hymem.tex)：章节页加6页正文；含可编辑流程图、结果表及讲稿备注。
 - [个人编译入口](slides/hymem-preview.tex)：复用共享样式，只包含 HyMEM，不改全组主文件。
+- [个人PDF预览](slides/hymem-preview.pdf)：7页；[全组PDF预览](slides/preview.pdf)中对应第30--36页。
 - [原文](../../papers/structured-memory-group2/04_Hybrid_Self-evolving_Structured_Memory.pdf)；[官方页面](https://aclanthology.org/2026.findings-acl.549/)。PDF共18页，印刷页11287–11304；下列页码均为PDF文件页码。
 - 原文大小4,322,862字节，SHA-256：`13e83314073fb3a8205f1f2d06fbd1acf994b0ac56455d95a0113df3ad06d33b`。本次核对本地原文第3–7页的表示、流程、设置和结果。
 
@@ -94,9 +95,18 @@ HyMEM包含记忆编码器训练，更新Q-Former和LoRA，作者称约1.2%的�
 latexmk -xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error hymem-preview.tex
 ```
 
-输出按该目录既有 `.latexmkrc` 写入 `output/homework-slides/`。报告章节由小组报告 `main.tex` 引入，不单独当作完整TeX文档编译。共享的 `slides/preview.pdf` 是旧模板，**本次没有覆盖，不能作为新HyMEM页的编译证据**。
+输出按该目录既有 `.latexmkrc` 写入 `output/homework-slides/`。报告章节由小组报告 `main.tex` 引入，不单独当作完整TeX文档编译。
 
-本次已核对原文结果、页码、LaTeX引用、模块结构及改动边界。本机未找到XeLaTeX/latexmk；内置编译调用未返回诊断，已终止等待。因此当前**没有新PDF、没有通过编译和视觉排版验收**，交接的是源码初稿。请 F 在有TeX环境的机器按上述入口编译并检查字号、表格、页脚和溢出后，再同步全组PDF。未将此技术检查记为完成。
+初稿提交时，作者本机缺少XeLaTeX/latexmk，未完成编译。2026-10-26，F在独立副本中用XeLaTeX及上述参数编译了小组报告（12页）、个人幻灯片（7页）和全组幻灯片（61页），均成功。原文表2、图2及训练/检索条件已核对；修正报告中本组数据集名称为LoCoMo，并调整结果页数值列间距及表后留白。
+
+个人7页、报告HyMEM所在第9--10页及结果页的全组排版已检查。三项编译均无Overfull、缺字或未定义引用；整份报告保留未修改的StructMem章节中已有的Underfull和数学字体尺寸替代提示。修正前后逐页渲染对比仅报告第10页、全组幻灯片第35页发生变化。共享预览已同步，报告编译输出仍留在忽略目录，不作为全组最终报告。
+
+预览交接（2026-10-26，均小于20 MB）：
+
+| 文件 | 页数 | 字节数 | SHA-256 |
+| --- | ---: | ---: | --- |
+| `slides/hymem-preview.pdf` | 7 | 183848 | `7f0e9711397cc54656965c5ece6c91f05fe7b16a19590d6f1a2b4dcbb5e6ad65` |
+| `slides/preview.pdf` | 61 | 455751 | `1abab03db0ea939a91bf3025c324bad60a31d6a12ed554b296b054646bfdf44e` |
 
 本人仍需：
 
@@ -105,6 +115,6 @@ latexmk -xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error hymem-
 - [ ] 检查F导出的新PDF并完成个人视频录制；团队汇总后确认最终上传。
 - [ ] 本人确认分工描述，和全组共同确定贡献百分比。
 
-发群可用文字（编译通过前）：
+发群可用文字（本人录制前）：
 
-> 我的HyMEM阅读部分已提交报告正文、7页Beamer源码和约8分钟讲稿初稿，包含原文页码、主结果及与StructMem的区别。目前待本人过稿排练，PDF编译与全组整合也待核验；没有把作者实验写成团队复现。F可以从 `slides/hymem-preview.tex` 单独编译检查。
+> 我的HyMEM阅读部分已提交报告正文、7页Beamer和约8分钟讲稿初稿，包含原文页码、主结果及与StructMem的区别。F已完成原文核对、编译和版式检查，个人PDF及全组预览已更新。目前待我本人过稿、计时排练和录制；没有把作者实验写成团队复现。

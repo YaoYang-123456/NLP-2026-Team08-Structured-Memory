@@ -82,7 +82,7 @@
 \source{HyMEM，PDF 第7页，表2；图2为不同分析设置，不与本表混合}
 \begin{frame}{结果：混合记忆有收益，单一记忆并非总有帮助}
     \textbf{作者表2：Overall任务成功率（\%）}\par\vspace{3mm}
-    \begin{tabularx}{\linewidth}{@{}Yrrrr@{}}
+    \begin{tabularx}{\linewidth}{@{}Y*{4}{>{\centering\arraybackslash}p{17mm}}@{}}
         \toprule
         基础模型 & 无记忆 & 离散 & 连续 & HyMEM \\
         \midrule
@@ -90,7 +90,7 @@
         Qwen3-VL-8B & 21.9 & 21.3 & 23.3 & \key{33.8} \\
         UI-TARS-1.5-7B & 17.1 & 15.4 & 28.7 & \key{31.2} \\
         \bottomrule
-    \end{tabularx}
+    \end{tabularx}\par
     \vspace{4mm}
     \key{12.5\%到35.0\%：提高22.5个百分点。}\par\vspace{2mm}
     Qwen3的离散记忆低于无记忆；总体提升不代表每个领域都改善。
