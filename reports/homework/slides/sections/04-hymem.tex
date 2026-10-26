@@ -1,97 +1,121 @@
-\source{https://aclanthology.org/2026.findings-acl.549/；逐页补充原文页码与图表编号}
-\papersection{HyMEM}{电脑操作智能体的混合自演化记忆}{讲解人待填写}
+\source{Zhu et al., HyMEM, Findings ACL 2026；PDF 第1页（印刷页11287）}
+\papersection{HyMEM}{电脑操作智能体的混合自演化记忆}{lanshuheng9-oss}
 
-\begin{frame}{研究问题与任务范围}
-    \large\key{待补充：论文解决的具体问题}\par
+\source{HyMEM，PDF 第1--3页，表1；下例为机制说明}
+\begin{frame}{问题：经验既要保留细节，也要跟上任务变化}
+    \large\key{截图与动作难以只靠文本总结；一次检索也会过时。}\par
     \vspace{5mm}\normalsize
     \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 任务、输入与预期输出是什么？
-        \item 既有方法在哪种情形下失败？
-        \item 论文提出什么可检验的改进目标？
+        \item 输入：任务描述、当前截图、历史成功操作轨迹。
+        \item 输出：指导智能体选择下一步网页操作。
+        \item 例：搜索商品转入结账后，保留预算，更新操作指导。
     \end{itemize}
-    \note{建议约 45 秒。用一个具体问题或案例说明动机，避免用过长的背景综述占用时间。}
+    \takeaway{混合表示解决“存什么”；自演化解决“何时更新”。}
+    \note{约50秒。研究对象是网页操作智能体，评价任务成功率。搜索到结账是机制说明，不是本组实验。困难一是视觉细节难以完整文字化，二是任务状态变化使先前经验不再相关。}
 \end{frame}
 
-\begin{frame}{核心方法与整体流程}
+\source{HyMEM，PDF 第3--5页，式(1)、图1、Structured Retrieval}
+\begin{frame}{混合记忆：策略指导规划，连续表示保留细节}
     \begin{columns}[T,onlytextwidth]
-        \column{.54\textwidth}
-        \textbf{核心流程图：待替换}\par\vspace{5mm}
-        {\color{muted}放入原论文核心图或可编辑重绘图。\par
-        保留关键标签，标明输入、操作与输出。}
-        % \includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{images/paper-method.pdf}
-        \column{.42\textwidth}
-        \textbf{需要解释的机制}\par\vspace{4mm}
-        \begin{enumerate}\setlength{\itemsep}{4mm}
-            \item 待补充：信息如何进入系统。
-            \item 待补充：核心操作与设计原因。
-            \item 待补充：结果如何被后续使用。
+        \column{.52\textwidth}
+        \centering
+        \begin{tikzpicture}[node distance=5mm,box/.style={draw=accent,rounded corners,align=center,text width=53mm,minimum height=9mm,font=\small},>=Stealth]
+            \node[box] (q) {任务文本＋当前截图};
+            \node[box,below=of q] (r) {检索5条种子＋5条图邻居};
+            \node[box,below=of r] (m) {离散指导指令＋连续轨迹嵌入};
+            \node[box,below=of m] (a) {智能体执行下一步动作};
+            \draw[->] (q)--(r);\draw[->] (r)--(m);\draw[->] (m)--(a);
+        \end{tikzpicture}
+        \column{.44\textwidth}
+        \textbf{一条经验的三个层次}
+        \[v_i=(c_i,A_i,m_i)\]
+        \begin{itemize}\setlength{\itemsep}{3mm}
+            \item $c_i$：可复用的高层策略。
+            \item $A_i$：动作、界面及领域属性。
+            \item $m_i$：8个连续轨迹嵌入。
+        \end{itemize}
+        \aside{CLIP检索索引与连续记忆是不同表示。}
+    \end{columns}
+    \note{约85秒。从任务与截图检索种子，再沿图关联扩展，最后生成文本指导并加入连续嵌入。5加5是主实验配置，不是理论最优。三元组描述经验内容，实际图存在策略、属性与轨迹的关联。CLIP负责找经验，CoMEM式编码负责让智能体使用轨迹细节。}
+\end{frame}
+
+\source{HyMEM，PDF 第4--5页，Memory Update、Working Memory Refresh；图1}
+\begin{frame}{自演化：长期图与当前工作记忆分别更新}
+    \begin{columns}[T,onlytextwidth]
+        \column{.47\textwidth}
+        \key{全局：跨任务积累经验}\par\vspace{3mm}
+        \begin{itemize}\setlength{\itemsep}{3mm}
+            \item ADD：出现新策略或属性。
+            \item MERGE：同一策略的互补证据。
+            \item REPLACE：同条件下更优的轨迹。
+        \end{itemize}
+        \aside{先检索候选，再由视觉语言模型判断信息增量。}
+        \column{.47\textwidth}
+        \key{局部：跟随当前任务阶段}\par\vspace{3mm}
+        \begin{enumerate}\setlength{\itemsep}{3mm}
+            \item 比较动作前后观测，检测阶段变化。
+            \item 保留长期目标及约束，删除过时指导。
+            \item 重新检索，刷新文本与连续嵌入。
         \end{enumerate}
     \end{columns}
-    \note{建议约 90 秒。先沿流程讲一遍，再解释核心机制。需要复杂图示时拆页，不把整篇系统图缩成不可读的小图。}
+    \takeaway{全局改变长期经验库；局部更新当前执行上下文。}
+    \note{约85秒。相似不等于重复：新轨迹可能是补充证据，也可能是更优执行。局部在每次动作后判断是否换阶段，并非无条件重建全部记忆。两种更新都依赖模型判断，不能保证绝无误合并或误刷新。}
 \end{frame}
 
-\begin{frame}{关键机制与方法细节}
-    \[
-        \text{输入}\quad\longrightarrow\quad
-        \text{核心操作}\quad\longrightarrow\quad\text{输出}
-    \]
-    \vspace{4mm}
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 待补充：关键公式、结构或操作，说明符号与含义。
-        \item 待补充：一个小例子，解释机制怎样改变处理结果。
-        \item 待补充：与基线的具体差别，以及依赖的条件。
-    \end{itemize}
-    \note{建议约 90 秒。聚焦最重要的一项设计；公式要解释符号和直觉。其余实现细节可放到备用页。}
-\end{frame}
-
-\begin{frame}{实验设置与评价范围}
-    \begin{tabularx}{\linewidth}{@{}p{29mm}Y@{}}
+\source{HyMEM，PDF 第5--6页，\S4.1；第7页，表2表注}
+\begin{frame}{实验：网页操作成功率，包含记忆编码器训练}
+    \begin{tabularx}{\linewidth}{@{}p{25mm}Y@{}}
         \toprule
-        项目 & 依据原论文补充 \\
+        项目 & 作者实验条件 \\
         \midrule
-        任务与数据 & 待填写：数据来源、划分与任务范围 \\
-        模型与基线 & 待填写：模型角色、基线与主要配置 \\
-        评价指标 & 待填写：指标含义、评价者与计分方式 \\
-        预算与成本 & 待填写：上下文预算、构建或推理开销 \\
+        三个基准 & WebVoyager、Multimodal-Mind2Web、MMInA \\
+        记忆来源 & 2883条成功轨迹；主图1858个节点，超过100万条边 \\
+        模型与接口 & 7B/8B视觉语言模型；ReAct、SOM及定位回退 \\
+        训练 & Q-Former＋LoRA；约1.2\%参数可训练，通常1个epoch \\
+        评价 & 任务成功率；Overall按可用领域取平均 \\
         \bottomrule
     \end{tabularx}
-    \aside{实验条件解释到足以理解结果；训练、优化与测试时可用信息分别说明。}
-    \note{建议约 60 秒。不要逐项念参数，重点解释影响结果理解和可比性的条件。}
+    \aside{前两个基准根据任务和截图轨迹判分；MMInA比较最终回答与标准答案。}
+    \note{约65秒。记忆来自GUIAct、Mind2Web训练集及作者生成的成功轨迹。训练记忆编码器相关参数，不只是往提示词加入文本。评价包含模型判分，图与定位系统也构成实验条件，不能直接推广到纯文本长期对话。}
 \end{frame}
 
-\begin{frame}{关键结果与证据}
-    \textbf{待补充：这一页数据支持的一项结论}\par\vspace{5mm}
-    \begin{tabularx}{\linewidth}{@{}Yrrr@{}}
+\source{HyMEM，PDF 第7页，表2；图2为不同分析设置，不与本表混合}
+\begin{frame}{结果：混合记忆有收益，单一记忆并非总有帮助}
+    \textbf{作者表2：Overall任务成功率（\%）}\par\vspace{3mm}
+    \begin{tabularx}{\linewidth}{@{}Yrrrr@{}}
         \toprule
-        配置 & 主指标 & 关键分项 & 成本 \\
+        基础模型 & 无记忆 & 离散 & 连续 & HyMEM \\
         \midrule
-        基线 & 待填 & 待填 & 待填 \\
-        本文方法 & 待填 & 待填 & 待填 \\
-        关键消融 & 待填 & 待填 & 待填 \\
+        Qwen2.5-VL-7B & 12.5 & 17.0 & 21.7 & \key{35.0} \\
+        Qwen3-VL-8B & 21.9 & 21.3 & 23.3 & \key{33.8} \\
+        UI-TARS-1.5-7B & 17.1 & 15.4 & 28.7 & \key{31.2} \\
         \bottomrule
-    \end{tabularx}\par
-    \vspace{5mm}
-    \key{待补充：提升出现在哪些条件下，哪里没有改善}
-    \aside{用原表数值或图表替换占位，写清单位；论文结果与本组实验分开。}
-    \note{建议约 90 秒。解释一个关键对照或消融，不逐格朗读主表；图表较复杂时可分成结果和消融两页。}
+    \end{tabularx}
+    \vspace{4mm}
+    \key{12.5\%到35.0\%：提高22.5个百分点。}\par\vspace{2mm}
+    Qwen3的离散记忆低于无记忆；总体提升不代表每个领域都改善。
+    \aside{图2另支持全局演化与局部刷新的作用；两种收益不能直接相加。以上均非本组结果。}
+    \note{约90秒。先看Qwen2.5这一行，两种单一记忆各有帮助，混合更高。再看Qwen3离散21.3低于基线21.9，说明加记忆不必然提升。22.5是百分点，相对增幅为180\%。图2单独考察静态与演化，Amazon全局48.8到61.0，局部48.8到56.1；两项不能相加，也不能套用到全部任务。}
 \end{frame}
 
-\begin{frame}{局限、阅读判断与后续问题}
+\source{HyMEM，PDF 第3--7页；右侧为本节阅读分析与待验证假设}
+\begin{frame}{阅读判断：借鉴组织机制，迁移收益仍需验证}
     \begin{columns}[T,onlytextwidth]
         \column{.47\textwidth}
-        \textbf{论文支持的结论}\par\vspace{4mm}
+        \textbf{贡献与局限}\par\vspace{3mm}
         \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最重要的贡献与证据。
-            \item 待补充：尚未解决的局限。
+            \item 离散策略与视觉细节互补。
+            \item 长期积累与任务内刷新形成闭环。
+            \item 依赖训练、标签与模型判断，存在额外调用成本。
         \end{itemize}
         \column{.47\textwidth}
-        \textbf{个人阅读思考}\par\vspace{4mm}
+        \textbf{与本组StructMem D的联系}\par\vspace{3mm}
         \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最值得借鉴的设计。
-            \item 待补充：需要进一步验证的问题。
+            \item 可研究种子检索与结构扩展的分工。
+            \item 固定预算，比较覆盖、噪声及成本。
+            \item 文本问答与截图操作口径不同，不能直接排名。
         \end{itemize}
     \end{columns}
-    \vspace{5mm}
-    \aside{与后续讲解的衔接：待各成员填写完成后统一整理。}
-    \note{建议约 75 秒。个人判断与论文结论分别表达，并用一句话交接给下一位成员。连同章节页，本模块约 8 分钟。}
+    \aside{本组尚未复现HyMEM；迁移建议不是团队共识或已完成实验。}
+    \note{约75秒。创新在于记忆组织与使用闭环，不能只记住35这个数字，忽略数据、训练和动作接口。我们的D部分做事件记忆综合与检索，可以提出固定预算下结构扩展是否改善覆盖的问题，但需要另做实验。交接语：以上是HyMEM的个人阅读分析，接下来进入下一篇论文。}
 \end{frame}

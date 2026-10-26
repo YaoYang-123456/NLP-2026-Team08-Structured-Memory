@@ -14,7 +14,7 @@
 | StructMem | `sections/01-structmem.tex` | 7–9 分钟；已迁入本地既有演示稿正文和讲稿备注 |
 | Hindsight | `sections/02-hindsight.tex` | 7–9 分钟，待对应成员填写 |
 | Semantic XPath | `sections/03-semantic-xpath.tex` | 7–9 分钟，待对应成员填写 |
-| HyMEM | `sections/04-hymem.tex` | 7–9 分钟，待对应成员填写 |
+| HyMEM | `sections/04-hymem.tex` | 7页源码及讲稿初稿已填，待本人过稿、编译和排练；[个人指南](../hymem-reading-guide.md) |
 | MetaMem | `sections/05-metamem.tex` | 7–9 分钟，待对应成员填写 |
 | Text2Mem | `sections/06-text2mem.tex` | 7–9 分钟，待对应成员填写 |
 | 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
@@ -26,7 +26,7 @@
 
 主文件为 `main.tex`，按“开场 → 六人讲解 → 系统性总结 → 备用资料”顺序输入各模块。每位成员填写章节页的讲解人，并只修改自己的 `.tex` 和相应图片，按 issue 认领范围协作。共享样式和开场、总结由相关成员集中整合。
 
-未填写的五个论文模块各提供章节页与六张正文页：研究问题、整体流程、关键机制、实验设置、关键结果、局限与阅读判断。可按内容增加、合并或拆分页面，不要求机械填满固定页数。StructMem 沿用已有约 9 分钟讲解版本，作为有实际内容的示例。
+待填写的论文模块各提供章节页与六张正文页：研究问题、整体流程、关键机制、实验设置、关键结果、局限与阅读判断。可按内容增加、合并或拆分页面，不要求机械填满固定页数。StructMem 沿用已有约 9 分钟讲解版本，作为有实际内容的示例。
 
 现有综合总结页只提供对照表、机制取舍、共同案例、实验可比性和小组结论的版式，不填入尚未讨论的结论，也不自动导入报告的综合分析草稿。
 
@@ -46,7 +46,7 @@
 \includeonlylecture{structmem}
 ```
 
-可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。
+可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。HyMEM另有 `hymem-preview.tex`，可直接编译个人模块而不改动全组主文件；当前状态见[个人指南](../hymem-reading-guide.md)。
 
 ## 编译
 
