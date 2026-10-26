@@ -111,7 +111,11 @@ latexmk -xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error hymem-
 ```sh
 tectonic reports/homework/hymem-preview.tex -Z search-path=reports/templates/jos --outdir output/homework-hymem --keep-logs --keep-intermediates
 tectonic reports/homework/slides/hymem-preview.tex --outdir output/homework-slides --keep-logs --keep-intermediates
+python scripts/fix_hymem_pdf_unicode.py output/homework-hymem/hymem-preview.pdf reports/homework/hymem-reading-report.pdf
+python scripts/fix_hymem_pdf_unicode.py output/homework-slides/hymem-preview.pdf reports/homework/slides/hymem-preview.pdf
 ```
+
+2026-10-26 根据实际预览反馈修复中文缺失（#62）：Tectonic省略标准Adobe-GB1字体的ToUnicode，未配置外部CMap的预览器会跳过中文。上面的两个Python步骤将固定映射直接嵌入个人PDF，需安装 `pypdf`；[映射资源及许可](resources/README.md)随仓库保存。正文、字体、可选择文字及矢量图保持原样。修复后用PDF.js 5.6.205在不传入 `cMapUrl` 的条件下渲染全部9页并核对中文；pypdf与PDFium提取正常，全部页面的PDFium渲染与修复前逐像素一致。共享全组预览不在本次修复范围内。
 
 编译器和下载缓存位于忽略目录 `tmp/hymem-20261026/`，没有修改系统TeX配置或项目依赖。两次编译退出码均为0。已检查全部2页报告与7页演示，修正表格后文字间距及报告跨页断词；最终日志没有Overfull/Underfull、未解析引用或缺字提示。报告依赖的 `algorithm.sty`、`algorithmic.sty` 有两类非致命UTF-8警告，Fontconfig也提示未找到默认配置；显式字体已正常加载，实际PDF中英文字体、复制文本与数值经核对正常。没有把这些依赖警告写成零警告。
 
