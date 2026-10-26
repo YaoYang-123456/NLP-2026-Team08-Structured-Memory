@@ -1,0 +1,123 @@
+{
+  "content_date": "2026-10-21",
+  "seminar_date": "2026-10-22",
+  "repository_baseline": "6f6a52f",
+  "slides": {
+    "main_pages": 12,
+    "backup_pages": 0,
+    "total_pages": 12
+  },
+  "script": {
+    "pages": 7,
+    "spoken_chinese_characters": 1684,
+    "planned_seconds": 480,
+    "seconds_per_slide": [
+      15,
+      35,
+      60,
+      40,
+      40,
+      30,
+      55,
+      45,
+      45,
+      40,
+      50,
+      25
+    ],
+    "human_recording_measured": false
+  },
+  "validation": {
+    "xelatex_slides": "success",
+    "xelatex_script": "success",
+    "desktop_editor_slides": "success",
+    "desktop_editor_script": "success",
+    "overfull_boxes": 0,
+    "missing_glyphs": 0,
+    "visual_review": "Retained prior table-spacing and chart review; recompiled and visually inspected the revised title slide, script front page with preparation roles, and Q&A first page. No clipping or overlaps.",
+    "scores_checked_against": "reports/e-score-verification-20261021.json",
+    "zip_crc_and_content_hashes": "passed",
+    "slide6_chart": "Original slide 6 is now slide 7; correct S0/S2 bar positions retained and visually checked at 1800px.",
+    "xelatex_qa_notes": "success",
+    "desktop_editor_qa_notes": "success",
+    "screenshot_removed": "Verified no raster images in slides PDF and no screenshot in ZIP"
+  },
+  "files": [
+    {
+      "path": "main.tex",
+      "bytes": 14313,
+      "sha256": "979ead29fd5a8b15dee549c769c229a8db53b597ee3e8409fb3b70bed2c95ce4"
+    },
+    {
+      "path": "speaker-script.tex",
+      "bytes": 3687,
+      "sha256": "4d1abf4fc60766632f914885dfa704ab3833f3e1d417c4f1de42cd836adeae9e"
+    },
+    {
+      "path": "speeches.tex",
+      "bytes": 6182,
+      "sha256": "18f645a7df1dab36b49628f4920cc91db9d12c3838d4ff3544542554ee19708c"
+    },
+    {
+      "path": "preamble.tex",
+      "bytes": 2551,
+      "sha256": "dddb81fde7c9685eddee2f398b1380959845684fc2016640968726bc53192945"
+    },
+    {
+      "path": "qa-notes/main.tex",
+      "bytes": 7200,
+      "sha256": "6092b2fa9677918052e9b9d1a8674fda4e42bf41fae8f3b6a6b8281acaaf4cc4"
+    },
+    {
+      "path": "slides-8min.pdf",
+      "bytes": 264500,
+      "sha256": "c9d9cd312837949810f874c7178ef2738ab665d0fb62e3f0553d3a9227712963"
+    },
+    {
+      "path": "speaker-script-8min.pdf",
+      "bytes": 229045,
+      "sha256": "2ea87017d31da4582c7d23edfcf87be0c973c92b27f68b0cf1c414b3ea649da3"
+    },
+    {
+      "path": "qa-notes.pdf",
+      "bytes": 219259,
+      "sha256": "756a16dd1d2fe5d5904ac734f7a83bc6e986cb60ba0180260612092c91553f87"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6405,
+      "sha256": "28dd521734caac72a06f648833c591774c59367646cff3ec6e941208d000d293"
+    },
+    {
+      "path": "team08-seminar-latex-8min.zip",
+      "bytes": 729000,
+      "sha256": "cb057b88bc43be0e67678758c57eadfb847ff2b23cdcf85ae42668088afa11e7"
+    }
+  ],
+  "layout_revision": "12 main slides, no backup slides; 7-page shared script with 480-second plan; separate 3-page Q&A. Cross-paper synthesis and common-case analysis retained. Collaboration simplified to GitHub, WeChat and in-person discussions; screenshot and thanks removed. Progress and conclusion focus on completed outputs; S1 and held-out evaluation remain future research. Table spacing increased to 3-4 mm.",
+  "qa_notes": {
+    "pages": 3,
+    "questions": 15,
+    "separate_document": true,
+    "source": "qa-notes/main.tex"
+  },
+  "current_approximate_contributions": {
+    "A": "1/6",
+    "B": "1/6",
+    "C": "1/6",
+    "D": "1/6",
+    "E": "1/6",
+    "F": "1/6"
+  },
+  "presentation_title": "长对话结构化记忆复现与优化",
+  "preparation_roles": {
+    "video_recording": {
+      "member": "F",
+      "github": "hycx233"
+    },
+    "in_person_presentation": {
+      "member": "A",
+      "github": "ngocnamd93-spec"
+    }
+  }
+}
