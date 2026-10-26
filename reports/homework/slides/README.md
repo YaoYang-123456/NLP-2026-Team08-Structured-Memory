@@ -6,6 +6,8 @@
 
 [当前 PDF 预览](preview.pdf)随源码保存，便于直接查看版式。它仍是工作模板，其他成员的个人部分和共同总结尚待填写；修改后重新编译并同步预览。
 
+2026-10-26迁入Semantic XPath后，本版预览共67页（63页正文、4页备用），Semantic XPath位于PDF第23–35页，HyMEM顺延至第36–42页。个人材料页数不等于视频时长，录制状态见各自指南。
+
 ## 结构与时间
 
 | 环节 | 文件 | 讲解安排 |
@@ -13,7 +15,7 @@
 | 开场 | `sections/00-opening.tex` | 主题、共同问题和路线，约 3 分钟 |
 | StructMem | `sections/01-structmem.tex` | 7–9 分钟；已迁入本地既有演示稿正文和讲稿备注 |
 | Hindsight | `sections/02-hindsight.tex` | 7–9 分钟，待对应成员填写 |
-| Semantic XPath | `sections/03-semantic-xpath.tex` | 7–9 分钟，待对应成员填写 |
+| Semantic XPath | `sections/03-semantic-xpath.tex` | 已按原13页迁入；本人确认视频8分55秒，未核验视频文件；[个人PDF](semantic-xpath-preview.pdf)、[个人指南](../semantic-xpath-reading-guide.md) |
 | HyMEM | `sections/04-hymem.tex` | 7页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md) |
 | MetaMem | `sections/05-metamem.tex` | 7–9 分钟，待对应成员填写 |
 | Text2Mem | `sections/06-text2mem.tex` | 7–9 分钟，待对应成员填写 |
@@ -46,7 +48,7 @@
 \includeonlylecture{structmem}
 ```
 
-可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。HyMEM另有 `hymem-preview.tex`，可直接编译个人模块而不改动全组主文件；当前状态见[个人指南](../hymem-reading-guide.md)。
+可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。HyMEM另有 `hymem-preview.tex`，可直接编译个人模块而不改动全组主文件；当前状态见[个人指南](../hymem-reading-guide.md)。Semantic XPath可直接编译 `semantic-xpath-preview.tex`，13页顺序与原个人PPT对应，视频合稿边界见[个人指南](../semantic-xpath-reading-guide.md)。
 
 ## 编译
 

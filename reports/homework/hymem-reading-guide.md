@@ -7,7 +7,7 @@
 - [报告正文](sections/04-hymem.tex)：可并入小组报告，沿用现有参考文献键 `zhu-etal-2026-hybrid`。
 - [7页 Beamer 模块](slides/sections/04-hymem.tex)：章节页加6页正文；含可编辑流程图、结果表及讲稿备注。
 - [个人编译入口](slides/hymem-preview.tex)：复用共享样式，只包含 HyMEM，不改全组主文件。
-- [个人PDF预览](slides/hymem-preview.pdf)：7页；[全组PDF预览](slides/preview.pdf)中对应第30--36页。
+- [个人PDF预览](slides/hymem-preview.pdf)：7页；[全组PDF预览](slides/preview.pdf)中对应第36--42页（Semantic XPath迁入后的页码）。
 - [原文](../../papers/structured-memory-group2/04_Hybrid_Self-evolving_Structured_Memory.pdf)；[官方页面](https://aclanthology.org/2026.findings-acl.549/)。PDF共18页，印刷页11287–11304；下列页码均为PDF文件页码。
 - 原文大小4,322,862字节，SHA-256：`13e83314073fb3a8205f1f2d06fbd1acf994b0ac56455d95a0113df3ad06d33b`。本次核对本地原文第3–7页的表示、流程、设置和结果。
 

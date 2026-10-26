@@ -1,0 +1,20 @@
+% !TeX program = xelatex
+\documentclass{jos}
+\makeatletter
+\renewcommand{\jos@topmatter}{\noindent 天津大学 NLP 平时作业\hfill 第8队个人阅读模块\par}
+\renewcommand{\jos@citationbox}[2]{}
+\makeatother
+\fancyhead[RO]{\joskaiti Semantic XPath 阅读报告\quad 第8队}
+\setlength{\headheight}{16pt}
+\begin{document}
+\Year{2026}\BeginPage{1}\CLC{TP18}
+\title{Semantic XPath结构化记忆访问方法阅读报告}{Semantic XPath阅读报告}
+\entitle{A Reading Report on Semantic XPath for Structured Conversational Memory Access}{Semantic XPath Reading Report}
+\author{oioioi-521}{oioioi-521}{}
+\AuthorMark{oioioi-521}\address{天津大学 NLP 第8队}{NLP Team 8, Tianjin University}
+\abstract{Semantic XPath将对话任务记忆组织为树，结合路径、位置选择与连续语义评分访问相关节点和子树。本报告梳理数据模型、查询执行与证据聚合，核对作者单轮、多轮与LoCoMo结果，区分任务通过率、回答得分和token口径。该方法改善相对扁平检索的效果及相对全量上下文的输入规模，但准确性取决于模型和任务。本报告进一步讨论层级依赖、证据完整性、元数据过滤基线及与本组课设的联系。}
+\keywords{结构化记忆；对话智能体；Semantic XPath；语义检索；论文阅读}
+\maketitle
+\input{sections/03-semantic-xpath}
+\bibliographystyle{jos}\bibliography{references}
+\end{document}

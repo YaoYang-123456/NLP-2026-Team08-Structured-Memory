@@ -1,97 +1,206 @@
-\source{https://aclanthology.org/2026.acl-demo.28/；逐页补充原文页码与图表编号}
-\papersection{Semantic XPath}{面向结构化记忆的语义访问}{讲解人待填写}
+\source{Liu et al., ACL 2026 Demo, pp.286--296；作者论文结果与个人阅读分析}
+\papersection{Semantic XPath}{结构化记忆的路径与语义访问}{oioioi-521}
 
-\begin{frame}{研究问题与任务范围}
-    \large\key{待补充：论文解决的具体问题}\par
-    \vspace{5mm}\normalsize
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 任务、输入与预期输出是什么？
-        \item 既有方法在哪种情形下失败？
-        \item 论文提出什么可检验的改进目标？
-    \end{itemize}
-    \note{建议约 45 秒。用一个具体问题或案例说明动机，避免用过长的背景综述占用时间。}
-\end{frame}
-
-\begin{frame}{核心方法与整体流程}
+\source{原文PDF第1--2页，图1--2；沿用原个人PPT第2页}
+\begin{frame}{长期任务中的记忆访问}
     \begin{columns}[T,onlytextwidth]
-        \column{.54\textwidth}
-        \textbf{核心流程图：待替换}\par\vspace{5mm}
-        {\color{muted}放入原论文核心图或可编辑重绘图。\par
-        保留关键标签，标明输入、操作与输出。}
-        % \includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{images/paper-method.pdf}
-        \column{.42\textwidth}
-        \textbf{需要解释的机制}\par\vspace{4mm}
-        \begin{enumerate}\setlength{\itemsep}{4mm}
-            \item 待补充：信息如何进入系统。
-            \item 待补充：核心操作与设计原因。
-            \item 待补充：结果如何被后续使用。
-        \end{enumerate}
+        \column{.46\textwidth}
+        \textbf{全量上下文}\par\vspace{3mm}
+        保留完整历史，但输入随交互增长。
+        \par\vspace{5mm}\textbf{扁平RAG}\par\vspace{3mm}
+        返回相关片段，但日期和版本范围可能混淆。
+        \column{.49\textwidth}
+        \textbf{贯穿案例}\par\vspace{3mm}
+        在会议安排最密集的一天增加咖啡休息。
+        \par\vspace{4mm}
+        需要比较各天的活动，而不只是找到一条会议相关文本。
     \end{columns}
-    \note{建议约 90 秒。先沿流程讲一遍，再解释核心机制。需要复杂图示时拆页，不把整篇系统图缩成不可读的小图。}
+    \takeaway{研究问题：怎样访问相关的记忆子结构？}
+    \note{对应原视频第2页。全量上下文保留信息，扁平检索减少输入，但可能忽略活动所属的日期和版本。先比较日期，再进行下游修改。}
 \end{frame}
 
-\begin{frame}{关键机制与方法细节}
-    \[
-        \text{输入}\quad\longrightarrow\quad
-        \text{核心操作}\quad\longrightarrow\quad\text{输出}
-    \]
-    \vspace{4mm}
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 待补充：关键公式、结构或操作，说明符号与含义。
-        \item 待补充：一个小例子，解释机制怎样改变处理结果。
-        \item 待补充：与基线的具体差别，以及依赖的条件。
-    \end{itemize}
-    \note{建议约 90 秒。聚焦最重要的一项设计；公式要解释符号和直觉。其余实现细节可放到备用页。}
+\source{原文PDF第2--4页，图2、\S3.1--3.3；层级与流程按原文整理}
+\begin{frame}{树形记忆与整体流程}
+    \centering
+    \begin{tikzpicture}[node distance=7mm and 9mm, every node/.style={font=\small}, >=Latex]
+        \node (i) {计划 Itinerary}; \node[right=of i] (v) {版本 Version};
+        \node[right=of v] (d) {日期 Day}; \node[right=of d] (p) {活动 POI};
+        \draw[->,thick,accent] (i)--(v); \draw[->,thick,accent] (v)--(d); \draw[->,thick,accent] (d)--(p);
+    \end{tikzpicture}
+    \par\vspace{6mm}
+    \begin{enumerate}\setlength{\itemsep}{3mm}
+        \item 结合已有结构，把自然语言请求转成查询。
+        \item 执行结构匹配、位置筛选与语义评分。
+        \item 返回节点及子树，供下游回答或更新。
+    \end{enumerate}
+    \aside{schema来自已有记忆结构；查询负责定位，实际修改由下游步骤完成。}
+    \note{对应原视频第3页。先讲计划、版本、日期和活动，再解释查询生成、执行和下游更新。原文例子先选第二天，插入咖啡休息由后续步骤完成。}
 \end{frame}
 
-\begin{frame}{实验设置与评价范围}
-    \begin{tabularx}{\linewidth}{@{}p{29mm}Y@{}}
-        \toprule
-        项目 & 依据原论文补充 \\
+\source{原文PDF第3--4页，\S3.2；第10页，附录A}
+\begin{frame}{查询语法与访问范围}
+    \centering $S=A\,N\,[R]\,[P]$\par\vspace{3mm}
+    \begin{tabularx}{\linewidth}{@{}p{22mm}p{45mm}Y@{}}
+        \toprule 组成 & 写法 & 含义 \\
         \midrule
-        任务与数据 & 待填写：数据来源、划分与任务范围 \\
-        模型与基线 & 待填写：模型角色、基线与主要配置 \\
-        评价指标 & 待填写：指标含义、评价者与计分方式 \\
-        预算与成本 & 待填写：上下文预算、构建或推理开销 \\
+        路径 $A$ & \texttt{/}、\texttt{//} & 子节点或后代 \\
+        类型 $N$ & \texttt{Day / POI / *} & 类型或任意节点 \\
+        位置 $R$ & \texttt{[i] / [-i] / [i:j]} & 顺序、倒序或区间 \\
+        语义 $P$ & \texttt{[node\textasciitilde="workshop"]} & 连续相关性评分 \\
         \bottomrule
     \end{tabularx}
-    \aside{实验条件解释到足以理解结果；训练、优化与测试时可用信息分别说明。}
-    \note{建议约 60 秒。不要逐项念参数，重点解释影响结果理解和可比性的条件。}
+    \par\vspace{4mm}{\small\ttfamily //Day[3]/POI[node\textasciitilde="workshop"]}
+    \aside{多个行程或历史版本共存时，先限定目标范围；第三个匹配日期未必是当前计划第三天。}
+    \note{对应原视频第4页。位置与语义条件可选。单斜杠访问子节点，双斜杠访问后代。位置选择依赖候选集合和树顺序。}
 \end{frame}
 
-\begin{frame}{关键结果与证据}
-    \textbf{待补充：这一页数据支持的一项结论}\par\vspace{5mm}
-    \begin{tabularx}{\linewidth}{@{}Yrrr@{}}
-        \toprule
-        配置 & 主指标 & 关键分项 & 成本 \\
+\source{原文PDF第4页，\S3.3、图2；第10页，附录A}
+\begin{frame}{语义评分与查询执行}
+    \noindent{\small\ttfamily //Day[avg(/POI[node\textasciitilde="conference"])]}\par\vspace{4mm}
+    \begin{tabularx}{\linewidth}{@{}p{47mm}Y@{}}
+        \toprule 执行阶段 & 候选与分数 \\
         \midrule
-        基线 & 待填 & 待填 & 待填 \\
-        本文方法 & 待填 & 待填 & 待填 \\
-        关键消融 & 待填 & 待填 & 待填 \\
+        初始化 & 根节点，权重为1 \\
+        路径与类型筛选 & 找到日期及其活动 \\
+        第二天活动局部评分 & 0.603、0.482、0.608 \\
+        日期聚合评分 & $(0.603+0.482+0.608)/3\approx0.565$ \\
+        与其他日期比较 & 选中第二天，再交给下游更新 \\
         \bottomrule
-    \end{tabularx}\par
-    \vspace{5mm}
-    \key{待补充：提升出现在哪些条件下，哪里没有改善}
-    \aside{用原表数值或图表替换占位，写清单位；论文结果与本组实验分开。}
-    \note{建议约 90 秒。解释一个关键对照或消融，不逐格朗读主表；图表较复杂时可分成结果和消融两页。}
+    \end{tabularx}
+    \par\vspace{3mm} $w_{\rm new}=w_{\rm old}\times\operatorname{Rel}(u,P)$
+    \aside{平均相关性反映密集程度，不直接等同于会议数量最多。}
+    \note{对应原视频第5页。局部评价节点，聚合以下层证据评价上层。min、max、gmean和取反都是连续软评分，执行时累积权重。}
 \end{frame}
 
-\begin{frame}{局限、阅读判断与后续问题}
-    \begin{columns}[T,onlytextwidth]
-        \column{.47\textwidth}
-        \textbf{论文支持的结论}\par\vspace{4mm}
-        \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最重要的贡献与证据。
-            \item 待补充：尚未解决的局限。
-        \end{itemize}
-        \column{.47\textwidth}
-        \textbf{个人阅读思考}\par\vspace{4mm}
-        \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最值得借鉴的设计。
-            \item 待补充：需要进一步验证的问题。
-        \end{itemize}
-    \end{columns}
-    \vspace{5mm}
-    \aside{与后续讲解的衔接：待各成员填写完成后统一整理。}
-    \note{建议约 75 秒。个人判断与论文结论分别表达，并用一句话交接给下一位成员。连同章节页，本模块约 8 分钟。}
+\source{个人教学示例，非论文实验数据；沿用原个人PPT第6页}
+\begin{frame}{旅行示例中的日期范围}
+    用户：第七天下雨，找出当天需要调整的户外活动。\par\vspace{5mm}
+    \begin{tabularx}{\linewidth}{@{}p{24mm}Yp{37mm}@{}}
+        \toprule 日期 & 活动 & 是否属于目标 \\
+        \midrule
+        第2天 & 海滨公园 & 否，日期不符 \\
+        第5天 & 山地徒步 & 否，日期不符 \\
+        第7天 & 植物园、海港游船 & 是 \\
+        \bottomrule
+    \end{tabularx}
+    \par\vspace{5mm}\key{先限定第七天，再判断活动语义。}
+    \aside{普通RAG加入日期元数据过滤也能改善简单范围错误，应纳入公平比较。}
+    \note{对应原视频第6页。这是假设场景，没有运行检索模型，不能当成实验结果。}
+\end{frame}
+
+\source{原文PDF第5页，\S4.1；第7页表1；第11页表2--3}
+\begin{frame}{实验设置与指标口径}
+    \noindent{\small 旅行、待办、配餐：每场景20个单轮和5个多轮对话，另测LoCoMo。}\par\vspace{3mm}
+    \begin{tabularx}{\linewidth}{@{}p{27mm}Y@{}}
+        \toprule 指标或模型 & 含义与口径 \\
+        \midrule
+        任务通过率 & 检索正确，且输出满足任务约束 \\
+        LoCoMo得分 & LLM裁判与参考答案对照 \\
+        平均tokens & 表2--3口径；未完整说明全部组成 \\
+        平均输入tokens & 表1口径；XPath包含查询生成输入 \\
+        模型 & GPT-5 mini / Gemini 3 Flash；Qwen3嵌入 / BART蕴含评分 \\
+        \bottomrule
+    \end{tabularx}
+    \aside{不同任务指标不直接混比；tokens不包含本地评分的全部计算开销。}
+    \note{对应原视频第7页。Sem使用Qwen3-Embedding-8B，Entail使用facebook/bart-large-mnli；不同提供方分词器不同，宜在同一模型内比较。}
+\end{frame}
+
+\source{原文PDF第11页，附录B表2；作者单轮平均结果}
+\begin{frame}{单轮结果与准确性权衡}
+    \begin{tabularx}{\linewidth}{@{}p{34mm}Yrr@{}}
+        \toprule 回答模型 & 方法 & 通过率 & 平均tokens \\
+        \midrule
+        GPT-5 mini & In-context & 70.0\% & 26\,216 \\
+         & Flat RAG & 30.0\% & 3\,250 \\
+         & XPath Entail & 83.0\% & 5\,691 \\
+        \midrule
+        Gemini 3 Flash & In-context & 79.0\% & 25\,387 \\
+         & Flat RAG & 37.7\% & 3\,361 \\
+         & XPath Entail & 70.7\% & 5\,830 \\
+        \bottomrule
+    \end{tabularx}
+    \par\vspace{4mm}\key{GPT-5 mini：比Flat RAG提高53个百分点。}
+    \aside{相对增幅176.7\%；tokens为全量上下文的21.7\%。Gemini准确性仍低于全量上下文。}
+    \note{对应原视频第8页。83减30是53个百分点，除以30才是176.7\%相对提高；不同设置的最佳数字不能拼接。}
+\end{frame}
+
+\source{原文PDF第6页图6--7；第11页表3；作者多轮平均结果}
+\begin{frame}{多轮结果与评分器比较}
+    \begin{tabularx}{\linewidth}{@{}p{34mm}Yrr@{}}
+        \toprule 回答模型 & 方法 & 通过率 & 平均tokens \\
+        \midrule
+        GPT-5 mini & In-context & 80.0\% & 69\,097 \\
+         & Flat RAG & 26.7\% & 3\,327 \\
+         & XPath Entail & 83.3\% & 5\,850 \\
+        \midrule
+        Gemini 3 Flash & In-context & 56.7\% & 76\,603 \\
+         & Flat RAG & 26.7\% & 3\,240 \\
+         & XPath Entail & 80.0\% & 5\,993 \\
+        \bottomrule
+    \end{tabularx}
+    \par\vspace{4mm}\key{Entail在两种模型下取得最高平均通过率。}
+    \aside{tokens约为全量上下文的8.5\%和7.8\%；平均优势不代表每个子场景均提升。}
+    \note{对应原视频第9页。多轮与单轮请求不同，不能直接当成同批样本随轮数退化的曲线。附录同时提供Sem与Entail的平均比较。}
+\end{frame}
+
+\source{原文PDF第7页表1；回答得分与平均输入tokens，XPath含查询生成}
+\begin{frame}{LoCoMo上的泛化结果}
+    \begin{tabularx}{\linewidth}{@{}p{34mm}Yrr@{}}
+        \toprule 回答模型 & 方法 & 回答得分 & 输入tokens \\
+        \midrule
+        GPT-5 mini & In-context & 74.55 & 24\,857 \\
+         & Flat RAG & 35.71 & 1\,341 \\
+         & Semantic XPath & 65.19 & 3\,032 \\
+        \midrule
+        Gemini 3 Flash & In-context & 87.01 & 27\,499 \\
+         & Flat RAG & 41.49 & 1\,996 \\
+         & Semantic XPath & 73.25 & 3\,870 \\
+        \bottomrule
+    \end{tabularx}
+    \par\vspace{4mm}\key{总体得分高于Flat RAG，低于全量上下文。}
+    \aside{输入约为全量上下文的12.2\%和14.1\%；保留准确性和证据完整性的代价。}
+    \note{对应原视频第10页。这是回答得分，不与任务通过率直接比较；多跳问题仍需完整取回并整合证据。}
+\end{frame}
+
+\source{原文PDF第6--7页，\S4.3、图8；局限部分为个人阅读分析}
+\begin{frame}{优点 局限与失败来源}
+    \begin{tabularx}{\linewidth}{@{}p{28mm}Y@{}}
+        \toprule 失败阶段 & 典型表现 \\
+        \midrule
+        查询生成 & 语法不合法，无法执行 \\
+        检索 & 无命中、证据不全、选错节点或发言 \\
+        回答生成 & 所需证据已取回，但答案仍错误 \\
+        \bottomrule
+    \end{tabularx}
+    \par\vspace{5mm}
+    \begin{itemize}\setlength{\itemsep}{2mm}
+        \item 优点：结构与语义结合，路径及评分轨迹可追溯。
+        \item 作者分析：检索仍是主要剩余失败来源。
+        \item 阅读局限：层级依赖、多跳、小规模评测和本地评分开销。
+    \end{itemize}
+    \note{对应原视频第11页。作者分析和个人评价分别表达；不能从tokens减少推导整个系统成本或延迟必然下降。}
+\end{frame}
+
+\source{个人阅读总结；本组C事件记忆结项另见Issue\#32及PR\#43/\#50}
+\begin{frame}{个人总结与团队关联}
+    \begin{itemize}\setlength{\itemsep}{4mm}
+        \item 长期记忆访问同时考虑内容、所属范围和历史版本。
+        \item 阅读启发：明确查询范围，保留节点路径与证据标识。
+        \item 评测启发：区分检索与回答错误，加入元数据过滤基线。
+        \item 本组C已完成事件记忆构建；Semantic XPath尚未端到端复现。
+    \end{itemize}
+    \aside{原录制稿的拟议角色属于10月17日计划；当前分工按C结项记录表述，贡献比例由全组确认。}
+    \note{对应原视频第12页。原稿“可以负责结构化检索方案”是10月17日计划，迁入版按当前事实区分C构建和Semantic XPath复现。保留原录像，由本人在合稿时确认这一处时点衔接。}
+\end{frame}
+
+\source{论文与数值：Liu et al., 2026；教学示例和个人推测分别标识}
+\begin{frame}{参考资料}
+    \textbf{主要论文}\par\vspace{4mm}
+    Liu et al. Semantic XPath: Structured Agentic Memory Access for Conversational AI.
+    ACL 2026 System Demonstrations, pp.286--296.
+    \par\vspace{5mm}\url{https://aclanthology.org/2026.acl-demo.28/}
+    \par\vspace{5mm}\textbf{作者项目}\par\vspace{3mm}
+    \url{https://github.com/D3Mlab/SemanticXpath-Chat}
+    \aside{语法与评分见\S3、附录A；结果见表1--3；旅行下雨案例为教学示例。}
+    \note{对应原视频第13页，停留后结束。视频由本人确认8分55秒；本次没有取得并逐帧核验视频。}
 \end{frame}
