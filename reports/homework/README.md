@@ -13,6 +13,10 @@
 
 本组报告统一使用 **LaTeX 写作、PDF 交付**，演示材料使用 [Beamer 模板](slides/README.md)并导出 PDF；[官方 Word 样例](../../docs/course/软件学报排版样例2025年版.doc)只作报告版式参考。
 
+## 个人阅读材料
+
+HyMEM负责人 `lanshuheng9-oss` 的[个人报告PDF](hymem-reading-report.pdf)、[个人演示PDF](slides/hymem-preview.pdf)和[讲稿及阅读指南](hymem-reading-guide.md)已整理并完成个人模块编译与逐页检查；[文件大小及SHA-256](hymem-artifacts.json)随材料保存。当前待本人过稿、排练、录制及F审核，不能据此标记全组作业已定稿或提交。
+
 ## 共同编辑
 
 `main.tex` 是阅读报告入口，`sections/01-structmem.tex` 至 `sections/06-text2mem.tex` 分别对应六篇论文，成员在 issue 中认领后编辑对应章节。文件里的“待填写”标明尚未完成的内容，不代表已有阅读或实验成果。当前先完善各自的论文章节，待大家完成后再推进共同总结；`sections/07-synthesis.tex` 保留为综合分析草稿，暂不编入主稿。摘要、总结与贡献说明由相关成员整合，合并前请一位相关成员集中复核。`references.bib` 的六篇条目来自 ACL Anthology 官方 BibTeX 导出。

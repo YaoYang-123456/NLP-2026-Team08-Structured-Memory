@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "owner": "lanshuheng9-oss",
+  "issue": 53,
+  "pull_request": 54,
+  "status": "compiled_and_visually_checked_pending_personal_and_F_review",
+  "compiler": {
+    "name": "Tectonic",
+    "version": "0.17.0",
+    "engine": "XeTeX",
+    "windows_release_archive_sha256": "f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f",
+    "release_url": "https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0"
+  },
+  "outputs": [
+    {
+      "path": "reports/homework/hymem-reading-report.pdf",
+      "bytes": 226018,
+      "sha256": "c93f19c087217a67391f23612ccb56bd4d9a93ab15094fd49dcb63b525cd894a",
+      "pages": 2,
+      "purpose": "HyMEM individual report for reading and team integration"
+    },
+    {
+      "path": "reports/homework/slides/hymem-preview.pdf",
+      "bytes": 184262,
+      "sha256": "1c5d310a718a80b6503115951463a63213016229d5009459a5c1f88ad4df0e31",
+      "pages": 7,
+      "purpose": "HyMEM individual lecture; editable Beamer source kept alongside"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "reports/homework/hymem-preview.tex",
+      "bytes": 665,
+      "sha256": "8658eb72e2a20ecf08b2a4fd62d6d2130967f92415e891118a81ed49aef101f2"
+    },
+    {
+      "path": "reports/homework/sections/04-hymem.tex",
+      "bytes": 7405,
+      "sha256": "2ff7371f26dde1eb655baae80addc011b7ca80674d90caae881c3ec4923dc668"
+    },
+    {
+      "path": "reports/homework/slides/hymem-preview.tex",
+      "bytes": 303,
+      "sha256": "7f16174bbcada0acda06fc81034e831d4778d50b0e87d9f7d56a46dcf8aa3e0a"
+    },
+    {
+      "path": "reports/homework/slides/sections/04-hymem.tex",
+      "bytes": 7713,
+      "sha256": "5f75a2be8922d5a463e4e5bbff54e4684c574e626b2640627f9ae91db6f17e0e"
+    },
+    {
+      "path": "reports/homework/slides/preamble.tex",
+      "bytes": 2604,
+      "sha256": "645a429b5feda7c573e936adbe95149ade08985cdd9d97363a8cc1380bdf76d2"
+    },
+    {
+      "path": "reports/homework/references.bib",
+      "bytes": 5225,
+      "sha256": "adb080b30be19d2b0d73c972c5dcdfc43f10e1228fe72b738d9cba916285b042"
+    },
+    {
+      "path": "reports/templates/jos/jos.cls",
+      "bytes": 17773,
+      "sha256": "5a3e4a008578a7be8e3eb83fa6443897b65dab65cb80bc06e4451141c84b170d"
+    },
+    {
+      "path": "reports/templates/jos/jos.bst",
+      "bytes": 26518,
+      "sha256": "afa8769a8bbc0671c2ecc1620144cd2e856d8b785be9985886449d0a3ccde168"
+    }
+  ],
+  "original_paper": {
+    "path": "papers/structured-memory-group2/04_Hybrid_Self-evolving_Structured_Memory.pdf",
+    "bytes": 4322862,
+    "sha256": "13e83314073fb3a8205f1f2d06fbd1acf994b0ac56455d95a0113df3ad06d33b"
+  },
+  "validation": {
+    "report_compile_exit_code": 0,
+    "slides_compile_exit_code": 0,
+    "visually_checked_report_pages": [
+      1,
+      2
+    ],
+    "visually_checked_slide_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "result_numbers_checked_against_original_paper": true,
+    "cjk_and_numeric_text_checked_with_pdfium": true,
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "unresolved_references": 0,
+    "missing_character_messages": 0,
+    "non_fatal_warnings": [
+      "Fontconfig default configuration was unavailable; explicit document fonts rendered normally.",
+      "algorithm.sty:11 and algorithmic.sty:11 emitted invalid UTF-8 warnings; compiled document text contained no replacement character."
+    ]
+  },
+  "not_completed": [
+    "personal reading acceptance",
+    "timed rehearsal",
+    "personal video recording",
+    "F review and merge",
+    "team final submission"
+  ]
+}
