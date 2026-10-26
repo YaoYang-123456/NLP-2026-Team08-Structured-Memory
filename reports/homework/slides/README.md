@@ -16,7 +16,7 @@
 | Semantic XPath | `sections/03-semantic-xpath.tex` | 7–9 分钟，待对应成员填写 |
 | HyMEM | `sections/04-hymem.tex` | 7页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md) |
 | MetaMem | `sections/05-metamem.tex` | 7–9 分钟，待对应成员填写 |
-| Text2Mem | `sections/06-text2mem.tex` | 7–9 分钟，待对应成员填写 |
+| Text2Mem | `sections/06-text2mem.tex` | ngocnamd93-spec：8页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](text2mem-preview.pdf)、[个人指南](../text2mem-reading-guide.md) |
 | 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
 | 备用资料 | `sections/99-backup.tex` | 问答时按需使用，不计入正文页码；已迁入 StructMem 备用页 |
 
@@ -46,7 +46,7 @@
 \includeonlylecture{structmem}
 ```
 
-可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。HyMEM另有 `hymem-preview.tex`，可直接编译个人模块而不改动全组主文件；当前状态见[个人指南](../hymem-reading-guide.md)。
+可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。Text2Mem另有 `text2mem-preview.tex`，可编译8页个人模块；本轮未替换全组 `preview.pdf`，新内容以个人预览为准。HyMEM另有 `hymem-preview.tex`，可直接编译个人模块而不改动全组主文件；当前状态见[个人指南](../hymem-reading-guide.md)。
 
 ## 编译
 

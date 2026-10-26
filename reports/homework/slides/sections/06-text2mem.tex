@@ -1,97 +1,159 @@
-\source{https://aclanthology.org/2026.findings-acl.100/；逐页补充原文页码与图表编号}
-\papersection{Text2Mem}{统一的记忆操作语言}{讲解人待填写}
+\source{Text2Mem，PDF第1页；Findings of ACL 2026，2105--2119}
+\papersection{Text2Mem}{统一的记忆操作语言与状态验证}{ngocnamd93-spec}
 
-\begin{frame}{研究问题与任务范围}
-    \large\key{待补充：论文解决的具体问题}\par
-    \vspace{5mm}\normalsize
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 任务、输入与预期输出是什么？
-        \item 既有方法在哪种情形下失败？
-        \item 论文提出什么可检验的改进目标？
+\source{原论文PDF第1--3页，图1；动机案例为教学概述}
+\begin{frame}{记忆控制需要说明“对哪些记录做什么”}
+    \begin{block}{用户说：“暂时不要再提午餐。”}
+        降低显著性、设置到期规则与删除记录，会产生不同状态。
+    \end{block}
+    \vspace{2mm}
+    \begin{itemize}\setlength{\itemsep}{3mm}
+        \item 检索解决“找回什么”；记忆控制还要明确动作、范围与时间。
+        \item 输入是自然语言请求与上下文；输出是操作Schema或有序操作列表。
+        \item Text2Mem提供操作规范与基准，主实验在SQL/SQLite参考后端进行。
     \end{itemize}
-    \note{建议约 45 秒。用一个具体问题或案例说明动机，避免用过长的背景综述占用时间。}
+    \takeaway{把意图显式表达，再核验实际状态变化}
+    \note{约50秒。用暂时不要提午餐说明降权不等于删除。接着区分检索任务与控制任务：前者找到相关信息，后者决定该怎样改变记忆。说明本节是作者论文阅读，不是本组新实验；跨真实后端的普适效果尚未被主实验验证。}
 \end{frame}
 
-\begin{frame}{核心方法与整体流程}
-    \begin{columns}[T,onlytextwidth]
-        \column{.54\textwidth}
-        \textbf{核心流程图：待替换}\par\vspace{5mm}
-        {\color{muted}放入原论文核心图或可编辑重绘图。\par
-        保留关键标签，标明输入、操作与输出。}
-        % \includegraphics[width=\linewidth,height=.50\textheight,keepaspectratio]{images/paper-method.pdf}
-        \column{.42\textwidth}
-        \textbf{需要解释的机制}\par\vspace{4mm}
-        \begin{enumerate}\setlength{\itemsep}{4mm}
-            \item 待补充：信息如何进入系统。
-            \item 待补充：核心操作与设计原因。
-            \item 待补充：结果如何被后续使用。
-        \end{enumerate}
-    \end{columns}
-    \note{建议约 90 秒。先沿流程讲一遍，再解释核心机制。需要复杂图示时拆页，不把整篇系统图缩成不可读的小图。}
-\end{frame}
-
-\begin{frame}{关键机制与方法细节}
-    \[
-        \text{输入}\quad\longrightarrow\quad
-        \text{核心操作}\quad\longrightarrow\quad\text{输出}
-    \]
-    \vspace{4mm}
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 待补充：关键公式、结构或操作，说明符号与含义。
-        \item 待补充：一个小例子，解释机制怎样改变处理结果。
-        \item 待补充：与基线的具体差别，以及依赖的条件。
-    \end{itemize}
-    \note{建议约 90 秒。聚焦最重要的一项设计；公式要解释符号和直觉。其余实现细节可放到备用页。}
-\end{frame}
-
-\begin{frame}{实验设置与评价范围}
-    \begin{tabularx}{\linewidth}{@{}p{29mm}Y@{}}
+\source{原论文PDF第4页表1、第4--5页§3.2；附录A第11页}
+\begin{frame}{十二个操作由五字段契约组织}
+    \small
+    \begin{tabularx}{\linewidth}{@{}p{20mm}Y@{}}
         \toprule
-        项目 & 依据原论文补充 \\
+        阶段 & 操作 \\
         \midrule
-        任务与数据 & 待填写：数据来源、划分与任务范围 \\
-        模型与基线 & 待填写：模型角色、基线与主要配置 \\
-        评价指标 & 待填写：指标含义、评价者与计分方式 \\
-        预算与成本 & 待填写：上下文预算、构建或推理开销 \\
-        \bottomrule
-    \end{tabularx}
-    \aside{实验条件解释到足以理解结果；训练、优化与测试时可用信息分别说明。}
-    \note{建议约 60 秒。不要逐项念参数，重点解释影响结果理解和可比性的条件。}
-\end{frame}
-
-\begin{frame}{关键结果与证据}
-    \textbf{待补充：这一页数据支持的一项结论}\par\vspace{5mm}
-    \begin{tabularx}{\linewidth}{@{}Yrrr@{}}
-        \toprule
-        配置 & 主指标 & 关键分项 & 成本 \\
-        \midrule
-        基线 & 待填 & 待填 & 待填 \\
-        本文方法 & 待填 & 待填 & 待填 \\
-        关键消融 & 待填 & 待填 & 待填 \\
+        编码 ENC & Encode \\
+        存储 STO & Update、Label、Promote、Demote、Merge、Split、Delete、Lock、Expire \\
+        检索 RET & Retrieve、Summarize \\
         \bottomrule
     \end{tabularx}\par
-    \vspace{5mm}
-    \key{待补充：提升出现在哪些条件下，哪里没有改善}
-    \aside{用原表数值或图表替换占位，写清单位；论文结果与本组实验分开。}
-    \note{建议约 90 秒。解释一个关键对照或消融，不逐格朗读主表；图表较复杂时可分成结果和消融两页。}
+    \vspace{3mm}
+    \normalsize
+    \key{stage / op / target / args / meta}\par
+    \vspace{2mm}
+    阶段、动作、目标、参数、执行上下文；各操作的必填条件不同。
+    \aside{需要定位已有条目时，target选择ids、filter、search或all之一。\par
+    Demote降权或归档而不删除；Delete与Expire另有语义。}
+    \note{约70秒。不逐项念十二个名称，按一加九加二介绍生命周期。重点对比Demote、Delete与Expire，再说明Encode不是单纯算向量。五字段把动作和范围写清，创建新记忆不一定需要target。字段合法性只是操作契约，不能保证选对条目。}
 \end{frame}
 
-\begin{frame}{局限、阅读判断与后续问题}
+\source{依据原论文PDF第3页图2、第5页§3.3、第6页图3重绘；非运行记录}
+\begin{frame}{校验、解析与适配各自解决一层问题}
+    \centering
+    \begin{tikzpicture}[node distance=5mm and 8mm,>=Latex,
+        box/.style={draw=accent,rounded corners=1mm,fill=accent!5,
+        text width=34mm,minimum height=10mm,align=center,font=\small}]
+        \node[box] (plan) {自然语言与上下文\\模型生成操作};
+        \node[box,right=of plan] (val) {Validator\\结构、跨字段约束};
+        \node[box,right=of val] (parser) {Parser\\类型化、参数归一化};
+        \node[box,below=of parser] (adapter) {Adapter\\映射后端动作};
+        \node[box,left=of adapter] (state) {状态变化与\\ExecutionResult};
+        \node[box,left=of state] (check) {SQL断言\\检查预期效果};
+        \draw[->,thick,accent] (plan)--(val);
+        \draw[->,thick,accent] (val)--(parser);
+        \draw[->,thick,accent] (parser)--(adapter);
+        \draw[->,thick,accent] (adapter)--(state);
+        \draw[->,thick,accent] (state)--(check);
+    \end{tikzpicture}
+    \vspace{3mm}\par
+    \key{格式合法、动作可执行、效果符合意图，需要分别判断}
+    \aside{锁定与到期等规则可提前检查；复杂目标理解仍依赖模型。}
+    \note{约65秒。沿图先走上排再走下排。Validator检查是否合法，Parser统一内部类型与参数，Adapter负责后端实现。ExecutionResult记录影响了什么，但记录变化不等于证明变化正确，最后还要检查SQL断言。真实后端的能力差异不能被中间语言自动消除。}
+\end{frame}
+
+\source{改写自原论文PDF第12页附录B.1.1；本页是未执行的教学案例}
+\begin{frame}{案例：提高进度笔记权重，也要检查无关记录}
+    \small
+    \begin{block}{请求与已明确的目标}
+        “提高本周课设进度笔记的重要性，其他记录不变。”目标ID：17。
+    \end{block}
+    \begin{columns}[T,onlytextwidth]
+        \column{.45\textwidth}
+        \key{结构化操作}\par\vspace{2mm}
+        \texttt{stage: STO}\par
+        \texttt{op: Promote}\par
+        \texttt{target: ids=[17]}\par
+        \texttt{args: weight=0.9}\par
+        \vspace{3mm}
+        \color{muted}字段摘要，省略非必要项；\par
+        不是经过执行的JSON结果。
+        \column{.51\textwidth}
+        \key{执行后检查}\par\vspace{2mm}
+        \begin{enumerate}\setlength{\itemsep}{2.5mm}
+            \item ID 17的权重是否达到要求？
+            \item ID 17的内容是否保持不变？
+            \item 非目标条目是否保持不变？
+        \end{enumerate}
+        \vspace{2mm}
+        若最初选错目标，合法操作也会改错记录。
+    \end{columns}
+    \note{约70秒。说明这里假设已经明确目标17，避免把语义检索成功当作前提已被验证。Promote改变显著性，案例的0.9是教学参数，不是论文最优值。检查目标权重之外，还应看内容和无关条目是否误改；这些补充断言是本节阅读建议，不声称原文已逐项实现或我们已运行成功。}
+\end{frame}
+
+\source{原论文PDF第6--8页§4.1--4.3；EMR公式在第7页}
+\begin{frame}{评测分开衡量结构、执行与状态效果}
+    \small
+    \begin{tabularx}{\linewidth}{@{}p{22mm}Y@{}}
+        \toprule
+        指标 & 回答的问题 \\
+        \midrule
+        SMA & 操作与参考结构有多相似？使用编辑距离或余弦相似度。 \\
+        ESR & 操作能否通过校验，并无运行错误地执行？ \\
+        EMR & 全部期望SQL断言中，有多少得到满足？ \\
+        \bottomrule
+    \end{tabularx}\par
+    \vspace{2mm}
+    \[
+        \mathrm{EMR}=\frac{\text{满足的状态断言数}}{\text{期望状态断言总数}}
+    \]
+    \aside{作者比较五个模型，中/英文、直接/间接指令、单操作/工作流。\par
+    EMR不是整任务全通过率，也不是LoCoMo问答准确率。}
+    \note{约60秒。基准先用前置操作建立记忆初态，再让模型生成Schema并执行。解释三个指标的分母不同，特别是EMR按断言计数，一个任务可以包含多条断言。因此不能把ESR减EMR当作失败任务比例，也不能拿这里的EMR和我们StructMem的问答准确率比较。正文未明确的样本总数不补造。}
+\end{frame}
+
+\source{原论文PDF第8页表2 Avg列、表3；全部为作者结果}
+\begin{frame}{操作容易运行，预期状态仍难实现}
+    \small
+    \begin{tabularx}{\linewidth}{@{}Yrr@{}}
+        \toprule
+        模型 & ESR（\%） & EMR（\%） \\
+        \midrule
+        GPT-4o & 94.84 & 25.32 \\
+        Qwen2.5-72B-Instruct & 95.10 & 25.35 \\
+        Claude-4-Sonnet & 95.94 & 31.32 \\
+        Gemini-2.5-Pro & 94.79 & 28.97 \\
+        GPT-5 & 96.62 & 28.26 \\
+        \bottomrule
+    \end{tabularx}\par
+    \vspace{3mm}
+    \normalsize\key{GPT-5工作流：ESR 100\%，EMR 11.90\%}\par
+    \vspace{2mm}\small
+    原表Avg直接转为百分数，不重算操作均值。\par
+    \aside{Split的EMR在五个模型中均为0，仅限该基准。论文未做组件移除消融。}
+    \note{约90秒。选GPT-5与Claude对比，最高ESR不等于最高EMR。工作流的100和11.90说明无运行错误也可以错过大量状态要求，分母不同，不能简单相减。补充Split困难但不泛化为模型永远不会拆分。表2和表3是模型与任务分组比较，没有移除Validator或Parser的消融，不能据它们断言单个组件的因果收益。}
+\end{frame}
+
+\source{原论文PDF第9页Limitations、第15页附录F；课设联系为阅读分析}
+\begin{frame}{对本组的启发是明确契约，再核对效果}
     \begin{columns}[T,onlytextwidth]
         \column{.47\textwidth}
-        \textbf{论文支持的结论}\par\vspace{4mm}
-        \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最重要的贡献与证据。
-            \item 待补充：尚未解决的局限。
+        \key{论文价值与局限}\par\vspace{2mm}
+        \small
+        \begin{itemize}\setlength{\itemsep}{2.5mm}
+            \item 统一动作、范围和生命周期参数。
+            \item 规划与状态效果分开评测。
+            \item 缺少复杂语义保证；跨真实后端和长期任务证据有限。
         \end{itemize}
-        \column{.47\textwidth}
-        \textbf{个人阅读思考}\par\vspace{4mm}
-        \begin{itemize}\setlength{\itemsep}{3mm}
-            \item 待补充：最值得借鉴的设计。
-            \item 待补充：需要进一步验证的问题。
+        \column{.48\textwidth}
+        \key{与本组课设的联系}\par\vspace{2mm}
+        \small
+        \begin{itemize}\setlength{\itemsep}{2.5mm}
+            \item StructMem研究事件记忆与问答，任务和指标不同。
+            \item A的字段白名单与哈希属于数据校验，不能称Text2Mem复现。
+            \item 借鉴显式输入、影响范围与非目标状态检查。
         \end{itemize}
     \end{columns}
-    \vspace{5mm}
-    \aside{与后续讲解的衔接：待各成员填写完成后统一整理。}
-    \note{建议约 75 秒。个人判断与论文结论分别表达，并用一句话交接给下一位成员。连同章节页，本模块约 8 分钟。}
+    \takeaway{系统能调用成功，还要证明它做对了事}
+    \note{约60秒。先说统一规范和两层评测的价值，再保留SQL参考环境与未验证长期智能体效果的限制。我们的A数据工作确实包含白名单和版本检查，但并未实现十二操作后端。可借鉴的是检查思路，不增加团队必做实验。最后把问题交给共同总结：组织、检索、利用和操作各解决哪一层，哪些效果还需独立验证。}
 \end{frame}
