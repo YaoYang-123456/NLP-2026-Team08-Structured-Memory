@@ -65,13 +65,13 @@
   "outputs": {
     "reports/homework/text2mem-report-preview.pdf": {
       "pages": 3,
-      "bytes": 298662,
-      "sha256": "24e8d9993ec775a1edf6481151f4688f86075ec0957457b47e5f29a0c93efa51"
+      "bytes": 391960,
+      "sha256": "332ad62631089e541c14e902d2d0b6a0bab84ae02c0ac0b474b75c567e744057"
     },
     "reports/homework/slides/text2mem-preview.pdf": {
       "pages": 8,
-      "bytes": 197104,
-      "sha256": "78538a17111f6d459112a127a3c50cb80257d3ef3c4e842fbba2eea1bef531aa"
+      "bytes": 291050,
+      "sha256": "5b3f2b7942742fd61c4b6e4a86b47841960cc85f4fffab5713e7e622ecd04e4a"
     }
   },
   "planned_talk_seconds": 480,
@@ -135,5 +135,13 @@
     ],
     "blocking_errors_in_final_builds": false
   },
-  "model_or_paid_api_calls": 0
+  "model_or_paid_api_calls": 0,
+  "reviewer_validation_20261027": {
+    "reviewer": "hycx233",
+    "compiler": "latexmk / XeLaTeX",
+    "personal_report_and_slides": "compiled successfully",
+    "pdf_fix": "Existing scripts/fix_hymem_pdf_unicode.py from main 8a26505; only missing Adobe-GB1 Identity-H ToUnicode mappings added",
+    "pdfjs_without_external_cmap": "passed all personal pages; Chinese text and render verified",
+    "pdfium_pixel_equality": "all personal pages identical before and after ToUnicode mapping"
+  }
 }

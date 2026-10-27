@@ -1,0 +1,144 @@
+{
+  "prepared_on": "2026-10-26",
+  "owner": "oioioi-521",
+  "issue": 55,
+  "base_commit": "fde4f86a194ade326ad6da7e6b27479f7ae373fb",
+  "purpose": "Migrate the existing 13-slide reading materials to the shared LaTeX and Beamer format.",
+  "paper": {
+    "path": "papers/structured-memory-group2/03_Semantic_XPath.pdf",
+    "bytes": 3713378,
+    "sha256": "a1309c4b789bef966b64e465fe5c1cebeef944b442ad85ef90a341d1978278fc",
+    "url": "https://aclanthology.org/2026.acl-demo.28/"
+  },
+  "sources": [
+    {
+      "path": "reports/homework/sections/03-semantic-xpath.tex",
+      "bytes": 10348,
+      "sha256": "0882431175bc030e1482fe2ce944487237409f912438404e73b6cb34580ecd7e"
+    },
+    {
+      "path": "reports/homework/slides/sections/03-semantic-xpath.tex",
+      "bytes": 11608,
+      "sha256": "2ae29f6187c4487daf15c09f3c030b4dc2dcc7fa4b78d198602b47839e24c87b"
+    },
+    {
+      "path": "reports/homework/semantic-xpath-preview.tex",
+      "bytes": 1430,
+      "sha256": "011dd105ec23390875bc4e2d374c0cbbd59fcaf5c8c985d06d42199e9656bd1e"
+    },
+    {
+      "path": "reports/homework/slides/semantic-xpath-preview.tex",
+      "bytes": 195,
+      "sha256": "a51571396c7615851e81eeaecc58b3be33d14ef6e62f7549fba0895b16222413"
+    },
+    {
+      "path": "reports/homework/semantic-xpath-reading-guide.md",
+      "bytes": 6328,
+      "sha256": "d04d0cf43591c41e4dd41de17b13195799a1c86da9ea71d862287b66378ef179"
+    },
+    {
+      "path": "reports/homework/semantic-xpath-speaker-notes.md",
+      "bytes": 6373,
+      "sha256": "c39f589711d1684755f4def1a6eae362af8de39f345bb452cca532a8254191c5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/homework/semantic-xpath-preview.pdf",
+      "bytes": 416546,
+      "sha256": "8a1eed333be9c62ccc37c0718f03a4813f501f517e4e5aeab5bffcf1ba04c1b4",
+      "pages": 4
+    },
+    {
+      "path": "reports/homework/slides/semantic-xpath-preview.pdf",
+      "bytes": 339352,
+      "sha256": "93f4e2c139543aa4ea05aacdf1e64869e375eafe171a9923111abae8c04385d1",
+      "pages": 13
+    },
+    {
+      "path": "reports/homework/slides/preview.pdf",
+      "bytes": 678051,
+      "sha256": "00696646b0430e3304db07fde1fc69214291783ecc6c583fddc27ef69bf1f169",
+      "pages": 67
+    }
+  ],
+  "build": {
+    "compiler": "Tectonic 0.17.0",
+    "bundle": "default_bundle_v33",
+    "shell_escape": false,
+    "personal_report": {
+      "input": "reports/homework/semantic-xpath-preview.tex",
+      "status": "compiled",
+      "pages": 4,
+      "template_search_path": "reports/templates/jos"
+    },
+    "personal_slides": {
+      "input": "reports/homework/slides/semantic-xpath-preview.tex",
+      "status": "compiled",
+      "pages": 13
+    },
+    "shared_report": {
+      "input": "reports/homework/main.tex",
+      "status": "compiled_for_integration_only",
+      "pages": 15,
+      "retains_other_sections_placeholders": true
+    },
+    "shared_slides": {
+      "input": "reports/homework/slides/main.tex",
+      "status": "compiled",
+      "pages": 67,
+      "numbered_main_frames": 63,
+      "backup_pages": 4,
+      "semantic_xpath_pdf_pages": [
+        23,
+        35
+      ]
+    },
+    "nonfatal_warnings": [
+      "Legacy algorithm/algorithmic package comment encoding warnings in the report build.",
+      "Math font size substitutions and underfull report boxes; visually inspected."
+    ],
+    "overfull_boxes": 0,
+    "missing_characters": 0,
+    "undefined_references_or_citations": 0
+  },
+  "checks": {
+    "personal_report_rendered_and_visually_inspected_pages": 4,
+    "personal_slides_rendered_and_visually_inspected_pages": 13,
+    "shared_slides_rendered_and_visually_inspected_pages": 67,
+    "pdf_visible_text_checked_with": "pdfplumber/pdfminer",
+    "query_visible_on_personal_slide": 5,
+    "sample_counts_visible_on_personal_slide": 7,
+    "other_five_paper_and_shared_sections_source_text_unchanged": true,
+    "unrelated_shared_slide_text_unchanged_after_removing_page_counters": true,
+    "public_identity_check": "GitHub handles only; no original private name/class or API key pattern found"
+  },
+  "video": {
+    "status": "previous_recording_not_delivered_for_current_homework",
+    "duration_seconds": 535,
+    "duration_display": "8:55",
+    "file_supplied": false,
+    "content_reviewed": false,
+    "uploaded_verified": false,
+    "per_slide_timing_measured": false,
+    "preserve_existing_recording": true,
+    "slide_12_historical_role_explanation_in_guide": true,
+    "reuse_acceptance": "pending_F_review_of_content_style_and_audio_video"
+  },
+  "experiment_scope": "Author-reported Semantic XPath results only. No new model calls or end-to-end Semantic XPath reproduction.",
+  "team_status": {
+    "technical_c_task": 32,
+    "contribution_percentages": "pending_team_confirmation",
+    "synthesis": "pending_team_work",
+    "reviewer_required": "hycx233",
+    "final_group_video_and_upload": "not_verified"
+  },
+  "reviewer_validation_20261027": {
+    "reviewer": "hycx233",
+    "compiler": "latexmk / XeLaTeX",
+    "personal_report_and_slides": "compiled successfully",
+    "pdf_fix": "Existing scripts/fix_hymem_pdf_unicode.py from main 8a26505; only missing Adobe-GB1 Identity-H ToUnicode mappings added",
+    "pdfjs_without_external_cmap": "passed all personal pages; Chinese text and render verified",
+    "pdfium_pixel_equality": "all personal pages identical before and after ToUnicode mapping"
+  }
+}
