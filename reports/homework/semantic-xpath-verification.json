@@ -33,32 +33,32 @@
     },
     {
       "path": "reports/homework/semantic-xpath-reading-guide.md",
-      "bytes": 6242,
-      "sha256": "3dc74a13cfdc874ed6f3ab2b93f0e49cde50caa6b17dda4cbec4217f9f0c500e"
+      "bytes": 6328,
+      "sha256": "d04d0cf43591c41e4dd41de17b13195799a1c86da9ea71d862287b66378ef179"
     },
     {
       "path": "reports/homework/semantic-xpath-speaker-notes.md",
-      "bytes": 6310,
-      "sha256": "2866cb82710dbae6cedfc736184a1b0d3f236e02d35b7eeddfd62df1030ad42e"
+      "bytes": 6373,
+      "sha256": "c39f589711d1684755f4def1a6eae362af8de39f345bb452cca532a8254191c5"
     }
   ],
   "outputs": [
     {
       "path": "reports/homework/semantic-xpath-preview.pdf",
-      "bytes": 323803,
-      "sha256": "cb0a6160120c5ab8ee1055a923e48ccd35555353b382a43e419bcc8446a6061b",
+      "bytes": 416546,
+      "sha256": "8a1eed333be9c62ccc37c0718f03a4813f501f517e4e5aeab5bffcf1ba04c1b4",
       "pages": 4
     },
     {
       "path": "reports/homework/slides/semantic-xpath-preview.pdf",
-      "bytes": 238153,
-      "sha256": "6679f88da9acf9b2140105147b651a1b46c1efce1196f6b36b79c10ab96f1f23",
+      "bytes": 339352,
+      "sha256": "93f4e2c139543aa4ea05aacdf1e64869e375eafe171a9923111abae8c04385d1",
       "pages": 13
     },
     {
       "path": "reports/homework/slides/preview.pdf",
-      "bytes": 518894,
-      "sha256": "0032c50b41693c693d83748888a97f4726fb8c52ecdef17293009f2cb0163210",
+      "bytes": 678051,
+      "sha256": "00696646b0430e3304db07fde1fc69214291783ecc6c583fddc27ef69bf1f169",
       "pages": 67
     }
   ],
@@ -114,7 +114,7 @@
     "public_identity_check": "GitHub handles only; no original private name/class or API key pattern found"
   },
   "video": {
-    "status": "recorded_user_confirmed",
+    "status": "previous_recording_not_delivered_for_current_homework",
     "duration_seconds": 535,
     "duration_display": "8:55",
     "file_supplied": false,
@@ -122,7 +122,8 @@
     "uploaded_verified": false,
     "per_slide_timing_measured": false,
     "preserve_existing_recording": true,
-    "slide_12_historical_role_explanation_in_guide": true
+    "slide_12_historical_role_explanation_in_guide": true,
+    "reuse_acceptance": "pending_F_review_of_content_style_and_audio_video"
   },
   "experiment_scope": "Author-reported Semantic XPath results only. No new model calls or end-to-end Semantic XPath reproduction.",
   "team_status": {
@@ -131,5 +132,13 @@
     "synthesis": "pending_team_work",
     "reviewer_required": "hycx233",
     "final_group_video_and_upload": "not_verified"
+  },
+  "reviewer_validation_20261027": {
+    "reviewer": "hycx233",
+    "compiler": "latexmk / XeLaTeX",
+    "personal_report_and_slides": "compiled successfully",
+    "pdf_fix": "Existing scripts/fix_hymem_pdf_unicode.py from main 8a26505; only missing Adobe-GB1 Identity-H ToUnicode mappings added",
+    "pdfjs_without_external_cmap": "passed all personal pages; Chinese text and render verified",
+    "pdfium_pixel_equality": "all personal pages identical before and after ToUnicode mapping"
   }
 }

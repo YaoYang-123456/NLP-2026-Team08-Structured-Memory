@@ -1,6 +1,6 @@
 # Semantic XPath 逐页参考讲稿
 
-负责人：`oioioi-521`。对应[13页Beamer模块](slides/sections/03-semantic-xpath.tex)。这是按原13页顺序整理并核对论文的迁入版参考措辞，不是已录视频的逐字转写。视频实际时长8分55秒由本人确认；不重新分配或声称测量逐页时长。保留已有录像，合稿事项见[个人指南](semantic-xpath-reading-guide.md)。
+负责人：`oioioi-521`。对应[13页Beamer模块](slides/sections/03-semantic-xpath.tex)。这是按原13页顺序整理并核对论文的迁入版参考措辞，不是已录视频的逐字转写。8分55秒为此前录制的总时长，不是本次作业已验收交付；不声称测量逐页时长。旧视频待 F 检查内容、风格与音画后决定能否复用，合稿事项见[个人指南](semantic-xpath-reading-guide.md)。
 
 ## 第1页：标题
 
