@@ -14,7 +14,7 @@
 | StructMem | `sections/01-structmem.tex` | 7–9 分钟；已迁入本地既有演示稿正文和讲稿备注 |
 | Hindsight | `sections/02-hindsight.tex` | 8 分钟讲解稿已整理，9 页个人模块已编译；录制前由本人过稿并计时；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
 | Semantic XPath | `sections/03-semantic-xpath.tex` | oioioi-521；13 页模块已在 [PR #57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57) 提交，待审核合入；旧视频暂按本次未交付计 |
-| HyMEM | `sections/04-hymem.tex` | 7 页模块和个人材料已合入，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md)；中文显示修复由 [#62](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/62) 跟踪 |
+| HyMEM | `sections/04-hymem.tex` | 7 页模块和个人材料已合入，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md)；个人 PDF 中文显示修复 [#64](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/64) 已合入，#62 已结项 |
 | MetaMem | `sections/05-metamem.tex` | YaoYang-123456；#40 原模块已合入，[PR #63](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/63) 新交 8 页修订稿及中文兼容 PDF，待 F 审核；核心稿估计 7 分 59 秒，本人尚未实际计时或录制 |
 | Text2Mem | `sections/06-text2mem.tex` | ngocnamd93-spec；8 页模块已在 [PR #59](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/59) 提交，待审核合入；本人过稿、排练及录制按 [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 推进 |
 | 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
@@ -22,7 +22,7 @@
 
 默认分配为 **3＋6×8＋12＝63 分钟**。若六人分别使用 7–9 分钟、总结使用 10–15 分钟，在开场 3 分钟的条件下，总长约 55–72 分钟，不含额外问答。需要控制在 60 分钟时，采用 **2＋6×8＋10＝60 分钟**，并更新开场时间页和讲稿备注。页数只作内容组织参考，最终以排练计时为准。
 
-截至北京时间 2026-10-26 21:48，主分支 `1850da7` 已有 StructMem、Hindsight、HyMEM、MetaMem 四篇材料；Semantic XPath #57、Text2Mem #59 初稿和 MetaMem #63 修订稿待 F 审核。六篇均有稿件记录。此前 17 页报告 / 68 页幻灯片仅是旧主分支加 #57/#59 的本地预览，已不代表最新合稿。#63 作者报告的 14 / 64 页也未包含 #57/#59，不当作当前完整组稿。本人计时、视频、字体兼容和后续安排见[平时作业进度](../README.md#当前进展2026-10-26)。
+截至北京时间 2026-10-27 11:01，主分支 `8a26505` 已有 StructMem、Hindsight、HyMEM、MetaMem 四篇材料；Semantic XPath #57、Text2Mem #59 初稿和 MetaMem #63 修订稿待 F 审核。六篇均有稿件记录。HyMEM #64 仅修复个人 PDF，未更新全组预览；#57、#59、#63 与昨日版本相同。此前 17 页报告 / 68 页幻灯片仅是旧主分支加 #57/#59 的本地预览，已不代表最新合稿。#63 作者报告的 14 / 64 页也未包含 #57/#59，不当作当前完整组稿。本人计时、视频、字体兼容和后续安排见[平时作业进度](../README.md#当前进展2026-10-27)。
 
 ## 编辑方式
 

@@ -14,15 +14,15 @@
   "outputs": [
     {
       "path": "reports/homework/hymem-reading-report.pdf",
-      "bytes": 223872,
-      "sha256": "7dadd388422a926dead0497b32d951971b11883450260980aa5d47584dac0849",
+      "bytes": 313814,
+      "sha256": "0019a342398f8198c1ad08eb758038a912527ac29fcc42203d1a94129beebd4e",
       "pages": 2,
       "purpose": "HyMEM individual report for reading and team integration"
     },
     {
       "path": "reports/homework/slides/hymem-preview.pdf",
-      "bytes": 184290,
-      "sha256": "179b40e42abbec11c3d5cc93b174d2d5d5fae9c4cc20df2b9f9f15561eb5ba35",
+      "bytes": 277398,
+      "sha256": "73e1bec8a335b86632a1c95609fb2236181dfac9e00c2d92330f4d9052e3eb80",
       "pages": 7,
       "purpose": "HyMEM individual lecture; editable Beamer source kept alongside"
     }
@@ -67,6 +67,16 @@
       "path": "reports/templates/jos/jos.bst",
       "bytes": 26518,
       "sha256": "afa8769a8bbc0671c2ecc1620144cd2e856d8b785be9985886449d0a3ccde168"
+    },
+    {
+      "path": "scripts/fix_hymem_pdf_unicode.py",
+      "bytes": 2031,
+      "sha256": "f3518f0ec50f23d5ac2f2e6c9e926a45acfbf48a0f8b8d74e0202923e2cdaf3c"
+    },
+    {
+      "path": "reports/homework/resources/Adobe-GB1-UCS2",
+      "bytes": 221210,
+      "sha256": "40b286cf48062e5e3b2164a52090d6ef32ef65739153aab26fec297d6699e105"
     }
   ],
   "original_paper": {
@@ -99,7 +109,28 @@
     "non_fatal_warnings": [
       "Fontconfig default configuration was unavailable; explicit document fonts rendered normally.",
       "algorithm.sty:11 and algorithmic.sty:11 emitted invalid UTF-8 warnings; compiled document text contained no replacement character."
-    ]
+    ],
+    "pypdf_cjk_text_checked": true,
+    "pdfjs_without_external_cmap": {
+      "version": "5.6.205",
+      "report_pages": [
+        1,
+        2
+      ],
+      "slide_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "external_cMapUrl": false,
+      "Chinese_rendering_and_text_passed": true
+    },
+    "pdfium_rendering_identical_before_after_all_9_pages": true,
+    "all_fandol_fonts_have_embedded_ToUnicode": true
   },
   "not_completed": [
     "personal reading acceptance",
@@ -122,5 +153,15 @@
     "sha256": "1abab03db0ea939a91bf3025c324bad60a31d6a12ed554b296b054646bfdf44e",
     "pages": 61,
     "producer": "F; preserved without regeneration on this host"
+  },
+  "compatibility_fix": {
+    "issue": 62,
+    "cause": "Standard Adobe-GB1 Fandol fonts omitted ToUnicode; viewers without external CMaps skipped Chinese.",
+    "method": "Embed the bundled Adobe-GB1-UCS2 CMap into Identity-H fonts without ToUnicode. Mapping values and full license preserved; source trailing whitespace normalized.",
+    "tool": "pypdf",
+    "tool_version": "6.10.0",
+    "resource_license": "Adobe BSD-style license; complete notice preserved in source and embedded resource.",
+    "input_rendering": "Original 2-page/7-page Tectonic outputs; postprocess after each compilation.",
+    "completed_date": "2026-10-27"
   }
 }
