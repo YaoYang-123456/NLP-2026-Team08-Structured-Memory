@@ -14,15 +14,15 @@
   "outputs": [
     {
       "path": "reports/homework/hymem-reading-report.pdf",
-      "bytes": 313817,
-      "sha256": "2d85fa26623646fe4066111674c2c31f802453914a1fd558e69296e43a8d42fc",
+      "bytes": 313814,
+      "sha256": "0019a342398f8198c1ad08eb758038a912527ac29fcc42203d1a94129beebd4e",
       "pages": 2,
       "purpose": "HyMEM individual report for reading and team integration"
     },
     {
       "path": "reports/homework/slides/hymem-preview.pdf",
-      "bytes": 277401,
-      "sha256": "44149a97b3414c7d8f92b797f05121b73790707fdc7980f4d74abd424707da6b",
+      "bytes": 277398,
+      "sha256": "73e1bec8a335b86632a1c95609fb2236181dfac9e00c2d92330f4d9052e3eb80",
       "pages": 7,
       "purpose": "HyMEM individual lecture; editable Beamer source kept alongside"
     }
@@ -75,8 +75,8 @@
     },
     {
       "path": "reports/homework/resources/Adobe-GB1-UCS2",
-      "bytes": 221211,
-      "sha256": "368b40ec05568faf323cfbbddf23c60d566bbc88e366981eb6541b026381a3b8"
+      "bytes": 221210,
+      "sha256": "40b286cf48062e5e3b2164a52090d6ef32ef65739153aab26fec297d6699e105"
     }
   ],
   "original_paper": {
@@ -157,10 +157,11 @@
   "compatibility_fix": {
     "issue": 62,
     "cause": "Standard Adobe-GB1 Fandol fonts omitted ToUnicode; viewers without external CMaps skipped Chinese.",
-    "method": "Embed the unmodified Adobe-GB1-UCS2 CMap into Identity-H fonts without ToUnicode. Preserve embedded glyphs and content.",
+    "method": "Embed the bundled Adobe-GB1-UCS2 CMap into Identity-H fonts without ToUnicode. Mapping values and full license preserved; source trailing whitespace normalized.",
     "tool": "pypdf",
     "tool_version": "6.10.0",
     "resource_license": "Adobe BSD-style license; complete notice preserved in source and embedded resource.",
-    "input_rendering": "Original 2-page/7-page Tectonic outputs; postprocess after each compilation."
+    "input_rendering": "Original 2-page/7-page Tectonic outputs; postprocess after each compilation.",
+    "completed_date": "2026-10-27"
   }
 }
