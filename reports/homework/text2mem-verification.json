@@ -1,0 +1,147 @@
+{
+  "checked_date": "2026-10-26",
+  "owner": "ngocnamd93-spec",
+  "issue": 56,
+  "base_main": "fde4f86a194ade326ad6da7e6b27479f7ae373fb",
+  "paper": {
+    "file": "papers/structured-memory-group2/06_Text2Mem.pdf",
+    "pages": 15,
+    "sha256": "b7c8f38fa2009a1f3c54d89d3b3115b5ba044898349fa0d0d21bd229d5e5a3cd"
+  },
+  "facts": {
+    "table2_avg": {
+      "GPT-4o": [
+        "0.6776",
+        "0.8690",
+        "0.9484",
+        "0.2532"
+      ],
+      "Qwen2.5-72B-Instruct": [
+        "0.6195",
+        "0.8349",
+        "0.9510",
+        "0.2535"
+      ],
+      "Claude-4-Sonnet": [
+        "0.6230",
+        "0.8475",
+        "0.9594",
+        "0.3132"
+      ],
+      "Gemini-2.5-Pro": [
+        "0.6491",
+        "0.8560",
+        "0.9479",
+        "0.2897"
+      ],
+      "GPT-5": [
+        "0.6115",
+        "0.8396",
+        "0.9662",
+        "0.2826"
+      ]
+    },
+    "table2_page_visually_checked": true,
+    "table3_gpt5_workflow_esr": "1.0000",
+    "table3_gpt5_workflow_emr": "0.1190",
+    "component_removal_ablation": "not_reported",
+    "new_text2mem_experiments": 0
+  },
+  "checks": {
+    "report_table_exact": true,
+    "slide_percent_conversion_exact": true,
+    "tex_environments_balanced": true,
+    "reference_key_exists": true,
+    "utf8_lf_and_public_identity": true,
+    "existing_note_unchanged": true
+  },
+  "compiler": {
+    "engine": "Tectonic",
+    "version": "0.17.0",
+    "shell_escape": false,
+    "desktop_xelatex_tested": false,
+    "cache": "project-local temporary cache"
+  },
+  "outputs": {
+    "reports/homework/text2mem-report-preview.pdf": {
+      "pages": 3,
+      "bytes": 391960,
+      "sha256": "332ad62631089e541c14e902d2d0b6a0bab84ae02c0ac0b474b75c567e744057"
+    },
+    "reports/homework/slides/text2mem-preview.pdf": {
+      "pages": 8,
+      "bytes": 291050,
+      "sha256": "5b3f2b7942742fd61c4b6e4a86b47841960cc85f4fffab5713e7e622ecd04e4a"
+    }
+  },
+  "planned_talk_seconds": 480,
+  "actual_personal_rehearsal_seconds": null,
+  "personal_reading_acceptance": "pending",
+  "video_recorded": false,
+  "group_contribution_percentage": null,
+  "member_review": {
+    "reviewer": "hycx233",
+    "status": "pending"
+  },
+  "visual_qa": {
+    "status": "passed",
+    "personal_report_pages": [
+      1,
+      2,
+      3
+    ],
+    "personal_slide_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "method": "rendered pages inspected; final spacing edits rechecked"
+  },
+  "integration": {
+    "report_pages": 14,
+    "report_text2mem_pages": [
+      12,
+      13
+    ],
+    "slides_pages": 62,
+    "slides_text2mem_pages": [
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "compilation": "passed",
+    "new_section_render_check": "passed",
+    "shared_main_and_preview_modified": false
+  },
+  "compiler_warnings": {
+    "personal_report": [
+      "two algorithm package comment UTF-8 warnings"
+    ],
+    "personal_slides": [],
+    "group_report": [
+      "algorithm package comment UTF-8 warnings",
+      "existing font substitution",
+      "existing underfull vbox"
+    ],
+    "blocking_errors_in_final_builds": false
+  },
+  "model_or_paid_api_calls": 0,
+  "reviewer_validation_20261027": {
+    "reviewer": "hycx233",
+    "compiler": "latexmk / XeLaTeX",
+    "personal_report_and_slides": "compiled successfully",
+    "pdf_fix": "Existing scripts/fix_hymem_pdf_unicode.py from main 8a26505; only missing Adobe-GB1 Identity-H ToUnicode mappings added",
+    "pdfjs_without_external_cmap": "passed all personal pages; Chinese text and render verified",
+    "pdfium_pixel_equality": "all personal pages identical before and after ToUnicode mapping"
+  }
+}

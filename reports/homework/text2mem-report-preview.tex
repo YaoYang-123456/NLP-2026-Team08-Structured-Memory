@@ -1,0 +1,24 @@
+% !TeX program = xelatex
+\documentclass{jos}
+\makeatletter
+\renewcommand{\jos@topmatter}{\noindent 天津大学NLP平时作业\hfill 第8队个人章节预览\par}
+\renewcommand{\jos@citationbox}[2]{}
+\makeatother
+\fancyhead[RO]{\joskaiti Text2Mem论文阅读\quad ngocnamd93-spec}
+\setlength{\headheight}{16pt}
+\begin{document}
+\Year{2026}
+\BeginPage{1}
+\CLC{TP18}
+\title{Text2Mem：统一记忆操作语言与状态验证}{Text2Mem论文阅读}
+\entitle{Text2Mem: Unified Memory Operations and State Verification}{Text2Mem Reading}
+\author{ngocnamd93-spec}{ngocnamd93-spec}{}
+\AuthorMark{ngocnamd93-spec}
+\address{天津大学，第8队}{Tianjin University, Team 8}
+\abstract{本文阅读Text2Mem的统一操作规范和基准，梳理十二操作、五字段Schema与校验、解析、适配流程，区分结构相似、执行成功和状态断言满足率。作者结果显示高可执行性并不保证预期状态效果。本文进一步讨论参考后端、复杂语义和长期任务的验证边界，并说明其与本组StructMem课设的联系。本文没有新增Text2Mem实验。}
+\keywords{记忆操作；结构化规范；状态验证；论文阅读}
+\maketitle
+\input{sections/06-text2mem}
+\bibliographystyle{jos}
+\bibliography{references}
+\end{document}
