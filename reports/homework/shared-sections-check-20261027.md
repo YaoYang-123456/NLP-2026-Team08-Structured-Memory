@@ -1,13 +1,15 @@
 # 2026-10-27 共同部分整理与检查
 
+> 本文保留 `fb0141d` 的22／73页检查记录。后续全组slides措辞与样式修订见[新检查记录](slides/style-check-20261027.md)，最新演示为68页。
+
 本轮基于 `1862df9`（六篇个人材料已合入），对应 [#65](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/65)。摘要、背景、跨论文比较、共同案例、课设选择和总结已形成完整审核稿；贡献比例按要求留空。这里记录材料检查，不代表团队讨论、真人排练、视频验收或课程提交完成。
 
 ## 成稿与定位
 
-- [完整报告](report-preview.pdf)：22 页。第 1 页为摘要与背景，第 18–21 页为跨论文综合，第 22 页为总结、引用及未填写的贡献说明。
-- [完整 slides](slides/preview.pdf)：73 页，其中正文 69 页、备用 4 页。开场第 1–3 页，综合第 61–69 页；六篇个人模块页码保持不变。
-- [共同部分讲稿](scripts/00-opening-and-synthesis.md)：与 Beamer 的 12 页备注逐段一致，开场计划 120 秒、总结计划 600 秒；加上六人各 8 分钟，总计 60 分钟。计划时间尚未经过本人排练验证。
-- [当前清单](integration-artifacts.json)：记录本轮源文件、两份 PDF 的大小及 SHA-256。前一轮 18 / 71 页的结果保留在[历史整合检查](integration-check-20261027.md)。
+- [完整报告](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/fb0141d3caec8e9f16fd5d473547f7e4ff16ad1f/reports/homework/report-preview.pdf)：22 页。第 1 页为摘要与背景，第 18–21 页为跨论文综合，第 22 页为总结、引用及未填写的贡献说明。
+- [完整 slides](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/fb0141d3caec8e9f16fd5d473547f7e4ff16ad1f/reports/homework/slides/preview.pdf)：73 页，其中正文 69 页、备用 4 页。开场第 1–3 页，综合第 61–69 页；六篇个人模块页码保持不变。
+- [共同部分讲稿](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/fb0141d3caec8e9f16fd5d473547f7e4ff16ad1f/reports/homework/scripts/00-opening-and-synthesis.md)：与 Beamer 的 12 页备注逐段一致，开场计划 120 秒、总结计划 600 秒；加上六人各 8 分钟，总计 60 分钟。计划时间尚未经过本人排练验证。
+- [当前清单](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/fb0141d3caec8e9f16fd5d473547f7e4ff16ad1f/reports/homework/integration-artifacts.json)：记录本轮源文件、两份 PDF 的大小及 SHA-256。前一轮 18 / 71 页的结果保留在[历史整合检查](integration-check-20261027.md)。
 
 | 模块 | PDF 页码 | 页数 |
 | --- | --- | --- |

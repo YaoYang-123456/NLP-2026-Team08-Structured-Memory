@@ -143,5 +143,10 @@
     "pdf_fix": "Existing scripts/fix_hymem_pdf_unicode.py from main 8a26505; only missing Adobe-GB1 Identity-H ToUnicode mappings added",
     "pdfjs_without_external_cmap": "passed all personal pages; Chinese text and render verified",
     "pdfium_pixel_equality": "all personal pages identical before and after ToUnicode mapping"
+  },
+  "latest_slide_revision": {
+    "date": "2026-10-27",
+    "manifest": "reports/homework/slides/style-artifacts.json",
+    "note": "Original fields retain earlier review/build evidence; current slide sources, PDFs and revised scripts are versioned in the linked manifest."
   }
 }

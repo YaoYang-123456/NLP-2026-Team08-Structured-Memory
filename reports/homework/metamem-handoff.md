@@ -1,5 +1,7 @@
 # MetaMem 个人模块交接（2026-10-26）
 
+> 演示于2026-10-27统一修订文字和样式，已移除文献脚注与灰色旁注。当前个人PDF及全组68页演示的大小、哈希与源码见[演示清单](slides/style-artifacts.json)，验证见[修订记录](slides/style-check-20261027.md)。下文原核查过程和旧版估时保留为历史记录，录制前按新稿重新计时。
+
 负责人：`YaoYang-123456`；关联 [Issue #39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39)。本轮从 main `1850da7` 核查，保留 [PR #40](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/40) 已审核章节及此前个人材料；不关闭 #39，不代表本人阅读、试讲或录制完成。
 
 ## F 的直接读取入口

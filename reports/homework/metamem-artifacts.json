@@ -146,5 +146,10 @@
       "sha256": "40b286cf48062e5e3b2164a52090d6ef32ef65739153aab26fec297d6699e105"
     }
   ],
-  "repository_manifest_note": "2026-10-27 F: text entries normalized to checked-in LF bytes; original author hashes used CRLF. PDF hashes unchanged."
+  "repository_manifest_note": "2026-10-27 F: text entries normalized to checked-in LF bytes; original author hashes used CRLF. PDF hashes unchanged.",
+  "latest_slide_revision": {
+    "date": "2026-10-27",
+    "manifest": "reports/homework/slides/style-artifacts.json",
+    "note": "Original fields retain earlier review/build evidence; current slide sources, PDFs and revised scripts are versioned in the linked manifest."
+  }
 }

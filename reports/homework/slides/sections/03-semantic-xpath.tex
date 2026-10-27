@@ -1,7 +1,7 @@
-\source{Liu et al., ACL 2026 Demo, pp.286--296；作者论文结果与个人阅读分析}
+% 来源：Liu et al., ACL 2026 Demo, pp.286--296；作者论文结果与个人阅读分析
 \papersection{Semantic XPath}{结构化记忆的路径与语义访问}{oioioi-521}
 
-\source{原文PDF第1--2页，图1--2；沿用原个人PPT第2页}
+% 来源：原文PDF第1--2页，图1--2；沿用原个人PPT第2页
 \begin{frame}{长期任务中的记忆访问}
     \begin{columns}[T,onlytextwidth]
         \column{.46\textwidth}
@@ -16,10 +16,10 @@
         需要比较各天的活动，而不只是找到一条会议相关文本。
     \end{columns}
     \takeaway{研究问题：怎样访问相关的记忆子结构？}
-    \note{对应原视频第2页。全量上下文保留信息，扁平检索减少输入，但可能忽略活动所属的日期和版本。先比较日期，再进行下游修改。}
+    \note{长期任务会反复查看和修改同一个对象，比如旅行计划。完整历史包含全部信息，但输入量持续增长；扁平检索减少输入，却可能混淆活动所属的日期和版本。要在会议安排最密集的一天增加咖啡休息，就需要先比较各天的活动，再选定修改位置。Semantic XPath研究怎样访问相关的记忆子结构。}
 \end{frame}
 
-\source{原文PDF第2--4页，图2、\S3.1--3.3；层级与流程按原文整理}
+% 来源：原文PDF第2--4页，图2、\S3.1--3.3；层级与流程按原文整理
 \begin{frame}{树形记忆与整体流程}
     \centering
     \begin{tikzpicture}[node distance=7mm and 9mm, every node/.style={font=\small}, >=Latex]
@@ -33,11 +33,11 @@
         \item 执行结构匹配、位置筛选与语义评分。
         \item 返回节点及子树，供下游回答或更新。
     \end{enumerate}
-    \aside{schema来自已有记忆结构；查询负责定位，实际修改由下游步骤完成。}
-    \note{对应原视频第3页。先讲计划、版本、日期和活动，再解释查询生成、执行和下游更新。原文例子先选第二天，插入咖啡休息由后续步骤完成。}
+    \par\vspace{3mm}树结构定义可访问的范围，查询定位节点，下游模块执行修改。\par
+    \note{旅行例子按计划、版本、日期和活动组织成树，每条活动都有明确的所属范围。模型根据请求和已有结构生成查询，执行器沿树筛选并评分，返回相关节点及子树。定位完成后，再交给下游模块回答或修改。例如先选中第二天，再插入咖啡休息。}
 \end{frame}
 
-\source{原文PDF第3--4页，\S3.2；第10页，附录A}
+% 来源：原文PDF第3--4页，\S3.2；第10页，附录A
 \begin{frame}{查询语法与访问范围}
     \centering $S=A\,N\,[R]\,[P]$\par\vspace{3mm}
     \begin{tabularx}{\linewidth}{@{}p{22mm}p{45mm}Y@{}}
@@ -50,11 +50,11 @@
         \bottomrule
     \end{tabularx}
     \par\vspace{4mm}{\small\ttfamily //Day[3]/POI[node\textasciitilde="workshop"]}
-    \aside{多个行程或历史版本共存时，先限定目标范围；第三个匹配日期未必是当前计划第三天。}
-    \note{对应原视频第4页。位置与语义条件可选。单斜杠访问子节点，双斜杠访问后代。位置选择依赖候选集合和树顺序。}
+    \par\vspace{3mm}多个行程或版本共存时，先选定目标，再按位置访问日期。\par
+    \note{一个查询步骤包括路径、节点类型，以及可选的位置和语义条件。单斜杠访问子节点，双斜杠访问后代；位置支持顺序、倒序和区间；语义条件则给出连续相关性分数。页面上的例子选择第三个匹配日期，再查找与workshop相关的活动。如果树里有多个行程或历史版本，先限定目标范围，位置才有明确含义。}
 \end{frame}
 
-\source{原文PDF第4页，\S3.3、图2；第10页，附录A}
+% 来源：原文PDF第4页，\S3.3、图2；第10页，附录A
 \begin{frame}{语义评分与查询执行}
     \noindent{\small\ttfamily //Day[avg(/POI[node\textasciitilde="conference"])]}\par\vspace{4mm}
     \begin{tabularx}{\linewidth}{@{}p{47mm}Y@{}}
@@ -68,12 +68,12 @@
         \bottomrule
     \end{tabularx}
     \par\vspace{3mm} $w_{\rm new}=w_{\rm old}\times\operatorname{Rel}(u,P)$
-    \aside{平均相关性反映密集程度，不直接等同于会议数量最多。}
-    \note{对应原视频第5页。局部评价节点，聚合以下层证据评价上层。min、max、gmean和取反都是连续软评分，执行时累积权重。}
+    \par\vspace{3mm}这里按会议相关性的平均分选择日期。\par
+    \note{这个查询用活动的会议相关性来评价日期。第二天的三个局部分数是0.603、0.482和0.608，平均约0.565；与其他日期比较后，选中第二天。这里衡量的是活动与会议的相关程度。执行从根节点和权重1开始，逐步完成路径筛选与语义评价，新权重乘上当前相关性。还可以用最小、最大和几何平均等方式聚合。}
 \end{frame}
 
-\source{个人教学示例，非论文实验数据；沿用原个人PPT第6页}
-\begin{frame}{旅行示例中的日期范围}
+% 来源：个人教学示例，非论文实验数据；沿用原个人PPT第6页
+\begin{frame}{教学示例：限定日期范围}
     用户：第七天下雨，找出当天需要调整的户外活动。\par\vspace{5mm}
     \begin{tabularx}{\linewidth}{@{}p{24mm}Yp{37mm}@{}}
         \toprule 日期 & 活动 & 是否属于目标 \\
@@ -84,29 +84,29 @@
         \bottomrule
     \end{tabularx}
     \par\vspace{5mm}\key{先限定第七天，再判断活动语义。}
-    \aside{普通RAG加入日期元数据过滤也能改善简单范围错误，应纳入公平比较。}
-    \note{对应原视频第6页。这是假设场景，没有运行检索模型，不能当成实验结果。}
+    \par\vspace{3mm}对照方法：为普通 RAG 加入日期过滤，比较范围选择的效果。\par
+    \note{用一个旅行安排例子看范围的作用。第二天有海滨公园，第五天有山地徒步，第七天有植物园和海港游船。用户要求调整第七天的户外活动，首先应限定第七天，再判断活动性质。第二天和第五天的活动虽然语义相近，却不属于本次目标。评价这种能力时，可以把加入日期过滤的普通RAG作为对照。}
 \end{frame}
 
-\source{原文PDF第5页，\S4.1；第7页表1；第11页表2--3}
-\begin{frame}{实验设置与指标口径}
+% 来源：原文PDF第5页，\S4.1；第7页表1；第11页表2--3
+\begin{frame}{实验设置与评价指标}
     \noindent{\small 旅行、待办、配餐：每场景20个单轮和5个多轮对话，另测LoCoMo。}\par\vspace{3mm}
     \begin{tabularx}{\linewidth}{@{}p{27mm}Y@{}}
         \toprule 指标或模型 & 含义与口径 \\
         \midrule
         任务通过率 & 检索正确，且输出满足任务约束 \\
         LoCoMo得分 & LLM裁判与参考答案对照 \\
-        平均tokens & 表2--3口径；未完整说明全部组成 \\
-        平均输入tokens & 表1口径；XPath包含查询生成输入 \\
+        平均tokens & 单轮／多轮任务的用量；组成披露有限 \\
+        平均输入tokens & LoCoMo用量，含XPath查询生成输入 \\
         模型 & GPT-5 mini / Gemini 3 Flash；Qwen3嵌入 / BART蕴含评分 \\
         \bottomrule
     \end{tabularx}
-    \aside{不同任务指标不直接混比；tokens不包含本地评分的全部计算开销。}
-    \note{对应原视频第7页。Sem使用Qwen3-Embedding-8B，Entail使用facebook/bart-large-mnli；不同提供方分词器不同，宜在同一模型内比较。}
+    \par\vspace{3mm}本地嵌入与语义评分的计算开销需另行统计。\par
+    \note{实验包含旅行、待办和配餐三个场景，每个场景有二十个单轮、五个多轮对话，另测LoCoMo。回答模型是GPT-5 mini和Gemini 3 Flash。语义评分有Qwen3嵌入相似度和BART蕴含评分两种实现。任务通过率同时考虑检索和约束满足；LoCoMo使用回答得分。输入规模、嵌入计算和本地评分开销需要分别记录。}
 \end{frame}
 
-\source{原文PDF第11页，附录B表2；作者单轮平均结果}
-\begin{frame}{单轮结果与准确性权衡}
+% 来源：原文PDF第11页，附录B表2；作者单轮平均结果
+\begin{frame}{单轮任务结果}
     \begin{tabularx}{\linewidth}{@{}p{34mm}Yrr@{}}
         \toprule 回答模型 & 方法 & 通过率 & 平均tokens \\
         \midrule
@@ -120,12 +120,12 @@
         \bottomrule
     \end{tabularx}
     \par\vspace{4mm}\key{GPT-5 mini：比Flat RAG提高53个百分点。}
-    \aside{相对增幅176.7\%；tokens为全量上下文的21.7\%。Gemini准确性仍低于全量上下文。}
-    \note{对应原视频第8页。83减30是53个百分点，除以30才是176.7\%相对提高；不同设置的最佳数字不能拼接。}
+    \par\vspace{3mm}GPT-5 mini 的 tokens 为全量上下文的21.7\%；Gemini较全量上下文低8.3个百分点。\par
+    \note{先看GPT-5 mini，Flat RAG通过率为百分之三十，XPath Entail为百分之八十三，提高五十三个百分点。它的tokens为五千六百九十一，约为全量上下文的百分之二十一点七。Gemini中则是全量上下文的通过率更高，Entail低八点三个百分点。相同访问机制在不同模型下，准确性和输入规模的取舍有所不同。}
 \end{frame}
 
-\source{原文PDF第6页图6--7；第11页表3；作者多轮平均结果}
-\begin{frame}{多轮结果与评分器比较}
+% 来源：原文PDF第6页图6--7；第11页表3；作者多轮平均结果
+\begin{frame}{多轮任务结果}
     \begin{tabularx}{\linewidth}{@{}p{34mm}Yrr@{}}
         \toprule 回答模型 & 方法 & 通过率 & 平均tokens \\
         \midrule
@@ -139,11 +139,11 @@
         \bottomrule
     \end{tabularx}
     \par\vspace{4mm}\key{Entail在两种模型下取得最高平均通过率。}
-    \aside{tokens约为全量上下文的8.5\%和7.8\%；平均优势不代表每个子场景均提升。}
-    \note{对应原视频第9页。多轮与单轮请求不同，不能直接当成同批样本随轮数退化的曲线。附录同时提供Sem与Entail的平均比较。}
+    \par\vspace{3mm}两种模型的 tokens 分别为全量上下文的8.5\%和7.8\%。\par
+    \note{多轮任务中，Entail在两个回答模型下的平均通过率分别为百分之八十三点三和百分之八十，高于表中两种对照。对应tokens约为全量上下文的百分之八点五和七点八。结构化访问在持续修改任务中减少了输入，同时保留较高的任务通过率。这里使用独立的多轮请求集合，具体场景的表现还可以结合分类结果分析。}
 \end{frame}
 
-\source{原文PDF第7页表1；回答得分与平均输入tokens，XPath含查询生成}
+% 来源：原文PDF第7页表1；回答得分与平均输入tokens，XPath含查询生成
 \begin{frame}{LoCoMo上的泛化结果}
     \begin{tabularx}{\linewidth}{@{}p{34mm}Yrr@{}}
         \toprule 回答模型 & 方法 & 回答得分 & 输入tokens \\
@@ -158,12 +158,12 @@
         \bottomrule
     \end{tabularx}
     \par\vspace{4mm}\key{总体得分高于Flat RAG，低于全量上下文。}
-    \aside{输入约为全量上下文的12.2\%和14.1\%；保留准确性和证据完整性的代价。}
-    \note{对应原视频第10页。这是回答得分，不与任务通过率直接比较；多跳问题仍需完整取回并整合证据。}
+    \par\vspace{3mm}输入分别为全量上下文的12.2\%和14.1\%，回答得分也有所下降。\par
+    \note{LoCoMo使用对话、会话和发言的层级结构。GPT-5 mini的XPath得分为六十五点一九，位于Flat RAG和全量上下文之间；Gemini也呈现相同关系。两种模型的输入规模分别约为全量上下文的百分之十二点二和十四点一。长对话问答中，缩小输入范围带来了得分下降，多跳问题尤其依赖充分的证据。}
 \end{frame}
 
-\source{原文PDF第6--7页，\S4.3、图8；局限部分为个人阅读分析}
-\begin{frame}{优点 局限与失败来源}
+% 来源：原文PDF第6--7页，\S4.3、图8；局限部分为个人阅读分析
+\begin{frame}{检索错误与方法局限}
     \begin{tabularx}{\linewidth}{@{}p{28mm}Y@{}}
         \toprule 失败阶段 & 典型表现 \\
         \midrule
@@ -176,31 +176,19 @@
     \begin{itemize}\setlength{\itemsep}{2mm}
         \item 优点：结构与语义结合，路径及评分轨迹可追溯。
         \item 作者分析：检索仍是主要剩余失败来源。
-        \item 阅读局限：层级依赖、多跳、小规模评测和本地评分开销。
+        \item 局限：依赖已有层级；多跳检索与评分开销仍需改进。
     \end{itemize}
-    \note{对应原视频第11页。作者分析和个人评价分别表达；不能从tokens减少推导整个系统成本或延迟必然下降。}
+    \note{方法的优点是把结构范围和语义相关性结合起来，查询路径与评分过程也便于检查。作者按查询生成、检索和回答生成分析错误，其中检索仍是主要失败来源，包括无命中、证据缺失和选错节点。进一步使用时，需要关注树结构质量、多跳证据覆盖，以及本地评分开销。}
 \end{frame}
 
-\source{个人阅读总结；本组C事件记忆结项另见Issue\#32及PR\#43/\#50}
-\begin{frame}{个人总结与团队关联}
+% 来源：个人阅读总结；本组C事件记忆结项另见Issue\#32及PR\#43/\#50
+\begin{frame}{总结与课设应用}
     \begin{itemize}\setlength{\itemsep}{4mm}
         \item 长期记忆访问同时考虑内容、所属范围和历史版本。
         \item 阅读启发：明确查询范围，保留节点路径与证据标识。
         \item 评测启发：区分检索与回答错误，加入元数据过滤基线。
-        \item 本组C已完成事件记忆构建；Semantic XPath尚未端到端复现。
+        \item 在事件记忆检索中，比较范围约束与纯语义检索的效果。
     \end{itemize}
-    \aside{原录制稿的拟议角色属于10月17日计划；当前分工按C结项记录表述，贡献比例由全组确认。}
-    \note{对应原视频第12页。原稿“可以负责结构化检索方案”是10月17日计划，迁入版按当前事实区分C构建和Semantic XPath复现。保留原录像，由本人在合稿时确认这一处时点衔接。}
-\end{frame}
 
-\source{论文与数值：Liu et al., 2026；教学示例和个人推测分别标识}
-\begin{frame}{参考资料}
-    \textbf{主要论文}\par\vspace{4mm}
-    Liu et al. Semantic XPath: Structured Agentic Memory Access for Conversational AI.
-    ACL 2026 System Demonstrations, pp.286--296.
-    \par\vspace{5mm}\url{https://aclanthology.org/2026.acl-demo.28/}
-    \par\vspace{5mm}\textbf{作者项目}\par\vspace{3mm}
-    \url{https://github.com/D3Mlab/SemanticXpath-Chat}
-    \aside{语法与评分见\S3、附录A；结果见表1--3；旅行下雨案例为教学示例。}
-    \note{对应原视频第13页，停留后结束。视频由本人确认8分55秒；本次没有取得并逐帧核验视频。}
+    \note{这篇工作的重点是同时限定内容、范围和版本。对我们的事件记忆检索，可以借鉴明确查询范围、保留节点路径和证据标识的做法，并把检索错误与回答错误分开统计。接下来可在相同数据和预算下，对照纯语义检索、元数据过滤和结构约束，观察证据覆盖与回答质量的变化。下面进入HyMEM。}
 \end{frame}

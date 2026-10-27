@@ -163,5 +163,10 @@
     "resource_license": "Adobe BSD-style license; complete notice preserved in source and embedded resource.",
     "input_rendering": "Original 2-page/7-page Tectonic outputs; postprocess after each compilation.",
     "completed_date": "2026-10-27"
+  },
+  "latest_slide_revision": {
+    "date": "2026-10-27",
+    "manifest": "reports/homework/slides/style-artifacts.json",
+    "note": "Original fields retain earlier review/build evidence; current slide sources, PDFs and revised scripts are versioned in the linked manifest."
   }
 }

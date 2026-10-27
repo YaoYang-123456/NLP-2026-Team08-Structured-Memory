@@ -141,5 +141,10 @@
     "sha256": "00696646b0430e3304db07fde1fc69214291783ecc6c583fddc27ef69bf1f169",
     "pages": 67
   },
-  "current_shared_preview_manifest": "reports/homework/integration-artifacts.json"
+  "current_shared_preview_manifest": "reports/homework/integration-artifacts.json",
+  "latest_slide_revision": {
+    "date": "2026-10-27",
+    "manifest": "reports/homework/slides/style-artifacts.json",
+    "note": "Original fields retain earlier review/build evidence; current slide sources, PDFs and revised scripts are versioned in the linked manifest."
+  }
 }

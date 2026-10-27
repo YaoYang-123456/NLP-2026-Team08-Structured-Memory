@@ -1,8 +1,8 @@
-\source{Latimer et al., 2026, §1--2；PDF pp.1--2}
+% 来源：Latimer et al., 2026, §1--2；PDF pp.1--2
 \papersection{Hindsight}{结构化智能体记忆：保留、召回与反思}{李金昊}
 
-\source{Hindsight, §1；PDF p.1（印刷页275）}
-\begin{frame}{问题：长对话中的记忆不只是“存下来”}
+% 来源：Hindsight, §1；PDF p.1（印刷页275）
+\begin{frame}{长对话中的信息保留与使用}
     \large\key{智能体需要保留信息、跨会话找回它，并据此给出连贯回答。}\par
     \vspace{4mm}\normalsize
     \begin{itemize}\setlength{\itemsep}{4mm}
@@ -14,7 +14,7 @@
     \note{约45秒。先交代问题范围：论文关注跨会话的长期对话记忆。作者把挑战分成保留、召回和推理。比如系统只检索到一条用户偏好，却没看到后来相反的说法，就可能给出前后不一致的回答。接下来按记忆结构和三种操作解释它如何处理这些问题。}
 \end{frame}
 
-\source{Hindsight, §3.1；PDF pp.2--3，表1}
+% 来源：Hindsight, §3.1；PDF pp.2--3，表1
 \begin{frame}{四类网络把事实、摘要和意见分开}
     \small
     \begin{tabularx}{\linewidth}{@{}p{27mm}p{38mm}Y@{}}
@@ -29,12 +29,12 @@
     \end{tabularx}
     \vspace{4mm}
     \takeaway{Observation 是证据摘要；Opinion 是带置信度的判断。}
-    \aside{四类网络让开发者能检查智能体“知道什么”与“相信什么”。}
+
     \note{约55秒。World记录外部事实，Experience记录智能体自己的行动；这两类保存发生过什么。Observation是从多条事实综合出的实体画像，Opinion则明确是主观判断，并带有置信度。这个区分很重要：用户喜欢某种工具是证据，系统认为它适合用户则是判断。论文认为分开保存能提高可检查性，也为后续证据更新留出位置。}
 \end{frame}
 
-\source{Hindsight, §3.2--3.3、图1；PDF pp.3--4（印刷页277--278）}
-\begin{frame}{三种操作组成记忆生命周期}
+% 来源：Hindsight, §3.2--3.3、图1；PDF pp.3--4（印刷页277--278）
+\begin{frame}{写入、检索与反思}
     \centering
     \begin{tikzpicture}[
         >=Stealth,
@@ -51,12 +51,12 @@
         \draw[flow] (recall)--(reflect);
     \end{tikzpicture}
     \vspace{5mm}
-    \aside{TEMPR 负责 retain／recall；CARA 负责 reflect。Reflect 的新证据可触发 Opinion 更新。}
-    \note{约65秒。图中是系统主线。Retain把对话和文档转为结构化事实，标注类别、时间和实体关系；Recall根据问题与预算找回候选记忆；Reflect结合检索结果和行为档案生成回答，并能依据新证据更新Opinion。论文把前两步放在TEMPR组件中，把反思放在CARA中。下方说明强调新证据可以进入意见更新过程，但不代表每条记忆都必然改变已有意见。}
+    \par\vspace{3mm}TEMPR 负责写入和检索；CARA 负责反思，并依据新证据更新意见。\par
+    \note{约65秒。图中是系统主线。Retain把对话和文档转为结构化事实，标注类别、时间和实体关系；Recall根据问题与预算找回候选记忆；Reflect结合检索结果和行为档案生成回答，并能依据新证据更新Opinion。论文把前两步放在TEMPR组件中，把反思放在CARA中。新增证据与已有意见关联后，系统据此调整意见置信度。}
 \end{frame}
 
-\source{Hindsight, §3.2、§4.1；PDF pp.3、5（印刷页277、279）}
-\begin{frame}{Recall 将四种检索并行，再融合排序}
+% 来源：Hindsight, §3.2、§4.1；PDF pp.3、5（印刷页277、279）
+\begin{frame}{四路检索与融合排序}
     \[
         \{\text{向量},\ \text{关键词},\ \text{图遍历},\ \text{时间过滤}\}
         \ \longrightarrow\ \text{RRF}\ \longrightarrow\ \text{重排与预算裁剪}
@@ -71,13 +71,13 @@
         图遍历 & 沿实体、时间、因果关系扩展，通常限制在 2--3 跳。 \\
         时间过滤 & 按问题中的日期或时间区间匹配事件。 \\
         \bottomrule
-    \end{tabularx}
-    \vspace{3mm}
+    \end{tabularx}\par
+    \vspace{4mm}
     \key{RRF 合并各通道排序，cross-encoder 再重排；token 预算限制返回上下文。}
-    \note{约55秒。四个通道互补：向量找语义相似，BM25找关键词，图遍历补实体和因果关联，时间过滤处理日期范围。它们并行运行后由RRF融合，再用cross-encoder重排。返回结果还受到token预算约束。论文称，对于一万条记忆，单次recall在不含回答模型推理时低于200毫秒；这个是作者报告的系统延迟，不是本组实测。}
+    \note{约55秒。四个通道互补：向量找语义相似，BM25找关键词，图遍历补实体和因果关联，时间过滤处理日期范围。它们并行运行后由RRF融合，再用cross-encoder重排。返回结果还受到token预算约束。论文称，对于一万条记忆，单次recall在不含回答模型推理时低于200毫秒。}
 \end{frame}
 
-\source{Hindsight, §3.2--3.3、§6.4；PDF pp.3--4、7（印刷页277--278、281）}
+% 来源：Hindsight, §3.2--3.3、§6.4；PDF pp.3--4、7（印刷页277--278、281）
 \begin{frame}{Reflect 让意见随证据变化}
     \begin{columns}[T,onlytextwidth]
         \column{.47\textwidth}
@@ -97,12 +97,12 @@
     \end{columns}
     \vspace{3mm}
     \takeaway{新证据削弱先前的偏好判断；相关世界事实仍保留。}
-    \aside{这是论文的定性案例，不是独立用户研究。}
+
     \note{约60秒。行为档案有怀疑、字面和共情三个维度，范围都是一到五，它们用于调节回答风格。意见有置信度，也能连接支持或反驳它的证据。论文的定性案例中，用户先说开始用Rust改造支付服务，之后咨询下一季度计划，后来又说Rust令人沮丧、怀念Go。新信息使对Rust偏好的观察由稳定转向减弱，但项目使用Rust这一事实仍然保留。}
 \end{frame}
 
-\source{Hindsight, §6.1--6.3、表2；PDF pp.6--7（印刷页280--281）}
-\begin{frame}{作者报告的结果有提升，也有比较边界}
+% 来源：Hindsight, §6.1--6.3、表2；PDF pp.6--7（印刷页280--281）
+\begin{frame}{长期对话问答结果}
     \begin{columns}[T,onlytextwidth]
         \column{.49\textwidth}
         \textbf{LongMemEval S，准确率（\%）}\par\vspace{2mm}
@@ -129,13 +129,13 @@
         \end{tabular}
     \end{columns}
     \vspace{3mm}
-    \key{20B 在 LongMemEval 比全文 GPT-4o 高 23.4 个百分点；表中也有更高的其他系统分数。}
-    \aside{LongMemEval S 为 500 题；两项基准的模型和系统条件并非完全一致。}
-    \note{约90秒。论文在LongMemEval S上报告20B配置83.6\%，相对全文GPT-4o的60.2\%高23.4个百分点；120B和Gemini-3分别达到89.0\%和91.4\%。LoCoMo上的20B、120B和Gemini-3分别是83.2\%、85.7\%和89.6\%。不过表里Supermemory的85.2\%高于Hindsight的20B，Backboard的90\%也略高于Hindsight Gemini-3。不同系统的模型和实验条件不完全一致，所以这些数字可以说明报告结果和比较边界，不能当作同设置下的胜负结论。}
+    \key{20B 在 LongMemEval 比全文 GPT-4o 高 23.4 个百分点。}
+    \par\vspace{3mm}LongMemEval S 共 500 题；表中各系统使用的模型配置不同。\par
+    \note{约90秒。论文在LongMemEval S上报告20B配置83.6\%，相对全文GPT-4o的60.2\%高23.4个百分点；120B和Gemini-3分别达到89.0\%和91.4\%。LoCoMo上的20B、120B和Gemini-3分别是83.2\%、85.7\%和89.6\%。不过表里Supermemory的85.2\%高于Hindsight的20B，Backboard的90\%也略高于Hindsight Gemini-3。表中包含不同模型配置，结果同时受到记忆系统和模型能力的影响。}
 \end{frame}
 
-\source{Hindsight, Limitations、Ethics；PDF p.8（印刷页282），§6.2及附录D}
-\begin{frame}{局限与证据边界}
+% 来源：Hindsight, Limitations、Ethics；PDF p.8（印刷页282），§6.2及附录D
+\begin{frame}{系统局限与评测范围}
     \begin{columns}[T,onlytextwidth]
         \column{.48\textwidth}
         \textbf{系统局限}\par\vspace{3mm}
@@ -145,25 +145,24 @@
             \item 持续保存个人信息，且无内置 PII 自动脱敏。
         \end{itemize}
         \column{.48\textwidth}
-        \textbf{报告证据需谨慎读}\par\vspace{3mm}
+        \textbf{评测记录的缺口}\par\vspace{3mm}
         \begin{itemize}\setlength{\itemsep}{3mm}
             \item 完整评估指向另一篇工作，本文引用编号仍是占位符。
             \item 正文与附录的部分类别基线数值不一致。
-            \item 本文提供的是系统演示与结果摘要，不是本组复现。
         \end{itemize}
     \end{columns}
-    \note{约60秒。作者自己指出了英文评测范围、模型抽取错误传播、意见质量缺少用户研究、隐私和脱敏等问题。证据方面，本文将完整评估指向另一篇2025年工作，但参考文献中的arXiv编号仍为占位符；另外，正文与附录的部分分类基线数字不同，文中没有充分解释。我的理解是，架构机制和作者报告的成绩可以作为阅读证据，但复述成绩时要保留它们的出处、条件和不确定之处。}
+    \note{约60秒。作者自己指出了英文评测范围、模型抽取错误传播、意见质量缺少用户研究、隐私和脱敏等问题。证据方面，本文将完整评估指向另一篇2025年工作，但参考文献中的arXiv编号仍为占位符；另外，正文与附录的部分分类基线数字不同，文中没有充分解释。这些缺口使部分分类成绩难以复核，复现时需要补齐数据与评价设置。}
 \end{frame}
 
-\source{阅读启发：据 Hindsight, §3、§6；PDF pp.3--8}
-\begin{frame}{对长上下文结构化记忆课设的启发}
+% 来源：阅读启发：据 Hindsight, §3、§6；PDF pp.3--8
+\begin{frame}{对课设的启发}
     \begin{itemize}\setlength{\itemsep}{5mm}
         \item 分开事实、经历、实体摘要和意见，检查来源与置信度。
         \item 在固定 token 预算下，比较语义检索与时间／实体关联。
         \item 用消融区分各通道收益，并同步记录准确率、噪声和成本。
     \end{itemize}
     \vspace{4mm}
-    \takeaway{可借鉴的是可检查的记忆类型与操作；迁移效果仍要用同一条件验证。}
-    \aside{以上是个人阅读推导的实验问题，不是已经完成的本组实验或团队共识。}
-    \note{约35秒。对我们的课设，值得转化为实验问题的是：记忆类型分开是否减少事实和意见混淆，时间与实体图能否补足向量检索，以及不同通道在固定预算下各有什么贡献。后续需要控制模型、数据和预算，并同时看准确率、错误记忆和成本。以上是我根据论文提出的设想，不代表我们已经做过这些实验，也不预设小组结论。}
+    \takeaway{按记忆类型和检索通道设计对照，观察准确率与成本变化。}
+
+    \note{约35秒。对我们的课设，值得转化为实验问题的是：记忆类型分开是否减少事实和意见混淆，时间与实体图能否补足向量检索，以及不同通道在固定预算下各有什么贡献。后续需要控制模型、数据和预算，并同时看准确率、错误记忆和成本。可以先从时间过滤和实体关联的单独消融开始。}
 \end{frame}

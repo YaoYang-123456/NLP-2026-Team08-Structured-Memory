@@ -21,18 +21,18 @@
 | --- | --- | --- | --- |
 | StructMem | hycx233 | #15 报告、12 页模块和备注 | 尚无本次录制及实测时长登记 |
 | Hindsight | onlysonder | #60 报告、9 页模块和[8 分钟讲稿](scripts/02-hindsight-8min.md) | 待本人过稿、实际计时及视频交付 |
-| Semantic XPath | oioioi-521 | #57 报告、13 页模块、[个人指南](semantic-xpath-reading-guide.md)；已修复个人 PDF 中文映射 | **本次视频未交付**；8 分 55 秒为旧录制，待 F 核看当前幻灯片衔接、风格和音画后决定能否复用；[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 保持开放 |
+| Semantic XPath | oioioi-521 | #57 报告、12 页模块、[个人指南](semantic-xpath-reading-guide.md)；已修复个人 PDF 中文映射 | **本次视频未交付**；8 分 55 秒为旧录制，待 F 核看当前幻灯片衔接、风格和音画后决定能否复用；[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 保持开放 |
 | HyMEM | lanshuheng9-oss | #54 正文、#61 个人材料、#64 中文 PDF 修复均已合入；7 页模块，[个人指南](hymem-reading-guide.md) | #62 已结项；[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人过稿、计时和录制 |
-| MetaMem | YaoYang-123456 | #40 正文及 #63 修订已合入；8 页模块、规则示例、[完整讲稿与交接](metamem-handoff.md) | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保持开放；7 分 59 秒为估时，不是本人排练记录 |
+| MetaMem | YaoYang-123456 | #40 正文及 #63 修订已合入；8 页模块、规则示例、[完整讲稿与交接](metamem-handoff.md) | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保持开放；讲稿已修订，待本人重新计时 |
 | Text2Mem | ngocnamd93-spec | #59 报告、8 页模块、[阅读与讲稿指南](text2mem-reading-guide.md)；已修复个人 PDF 中文映射 | [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 保留本人过稿、计时及录制；480 秒为计划 |
 
 ### 当前整合预览与检查
 
-- [整份报告 PDF](report-preview.pdf)：**22 页**；[整份幻灯片 PDF](slides/preview.pdf)：**73 页，其中正文 69 页、备用 4 页**。这是 10 月 27 日共同部分补齐后的审核版，仍非最终提交版。
+- [整份报告 PDF](report-preview.pdf)：**22 页**；[整份幻灯片 PDF](slides/preview.pdf)：**68 页，已移除备用页和独立参考资料页**。这是 10 月 27 日共同部分补齐、全组 slides 文字与样式统一后的审核版，仍非最终提交版。
 - 摘要与背景说明六篇的阅读范围；综合章节比较表示、机制、成立条件、误差与成本，以行程变更案例解释关系，并结合既定 StructMem 课设范围形成总结。原文数字、自拟案例和后续设计分别标明。
 - 开场 3 页、综合 9 页均已填写逐页备注，并提供[独立讲稿](scripts/00-opening-and-synthesis.md)。计划采用 **2＋6×8＋10＝60 分钟**；这不是实际排练记录。
 - latexmk / XeLaTeX 编译成功，无 Overfull、Underfull hbox、缺字或未定义引用；报告保留 3 条 Underfull vbox 和数学字体尺寸替代提示，已检查版式。两份 PDF 全页通过无外部 CMap 的 PDF.js 中文提取与渲染，补映射前后 PDFium 画面一致。
-- 本轮页码、内容范围和实际验证见[共同部分检查记录](shared-sections-check-20261027.md)，当前文件大小与 SHA-256 见[整合清单](integration-artifacts.json)。[前一轮整合检查](integration-check-20261027.md)保留为 18 / 71 页版本的历史记录。
+- 共同正文整理见[共同部分检查记录](shared-sections-check-20261027.md)，最新 slides 页码与验证见[演示修订检查](slides/style-check-20261027.md)；文件大小与 SHA-256 见[整合清单](integration-artifacts.json)及[演示清单](slides/style-artifacts.json)。[前一轮整合检查](integration-check-20261027.md)保留为 18 / 71 页版本的历史记录。
 
 ### 接下来的交付
 
@@ -49,7 +49,7 @@
 | --- | --- | --- | --- |
 | StructMem | [共享章节](sections/01-structmem.tex) | [共享模块](slides/sections/01-structmem.tex) | 逐页 Beamer 备注 |
 | Hindsight | [共享章节](sections/02-hindsight.tex) | [个人 PDF](slides/hindsight-preview.pdf) | [8 分钟讲稿](scripts/02-hindsight-8min.md) |
-| Semantic XPath | [4 页 PDF](semantic-xpath-preview.pdf) | [13 页 PDF](slides/semantic-xpath-preview.pdf) | [个人指南](semantic-xpath-reading-guide.md) |
+| Semantic XPath | [4 页 PDF](semantic-xpath-preview.pdf) | [12 页 PDF](slides/semantic-xpath-preview.pdf) | [个人指南](semantic-xpath-reading-guide.md) |
 | HyMEM | [2 页 PDF](hymem-reading-report.pdf) | [7 页 PDF](slides/hymem-preview.pdf) | [个人指南](hymem-reading-guide.md) |
 | MetaMem | [2 页 PDF](metamem-reading-report.pdf) | [8 页 PDF](slides/metamem-preview.pdf) | [交接与完整讲稿](metamem-handoff.md) |
 | Text2Mem | [3 页 PDF](text2mem-report-preview.pdf) | [8 页 PDF](slides/text2mem-preview.pdf) | [个人指南](text2mem-reading-guide.md) |

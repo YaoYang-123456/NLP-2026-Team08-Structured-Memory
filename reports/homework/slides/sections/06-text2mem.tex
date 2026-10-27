@@ -1,8 +1,8 @@
-\source{Text2Mem，PDF第1页；Findings of ACL 2026，2105--2119}
+% 来源：Text2Mem，PDF第1页；Findings of ACL 2026，2105--2119
 \papersection{Text2Mem}{统一的记忆操作语言与状态验证}{ngocnamd93-spec}
 
-\source{原论文PDF第1--3页，图1；动机案例为教学概述}
-\begin{frame}{记忆控制需要说明“对哪些记录做什么”}
+% 来源：原论文PDF第1--3页，图1；动机案例为教学概述
+\begin{frame}{记忆操作的目标、动作与效果}
     \begin{block}{用户说：“暂时不要再提午餐。”}
         降低显著性、设置到期规则与删除记录，会产生不同状态。
     \end{block}
@@ -12,12 +12,12 @@
         \item 输入是自然语言请求与上下文；输出是操作Schema或有序操作列表。
         \item Text2Mem提供操作规范与基准，主实验在SQL/SQLite参考后端进行。
     \end{itemize}
-    \takeaway{把意图显式表达，再核验实际状态变化}
-    \note{约50秒。用暂时不要提午餐说明降权不等于删除。接着区分检索任务与控制任务：前者找到相关信息，后者决定该怎样改变记忆。说明本节是作者论文阅读，不是本组新实验；跨真实后端的普适效果尚未被主实验验证。}
+    \takeaway{明确目标与动作，检查状态变化}
+    \note{约50秒。用户说暂时不要再提午餐，可能希望降低优先级、设置到期时间，或者删除记录，这些动作会产生不同状态。检索负责找回信息，记忆操作还要明确改变哪些记录、怎样改变。Text2Mem用结构化语言表达这些要求，并在SQL参考后端检查执行效果。}
 \end{frame}
 
-\source{原论文PDF第4页表1、第4--5页§3.2；附录A第11页}
-\begin{frame}{十二个操作由五字段契约组织}
+% 来源：原论文PDF第4页表1、第4--5页§3.2；附录A第11页
+\begin{frame}{十二种操作与五个字段}
     \small
     \begin{tabularx}{\linewidth}{@{}p{20mm}Y@{}}
         \toprule
@@ -33,13 +33,13 @@
     \key{stage / op / target / args / meta}\par
     \vspace{2mm}
     阶段、动作、目标、参数、执行上下文；各操作的必填条件不同。
-    \aside{需要定位已有条目时，target选择ids、filter、search或all之一。\par
-    Demote降权或归档而不删除；Delete与Expire另有语义。}
-    \note{约70秒。不逐项念十二个名称，按一加九加二介绍生命周期。重点对比Demote、Delete与Expire，再说明Encode不是单纯算向量。五字段把动作和范围写清，创建新记忆不一定需要target。字段合法性只是操作契约，不能保证选对条目。}
+    \par\vspace{3mm}target 支持 ids、filter、search 或 all。\par
+    Demote调整优先级，Delete删除记录，Expire设置到期规则。\par
+    \note{约70秒。十二种操作按编码、存储和检索三个阶段组织。Encode写入新记忆，存储阶段包含更新、合并、拆分、删除等动作，检索阶段包含Retrieve和Summarize。五个字段分别说明阶段、动作、目标、参数和上下文。其中Demote降低优先级，Delete删除记录，Expire设置到期规则。定位已有条目可以按ID、条件或搜索结果选择。}
 \end{frame}
 
-\source{依据原论文PDF第3页图2、第5页§3.3、第6页图3重绘；非运行记录}
-\begin{frame}{校验、解析与适配各自解决一层问题}
+% 来源：依据原论文PDF第3页图2、第5页§3.3、第6页图3重绘；非运行记录
+\begin{frame}{从操作生成到状态核验}
     \centering
     \begin{tikzpicture}[node distance=5mm and 8mm,>=Latex,
         box/.style={draw=accent,rounded corners=1mm,fill=accent!5,
@@ -58,12 +58,12 @@
     \end{tikzpicture}
     \vspace{3mm}\par
     \key{格式合法、动作可执行、效果符合意图，需要分别判断}
-    \aside{锁定与到期等规则可提前检查；复杂目标理解仍依赖模型。}
-    \note{约65秒。沿图先走上排再走下排。Validator检查是否合法，Parser统一内部类型与参数，Adapter负责后端实现。ExecutionResult记录影响了什么，但记录变化不等于证明变化正确，最后还要检查SQL断言。真实后端的能力差异不能被中间语言自动消除。}
+    \par\vspace{3mm}锁定、到期与字段约束由校验器检查；目标理解依赖模型。\par
+    \note{约65秒。模型先生成操作，Validator检查结构和跨字段约束，Parser统一类型与参数，Adapter把操作映射到具体后端。ExecutionResult记录影响的条目和状态，最后用SQL断言核对预期效果。格式检查、执行检查和状态检查各有分工；适配新后端时，需要实现相应动作及约束。}
 \end{frame}
 
-\source{改写自原论文PDF第12页附录B.1.1；本页是未执行的教学案例}
-\begin{frame}{案例：提高进度笔记权重，也要检查无关记录}
+% 来源：改写自原论文PDF第12页附录B.1.1；本页是未执行的教学案例
+\begin{frame}{操作示例：提高进度笔记的权重}
     \small
     \begin{block}{请求与已明确的目标}
         “提高本周课设进度笔记的重要性，其他记录不变。”目标ID：17。
@@ -75,9 +75,7 @@
         \texttt{op: Promote}\par
         \texttt{target: ids=[17]}\par
         \texttt{args: weight=0.9}\par
-        \vspace{3mm}
-        \color{muted}字段摘要，省略非必要项；\par
-        不是经过执行的JSON结果。
+
         \column{.51\textwidth}
         \key{执行后检查}\par\vspace{2mm}
         \begin{enumerate}\setlength{\itemsep}{2.5mm}
@@ -88,11 +86,11 @@
         \vspace{2mm}
         若最初选错目标，合法操作也会改错记录。
     \end{columns}
-    \note{约70秒。说明这里假设已经明确目标17，避免把语义检索成功当作前提已被验证。Promote改变显著性，案例的0.9是教学参数，不是论文最优值。检查目标权重之外，还应看内容和无关条目是否误改；这些补充断言是本节阅读建议，不声称原文已逐项实现或我们已运行成功。}
+    \note{约70秒。这个示例把目标设为编号17的课设进度笔记，要求提高权重，并保持其他记录不变。Promote操作把示例权重设为0.9。执行后有三项检查：目标权重达到要求，目标内容没有改变，其他记录也保持原样。如果目标在最初就选错了，后续仍可能执行成功，因此目标定位也要纳入检查。}
 \end{frame}
 
-\source{原论文PDF第6--8页§4.1--4.3；EMR公式在第7页}
-\begin{frame}{评测分开衡量结构、执行与状态效果}
+% 来源：原论文PDF第6--8页§4.1--4.3；EMR公式在第7页
+\begin{frame}{结构、执行与状态评价}
     \small
     \begin{tabularx}{\linewidth}{@{}p{22mm}Y@{}}
         \toprule
@@ -107,13 +105,12 @@
     \[
         \mathrm{EMR}=\frac{\text{满足的状态断言数}}{\text{期望状态断言总数}}
     \]
-    \aside{作者比较五个模型，中/英文、直接/间接指令、单操作/工作流。\par
-    EMR不是整任务全通过率，也不是LoCoMo问答准确率。}
-    \note{约60秒。基准先用前置操作建立记忆初态，再让模型生成Schema并执行。解释三个指标的分母不同，特别是EMR按断言计数，一个任务可以包含多条断言。因此不能把ESR减EMR当作失败任务比例，也不能拿这里的EMR和我们StructMem的问答准确率比较。正文未明确的样本总数不补造。}
+    \par\vspace{3mm}评测覆盖五个模型，以及中英文、直接／间接指令、单操作／工作流。\par
+    \note{约60秒。基准先建立记忆初态，再让模型生成操作并执行。SMA比较操作结构，ESR统计能够通过校验并正常执行的操作，EMR统计满足的状态断言。一个操作可能对应多条断言，因此ESR和EMR的分母不同。用这三项指标，可以分别观察表达、执行和状态效果中的问题。}
 \end{frame}
 
-\source{原论文PDF第8页表2 Avg列、表3；全部为作者结果}
-\begin{frame}{操作容易运行，预期状态仍难实现}
+% 来源：原论文PDF第8页表2 Avg列、表3；全部为作者结果
+\begin{frame}{执行成功率与状态匹配结果}
     \small
     \begin{tabularx}{\linewidth}{@{}Yrr@{}}
         \toprule
@@ -129,13 +126,13 @@
     \vspace{3mm}
     \normalsize\key{GPT-5工作流：ESR 100\%，EMR 11.90\%}\par
     \vspace{2mm}\small
-    原表Avg直接转为百分数，不重算操作均值。\par
-    \aside{Split的EMR在五个模型中均为0，仅限该基准。论文未做组件移除消融。}
-    \note{约90秒。选GPT-5与Claude对比，最高ESR不等于最高EMR。工作流的100和11.90说明无运行错误也可以错过大量状态要求，分母不同，不能简单相减。补充Split困难但不泛化为模型永远不会拆分。表2和表3是模型与任务分组比较，没有移除Validator或Parser的消融，不能据它们断言单个组件的因果收益。}
+
+    \par\vspace{3mm}该基准中，五个模型在 Split 操作上的 EMR 均为0。\par
+    \note{约90秒。五个模型的ESR都接近百分之九十五，EMR则在百分之二十五到三十一左右。GPT-5的ESR最高，Claude的EMR最高。工作流中，GPT-5的操作全部可以执行，但只满足百分之十一点九的状态断言。Split也是困难项，五个模型在该基准中的EMR都为零。这些结果说明，多步执行和状态约束仍是主要问题。}
 \end{frame}
 
-\source{原论文PDF第9页Limitations、第15页附录F；课设联系为阅读分析}
-\begin{frame}{对本组的启发是明确契约，再核对效果}
+% 来源：原论文PDF第9页Limitations、第15页附录F；课设联系为阅读分析
+\begin{frame}{方法局限与课设启发}
     \begin{columns}[T,onlytextwidth]
         \column{.47\textwidth}
         \key{论文价值与局限}\par\vspace{2mm}
@@ -150,10 +147,10 @@
         \small
         \begin{itemize}\setlength{\itemsep}{2.5mm}
             \item StructMem研究事件记忆与问答，任务和指标不同。
-            \item A的字段白名单与哈希属于数据校验，不能称Text2Mem复现。
+            \item 在数据校验之外，增加操作后的状态检查。
             \item 借鉴显式输入、影响范围与非目标状态检查。
         \end{itemize}
     \end{columns}
-    \takeaway{系统能调用成功，还要证明它做对了事}
-    \note{约60秒。先说统一规范和两层评测的价值，再保留SQL参考环境与未验证长期智能体效果的限制。我们的A数据工作确实包含白名单和版本检查，但并未实现十二操作后端。可借鉴的是检查思路，不增加团队必做实验。最后把问题交给共同总结：组织、检索、利用和操作各解决哪一层，哪些效果还需独立验证。}
+    \takeaway{按目标记录与非目标记录分别核验操作效果}
+    \note{约60秒。Text2Mem把动作、范围和生命周期参数写成明确的操作格式，再分别评价规划与状态效果。当前证据主要来自SQL参考环境，复杂语义、其他后端和长期任务仍需进一步研究。对我们的课设，可在数据校验之外增加操作后的状态检查，尤其关注目标范围和非目标记录。下面进入共同总结，比较六篇分别解决了哪些问题。}
 \end{frame}

@@ -1,9 +1,9 @@
-\source{Zhu et al., HyMEM, Findings ACL 2026；PDF 第1页（印刷页11287）}
+% 来源：Zhu et al., HyMEM, Findings ACL 2026；PDF 第1页（印刷页11287）
 \papersection{HyMEM}{电脑操作智能体的混合自演化记忆}{lanshuheng9-oss}
 
-\source{HyMEM，PDF 第1--3页，表1；下例为机制说明}
-\begin{frame}{问题：经验既要保留细节，也要跟上任务变化}
-    \large\key{截图与动作难以只靠文本总结；一次检索也会过时。}\par
+% 来源：HyMEM，PDF 第1--3页，表1；下例为机制说明
+\begin{frame}{网页操作中的经验表示与更新}
+    \large\key{网页操作需要视觉细节，任务推进也会改变所需经验。}\par
     \vspace{5mm}\normalsize
     \begin{itemize}\setlength{\itemsep}{4mm}
         \item 输入：任务描述、当前截图、历史成功操作轨迹。
@@ -11,11 +11,11 @@
         \item 例：搜索商品转入结账后，保留预算，更新操作指导。
     \end{itemize}
     \takeaway{混合表示解决“存什么”；自演化解决“何时更新”。}
-    \note{约50秒。研究对象是网页操作智能体，评价任务成功率。搜索到结账是机制说明，不是本组实验。困难一是视觉细节难以完整文字化，二是任务状态变化使先前经验不再相关。}
+    \note{约50秒。HyMEM面向网页操作智能体。任务输入包含描述、当前截图和历史成功轨迹，输出用于指导下一步动作。文本摘要容易遗漏界面细节；任务从搜索商品进入结账时，所需指导也会变化。预算等长期约束需要保留，当前操作经验则需要刷新。因此，方法同时研究经验怎样表示，以及怎样随任务更新。}
 \end{frame}
 
-\source{HyMEM，PDF 第3--5页，式(1)、图1、Structured Retrieval}
-\begin{frame}{混合记忆：策略指导规划，连续表示保留细节}
+% 来源：HyMEM，PDF 第3--5页，式(1)、图1、Structured Retrieval
+\begin{frame}{混合记忆：策略与轨迹表示}
     \begin{columns}[T,onlytextwidth]
         \column{.52\textwidth}
         \centering
@@ -34,13 +34,13 @@
             \item $A_i$：动作、界面及领域属性。
             \item $m_i$：8个连续轨迹嵌入。
         \end{itemize}
-        \aside{CLIP检索索引与连续记忆是不同表示。}
+        \par\vspace{3mm}CLIP 用于检索；连续轨迹嵌入供智能体使用。\par
     \end{columns}
-    \note{约85秒。从任务与截图检索种子，再沿图关联扩展，最后生成文本指导并加入连续嵌入。5加5是主实验配置，不是理论最优。三元组描述经验内容，实际图存在策略、属性与轨迹的关联。CLIP负责找经验，CoMEM式编码负责让智能体使用轨迹细节。}
+    \note{约85秒。系统根据任务和截图检索五条种子，再沿图扩展五条邻居，形成当前需要的经验。每条经验包含高层策略、动作与界面属性，以及八个连续轨迹嵌入。高层策略帮助规划，连续表示保留截图和动作中的细节。CLIP用于检索相似经验，轨迹编码器生成供智能体使用的连续表示。两种表示共同进入决策过程。}
 \end{frame}
 
-\source{HyMEM，PDF 第4--5页，Memory Update、Working Memory Refresh；图1}
-\begin{frame}{自演化：长期图与当前工作记忆分别更新}
+% 来源：HyMEM，PDF 第4--5页，Memory Update、Working Memory Refresh；图1
+\begin{frame}{长期经验与工作记忆的更新}
     \begin{columns}[T,onlytextwidth]
         \column{.47\textwidth}
         \key{全局：跨任务积累经验}\par\vspace{3mm}
@@ -49,7 +49,7 @@
             \item MERGE：同一策略的互补证据。
             \item REPLACE：同条件下更优的轨迹。
         \end{itemize}
-        \aside{先检索候选，再由视觉语言模型判断信息增量。}
+        \par\vspace{3mm}先检索候选，再判断新轨迹提供了哪些信息。\par
         \column{.47\textwidth}
         \key{局部：跟随当前任务阶段}\par\vspace{3mm}
         \begin{enumerate}\setlength{\itemsep}{3mm}
@@ -59,11 +59,11 @@
         \end{enumerate}
     \end{columns}
     \takeaway{全局改变长期经验库；局部更新当前执行上下文。}
-    \note{约85秒。相似不等于重复：新轨迹可能是补充证据，也可能是更优执行。局部在每次动作后判断是否换阶段，并非无条件重建全部记忆。两种更新都依赖模型判断，不能保证绝无误合并或误刷新。}
+    \note{约85秒。更新分为全局和局部。全局把新的成功轨迹与长期经验比较：新策略可以添加，互补信息可以合并，同条件下更优的轨迹可以替换旧轨迹。局部则关注当前任务阶段，在动作后比较观测，判断是否需要保留目标、移除过时指导并重新检索。两层更新都依赖模型判断，误合并和误刷新是需要检查的错误类型。}
 \end{frame}
 
-\source{HyMEM，PDF 第5--6页，\S4.1；第7页，表2表注}
-\begin{frame}{实验：网页操作成功率，包含记忆编码器训练}
+% 来源：HyMEM，PDF 第5--6页，\S4.1；第7页，表2表注
+\begin{frame}{实验设置与编码器训练}
     \begin{tabularx}{\linewidth}{@{}p{25mm}Y@{}}
         \toprule
         项目 & 作者实验条件 \\
@@ -75,13 +75,13 @@
         评价 & 任务成功率；Overall按可用领域取平均 \\
         \bottomrule
     \end{tabularx}
-    \aside{前两个基准根据任务和截图轨迹判分；MMInA比较最终回答与标准答案。}
-    \note{约65秒。记忆来自GUIAct、Mind2Web训练集及作者生成的成功轨迹。训练记忆编码器相关参数，不只是往提示词加入文本。评价包含模型判分，图与定位系统也构成实验条件，不能直接推广到纯文本长期对话。}
+    \par\vspace{3mm}前两个基准评价截图与操作轨迹；MMInA评价最终回答。\par
+    \note{约65秒。实验覆盖三个网页操作基准，记忆来自GUIAct、Mind2Web训练集及作者生成的成功轨迹。连续记忆编码器使用Q-Former和LoRA训练，约百分之一点二的参数可训练。评价采用任务成功率：前两个基准根据任务和截图轨迹判分，MMInA比较最终回答。记忆图、视觉输入、训练和动作接口共同构成这组实验条件。}
 \end{frame}
 
-\source{HyMEM，PDF 第7页，表2；图2为不同分析设置，不与本表混合}
-\begin{frame}{结果：混合记忆有收益，单一记忆并非总有帮助}
-    \textbf{作者表2：Overall任务成功率（\%）}\par\vspace{3mm}
+% 来源：HyMEM，PDF 第7页，表2；图2为不同分析设置，不与本表混合
+\begin{frame}{混合记忆的任务成功率}
+    \textbf{任务成功率（\%），按可用领域取平均}\par\vspace{3mm}
     \begin{tabularx}{\linewidth}{@{}Y*{4}{>{\centering\arraybackslash}p{17mm}}@{}}
         \toprule
         基础模型 & 无记忆 & 离散 & 连续 & HyMEM \\
@@ -93,29 +93,29 @@
     \end{tabularx}\par
     \vspace{4mm}
     \key{12.5\%到35.0\%：提高22.5个百分点。}\par\vspace{2mm}
-    Qwen3的离散记忆低于无记忆；总体提升不代表每个领域都改善。
-    \aside{图2另支持全局演化与局部刷新的作用；两种收益不能直接相加。以上均非本组结果。}
-    \note{约90秒。先看Qwen2.5这一行，两种单一记忆各有帮助，混合更高。再看Qwen3离散21.3低于基线21.9，说明加记忆不必然提升。22.5是百分点，相对增幅为180\%。图2单独考察静态与演化，Amazon全局48.8到61.0，局部48.8到56.1；两项不能相加，也不能套用到全部任务。}
+    Qwen3 的离散记忆为21.3\%，低于无记忆时的21.9\%。
+
+    \note{约90秒。Qwen2.5这一行中，无记忆时成功率为百分之十二点五，混合记忆达到百分之三十五，提高二十二点五个百分点。Qwen3的离散记忆略低于无记忆，连续记忆与混合记忆则更高。论文还分别分析全局演化和局部刷新：Amazon任务中，全局配置从四十八点八提高到六十一，局部配置提高到五十六点一。这是两组独立对照，可以分别观察两层维护的作用。}
 \end{frame}
 
-\source{HyMEM，PDF 第3--7页；右侧为本节阅读分析与待验证假设}
-\begin{frame}{阅读判断：借鉴组织机制，迁移收益仍需验证}
+% 来源：HyMEM，PDF 第3--7页；右侧为本节阅读分析与待验证假设
+\begin{frame}{方法总结与课设启发}
     \begin{columns}[T,onlytextwidth]
         \column{.47\textwidth}
         \textbf{贡献与局限}\par\vspace{3mm}
         \begin{itemize}\setlength{\itemsep}{3mm}
             \item 离散策略与视觉细节互补。
-            \item 长期积累与任务内刷新形成闭环。
+            \item 跨任务积累经验，任务内刷新上下文。
             \item 依赖训练、标签与模型判断，存在额外调用成本。
         \end{itemize}
         \column{.47\textwidth}
-        \textbf{与本组StructMem D的联系}\par\vspace{3mm}
+        \textbf{对事件记忆检索的启发}\par\vspace{3mm}
         \begin{itemize}\setlength{\itemsep}{3mm}
             \item 可研究种子检索与结构扩展的分工。
             \item 固定预算，比较覆盖、噪声及成本。
-            \item 文本问答与截图操作口径不同，不能直接排名。
+            \item 区分文本证据检索与多模态轨迹使用。
         \end{itemize}
     \end{columns}
-    \aside{本组尚未复现HyMEM；迁移建议不是团队共识或已完成实验。}
-    \note{约75秒。创新在于记忆组织与使用闭环，不能只记住35这个数字，忽略数据、训练和动作接口。我们的D部分做事件记忆综合与检索，可以提出固定预算下结构扩展是否改善覆盖的问题，但需要另做实验。交接语：以上是HyMEM的个人阅读分析，接下来进入下一篇论文。}
+
+    \note{约75秒。HyMEM把可复用策略与视觉轨迹结合，并把跨任务积累和任务内刷新分开。代价是额外训练、轨迹数据和模型调用。对事件记忆检索，可借鉴种子检索与结构扩展的分工，在固定预算下比较证据覆盖、噪声和成本。这样可以分析哪些信息来自直接命中，哪些来自结构关联。下面介绍关注事实使用的MetaMem。}
 \end{frame}
