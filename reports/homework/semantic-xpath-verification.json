@@ -33,8 +33,8 @@
     },
     {
       "path": "reports/homework/semantic-xpath-reading-guide.md",
-      "bytes": 6328,
-      "sha256": "d04d0cf43591c41e4dd41de17b13195799a1c86da9ea71d862287b66378ef179"
+      "bytes": 6305,
+      "sha256": "27cc3a4366fc975ebf8c611585b6e4f25fe5ffeea3407d56a8b9ed56f3c631f8"
     },
     {
       "path": "reports/homework/semantic-xpath-speaker-notes.md",
@@ -54,12 +54,6 @@
       "bytes": 339352,
       "sha256": "93f4e2c139543aa4ea05aacdf1e64869e375eafe171a9923111abae8c04385d1",
       "pages": 13
-    },
-    {
-      "path": "reports/homework/slides/preview.pdf",
-      "bytes": 678051,
-      "sha256": "00696646b0430e3304db07fde1fc69214291783ecc6c583fddc27ef69bf1f169",
-      "pages": 67
     }
   ],
   "build": {
@@ -140,5 +134,12 @@
     "pdf_fix": "Existing scripts/fix_hymem_pdf_unicode.py from main 8a26505; only missing Adobe-GB1 Identity-H ToUnicode mappings added",
     "pdfjs_without_external_cmap": "passed all personal pages; Chinese text and render verified",
     "pdfium_pixel_equality": "all personal pages identical before and after ToUnicode mapping"
-  }
+  },
+  "historical_shared_preview_20261026": {
+    "path": "reports/homework/slides/preview.pdf",
+    "bytes": 678051,
+    "sha256": "00696646b0430e3304db07fde1fc69214291783ecc6c583fddc27ef69bf1f169",
+    "pages": 67
+  },
+  "current_shared_preview_manifest": "reports/homework/integration-artifacts.json"
 }

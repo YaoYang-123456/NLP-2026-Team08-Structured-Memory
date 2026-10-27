@@ -132,18 +132,19 @@
     },
     {
       "path": "reports/homework/scripts/05-metamem-8min.md",
-      "bytes": 8066,
-      "sha256": "b7989d5db82ced0315cf456903c5c28c7ed3d9e34d7742bcd793157265b532d9"
+      "bytes": 7971,
+      "sha256": "10c5555e61cf2eb4c875f8cec19a8bbe3e2d2d5be66fe63443634a5f0ed019a8"
     },
     {
       "path": "reports/homework/slides/sections/05-metamem.tex",
-      "bytes": 11585,
-      "sha256": "11465e490485783b954a52d9eee3cb5aa7ce4d7b2eae52214cb88b4edb678de1"
+      "bytes": 11456,
+      "sha256": "ea8e642c32294b3d2fcf0e6db03e1b0823356d35fb4d346fbddb1970fb0c8eaf"
     },
     {
       "path": "reports/homework/metamem-assets/Adobe-GB1-UCS2",
-      "bytes": 235478,
-      "sha256": "83eaa7ffb2ed1e4b021eb9842cd0e0f3abcbc32449c092a174f1670a00ffd458"
+      "bytes": 221210,
+      "sha256": "40b286cf48062e5e3b2164a52090d6ef32ef65739153aab26fec297d6699e105"
     }
-  ]
+  ],
+  "repository_manifest_note": "2026-10-27 F: text entries normalized to checked-in LF bytes; original author hashes used CRLF. PDF hashes unchanged."
 }

@@ -9,7 +9,7 @@
 - [阅读报告正文](sections/03-semantic-xpath.tex)：全组 `main.tex` 已输入此文件。
 - [个人报告PDF](semantic-xpath-preview.pdf)与[个人报告编译入口](semantic-xpath-preview.tex)。
 - [13页演示PDF](slides/semantic-xpath-preview.pdf)、[Beamer正文](slides/sections/03-semantic-xpath.tex)与[个人演示编译入口](slides/semantic-xpath-preview.tex)。全组 slides 主文件已输入该模块。
-- [全组演示预览](slides/preview.pdf)已同步编译，共67页（含4页备用页）；本模块位于第23–35页，其他模块正文与共同总结保留原状态。全组报告也已通过编译集成检查，仍含其他章节的既有占位内容，不作为已定稿报告。
+- [全组演示预览](slides/preview.pdf)已于 2026-10-27 更新为71页（正文67页＋备用4页）；本模块位于第25–37页。整份报告18页，共同部分仍待补齐，详见[整合检查](integration-check-20261027.md)，不作为已定稿报告。
 - [逐页参考讲稿](semantic-xpath-speaker-notes.md)：迁入版措辞，供过稿与解释使用，不标为录像逐字转写；Beamer另有逐页备注。
 - [验证记录](semantic-xpath-verification.json)：编译器、页数、文件大小与SHA-256；视频状态单独记录为本人确认。
 - [原论文PDF](../../papers/structured-memory-group2/03_Semantic_XPath.pdf)、[ACL官方页面](https://aclanthology.org/2026.acl-demo.28/)、[作者项目](https://github.com/D3Mlab/SemanticXpath-Chat)。论文共11页，印刷页286–296；本页所有页码指PDF文件页码。

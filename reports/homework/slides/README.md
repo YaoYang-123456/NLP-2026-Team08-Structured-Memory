@@ -4,31 +4,31 @@
 
 当前按录屏讲解调整为 10pt 基准字号，正文行距系数 1.12，默认表格行距系数 1.15，并为正文与来源脚注保留独立留白。标题与章节页字号也相应收敛；表格后的解释文字留出明确间隔。
 
-[当前 PDF 预览](preview.pdf)随源码保存，便于直接查看版式。它仍是工作模板，其他成员的个人部分和共同总结尚待填写；修改后重新编译并同步预览。
-
-2026-10-26迁入Semantic XPath后，本版预览共67页（63页正文、4页备用），Semantic XPath位于PDF第23–35页，HyMEM顺延至第36–42页。个人材料页数不等于视频时长，录制状态见各自指南。
+[仓库 PDF 预览](preview.pdf)已于 2026-10-27 更新为 71 页（正文 67 页＋备用 4 页），包含六篇个人模块与 MetaMem 最新修订。已通过编译、全页版式及 PDF.js 无外部 CMap 中文检查；共同总结仍待填写，详见[整合检查](../integration-check-20261027.md)。
 
 ## 结构与时间
 
 | 环节 | 文件 | 讲解安排 |
 | --- | --- | --- |
 | 开场 | `sections/00-opening.tex` | 主题、共同问题和路线，约 3 分钟 |
-| StructMem | `sections/01-structmem.tex` | 7–9 分钟；已迁入本地既有演示稿正文和讲稿备注 |
+| StructMem | `sections/01-structmem.tex` | hycx233；12 页模块和备注，待本次实际计时及录制 |
 | Hindsight | `sections/02-hindsight.tex` | 8 分钟讲解稿已整理，9 页个人模块已编译；录制前由本人过稿并计时；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
-| Semantic XPath | `sections/03-semantic-xpath.tex` | 已按原13页迁入；8分55秒为旧视频，本次视频按未交付统计，待 F 检查后决定能否复用；[个人PDF](semantic-xpath-preview.pdf)、[个人指南](../semantic-xpath-reading-guide.md) |
-| HyMEM | `sections/04-hymem.tex` | 7页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md) |
-| MetaMem | `sections/05-metamem.tex` | 7–9 分钟，待对应成员填写 |
-| Text2Mem | `sections/06-text2mem.tex` | ngocnamd93-spec：8页材料已编译并检查版式，待本人过稿、排练及录制；[个人PDF](text2mem-preview.pdf)、[个人指南](../text2mem-reading-guide.md) |
+| Semantic XPath | `sections/03-semantic-xpath.tex` | #57 已审核合入，13 页；[个人PDF](semantic-xpath-preview.pdf)、[个人指南](../semantic-xpath-reading-guide.md)；旧视频按本次未交付计 |
+| HyMEM | `sections/04-hymem.tex` | 7 页模块和个人材料已合入，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md)；个人 PDF 中文显示修复 [#64](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/64) 已合入，#62 已结项 |
+| MetaMem | `sections/05-metamem.tex` | #63 已审核合入，8 页；[个人PDF](metamem-preview.pdf)、[交接与完整讲稿](../metamem-handoff.md)；7 分 59 秒为估时 |
+| Text2Mem | `sections/06-text2mem.tex` | #59 已审核合入，8 页；[个人PDF](text2mem-preview.pdf)、[个人指南](../text2mem-reading-guide.md)；480 秒为计划，待本人过稿、计时及录制 |
 | 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
 | 备用资料 | `sections/99-backup.tex` | 问答时按需使用，不计入正文页码；已迁入 StructMem 备用页 |
 
 默认分配为 **3＋6×8＋12＝63 分钟**。若六人分别使用 7–9 分钟、总结使用 10–15 分钟，在开场 3 分钟的条件下，总长约 55–72 分钟，不含额外问答。需要控制在 60 分钟时，采用 **2＋6×8＋10＝60 分钟**，并更新开场时间页和讲稿备注。页数只作内容组织参考，最终以排练计时为准。
 
+六篇模块均已审核接入。正文页序：开场 1–3；StructMem 4–15；Hindsight 16–24；Semantic XPath 25–37；HyMEM 38–44；MetaMem 45–52；Text2Mem 53–60；总结与讨论 61–67；备用 68–71。本人计时、视频及贡献说明继续见[平时作业进度](../README.md#当前进展2026-10-27)。
+
 ## 编辑方式
 
 主文件为 `main.tex`，按“开场 → 六人讲解 → 系统性总结 → 备用资料”顺序输入各模块。每位成员填写章节页的讲解人，并只修改自己的 `.tex` 和相应图片，按 issue 认领范围协作。共享样式和开场、总结由相关成员集中整合。
 
-待填写的论文模块各提供章节页与六张正文页：研究问题、整体流程、关键机制、实验设置、关键结果、局限与阅读判断。可按内容增加、合并或拆分页面，不要求机械填满固定页数。StructMem 沿用已有约 9 分钟讲解版本，作为有实际内容的示例。
+六篇论文章节现均有实质内容，页数依讲解需要分别为 12、9、13、7、8、8 页。StructMem 与 Semantic XPath 页数较多，实际讲解仍需按 7–9 分钟控制，不能根据页数推定已完成排练。
 
 现有综合总结页只提供对照表、机制取舍、共同案例、实验可比性和小组结论的版式，不填入尚未讨论的结论，也不自动导入报告的综合分析草稿。
 
@@ -48,15 +48,17 @@
 \includeonlylecture{structmem}
 ```
 
-可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。Hindsight、HyMEM、Semantic XPath 和 Text2Mem 都有独立预览入口，可直接编译而不改动全组主文件；Text2Mem 为8页个人模块。Semantic XPath 的13页顺序与原个人PPT对应，旧视频复用边界见[个人指南](../semantic-xpath-reading-guide.md)。
+可用模块名为 `opening`、`structmem`、`hindsight`、`semantic-xpath`、`hymem`、`metamem`、`text2mem`、`synthesis`、`backup`。个人预览结束后注释掉该行，恢复全组导出。Hindsight、Semantic XPath、HyMEM、MetaMem 和 Text2Mem 均有独立预览入口；文件版本见各个人交接清单。
 
 ## 编译
 
-需要支持中文的 TeX Live、XeLaTeX、latexmk、Beamer、TikZ 和 PGFPlots；字体使用 TeX Live 自带的 Fandol。进入本目录执行：
+需要支持中文的 TeX Live、XeLaTeX、latexmk、Beamer、TikZ、PGFPlots，以及安装 pypdf 的 Python；字体使用 TeX Live 自带的 Fandol。进入本目录执行：
 
 ```sh
 latexmk -xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
-cp ../../../output/homework-slides/main.pdf preview.pdf
+python3 ../../../scripts/fix_hymem_pdf_unicode.py ../../../output/homework-slides/main.pdf preview.pdf
 ```
+
+导出步骤复用现有 Unicode 映射脚本，为缺少 ToUnicode 的 Adobe-GB1 / Identity-H 字体补映射，避免 PDF.js 未配置外部 CMap 时缺中文。该脚本也适用于全组 PDF；保留原始编译输出以便核对。
 
 生成文件为仓库根目录下 `output/homework-slides/main.pdf`，编译缓存也写入该忽略目录。定稿后将 PDF 复制为 `reports/homework/8队-结构化记忆-实际日期-slides.pdf`，与阅读报告 PDF 和视频一同整理。共享 LaTeX 源文件直接保留在仓库中。
