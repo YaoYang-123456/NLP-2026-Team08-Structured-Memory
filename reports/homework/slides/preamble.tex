@@ -7,7 +7,6 @@
 
 \definecolor{accent}{HTML}{28649A}
 \definecolor{ink}{HTML}{17334F}
-\definecolor{muted}{HTML}{596B7B}
 \setbeamercolor{normal text}{fg=ink,bg=white}
 \setbeamercolor{structure}{fg=accent}
 \setbeamercolor{frametitle}{fg=ink}
@@ -19,16 +18,13 @@
 \setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{frametitle}{\vspace{3mm}\insertframetitle\par\vspace{1mm}\textcolor{accent}{\rule{\textwidth}{0.5pt}}}
 
-\newcommand{\framesource}{}
 \newcommand{\currentpresenter}{第 8 队}
 \newcommand{\pageindicator}{\insertframenumber\,/\,\inserttotalframenumber}
-\newcommand{\source}[1]{\renewcommand{\framesource}{#1}}
 \newcommand{\presenter}[1]{\renewcommand{\currentpresenter}{#1}}
 \setbeamertemplate{footline}{%
     \vskip2mm
     \hspace{9mm}\begin{minipage}{\dimexpr\paperwidth-18mm\relax}
-        \color{muted}\fontsize{6.2}{7.5}\selectfont\framesource\par\vspace{1mm}
-        \fontsize{7}{8}\selectfont\insertsectionhead\quad\currentpresenter
+        \color{ink}\fontsize{7}{8}\selectfont\insertsectionhead\quad\currentpresenter
         \hfill\pageindicator
     \end{minipage}\vspace{2mm}}
 \setbeamertemplate{note page}{\vspace{4mm}{\Large\bfseries\insertframetitle}\par\vspace{3mm}{\footnotesize\insertnote}}
@@ -37,7 +33,6 @@
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcommand{\key}[1]{\textcolor{accent}{\bfseries #1}}
-\newcommand{\aside}[1]{\par\vspace{3mm}{\small\color{muted}#1}}
 \newcommand{\takeaway}[1]{\par\vspace{4mm}{\large\bfseries #1}}
 \newcommand{\papersection}[3]{%
     \section{#1}\presenter{#3}
@@ -46,8 +41,8 @@
         \vspace{7mm}{\fontsize{28}{34}\selectfont\bfseries #1}\par
         \vspace{4mm}{\Large #2}\par
         \vspace{7mm}\textcolor{accent}{\rule{\textwidth}{0.8pt}}\par
-        \vspace{3mm}#3\hfill 7--9 分钟
-        \note{建议用约 15 秒介绍论文和讲解人。正文围绕问题、方法、证据和局限展开。}
+        \vspace{3mm}#3
+        \note{计划15秒。这一部分介绍#1。#2。}
     \end{frame}}
 
 \hypersetup{pdftitle={长上下文场景结构化记忆建模：小组学术汇报},pdfauthor={第8队}}

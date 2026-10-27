@@ -1,12 +1,14 @@
 # 2026-10-27 平时作业整合检查
 
+> 本记录保留合并版本 `1862df9` 的 18 / 71 页验证事实；当时的内容缺口不代表最新状态。共同部分补齐后的 22 / 73 页版本见[新检查记录](shared-sections-check-20261027.md)。
+
 本记录针对六篇个人材料接入后的阅读报告和幻灯片。已完成材料审核与版式检查，不代表本人过稿、实际排练、视频验收或课程提交完成。
 
-## 当前预览
+## 本轮历史预览
 
-- [报告](report-preview.pdf)：18 页。
-- [幻灯片](slides/preview.pdf)：71 页，其中正文 67 页、备用 4 页。
-- [文件版本及校验值](integration-artifacts.json)：保存最终输入版本、导出大小和 SHA-256；文件均小于 20 MB。
+- [报告](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/1862df9ee7aa9a8d5c06e83d2b3a3ed087c03d31/reports/homework/report-preview.pdf)：18 页。
+- [幻灯片](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/1862df9ee7aa9a8d5c06e83d2b3a3ed087c03d31/reports/homework/slides/preview.pdf)：71 页，其中正文 67 页、备用 4 页。
+- [文件版本及校验值](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/blob/1862df9ee7aa9a8d5c06e83d2b3a3ed087c03d31/reports/homework/integration-artifacts.json)：保存最终输入版本、导出大小和 SHA-256；文件均小于 20 MB。
 
 | 幻灯片模块 | PDF 页码 | 页数 |
 | --- | --- | --- |

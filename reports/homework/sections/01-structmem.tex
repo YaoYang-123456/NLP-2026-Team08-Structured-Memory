@@ -1,21 +1,21 @@
 \section{StructMem：面向长程对话的结构化记忆}
 \label{sec:structmem}
 
-StructMem\upcite{xu-etal-2026-structmem}研究长期对话中的记忆组织，发表于 ACL 2026 Short Papers，印刷页 122--146。它在事件内部保存事实与互动关系，并用来源时间将条目绑定；在事件之间检索历史、恢复事件语境，再生成整合记忆。细粒度条目与整合摘要共同参与问答。本节实验数值均来自原论文，阅读判断与后续设想分别说明，不表示已完成本组复现。
+StructMem\upcite{xu-etal-2026-structmem}研究长期对话中的记忆组织。它在事件内部保存事实与互动关系，并用来源时间将条目绑定；在事件之间检索历史、恢复事件语境，再生成整合记忆。细粒度条目与整合摘要共同参与问答。
 
 \begingroup
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\newcommand{\structmemsource}[1]{\par\noindent{\footnotesize\color{black!65}原文位置：#1。}\par}
-\newcommand{\structmemlead}[1]{\par\noindent\textbf{#1}\par}
 \newcommand{\structmemtable}{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}}
 
 \subsection{研究问题与方法定位}
-\subsubsection{长期对话为什么需要组织记忆}
+\subsubsection{长期对话中的关联信息}
 长程对话会持续产生事实、计划、态度和互动。例如，某人提到“去年参加过一个活动”，另一人在相邻话轮中回忆了与朋友共同参加的经历。回答“两人何时一起参加活动”需要把时间表达、共同参与关系和分散的事实放在一起。仅找到与活动名称相似的句子，未必能恢复这个联系。
 
 这类问题同时涉及两个过程。第一，系统在写入记忆时决定保留什么信息。第二，系统在读取记忆时决定给回答模型什么上下文。写入阶段丢失的关系信息，很难单靠增加检索数量补回来。StructMem 因而把记忆单元的设计作为主要切入点。
-\subsubsection{三种记忆组织方式}
-\par\noindent{\structmemtable
+\begin{table}[!htbp]
+\caption{三种记忆组织方式}
+\label{tab:structmem-organization}
+\centering\structmemtable
 \begin{tabularx}{\linewidth}{@{}p{2cm}YYY@{}}
 \toprule
 组织方式 & 保存的信息 & 主要优点 & 主要代价\\\midrule
@@ -23,12 +23,14 @@ StructMem\upcite{xu-etal-2026-structmem}研究长期对话中的记忆组织，�
 图记忆 & 实体、关系及图结构 & 关系显式，便于结构化访问 & 实体消歧、去重与关系维护增加成本\\
 StructMem & 带时间锚的事实与关系条目，加上跨事件摘要 & 保留细节，同时提供关联上下文 & 依赖抽取与整合提示的质量\\
 \bottomrule
-\end{tabularx}}\par
-\structmemsource{§1--3，图1，印刷页122--124}
+\end{tabularx}
+\end{table}
+% 来源：§1--3，图1，印刷页122--124
 \subsubsection{结构从两个层次形成}
 事件级绑定解决“同一段交流中的事实和关系怎样放在一起”。跨事件整合解决“当前交流如何与更早的经历相联系”。最终的记忆包括两类可检索内容：一类保留细节，另一类提供跨事件的解释。
 
-\begin{center}
+\begin{figure}[!htbp]
+\centering
 \begin{tikzpicture}[node distance=9mm,>=Latex,every node/.style={font=\small},flowstep/.style={draw=black,align=center,minimum height=12mm,text width=3.8cm,inner sep=5pt}]
 \node[flowstep] (a) {对话与来源时间};
 \node[flowstep,right=8mm of a] (b) {事实条目＋关系条目};
@@ -38,8 +40,10 @@ StructMem & 带时间锚的事实与关系条目，加上跨事件摘要 & 保�
 \node[flowstep,left=8mm of e] (f) {条目与摘要共同支持问答};
 \draw[->] (a)--(b);\draw[->] (b)--(c);\draw[->] (c)--(d);\draw[->] (d)--(e);\draw[->] (e)--(f);
 \end{tikzpicture}
-\end{center}
-{\footnotesize\color{black!65}图1\quad 据原文图2及附录 A.3、A.7 重绘的处理流程。}
+\caption{StructMem的记忆构建与问答流程}
+\label{fig:structmem-flow}
+\end{figure}
+% 来源：原文图2，附录A.3、A.7。
 
 从实现上看，StructMem 属于外部记忆框架。论文的核心流程由模型调用、向量检索和数据组织组成，没有引入基础语言模型的参数训练。它仍使用向量检索，结构主要体现在事件绑定与整合内容中。
 
@@ -50,18 +54,22 @@ StructMem & 带时间锚的事实与关系条目，加上跨事件摘要 & 保�
 \Phi_i=\mathcal L(P_{\mathrm{fact}}\Vert m_i),\qquad
 \Psi_i=\mathcal L(P_{\mathrm{rel}}\Vert m_i).
 \end{equation}
-其中，$\Phi_i$ 保存发生了什么、有什么计划或偏好；$\Psi_i$ 保存人物如何回应、支持、评价或影响对方。“双视角”对应事实内容与互动关系两个抽取目标。附录的关系提示特别关注赞扬、鼓励、感谢、兴趣、认同和回应等行为。
+其中，$\Phi_i$ 保存发生了什么、有什么计划或偏好；$\Psi_i$ 保存人物如何回应、支持、评价或影响对方。“双视角”对应事实内容与互动关系两个抽取目标。关系抽取关注赞扬、鼓励、感谢、兴趣、认同和回应等行为。
 
-以附录中的研究生录取对话为例，Alice 分享自己被计算机科学项目录取的消息，Bob 祝贺她并询问研究方向。事实条目可记录录取项目与研究方向，关系条目可记录 Bob 对 Alice 的支持和兴趣。这些互动信息能帮助后续模型理解两人为何继续讨论相关计划。
-\par\noindent{\structmemtable
+以研究生录取对话为例，Alice 分享自己被计算机科学项目录取的消息，Bob 祝贺她并询问研究方向。事实条目可记录录取项目与研究方向，关系条目可记录 Bob 对 Alice 的支持和兴趣。这些互动信息能帮助后续模型理解两人为何继续讨论相关计划。
+\begin{table}[!htbp]
+\caption{事实、关系与来源信息}
+\label{tab:structmem-entries}
+\centering\structmemtable
 \begin{tabularx}{\linewidth}{@{}p{2.3cm}Y@{}}
 \toprule
-条目类型 & 据附录示例简化后的内容\\\midrule
+条目类型 & 条目内容\\\midrule
 事实条目 & Alice 被计算机科学研究生项目录取，研究方向为机器学习。\\
 关系条目 & Bob 祝贺 Alice，表达对她的信心，并询问她的研究方向。\\
 来源信息 & 两类输出都携带 \texttt{source\_id}，用于对应原话及其时间。\\
 \bottomrule
-\end{tabularx}}\par
+\end{tabularx}
+\end{table}
 \subsubsection{时间锚定与事件重建}
 条目 $x$ 的表示包含自然语言文本、向量 $\mathbf e_x$ 和来源时间 $\tau_i$：
 \begin{equation}
@@ -69,10 +77,10 @@ StructMem & 带时间锚的事实与关系条目，加上跨事件摘要 & 保�
 \end{equation}
 来源时间将事实和关系绑定为一个事件单元。检索命中其中一个条目后，可以用同一时间戳找回其他条目，补全事件语境。
 
-这里需要区分\textbf{提及时间}与\textbf{事件发生时间}。例如，2023年8月17日的一条消息说“去年参加了活动”，时间锚记录这句话的来源日期，事件年份则由相对表达推到2022年。附录的事实抽取提示要求保留相对时间与参考日期，问答提示再要求换算为具体时间。
-\subsubsection{形式化表示与实际调用}
-正文按单条原话 $m_i$ 描述抽取过程。附录提示实际接收按话题组织的文本，并要求按 \texttt{source\_id} 顺序输出。因此，双视角表示两种抽取任务，具体 API 次数还取决于批处理方式。保留来源编号、人物和时间，是将生成文本接回原始证据的关键。
-\structmemsource{§3.1、式(1)--(2)，图4--7、图13；印刷页123--124、133--136、139}
+这里需要区分\textbf{提及时间}与\textbf{事件发生时间}。例如，2023年8月17日的一条消息说“去年参加了活动”，时间锚记录这句话的来源日期，事件年份则由相对表达推到2022年。事实抽取提示要求保留相对时间与参考日期，问答提示再要求换算为具体时间。
+\subsubsection{批处理与来源追踪}
+抽取过程以原话 $m_i$ 为基本单位，调用时可按话题批量处理，并按 \texttt{source\_id} 顺序输出。事实与关系分别对应两个抽取目标。来源编号、人物和时间将生成条目连接到原始对话，便于事件重建与后续核查。
+% 来源：§3.1、式(1)--(2)，图4--7、图13；印刷页123--124、133--136、139
 
 \subsection{跨事件整合与双路问答}
 \subsubsection{从当前缓存找到相关历史}
@@ -85,16 +93,19 @@ C_{\mathrm{cross}}&=C_{\mathrm{buf}}\cup\bigcup_{x^*\in S_K}E_{\tau}(x^*).
 \end{align}
 这一步使语义检索结果扩展为完整事件上下文。一个与问题高度相似的事实条目，可能缺少周围的赞同、回应或计划信息。时间锚能把这些条目重新聚合起来。
 \subsubsection{生成有依据的整合记忆}
-整合模型接收当前事件和相关历史，生成跨事件摘要。提示要求保留具体人物、日期、地点和行动计划，按时间组织内容，并在有依据时表达事件之间的联系。跨时期的引用应带有具体时间，重点放在与当前话题直接相关的历史内容上。附录给出的摘要长度是200--350个英文词。
+整合模型接收当前事件和相关历史，生成跨事件摘要。提示要求保留具体人物、日期、地点和行动计划，按时间组织内容，并在有依据时表达事件之间的联系。跨时期的引用应带有具体时间，重点放在与当前话题直接相关的历史内容上。摘要长度为200--350个英文词。
 
-生成的摘要形成额外的抽象层，与原有事件条目共同保存。细粒度条目负责具体事实，摘要提供跨事件联系。为了清楚表达这种并存关系，可以把存储理解为：
+生成的摘要形成额外的抽象层，与原有事件条目共同保存。细粒度条目负责具体事实，摘要提供跨事件联系。两类记忆共同组成存储：
 \[
 \mathcal M_{\mathrm{all}}=\mathcal M_{\mathrm{entries}}\cup\mathcal M_{\mathrm{syntheses}}.
 \]
-原文式(6)简写了摘要生成与记忆写入过程，同段及问答模板说明了原始条目和整合摘要会一起参与后续回答。
+% 来源：式(6)及问答模板；条目与整合摘要共同参与回答。
 \subsubsection{回答阶段使用两路上下文}
 论文在问答阶段检索\textbf{60个条目与5条整合摘要}，把它们连同问题交给回答模型。提示要求核对人物、利用时间戳换算相对日期，并给出简短答案。
-\par\noindent{\structmemtable
+\begin{table}[!htbp]
+\caption{记忆整合与问答的默认配置}
+\label{tab:structmem-settings}
+\centering\structmemtable
 \begin{tabularx}{\linewidth}{@{}p{3.2cm}p{2.2cm}Y@{}}
 \toprule
 参数 & 默认设置 & 所处阶段\\\midrule
@@ -102,13 +113,17 @@ C_{\mathrm{cross}}&=C_{\mathrm{buf}}\cup\bigcup_{x^*\in S_K}E_{\tau}(x^*).
 历史种子数量 $K$ & 15 & 整合时检索历史，再扩展事件上下文\\
 问答检索数量 & 60＋5 & 回答时读取条目与整合摘要\\
 \bottomrule
-\end{tabularx}}\par
-\structmemsource{§3.2、式(3)--(6)，附录 A.3，图8、图13；印刷页124、129、137、139}
+\end{tabularx}
+\end{table}
+% 来源：§3.2、式(3)--(6)，附录 A.3，图8、图13；印刷页124、129、137、139
 
 \subsection{案例分析：共同经历与相对时间}
-\subsubsection{原论文中的问题}
-附录 A.8 的问题是：Caroline 和 Melanie 什么时候一起参加过 Pride festival？关键证据分散在不同条目中，同时出现了2023年的活动记录和对“去年”活动的回忆。
-\par\noindent{\structmemtable
+\subsubsection{问题与证据}
+案例问题是：Caroline 和 Melanie 什么时候一起参加过 Pride festival？关键证据分散在不同条目中，同时出现了2023年的活动记录和对“去年”活动的回忆。
+\begin{table}[!htbp]
+\caption{共同经历案例中的证据}
+\label{tab:structmem-case-evidence}
+\centering\structmemtable
 \begin{tabularx}{\linewidth}{@{}p{2.2cm}Y@{}}
 \toprule
 证据 & 内容概述\\\midrule
@@ -118,30 +133,37 @@ C_{\mathrm{cross}}&=C_{\mathrm{buf}}\cup\bigcup_{x^*\in S_K}E_{\tau}(x^*).
 互动关系 & Melanie 对 Caroline 的相关经历表示兴趣，并积极回应她参与社区活动的事情。\\
 整合记忆 & 在同一叙述中连接两人的回忆，形成她们对去年共同经历的讨论。\\
 \bottomrule
-\end{tabularx}}\par
-\subsubsection{三种方法的回答}
-\par\noindent{\structmemtable
+\end{tabularx}
+\end{table}
+\begin{table}[!htbp]
+\caption{共同经历案例中的回答}
+\label{tab:structmem-case-answers}
+\centering\structmemtable
 \begin{tabularx}{\linewidth}{@{}p{3cm}Y@{}}
 \toprule
-方法 & 原文报告的预测\\\midrule
+方法 & 模型回答\\\midrule
 Flat Memory & 两人没有一起去过。\\
 Graph Memory & 上个月，2023年6月。\\
 StructMem & 去年，2022年8月。\\
 参考答案 & 2022年。\\
 \bottomrule
-\end{tabularx}}\par
-\subsubsection{这个案例说明了什么}
+\end{tabularx}
+\end{table}
+\subsubsection{事件关联与时间推理}
 问题需要同时判断“共同参加”与“参加时间”。独立事实分别描述两人的经历，互动条目补充了彼此回应的语境。整合步骤把时间相近、语义相关的信息组织成连续叙述，回答模型据此识别共同经历，并将2023年消息中的“去年”换算为2022年。
 
-这一案例展示了记忆组织如何改变回答上下文。它也提示我们，关系整合需要保留证据来源，避免把主题相似误当成共同经历。原文的参考答案只给出年份，因此案例能够支持的时间结论是2022年；预测中额外出现的“8月”没有得到表内参考答案的单独验证。
+事件绑定与整合使共同经历和相对时间出现在同一回答上下文中。参考答案为2022年，StructMem给出的年份与之相符；更具体的月份仍需回溯原始对话确认。
 
-对实际系统而言，适合保存的整合记忆应同时包含事件联系和可回溯的来源。这样既能使用摘要中的关联信息，也能在回答涉及具体日期或参与关系时重新检查原始条目。
-\structmemsource{附录 A.8，表8；印刷页132}
+整合记忆中的事件联系应与来源条目相连，便于回答时核对参与关系和具体日期。
+% 来源：附录 A.8，表8；印刷页132
 
-\subsection{实验设计与评价口径}
+\subsection{实验设置与评价指标}
 \subsubsection{数据与任务}
-论文使用 LoCoMo 的长对话问答任务。数据包括10段长期对话，平均每段588轮、16,618 Token。实验采用四类问题，共1,540题。
-\par\noindent{\structmemtable
+论文使用 LoCoMo 的长对话问答任务。数据包括10段长期对话，平均每段588轮、16,618 tokens。实验采用四类问题，共1,540题。
+\begin{table}[!htbp]
+\caption{LoCoMo题型分布}
+\label{tab:structmem-tasks}
+\centering\structmemtable
 \begin{tabularx}{\linewidth}{@{}p{3.8cm}rY@{}}
 \toprule
 问题类型 & 数量 & 主要考察内容\\\midrule
@@ -151,22 +173,26 @@ StructMem & 去年，2022年8月。\\
 开放域 Open-domain & 96 & 对话记忆与开放域知识相关的回答\\\midrule
 合计 & 1,540 & 单跳题约占54.6\%\\
 \bottomrule
-\end{tabularx}}\par
+\end{tabularx}
+\end{table}
 \subsubsection{模型与基线}
 主实验统一使用 \texttt{gpt-4o-mini} 作为基础模型，以 \texttt{text-embedding-3-small} 生成向量。比较对象覆盖原始上下文输入、RAG、平面记忆与结构化记忆。
 
-附录还给出了不同方法的检索配置：MiniRAG和LightRAG各检索20条，A-Mem和LangMem各检索40条；Mem0、Mem0g、Zep和Memobase每位说话人检索10条。FullContext使用完整历史的逆时间顺序表示，表中名为OpenAI的配置直接拼接对话文本。这里的OpenAI是一个基线配置名。
+各方法的检索配置为：MiniRAG和LightRAG各检索20条，A-Mem和LangMem各检索40条；Mem0、Mem0g、Zep和Memobase每位说话人检索10条。FullContext使用完整历史的逆时间顺序表示，表中名为OpenAI的配置直接拼接对话文本。这里的OpenAI是一个基线配置名。
 
-不同系统使用各自的检索设置，因此主表适合比较整套系统的效果与成本。分析事件绑定和整合组件时，表2中的范式对照和消融更直接。
-\subsubsection{准确率与效率分别衡量什么}
-准确率使用 LLM-as-a-judge：评判模型接收问题、参考答案和生成答案，输出正确或错误。附录提示允许同义表达和等价日期表述。主结果使用 \texttt{gpt-4o-mini} 判断，并用另外两种模型复核。
+不同系统使用各自的检索设置，因此主表适合比较整套系统的效果与成本。分析事件绑定和整合组件时，同框架的范式对照和消融更直接。
+\subsubsection{准确率与构建效率}
+准确率使用 LLM-as-a-judge：评判模型接收问题、参考答案和生成答案，输出正确或错误。评判提示允许同义表达和等价日期表述。主结果使用 \texttt{gpt-4o-mini} 判断，并用另外两种模型复核。
 
-效率指标统计\textbf{记忆构建阶段}的输入／输出Token、API调用次数和运行时间。它们描述把历史对话变为记忆的成本。回答阶段的Token预算和完整服务的响应延迟，还需要单独衡量。对没有构建过程的上下文基线，以及未公开构建细节的服务，主表以横线标注相关项。
-\structmemsource{§4.1，附录 A.2--A.5，表3，图16；印刷页125、128--130、142}
+效率指标统计\textbf{记忆构建阶段}的输入／输出tokens、API调用次数和运行时间。它们描述把历史对话变为记忆的成本。回答阶段的tokens预算和完整服务的响应延迟，还需要单独衡量。对没有构建过程的上下文基线，以及未公开构建细节的服务，主表以横线标注相关项。
+% 来源：§4.1，附录 A.2--A.5，表3，图16；印刷页125、128--130、142
 
 \subsection{准确率结果：总分与分项表现}
-下表按原文表1转录，并将单跳列放在多跳列之前，便于对应任务含义。全部数值为百分比。
-\begin{center}\structmemtable
+表\ref{tab:structmem-accuracy}列出各方法的问答准确率，加粗表示该列最高值。
+\begin{table}[!htbp]
+\caption{LoCoMo问答准确率（\%）}
+\label{tab:structmem-accuracy}
+\centering\structmemtable
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
 方法 & 总分 & 单跳 & 多跳 & 时间 & 开放域\\\midrule
@@ -183,24 +209,30 @@ Zep & 75.14 & 79.79 & \textbf{74.11} & 67.71 & \textbf{66.04}\\
 Memobase & 75.78 & 77.17 & 70.92 & \textbf{85.05} & 46.88\\
 \textbf{StructMem} & \textbf{76.82} & 81.09 & 68.77 & 81.62 & 46.88\\
 \bottomrule
-\end{tabular}\end{center}
-\structmemsource{表1；印刷页125。加粗表示该列最高值}
+\end{tabular}
+\end{table}
+% 来源：表1；印刷页125。加粗表示该列最高值
 \subsubsection{主要结果}
-StructMem的总分为76.82\%，比Memobase高1.04个百分点，比Zep高1.68个百分点，比FullContext高2.99个百分点。这表明它在论文所采用的数据与配置下，达到了较好的整体平衡。
+StructMem的总分为76.82\%，比Memobase高1.04个百分点，比Zep高1.68个百分点，比FullContext高2.99个百分点。
 
 分项表现更有解释力。相对FullContext，StructMem的时间推理提高31.46个百分点，而单跳下降5.47个百分点，多跳基本持平。相对Zep，StructMem时间推理更好，但多跳与开放域更低。Memobase则仍保持最高的时间推理成绩。由此可见，StructMem的收益与问题类型有关。
-\subsubsection{结果应如何理解}
+\subsubsection{题型差异}
 全文上下文保留了大量原始细节，有利于单跳事实定位。事件结构和整合摘要帮助模型建立时间线，所以StructMem相对全文上下文的时间推理优势很突出。它在多跳任务上的机制收益，还要结合下一节的消融结果判断。
 
-单跳题占数据的一半以上，总分会受到题型分布影响。阅读这一结果时，应同时报告总分与四类成绩，避免把综合排名解释为所有任务上的全面领先。
+单跳题约占54.6\%，对总分影响较大。分项结果显示，StructMem的优势集中在时间推理，单跳、多跳和开放域仍有提升空间。
+
+部分基线的汇总口径存在差异：按题型数量加权，Mem0与Zep的分类分数约为67.646\%和75.375\%，而论文报告的总分为66.88\%和75.14\%。对应行需结合有效样本和逐题结果核对。
 
 \subsection{效率结果：构建成本与运行时间}
 \subsubsection{主表中的资源消耗}
-Token单位为百万（M），时间单位为秒。下表保留了原文的构建总量；其中MemoryOS的输入输出加总差异在文末注明。
-\begin{center}\structmemtable
+表\ref{tab:structmem-cost}统计记忆构建的资源消耗，tokens单位为百万（M），时间单位为秒。MemoryOS的总量沿用论文报告值2.868M；其输入与输出之和为2.828M，存在汇总差异。
+\begin{table}[!htbp]
+\caption{记忆构建的资源消耗}
+\label{tab:structmem-cost}
+\centering\structmemtable
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
-方法 & 输入Token & 输出Token & 总Token & 调用次数 & 时间\\\midrule
+方法 & 输入tokens & 输出tokens & 总tokens & 调用次数 & 时间\\\midrule
 MiniRAG & 9.022 & 1.081 & 10.103 & 2,508 & 2,566\\
 LightRAG & 10.014 & 1.916 & 11.931 & 13,576 & 60,469\\
 LangMem & 9.873 & 1.192 & 11.066 & 5,990 & 26,281\\
@@ -210,22 +242,25 @@ MemoryOS & 1.889 & 0.939 & 2.868 & 5,534 & 24,220\\
 Mem0g & 33.512 & 2.313 & 35.825 & 53,514 & 115,670\\
 \textbf{StructMem} & \textbf{1.501} & \textbf{0.436} & \textbf{1.937} & \textbf{1,056} & 22,854\\
 \bottomrule
-\end{tabular}\end{center}
-\structmemsource{表1；印刷页125}
-相对Mem0g，StructMem的构建Token减少约94.6\%，API调用减少约98.0\%，运行时间减少约80.2\%。相对Mem0，构建Token减少约84.1\%。这些百分比由原表数值计算，表达的是不同系统配置之间的差异。
+\end{tabular}
+\end{table}
+% 来源：表1；印刷页125
+相对Mem0g，StructMem的构建tokens减少约94.6\%，API调用减少约98.0\%，运行时间减少约80.2\%。相对Mem0，构建tokens减少约84.1\%。
 
-运行时间具有不同的排序：MiniRAG只用2,566秒，明显短于StructMem的22,854秒。Token数量、调用次数和耗时之间还受到模型调用方式、批处理、服务延迟与并发等因素影响。论文没有提供足够的信息，把全部耗时差异归因于其中某一因素。
+运行时间具有不同的排序：MiniRAG只用2,566秒，明显短于StructMem的22,854秒。tokens数量、调用次数和耗时之间还受到模型调用方式、批处理、服务延迟与并发等因素影响。论文没有提供足够的信息，把全部耗时差异归因于其中某一因素。
 \subsubsection{同一框架下的组织代价}
-图3(b)在LoCoMo第一段对话上拆分三种范式的构建Token。平面记忆约77.6k，StructMem约226.1k，图记忆约402.3k。StructMem的226.1k中，条目抽取约151.0k，整合约75.1k。
+同框架的范式比较在LoCoMo第一段对话上拆分构建tokens：平面记忆约77.6k，StructMem约226.1k，图记忆约402.3k。StructMem的226.1k中，条目抽取约151.0k，整合约75.1k。
 
-这组结果说明，增加双视角抽取与整合会比简单平面记忆付出更多构建成本。相对图记忆，批量整合又减少了实体／关系抽取及去重的多阶段开销。主表的跨系统比较与图3的范式比较回答了不同层面的问题，两者需要分别解读。
-\structmemlead{我的理解}
+双视角抽取与整合增加了相对平面记忆的构建成本；相对图记忆，批量整合减少了实体、关系抽取及去重的多阶段开销。
 StructMem把一部分原本留到问答时完成的关系推理，提前放进周期性的记忆构建。它用额外的组织成本换取更好的上下文，再通过批处理控制这部分成本。
-\structmemsource{图3(a)--(b)及§4.3；印刷页126}
+% 来源：图3(a)--(b)及§4.3；印刷页126
 
 \subsection{消融与参数分析}
-\subsubsection{事件绑定和跨事件整合各带来什么}
-\begin{center}\structmemtable
+\subsubsection{事件绑定与跨事件整合的贡献}
+\begin{table}[!htbp]
+\caption{记忆组织消融：准确率（\%）及百分点变化}
+\label{tab:structmem-ablation}
+\centering\structmemtable
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
 配置 & 单跳 & 多跳 & 时间 & 开放域\\\midrule
@@ -235,33 +270,39 @@ Graph Memory & 80.50 & 66.67 & 76.64 & 48.96\\
 StructMem & 81.09 & 68.77 & 81.62 & 46.88\\\midrule
 加入跨事件整合的变化 & +0.23 & +2.46 & +2.18 & 0.00\\
 \bottomrule
-\end{tabular}\end{center}
-{\footnotesize\color{black!65}数值来自表2，最后一行是本总结计算的百分点差值。}
+\end{tabular}
+\end{table}
 
 保留事件绑定、去掉跨事件整合后，单跳与时间任务仍高于Flat Memory。进一步加入整合，多跳提高2.46个百分点，时间提高2.18个百分点，单跳只增加0.23个百分点。这与方法设计相符：跨事件摘要主要帮助联合分散信息。去掉与加入整合的两种配置中，开放域分数均为46.88\%。
 \subsubsection{历史种子数量与效果}
-\begin{center}
+\begin{figure}[!htbp]
+\centering
 \begin{tikzpicture}
 \begin{axis}[width=.85\linewidth,height=4.5cm,xlabel={整合阶段的历史种子数量 $K$},ylabel={准确率（\%）},xmin=0,xmax=20,ymin=75.4,ymax=77.05,xtick={0,5,10,15,20},ytick={75.5,76,76.5,77},axis lines=left,grid=major,grid style={gray!15},tick label style={font=\small},label style={font=\small}]
 \addplot[color=black,mark=*,thick,nodes near coords,point meta=y,every node near coord/.append style={font=\scriptsize,anchor=south},/pgf/number format/fixed,/pgf/number format/precision=2] coordinates {(0,75.71)(5,76.43)(10,76.49)(15,76.82)(20,76.23)};
 \end{axis}
 \end{tikzpicture}
-\end{center}
-{\footnotesize\color{black!65}图2\quad 据原文图3(d)重绘。纵轴截取75.4--77.05，用于显示参数间的细小差异。}
+\caption{历史种子数量对问答准确率的影响（纵轴范围75.4--77.05）}
+\label{fig:structmem-seeds}
+\end{figure}
+% 来源：原文图3(d)。
 
 $K=0$时仍整合当前缓存，只是不引入历史事件。$K=15$达到图中最高的76.82\%，$K=20$则回落到76.23\%。这表明更多历史上下文不一定继续改善效果，选择范围需要控制。
 
-图3(c)中，平面检索从10条增加到60条，准确率由70.91\%提高到75.78\%；继续增加到100条时为75.71\%，相关Token量则从3.65M增到5.62M。该结果支持适度增加检索覆盖率，也说明覆盖率之外仍存在信息组织问题。
-\structmemsource{表2，图3(c)--(d)；印刷页125--126}
+在检索规模分析中，平面检索从10条增加到60条，准确率由70.91\%提高到75.78\%；继续增加到100条时为75.71\%，相关tokens量则从3.65M增到5.62M。该结果支持适度增加检索覆盖率，也说明覆盖率之外仍存在信息组织问题。
+% 来源：表2，图3(c)--(d)；印刷页125--126
 
 \subsection{生成记忆的忠实性与评判稳定性}
 \subsubsection{抽取和整合分别接受检验}
-新的记忆由语言模型生成，因此需要检查生成内容是否有原始证据。附录 A.6 将这个问题分成两步：先检查单个条目是否忠于原话，再检查跨事件摘要是否引入了错误联系。
+新的记忆由语言模型生成，因此需要检查生成内容是否有原始证据。忠实性评测分成两步：先检查单个条目是否忠于原话，再检查跨事件摘要是否引入了错误联系。
 
 在事件抽取阶段，三个评判模型报告的幻觉率分别为2.63\%（GPT）、1.61\%（Qwen）和2.84\%（DeepSeek），原文汇总的平均值为2.36\%。这描述的是抽取条目的忠实性，与问答错误率是不同指标。
 
 在整合阶段，评判模型比较“只整合当前缓存”与“加入15个历史种子”的摘要，识别新增历史联系。作者进一步删除提示中的具体时间引用与具体联系要求，得到无约束版本。
-\begin{center}\structmemtable
+\begin{table}[!htbp]
+\caption{来源约束对错误关联的影响}
+\label{tab:structmem-faithfulness}
+\centering\structmemtable
 \begin{tabular}{@{}lrrr@{}}
 \toprule
 评判模型 & 有约束的错误联系 & 无约束的错误联系 & 错误率变化\\\midrule
@@ -269,10 +310,14 @@ GPT & 6/982（0.61\%） & 72/966（7.45\%） & +6.84个百分点\\
 Qwen & 33/968（3.41\%） & 213/1065（20.00\%） & +16.59个百分点\\
 DeepSeek & 13/358（3.63\%） & 104/687（15.14\%） & +11.51个百分点\\
 \bottomrule
-\end{tabular}\end{center}
+\end{tabular}
+\end{table}
 这组实验支持具体时间与来源关联约束的作用。不同评判模型识别出的联系数量不同，因此表中保留各自的分子和分母，分别比较约束前后变化。
 \subsubsection{更换问答评判模型后的排名}
-\begin{center}\structmemtable
+\begin{table}[!htbp]
+\caption{不同评判模型下的准确率（\%）}
+\label{tab:structmem-judges}
+\centering\structmemtable
 \begin{tabular}{@{}lrrr@{}}
 \toprule
 评判模型 & StructMem & Memobase & 分差（百分点）\\\midrule
@@ -280,36 +325,31 @@ gpt-4o-mini & 76.82 & 75.78 & +1.04\\
 Qwen2.5-32B-Instruct & 77.01 & 76.36 & +0.65\\
 DeepSeek-V3.2 & 79.35 & 79.29 & +0.06\\
 \bottomrule
-\end{tabular}\end{center}
+\end{tabular}
+\end{table}
 三个评判模型下，StructMem的总分都略高于Memobase。作者报告Fleiss' $\kappa=0.8341$，表明这些模型的判断具有较高一致性。与此同时，DeepSeek评判下的分差只有0.06个百分点。排名相近的系统还需要逐题分析和重复实验来理解差异来源。
-\structmemsource{附录 A.5--A.7，表4--7，图17--20；印刷页129--131、143--146}
+% 来源：附录 A.5--A.7，表4--7，图17--20；印刷页129--131、143--146
 
-\subsection{阅读思考与后续实验}
-\subsubsection{方法最值得借鉴的部分}
-我认为这篇论文最有价值的设计，是把关系信息的保存提前到记忆形成阶段。人物的支持、回应和共同回忆经常出现在话语互动中，这些内容一旦被压缩成孤立事实，后续检索很难恢复。StructMem在抽取时保留互动关系，在整合时再连接历史事件，使回答上下文更接近一段有时间线的经历。
+\subsection{方法局限与课设启发}
+\subsubsection{关系保存与多粒度记忆}
+StructMem将关系信息的保存提前到记忆形成阶段。人物的支持、回应和共同回忆经常出现在话语互动中；保留这些关系有助于重建事件语境，再通过整合连接相关历史。
 
-第二个值得借鉴的设计是原子条目和整合摘要并存。条目保存具体细节，摘要把分散信息组织起来。两种粒度一起检索，可以兼顾事实定位与跨事件理解。这也为后续系统提供了清楚的消融维度。
-\subsubsection{还需要解决的实际问题}
+原子条目和整合摘要提供了互补粒度：条目保存具体细节，摘要组织分散信息。两种粒度共同检索，兼顾事实定位与跨事件理解，也提供了清晰的消融维度。
+\subsubsection{更新、追溯与泛化}
 \textbf{旧记忆如何修订。}作者在局限部分指出，当前框架缺少显式的冲突消解与记忆更新机制。用户更改计划或偏好后，旧摘要可能继续被检索。问答提示中的“优先最近记忆”提供了回答规则，存储层仍需要版本、失效标记或重新整合机制。
 
 \textbf{摘要联系如何追溯。}时间锚和提示约束降低了无依据联系，但摘要中的每项关联若能对应到具体来源条目，检查和更新会更加直接。尤其当某条历史事实失效时，系统应能找到受它影响的摘要。
 
-\textbf{收益能否迁移。}论文主要在LoCoMo上测试，基础模型固定为gpt-4o-mini。更多任务类型、不同模型和更长历史能够帮助判断方法适用范围。表2也没有逐项拆开“关系抽取”“时间锚定”“摘要检索”的贡献，后续可以在固定预算下继续比较。
+\textbf{收益能否迁移。}论文主要在LoCoMo上测试，基础模型固定为gpt-4o-mini。更多任务类型、不同模型和更长历史能够帮助判断方法适用范围。现有消融尚未逐项拆开“关系抽取”“时间锚定”“摘要检索”的贡献，后续可以在固定预算下继续比较。
 \subsubsection{适合课设的小规模验证}
-以同一基础模型和同一份数据，比较事实记忆、事件记忆、事件记忆加跨事件整合三种配置。先固定检索预算，再分别去掉关系条目、时间信息和整合摘要。记录四类准确率、构建与问答Token、调用次数，并保留失败题的检索上下文。
+以同一基础模型和同一份数据，比较事实记忆、事件记忆、事件记忆加跨事件整合三种配置。先固定检索预算，再分别去掉关系条目、时间信息和整合摘要。记录四类准确率、构建与问答tokens、调用次数，并保留失败题的检索上下文。
 
-在此基础上，可以增加一组计划变更对话，观察旧事实及旧摘要的影响，再尝试加入来源追踪和摘要失效策略。这些是基于论文提出的后续实验设想，能够把阅读中的问题转化为具体实现与评测。
-\structmemsource{§3--4，Limitations，附录 A.3、A.7；印刷页123--127、129、139}
+还可加入计划变更对话，观察旧事实和旧摘要的影响，并比较来源追踪与摘要失效策略。
+% 来源：§3--4，Limitations，附录 A.3、A.7；印刷页123--127、129、139
 
+\subsection{小结}
 
-\subsection{原论文表格的复核问题}
-本文引用原论文印刷值，差值与比例在该基础上计算。复核时发现，表1中MemoryOS的输入1.889M与输出0.939M相加为2.828M，Sum列为2.868M。另外，按表3题型数量对表1的Mem0与Zep分类分数加权，约得到67.646\%和75.375\%，与报告的66.88\%和75.14\%不一致。论文未说明这些行是否采用了不同的有效样本或汇总规则。后续复现时可用逐题结果核对。
+StructMem通过事件内绑定保留人物互动与事实语境，通过跨事件整合建立时间联系。主结果、组件消融和忠实性检查分别展示了整体表现、整合模块的作用与生成关联的可靠性。
 
-图3(c)的Token量对应其检索规模分析，正文没有完整展开该图的计量过程。本文按图中趋势讨论检索数量与效果，不把它并入表1的构建成本。
-
-\subsection{本篇阅读结论}
-
-这篇论文最重要的启发是：记忆组织改变的不只是存储形式，还改变后续模型能够联合哪些证据。事件内绑定保留人物互动与事实语境，跨事件整合则把相关历史组织成有时间依据的叙述。主结果、组件消融和忠实性检查分别从整体效果、机制作用与生成风险三个层面提供支持。
-
-与此同时，论文条件下的整体排名不等于所有题型领先，较少的构建 tokens 也不等于每项效率指标都最优。后续仍应检查关系抽取、时间锚和摘要通道的独立贡献，以及新旧信息变化后如何维护一致性。与其他五篇论文的系统性比较，留待各成员完成个人部分后共同讨论。
+该方法适合分析时间关系和跨事件证据组织。进一步研究可聚焦关系抽取、时间锚和摘要检索的独立贡献，以及计划变更后旧条目与摘要的一致性维护。
 \endgroup

@@ -1,40 +1,45 @@
 \section{开场与阅读范围}
-\presenter{开场讲解人待填写}
-\source{}
+\presenter{第8队}
+
 \begin{frame}[plain]
     \vspace{4mm}{\small\color{accent}天津大学 NLP\quad 第 8 队}\par
     \vspace{8mm}{\fontsize{27}{34}\selectfont\bfseries 长上下文场景\\结构化记忆建模}\par
-    \vspace{5mm}{\Large 六篇论文阅读与系统性总结}\par
+    \vspace{5mm}{\Large 六篇论文阅读与系统性比较}\par
     \vspace{6mm}\textcolor{accent}{\rule{\textwidth}{0.8pt}}\par
-    \vspace{3mm}{\small 汇报成员与日期：待填写}
-    \note{开场约 3 分钟，三页合计。封面用约 15 秒介绍小组和主题。}
+    \vspace{3mm}{\small 组织、访问、更新、利用与操作验证}
+    \note{计划15秒。大家好，我们是第八队。这次阅读围绕长上下文场景中的结构化记忆，介绍六篇论文，并用统一的问题比较它们。我们关注历史怎样被保存、找到、更新并用于后续任务。}
 \end{frame}
 
-\begin{frame}{共同的研究问题}
+% 来源：阅读范围：六篇原论文；下列问题为综述整理
+\begin{frame}{长历史中的关系、范围与状态}
     \large
-    长历史持续增长时，如何保存、找到并正确使用相关记忆？\par
-    \vspace{6mm}
-    \normalsize
-    \begin{itemize}\setlength{\itemsep}{4mm}
-        \item 组织：保留哪些事实、关系、时间与任务状态？
-        \item 访问：怎样定位相关证据，并保留必要上下文？
-        \item 维护与利用：如何处理更新、操作和证据使用？
-    \end{itemize}
-    \note{用约 1 分钟介绍共同问题。此处只给阅读视角，具体结论放在各篇讲解和最后的共同总结。}
+    长期记忆需要保留关系、定位证据，并跟随新信息更新。\par
+    \vspace{5mm}\normalsize
+    \begin{tabularx}{\linewidth}{@{}p{26mm}Y@{}}
+        \toprule
+        环节 & 需要回答的问题 \\
+        \midrule
+        组织 & 人物、事件、时间和来源关系是否保留下来？\\[2mm]
+        访问 & 如何定位正确的人物、事件与版本？\\[2mm]
+        更新与利用 & 新旧状态如何区分，已取回的证据如何解释？\\[2mm]
+        操作验证 & 改了哪条记忆，执行后的状态是否符合意图？\\
+        \bottomrule
+    \end{tabularx}
+    \note{计划60秒。假设用户先说周五去A地，后来改成周六去B地。完整历史虽然包含两条信息，模型仍可能混淆哪个计划有效；如果只检索语义最相似的片段，也可能只找到旧计划。即使都找到了，回答时还可能把两个版本拼在一起。最后，如果用户要求暂时不要再提这次行程，系统还要判断是降低优先级还是删除。这个小例子把问题分成四层：组织是否保留关系，访问是否选对范围，更新和回答是否处理好证据，操作结果是否符合要求。后面的六篇工作分别围绕这些环节展开。}
 \end{frame}
 
-\begin{frame}{汇报结构与时间安排}
-    \begin{tabularx}{\linewidth}{@{}p{27mm}Y r@{}}
+% 来源：时间为讲解计划；实际时长以本人排练与录制为准
+\begin{frame}{汇报安排}
+    \begin{tabularx}{\linewidth}{@{}p{25mm}Y r@{}}
         \toprule
-        环节 & 内容 & 参考时间 \\
+        环节 & 内容 & 计划时间 \\
         \midrule
-        开场 & 研究背景与共同问题 & 3 分钟 \\
-        六篇论文 & StructMem、Hindsight、Semantic XPath\newline HyMEM、MetaMem、Text2Mem & 每人 7--9 分钟 \\
-        系统性总结 & 统一比较、共同案例、取舍与小组结论 & 10--15 分钟 \\
+        开场 & 共同问题与阅读范围 & 2 分钟 \\
+        六篇论文 & StructMem、Hindsight、Semantic XPath\newline HyMEM、MetaMem、Text2Mem & 每人约8分钟 \\
+        系统性总结 & 机制比较、共同案例、实验结果与课设选择 & 10 分钟 \\
         \bottomrule
     \end{tabularx}\par
-    \vspace{5mm}
-    \key{默认：3＋6×8＋12＝63 分钟}
-    \aside{各篇讲解先建立依据，最后集中讨论论文之间的关系。}
-    \note{用约 1 分钟说明路线，剩余时间用于衔接。若采用 60 分钟版，开场 2 分钟、每人 8 分钟、总结 10 分钟，并更新此页时间。}
+    \vspace{5mm}\key{2＋6×8＋10＝60 分钟}
+
+    \note{计划45秒。先由六位成员分别说明问题、方法、证据和局限，每部分以八分钟为目标，再用十分钟回答这些工作之间是什么关系。StructMem和Hindsight主要讨论长对话记忆，Semantic XPath研究结构访问，HyMEM面向网页操作，MetaMem关注证据利用，Text2Mem关注操作语义与状态效果。最后结合各自的任务和实验条件，比较这些机制怎样发挥作用。下面进入StructMem。}
 \end{frame}

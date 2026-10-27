@@ -1,6 +1,10 @@
 # Semantic XPath 个人材料与视频合稿说明
 
-负责人：`oioioi-521`。关联任务：[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55)。本次将2026-10-17已有个人材料迁入2026-10-26的小组 LaTeX / Beamer 格式，保留原13页顺序。
+> 报告于2026-10-27统一修订行文与图表格式，精简引用及原文位置。当前报告 PDF、页数和哈希见[报告清单](report-style-artifacts.json)，检查见[报告修订记录](report-style-check-20261027.md)。
+
+> 演示于2026-10-27统一修订文字和样式，已移除文献脚注与灰色旁注。当前个人PDF及全组68页演示的大小、哈希与源码见[演示清单](slides/style-artifacts.json)，验证见[修订记录](slides/style-check-20261027.md)。下文原核查过程和旧版估时保留为历史记录，录制前按新稿重新计时。
+
+负责人：`oioioi-521`。关联任务：[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55)。2026-10-26迁入版沿用原13页顺序；本轮移除末页参考资料，当前演示为12页。
 
 此前录制的视频时长为 **8分55秒（535秒）**。按 F 最新确认，**本次作业视频仍按未交付统计**；待取得文件并检查与当前幻灯片的内容衔接、风格及音画后，再决定能否复用，不能仅凭旧录制时长视为本次交付。
 
@@ -8,15 +12,15 @@
 
 - [阅读报告正文](sections/03-semantic-xpath.tex)：全组 `main.tex` 已输入此文件。
 - [个人报告PDF](semantic-xpath-preview.pdf)与[个人报告编译入口](semantic-xpath-preview.tex)。
-- [13页演示PDF](slides/semantic-xpath-preview.pdf)、[Beamer正文](slides/sections/03-semantic-xpath.tex)与[个人演示编译入口](slides/semantic-xpath-preview.tex)。全组 slides 主文件已输入该模块。
-- [全组演示预览](slides/preview.pdf)已于 2026-10-27 更新为71页（正文67页＋备用4页）；本模块位于第25–37页。整份报告18页，共同部分仍待补齐，详见[整合检查](integration-check-20261027.md)，不作为已定稿报告。
+- [12页演示PDF](slides/semantic-xpath-preview.pdf)、[Beamer正文](slides/sections/03-semantic-xpath.tex)与[个人演示编译入口](slides/semantic-xpath-preview.tex)。全组 slides 主文件已输入该模块。
+- [全组演示预览](slides/preview.pdf)已于 2026-10-27 更新为68页；本模块位于第25–36页。整份报告20页，共同部分已补齐待审核，详见[演示修订检查](slides/style-check-20261027.md)，不作为已定稿报告。
 - [逐页参考讲稿](semantic-xpath-speaker-notes.md)：迁入版措辞，供过稿与解释使用，不标为录像逐字转写；Beamer另有逐页备注。
 - [验证记录](semantic-xpath-verification.json)：编译器、页数、文件大小与SHA-256；视频状态单独记录为本人确认。
 - [原论文PDF](../../papers/structured-memory-group2/03_Semantic_XPath.pdf)、[ACL官方页面](https://aclanthology.org/2026.acl-demo.28/)、[作者项目](https://github.com/D3Mlab/SemanticXpath-Chat)。论文共11页，印刷页286–296；本页所有页码指PDF文件页码。
 
 原始Word、PowerPoint和录制稿不随PR公开，避免公开姓名、班级和学号；本次未修改这些个人底稿。公共模块统一使用GitHub账号。这里的PDF是个人模块预览，最终仍按小组要求提交一份系统性报告、演示和约60分钟视频。
 
-## 13页与原录制材料的对应
+## 原13页与当前演示的对应
 
 下表按原PPT页序对齐，未根据视频推断切页时间，也没有将原“10分钟”计划改写成实际逐页计时。
 
@@ -34,11 +38,11 @@
 | 10 / 10 | LoCoMo | 明确总体得分处于两种基线之间，输入包含查询生成 |
 | 11 / 11 | 优点、局限与错误 | 检索是主要剩余失败来源；token不等于完整系统成本 |
 | 12 / 12 | 个人总结与团队关联 | 原稿拟议角色属于10月17日计划；当前C已结项，未复现Semantic XPath |
-| 13 / 13 | 参考资料 | 统一论文、代码地址与来源说明 |
+| 13 / 已移除 | 参考资料 | 论文位置保留在源码注释与报告中 |
 
 旧视频保留作为待验收素材，是否复用由 F 核看后确认。合稿时核对上述事实口径，尤其第12页的时点说明；不能仅凭页数对应就认定视频与新PDF逐字一致。若原视频含过度概括，可在整组视频的字幕或片尾说明补充，不预先断言存在需要修正的具体口播。
 
-第12页可用的合稿说明：
+原录制第12页的核对说明（新版口播见逐页讲稿）：
 
 > 本段录制材料基于10月17日的个人阅读稿，其中拟议分工反映当时计划。后续本人已完成C事件记忆构建与交接（91个session），详见Issue #32及PR #43、#50；这些成果不属于Semantic XPath端到端复现。
 

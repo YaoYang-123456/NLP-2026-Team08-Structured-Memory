@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-27",
+  "source_baseline": "fb0141d3caec8e9f16fd5d473547f7e4ff16ad1f",
+  "scope": "Whole-deck wording, normal text styling, removal of per-slide references and backup pages; corresponding individual slides and scripts",
+  "inputs": [
+    {
+      "path": "reports/homework/slides/main.tex",
+      "bytes": 714,
+      "sha256": "2ed97c7a6d6e9ee7e0b365cd95e71b82c57f63eae586a94fc1e6b2eae32c325f"
+    },
+    {
+      "path": "reports/homework/slides/preamble.tex",
+      "bytes": 2223,
+      "sha256": "ef65f94cee24f256f5db39bcc3c0a06b02dec3104ee13037ba9bb61aa776e111"
+    },
+    {
+      "path": "reports/homework/slides/.latexmkrc",
+      "bytes": 61,
+      "sha256": "7c080fb06c50e9b027daffbb8b2c25abcc54b20e3ebde80aa0ff758314960538"
+    },
+    {
+      "path": "reports/homework/slides/hindsight-preview.tex",
+      "bytes": 180,
+      "sha256": "9680abd437009be37073268ace0de10135014b44047013ad5d41cc75d8ab40cc"
+    },
+    {
+      "path": "reports/homework/slides/hymem-preview.tex",
+      "bytes": 303,
+      "sha256": "7f16174bbcada0acda06fc81034e831d4778d50b0e87d9f7d56a46dcf8aa3e0a"
+    },
+    {
+      "path": "reports/homework/slides/metamem-preview.tex",
+      "bytes": 260,
+      "sha256": "b50beae03c2c23450cee7e2078e009f2c979f651a9998136c2f565c45791ef46"
+    },
+    {
+      "path": "reports/homework/slides/semantic-xpath-preview.tex",
+      "bytes": 195,
+      "sha256": "a51571396c7615851e81eeaecc58b3be33d14ef6e62f7549fba0895b16222413"
+    },
+    {
+      "path": "reports/homework/slides/text2mem-preview.tex",
+      "bytes": 177,
+      "sha256": "89c0b45bd10d4e1df5630a30dd434c294cf733a01bdb7f4c7033b1c88e2da47f"
+    },
+    {
+      "path": "reports/homework/slides/sections/00-opening.tex",
+      "bytes": 3212,
+      "sha256": "f822c16a1c41cfc2536da165f41780ffa2b25d30e3e0939a8f33c48bd1f8c9a8"
+    },
+    {
+      "path": "reports/homework/slides/sections/01-structmem.tex",
+      "bytes": 18562,
+      "sha256": "af5235ec35d36ddff99475150b2a92e3d82e884b2c3dede42013daa6ec678075"
+    },
+    {
+      "path": "reports/homework/slides/sections/02-hindsight.tex",
+      "bytes": 10616,
+      "sha256": "1607257496e40698194c43ab408b244520e176b7de1e06da035f058c3d4e8992"
+    },
+    {
+      "path": "reports/homework/slides/sections/03-semantic-xpath.tex",
+      "bytes": 13191,
+      "sha256": "11a504fad3971a93702e4d663ea62d35af343225e7061240a5a6b22913db04e8"
+    },
+    {
+      "path": "reports/homework/slides/sections/04-hymem.tex",
+      "bytes": 8146,
+      "sha256": "8e3ccaaecd55f47ddeb257df603d34eaf792b3b73b4dcc7631014d397664f3c6"
+    },
+    {
+      "path": "reports/homework/slides/sections/05-metamem.tex",
+      "bytes": 10244,
+      "sha256": "a3e9c2e1a41e1654f4e422e83630f15279ed0d90de7a0f8ed2baa193baeb9a95"
+    },
+    {
+      "path": "reports/homework/slides/sections/06-text2mem.tex",
+      "bytes": 9282,
+      "sha256": "815aeaf8fd3026fae2bd197fba3a9dc0816af73246db66a2b5d794f613c3ac04"
+    },
+    {
+      "path": "reports/homework/slides/sections/07-synthesis.tex",
+      "bytes": 11848,
+      "sha256": "1c85c2dba637a47768715e195d917852de749dfcfa8dadec6438bf79ec392cd2"
+    },
+    {
+      "path": "scripts/fix_hymem_pdf_unicode.py",
+      "bytes": 2031,
+      "sha256": "f3518f0ec50f23d5ac2f2e6c9e926a45acfbf48a0f8b8d74e0202923e2cdaf3c"
+    },
+    {
+      "path": "reports/homework/resources/Adobe-GB1-UCS2",
+      "bytes": 221210,
+      "sha256": "40b286cf48062e5e3b2164a52090d6ef32ef65739153aab26fec297d6699e105"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/homework/slides/preview.pdf",
+      "pages": 68,
+      "bytes": 672816,
+      "sha256": "bff5b07e4ba572f1ad469a08ce6468ac8f78070f8ef6e6123b125a532ce4f648"
+    },
+    {
+      "path": "reports/homework/slides/hindsight-preview.pdf",
+      "pages": 9,
+      "bytes": 280361,
+      "sha256": "f8e69fa86d0e48fae8479b0bc239eb46187187438f98da01cbc95c9f92e64f72"
+    },
+    {
+      "path": "reports/homework/slides/semantic-xpath-preview.pdf",
+      "pages": 12,
+      "bytes": 302494,
+      "sha256": "490de36f7166748f2b483295123c9fd0c50433ccb0722c8c283f9e6e4b2002ba"
+    },
+    {
+      "path": "reports/homework/slides/hymem-preview.pdf",
+      "pages": 7,
+      "bytes": 243292,
+      "sha256": "f542bfb48c2a89f1e0e101f32ec72dc778a76a403ce1ce05a698a8660dc5e57f"
+    },
+    {
+      "path": "reports/homework/slides/metamem-preview.pdf",
+      "pages": 8,
+      "bytes": 243237,
+      "sha256": "634e34fdc37fd166c2c40c200ec7530a2ec67248febfc60079cce8027e8b3655"
+    },
+    {
+      "path": "reports/homework/slides/text2mem-preview.pdf",
+      "pages": 8,
+      "bytes": 255810,
+      "sha256": "7dc72dc0695683c94fcab6501e3e79f9c556b5f5b69384b9e84311290790bdd5"
+    }
+  ],
+  "supporting_artifacts": [
+    {
+      "path": "reports/homework/scripts/00-opening-and-synthesis.md",
+      "bytes": 6848,
+      "sha256": "b716a87121e94067b37344ce8b9e36a1ac9c0b54c5fd13df0f2bda6b5bcc05fb"
+    },
+    {
+      "path": "reports/homework/scripts/02-hindsight-8min.md",
+      "bytes": 7322,
+      "sha256": "1d041d1e1cf9c12119a932b1de2c6deb88c6d1d8772614663b05ca279b80f85e"
+    },
+    {
+      "path": "reports/homework/scripts/05-metamem-8min.md",
+      "bytes": 5720,
+      "sha256": "f5755ceaaeb5344322a7587140cffa28145f45faeb57f5ceaffc27d9e2889317"
+    },
+    {
+      "path": "reports/homework/semantic-xpath-speaker-notes.md",
+      "bytes": 5049,
+      "sha256": "30e5890762b52ae43014d4e758002c83109a6acb558b1212add77418fc113505"
+    }
+  ],
+  "checks": {
+    "latexmk_xelatex_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "overfull": 0,
+    "underfull": 0,
+    "missing_characters": 0,
+    "undefined_references_or_citations": 0,
+    "pdfjs_all_112_pages_rendered_and_chinese_extracted": true,
+    "pdfjs_external_cMapUrl": false,
+    "full_deck_visual_review_pages": "1-68",
+    "pdfium_unicode_mapping_pixel_equality": true,
+    "individual_body_pixels_equal_to_shared": true,
+    "result_table_numbers_unchanged": true,
+    "report_text_and_pdf_unchanged": true,
+    "contribution_unchanged": true
+  },
+  "readiness": {
+    "review": "approved_in_PR66_by_YaoYang-123456",
+    "actual_timing": "pending_rehearsal",
+    "semantic_xpath_old_video": "not_delivered_for_current_homework"
+  },
+  "section_title_timing_revision": {
+    "date": "2026-10-27",
+    "baseline": "b3e351df0aafcc9d5e0898859de374a1fe4ddadb",
+    "title_pages": [
+      4,
+      16,
+      25,
+      37,
+      44,
+      52,
+      60
+    ],
+    "duration_labels_removed": true,
+    "other_61_pages_pixel_identical": true,
+    "individual_previews_rebuilt": 5
+  },
+  "technical_review": {
+    "pull_request": 66,
+    "reviewer": "YaoYang-123456",
+    "reviewed_commit": "6b49e6890182dd1631dfd2ac74aa443ccff053f0",
+    "state": "APPROVED",
+    "submitted_at": "2026-10-27T07:53:19Z"
+  },
+  "metric_wording_revision": {
+    "date": "2026-10-27",
+    "baseline": "6b49e6890182dd1631dfd2ac74aa443ccff053f0",
+    "changed_slide": 65,
+    "change": "ESR counts generated schemas/evaluation instances; EMR counts state assertions",
+    "other_67_pages_pixel_identical": true,
+    "latexmk_xelatex_exit_code": 0,
+    "overfull": 0,
+    "underfull": 0,
+    "missing_characters": 0,
+    "undefined_references": 0,
+    "pdfjs_all_68_pages_rendered_and_chinese_extracted": true,
+    "shared_notes_match_script": true
+  }
+}
