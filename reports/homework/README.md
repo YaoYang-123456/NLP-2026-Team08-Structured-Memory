@@ -28,11 +28,11 @@
 
 ### 当前整合预览与检查
 
-- [整份报告 PDF](report-preview.pdf)：**22 页**；[整份幻灯片 PDF](slides/preview.pdf)：**68 页，已移除备用页和独立参考资料页**。这是 10 月 27 日共同部分补齐、全组 slides 文字与样式统一后的审核版，仍非最终提交版。
-- 摘要与背景说明六篇的阅读范围；综合章节比较表示、机制、成立条件、误差与成本，以行程变更案例解释关系，并结合既定 StructMem 课设范围形成总结。原文数字、自拟案例和后续设计分别标明。
+- [整份报告 PDF](report-preview.pdf)：**20 页**；[整份幻灯片 PDF](slides/preview.pdf)：**68 页，已移除备用页和独立参考资料页**。10 月 27 日已完成共同部分及全组 report / slides 的文字整理，当前由 PR #66 集中审核。
+- 报告统一摘要、背景、六篇章节、比较与总结的行文；删除重复自我辩解、交接状态和可见原文位置，保留六处首次引用与文末文献。图表使用软件学报模板的自动编号和题注，实验数据保持一致。
 - 开场 3 页、综合 9 页均已填写逐页备注，并提供[独立讲稿](scripts/00-opening-and-synthesis.md)。计划采用 **2＋6×8＋10＝60 分钟**；这不是实际排练记录。
-- latexmk / XeLaTeX 编译成功，无 Overfull、Underfull hbox、缺字或未定义引用；报告保留 3 条 Underfull vbox 和数学字体尺寸替代提示，已检查版式。两份 PDF 全页通过无外部 CMap 的 PDF.js 中文提取与渲染，补映射前后 PDFium 画面一致。
-- 共同正文整理见[共同部分检查记录](shared-sections-check-20261027.md)，最新 slides 页码与验证见[演示修订检查](slides/style-check-20261027.md)；文件大小与 SHA-256 见[整合清单](integration-artifacts.json)及[演示清单](slides/style-artifacts.json)。[前一轮整合检查](integration-check-20261027.md)保留为 18 / 71 页版本的历史记录。
+- 主报告与四份个人报告均通过 latexmk / XeLaTeX，共 29 页完成 PDF.js 中文提取、渲染和版面检查。无 Overfull、Underfull hbox、缺字或未定义引用；主报告保留 3 条 Underfull vbox 及数学字体尺寸替代提示。补 Unicode 映射前后 PDFium 画面一致，软件学报模板未改。
+- 最新报告验证见[报告修订检查](report-style-check-20261027.md)及[报告清单](report-style-artifacts.json)，slides 验证见[演示修订检查](slides/style-check-20261027.md)及[演示清单](slides/style-artifacts.json)。[整合清单](integration-artifacts.json)记录当前入口；早期检查保留对应版本记录。
 
 ### 接下来的交付
 
@@ -49,10 +49,10 @@
 | --- | --- | --- | --- |
 | StructMem | [共享章节](sections/01-structmem.tex) | [共享模块](slides/sections/01-structmem.tex) | 逐页 Beamer 备注 |
 | Hindsight | [共享章节](sections/02-hindsight.tex) | [个人 PDF](slides/hindsight-preview.pdf) | [8 分钟讲稿](scripts/02-hindsight-8min.md) |
-| Semantic XPath | [4 页 PDF](semantic-xpath-preview.pdf) | [12 页 PDF](slides/semantic-xpath-preview.pdf) | [个人指南](semantic-xpath-reading-guide.md) |
+| Semantic XPath | [3 页 PDF](semantic-xpath-preview.pdf) | [12 页 PDF](slides/semantic-xpath-preview.pdf) | [个人指南](semantic-xpath-reading-guide.md) |
 | HyMEM | [2 页 PDF](hymem-reading-report.pdf) | [7 页 PDF](slides/hymem-preview.pdf) | [个人指南](hymem-reading-guide.md) |
 | MetaMem | [2 页 PDF](metamem-reading-report.pdf) | [8 页 PDF](slides/metamem-preview.pdf) | [交接与完整讲稿](metamem-handoff.md) |
-| Text2Mem | [3 页 PDF](text2mem-report-preview.pdf) | [8 页 PDF](slides/text2mem-preview.pdf) | [个人指南](text2mem-reading-guide.md) |
+| Text2Mem | [2 页 PDF](text2mem-report-preview.pdf) | [8 页 PDF](slides/text2mem-preview.pdf) | [个人指南](text2mem-reading-guide.md) |
 
 个人材料与历史编译清单分别保留；最新整合报告和演示以本页的整合清单为准。本人过稿、实际计时、录制及课程提交仍按上表状态推进。
 
@@ -60,7 +60,7 @@
 
 `main.tex` 是阅读报告入口，`sections/01-structmem.tex` 至 `sections/06-text2mem.tex` 分别对应六篇论文，成员在 issue 中认领后编辑对应章节。文件里的“待填写”标明尚未完成的内容，不代表已有阅读或实验成果。六篇个人章节现均已接入；`sections/07-synthesis.tex` 已编入主稿，摘要、背景、比较与总结形成可审核正文。合并前请一位相关成员集中复核；贡献说明本轮保留原占位。`references.bib` 的六篇条目来自 ACL Anthology 官方 BibTeX 导出。
 
-每篇至少说明问题与背景、核心方法、关键实验、优缺点和对本组课设的启发，引用标明论文页码 / 图表编号。公共讨论围绕组织、检索、更新、利用和操作规范比较六篇工作，不直接按不同模型和任务下的准确率排名。论文报告结果、本组已验证结果和计划开展的实验分别注明；阅读报告不等待课设实验全部完成。
+每篇说明问题与背景、核心方法、关键实验、局限和课设启发。正文保留必要的学术引用，详细原文页码及图表位置放在源码注释或阅读指南中。公共讨论围绕组织、检索、更新、利用和操作规范比较六篇工作，不直接按不同模型和任务下的准确率排名。论文报告结果、本组已验证结果和计划开展的实验分别注明；阅读报告不等待课设实验全部完成。
 
 ## 系统性总结与团队讨论
 

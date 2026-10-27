@@ -151,5 +151,10 @@
     "date": "2026-10-27",
     "manifest": "reports/homework/slides/style-artifacts.json",
     "note": "Original fields retain earlier review/build evidence; current slide sources, PDFs and revised scripts are versioned in the linked manifest."
+  },
+  "latest_report_revision": {
+    "date": "2026-10-27",
+    "manifest": "reports/homework/report-style-artifacts.json",
+    "note": "Current report sources and PDFs are recorded in this manifest; original fields retain earlier review/build evidence."
   }
 }

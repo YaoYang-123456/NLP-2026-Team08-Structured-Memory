@@ -1,14 +1,14 @@
 {
   "checked_on": "2026-10-27",
   "prepared_by": "hycx233",
-  "source_baseline": "fb0141d3caec8e9f16fd5d473547f7e4ff16ad1f",
+  "source_baseline": "97bd3c388b3105009e30d5c2ec37e3c3e3b9bb25",
   "task_issue": 65,
-  "scope": "Shared report from baseline plus revised complete slides and scripts",
+  "scope": "Revised complete report and existing 68-page slides",
   "inputs": [
     {
       "path": "reports/homework/main.tex",
-      "bytes": 6159,
-      "sha256": "d61ae6e5d05cb6c1d8f0e8360d89d4d938a568c2d8a6713fc2bb847e91cf489f"
+      "bytes": 4844,
+      "sha256": "37c1769197a141d066c9b6ada798d1f82b4e22d71d4148df96f602863eaf3f1d"
     },
     {
       "path": "reports/homework/references.bib",
@@ -17,33 +17,33 @@
     },
     {
       "path": "reports/homework/sections/01-structmem.tex",
-      "bytes": 26189,
-      "sha256": "1a1f8721c8c9828c01bcb21bdab5be08e1fe853595bdb27cb8383561443de80e"
+      "bytes": 24733,
+      "sha256": "0d74c8162b26ed68ed4dd19cfd4a3517b72cfa051f231df3f9cdb5f4ea26ae21"
     },
     {
       "path": "reports/homework/sections/02-hindsight.tex",
-      "bytes": 8381,
-      "sha256": "053b51becb1826968e2cae7948915c7d78e402f1f89d555e2473f9d981f90fec"
+      "bytes": 6419,
+      "sha256": "49d26570d6cfe27a834b9f102aca9415d7e784c90100d590a6aafb6f1ce31026"
     },
     {
       "path": "reports/homework/sections/03-semantic-xpath.tex",
-      "bytes": 10348,
-      "sha256": "0882431175bc030e1482fe2ce944487237409f912438404e73b6cb34580ecd7e"
+      "bytes": 8246,
+      "sha256": "742c8dbb52252e4c2d059a6051fecdf79d92ad98ed07a07b7b46f48fd7187e16"
     },
     {
       "path": "reports/homework/sections/04-hymem.tex",
-      "bytes": 7364,
-      "sha256": "45fe45b2ab97650a9503f1a4842fa714c6af1ef38a8cd7001ae3283ce2cb8ec6"
+      "bytes": 6150,
+      "sha256": "d2190159a0fa19ac4b84e350959b4caca6d384686c6d223ac19229cad690705d"
     },
     {
       "path": "reports/homework/sections/05-metamem.tex",
-      "bytes": 5320,
-      "sha256": "f5dd294b6babec05fe2804a1f664b522301a21e5dd5ecbcfdf2fc961e73ec374"
+      "bytes": 3994,
+      "sha256": "adf36b90e5c3e527167164221fea87ff2adb09f264f821a68d1642147d6fd3d7"
     },
     {
       "path": "reports/homework/sections/06-text2mem.tex",
-      "bytes": 8666,
-      "sha256": "4e1a8897abf2d5109d08c24cd8986ce5f9e9d1adfd6afd9da5c71f00eb59968d"
+      "bytes": 6514,
+      "sha256": "12d86f724093be9bd53a03748c4038096140da0f92ad52ae96690dca1d0e8c88"
     },
     {
       "path": "reports/homework/slides/main.tex",
@@ -107,8 +107,8 @@
     },
     {
       "path": "reports/homework/sections/07-synthesis.tex",
-      "bytes": 15389,
-      "sha256": "7453e130486d99e4c54550e1167f50a8665ff15f254352cfbeccf1c17eae149d"
+      "bytes": 11231,
+      "sha256": "4136ad690ace07f06193814601880e0de43dfa9bcf6a0fff4a703550e895fbd9"
     },
     {
       "path": "reports/homework/.latexmkrc",
@@ -139,9 +139,9 @@
   "outputs": [
     {
       "path": "reports/homework/report-preview.pdf",
-      "bytes": 881992,
-      "sha256": "45301e2b26d658561201ddea2e88ba2785f0268f1a3327ec502d47a739393fb0",
-      "pages": 22
+      "pages": 20,
+      "bytes": 776315,
+      "sha256": "6f2004824c8853c52fcba6353a2678d05a0feb303a0b0d283e9b2c2267be657f"
     },
     {
       "path": "reports/homework/slides/preview.pdf",
@@ -174,7 +174,7 @@
   ],
   "checks": {
     "latexmk_xelatex": "passed",
-    "report_pages": 22,
+    "report_pages": 20,
     "slides_pages": 68,
     "numbered_slides": 68,
     "backup_pages": 0,
@@ -186,7 +186,7 @@
     "math_font_size_substitutions": true,
     "pdfjs_external_cMapUrl": false,
     "pdfjs_all_pages_rendered_and_chinese_extracted": true,
-    "report_visual_review_pages": "1-22",
+    "report_visual_review_pages": "1-20",
     "slides_visual_review_pages": "1-68",
     "unicode_mapping_pdfium_pixel_equality": true,
     "contribution_section_unchanged_from_baseline": true,
@@ -194,18 +194,20 @@
     "planned_opening_seconds": 120,
     "planned_synthesis_seconds": 600,
     "planned_total_seconds": 3600,
-    "report_unchanged_from_baseline": true,
-    "report_build_and_visual_check_commit": "fb0141d3caec8e9f16fd5d473547f7e4ff16ad1f",
-    "slide_revision": "style-check-20261027.md"
+    "report_unchanged_from_baseline": false,
+    "report_build_and_visual_check_commit": null,
+    "slide_revision": "style-check-20261027.md",
+    "report_revision": "report-style-check-20261027.md"
   },
   "readiness": {
     "six_paper_materials": "reviewed_before_this_change",
-    "joint_synthesis": "written_and_slides_style_revised_pending_review",
+    "joint_synthesis": "written_and_complete_report_and_slides_revised_pending_review",
     "contribution_percentages": "pending_user_requested_to_leave_blank",
     "personal_videos": "not_accepted",
     "semantic_xpath_old_video": "not_delivered_for_current_homework",
     "actual_timing": "pending",
     "course_submitted": false
   },
-  "slide_revision_manifest": "reports/homework/slides/style-artifacts.json"
+  "slide_revision_manifest": "reports/homework/slides/style-artifacts.json",
+  "report_revision_manifest": "reports/homework/report-style-artifacts.json"
 }

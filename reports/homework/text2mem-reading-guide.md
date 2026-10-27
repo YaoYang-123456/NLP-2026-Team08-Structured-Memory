@@ -1,5 +1,7 @@
 # Text2Mem 个人阅读、过稿与讲解指南
 
+> 报告于2026-10-27统一修订行文与图表格式，精简引用及原文位置。当前报告 PDF、页数和哈希见[报告清单](report-style-artifacts.json)，检查见[报告修订记录](report-style-check-20261027.md)。
+
 > 演示于2026-10-27统一修订文字和样式，已移除文献脚注与灰色旁注。当前个人PDF及全组68页演示的大小、哈希与源码见[演示清单](slides/style-artifacts.json)，验证见[修订记录](slides/style-check-20261027.md)。下文原核查过程和旧版估时保留为历史记录，录制前按新稿重新计时。
 
 负责人：`ngocnamd93-spec`；任务 [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56)。本材料属于平时作业，与已验收的 A 数据与环境任务分别跟踪。本文是供本人理解和改写的讲解初稿；本人阅读验收、真实排练、视频录制、共同总结和贡献百分比不自动记为已完成。

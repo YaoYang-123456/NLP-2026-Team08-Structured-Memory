@@ -1,12 +1,14 @@
 # MetaMem 个人模块交接（2026-10-26）
 
+> 报告于2026-10-27统一修订行文与图表格式，精简引用及原文位置。当前报告 PDF、页数和哈希见[报告清单](report-style-artifacts.json)，检查见[报告修订记录](report-style-check-20261027.md)。
+
 > 演示于2026-10-27统一修订文字和样式，已移除文献脚注与灰色旁注。当前个人PDF及全组68页演示的大小、哈希与源码见[演示清单](slides/style-artifacts.json)，验证见[修订记录](slides/style-check-20261027.md)。下文原核查过程和旧版估时保留为历史记录，录制前按新稿重新计时。
 
 负责人：`YaoYang-123456`；关联 [Issue #39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39)。本轮从 main `1850da7` 核查，保留 [PR #40](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/40) 已审核章节及此前个人材料；不关闭 #39，不代表本人阅读、试讲或录制完成。
 
 ## F 的直接读取入口
 
-- 共享阅读章节：[`sections/05-metamem.tex`](sections/05-metamem.tex)，本轮核对后无须实质修改；SHA-256 为 `622f4c9cd876bb6fba395583aad42022db3f9df0ab763a9a74a3d64257f6fecf`，与任务起点一致。
+- 共享阅读章节：[`sections/05-metamem.tex`](sections/05-metamem.tex)，已统一行文，当前源码指纹见报告清单。
 - 共享演示：[`slides/sections/05-metamem.tex`](slides/sections/05-metamem.tex)，章节页＋7页正文，共8页；[`slides/metamem-preview.pdf`](slides/metamem-preview.pdf) 为本轮编译并修复中文映射后的个人预览。
 - 全组合稿的完整口语稿：[`scripts/05-metamem-8min.md`](scripts/05-metamem-8min.md)。正文逐页对应共享 `\note{}`，包含显示重点、翻页位置、预计时间和累计时间。
 - 独立报告预览：[`metamem-reading-report.pdf`](metamem-reading-report.pdf)，2页，直接读取相同共享章节；不另维护平行正文。

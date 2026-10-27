@@ -1,5 +1,7 @@
 # HyMEM 个人过稿与讲解指南
 
+> 报告于2026-10-27统一修订行文与图表格式，精简引用及原文位置。当前报告 PDF、页数和哈希见[报告清单](report-style-artifacts.json)，检查见[报告修订记录](report-style-check-20261027.md)。
+
 > 演示于2026-10-27统一修订文字和样式，已移除文献脚注与灰色旁注。当前个人PDF及全组68页演示的大小、哈希与源码见[演示清单](slides/style-artifacts.json)，验证见[修订记录](slides/style-check-20261027.md)。下文原核查过程和旧版估时保留为历史记录，录制前按新稿重新计时。
 
 负责人：`lanshuheng9-oss`。关联任务：[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53)。状态：报告与演示PDF已编译并逐页检查，F（hycx233）已完成内容及整合审核，待本人过稿、排练及录制；不代表本人已完成阅读或录制，不填写全组贡献百分比。

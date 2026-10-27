@@ -1,15 +1,17 @@
 \section{Hindsight：保留、召回与反思的结构化智能体记忆}
 \label{sec:hindsight}
 
-Latimer 等人提出 Hindsight，面向需要跨多轮对话和多个会话保持记忆的智能体\upcite{latimer-etal-2026-hindsight}。它把记忆组织为四类网络，并用 retain、recall、reflect 三种显式操作分别处理信息写入、证据检索和基于记忆的回答。本文是 ACL 2026 System Demonstrations 论文，重点介绍系统架构与交互演示；实验部分概述了作者报告的 LongMemEval 和 LoCoMo 结果。下文的准确率均为论文报告值，不是本组复现结果。
+Hindsight\upcite{latimer-etal-2026-hindsight}面向跨多轮对话和多个会话保持记忆的智能体。它把记忆组织为四类网络，并用retain、recall、reflect三种操作分别处理信息写入、证据检索和基于记忆的回答。
 
 \subsection{研究问题与四类记忆}
 
-作者将现有对话记忆的困难概括为三个相连的问题：长历史中怎样保留有用信息，查询时怎样跨会话找回相关信息，以及怎样在回答时避免只凭局部线索而产生全局不一致。单纯把片段放进向量库并取回 top-$k$，还可能混淆用户说过的事实与智能体形成的判断，也难以表达时间和实体之间的联系（PDF 第1--3页，印刷页275--277）。
+作者将现有对话记忆的困难概括为三个相连的问题：长历史中怎样保留有用信息，查询时怎样跨会话找回相关信息，以及怎样在回答时避免只凭局部线索而产生全局不一致。单纯把片段放进向量库并取回 top-$k$，还可能混淆用户说过的事实与智能体形成的判断，也难以表达时间和实体之间的联系。
 
 Hindsight 在每个 memory bank 中维护四类逻辑网络：
-\begin{center}
-\small
+\begin{table}[!htbp]
+\centering
+\caption{Hindsight的四类记忆}
+\label{tab:hindsight-types}
 \begin{tabularx}{\linewidth}{@{}p{2.5cm}XX@{}}
 \toprule
 网络 & 保存内容 & 例子或作用 \\
@@ -20,46 +22,47 @@ Observation & 根据多条事实整合出的实体摘要 & Alice 是专长于机
 Opinion & 带置信度、可随证据变化的主观判断 & “Python 适合数据科学”，并记录置信度。 \\
 \bottomrule
 \end{tabularx}
-\end{center}
-World 与 Experience 记录事实或经历；Observation 汇总关于实体的证据；Opinion 则明确标记为主观判断。论文强调这种区分便于开发者检查智能体“知道什么”以及“相信什么”。记忆单元还带有发生时间区间和被系统获知的时间戳，并可通过时间、语义、实体和因果关系连接成图（PDF 第3--4页，§3.1、图1）。
+\end{table}
+World与Experience记录事实或经历，Observation汇总实体证据，Opinion保存主观判断。这些类型区分了事实、概括与观点，便于检查和更新。记忆单元带有事件发生时间区间和系统获知时间，并通过时间、语义、实体和因果关系连接成图。
 
 \subsection{三种操作：写入、检索与生成}
 
-\textbf{Retain} 接收对话或文档，由模型抽取较粗粒度的叙事事实，再进行分类、实体识别与消歧、时间标注和关系建图。作者称每段对话通常抽取 2--5 条事实，以减少记忆切分方式对后续检索的影响。这里记录的时间至少要区分事件发生时间与智能体提及或获知该信息的时间（PDF 第3--4页，§3.2--3.3）。
+\textbf{Retain} 接收对话或文档，由模型抽取较粗粒度的叙事事实，再进行分类、实体识别与消歧、时间标注和关系建图。作者称每段对话通常抽取 2--5 条事实，以减少记忆切分方式对后续检索的影响。这里记录的时间至少要区分事件发生时间与智能体提及或获知该信息的时间。
 
-\textbf{Recall} 接收查询和 token 预算，返回预算内排序后的记忆。它并行使用四类检索：HNSW 向量相似度、BM25 关键词匹配、沿实体／时间／因果连接进行图遍历，以及按事件时间范围过滤。不同通道的排序由 Reciprocal Rank Fusion 合并，再由 cross-encoder 重排。图遍历通常限制在 2--3 跳；时间解析先处理常见表达，规则无法处理时再调用轻量 T5 模型。token 预算让调用者限定送入回答模型的上下文规模（PDF 第3、5页，§3.2、§4.1）。
+\textbf{Recall} 接收查询和 token 预算，返回预算内排序后的记忆。它并行使用四类检索：HNSW 向量相似度、BM25 关键词匹配、沿实体／时间／因果连接进行图遍历，以及按事件时间范围过滤。不同通道的排序由 Reciprocal Rank Fusion 合并，再由 cross-encoder 重排。图遍历通常限制在 2--3 跳；时间解析先处理常见表达，规则无法处理时再调用轻量 T5 模型。token 预算让调用者限定送入回答模型的上下文规模。
 
-\textbf{Reflect} 将查询、取回的记忆和可配置的行为档案交给生成流程。行为档案由怀疑程度、字面倾向和共情程度三个 1--5 的参数组成。Opinion 与事实分开存储，置信度在 $[0,1]$ 范围内；新证据支持某个判断时提高置信度，形成反证时降低置信度。后台整合还会保存支持性引文、证据数量和从 new 到 stale 的新鲜度趋势，使判断可以回溯到证据（PDF 第3--4页，§3.2--3.3）。
+\textbf{Reflect} 将查询、取回的记忆和可配置的行为档案交给生成流程。行为档案由怀疑程度、字面倾向和共情程度三个 1--5 的参数组成。Opinion 与事实分开存储，置信度在 $[0,1]$ 范围内；新证据支持某个判断时提高置信度，形成反证时降低置信度。后台整合还会保存支持性引文、证据数量和从 new 到 stale 的新鲜度趋势，使判断可以回溯到证据。
 
-论文把 retain 和 recall 放在 TEMPR（Temporal Entity Memory Priming Retrieval）组件中，把 reflect 放在 CARA（Coherent Adaptive Reasoning Agents）组件中。端到端流程可概括为“对话进入四类记忆网络—多通道召回—依据证据生成并更新意见”。作者使用 PostgreSQL、pgvector 与全文检索索引作为存储基础，并报告：包含 10,000 条记忆的 bank，其 recall 检索延迟低于 200 ms，但该数字不包含回答模型的推理时间（PDF 第4--5页，图1、§4.1--4.2）。
+论文把 retain 和 recall 放在 TEMPR（Temporal Entity Memory Priming Retrieval）组件中，把 reflect 放在 CARA（Coherent Adaptive Reasoning Agents）组件中。端到端流程可概括为“对话进入四类记忆网络—多通道召回—依据证据生成并更新意见”。作者使用 PostgreSQL、pgvector 与全文检索索引作为存储基础，并报告：包含 10,000 条记忆的 bank，其 recall 检索延迟低于 200 ms，但该数字不包含回答模型的推理时间。
 
-\subsection{实验设置与论文报告的结果}
+\subsection{实验设置与结果}
 
-论文在 LongMemEval 与 LoCoMo 上评估对话长期记忆。LongMemEval 的 S 设置包含 500 道问题，对话最长约 150 万 token；LoCoMo 使用多会话对话，每段最多 35 个会话。指标为回答准确率。以下转录原文表2中的总体分数（单位：\%）；不同工作使用的模型、系统配置和评测设置并不完全相同，因此表中结果不构成严格控制变量的直接比较。
+论文在LongMemEval与LoCoMo上评估长期对话记忆。LongMemEval的S设置包含500道问题，对话最长约150万tokens；LoCoMo使用多会话对话，每段最多35个会话。表\ref{tab:hindsight-results}列出不同模型配置下的回答准确率。
 
-\begin{center}
-\small
-\begin{tabularx}{\linewidth}{@{}p{2.0cm}X>{\centering\arraybackslash}p{1.35cm}>{\centering\arraybackslash}p{1.35cm}>{\centering\arraybackslash}p{1.35cm}X@{}}
+\begin{table}[!htbp]
+\centering
+\caption{Hindsight在两项基准上的回答准确率（\%）}
+\label{tab:hindsight-results}
+\begin{tabular}{lrrr}
 \toprule
-基准 & 论文列出的参照结果 & Hindsight 20B & Hindsight 120B & Hindsight Gemini-3 & 阅读时需注意 \\
+基准 & Hindsight 20B & Hindsight 120B & Hindsight Gemini-3 \\
 \midrule
-LongMemEval & Full-context GPT-4o：60.2；Supermemory（Gemini-3）：85.2 & 83.6 & 89.0 & 91.4 & 20B 高于 GPT-4o 全文基线，但低于表中的 Supermemory。 \\
-LoCoMo & Zep：75.1；Memobase：75.8；Backboard：90.0 & 83.2 & 85.7 & 89.6 & Gemini-3 结果接近但低于 Backboard 的报告值。 \\
+LongMemEval & 83.6 & 89.0 & 91.4 \\
+LoCoMo & 83.2 & 85.7 & 89.6 \\
 \bottomrule
-\end{tabularx}
-\end{center}
-\noindent{\footnotesize Hindsight 结果表\quad 据原文表2转录；PDF 第6页，印刷页280。}
+\end{tabular}
+\end{table}
 
-在 LongMemEval 上，作者报告 20B 开源模型配合 Hindsight 达到 83.6\%，比全文 GPT-4o 的 60.2\% 高 23.4 个百分点；模型扩大到 120B 后为 89.0\%，使用 Gemini-3 后为 91.4\%。在 LoCoMo 上，相应结果为 83.2\%、85.7\% 和 89.6\%。附录表4显示，20B 配置在 LongMemEval 的时间推理和多会话题上均为 79.7\%，偏好题为 66.7\%；这些题型与时间过滤、实体关联和 Opinion／Observation 组织所针对的问题相对应（PDF 第7页及第11页，§6.1--6.3、表4）。
+在LongMemEval上，20B模型配合Hindsight达到83.6\%，120B模型为89.0\%，Gemini-3为91.4\%；在LoCoMo上，相应结果为83.2\%、85.7\%和89.6\%。20B配置在LongMemEval时间推理和多会话题上均为79.7\%，偏好题为66.7\%，反映出不同题型仍有差异。
 
-表内模型条件影响结论范围：20B 配置的 LongMemEval 分数低于表列的 Supermemory-Gemini-3，LoCoMo 上 Hindsight-Gemini-3 的 89.6\% 也低于 Backboard 的 90.0\%。这不等于受控条件下 Hindsight 一定较差，而是说明不宜把摘要中的“胜过所有既有记忆系统”泛化为对表中每个系统、每个模型配置都领先。比较时需要同时报告基座模型、记忆方法、数据集和评测口径。
+作为参照，全文GPT-4o在LongMemEval上的分数为60.2\%，Supermemory-Gemini-3为85.2\%；LoCoMo中Zep、Memobase和Backboard分别为75.1\%、75.8\%和90.0\%。这些结果涉及不同基础模型和系统配置，适合描述各配置的表现；记忆机制的独立贡献则需在固定模型与预算下比较。
 
-\subsection{局限、证据边界与课设启发}
+\subsection{方法局限与课设启发}
 
-论文明确列出的局限包括：事实抽取、实体消歧和意见更新依赖语言模型，错误可能沿记忆图传播；评测只覆盖英文基准；Opinion 的主观质量和置信度校准还没有通过正式用户研究验证；时间解析可能漏掉含混或文化相关的表达。持续保存个人偏好与意见也带来隐私和偏见风险，论文指出系统没有内置 PII 检测或自动脱敏机制（PDF 第8页，印刷页282）。
+论文明确列出的局限包括：事实抽取、实体消歧和意见更新依赖语言模型，错误可能沿记忆图传播；评测只覆盖英文基准；Opinion 的主观质量和置信度校准还没有通过正式用户研究验证；时间解析可能漏掉含混或文化相关的表达。持续保存个人偏好与意见也带来隐私和偏见风险，论文指出系统没有内置 PII 检测或自动脱敏机制。
 
-还有两点证据边界值得在复述时说明。第一，本文是系统演示论文，并称完整评估见 Latimer 等人的 2025 年工作；但本文参考文献中该条目的 arXiv 编号仍为占位符“2505.XXXXX”，因此不能仅凭本文核实其完整实验与消融。第二，§6.2 的 LongMemEval 细分类别基线数值与附录表4中 Full-context GPT-4o 的对应数值不同，正文没有在该处充分解释差异。阅读结果时应以明确标注的数据配置为单位，避免把不同设置的数字当作同一组对照（PDF 第7--9、11页，§6.2、表4及参考文献）。
+评测材料也有待完善：系统演示论文引用的完整评估条目仍带有arXiv编号占位符，且正文与附录中的部分LongMemEval分类基线数值不一致。复核组件效果时，需要补充完整实验配置和逐题结果。
 
-对本组“长上下文场景结构化记忆”课设，Hindsight 提供了三类可验证的设计问题：事实、经历、实体摘要与主观意见是否需要分开存储；时间与实体图连接是否能补足向量检索；多通道检索在固定 token 预算下是否提高答案质量。若后续实验采用这些想法，应固定模型、数据与预算，逐项比较检索通道，并同时记录准确率、噪声、延迟和 token 成本。上述内容是从论文推导出的实验设想，不是本组已经验证的结果，也不代表全组已形成结论。
+Hindsight对课程设计的启发集中在记忆类型和检索组织：分别保存事实、经历、实体摘要与观点，利用时间和实体关系补充向量检索，并通过token预算控制回答上下文。可在固定模型、数据和预算下逐项比较检索通道，记录准确率、无关条目比例、延迟与token开销。
 
-\noindent{\footnotesize 原文：Latimer et al. (2026), ACL Anthology，PDF 第1--11页；关键架构见图1（PDF 第4页），总体结果见表2（PDF 第6页），分类结果见表4（PDF 第11页）。}
+% 原文定位：PDF 第1--3页，印刷页275--277；PDF 第3--4页，§3.1、图1；PDF 第3--4页，§3.2--3.3；PDF 第3、5页，§3.2、§4.1；PDF 第4--5页，图1、§4.1--4.2；PDF 第7页及第11页，§6.1--6.3、表4；PDF 第8页，印刷页282；PDF 第7--9、11页，§6.2、表4及参考文献；PDF 第4页；PDF 第6页；PDF 第11页。

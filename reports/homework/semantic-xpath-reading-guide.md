@@ -1,5 +1,7 @@
 # Semantic XPath 个人材料与视频合稿说明
 
+> 报告于2026-10-27统一修订行文与图表格式，精简引用及原文位置。当前报告 PDF、页数和哈希见[报告清单](report-style-artifacts.json)，检查见[报告修订记录](report-style-check-20261027.md)。
+
 > 演示于2026-10-27统一修订文字和样式，已移除文献脚注与灰色旁注。当前个人PDF及全组68页演示的大小、哈希与源码见[演示清单](slides/style-artifacts.json)，验证见[修订记录](slides/style-check-20261027.md)。下文原核查过程和旧版估时保留为历史记录，录制前按新稿重新计时。
 
 负责人：`oioioi-521`。关联任务：[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55)。2026-10-26迁入版沿用原13页顺序；本轮移除末页参考资料，当前演示为12页。
@@ -11,7 +13,7 @@
 - [阅读报告正文](sections/03-semantic-xpath.tex)：全组 `main.tex` 已输入此文件。
 - [个人报告PDF](semantic-xpath-preview.pdf)与[个人报告编译入口](semantic-xpath-preview.tex)。
 - [12页演示PDF](slides/semantic-xpath-preview.pdf)、[Beamer正文](slides/sections/03-semantic-xpath.tex)与[个人演示编译入口](slides/semantic-xpath-preview.tex)。全组 slides 主文件已输入该模块。
-- [全组演示预览](slides/preview.pdf)已于 2026-10-27 更新为68页；本模块位于第25–36页。整份报告22页，共同部分已补齐待审核，详见[演示修订检查](slides/style-check-20261027.md)，不作为已定稿报告。
+- [全组演示预览](slides/preview.pdf)已于 2026-10-27 更新为68页；本模块位于第25–36页。整份报告20页，共同部分已补齐待审核，详见[演示修订检查](slides/style-check-20261027.md)，不作为已定稿报告。
 - [逐页参考讲稿](semantic-xpath-speaker-notes.md)：迁入版措辞，供过稿与解释使用，不标为录像逐字转写；Beamer另有逐页备注。
 - [验证记录](semantic-xpath-verification.json)：编译器、页数、文件大小与SHA-256；视频状态单独记录为本人确认。
 - [原论文PDF](../../papers/structured-memory-group2/03_Semantic_XPath.pdf)、[ACL官方页面](https://aclanthology.org/2026.acl-demo.28/)、[作者项目](https://github.com/D3Mlab/SemanticXpath-Chat)。论文共11页，印刷页286–296；本页所有页码指PDF文件页码。
