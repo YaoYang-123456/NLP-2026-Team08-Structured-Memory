@@ -1,11 +1,137 @@
 \section{Semantic XPath}
-原文：\url{https://aclanthology.org/2026.acl-demo.28/}。
+本节由 \texttt{oioioi-521} 负责，依据既有个人阅读报告、13页演示稿及讲稿整理。原文为 Liu 等人的 Semantic XPath\cite{liu-etal-2026-semantic}，见 \url{https://aclanthology.org/2026.acl-demo.28/}。下述页码均为原论文 PDF 页码（共11页，印刷页286--296）。所有实验数字属于作者结果；本组没有进行 Semantic XPath 的端到端复现。
 
-\subsection{研究问题与方法}
-待填写：问题、核心机制、关键图示及原文页码。
+\subsection{研究问题与方法定位}
 
-\subsection{实验依据与优缺点}
-待填写：任务、数据、模型、关键结果和消融；说明适用条件与局限。
+长期任务导向对话需要反复查看、修改和回溯同一个任务对象。旅行计划中的一项活动不仅包含文本，还属于特定日期、行程与历史版本。全量上下文保留信息较多，但输入量随历史增长；扁平检索降低输入量，却可能取回语义相似而所属范围错误的条目。比如“在会议安排最密集的一天增加咖啡休息”，需要比较各天的活动，而不仅是找一条包含会议内容的文本（PDF第1--2页，图1--2）。
 
-\subsection{与其他论文及课设的联系}
-待填写：与其他论文的关系及对本组课设的具体启发。
+Semantic XPath 将已有的结构化记忆组织为树，用 XPath 风格的路径、位置条件和连续语义评分定位相关节点及子树，再交给下游模型回答或更新。研究重点是\textbf{记忆访问}：查询负责定位，实际插入、删除及版本维护由下游步骤处理。论文不能被解读为已经解决通用记忆构建、全部冲突消解或任意图关系推理。
+
+\subsection{树形数据模型与查询语法}
+
+记忆表示为有根树 $T=(V,E,r)$。非根节点只有一个父节点，节点具有类型和文本属性；模式 $\Sigma$ 由记忆数据已有的节点类型、属性和父子关系决定，而非要求人工预先设计一个通用模式。旅行示例采用
+\[
+\text{Itinerary}\rightarrow\text{Version}\rightarrow\text{Day}\rightarrow\text{POI},
+\]
+分别表示计划、版本、日期和活动；层级主要是组成关系，不只是对下层文本做有损摘要（PDF第3页，\S3.1）。
+
+查询是步骤序列，每一步写为 $S=A\,N\,[R]\,[P]$：路径与类型必需，位置选择器和语义条件可选（PDF第3--4页，\S3.2）。
+\begin{table}[H]
+\centering
+\caption{Semantic XPath 查询步骤的组成；依据原文\S3.2}
+\label{tab:sxpath-grammar}
+\begin{tabularx}{\linewidth}{@{}p{20mm}p{43mm}X@{}}
+\toprule
+组成 & 示例写法 & 作用 \\
+\midrule
+路径 $A$ & \texttt{/}、\texttt{//} & 访问直接子节点或全部后代 \\
+类型 $N$ & \texttt{Day}、\texttt{POI}、\texttt{*} & 按节点类型筛选或匹配任意类型 \\
+位置 $R$ & \texttt{[i]}、\texttt{[-i]}、\texttt{[i:j]} & 按顺序、倒序或区间选取候选 \\
+语义 $P$ & \texttt{[node\textasciitilde="workshop"]} & 计算候选与语义条件的相关程度 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+例如 \texttt{//Day[3]/POI[node\textasciitilde="workshop"]} 先选第三个匹配日期，再对该日期下的活动进行语义评分。若同时存在多个行程或版本，必须先限定目标范围；第三个匹配日期不能自动当作当前版本的第三天。语义条件 $1-P$ 提高原条件低分候选的优先级，它是软评分操作，不等同于已经执行删除。
+
+\subsection{语义评分与带权执行}
+
+原文附录A定义 $\operatorname{Rel}(u,P)\in[0,1]$。局部评分依据一个属性或完整节点表示；聚合评分先在当前节点下执行内部结构查询，再用平均、最小、最大或几何平均聚合证据；多个条件还可用乘积、平均及取反组合（PDF第10页）。
+
+\begin{quote}\small\ttfamily
+//Day[avg(/POI[node\textasciitilde="conference"])]
+\end{quote}
+这个查询根据活动证据评价日期。原文第二天的三个活动分数为 $0.603$、$0.482$、$0.608$，平均约 $0.565$；与其他日期比较后选中第二天。该平均值刻画会议相关性的密集程度，不能直接解释为会议数量最多（PDF第4页，\S3.3、图2）。
+
+执行器从根节点及权重1出发，维护带权集合 $W\subseteq V\times[0,1]$，按步骤进行路径扩展、类型筛选、位置选择与语义评价。语义步骤更新为
+\begin{equation}
+w_{\mathrm{new}}=w_{\mathrm{old}}\operatorname{Rel}(u,P).
+\end{equation}
+聚合条件递归访问下层证据。可执行的查询、正确的目标节点、足够完整的证据与正确的最终回答是不同层次；形式定义本身不统一规定所有场景的阈值、返回数量或空集处理。
+
+\subsection{教学案例与公平比较}
+
+沿用个人演示中的教学示例：假设只有一个当前版本，第2天有海滨公园，第5天有山地徒步，第7天有植物园和海港游船。用户要求找出“第7天下雨时需要调整的户外活动”。纯语义排序可能混入其他日期的活动；结构化访问先限定第7天，再评价活动语义，目标为植物园与游船。
+
+这个例子用于解释范围约束，\textbf{没有运行真实检索，也不是论文实验数据}。带日期元数据过滤的扁平RAG同样可以解决简单日期约束，因此应作为公平比较基线；不能把简单过滤收益全部归因于复杂查询语言。
+
+\subsection{实验设置与指标口径}
+
+作者评估旅行行程、待办清单和家庭配餐三个自建场景，每场景20个单轮对话、5个多轮对话；另在 LoCoMo 中使用原生的 Memory--Conversation--Session--Turn 层级。回答模型为 GPT-5 mini 与 Gemini 3 Flash。相似度评分器（Sem）和 Flat RAG 使用 Qwen3-Embedding-8B；蕴含评分器（Entail）使用 \texttt{facebook/bart-large-mnli}（PDF第5页，\S4.1）。
+
+自建场景的通过率要求检索到正确结构化数据，且输出满足任务约束；LoCoMo 则是模型裁判与参考答案对照的回答得分。后者不是人工金标准，两类指标不能直接混比。表1明确报告平均\textbf{输入}tokens，XPath包含查询生成输入；附录表2、表3仅称平均token用量，没有同样完整交代各组成。跨提供方的分词器也不同，宜在同一模型内比较。token不能代表嵌入、蕴含评分及查询执行的全部计算成本。
+
+\begin{table}[H]
+\centering
+\caption{作者单轮结果节选；原文PDF第11页、表2，三个自建场景平均}
+\label{tab:sxpath-single}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+回答模型 & 方法 & 通过率（\%） & 平均tokens \\
+\midrule
+GPT-5 mini & In-context & 70.0 & 26\,216 \\
+ & Flat RAG & 30.0 & 3\,250 \\
+ & XPath Sem & 66.3 & 6\,166 \\
+ & XPath Entail & 83.0 & 5\,691 \\
+\midrule
+Gemini 3 Flash & In-context & 79.0 & 25\,387 \\
+ & Flat RAG & 37.7 & 3\,361 \\
+ & XPath Sem & 64.3 & 6\,043 \\
+ & XPath Entail & 70.7 & 5\,830 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+单轮 GPT-5 mini 的 Entail 相对 Flat RAG 提高 $83.0-30.0=53.0$ 个百分点，相对增幅约 $176.7\%$；其token用量为全量上下文的 $5691/26216\approx21.7\%$。但 Gemini 的 In-context 为79.0\%，高于 Entail 的70.7\%，因此不能声称所有模型下准确性均最高。
+
+\begin{table}[H]
+\centering
+\caption{作者多轮结果节选；原文PDF第11页、表3，三个自建场景平均}
+\label{tab:sxpath-multi}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+回答模型 & 方法 & 通过率（\%） & 平均tokens \\
+\midrule
+GPT-5 mini & In-context & 80.0 & 69\,097 \\
+ & Flat RAG & 26.7 & 3\,327 \\
+ & XPath Sem & 70.0 & 6\,294 \\
+ & XPath Entail & 83.3 & 5\,850 \\
+\midrule
+Gemini 3 Flash & In-context & 56.7 & 76\,603 \\
+ & Flat RAG & 26.7 & 3\,240 \\
+ & XPath Sem & 76.7 & 6\,092 \\
+ & XPath Entail & 80.0 & 5\,993 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+多轮 Entail 在两种模型下取得最高平均通过率，token约为全量上下文的8.5\%与7.8\%。Sem与Entail的平均差异提供评分器比较，但不保证每个子场景都改善。单轮和多轮请求不同，不能将两张表当作同批样本的退化曲线。摘要中的9.1\%是作者概括；不能把它与单轮176.7\%相对提升拼接为同一设置下的结论。
+
+\begin{table}[H]
+\centering
+\caption{作者LoCoMo结果；原文PDF第7页、表1，XPath输入含查询生成}
+\label{tab:sxpath-locomo}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+回答模型 & 方法 & 回答得分 & 平均输入tokens \\
+\midrule
+GPT-5 mini & In-context & 74.55 & 24\,857 \\
+ & Flat RAG & 35.71 & 1\,341 \\
+ & Semantic XPath & 65.19 & 3\,032 \\
+\midrule
+Gemini 3 Flash & In-context & 87.01 & 27\,499 \\
+ & Flat RAG & 41.49 & 1\,996 \\
+ & Semantic XPath & 73.25 & 3\,870 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+LoCoMo上XPath的总体得分处于两种基线之间，输入分别约为全量上下文的12.2\%与14.1\%。这说明已有会话层级可用于访问，但准确性仍有损失。例如 GPT-5 mini 多跳题得分为43.26，低于全量上下文58.87，证据整合仍有差距。作者的失败分析将错误分为查询生成、检索和回答生成，认为检索是主要剩余来源，包括无命中、证据不全及选错节点或发言（PDF第6--7页，\S4.3、图8）。
+
+\subsection{优缺点与本组课设的联系}
+
+方法的优势是将结构范围与连续语义判断组合，并用路径与评分轨迹解释结果；下层证据可以评价上层对象，访问粒度不必固定为独立片段。其前提是有可用且可靠的层级。跨树关系、版本范围模糊、复杂多跳和不完整证据仍需检验；小规模自建任务、缺少充分重复实验和置信区间、未覆盖本地评分开销等，也限制了对泛化和成本的判断。这些属于本节阅读评价，不作为已验证的改进成果。
+
+与StructMem相比，Semantic XPath强调\textbf{如何在已有层级中访问证据}，StructMem强调事件绑定及跨事件综合；二者表示、模型、任务与预算不同，不按原论文分数直接排名。HyMEM的图邻居与动态更新、Text2Mem的操作规范可以作为比较维度，但本节不推定已完成模块组合或形成全组共识。
+
+本人课设技术分工C已经完成91个session的事件抽取与交接，具体实现和验收另见C结项记录\footnote{\url{https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/32}}；它不是Semantic XPath复现。对后续设计可提出三项待验证建议：明确日期/版本等硬范围；输出可追溯的节点与证据标识；分别检查范围、节点、证据完整性及回答错误，并与元数据过滤基线比较。

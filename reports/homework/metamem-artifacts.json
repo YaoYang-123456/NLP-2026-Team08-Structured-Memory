@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-26",
+  "base_commit": "1850da7f25fa1e40be78f2676d84acec51d9c58f",
+  "reviewer_type": "AI-assisted source and artifact checks; teammate approval pending",
+  "paper_sha256": "d51f68adc7fd535a0fc23adfaa1ea8aa65aa448b22a5112128957df257a424c6",
+  "report_section_modified": false,
+  "shared_pages": 8,
+  "report_preview_pages": 2,
+  "full_report_compiled_pages": 14,
+  "full_beamer_compiled_pages": 64,
+  "compiler": "Tectonic 0.17.0 / XeTeX",
+  "compiler_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "timing_estimated_seconds": {
+    "core": 479,
+    "full_local": 605
+  },
+  "human_reading_performed": false,
+  "video_recorded": false,
+  "course_submitted": false,
+  "model_experiments_run": false,
+  "personal_native_checks": {
+    "PowerPoint": "16.0",
+    "opened_and_reopened": true,
+    "slides": 8,
+    "notes": 8,
+    "native_tables": 6,
+    "native_charts": 1,
+    "text_overflow_candidates": 0,
+    "package_check": "passed",
+    "artifact_tool_import": "failed Format_InvalidStringWithValue -2068027336; preserved Office objects"
+  },
+  "pdf_checks": {
+    "pdfjs_without_external_cMapUrl": [
+      8,
+      2,
+      8
+    ],
+    "all_personal_pages_visually_checked": true,
+    "cmap_fix_preserves_pdfium_pixels": true
+  },
+  "known_warnings": [
+    "Full report: two preexisting Underfull vbox warnings in StructMem/Hindsight",
+    "algorithm/algorithmic UTF-8 warnings; Fontconfig configuration warning",
+    "No claim of human timing or recording"
+  ],
+  "source_verification": [
+    {
+      "paper_pdf_page": 1,
+      "object": "Figure 1",
+      "verified": "1800+1200=3000; 300 is a part"
+    },
+    {
+      "paper_pdf_page": 3,
+      "object": "Equations 1–3",
+      "verified": "q,M,E and external symbolic rules"
+    },
+    {
+      "paper_pdf_page": "4–5",
+      "object": "Figure 2; Equations 4–10",
+      "verified": "sampling,judge,reflection,actions,filter,execution"
+    },
+    {
+      "paper_pdf_page": 6,
+      "object": "Table 1",
+      "values": {
+        "Qwen": [
+          67.5,
+          71.9
+        ],
+        "Llama": [
+          66.17,
+          69.08
+        ]
+      }
+    },
+    {
+      "paper_pdf_page": 7,
+      "object": "Table 2",
+      "values": {
+        "Qwen_full_no_reflection_no_evolution": [
+          71.9,
+          70.02,
+          68.33
+        ]
+      }
+    },
+    {
+      "paper_pdf_page": 11,
+      "object": "A.3/A.5",
+      "values": {
+        "split": [
+          350,
+          50,
+          100
+        ],
+        "top_k": 20,
+        "epochs": 5,
+        "batch": 50,
+        "samples": 5
+      }
+    },
+    {
+      "paper_pdf_page": 11,
+      "object": "Table 4",
+      "values": {
+        "Qwen_seconds": [
+          17.59,
+          19.87
+        ],
+        "Llama_seconds": [
+          11.23,
+          14.86
+        ]
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "reports/homework/metamem-reading-report.pdf",
+      "bytes": 434427,
+      "sha256": "4acbf2fe3b1f41a47fcee9a7c77583d7ef9f64043dbc43f0d4945e1e7514ecd5"
+    },
+    {
+      "path": "reports/homework/slides/metamem-preview.pdf",
+      "bytes": 412769,
+      "sha256": "69b7da9927cd530e8d2be779bc106d69b3aa0ad5463cfc349592b6616092e835"
+    },
+    {
+      "path": "reports/homework/scripts/05-metamem-8min.md",
+      "bytes": 7971,
+      "sha256": "10c5555e61cf2eb4c875f8cec19a8bbe3e2d2d5be66fe63443634a5f0ed019a8"
+    },
+    {
+      "path": "reports/homework/slides/sections/05-metamem.tex",
+      "bytes": 11456,
+      "sha256": "ea8e642c32294b3d2fcf0e6db03e1b0823356d35fb4d346fbddb1970fb0c8eaf"
+    },
+    {
+      "path": "reports/homework/metamem-assets/Adobe-GB1-UCS2",
+      "bytes": 221210,
+      "sha256": "40b286cf48062e5e3b2164a52090d6ef32ef65739153aab26fec297d6699e105"
+    }
+  ],
+  "repository_manifest_note": "2026-10-27 F: text entries normalized to checked-in LF bytes; original author hashes used CRLF. PDF hashes unchanged."
+}
