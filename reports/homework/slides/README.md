@@ -14,7 +14,7 @@
 | StructMem | `sections/01-structmem.tex` | hycx233；12 页模块和备注，待本次实际计时及录制 |
 | Hindsight | `sections/02-hindsight.tex` | 8 分钟讲解稿已整理，9 页个人模块已编译；录制前由本人过稿并计时；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
 | Semantic XPath | `sections/03-semantic-xpath.tex` | #57 已审核合入，移除参考资料页后为12页；[个人PDF](semantic-xpath-preview.pdf)、[个人指南](../semantic-xpath-reading-guide.md)；旧视频按本次未交付计 |
-| HyMEM | `sections/04-hymem.tex` | 7 页模块和个人材料已合入，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md)；个人 PDF 中文显示修复 [#64](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/64) 已合入，#62 已结项 |
+| HyMEM | `sections/04-hymem.tex` | 7 页模块及 #67 七段录音稿已审核，待本人过稿、排练及录音；[个人PDF](hymem-preview.pdf)、[录音指南](../hymem-recording-guide.md)、[讲稿](../scripts/04-hymem-recording.md) |
 | MetaMem | `sections/05-metamem.tex` | #63 已审核合入，8 页；[个人PDF](metamem-preview.pdf)、[交接与完整讲稿](../metamem-handoff.md)；讲稿已修订，待重新计时 |
 | Text2Mem | `sections/06-text2mem.tex` | #59 已审核合入，8 页；[个人PDF](text2mem-preview.pdf)、[个人指南](../text2mem-reading-guide.md)；480 秒为计划，待本人过稿、计时及录制 |
 | 系统性总结 | `sections/07-synthesis.tex` | 9 页比较与总结已补齐，计划 10 分钟，已通过 #66 集中审核 |

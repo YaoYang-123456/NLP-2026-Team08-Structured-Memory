@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "owner": "lanshuheng9-oss",
+  "issue": 53,
+  "reference_style_PR": 66,
+  "reference_style_commit": "6b49e6890182dd1631dfd2ac74aa443ccff053f0",
+  "source_slides": {
+    "file": "slides-recording-realnames.pdf",
+    "bytes": 675834,
+    "sha256": "572a5f76a489d0ef3c30723a08a27083300efeebcd9d0cba44e2895203dac81d",
+    "pages": 68,
+    "personal_pages": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
+    "raw_file_not_published": true
+  },
+  "report": {
+    "path": "reports/homework/hymem-recording-report.pdf",
+    "bytes": 303580,
+    "sha256": "5082fd5bcc7c698248610f6ef26b9a611c7053289692ae27cc49ed29dd6eb4de",
+    "pages": 2
+  },
+  "source_inputs": [
+    {
+      "path": "reports/homework/hymem-recording-report.tex",
+      "bytes": 2322,
+      "sha256": "03e14e2491ce52304cd0ee48d4510d328a694db27b24ebe971b4bfe3a5d2842e"
+    },
+    {
+      "path": "reports/homework/sections/04-hymem.tex",
+      "bytes": 6150,
+      "sha256": "d2190159a0fa19ac4b84e350959b4caca6d384686c6d223ac19229cad690705d"
+    },
+    {
+      "path": "reports/homework/hymem-recording-script.tex",
+      "bytes": 9072,
+      "sha256": "969e13f5767114f1945fbd2f62b4a1b9e6a16efdf6caf7356845e7c9fb3e19d8"
+    },
+    {
+      "path": "reports/homework/scripts/04-hymem-recording.md",
+      "bytes": 8217,
+      "sha256": "ca42d45db30c448a55d67996cf1bc3f118593adac648c44cd6903feee0c63799"
+    },
+    {
+      "path": "reports/homework/references.bib",
+      "bytes": 5082,
+      "sha256": "ab4a3cdb145f9e9ac9a9703e72f71aa9ddb5fc078e1716661873beec81692c88"
+    },
+    {
+      "path": "reports/templates/jos/jos.cls",
+      "bytes": 17290,
+      "sha256": "7465b4eb1580ff6f0096c03c8aee4c55d94f6a96be7c82a2ff1b7264e0736fbd"
+    },
+    {
+      "path": "scripts/fix_hymem_pdf_unicode.py",
+      "bytes": 2031,
+      "sha256": "f3518f0ec50f23d5ac2f2e6c9e926a45acfbf48a0f8b8d74e0202923e2cdaf3c"
+    },
+    {
+      "path": "reports/homework/resources/Adobe-GB1-UCS2",
+      "bytes": 221210,
+      "sha256": "40b286cf48062e5e3b2164a52090d6ef32ef65739153aab26fec297d6699e105"
+    }
+  ],
+  "local_real_name_recording_script": {
+    "not_published": true,
+    "pages": 8,
+    "includes_personal_intro_and_next_speaker": true
+  },
+  "planned_audio_seconds": 480,
+  "actual_audio_seconds": null,
+  "actual_audio_file": null,
+  "timing_plan": [
+    {
+      "slide": 37,
+      "title": "HyMEM：电脑操作智能体的混合自演化记忆",
+      "planned_start_seconds": 0,
+      "planned_start": "00:00",
+      "planned_end": "00:20",
+      "planned_duration_seconds": 20
+    },
+    {
+      "slide": 38,
+      "title": "网页操作中的经验表示与更新",
+      "planned_start_seconds": 20,
+      "planned_start": "00:20",
+      "planned_end": "01:20",
+      "planned_duration_seconds": 60
+    },
+    {
+      "slide": 39,
+      "title": "混合记忆：策略与轨迹表示",
+      "planned_start_seconds": 80,
+      "planned_start": "01:20",
+      "planned_end": "03:05",
+      "planned_duration_seconds": 105
+    },
+    {
+      "slide": 40,
+      "title": "长期经验与工作记忆的更新",
+      "planned_start_seconds": 185,
+      "planned_start": "03:05",
+      "planned_end": "04:50",
+      "planned_duration_seconds": 105
+    },
+    {
+      "slide": 41,
+      "title": "实验设置与编码器训练",
+      "planned_start_seconds": 290,
+      "planned_start": "04:50",
+      "planned_end": "05:45",
+      "planned_duration_seconds": 55
+    },
+    {
+      "slide": 42,
+      "title": "混合记忆的任务成功率",
+      "planned_start_seconds": 345,
+      "planned_start": "05:45",
+      "planned_end": "07:05",
+      "planned_duration_seconds": 80
+    },
+    {
+      "slide": 43,
+      "title": "方法总结与课设启发",
+      "planned_start_seconds": 425,
+      "planned_start": "07:05",
+      "planned_end": "08:00",
+      "planned_duration_seconds": 55
+    }
+  ],
+  "validation": {
+    "report_pages": 2,
+    "script_pages": 8,
+    "report_compile_exit_code": 0,
+    "script_compile_exit_code": 0,
+    "PDFjs_version": "5.6.205",
+    "PDFjs_external_CMap": false,
+    "PDFjs_checked_all_10_pages": true,
+    "report_visually_checked_pages": [
+      1,
+      2
+    ],
+    "script_visually_checked_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "missing_characters": 0,
+    "undefined_references": 0,
+    "rare_character_in_local_next_speaker_name_verified": true,
+    "report_numeric_differences": [
+      13.3,
+      10.5,
+      2.5
+    ],
+    "new_model_experiments": false,
+    "known_non_fatal_warnings": [
+      "Fontconfig default configuration unavailable; explicit fonts loaded.",
+      "algorithm.sty and algorithmic.sty contain upstream invalid UTF-8 warnings in the report build."
+    ]
+  },
+  "pending": [
+    "personal reading acceptance",
+    "timed rehearsal",
+    "recording the audio",
+    "measuring actual slide timestamps",
+    "team final submission"
+  ],
+  "integration_review": {
+    "date": "2026-10-27",
+    "reviewer": "hycx233",
+    "reviewed_original_commit": "fe6564910b50e6488a4ef92ab8753c48eee88988",
+    "source_hashes_use": "Git LF files",
+    "report_compile": "latexmk / XeLaTeX",
+    "report_pages": 2,
+    "public_script_pages": 8,
+    "compile_exit_codes": [
+      0,
+      0
+    ],
+    "pdfjs_external_CMap": false,
+    "pdfjs_all_10_rebuilt_pages_checked": true,
+    "submitted_report_2_pages_checked": true,
+    "rebuilt_report_text_matches_submitted": true,
+    "markdown_and_tex_script_bodies_match": true,
+    "overfull": 0,
+    "underfull": 0,
+    "missing_characters": 0,
+    "undefined_references": 0,
+    "planned_timing_contiguous_seconds": 480,
+    "actual_audio_received": false,
+    "supplement_kept_in_individual_report": true
+  }
+}

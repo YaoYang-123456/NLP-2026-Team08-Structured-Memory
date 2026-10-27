@@ -1,0 +1,26 @@
+% !TeX program = xelatex
+\documentclass{jos}
+\fancyhead[LE,RO]{\joskaiti HyMEM 阅读报告}
+\fancyhead[LO,RE]{\joskaiti 第8队\quad lanshuheng9-oss}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{16pt}
+\hypersetup{pdftitle={HyMEM 阅读报告：录音配套修订},pdfauthor={lanshuheng9-oss}}
+\begin{document}
+\raggedbottom
+\begin{center}
+{\Large\bfseries HyMEM 阅读报告}\par
+第8队\quad lanshuheng9-oss\quad 2026年10月27日
+\end{center}
+\input{sections/04-hymem}
+
+\subsection{结果解释与方法取舍}
+
+表\ref{tab:hymem-results}中，相对于连续记忆，HyMEM在Qwen2.5-VL-7B、Qwen3-VL-8B和UI-TARS-1.5-7B上分别提高13.3、10.5和2.5个百分点。混合表示的增益因基础模型而异，不能把一种配置的提升幅度直接推广到其他模型。离散记忆在后两种模型上还低于无记忆基线，提示需要进一步检查文本化策略的质量及其与模型的配合。主表支持所测设置中的表示互补性；编码器训练、检索和动态更新的成本仍需结合具体任务评估。
+
+可以用商品搜索转入结账的过程理解三个机制的分工。高层策略保存“先搜索、再筛选、最后结账”的方法；属性标记搜索、筛选及价格等概念；连续轨迹表示保存界面与动作细节。当页面转入结账阶段，预算等目标约束仍应保留，搜索阶段的操作指导则需要更新。此为机制说明例，不作为论文或本组的新增实测样例。长期图维护跨任务经验，局部刷新维护当前执行上下文；记忆编码器的参数训练属于另一个阶段。
+
+对课程设计，更有检验价值的问题是：在相同回答模型、总检索条数及输入预算下，以“10条语义种子”为参照，比较“5条语义种子＋5条结构邻居”能否补足关键关系证据。评价应同时记录证据覆盖、无关内容比例、回答正确性及调用成本，而不只报告最终分数。该比较可检验结构扩展的收益与噪声，属于后续实验设想；将多模态轨迹嵌入直接替换为文本片段，则需要另外论证表示及模型接口的差异。
+% 补充分析依据：HyMEM PDF第3--5页的方法、PDF第7页表2；差值为对原表的算术整理。
+\bibliographystyle{jos}
+\bibliography{references}
+\end{document}
