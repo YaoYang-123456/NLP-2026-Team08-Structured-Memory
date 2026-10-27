@@ -52,8 +52,8 @@
     },
     {
       "path": "reports/homework/slides/preamble.tex",
-      "bytes": 2240,
-      "sha256": "18fdf12eee4f0c9d56bda0621f68aafbda04c811cf2fa9c472786e887f7ea2b7"
+      "bytes": 2223,
+      "sha256": "ef65f94cee24f256f5db39bcc3c0a06b02dec3104ee13037ba9bb61aa776e111"
     },
     {
       "path": "reports/homework/slides/sections/00-opening.tex",
@@ -82,8 +82,8 @@
     },
     {
       "path": "reports/homework/slides/sections/05-metamem.tex",
-      "bytes": 10261,
-      "sha256": "8a2bf3ce4810f54bf19c80b5d6a9532ef292adabfda45df40504bed51ab3fe7f"
+      "bytes": 10244,
+      "sha256": "a3e9c2e1a41e1654f4e422e83630f15279ed0d90de7a0f8ed2baa193baeb9a95"
     },
     {
       "path": "reports/homework/slides/sections/06-text2mem.tex",
@@ -92,8 +92,8 @@
     },
     {
       "path": "reports/homework/slides/sections/07-synthesis.tex",
-      "bytes": 11824,
-      "sha256": "a84ea2b4017accbaa958642d3c60b7d96fb7e36b03672df39cedd6b8b652e69c"
+      "bytes": 11803,
+      "sha256": "8904e41d1e24b44e350212283612cbad296f28bf7761d8de6269eab4cd30ebd8"
     },
     {
       "path": "reports/templates/jos/jos.bst",
@@ -146,8 +146,8 @@
     {
       "path": "reports/homework/slides/preview.pdf",
       "pages": 68,
-      "bytes": 673058,
-      "sha256": "fd4ce69393ff107864ef4063767d7e6c27fe8e159533af2c8c2188828dec408c"
+      "bytes": 672781,
+      "sha256": "3577775007cdb8f3046e1419cfc6e8e5ced944d645531ba3e8679ce4de8c7ba0"
     }
   ],
   "supporting_artifacts": [
@@ -209,5 +209,21 @@
     "course_submitted": false
   },
   "slide_revision_manifest": "reports/homework/slides/style-artifacts.json",
-  "report_revision_manifest": "reports/homework/report-style-artifacts.json"
+  "report_revision_manifest": "reports/homework/report-style-artifacts.json",
+  "section_title_timing_revision": {
+    "date": "2026-10-27",
+    "baseline": "b3e351df0aafcc9d5e0898859de374a1fe4ddadb",
+    "title_pages": [
+      4,
+      16,
+      25,
+      37,
+      44,
+      52,
+      60
+    ],
+    "duration_labels_removed": true,
+    "other_61_pages_pixel_identical": true,
+    "individual_previews_rebuilt": 5
+  }
 }
