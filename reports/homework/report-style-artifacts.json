@@ -149,7 +149,14 @@
   },
   "readiness": {
     "contribution_percentages": "pending_user_requested_to_leave_blank",
-    "review": "PR66_requested_YaoYang-123456",
+    "review": "approved_in_PR66_by_YaoYang-123456",
     "course_submitted": false
+  },
+  "technical_review": {
+    "pull_request": 66,
+    "reviewer": "YaoYang-123456",
+    "reviewed_commit": "6b49e6890182dd1631dfd2ac74aa443ccff053f0",
+    "state": "APPROVED",
+    "submitted_at": "2026-10-27T07:53:19Z"
   }
 }

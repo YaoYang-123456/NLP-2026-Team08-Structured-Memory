@@ -15,31 +15,32 @@
 
 ## 当前进展（2026-10-27）
 
-六篇个人论文章节均已接入共享材料。F 本次审核并合入 Semantic XPath [#57](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/57)、Text2Mem [#59](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/59) 和 MetaMem 修订 [#63](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/63)，并重新检查整份 report / slides。**六篇个人材料已整合；摘要、背景、跨论文比较、总结及对应讲稿已补齐，待共同部分审核。个人视频及最终提交尚未完成。** 共同整理任务见 [#65](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/65)。
+六篇个人论文章节、摘要、背景、跨论文比较、总结及对应讲稿已补齐。整份报告 20 页，演示 68 页；[#66](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/66) 已由 YaoYang-123456 完成集中技术审核，已合并；审核建议中的 ESR 计数口径也已修正。个人录音、实际翻页点与最终视频仍待交付。共同整理任务见 [#65](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/65)。
 
-| 论文 | 阅读负责人 | 已整合材料 | 本人过稿与视频状态 |
+| 论文 | 阅读负责人 | 已整合材料 | 本人过稿与录音状态 |
 | --- | --- | --- | --- |
 | StructMem | hycx233 | #15 报告、12 页模块和备注 | 尚无本次录制及实测时长登记 |
-| Hindsight | onlysonder | #60 报告、9 页模块和[8 分钟讲稿](scripts/02-hindsight-8min.md) | 待本人过稿、实际计时及视频交付 |
+| Hindsight | onlysonder | #60 报告、9 页模块和[8 分钟讲稿](scripts/02-hindsight-8min.md) | 待本人过稿、实际计时及音频与翻页时间表交付 |
 | Semantic XPath | oioioi-521 | #57 报告、12 页模块、[个人指南](semantic-xpath-reading-guide.md)；已修复个人 PDF 中文映射 | **本次视频未交付**；8 分 55 秒为旧录制，待 F 核看当前幻灯片衔接、风格和音画后决定能否复用；[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 保持开放 |
-| HyMEM | lanshuheng9-oss | #54 正文、#61 个人材料、#64 中文 PDF 修复均已合入；7 页模块，[个人指南](hymem-reading-guide.md) | #62 已结项；[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人过稿、计时和录制 |
+| HyMEM | lanshuheng9-oss | #54 正文、#61 个人材料、#64 中文 PDF 修复已合入；#67 录音配套报告和七段讲稿已审核，[录音指南](hymem-recording-guide.md) | #62 已结项；[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人过稿、计时和录制 |
 | MetaMem | YaoYang-123456 | #40 正文及 #63 修订已合入；8 页模块、规则示例、[完整讲稿与交接](metamem-handoff.md) | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保持开放；讲稿已修订，待本人重新计时 |
 | Text2Mem | ngocnamd93-spec | #59 报告、8 页模块、[阅读与讲稿指南](text2mem-reading-guide.md)；已修复个人 PDF 中文映射 | [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 保留本人过稿、计时及录制；480 秒为计划 |
 
 ### 当前整合预览与检查
 
-- [整份报告 PDF](report-preview.pdf)：**20 页**；[整份幻灯片 PDF](slides/preview.pdf)：**68 页，已移除备用页和独立参考资料页**。10 月 27 日已完成共同部分及全组 report / slides 的文字整理，当前由 PR #66 集中审核。
+- [整份报告 PDF](report-preview.pdf)：**20 页**；[整份幻灯片 PDF](slides/preview.pdf)：**68 页，已移除备用页和独立参考资料页**。10 月 27 日已完成共同部分及全组 report / slides 的文字整理，已通过 PR #66 集中技术审核。
 - 报告统一摘要、背景、六篇章节、比较与总结的行文；删除重复自我辩解、交接状态和可见原文位置，保留六处首次引用与文末文献。图表使用软件学报模板的自动编号和题注，实验数据保持一致。
 - 开场 3 页、综合 9 页均已填写逐页备注，并提供[独立讲稿](scripts/00-opening-and-synthesis.md)。计划采用 **2＋6×8＋10＝60 分钟**；这不是实际排练记录。
 - 主报告与四份个人报告均通过 latexmk / XeLaTeX，共 29 页完成 PDF.js 中文提取、渲染和版面检查。无 Overfull、Underfull hbox、缺字或未定义引用；主报告保留 3 条 Underfull vbox 及数学字体尺寸替代提示。补 Unicode 映射前后 PDFium 画面一致，软件学报模板未改。
+- HyMEM新增2页录音配套报告与七段讲稿已通过 #67 技术审核；独立编译报告2页、公开录音稿8页，并完成PDF.js中文与版面检查。补充分析保留在个人报告，录音及实际翻页点待交付。
 - 最新报告验证见[报告修订检查](report-style-check-20261027.md)及[报告清单](report-style-artifacts.json)，slides 验证见[演示修订检查](slides/style-check-20261027.md)及[演示清单](slides/style-artifacts.json)。[整合清单](integration-artifacts.json)记录当前入口；早期检查保留对应版本记录。
 
 ### 接下来的交付
 
-1. 请一位相关成员集中核对共同部分的论文证据、机制边界和课设选择，再依据实际讨论修订；当前文字不代表已完成团队讨论。
-2. 确认封面成员、实际定稿日期、开场/总结讲解人。**贡献比例按本轮要求暂留空**，最终按实际工作填写并合计 100%。
-3. 收集本人实际排练时长和本次视频，尤其核看 Semantic XPath 旧视频是否可复用。当前没有本次作业已验收的个人视频记录。
-4. 按 60 分钟计划实测调整讲稿和衔接，整理视频版本、交接与上传记录。
+1. 确认封面成员、实际定稿日期、开场/总结讲解人。**贡献比例按本轮要求暂留空**，最终按实际工作填写并合计 100%。
+2. 每人完整录制自己的模块，提交一份连续音频及实际翻页时间表；开场和总结采用同样方式。页码使用统一 68 页演示的全组页码，时间以该音频开头为零点。音频经过剪辑后，按最终文件重新核对时间点，最后一页保持到音频结束。
+3. 收集各段实测时长，按约 60 分钟的整体安排检查语速与衔接，再用统一幻灯片画面合成视频。Semantic XPath 旧视频仍按本次未交付计，是否复用另行核看。
+4. 整理最终报告、幻灯片、视频版本和上传记录。
 
 10 月 22 日研讨阶段已结项：[PR #52](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/52) 已合入，[#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19) 与 [#31](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/31) 已关闭；11 月 1 日的阅读报告、约 60 分钟视频及课程上传仍按本页跟踪。
 
@@ -50,7 +51,7 @@
 | StructMem | [共享章节](sections/01-structmem.tex) | [共享模块](slides/sections/01-structmem.tex) | 逐页 Beamer 备注 |
 | Hindsight | [共享章节](sections/02-hindsight.tex) | [个人 PDF](slides/hindsight-preview.pdf) | [8 分钟讲稿](scripts/02-hindsight-8min.md) |
 | Semantic XPath | [3 页 PDF](semantic-xpath-preview.pdf) | [12 页 PDF](slides/semantic-xpath-preview.pdf) | [个人指南](semantic-xpath-reading-guide.md) |
-| HyMEM | [2 页 PDF](hymem-reading-report.pdf) | [7 页 PDF](slides/hymem-preview.pdf) | [个人指南](hymem-reading-guide.md) |
+| HyMEM | [2 页阅读报告](hymem-reading-report.pdf)、[2 页录音配套报告](hymem-recording-report.pdf) | [7 页 PDF](slides/hymem-preview.pdf) | [录音指南](hymem-recording-guide.md)、[七段讲稿](scripts/04-hymem-recording.md) |
 | MetaMem | [2 页 PDF](metamem-reading-report.pdf) | [8 页 PDF](slides/metamem-preview.pdf) | [交接与完整讲稿](metamem-handoff.md) |
 | Text2Mem | [2 页 PDF](text2mem-report-preview.pdf) | [8 页 PDF](slides/text2mem-preview.pdf) | [个人指南](text2mem-reading-guide.md) |
 
@@ -58,13 +59,13 @@
 
 ## 共同编辑
 
-`main.tex` 是阅读报告入口，`sections/01-structmem.tex` 至 `sections/06-text2mem.tex` 分别对应六篇论文，成员在 issue 中认领后编辑对应章节。文件里的“待填写”标明尚未完成的内容，不代表已有阅读或实验成果。六篇个人章节现均已接入；`sections/07-synthesis.tex` 已编入主稿，摘要、背景、比较与总结形成可审核正文。合并前请一位相关成员集中复核；贡献说明本轮保留原占位。`references.bib` 的六篇条目来自 ACL Anthology 官方 BibTeX 导出。
+`main.tex` 是阅读报告入口，`sections/01-structmem.tex` 至 `sections/06-text2mem.tex` 分别对应六篇论文，成员在 issue 中认领后编辑对应章节。文件里的“待填写”标明尚未完成的内容，不代表已有阅读或实验成果。六篇个人章节现均已接入；`sections/07-synthesis.tex` 已编入主稿，摘要、背景、比较与总结形成可审核正文。共同部分已由 YaoYang-123456 集中复核；贡献说明本轮保留原占位。`references.bib` 的六篇条目来自 ACL Anthology 官方 BibTeX 导出。
 
 每篇说明问题与背景、核心方法、关键实验、局限和课设启发。正文保留必要的学术引用，详细原文页码及图表位置放在源码注释或阅读指南中。公共讨论围绕组织、检索、更新、利用和操作规范比较六篇工作，不直接按不同模型和任务下的准确率排名。论文报告结果、本组已验证结果和计划开展的实验分别注明；阅读报告不等待课设实验全部完成。
 
 ## 系统性总结与团队讨论
 
-保留每人介绍一篇论文的安排。综合分析现已接入报告和 slides，作为个人介绍之后的共同主线；后续由小组核对、讨论和修订，不代表已经形成团队共识。已覆盖：
+保留每人介绍一篇论文的安排。综合分析现已接入报告和 slides，作为个人介绍之后的共同主线，并已通过集中技术审核。已覆盖：
 
 - **统一对照表**：对齐研究对象、表示、主要机制和比较边界，说明六篇工作分别解决什么问题。
 - **机制之间的联系**：讨论组织与访问、取回与利用、更新与操作语义的关系，同时说明组合所需条件。

@@ -50,13 +50,13 @@
     },
     {
       "path": "reports/homework/references.bib",
-      "bytes": 5225,
-      "sha256": "adb080b30be19d2b0d73c972c5dcdfc43f10e1228fe72b738d9cba916285b042"
+      "bytes": 5082,
+      "sha256": "ab4a3cdb145f9e9ac9a9703e72f71aa9ddb5fc078e1716661873beec81692c88"
     },
     {
       "path": "reports/templates/jos/jos.cls",
-      "bytes": 17773,
-      "sha256": "5a3e4a008578a7be8e3eb83fa6443897b65dab65cb80bc06e4451141c84b170d"
+      "bytes": 17290,
+      "sha256": "7465b4eb1580ff6f0096c03c8aee4c55d94f6a96be7c82a2ff1b7264e0736fbd"
     },
     {
       "path": "scripts/fix_hymem_pdf_unicode.py",
@@ -178,7 +178,31 @@
     "timed rehearsal",
     "recording the audio",
     "measuring actual slide timestamps",
-    "F integration review",
     "team final submission"
-  ]
+  ],
+  "integration_review": {
+    "date": "2026-10-27",
+    "reviewer": "hycx233",
+    "reviewed_original_commit": "fe6564910b50e6488a4ef92ab8753c48eee88988",
+    "source_hashes_use": "Git LF files",
+    "report_compile": "latexmk / XeLaTeX",
+    "report_pages": 2,
+    "public_script_pages": 8,
+    "compile_exit_codes": [
+      0,
+      0
+    ],
+    "pdfjs_external_CMap": false,
+    "pdfjs_all_10_rebuilt_pages_checked": true,
+    "submitted_report_2_pages_checked": true,
+    "rebuilt_report_text_matches_submitted": true,
+    "markdown_and_tex_script_bodies_match": true,
+    "overfull": 0,
+    "underfull": 0,
+    "missing_characters": 0,
+    "undefined_references": 0,
+    "planned_timing_contiguous_seconds": 480,
+    "actual_audio_received": false,
+    "supplement_kept_in_individual_report": true
+  }
 }

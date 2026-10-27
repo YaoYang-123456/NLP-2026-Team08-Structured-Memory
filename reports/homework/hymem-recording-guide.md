@@ -30,7 +30,7 @@
 
 ## 报告与全组整合
 
-本分支对齐F正在处理的统一报告/演示分支（PR #66）；本次只新增个人报告补充和录音材料，未覆盖共享章节、统一幻灯片、其他五位成员或共同总结。报告补充通过独立入口复用共享正文，供F按整体行文判断是否迁入主稿。
+本材料基于 #66 的统一报告和演示。F已审核个人报告补充与录音材料；补充分析保留在个人报告中，通过独立入口复用共享正文。
 
 报告使用仓库JOS模板；录音稿使用中文A4版式，逐页标注全组页码与计划时段。两份PDF经过TeX编译、Unicode映射补齐、无外部CMap的PDF.js中文验证和逐页排版检查。报告保留算法宏包UTF-8与Fontconfig的非致命提示；最终无Overfull/Underfull、缺字或未定义引用。实名稿中少见字采用本机已确认具备字形的字体，系统字体仅保留在忽略目录。
 
@@ -40,6 +40,8 @@
 tectonic reports/homework/hymem-recording-report.tex -Z search-path=reports/templates/jos --outdir output/hymem-recording-build --keep-logs --keep-intermediates
 python scripts/fix_hymem_pdf_unicode.py output/hymem-recording-build/hymem-recording-report.pdf reports/homework/hymem-recording-report.pdf
 ```
+
+F独立使用latexmk / XeLaTeX编译个人报告2页和公开录音稿8页，均退出0，无Overfull、Underfull、缺字或未定义引用；全部10页通过无外部CMap的PDF.js检查。提交报告与独立构建的逐页规范化文本一致，七段Markdown与LaTeX讲稿正文一致。清单已按Git中的LF文件修正依赖指纹。
 
 公开录音源可直接编译；实名版本由本地包装文件设置姓名后编译，随后使用同一Unicode修复脚本。
 

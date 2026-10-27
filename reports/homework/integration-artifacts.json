@@ -92,8 +92,8 @@
     },
     {
       "path": "reports/homework/slides/sections/07-synthesis.tex",
-      "bytes": 11803,
-      "sha256": "8904e41d1e24b44e350212283612cbad296f28bf7761d8de6269eab4cd30ebd8"
+      "bytes": 11848,
+      "sha256": "1c85c2dba637a47768715e195d917852de749dfcfa8dadec6438bf79ec392cd2"
     },
     {
       "path": "reports/templates/jos/jos.bst",
@@ -146,15 +146,15 @@
     {
       "path": "reports/homework/slides/preview.pdf",
       "pages": 68,
-      "bytes": 672781,
-      "sha256": "3577775007cdb8f3046e1419cfc6e8e5ced944d645531ba3e8679ce4de8c7ba0"
+      "bytes": 672816,
+      "sha256": "bff5b07e4ba572f1ad469a08ce6468ac8f78070f8ef6e6123b125a532ce4f648"
     }
   ],
   "supporting_artifacts": [
     {
       "path": "reports/homework/scripts/00-opening-and-synthesis.md",
-      "bytes": 6815,
-      "sha256": "edfba4779f535b8812d83e85c670a09163565be60ef13cd165f223d7d3e4724a"
+      "bytes": 6848,
+      "sha256": "b716a87121e94067b37344ce8b9e36a1ac9c0b54c5fd13df0f2bda6b5bcc05fb"
     },
     {
       "path": "reports/homework/scripts/02-hindsight-8min.md",
@@ -201,12 +201,13 @@
   },
   "readiness": {
     "six_paper_materials": "reviewed_before_this_change",
-    "joint_synthesis": "written_and_complete_report_and_slides_revised_pending_review",
+    "joint_synthesis": "technically_reviewed_and_approved_in_PR66",
     "contribution_percentages": "pending_user_requested_to_leave_blank",
     "personal_videos": "not_accepted",
     "semantic_xpath_old_video": "not_delivered_for_current_homework",
     "actual_timing": "pending",
-    "course_submitted": false
+    "course_submitted": false,
+    "recording_delivery": "one_continuous_audio_per_module_plus_actual_slide_timestamps"
   },
   "slide_revision_manifest": "reports/homework/slides/style-artifacts.json",
   "report_revision_manifest": "reports/homework/report-style-artifacts.json",
@@ -225,5 +226,26 @@
     "duration_labels_removed": true,
     "other_61_pages_pixel_identical": true,
     "individual_previews_rebuilt": 5
+  },
+  "technical_review": {
+    "pull_request": 66,
+    "reviewer": "YaoYang-123456",
+    "reviewed_commit": "6b49e6890182dd1631dfd2ac74aa443ccff053f0",
+    "state": "APPROVED",
+    "submitted_at": "2026-10-27T07:53:19Z"
+  },
+  "metric_wording_revision": {
+    "date": "2026-10-27",
+    "baseline": "6b49e6890182dd1631dfd2ac74aa443ccff053f0",
+    "changed_slide": 65,
+    "change": "ESR counts generated schemas/evaluation instances; EMR counts state assertions",
+    "other_67_pages_pixel_identical": true,
+    "latexmk_xelatex_exit_code": 0,
+    "overfull": 0,
+    "underfull": 0,
+    "missing_characters": 0,
+    "undefined_references": 0,
+    "pdfjs_all_68_pages_rendered_and_chinese_extracted": true,
+    "shared_notes_match_script": true
   }
 }
