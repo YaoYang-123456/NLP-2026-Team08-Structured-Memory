@@ -4,25 +4,25 @@
 
 当前按录屏讲解调整为 10pt 基准字号，正文行距系数 1.12，默认表格行距系数 1.15，并为正文与来源脚注保留独立留白。标题与章节页字号也相应收敛；表格后的解释文字留出明确间隔。
 
-[仓库 PDF 预览](preview.pdf)已于 2026-10-27 更新为 71 页（正文 67 页＋备用 4 页），包含六篇个人模块与 MetaMem 最新修订。已通过编译、全页版式及 PDF.js 无外部 CMap 中文检查；共同总结仍待填写，详见[整合检查](../integration-check-20261027.md)。
+[仓库 PDF 预览](preview.pdf)已于 2026-10-27 更新为 73 页（正文 69 页＋备用 4 页），包含六篇个人模块与补齐的开场、跨论文比较和总结。已通过编译、版式及 PDF.js 无外部 CMap 全页中文检查，详见[共同部分检查](../shared-sections-check-20261027.md)。
 
 ## 结构与时间
 
 | 环节 | 文件 | 讲解安排 |
 | --- | --- | --- |
-| 开场 | `sections/00-opening.tex` | 主题、共同问题和路线，约 3 分钟 |
+| 开场 | `sections/00-opening.tex` | 主题、共同问题和路线，计划 2 分钟，3 页备注齐全 |
 | StructMem | `sections/01-structmem.tex` | hycx233；12 页模块和备注，待本次实际计时及录制 |
 | Hindsight | `sections/02-hindsight.tex` | 8 分钟讲解稿已整理，9 页个人模块已编译；录制前由本人过稿并计时；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
 | Semantic XPath | `sections/03-semantic-xpath.tex` | #57 已审核合入，13 页；[个人PDF](semantic-xpath-preview.pdf)、[个人指南](../semantic-xpath-reading-guide.md)；旧视频按本次未交付计 |
 | HyMEM | `sections/04-hymem.tex` | 7 页模块和个人材料已合入，待本人过稿、排练及录制；[个人PDF](hymem-preview.pdf)、[个人指南](../hymem-reading-guide.md)；个人 PDF 中文显示修复 [#64](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/64) 已合入，#62 已结项 |
 | MetaMem | `sections/05-metamem.tex` | #63 已审核合入，8 页；[个人PDF](metamem-preview.pdf)、[交接与完整讲稿](../metamem-handoff.md)；7 分 59 秒为估时 |
 | Text2Mem | `sections/06-text2mem.tex` | #59 已审核合入，8 页；[个人PDF](text2mem-preview.pdf)、[个人指南](../text2mem-reading-guide.md)；480 秒为计划，待本人过稿、计时及录制 |
-| 系统性总结 | `sections/07-synthesis.tex` | 10–15 分钟，先保留结构，待个人部分完成后共同填写 |
+| 系统性总结 | `sections/07-synthesis.tex` | 9 页比较与总结已补齐，计划 10 分钟，待集中审核 |
 | 备用资料 | `sections/99-backup.tex` | 问答时按需使用，不计入正文页码；已迁入 StructMem 备用页 |
 
-默认分配为 **3＋6×8＋12＝63 分钟**。若六人分别使用 7–9 分钟、总结使用 10–15 分钟，在开场 3 分钟的条件下，总长约 55–72 分钟，不含额外问答。需要控制在 60 分钟时，采用 **2＋6×8＋10＝60 分钟**，并更新开场时间页和讲稿备注。页数只作内容组织参考，最终以排练计时为准。
+当前计划为 **2＋6×8＋10＝60 分钟**，不含额外问答。开场和总结的 12 页备注分别合计 120 秒、600 秒，并整理为[可独立阅读的讲稿](../scripts/00-opening-and-synthesis.md)。这些是计划时长，页数也只作内容组织参考，最终以本人排练计时为准。
 
-六篇模块均已审核接入。正文页序：开场 1–3；StructMem 4–15；Hindsight 16–24；Semantic XPath 25–37；HyMEM 38–44；MetaMem 45–52；Text2Mem 53–60；总结与讨论 61–67；备用 68–71。本人计时、视频及贡献说明继续见[平时作业进度](../README.md#当前进展2026-10-27)。
+六篇模块均已审核接入。正文页序：开场 1–3；StructMem 4–15；Hindsight 16–24；Semantic XPath 25–37；HyMEM 38–44；MetaMem 45–52；Text2Mem 53–60；总结与讨论 61–69；备用 70–73。本人计时、视频及贡献说明继续见[平时作业进度](../README.md#当前进展2026-10-27)。
 
 ## 编辑方式
 
@@ -30,7 +30,7 @@
 
 六篇论文章节现均有实质内容，页数依讲解需要分别为 12、9、13、7、8、8 页。StructMem 与 Semantic XPath 页数较多，实际讲解仍需按 7–9 分钟控制，不能根据页数推定已完成排练。
 
-现有综合总结页只提供对照表、机制取舍、共同案例、实验可比性和小组结论的版式，不填入尚未讨论的结论，也不自动导入报告的综合分析草稿。
+综合部分已补齐六篇对照、机制联系与代价、行程变更案例、实验可比性、既定课设选择和三点结论。与报告采用同一证据和边界，明确区分作者结果、阅读分析及自拟案例；这些内容仍待相关成员集中审核，不声称已经完成团队讨论。
 
 ### 来源、图表与讲稿
 
