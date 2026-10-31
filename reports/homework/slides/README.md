@@ -10,18 +10,18 @@
 
 | 环节 | 文件 | 讲解安排 |
 | --- | --- | --- |
-| 开场 | `sections/00-opening.tex` | 主题、共同问题和路线，计划 2 分钟，3 页备注齐全 |
-| StructMem | `sections/01-structmem.tex` | hycx233；12 页模块和备注，待本次实际计时及录制 |
-| Hindsight | `sections/02-hindsight.tex` | 8 分钟讲解稿已整理，9 页个人模块已编译；录制前由本人过稿并计时；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
-| Semantic XPath | `sections/03-semantic-xpath.tex` | #57 已审核合入，移除参考资料页后为12页；[个人PDF](semantic-xpath-preview.pdf)、[个人指南](../semantic-xpath-reading-guide.md)；旧视频按本次未交付计 |
-| HyMEM | `sections/04-hymem.tex` | 7 页模块及 #67 七段录音稿已审核，待本人过稿、排练及录音；[个人PDF](hymem-preview.pdf)、[录音指南](../hymem-recording-guide.md)、[讲稿](../scripts/04-hymem-recording.md) |
-| MetaMem | `sections/05-metamem.tex` | #63 已审核合入，8 页；[个人PDF](metamem-preview.pdf)、[交接与完整讲稿](../metamem-handoff.md)；讲稿已修订，待重新计时 |
-| Text2Mem | `sections/06-text2mem.tex` | #59 已审核合入，8 页；[个人PDF](text2mem-preview.pdf)、[个人指南](../text2mem-reading-guide.md)；480 秒为计划，待本人过稿、计时及录制 |
-| 系统性总结 | `sections/07-synthesis.tex` | 9 页比较与总结已补齐，计划 10 分钟，已通过 #66 集中审核 |
+| 开场 | `sections/00-opening.tex` | 3页，与StructMem合录；实际开场至01:42.120 |
+| StructMem | `sections/01-structmem.tex` | hycx233；12页模块，与开场合录09:51.211，翻页点已核对 |
+| Hindsight | `sections/02-hindsight.tex` | 9页个人模块；实际音频07:52.387、翻页点已核对；[个人PDF](hindsight-preview.pdf)、[讲稿](../scripts/02-hindsight-8min.md) |
+| Semantic XPath | `sections/03-semantic-xpath.tex` | #57 已审核合入，移除参考资料页后为12页；[个人PDF](semantic-xpath-preview.pdf)、[个人指南](../semantic-xpath-reading-guide.md)；本次新音频08:58.288已接入视频 |
+| HyMEM | `sections/04-hymem.tex` | 7 页模块及 #67 七段录音稿已审核，实际音频08:04.352、翻页点已核对；[个人PDF](hymem-preview.pdf)、[录音指南](../hymem-recording-guide.md)、[讲稿](../scripts/04-hymem-recording.md) |
+| MetaMem | `sections/05-metamem.tex` | #63 已审核合入，8 页；[个人PDF](metamem-preview.pdf)、[交接与完整讲稿](../metamem-handoff.md)；实际音频08:05.138、翻页点已核对 |
+| Text2Mem | `sections/06-text2mem.tex` | #59 已审核合入，8 页；[个人PDF](text2mem-preview.pdf)、[个人指南](../text2mem-reading-guide.md)；实际音频07:27.147、翻页点已核对 |
+| 系统性总结 | `sections/07-synthesis.tex` | 9页比较与总结已通过 #66 审核；实际音频09:31.711 |
 
-当前计划为 **2＋6×8＋10＝60 分钟**，不含额外问答。开场和总结的 12 页备注分别合计 120 秒、600 秒，并整理为[可独立阅读的讲稿](../scripts/00-opening-and-synthesis.md)。这些是计划时长，页数也只作内容组织参考，最终以本人排练计时为准。
+原讲解计划为 **2＋6×8＋10＝60 分钟**，不含额外问答。开场和总结的 12 页备注分别合计 120 秒、600 秒，并整理为[可独立阅读的讲稿](../scripts/00-opening-and-synthesis.md)。七段实际录音现已收齐，已核对全部68页翻页点并合成本地实名视频，总长59分50.24秒。
 
-六篇模块均已审核接入。正文页序：开场 1–3；StructMem 4–15；Hindsight 16–24；Semantic XPath 25–36；HyMEM 37–43；MetaMem 44–51；Text2Mem 52–59；总结与讨论 60–68。本人计时、音频与翻页时间表及贡献说明继续见[平时作业进度](../README.md#当前进展2026-10-27)。
+六篇模块均已审核接入。正文页序：开场 1–3；StructMem 4–15；Hindsight 16–24；Semantic XPath 25–36；HyMEM 37–43；MetaMem 44–51；Text2Mem 52–59；总结与讨论 60–68。本人计时、音频与翻页时间表及贡献说明继续见[平时作业进度](../README.md#当前进展2026-10-29)。
 
 录制时每人连续录完自己的模块，再按最终音频填写全组页码和实际翻页时间点；由组长用统一幻灯片画面合成视频。具体交接方式见[接下来的交付](../README.md#接下来的交付)。
 

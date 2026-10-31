@@ -7,48 +7,48 @@
   "inputs": [
     {
       "path": "reports/homework/main.tex",
-      "bytes": 4844,
-      "sha256": "37c1769197a141d066c9b6ada798d1f82b4e22d71d4148df96f602863eaf3f1d"
+      "bytes": 6805,
+      "sha256": "bbe60432688601710971dac0bbdb9223c89b0945086d636200ecc8e19879d191"
     },
     {
       "path": "reports/homework/sections/01-structmem.tex",
-      "bytes": 24733,
-      "sha256": "0d74c8162b26ed68ed4dd19cfd4a3517b72cfa051f231df3f9cdb5f4ea26ae21"
+      "bytes": 11367,
+      "sha256": "be2a691dd27f17a54869b442778d28a65844b2fb9562e64abc55d3bbc8aa937f"
     },
     {
       "path": "reports/homework/sections/02-hindsight.tex",
-      "bytes": 6419,
-      "sha256": "49d26570d6cfe27a834b9f102aca9415d7e784c90100d590a6aafb6f1ce31026"
+      "bytes": 6400,
+      "sha256": "fe242be4379f9e6cd01aa570ab05fbce31a88cd5a27f19487756bbf5a56764c6"
     },
     {
       "path": "reports/homework/sections/03-semantic-xpath.tex",
-      "bytes": 8246,
-      "sha256": "742c8dbb52252e4c2d059a6051fecdf79d92ad98ed07a07b7b46f48fd7187e16"
+      "bytes": 8202,
+      "sha256": "e099d3a8f53120d41b2bbd64959b47beaeee3ca7884337db028f0f8deeba0f70"
     },
     {
       "path": "reports/homework/sections/04-hymem.tex",
-      "bytes": 6150,
-      "sha256": "d2190159a0fa19ac4b84e350959b4caca6d384686c6d223ac19229cad690705d"
+      "bytes": 5713,
+      "sha256": "52888c837c33b927c1e9211a6887bbb88e1dca4dd6add33de78ae795b8896b9c"
     },
     {
       "path": "reports/homework/sections/05-metamem.tex",
-      "bytes": 3994,
-      "sha256": "adf36b90e5c3e527167164221fea87ff2adb09f264f821a68d1642147d6fd3d7"
+      "bytes": 4099,
+      "sha256": "e00b1a32fa726eaaac1f4bbfa22f926dde40fe5930ac62eaa727142e1e6ae820"
     },
     {
       "path": "reports/homework/sections/06-text2mem.tex",
-      "bytes": 6514,
-      "sha256": "12d86f724093be9bd53a03748c4038096140da0f92ad52ae96690dca1d0e8c88"
+      "bytes": 6025,
+      "sha256": "201c7f58ba806fee35c69fc75317546dec3d807b7f49d44fa94bc5b527873ebd"
     },
     {
       "path": "reports/homework/sections/07-synthesis.tex",
-      "bytes": 11231,
-      "sha256": "4136ad690ace07f06193814601880e0de43dfa9bcf6a0fff4a703550e895fbd9"
+      "bytes": 11011,
+      "sha256": "730077a0cb590ef5740e5edf72204a6a6c1a1e5f4c4672c07817c9adb5b8c2d8"
     },
     {
       "path": "reports/homework/semantic-xpath-preview.tex",
-      "bytes": 1254,
-      "sha256": "7eeb86fad6e1b910f46b4f6192b1eba2cf125c6f2690af53f26108e091c9edf6"
+      "bytes": 1266,
+      "sha256": "5f71e427b0c074e6cc170af1977cda635ec79ecc0218266926218c611c526c53"
     },
     {
       "path": "reports/homework/hymem-preview.tex",
@@ -62,8 +62,8 @@
     },
     {
       "path": "reports/homework/text2mem-report-preview.tex",
-      "bytes": 1312,
-      "sha256": "07f90a412eb547e5811525b09daf605568b83157f386d458f2898cd2e0efe0bc"
+      "bytes": 1357,
+      "sha256": "06495310ba4b76de417f9ccb5cd5b8f58d04ffc513e8dfe9b74e9c68961f0934"
     },
     {
       "path": "reports/homework/references.bib",
@@ -82,73 +82,91 @@
     },
     {
       "path": "reports/templates/jos/jos.cls",
-      "bytes": 17290,
-      "sha256": "7465b4eb1580ff6f0096c03c8aee4c55d94f6a96be7c82a2ff1b7264e0736fbd"
+      "bytes": 18314,
+      "sha256": "46a4b084b8c32a9a3d9d01614b803ab0daa874ce4227783e141a4b299fad5a01"
     },
     {
       "path": "reports/templates/jos/jos.bst",
-      "bytes": 25367,
-      "sha256": "849a1233295f0a10191f56557d783c525396f8723140d349f8914ec038e602f2"
+      "bytes": 25337,
+      "sha256": "bcc703574ee92619a88c71fdebedc4ede792004f4c82171e639bbaabf800fd16"
     },
     {
       "path": "scripts/fix_hymem_pdf_unicode.py",
       "bytes": 2031,
       "sha256": "f3518f0ec50f23d5ac2f2e6c9e926a45acfbf48a0f8b8d74e0202923e2cdaf3c"
+    },
+    {
+      "path": "docs/course/软件学报排版样例2025年版.doc",
+      "bytes": 3027456,
+      "sha256": "6dd6d9f75609d4e6dc270fcc459a40fd14d46789c16c7a85a9c230eba815ffd0"
+    },
+    {
+      "path": "reports/homework/hymem-recording-report.tex",
+      "bytes": 2157,
+      "sha256": "23f9350fdfef823a827a10d14955c3b6322b1005ca768bc60f8ec488597a2a99"
     }
   ],
   "outputs": [
     {
       "path": "reports/homework/report-preview.pdf",
-      "pages": 20,
-      "bytes": 776315,
-      "sha256": "6f2004824c8853c52fcba6353a2678d05a0feb303a0b0d283e9b2c2267be657f"
+      "pages": 15,
+      "bytes": 396958,
+      "sha256": "89668349d85f561eb2269556fafccad236388174408526407e1b43674ea888fc"
     },
     {
       "path": "reports/homework/semantic-xpath-preview.pdf",
       "pages": 3,
-      "bytes": 356890,
-      "sha256": "fa99ada8eca6d40467c4f20bcb362943e559a8faddd10600ca6367a341d2f166"
+      "bytes": 203532,
+      "sha256": "1f87b818dc0384a4a377bc74a4540d0bbbd3932b26be4cd745184c11f71dc9d0"
     },
     {
       "path": "reports/homework/hymem-reading-report.pdf",
       "pages": 2,
-      "bytes": 287470,
-      "sha256": "b512c74cdc22841acfd5a09d574e1ba511ad3f1d8e3eea05f4d5d142d33856b6"
+      "bytes": 162146,
+      "sha256": "92b4eff3a206222d0ac80f44f84044c6b9856e28b106c3ffcc0a995c8c9e687c"
     },
     {
       "path": "reports/homework/metamem-reading-report.pdf",
       "pages": 2,
-      "bytes": 247423,
-      "sha256": "825c57d4e29cef9f7e666e001b9a1e9eb5f095df86442582f59e4c566ec6f836"
+      "bytes": 147578,
+      "sha256": "375207e0c58e78872134bb6854fc631dde3e5f7c58d4d5fa4897a6f7a0299441"
     },
     {
       "path": "reports/homework/text2mem-report-preview.pdf",
       "pages": 2,
-      "bytes": 354458,
-      "sha256": "597fd67c994e8767d6b261274b07d40356efc32c65cf38062b6168f5a496df5d"
+      "bytes": 194432,
+      "sha256": "e7406691267ac9fe173d4411b50c6c37413f52e5f904b17f4c35a063e34a6d8b"
+    },
+    {
+      "path": "reports/homework/hymem-recording-report.pdf",
+      "bytes": 173592,
+      "sha256": "e9208fc63ae05da6ca85e3d85d65b53f75696c0c0caec2809225beb526486215",
+      "pages": 2
     }
   ],
   "checks": {
-    "five_chapters_numeric_table_rows_unchanged": true,
+    "five_chapters_numeric_table_rows_unchanged": false,
     "hindsight_results_and_reference_values_preserved": true,
     "six_intro_citations_no_visible_source_locators": true,
-    "contribution_block_unchanged": true,
-    "slides_jos_template_bibliography_unchanged": true,
+    "contribution_block_unchanged": false,
+    "slides_jos_template_bibliography_unchanged": false,
     "unicode_mapping_pdfium_pixel_equality_all_pages": true,
     "latexmk_xelatex": "passed",
     "pdfjs_all_pages_rendered_and_chinese_extracted": true,
     "pdfjs_external_cMapUrl": false,
-    "visually_reviewed_pages": 29,
+    "visually_reviewed_pages": 41,
     "overfull": 0,
     "underfull_hbox": 0,
     "missing_characters": 0,
     "undefined_references_or_citations": 0,
     "main_report_underfull_vbox": 3,
-    "main_report_math_font_size_substitutions": true,
-    "personal_reports_layout_warnings": 0
+    "main_report_math_font_size_substitutions": false,
+    "personal_reports_layout_warnings": 1,
+    "retained_numeric_table_rows_unchanged": true,
+    "slides_and_bibliography_data_unchanged": true
   },
   "readiness": {
-    "contribution_percentages": "pending_user_requested_to_leave_blank",
+    "contribution_percentages": "filled_user_confirmed_25_15_15_15_15_15",
     "review": "approved_in_PR66_by_YaoYang-123456",
     "course_submitted": false
   },
@@ -158,5 +176,824 @@
     "reviewed_commit": "6b49e6890182dd1631dfd2ac74aa443ccff053f0",
     "state": "APPROVED",
     "submitted_at": "2026-10-27T07:53:19Z"
+  },
+  "contribution_revision": {
+    "date": "2026-10-29",
+    "baseline": "a6b1510c17a6f804234ace07b4dd312753dc36b9",
+    "scope": "author names, actual member work and user-confirmed contribution percentages",
+    "members": [
+      {
+        "account": "hycx233",
+        "paper": "StructMem",
+        "percentage": 25
+      },
+      {
+        "account": "onlysonder",
+        "paper": "Hindsight",
+        "percentage": 15
+      },
+      {
+        "account": "oioioi-521",
+        "paper": "Semantic XPath",
+        "percentage": 15
+      },
+      {
+        "account": "lanshuheng9-oss",
+        "paper": "HyMEM",
+        "percentage": 15
+      },
+      {
+        "account": "YaoYang-123456",
+        "paper": "MetaMem",
+        "percentage": 15
+      },
+      {
+        "account": "ngocnamd93-spec",
+        "paper": "Text2Mem",
+        "percentage": 15
+      }
+    ],
+    "sum_percent": 100,
+    "common_work": "Each member authored the report and explanation of their paper and participated in systematic discussion.",
+    "additional_work_hycx233": "Common material preparation and presentation; video integration; discussion coordination.",
+    "verification": {
+      "pages": 20,
+      "pdfjs_all_20_pages_chinese_and_rendered": true,
+      "visual_changed_pages_checked": [
+        1,
+        20
+      ],
+      "body_pages_2_to_19_pixel_identical_except_running_headers": true,
+      "unicode_mapping_pixel_equality_all_20_pages": true,
+      "percentages": [
+        25,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "percentages_sum": 100,
+      "all_six_members_in_cover_and_table": true,
+      "missing_glyphs": 0,
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "underfull_vbox": 3,
+      "math_font_size_substitutions": true
+    },
+    "remote_publication": false,
+    "wording_layout": "Responsibilities listed together in one table, without a separate individual paragraph.",
+    "wording_verification": {
+      "pages": 20,
+      "only_final_page_changed": true,
+      "first_19_pages_pixel_identical": true,
+      "all_20_pages_pdfjs_chinese_checked": true,
+      "contribution_total": 100,
+      "percentages": [
+        25,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "final_page_visually_checked": true,
+      "overfull": 0,
+      "missing_characters": 0
+    }
+  },
+  "last_updated_on": "2026-10-31",
+  "paragraph_layout_revision": {
+    "date": "2026-10-29",
+    "scope": "Paragraph lead-ins, Text2Mem prose and page breaks, and comparison table placement",
+    "lead_in_labels_removed": 18,
+    "sections": [
+      "01-structmem",
+      "02-hindsight",
+      "06-text2mem",
+      "07-synthesis"
+    ],
+    "changes": [
+      "Replace paragraph lead-in labels with continuous prose; retain formal headings and meaningful table emphasis.",
+      "Use regular indentation and paragraph spacing in Text2Mem.",
+      "Define the EMR indicator separately without changing the metric or result values.",
+      "Keep the example and evaluation introduction paragraphs intact across page breaks.",
+      "Keep the comparison table before the next subsection."
+    ],
+    "verification": {
+      "pages": 20,
+      "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+      "unicode_mapping_pixel_equality_all_pages": true,
+      "changed_pages": [
+        8,
+        9,
+        15,
+        16,
+        17
+      ],
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "underfull_vbox": 4,
+      "math_font_size_substitutions": true
+    },
+    "standalone_text2mem": {
+      "pages": 2,
+      "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+      "unicode_mapping_pixel_equality_all_pages": true,
+      "changed_pages": [
+        1,
+        2
+      ],
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "underfull_vbox": 1,
+      "math_font_size_substitutions": false
+    },
+    "shared_checks": {
+      "all_seven_section_sources_identical": true,
+      "formal_heading_hierarchy_unchanged": true,
+      "all_tables_in_changed_sections_byte_identical": true,
+      "jos_class_and_bibliography_style_unchanged": true,
+      "public_and_realnames_body_pages_2_to_19_pixel_identical_except_headers": true,
+      "lead_in_labels_removed": 18,
+      "contribution_percentages": [
+        25,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "remote_publication": false
+    },
+    "publication": "local_only_uncommitted"
+  },
+  "structmem_concision_revision": {
+    "date": "2026-10-29",
+    "scope": "Condense StructMem to the requested 3-4-page range while preserving methods, key results and limitations",
+    "structmem_page_span": [
+      1,
+      4
+    ],
+    "note": "The first and last pages share space with the background and following chapter.",
+    "old_subsections": 11,
+    "new_subsections": 5,
+    "old_tables": 11,
+    "new_tables": 2,
+    "old_figures": 2,
+    "new_figures": 1,
+    "old_chinese_character_count": 4891,
+    "new_chinese_character_count": 2941,
+    "kept": [
+      "event binding and source-time distinction",
+      "cross-event integration and separate retrieval configurations",
+      "one method flowchart",
+      "selected main results and component ablation",
+      "construction cost, generated-memory fidelity, limitations and project implications"
+    ],
+    "verification": {
+      "pages": 15,
+      "structmem_page_span": [
+        1,
+        4
+      ],
+      "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+      "unicode_mapping_pixel_equality_all_pages": true,
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "underfull_vbox": 1,
+      "math_font_size_substitutions": false
+    },
+    "shared_checks": {
+      "only_structmem_section_source_changed": true,
+      "all_seven_section_sources_identical_across_variants": true,
+      "retained_numeric_table_rows_unchanged": true,
+      "bibliography_jos_template_slides_unchanged": true,
+      "public_realnames_body_pages_2_to_14_pixel_identical_except_headers": true,
+      "old_chinese_character_count": 4891,
+      "new_chinese_character_count": 2941,
+      "old_tables": 11,
+      "new_tables": 2,
+      "old_figures": 2,
+      "new_figures": 1,
+      "contribution_percentages": [
+        25,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "remote_publication": false
+    },
+    "publication": "local_only_uncommitted",
+    "main_only_removed_forced_bibliography_page_break": true
+  },
+  "hindsight_wording_revision": {
+    "date": "2026-10-29",
+    "scope": "Remove bibliographic proofreading commentary from Hindsight method limitations",
+    "original_demo_reference": "https://aclanthology.org/2026.acl-demo.27.pdf",
+    "original_demo_reference_page": 8,
+    "original_identifier": "2505.XXXXX",
+    "resolved_long_paper": "https://arxiv.org/abs/2512.12818",
+    "report_paragraph_removed": true,
+    "slides_scripts_video_changed": false,
+    "verification": {
+      "pages": 15,
+      "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+      "unicode_mapping_pixel_equality_all_pages": true,
+      "only_review_paragraph_removed": true,
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "underfull_vbox": 1
+    },
+    "publication": "local_only_uncommitted"
+  },
+  "jos_format_revision": {
+    "date": "2026-10-29",
+    "scope": "Whole-report format audit against the pinned original LaTeX template and official Word sample",
+    "references": {
+      "word": {
+        "path": "docs/course/软件学报排版样例2025年版.doc",
+        "bytes": 3027456,
+        "sha256": "6dd6d9f75609d4e6dc270fcc459a40fd14d46789c16c7a85a9c230eba815ffd0"
+      },
+      "latex_repository": "https://github.com/CodingYuanLiu/JOS-Template",
+      "latex_commit": "7f1031f2ab948a8d778719da3159cfc532d27664",
+      "upstream_class_sha256": "83e6b0227ec45b69a347021178510b3864decdb17a38b1daffd0e32fb3389c46",
+      "word_reading_method": "OnlyOffice DOC to DOCX for XML style inspection and temporary PDF rendering; original DOC unchanged"
+    },
+    "authority": "Official Word styles take precedence when the approximate LaTeX template differs.",
+    "changes": [
+      "Use installed SimSun, SimHei, KaiTi, FangSong and Times New Roman; preserve the existing Fandol/TeX Gyre fallback for hosts lacking these fonts.",
+      "Match Word running headers at 9pt and the References label without a trailing colon.",
+      "Add the English abstract and keywords corresponding to the existing Chinese abstract.",
+      "Use normal 9pt numbered paragraphs for HyMEM updates; keep heading, introduction and the three items together on page 9.",
+      "Remove a duplicated Proceedings of prefix in conference references without changing bibliography data."
+    ],
+    "verification": {
+      "layout": {
+        "hymem_list_page": 9,
+        "structmem_page_span": [
+          1,
+          4
+        ]
+      },
+      "public": {
+        "path": "reports/homework/report-preview.pdf",
+        "pages": 15,
+        "latexmk_xelatex": "passed",
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+        "all_fonts_embedded": true,
+        "paper_mm": [
+          184,
+          260
+        ],
+        "font_size_distribution": {
+          "8.97": 18353,
+          "7.47": 2730,
+          "9.0": 1729,
+          "10.46": 217,
+          "5.98": 81,
+          "11.96": 76,
+          "13.95": 23
+        },
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_glyphs": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 3
+      },
+      "realnames": {
+        "path": "output/homework-report-realnames-20261029/8队-结构化记忆-20261029-报告-实名版.pdf",
+        "pages": 15,
+        "latexmk_xelatex": "passed",
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+        "all_fonts_embedded": true,
+        "paper_mm": [
+          184,
+          260
+        ],
+        "font_size_distribution": {
+          "8.97": 18270,
+          "7.47": 2730,
+          "9.0": 1729,
+          "10.46": 217,
+          "5.98": 81,
+          "13.95": 23,
+          "11.96": 21
+        },
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_glyphs": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 3
+      },
+      "xpath": {
+        "path": "reports/homework/semantic-xpath-preview.pdf",
+        "pages": 3,
+        "latexmk_xelatex": "passed",
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+        "all_fonts_embedded": true,
+        "paper_mm": [
+          184,
+          260
+        ],
+        "font_size_distribution": {
+          "8.97": 3068,
+          "7.47": 337,
+          "10.46": 82,
+          "9.0": 36,
+          "13.95": 26,
+          "7.97": 12,
+          "11.96": 10
+        },
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_glyphs": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "hymem": {
+        "path": "reports/homework/hymem-reading-report.pdf",
+        "pages": 2,
+        "latexmk_xelatex": "passed",
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+        "all_fonts_embedded": true,
+        "paper_mm": [
+          184,
+          260
+        ],
+        "font_size_distribution": {
+          "8.97": 2133,
+          "7.47": 271,
+          "10.46": 22,
+          "15.0": 11,
+          "5.98": 11,
+          "9.0": 2
+        },
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_glyphs": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "metamem": {
+        "path": "reports/homework/metamem-reading-report.pdf",
+        "pages": 2,
+        "latexmk_xelatex": "passed",
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+        "all_fonts_embedded": true,
+        "paper_mm": [
+          184,
+          260
+        ],
+        "font_size_distribution": {
+          "8.97": 1250,
+          "7.47": 304,
+          "9.0": 148,
+          "10.46": 20,
+          "15.0": 13,
+          "5.98": 3
+        },
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_glyphs": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "text2mem": {
+        "path": "reports/homework/text2mem-report-preview.pdf",
+        "pages": 2,
+        "latexmk_xelatex": "passed",
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+        "all_fonts_embedded": true,
+        "paper_mm": [
+          184,
+          260
+        ],
+        "font_size_distribution": {
+          "8.97": 2343,
+          "7.47": 305,
+          "9.0": 194,
+          "10.46": 76,
+          "13.95": 22,
+          "5.98": 16,
+          "11.96": 15
+        },
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_glyphs": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 1
+      },
+      "hymem-recording": {
+        "path": "reports/homework/hymem-recording-report.pdf",
+        "pages": 2,
+        "latexmk_xelatex": "passed",
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+        "all_fonts_embedded": true,
+        "paper_mm": [
+          184,
+          260
+        ],
+        "font_size_distribution": {
+          "8.97": 2724,
+          "7.47": 271,
+          "10.46": 22,
+          "5.98": 11,
+          "15.0": 9,
+          "9.0": 2
+        },
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_glyphs": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "shared": {
+        "hymem_list_meaning_unchanged": true,
+        "other_six_section_sources_unchanged": true,
+        "bibliography_data_unchanged": true,
+        "all_seven_sections_identical_across_variants": true,
+        "class_and_bst_identical_across_variants": true,
+        "public_realnames_body_pages_2_to_14_pixel_equal_except_headers": true,
+        "slides_and_video_unchanged": true,
+        "contribution_percentages": [
+          25,
+          15,
+          15,
+          15,
+          15,
+          15
+        ],
+        "official_word_sha256": "6dd6d9f75609d4e6dc270fcc459a40fd14d46789c16c7a85a9c230eba815ffd0",
+        "upstream_cls_sha256": "83e6b0227ec45b69a347021178510b3864decdb17a38b1daffd0e32fb3389c46",
+        "remote_publication": false
+      },
+      "total_pdf_pages": 41
+    },
+    "word_nominal_styles": {
+      "paper_mm": [
+        184,
+        260
+      ],
+      "body_pt": 9,
+      "body_line_spacing_pt": 14.25,
+      "first_line_indent_em": 2,
+      "cn_title_pt": 14,
+      "cn_author_pt": 12,
+      "section_pt": 10.5,
+      "subsection_pt": 9,
+      "header_pt": 9,
+      "caption_pt": 9,
+      "reference_pt": 7.5,
+      "reference_line_spacing_pt": 13
+    },
+    "retained_latex_geometry_mm": {
+      "left": 14.5,
+      "right": 14.5,
+      "top": 23,
+      "bottom": 22
+    },
+    "publication": "local_only_uncommitted"
+  },
+  "technical_font_revision": {
+    "date": "2026-10-29",
+    "scope": "Use the body Latin font for technical strings instead of the default Latin Modern Mono",
+    "style_decision": "Monospace is not prohibited by the template; proportional Times New Roman is used here for report consistency.",
+    "normal_profile": "Times New Roman, 9pt",
+    "fallback_profile": "TeX Gyre Termes",
+    "tex_quote_ligatures": "disabled for technical strings to preserve literal syntax",
+    "query": "//Day[avg(/POI[node~=\"conference\"])]",
+    "query_content_unchanged": true,
+    "verification": {
+      "public": {
+        "pages": 15,
+        "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+        "all_fonts_embedded": true,
+        "default_Latin_Modern_Mono_absent": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 3,
+        "query_verified": {
+          "page": 6,
+          "text": "//Day[avg(/POI[node~=\"conference\"])]",
+          "font": "Times New Roman",
+          "size_pt": 9
+        }
+      },
+      "realnames": {
+        "pages": 15,
+        "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+        "all_fonts_embedded": true,
+        "default_Latin_Modern_Mono_absent": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 3,
+        "query_verified": {
+          "page": 6,
+          "text": "//Day[avg(/POI[node~=\"conference\"])]",
+          "font": "Times New Roman",
+          "size_pt": 9
+        }
+      },
+      "xpath": {
+        "pages": 3,
+        "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+        "all_fonts_embedded": true,
+        "default_Latin_Modern_Mono_absent": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0,
+        "query_verified": {
+          "page": 2,
+          "text": "//Day[avg(/POI[node~=\"conference\"])]",
+          "font": "Times New Roman",
+          "size_pt": 9
+        }
+      },
+      "hymem": {
+        "pages": 2,
+        "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+        "all_fonts_embedded": true,
+        "default_Latin_Modern_Mono_absent": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "metamem": {
+        "pages": 2,
+        "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+        "all_fonts_embedded": true,
+        "default_Latin_Modern_Mono_absent": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "text2mem": {
+        "pages": 2,
+        "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+        "all_fonts_embedded": true,
+        "default_Latin_Modern_Mono_absent": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 1
+      },
+      "hymem-recording": {
+        "pages": 2,
+        "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+        "all_fonts_embedded": true,
+        "default_Latin_Modern_Mono_absent": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      }
+    },
+    "total_pdf_pages": 41,
+    "publication": "local_only_uncommitted"
+  },
+  "bold_emphasis_revision": {
+    "date": "2026-10-29",
+    "scope": "Remove remaining decorative bold emphasis from prose",
+    "removed": [
+      "任务内部的上下文更新",
+      "可迁移的知识使用经验"
+    ],
+    "retained": {
+      "five_column_maxima_in_structmem_table": true,
+      "caption_explains_column_maxima": true,
+      "mathematical_bold_vector_notation": true,
+      "template_heading_and_table_label_styles": true
+    },
+    "no_decorative_bold_in_prose": true,
+    "table_values_unchanged": true,
+    "verification": {
+      "public": {
+        "pages": 15,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "underfull_vbox": 3
+      },
+      "realnames": {
+        "pages": 15,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "underfull_vbox": 3
+      },
+      "hymem": {
+        "pages": 2,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "underfull_vbox": 0
+      },
+      "metamem": {
+        "pages": 2,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "underfull_vbox": 0
+      },
+      "hymem-recording": {
+        "pages": 2,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "unicode_mapping_pixel_equality_all_pages": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references_or_citations": 0,
+        "underfull_vbox": 0
+      }
+    },
+    "total_pdf_pages": 36,
+    "publication": "local_only_uncommitted"
+  },
+  "english_author_revision": {
+    "date": "2026-10-31",
+    "scope": "Replace Team 8 with six corresponding English author entries",
+    "verification": {
+      "public": {
+        "pages": 15,
+        "english_authors_match_chinese_order": true,
+        "all_pages_pdfjs_text_and_render": true,
+        "pages_2_to_15_pixel_identical_to_previous": true,
+        "cover_visually_checked": true,
+        "underfull_vbox": 3
+      },
+      "realnames": {
+        "pages": 15,
+        "english_authors_match_chinese_order": true,
+        "all_pages_pdfjs_text_and_render": true,
+        "pages_2_to_15_pixel_identical_to_previous": true,
+        "cover_visually_checked": true,
+        "underfull_vbox": 3
+      }
+    },
+    "publication": "local_only_uncommitted"
+  },
+  "language_revision_20261031": {
+    "date": "2026-10-31",
+    "scope": "User language revision across report abstract, chapters, synthesis and personal previews; regenerate PDFs from current sources",
+    "verification": {
+      "public": {
+        "pages": 15,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "all_fonts_embedded": true,
+        "unicode_processing_pixel_equal": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 3
+      },
+      "xpath": {
+        "pages": 3,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "all_fonts_embedded": true,
+        "unicode_processing_pixel_equal": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "hymem": {
+        "pages": 2,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "all_fonts_embedded": true,
+        "unicode_processing_pixel_equal": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "metamem": {
+        "pages": 2,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "all_fonts_embedded": true,
+        "unicode_processing_pixel_equal": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "text2mem": {
+        "pages": 2,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "all_fonts_embedded": true,
+        "unicode_processing_pixel_equal": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 1
+      },
+      "hymem-recording": {
+        "pages": 2,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "all_fonts_embedded": true,
+        "unicode_processing_pixel_equal": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 0
+      },
+      "realnames": {
+        "pages": 15,
+        "pdfjs_all_pages_chinese_and_rendered": true,
+        "all_fonts_embedded": true,
+        "unicode_processing_pixel_equal": true,
+        "overfull": 0,
+        "underfull_hbox": 0,
+        "missing_characters": 0,
+        "undefined_references": 0,
+        "font_warnings": 0,
+        "underfull_vbox": 3
+      }
+    },
+    "total_pdf_pages": 41,
+    "publication_target": "local_signed_commit",
+    "remote_push": false
   }
 }

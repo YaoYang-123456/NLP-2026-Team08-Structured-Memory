@@ -23,20 +23,20 @@
   },
   "report": {
     "path": "reports/homework/hymem-recording-report.pdf",
-    "bytes": 303580,
-    "sha256": "5082fd5bcc7c698248610f6ef26b9a611c7053289692ae27cc49ed29dd6eb4de",
+    "bytes": 173592,
+    "sha256": "e9208fc63ae05da6ca85e3d85d65b53f75696c0c0caec2809225beb526486215",
     "pages": 2
   },
   "source_inputs": [
     {
       "path": "reports/homework/hymem-recording-report.tex",
-      "bytes": 2322,
-      "sha256": "03e14e2491ce52304cd0ee48d4510d328a694db27b24ebe971b4bfe3a5d2842e"
+      "bytes": 2157,
+      "sha256": "23f9350fdfef823a827a10d14955c3b6322b1005ca768bc60f8ec488597a2a99"
     },
     {
       "path": "reports/homework/sections/04-hymem.tex",
-      "bytes": 6150,
-      "sha256": "d2190159a0fa19ac4b84e350959b4caca6d384686c6d223ac19229cad690705d"
+      "bytes": 5713,
+      "sha256": "52888c837c33b927c1e9211a6887bbb88e1dca4dd6add33de78ae795b8896b9c"
     },
     {
       "path": "reports/homework/hymem-recording-script.tex",
@@ -55,8 +55,8 @@
     },
     {
       "path": "reports/templates/jos/jos.cls",
-      "bytes": 17290,
-      "sha256": "7465b4eb1580ff6f0096c03c8aee4c55d94f6a96be7c82a2ff1b7264e0736fbd"
+      "bytes": 18314,
+      "sha256": "46a4b084b8c32a9a3d9d01614b803ab0daa874ce4227783e141a4b299fad5a01"
     },
     {
       "path": "scripts/fix_hymem_pdf_unicode.py",
@@ -204,5 +204,81 @@
     "planned_timing_contiguous_seconds": 480,
     "actual_audio_received": false,
     "supplement_kept_in_individual_report": true
+  },
+  "last_updated_on": "2026-10-31",
+  "jos_format_revision": {
+    "manifest": "reports/homework/report-style-artifacts.json",
+    "report_verification": {
+      "path": "reports/homework/hymem-recording-report.pdf",
+      "pages": 2,
+      "latexmk_xelatex": "passed",
+      "pdfjs_all_pages_chinese_and_rendered": true,
+      "unicode_mapping_pixel_equality_all_pages": true,
+      "font_profile": "SimSun, SimHei, KaiTi, FangSong, Times New Roman",
+      "all_fonts_embedded": true,
+      "paper_mm": [
+        184,
+        260
+      ],
+      "font_size_distribution": {
+        "8.97": 2724,
+        "7.47": 271,
+        "10.46": 22,
+        "5.98": 11,
+        "15.0": 9,
+        "9.0": 2
+      },
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_glyphs": 0,
+      "undefined_references_or_citations": 0,
+      "font_warnings": 0,
+      "underfull_vbox": 0
+    },
+    "recording_script_and_audio_unchanged": true
+  },
+  "technical_font_revision": {
+    "manifest": "reports/homework/report-style-artifacts.json",
+    "verification": {
+      "pages": 2,
+      "pdfjs_all_pages_rendered_and_chinese_extracted": true,
+      "all_fonts_embedded": true,
+      "default_Latin_Modern_Mono_absent": true,
+      "unicode_mapping_pixel_equality_all_pages": true,
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "font_warnings": 0,
+      "underfull_vbox": 0
+    }
+  },
+  "bold_emphasis_revision": {
+    "manifest": "reports/homework/report-style-artifacts.json",
+    "verification": {
+      "pages": 2,
+      "pdfjs_all_pages_chinese_and_rendered": true,
+      "unicode_mapping_pixel_equality_all_pages": true,
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "underfull_vbox": 0
+    }
+  },
+  "language_revision_20261031": {
+    "manifest": "reports/homework/report-style-artifacts.json",
+    "verification": {
+      "pages": 2,
+      "pdfjs_all_pages_chinese_and_rendered": true,
+      "all_fonts_embedded": true,
+      "unicode_processing_pixel_equal": true,
+      "overfull": 0,
+      "underfull_hbox": 0,
+      "missing_characters": 0,
+      "undefined_references": 0,
+      "font_warnings": 0,
+      "underfull_vbox": 0
+    }
   }
 }

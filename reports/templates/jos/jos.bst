@@ -545,10 +545,10 @@
         { "" }
         { editor empty$
         { %"In " booktitle emphasize *
-            "In: Proceedings of " booktitle *
+            "In: " booktitle *
         }
         { %"In " format.editors * ", " * booktitle emphasize *
-            "In: Proceedings of " format.editors * ", " * booktitle *
+            "In: " format.editors * ", " * booktitle *
         }
           if$
         }
