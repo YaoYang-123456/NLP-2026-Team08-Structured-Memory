@@ -1,0 +1,941 @@
+{
+  "date": "2026-11-03",
+  "status": "completed_offline_pilot",
+  "decision": "Do not advance complementary-v1 as the main innovation: no full-context coverage gain over MMR; retain MMR as a simple baseline.",
+  "reviewer": "Codex assisted semantic support review",
+  "independent_human_acceptance": false,
+  "answer_calls": 0,
+  "judge_calls": 0,
+  "heldout_questions_used": 0,
+  "config": {
+    "version": "offline-pilot-v1",
+    "frozen_before_selection": true,
+    "selection": "development30",
+    "dense_top_k": 120,
+    "lexical_top_k": 120,
+    "rrf_k": 60,
+    "bm25_k1": 1.2,
+    "bm25_b": 0.75,
+    "budget": 4096,
+    "counter": "cl100k_base",
+    "counter_scope": "Proxy tokens for complete rendered evidence blocks, including fixed five synthesis blocks; not DeepSeek billing tokens or total request tokens.",
+    "synthesis": "Keep each question's original five S2 synthesis texts identical across selectors. Do not search the incomplete synthesis archive.",
+    "mmr": {
+      "relevance": 0.7,
+      "redundancy": 0.3
+    },
+    "complementary": {
+      "relevance": 0.55,
+      "facet_gain": 0.2,
+      "source_gain": 0.25,
+      "redundancy": 0.3
+    },
+    "facet_weights": {
+      "keyword": 1.0,
+      "entity": 2.0,
+      "explicit_date": 3.0,
+      "temporal_attribute": 1.0
+    },
+    "decision": "Require at least two of the four previously identified missing-support cases to recover, positive paired coverage against both hybrid and MMR, and no systematic loss on the other questions. This is an engineering screen, not significance or generalization evidence.",
+    "tuning": "One configuration only. No question IDs, answers, categories or reference evidence in selector features. No parameter search after results."
+  },
+  "provenance": {
+    "config_sha256": "80bd666a4db65c789f6f7e90eab1415f3b77a2359c4267a6017f76aadc15b9b1",
+    "script_sha256": "3e2057e25c9e632ae9a0a3e2ac0a862b1a0f9fbe15a7da6020826f599db78713",
+    "questions_sha256": "8244dff6123ea8479561bfbe6ad5a36d655b2926d4acbf6fdd0d2ddf356abb63",
+    "event_sqlite_sha256": {
+      "conv-48.sqlite": "ec45cdf522dcd9d280f3a327959264522e4c012e50ee2a993f60f6be0107b132",
+      "conv-42.sqlite": "7cb8d8ab9cbbd9b26f3c3ff36dbdd02a94d9b07f2faa8fcb56064991fbaad908",
+      "conv-41.sqlite": "681a93ddbaa3292eedcc29f4df2a26dd143fb0019cf1f72b176fbe78f3c9ed96"
+    },
+    "s2_archive_sha256": "21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6",
+    "embedding": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "dimensions": 384,
+      "normalize_embeddings": true,
+      "max_seq_length": 256,
+      "device_for_check": "cpu"
+    },
+    "packages": {
+      "numpy": "2.2.6",
+      "nltk": "3.9.2",
+      "tiktoken": "0.12.0",
+      "sentence-transformers": "5.1.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.0"
+    },
+    "selections_sha256": "adabd469226ee0d2b0b00a6159754fc46b8ac2d90873ece8ea4a805ae9297be9"
+  },
+  "annotation_sha256": "1ceadec567212eaf9b8b97655ccffb6f3fbaa0e28b1cca4b60df6672545047d0",
+  "scope": {
+    "questions": 30,
+    "event_population": 3712,
+    "fixed_syntheses_per_question": 5,
+    "unique_available_syntheses": 69,
+    "support_units": 51,
+    "answer_support_questions": 25,
+    "answer_support_units": 44,
+    "context_only_questions": 5,
+    "context_only_units": 7,
+    "candidate_pool_upper_bound_units": 50,
+    "candidate_pool_upper_bound_ignores_budget": true,
+    "original_accuracy_denominator_unchanged": 30
+  },
+  "methods": {
+    "hybrid": {
+      "covered_units_all30": 45,
+      "total_units_all30": 51,
+      "answer_support_units": 38,
+      "answer_support_units_total": 44,
+      "complete_checklists_all30": 27,
+      "complete_answer_support_checklists": 22,
+      "answer_support_question_count": 25,
+      "context_only_complete": 5,
+      "context_only_question_count": 5,
+      "original_correct19_complete": 19,
+      "old_missing_units_recovered": 2,
+      "old_missing_units_total": 4,
+      "event_only_covered_units": 41,
+      "event_only_complete_checklists": 24,
+      "events_selected_sum_over_questions": 1253,
+      "distinct_sources_sum_over_questions": 1041,
+      "duplicate_source_excess_sum": 212,
+      "event_cosine_ge_085_pairs_sum": 201,
+      "proxy_tokens_mean": 4083.9333333333334,
+      "proxy_tokens_min": 4063,
+      "proxy_tokens_max": 4096
+    },
+    "mmr": {
+      "covered_units_all30": 48,
+      "total_units_all30": 51,
+      "answer_support_units": 41,
+      "answer_support_units_total": 44,
+      "complete_checklists_all30": 28,
+      "complete_answer_support_checklists": 23,
+      "answer_support_question_count": 25,
+      "context_only_complete": 5,
+      "context_only_question_count": 5,
+      "original_correct19_complete": 19,
+      "old_missing_units_recovered": 2,
+      "old_missing_units_total": 4,
+      "event_only_covered_units": 44,
+      "event_only_complete_checklists": 25,
+      "events_selected_sum_over_questions": 1241,
+      "distinct_sources_sum_over_questions": 1043,
+      "duplicate_source_excess_sum": 198,
+      "event_cosine_ge_085_pairs_sum": 157,
+      "proxy_tokens_mean": 4080.4333333333334,
+      "proxy_tokens_min": 4064,
+      "proxy_tokens_max": 4096
+    },
+    "complementary": {
+      "covered_units_all30": 48,
+      "total_units_all30": 51,
+      "answer_support_units": 41,
+      "answer_support_units_total": 44,
+      "complete_checklists_all30": 28,
+      "complete_answer_support_checklists": 23,
+      "answer_support_question_count": 25,
+      "context_only_complete": 5,
+      "context_only_question_count": 5,
+      "original_correct19_complete": 19,
+      "old_missing_units_recovered": 2,
+      "old_missing_units_total": 4,
+      "event_only_covered_units": 43,
+      "event_only_complete_checklists": 24,
+      "events_selected_sum_over_questions": 1240,
+      "distinct_sources_sum_over_questions": 1094,
+      "duplicate_source_excess_sum": 146,
+      "event_cosine_ge_085_pairs_sum": 152,
+      "proxy_tokens_mean": 4079.0666666666666,
+      "proxy_tokens_min": 4060,
+      "proxy_tokens_max": 4096
+    }
+  },
+  "paired_checklist_comparisons": {
+    "complementary_vs_hybrid": {
+      "wins": 1,
+      "losses": 0,
+      "ties": 29
+    },
+    "complementary_vs_mmr": {
+      "wins": 0,
+      "losses": 0,
+      "ties": 30
+    },
+    "mmr_vs_hybrid": {
+      "wins": 1,
+      "losses": 0,
+      "ties": 29
+    },
+    "complementary_vs_mmr_event_only": {
+      "wins": 0,
+      "losses": 1,
+      "ties": 29
+    }
+  },
+  "checks": {
+    "ordered30": true,
+    "same_candidate_pool": true,
+    "same_fixed_syntheses": true,
+    "complete_blocks_within_budget": true,
+    "unique_selected_event_ids": true,
+    "all_annotation_quotes_bound": true,
+    "sqlite_bytes_match_verified_C_archive": true,
+    "deterministic_replay_selection_and_contexts": true,
+    "tuned_after_selection": false
+  },
+  "questions": [
+    {
+      "sample_id": "conv-48",
+      "qa_index": 86,
+      "scope": "answer_support",
+      "units": 3,
+      "candidate_count": 209,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": false,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": false,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": false,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 15,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 197,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "scope": "context_only",
+      "units": 1,
+      "candidate_count": 199,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 211,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 71,
+      "scope": "answer_support",
+      "units": 2,
+      "candidate_count": 201,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "scope": "answer_support",
+      "units": 2,
+      "candidate_count": 195,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 11,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 205,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 89,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 196,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 36,
+      "scope": "answer_support",
+      "units": 2,
+      "candidate_count": 195,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 29,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 205,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 0,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 223,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 94,
+      "scope": "answer_support",
+      "units": 3,
+      "candidate_count": 198,
+      "candidate_pool_upper_bound_units": 3,
+      "methods": {
+        "hybrid": {
+          "covered_units": 3,
+          "complete_checklist": true,
+          "event_only_covered_units": 3
+        },
+        "mmr": {
+          "covered_units": 3,
+          "complete_checklist": true,
+          "event_only_covered_units": 3
+        },
+        "complementary": {
+          "covered_units": 3,
+          "complete_checklist": true,
+          "event_only_covered_units": 3
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 80,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 180,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 57,
+      "scope": "answer_support",
+      "units": 2,
+      "candidate_count": 193,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 45,
+      "scope": "context_only",
+      "units": 1,
+      "candidate_count": 200,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 173,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 207,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 61,
+      "scope": "context_only",
+      "units": 2,
+      "candidate_count": 165,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 53,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 185,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 23,
+      "scope": "context_only",
+      "units": 1,
+      "candidate_count": 159,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 146,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 200,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 49,
+      "scope": "answer_support",
+      "units": 2,
+      "candidate_count": 171,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": false,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": false,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": false,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 66,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 198,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "scope": "context_only",
+      "units": 2,
+      "candidate_count": 188,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 90,
+      "scope": "answer_support",
+      "units": 2,
+      "candidate_count": 219,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 0
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 6,
+      "scope": "answer_support",
+      "units": 2,
+      "candidate_count": 198,
+      "candidate_pool_upper_bound_units": 2,
+      "methods": {
+        "hybrid": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "mmr": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        },
+        "complementary": {
+          "covered_units": 2,
+          "complete_checklist": true,
+          "event_only_covered_units": 2
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 207,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 39,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 210,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 133,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 205,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 55,
+      "scope": "answer_support",
+      "units": 9,
+      "candidate_count": 191,
+      "candidate_pool_upper_bound_units": 9,
+      "methods": {
+        "hybrid": {
+          "covered_units": 6,
+          "complete_checklist": false,
+          "event_only_covered_units": 6
+        },
+        "mmr": {
+          "covered_units": 9,
+          "complete_checklist": true,
+          "event_only_covered_units": 9
+        },
+        "complementary": {
+          "covered_units": 9,
+          "complete_checklist": true,
+          "event_only_covered_units": 9
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 4,
+      "scope": "answer_support",
+      "units": 1,
+      "candidate_count": 201,
+      "candidate_pool_upper_bound_units": 1,
+      "methods": {
+        "hybrid": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "mmr": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        },
+        "complementary": {
+          "covered_units": 1,
+          "complete_checklist": true,
+          "event_only_covered_units": 1
+        }
+      }
+    }
+  ]
+}
