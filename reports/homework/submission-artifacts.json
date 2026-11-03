@@ -1,0 +1,90 @@
+{
+  "prepared_on": "2026-11-01",
+  "source_commit": "0d29597b340f141296851e472cada90c04e7ec09",
+  "naming_rule": "队号-论文或技术文档简要关键词-日期",
+  "report_pages": 15,
+  "slide_pages": 68,
+  "video_seconds": 3590.24,
+  "video_chapters": 8,
+  "phase": "homework-literature-review-20261101",
+  "status": "submitted_and_archived",
+  "archived_on": "2026-11-03",
+  "submission": {
+    "confirmed": true,
+    "confirmed_on": "2026-11-03",
+    "confirmation_source": "user_confirmation_in_current_chat",
+    "submitted_at": null
+  },
+  "files": [
+    {
+      "kind": "report",
+      "file": "8队-结构化记忆-20261101.pdf",
+      "bytes": 402525,
+      "sha256": "e045a6a795375c86e8ff2646f23d04f5fe48f2549ea5b4c557610f82c7ef0eff"
+    },
+    {
+      "kind": "slides",
+      "file": "8队-结构化记忆-20261101-slides.pdf",
+      "bytes": 675869,
+      "sha256": "1ed88b4a8de3de0910c1835822e043acf796efc311ebb201e5b0cb02507c4363"
+    },
+    {
+      "kind": "video",
+      "file": "8队-结构化记忆-20261101.mp4",
+      "bytes": 94095635,
+      "sha256": "7a8bd7d38763fac3c2d1b58b135b3d2068ae4d04874d6e370e6017d710738b6b"
+    }
+  ],
+  "archive": {
+    "file": "8队-结构化记忆-20261101.zip",
+    "bytes": 95174491,
+    "sha256": "f8efdade8ee4bd864c545c517358b88d97eeb2780a4e5091ce4d86878373a165",
+    "entries": [
+      "8队-结构化记忆-20261101.pdf",
+      "8队-结构化记忆-20261101-slides.pdf",
+      "8队-结构化记忆-20261101.mp4"
+    ],
+    "crc_and_sha256_verified": true
+  },
+  "storage": {
+    "public_report": "reports/homework/report-preview.pdf",
+    "public_slides": "reports/homework/slides/preview.pdf",
+    "private_submission_directory": "output/homework-submission-20261101",
+    "realname_files_in_git": false,
+    "video_and_zip_in_git": false,
+    "group_transfer_date": null
+  },
+  "contribution_percentages": {
+    "hycx233": 25,
+    "onlysonder": 15,
+    "oioioi-521": 15,
+    "lanshuheng9-oss": 15,
+    "YaoYang-123456": 15,
+    "ngocnamd93-spec": 15
+  },
+  "completed_issues": [
+    39,
+    53,
+    55,
+    56,
+    65
+  ],
+  "related_merged_prs": [
+    54,
+    57,
+    58,
+    59,
+    60,
+    61,
+    63,
+    64,
+    66,
+    67
+  ],
+  "verification": {
+    "submission_file_hashes_match": true,
+    "zip_crc_and_entries_verified": true,
+    "report_and_slides_content_unchanged_in_archive": true
+  },
+  "course_project_status": "tracked_separately"
+}

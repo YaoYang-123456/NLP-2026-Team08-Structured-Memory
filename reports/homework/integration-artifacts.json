@@ -203,10 +203,10 @@
     "six_paper_materials": "reviewed_before_this_change",
     "joint_synthesis": "technically_reviewed_and_user_confirmed_systematic_discussion_completed",
     "contribution_percentages": "filled_user_confirmed_25_15_15_15_15_15",
-    "personal_videos": "seven_audio_segments_received_and_local_video_ready_for_review",
-    "semantic_xpath_old_video": "not_delivered_for_current_homework",
+    "personal_videos": "all_segments_integrated_and_submission_confirmed",
+    "semantic_xpath_old_video": "not_used_current_audio_integrated",
     "actual_timing": "verified_from_recordings_2026_10_29",
-    "course_submitted": false,
+    "course_submitted": true,
     "recording_delivery": "one_continuous_audio_per_module_plus_actual_slide_timestamps",
     "semantic_xpath_current_audio": "received_and_integrated"
   },
@@ -334,7 +334,7 @@
       "missing_characters": 0
     }
   },
-  "last_updated_on": "2026-10-31",
+  "last_updated_on": "2026-11-03",
   "paragraph_layout_revision": {
     "date": "2026-10-29",
     "scope": "Paragraph lead-ins, Text2Mem prose and page breaks, and comparison table placement",
@@ -1067,5 +1067,12 @@
     "total_pdf_pages": 41,
     "publication_target": "local_signed_commit",
     "remote_push": false
+  },
+  "phase_archive": {
+    "status": "submitted_and_archived",
+    "confirmed_on": "2026-11-03",
+    "confirmation_source": "user_confirmation_in_current_chat",
+    "record": "reports/homework/archive-20261101.md",
+    "manifest": "reports/homework/submission-artifacts.json"
   }
 }

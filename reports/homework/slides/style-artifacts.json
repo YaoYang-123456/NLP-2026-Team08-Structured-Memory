@@ -178,8 +178,9 @@
   },
   "readiness": {
     "review": "approved_in_PR66_by_YaoYang-123456",
-    "actual_timing": "pending_rehearsal",
-    "semantic_xpath_old_video": "not_delivered_for_current_homework"
+    "actual_timing": "verified_from_recordings_2026_10_29",
+    "semantic_xpath_old_video": "not_used_current_audio_integrated",
+    "course_submitted": true
   },
   "section_title_timing_revision": {
     "date": "2026-10-27",
@@ -217,5 +218,12 @@
     "undefined_references": 0,
     "pdfjs_all_68_pages_rendered_and_chinese_extracted": true,
     "shared_notes_match_script": true
-  }
+  },
+  "phase_archive": {
+    "status": "submitted_and_archived",
+    "confirmed_on": "2026-11-03",
+    "record": "reports/homework/archive-20261101.md",
+    "manifest": "reports/homework/submission-artifacts.json"
+  },
+  "last_updated_on": "2026-11-03"
 }
