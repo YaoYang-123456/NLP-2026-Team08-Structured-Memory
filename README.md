@@ -8,6 +8,8 @@
 
 11月1日平时作业已完成并提交，11月3日确认归档：报告15页、演示68页、视频59分50.24秒。最终版本、文件指纹与任务结项见[平时作业阶段归档](reports/homework/archive-20261101.md)。课程设计的实现、实验和最终验收继续单独跟踪。
 
+下一阶段主方向已确定为[预算约束的多粒度证据打包与上下文保留](docs/plans/2026-11-03-phase2.md)。在 StructMem 上结合结构范围选择与抽取式压缩，按问题使用事件和综合片段，并保留人物指代、时间所需上下文。[最新离线试点](reports/phase2-anchor-pilot-20261103.md)在同一 4,096 预算下覆盖 50/51 项，旧固定综合＋MMR 为 48/51；普通逐句也达到 50/51，保护机制的独立答案收益尚待验证。六人分工和[创新边界](notes/phase2-direction-decision-20261103.md)已明确，[阶段总览 #69](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/69)关联已指派的 #70–#75；尚未运行新回答/裁判或使用留出题。
+
 ## 先从这里开始
 
 - [老师要求原文](docs/course/NLP初步课设与平时作业安排-贺瑞芳-20260920.pdf)：总体说明见第 1 页，所选专题的 6 篇论文见第 9 页。
@@ -17,7 +19,7 @@
 - [小组 Beamer 汇报模板](reports/homework/slides/README.md)：开场、六人各 7–9 分钟讲解、10–15 分钟系统总结；共享蓝色学术版式，导出 PDF。
 - [软件学报 LaTeX 模板](reports/templates/jos/README.md)：社区模板、字体适配和编译方法；[官方 Word 样例](docs/course/软件学报排版样例2025年版.doc)只作版式参考。
 - [协作与文件约定](docs/collaboration.md)：issue 分工、分支、PR、自查与审核、大文件传输。
-- [项目方案与任务认领](docs/project-plan.md)：六包已认领；S0/S2 同一 30 题回答及 E 自动评分已有记录，逐题评分与输入指纹已由 F 复算验收，成员人工核查及正式汇报交付仍待完成。
+- [项目方案与历史任务认领](docs/project-plan.md)：保留首阶段六包分工、S0/S2 同一 30 题结果与评分复算；新一轮任务按[下一阶段规划](docs/plans/2026-11-03-phase2.md)实施，历史未确认事项不自动视为完成。
 - [D 真实综合与 S2 交接](docs/structmem-real-run-20261020.md)：91 条真实综合、固定 30 题的 60＋5 检索与回答；评分包已由 F 接收，评分报告与独立验收分开记录。
 - [统一回答入口与联调说明](docs/qa-integration.md)：F 的 DeepSeek 调用、B/D 输入和 E 评分交接；真实 S0/S2 回答已完成；[S0 运行记录](reports/s0-answer-run-20261019.md)、[评分复算验收](reports/e-score-verification-20261021.json)与成员人工验收分别记录。
 - [六篇论文复现条件核查](notes/six-paper-comparison.md)：原文数字、固定代码版本与复现注意事项。
