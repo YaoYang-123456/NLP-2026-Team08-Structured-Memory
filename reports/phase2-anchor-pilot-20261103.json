@@ -1,0 +1,1147 @@
+{
+  "date": "2026-11-03",
+  "decision": "Select budget-constrained multi-granularity packing with context anchors as the phase2 implementation direction; claim course-level integration, not a new general retrieval algorithm. Independent answer benefit of anchors remains untested.",
+  "answer_calls": 0,
+  "judge_calls": 0,
+  "heldout_questions_used": 0,
+  "human_acceptance": false,
+  "questions": 30,
+  "selected_contexts": 180,
+  "counter_is_proxy": true,
+  "support_annotations_unchanged": true,
+  "annotation_sha256": "1ceadec567212eaf9b8b97655ccffb6f3fbaa0e28b1cca4b60df6672545047d0",
+  "candidate_support_upper_bound_ignoring_budget": 50,
+  "provenance": {
+    "config": {
+      "version": "anchor-packing-v1",
+      "frozen_before_selection": true,
+      "budgets": [
+        2048,
+        4096
+      ],
+      "counter": "cl100k_base",
+      "candidate_scope": "Reuse the previous pilot's common event candidates and original five synthesis documents per question. All packing methods use identical event and synthesis-sentence retrieval units.",
+      "ranking": {
+        "rrf_k": 60,
+        "bm25_k1": 1.2,
+        "bm25_b": 0.75,
+        "mmr_relevance": 0.7,
+        "mmr_redundancy": 0.3
+      },
+      "packing": [
+        "whole",
+        "sentence",
+        "anchor"
+      ],
+      "whole": "Selecting a synthesis sentence returns its whole parent synthesis.",
+      "sentence": "Selecting a synthesis sentence returns only that complete sentence.",
+      "anchor": "Close backward dependencies for leading anaphoric expressions and the nearest earlier explicit date sentence when relative time occurs; keep the summary time-range header. Whole dependency bundles must fit the budget. Never rewrite dates or facts.",
+      "evaluation": "Reuse the prior 51 support units unchanged. Compare coverage and context cost, not answer accuracy; report all configurations. No parameter search, paid calls or heldout data."
+    },
+    "config_sha256": "6a89aec637363722c50ef6e148c0fc57b7a464c974da6608f73700730f579988",
+    "script_sha256": "be79067c38653d0ad4ce2f2edb51013e17b131b009fe9e6edeabb5a424e48709",
+    "baseline_selections_sha256": "adabd469226ee0d2b0b00a6159754fc46b8ac2d90873ece8ea4a805ae9297be9",
+    "event_sqlite_sha256": {
+      "conv-48.sqlite": "ec45cdf522dcd9d280f3a327959264522e4c012e50ee2a993f60f6be0107b132",
+      "conv-42.sqlite": "7cb8d8ab9cbbd9b26f3c3ff36dbdd02a94d9b07f2faa8fcb56064991fbaad908",
+      "conv-41.sqlite": "681a93ddbaa3292eedcc29f4df2a26dd143fb0019cf1f72b176fbe78f3c9ed96"
+    },
+    "embedding": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "dimensions": 384,
+      "normalize_embeddings": true,
+      "max_seq_length": 256,
+      "device_for_check": "cpu"
+    },
+    "packages": {
+      "numpy": "2.2.6",
+      "nltk": "3.9.2",
+      "tiktoken": "0.12.0",
+      "sentence-transformers": "5.1.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.0"
+    },
+    "selections_sha256": "2578017003c0a9f150c0f046ac3a2618b1b14fdc924322242318874ef52e8fe1",
+    "questions": 30,
+    "configurations": 6,
+    "answer_calls": 0,
+    "judge_calls": 0
+  },
+  "methods": {
+    "whole_2048": {
+      "support_units_covered": 47,
+      "support_units_total": 51,
+      "answer_support_units_covered": 41,
+      "answer_support_units_total": 44,
+      "complete_answer_support_checklists": 23,
+      "answer_support_question_count": 25,
+      "complete_context_only_checklists": 4,
+      "original_correct19_complete": 19,
+      "proxy_tokens_mean": 2033.9666666666667,
+      "synthesis_proxy_tokens_mean": 855.5,
+      "declared_dependency_gap_count": 0
+    },
+    "sentence_2048": {
+      "support_units_covered": 47,
+      "support_units_total": 51,
+      "answer_support_units_covered": 41,
+      "answer_support_units_total": 44,
+      "complete_answer_support_checklists": 23,
+      "answer_support_question_count": 25,
+      "complete_context_only_checklists": 4,
+      "original_correct19_complete": 18,
+      "proxy_tokens_mean": 2042.7666666666667,
+      "synthesis_proxy_tokens_mean": 301.76666666666665,
+      "declared_dependency_gap_count": 47
+    },
+    "anchor_2048": {
+      "support_units_covered": 47,
+      "support_units_total": 51,
+      "answer_support_units_covered": 41,
+      "answer_support_units_total": 44,
+      "complete_answer_support_checklists": 23,
+      "answer_support_question_count": 25,
+      "complete_context_only_checklists": 4,
+      "original_correct19_complete": 18,
+      "proxy_tokens_mean": 2042.6333333333334,
+      "synthesis_proxy_tokens_mean": 352.3333333333333,
+      "declared_dependency_gap_count": 0
+    },
+    "whole_4096": {
+      "support_units_covered": 49,
+      "support_units_total": 51,
+      "answer_support_units_covered": 42,
+      "answer_support_units_total": 44,
+      "complete_answer_support_checklists": 24,
+      "answer_support_question_count": 25,
+      "complete_context_only_checklists": 5,
+      "original_correct19_complete": 19,
+      "proxy_tokens_mean": 4082.4333333333334,
+      "synthesis_proxy_tokens_mean": 1507.4,
+      "declared_dependency_gap_count": 0
+    },
+    "sentence_4096": {
+      "support_units_covered": 50,
+      "support_units_total": 51,
+      "answer_support_units_covered": 43,
+      "answer_support_units_total": 44,
+      "complete_answer_support_checklists": 24,
+      "answer_support_question_count": 25,
+      "complete_context_only_checklists": 5,
+      "original_correct19_complete": 19,
+      "proxy_tokens_mean": 4092.633333333333,
+      "synthesis_proxy_tokens_mean": 480.73333333333335,
+      "declared_dependency_gap_count": 70
+    },
+    "anchor_4096": {
+      "support_units_covered": 50,
+      "support_units_total": 51,
+      "answer_support_units_covered": 43,
+      "answer_support_units_total": 44,
+      "complete_answer_support_checklists": 24,
+      "answer_support_question_count": 25,
+      "complete_context_only_checklists": 5,
+      "original_correct19_complete": 19,
+      "proxy_tokens_mean": 4091.6,
+      "synthesis_proxy_tokens_mean": 544.8666666666667,
+      "declared_dependency_gap_count": 0
+    }
+  },
+  "paired_unit_coverage": {
+    "anchor_4096_vs_sentence_4096": {
+      "more_units_questions": 0,
+      "fewer_units_questions": 0,
+      "ties": 30
+    },
+    "anchor_4096_vs_whole_4096": {
+      "more_units_questions": 1,
+      "fewer_units_questions": 0,
+      "ties": 29
+    },
+    "anchor_2048_vs_sentence_2048": {
+      "more_units_questions": 0,
+      "fewer_units_questions": 0,
+      "ties": 30
+    },
+    "anchor_2048_vs_whole_2048": {
+      "more_units_questions": 1,
+      "fewer_units_questions": 1,
+      "ties": 28
+    },
+    "anchor_4096_vs_previous_fixed5_mmr_4096": {
+      "more_units_questions": 2,
+      "fewer_units_questions": 0,
+      "ties": 28
+    }
+  },
+  "checks": {
+    "deterministic_replay": true,
+    "all_180_contexts_within_budget": true,
+    "rendered_context_reconstruction": true,
+    "same_retrieval_units_for_three_packing_methods": true,
+    "no_generated_facts_or_date_rewrites": true
+  },
+  "per_question": [
+    {
+      "sample_id": "conv-48",
+      "qa_index": 86,
+      "scope": "answer_support",
+      "units": 3,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": false
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": false
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": false
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": false
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": false
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": false
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 15,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "scope": "context_only",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 71,
+      "scope": "answer_support",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "scope": "answer_support",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 11,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 89,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 36,
+      "scope": "answer_support",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 29,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 0,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 94,
+      "scope": "answer_support",
+      "units": 3,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 3,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 3,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 3,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 3,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 3,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 3,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 80,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 57,
+      "scope": "answer_support",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 45,
+      "scope": "context_only",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 0,
+          "complete": false
+        },
+        "sentence_2048": {
+          "covered_units": 0,
+          "complete": false
+        },
+        "anchor_2048": {
+          "covered_units": 0,
+          "complete": false
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 173,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 61,
+      "scope": "context_only",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 53,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 23,
+      "scope": "context_only",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 146,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 49,
+      "scope": "answer_support",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": false
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 66,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "scope": "context_only",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 90,
+      "scope": "answer_support",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 6,
+      "scope": "answer_support",
+      "units": 2,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 2,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 2,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 39,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 133,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 0,
+          "complete": false
+        },
+        "anchor_2048": {
+          "covered_units": 0,
+          "complete": false
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 55,
+      "scope": "answer_support",
+      "units": 9,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 9,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 9,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 9,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 9,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 9,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 9,
+          "complete": true
+        }
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 4,
+      "scope": "answer_support",
+      "units": 1,
+      "methods": {
+        "whole_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_2048": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "whole_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "sentence_4096": {
+          "covered_units": 1,
+          "complete": true
+        },
+        "anchor_4096": {
+          "covered_units": 1,
+          "complete": true
+        }
+      }
+    }
+  ]
+}
