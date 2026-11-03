@@ -34,9 +34,33 @@
 
 \makeatletter
 
-% Use TeX Live fonts so this teaching template needs no bundled Windows fonts.
+% Prefer the Word sample's installed fonts; retain TeX Live portability.
+\newif\ifjos@systemfonts
+\jos@systemfontstrue
+\@for\jos@font:=Times New Roman,SimSun,SimHei,FangSong,KaiTi\do{%
+  \IfFontExistsTF{\jos@font}{}{\jos@systemfontsfalse}%
+}
+\ifjos@systemfonts
+\setmainfont{Times New Roman}[Ligatures=TeX]
+\setmonofont{Times New Roman}[Ligatures={TeXOff,NoCommon}]
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+\setCJKsansfont{SimHei}[BoldFont=SimHei]
+\setCJKmonofont{FangSong}
+\setCJKfamilyfont{zhsong}{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+\setCJKfamilyfont{zhhei}{SimHei}[BoldFont=SimHei]
+\setCJKfamilyfont{zhfs}{FangSong}
+\setCJKfamilyfont{zhkai}{KaiTi}
+\setCJKfamilyfont{jossong}{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+\setCJKfamilyfont{josfang}{FangSong}
+\setCJKfamilyfont{joskai}{KaiTi}
+\setCJKfamilyfont{joshei}{SimHei}[BoldFont=SimHei]
+\newfontfamily\jossonglatin{SimSun}
+\newfontfamily\joskailatin{KaiTi}
+\else
 \setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,
   BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Ligatures=TeX]
+\setmonofont{texgyretermes}[Extension=.otf,UprightFont=*-regular,
+  BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Ligatures={TeXOff,NoCommon}]
 \setCJKmainfont{FandolSong-Regular}[Extension=.otf,
   BoldFont=FandolSong-Bold,ItalicFont=FandolKai-Regular]
 \setCJKsansfont{FandolHei-Regular}[Extension=.otf,BoldFont=FandolHei-Bold]
@@ -51,6 +75,7 @@
 \setCJKfamilyfont{joshei}{FandolHei-Regular}[Extension=.otf,BoldFont=FandolHei-Bold]
 \newfontfamily\jossonglatin{texgyretermes-regular.otf}
 \newfontfamily\joskailatin{texgyretermes-italic.otf}
+\fi
 \newcommand{\jossongti}{\CJKfamily{jossong}}
 \newcommand{\josfangsong}{\CJKfamily{josfang}}
 \newcommand{\joskaiti}{\CJKfamily{joskai}}
@@ -98,7 +123,7 @@
 \def\@enAuthorCitation{}
 \def\@comment{}
 \def\@encomment{}
-\def\@ReferenceName{References:}
+\def\@ReferenceName{References}
 
 \newcommand{\Year}[1]{\def\@Year{#1}}
 \newcommand{\Vol}[1]{\def\@Vol{#1}}
@@ -195,7 +220,7 @@
 \newcommand{\jos@cnabsfont}{\joskaiti\fontsize{9pt}{14.25pt}\selectfont}
 \newcommand{\jos@enabs}{\rmfamily\joskaiti\fontsize{7.5pt}{11.7pt}\selectfont}
 \newcommand{\jos@citefont}{\rmfamily\jossongti\fontsize{8pt}{12pt}\selectfont}
-\newcommand{\jos@headerfont}{\joskaiti\fontsize{7.5pt}{9pt}\selectfont}
+\newcommand{\jos@headerfont}{\joskaiti\fontsize{9pt}{12pt}\selectfont}
 \newcommand{\jos@footnotefont}{\normalfont\rmfamily\jossongti\fontsize{7.5pt}{10.5pt}\selectfont}
 \newcommand{\jos@refheadingfont}{\normalfont\rmfamily\josheiti\bfseries\fontsize{9pt}{14.25pt}\selectfont}
 \newcommand{\jos@reffont}{\normalfont\rmfamily\jossongti\fontsize{7.5pt}{13pt}\selectfont}

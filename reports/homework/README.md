@@ -13,36 +13,31 @@
 
 本组报告统一使用 **LaTeX 写作、PDF 交付**，演示材料使用 [Beamer 模板](slides/README.md)并导出 PDF；[官方 Word 样例](../../docs/course/软件学报排版样例2025年版.doc)只作报告版式参考。
 
-## 当前进展（2026-10-27）
+## 阶段状态（2026-11-03）
 
-六篇个人论文章节、摘要、背景、跨论文比较、总结及对应讲稿已补齐。整份报告 20 页，演示 68 页；[#66](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/66) 已由 YaoYang-123456 完成集中技术审核，已合并；审核建议中的 ESR 计数口径也已修正。个人录音、实际翻页点与最终视频仍待交付。共同整理任务见 [#65](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/65)。
+本阶段已完成并提交，11月3日由hycx233确认结项。最终报告15页、演示68页、视频59分50.24秒（8个章节）。六人的论文报告、讲解与讨论，以及开场、系统总结、录音整合和分工比例均已完成。
 
-| 论文 | 阅读负责人 | 已整合材料 | 本人过稿与录音状态 |
-| --- | --- | --- | --- |
-| StructMem | hycx233 | #15 报告、12 页模块和备注 | 尚无本次录制及实测时长登记 |
-| Hindsight | onlysonder | #60 报告、9 页模块和[8 分钟讲稿](scripts/02-hindsight-8min.md) | 待本人过稿、实际计时及音频与翻页时间表交付 |
-| Semantic XPath | oioioi-521 | #57 报告、12 页模块、[个人指南](semantic-xpath-reading-guide.md)；已修复个人 PDF 中文映射 | **本次视频未交付**；8 分 55 秒为旧录制，待 F 核看当前幻灯片衔接、风格和音画后决定能否复用；[#55](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/55) 保持开放 |
-| HyMEM | lanshuheng9-oss | #54 正文、#61 个人材料、#64 中文 PDF 修复已合入；#67 录音配套报告和七段讲稿已审核，[录音指南](hymem-recording-guide.md) | #62 已结项；[#53](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/53) 保留本人过稿、计时和录制 |
-| MetaMem | YaoYang-123456 | #40 正文及 #63 修订已合入；8 页模块、规则示例、[完整讲稿与交接](metamem-handoff.md) | [#39](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/39) 保持开放；讲稿已修订，待本人重新计时 |
-| Text2Mem | ngocnamd93-spec | #59 报告、8 页模块、[阅读与讲稿指南](text2mem-reading-guide.md)；已修复个人 PDF 中文映射 | [#56](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/56) 保留本人过稿、计时及录制；480 秒为计划 |
+归档入口：[阶段归档](archive-20261101.md)及[最终文件清单](submission-artifacts.json)。提交包名为`8队-结构化记忆-20261101.zip`，内含实名报告、实名幻灯片和压缩视频；实名材料、原始音频和视频制作文件继续保留在Git忽略的本地目录。
 
-### 当前整合预览与检查
+| 论文 | 阅读负责人 | 最终材料与录音 |
+| --- | --- | --- |
+| StructMem | hycx233 | 与开场合录09:51.211；系统总结另录09:31.711 |
+| Hindsight | onlysonder | 9页演示模块；实际录音07:52.387 |
+| Semantic XPath | oioioi-521 | 12页演示模块；本次新录音08:58.288已整合 |
+| HyMEM | lanshuheng9-oss | 7页演示模块及录音配套稿；实际录音08:04.352 |
+| MetaMem | YaoYang-123456 | 8页演示模块；实际录音08:05.138 |
+| Text2Mem | ngocnamd93-spec | 8页演示模块；实际录音07:27.147 |
 
-- [整份报告 PDF](report-preview.pdf)：**20 页**；[整份幻灯片 PDF](slides/preview.pdf)：**68 页，已移除备用页和独立参考资料页**。10 月 27 日已完成共同部分及全组 report / slides 的文字整理，已通过 PR #66 集中技术审核。
-- 报告统一摘要、背景、六篇章节、比较与总结的行文；删除重复自我辩解、交接状态和可见原文位置，保留六处首次引用与文末文献。图表使用软件学报模板的自动编号和题注，实验数据保持一致。
-- 开场 3 页、综合 9 页均已填写逐页备注，并提供[独立讲稿](scripts/00-opening-and-synthesis.md)。计划采用 **2＋6×8＋10＝60 分钟**；这不是实际排练记录。
-- 主报告与四份个人报告均通过 latexmk / XeLaTeX，共 29 页完成 PDF.js 中文提取、渲染和版面检查。无 Overfull、Underfull hbox、缺字或未定义引用；主报告保留 3 条 Underfull vbox 及数学字体尺寸替代提示。补 Unicode 映射前后 PDFium 画面一致，软件学报模板未改。
-- HyMEM新增2页录音配套报告与七段讲稿已通过 #67 技术审核；独立编译报告2页、公开录音稿8页，并完成PDF.js中文与版面检查。补充分析保留在个人报告，录音及实际翻页点待交付。
-- 最新报告验证见[报告修订检查](report-style-check-20261027.md)及[报告清单](report-style-artifacts.json)，slides 验证见[演示修订检查](slides/style-check-20261027.md)及[演示清单](slides/style-artifacts.json)。[整合清单](integration-artifacts.json)记录当前入口；早期检查保留对应版本记录。
+### 最终预览与验证
 
-### 接下来的交付
+- [报告PDF](report-preview.pdf)：15页，完成语言统一、StructMem精简、JOS版式对照、中英文作者对齐及分工填写。
+- [演示PDF](slides/preview.pdf)：68页，开场、六篇模块与系统总结齐全，已移除逐页文献和末尾备用页。
+- 两份主报告与5份个人报告共41页已完成XeLaTeX编译、PDF.js中文提取、渲染、字体嵌入及Unicode处理前后画面核对；最终文件与ZIP再次完成大小、SHA-256及完整性校验。
+- 详细技术记录见[报告修订检查](report-style-check-20261027.md)、[报告清单](report-style-artifacts.json)、[演示修订检查](slides/style-check-20261027.md)和[整合清单](integration-artifacts.json)。各次检查的历史页数与警告记录保留原版本含义。
 
-1. 确认封面成员、实际定稿日期、开场/总结讲解人。**贡献比例按本轮要求暂留空**，最终按实际工作填写并合计 100%。
-2. 每人完整录制自己的模块，提交一份连续音频及实际翻页时间表；开场和总结采用同样方式。页码使用统一 68 页演示的全组页码，时间以该音频开头为零点。音频经过剪辑后，按最终文件重新核对时间点，最后一页保持到音频结束。
-3. 收集各段实测时长，按约 60 分钟的整体安排检查语速与衔接，再用统一幻灯片画面合成视频。Semantic XPath 旧视频仍按本次未交付计，是否复用另行核看。
-4. 整理最终报告、幻灯片、视频版本和上传记录。
+### 后续工作
 
-10 月 22 日研讨阶段已结项：[PR #52](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/52) 已合入，[#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19) 与 [#31](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/31) 已关闭；11 月 1 日的阅读报告、约 60 分钟视频及课程上传仍按本页跟踪。
+11月1日阅读作业已结项。课程设计的实现、实验与最终验收继续按[项目方案](../../docs/project-plan.md)及后续通知推进。10月22日研讨材料见[研讨归档](../seminar-20261022/README.md)。
 
 ## 个人阅读材料
 
@@ -55,11 +50,11 @@
 | MetaMem | [2 页 PDF](metamem-reading-report.pdf) | [8 页 PDF](slides/metamem-preview.pdf) | [交接与完整讲稿](metamem-handoff.md) |
 | Text2Mem | [2 页 PDF](text2mem-report-preview.pdf) | [8 页 PDF](slides/text2mem-preview.pdf) | [个人指南](text2mem-reading-guide.md) |
 
-个人材料与历史编译清单分别保留；最新整合报告和演示以本页的整合清单为准。本人过稿、实际计时、录制及课程提交仍按上表状态推进。
+个人材料与历史编译清单分别保留；最新整合报告和演示以本页的整合清单为准。实际录音和翻页点已收齐，本次课程提交已完成，最终版本见阶段归档。
 
 ## 共同编辑
 
-`main.tex` 是阅读报告入口，`sections/01-structmem.tex` 至 `sections/06-text2mem.tex` 分别对应六篇论文，成员在 issue 中认领后编辑对应章节。文件里的“待填写”标明尚未完成的内容，不代表已有阅读或实验成果。六篇个人章节现均已接入；`sections/07-synthesis.tex` 已编入主稿，摘要、背景、比较与总结形成可审核正文。共同部分已由 YaoYang-123456 集中复核；贡献说明本轮保留原占位。`references.bib` 的六篇条目来自 ACL Anthology 官方 BibTeX 导出。
+`main.tex` 是阅读报告入口，`sections/01-structmem.tex` 至 `sections/06-text2mem.tex` 分别对应六篇论文，成员在 issue 中认领后编辑对应章节。文件里的“待填写”标明尚未完成的内容，不代表已有阅读或实验成果。六篇个人章节现均已接入；`sections/07-synthesis.tex` 已编入主稿，摘要、背景、比较与总结形成可审核正文。共同部分已由 YaoYang-123456 集中复核；署名、分工与贡献比例已按实际工作填写。`references.bib` 的六篇条目来自 ACL Anthology 官方 BibTeX 导出。
 
 每篇说明问题与背景、核心方法、关键实验、局限和课设启发。正文保留必要的学术引用，详细原文页码及图表位置放在源码注释或阅读指南中。公共讨论围绕组织、检索、更新、利用和操作规范比较六篇工作，不直接按不同模型和任务下的准确率排名。论文报告结果、本组已验证结果和计划开展的实验分别注明；阅读报告不等待课设实验全部完成。
 

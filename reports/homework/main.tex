@@ -6,7 +6,7 @@
 
 % Course metadata replaces the journal publication placeholders in the template.
 \makeatletter
-\renewcommand{\jos@topmatter}{\noindent 天津大学 NLP 平时作业\hfill 第 8 队\par}
+\renewcommand{\jos@topmatter}{{\jos@small\noindent 天津大学 NLP 平时作业\hfill 第 8 队\par}}
 \renewcommand{\jos@citationbox}[2]{}
 \makeatother
 \fancyhead[RO]{\joskaiti 长上下文场景结构化记忆建模\quad 第 8 队}
@@ -18,21 +18,23 @@
 \CLC{TP18}
 \title{长上下文场景结构化记忆建模：六篇论文阅读与比较}{结构化记忆论文阅读与比较}
 \entitle{Structured Memory for Long-Context Scenarios: A Review of Six Papers}{Structured Memory Review}
-\author{第 8 队（成员待填写）}{Team 8}{}
-\AuthorMark{第 8 队}
+\author{hycx233，onlysonder，oioioi-521，lanshuheng9-oss，YaoYang-123456，ngocnamd93-spec}{hycx233, onlysonder, oioioi-521, lanshuheng9-oss, YaoYang-123456, ngocnamd93-spec}{}
+\AuthorMark{hycx233}
 \address{天津大学}{Tianjin University}
-\abstract{长期交互中的记忆需要保留人物、事件与时间关系，定位相关证据，并随新信息更新状态。本文围绕StructMem、Hindsight、Semantic XPath、HyMEM、MetaMem和Text2Mem六篇论文，梳理事件组织、多通道检索、结构化访问、混合经验更新、事实利用与操作验证六类机制。比较表明，各方法分别作用于记忆形成、访问、维护和使用过程，其适用性取决于任务类型、数据表示与反馈条件。结构化记忆有助于保留关联和限定访问范围，同时引入抽取、维护与计算开销。本文结合论文内部对照实验和行程变更示例，分析这些机制的联系与取舍，并提出围绕错误类型开展受控比较的思路，为以StructMem为主线的课程设计提供参考。}
+\abstract{长期交互中的记忆系统需要保留人物、事件与时间关联，准确检索相关证据，并随新信息更新状态。本文围绕StructMem、Hindsight、Semantic XPath、HyMEM、MetaMem和Text2Mem六篇论文，系统梳理事件组织、多通道检索、结构化访问、混合经验更新、事实利用与操作验证六类核心机制。通过对比各方法在记忆形成、访问、维护与利用环节的设计，本文分析了不同结构化表示在保留语境关联、收敛检索范围以及控制抽取与维护开销之间的权衡，并结合对照实验与行程变更案例探讨各机制的互补关系与错误定位思路，为以StructMem为主线的课程设计提供参考。}
 \keywords{大语言模型；长上下文；结构化记忆；论文综述}
+\enabstract{Memory systems for long-term interaction must preserve relations among people, events, and time, retrieve relevant evidence accurately, and update their state as new information arrives. This report reviews six papers---StructMem, Hindsight, Semantic XPath, HyMEM, MetaMem, and Text2Mem---covering event organization, multi-channel retrieval, structured access, hybrid experience updating, knowledge utilization, and operation verification. By comparing how these methods act on memory formation, access, maintenance, and use, we analyze the trade-offs among preserving contextual relations, constraining retrieval scope, and managing extraction and maintenance costs. Drawing on experimental findings and an itinerary-change case study, we further examine the complementarity of these mechanisms and error diagnosis strategies to inform a course project centered on StructMem.}
+\enkeywords{large language models; long context; structured memory; literature review}
 \maketitle
 
 \section{背景与阅读范围}
-长期对话、持续任务和跨会话助手需要利用过去的信息。历史增长带来的困难包括计划变更、证据分散，以及用户陈述与系统推断的混淆。将完整历史交给模型会增加输入开销；将历史拆成独立片段后检索，则容易丢失人物、时间、事件归属及状态变更关系。记忆系统因此需要同时解决信息的组织、访问和使用问题。
+在长期对话、持续任务与跨会话交互中，智能体需要持续积累并调用历史信息。随着交互历史增长，计划变更、证据跨轮分散以及用户陈述与模型推断相混淆等问题日益突出。直接输入完整历史会导致上下文开销迅速膨胀；仅将历史切分为独立片段做扁平检索，又容易割裂人物、时间、事件归属与状态变更之间的联系。因此，记忆系统需要协同解决信息的组织、访问、更新与利用问题。
 
-结构化记忆通过明确组织单位、关系、访问范围或操作语义，为后续任务提供可定位、可维护的信息。其表示形式包括事件条目与整合摘要、带类型的记忆网络、层级树、离散策略与连续轨迹，以及事实利用规则和操作Schema。不同表示对应不同的处理环节，选择时需要结合任务所需的关联、粒度和更新方式。
+结构化记忆通过显式定义记忆单元、关联关系、访问范围或操作语义，使历史信息更易于定位和维护。常见表示形式包括事件条目与整合摘要、多类型记忆网络、层级树、离散策略与连续轨迹混合表示，以及事实利用规则和结构化操作规范（Schema）。这些表示分别作用于记忆生命周期的不同环节，在信息粒度、关联表达与维护方式上各有侧重。
 
-本文选取课程专题中的六篇论文：StructMem与Hindsight研究长期对话记忆的组织和使用；Semantic XPath研究层级记忆的访问；HyMEM面向依赖截图与动作轨迹的电脑操作智能体；MetaMem优化检索后对事实的利用；Text2Mem定义记忆操作并评测执行后的状态效果。
+本文围绕课程专题中的六篇代表性论文展开综述：StructMem与Hindsight重点探索长期对话记忆的组织与检索；Semantic XPath聚焦树形层级记忆的结构化访问；HyMEM面向依赖屏幕截图与动作轨迹的电脑操作智能体构建混合自演化记忆；MetaMem关注检索后如何正确利用事实进行推理；Text2Mem则定义统一的记忆操作规范并核验执行后的状态变化。
 
-下文依次介绍各方法的研究问题、核心机制、实验结果与局限，再从研究对象、机制联系、评价条件和共同案例四个方面展开比较，最后讨论这些工作对课程设计的启发。
+下文第2至7节依次介绍六篇论文的研究问题、核心机制、实验结果与局限；第8节从模型定位、机制衔接、设计权衡与具体案例四个方面展开横向比较，并探讨其对课程设计的启发；第9节总结全文。
 
 \input{sections/01-structmem}
 \input{sections/02-hindsight}
@@ -44,16 +46,33 @@
 \input{sections/07-synthesis}
 
 \section{总结}
-六篇论文分别从组织、访问、更新、利用和操作验证改善长期记忆。StructMem通过事件绑定与跨事件整合保留关联，Hindsight区分记忆角色并组织多路召回，Semantic XPath将访问范围落实到层级结构，HyMEM结合多模态经验与两层更新，MetaMem学习事实利用规则，Text2Mem明确操作语义并核验状态变化。各方法的作用位置为分析记忆系统的错误提供了依据。
+六篇论文从记忆的组织、访问、更新、利用与操作验证五个维度推进了长上下文结构化记忆建模。StructMem通过事件绑定与跨事件整合保留语境关联，Hindsight区分四类记忆角色并组织多路召回，Semantic XPath依托树形层级收敛访问范围，HyMEM结合多模态经验与两层更新适应交互变化，MetaMem通过反思提炼事实利用规则，Text2Mem则规范了记忆操作语法与后置状态核验。
 
-论文中的对照实验显示，结构化表示能够改善部分任务的证据组织和使用，同时增加抽取、维护或优化成本。方法选择需要结合具体题型、可用反馈与资源预算。评价时应对齐任务、模型和数据划分，分别记录构建、检索、回答及优化开销，并用组件消融和失败案例解释变化。
+综合各篇实验结果来看，引入结构化表示有助于加强跨轮证据整合与范围约束，但也会相应增加信息抽取、索引维护或离线优化开销。实际系统设计应结合任务的跨轮关联需求、反馈条件与计算预算进行取舍，并通过组件消融和开销统计评估各环节的实际贡献。
 
-课程设计以StructMem的小规模复现为主线，将其余五篇用于分析检索范围、时间更新、证据利用和操作效果。后续实验可先根据来源记录、检索上下文与状态变化定位错误，再在固定条件下引入相应机制。这样的比较能够明确改动解决了什么问题，以及为此增加了多少成本。
+本组课程设计以StructMem在LoCoMo上的复现与分析为主线，同时吸收其余五篇工作的思路，从检索范围约束、时间与状态更新、证据推理利用等角度开展错误归因。通过结合来源记录、检索上下文与状态变化逐步定位瓶颈，可以在受控条件下清晰检验各类结构化机制的改进效果与资源代价。
 
-\clearpage
 \bibliographystyle{jos}
 \bibliography{references}
 
 \section*{成员分工与贡献}
-待填写：六位成员姓名、负责论文、报告章节、PPT 与讲解工作及实际贡献百分比，总和为 100\%。
+六位成员均负责各自论文部分的报告与讲解，并参与系统性讨论。具体负责论文及贡献比例如下。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{30mm}>{\raggedright\arraybackslash}Xr@{}}
+\toprule
+成员 & 主要分工 & 贡献比例 \\
+\midrule
+\texttt{hycx233} & StructMem报告与讲解；共同部分整理与讲解、视频整合及讨论协调 & 25\% \\
+\texttt{onlysonder} & Hindsight报告与讲解 & 15\% \\
+\texttt{oioioi-521} & Semantic XPath报告与讲解 & 15\% \\
+\texttt{lanshuheng9-oss} & HyMEM报告与讲解 & 15\% \\
+\texttt{YaoYang-123456} & MetaMem报告与讲解 & 15\% \\
+\texttt{ngocnamd93-spec} & Text2Mem报告与讲解 & 15\% \\
+\midrule
+合计 & & 100\% \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
 \end{document}
