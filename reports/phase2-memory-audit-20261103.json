@@ -1,0 +1,969 @@
+{
+  "date": "2026-11-03",
+  "reviewer": "Codex offline semantic review",
+  "human_acceptance": false,
+  "causal_intervention_performed": false,
+  "api_calls": 0,
+  "method": "All 30 frozen questions; all 124 events linked to their 52 unique reference sources plus relevant actual input passages; independent stratified 60-event sample; 24 cue-selected source groups; all 37 sources without events checked. Available 69 synthesis texts were inspected for question-relevant passages, not exhaustively annotated claim by claim.",
+  "inputs": {
+    "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "event_archive_sha256": "8c26e24fa7be2e6b19dbec91f3647d563e1145e909866e939f1b2b4e70427885",
+    "prediction_archives": {
+      "s0-predictions-for-E-20261019.zip": "62a7f1da68590f7b80f2a753e1c60307a22620b84d0d6c81b92177500d19a3aa",
+      "s2-predictions-for-E-20261020.zip": "21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6"
+    },
+    "event_archive_members_verified": 103,
+    "judge_bindings_verified": 60
+  },
+  "coverage": {
+    "conversations": [
+      "conv-48",
+      "conv-42",
+      "conv-41"
+    ],
+    "messages": 1973,
+    "event_population": 3712,
+    "retrieved_unique_events": 1161,
+    "retrieved_unique_syntheses": 69,
+    "questions": 30,
+    "messages_without_event": 37,
+    "reference_source_occurrences": 54,
+    "unique_reference_sources": 52,
+    "reference_associated_events": 124
+  },
+  "summary": {
+    "question_findings": {
+      "retrieval_gap": 4,
+      "supported_correct": 19,
+      "reference_or_inference_boundary": 4,
+      "evidence_use": 3
+    },
+    "event_sample_findings": {
+      "no_clear_distortion_observed": 59,
+      "unsupported_causal_addition": 1
+    },
+    "cue_sample_findings": {
+      "no_clear_qualifier_loss_observed": 22,
+      "image_attribution_uncertain": 1,
+      "overgeneralization": 1
+    },
+    "errors_with_observed_answer_relevant_distortion": 0,
+    "causally_proven_repairs": null,
+    "old_source_plus_one_optimistic_candidates_among_four_retrieval_gaps": 1,
+    "decision": "Do not select distortion-driven backtracking as the main innovation. First control answer-format confounding; pilot query-constrained complementary evidence selection against simple retrieval controls before committing to heldout evaluation."
+  },
+  "sampling": {
+    "event_seed": 20261103,
+    "event_count_per_conversation": 20,
+    "cue_seed": 20261103,
+    "cue_pool_counts": {
+      "negation": 169,
+      "modality": 138,
+      "relative_time": 118
+    },
+    "cue_count_per_group": 8,
+    "cue_population": "Messages with at least one event; groups sampled in fixed order without overlap; units differ from the event sample."
+  },
+  "question_audit": [
+    {
+      "sample_id": "conv-48",
+      "qa_index": 86,
+      "category": 1,
+      "s2_original_judgment": "no",
+      "finding": "retrieval_gap",
+      "note": "完整事件库保留遗漏的另一份礼物；本题事件与综合正文均未带入该项，回答仅列出已提供的两项。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": false
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 15,
+      "category": 2,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 41,
+      "category": 3,
+      "s2_original_judgment": "no",
+      "finding": "reference_or_inference_boundary",
+      "note": "输入保留海边散步及频率，参考居住位置依赖间接推断；现有记录不能把弃答归因于失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 104,
+      "category": 4,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 71,
+      "category": 1,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 20,
+      "category": 2,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 11,
+      "category": 3,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 89,
+      "category": 4,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 36,
+      "category": 1,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 29,
+      "category": 2,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 0,
+      "category": 3,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 94,
+      "category": 4,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 80,
+      "category": 1,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 57,
+      "category": 2,
+      "s2_original_judgment": "no",
+      "finding": "retrieval_gap",
+      "note": "正确来访日期保存在完整事件和其他题取回的综合中；本题未取回，却输入了另一次来访的日期，回答与后者一致。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": false
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 45,
+      "category": 3,
+      "s2_original_judgment": "no",
+      "finding": "reference_or_inference_boundary",
+      "note": "输入和原文保留本国事业志向，但不能逻辑推出绝不愿迁居；参考需要额外偏好推断。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 173,
+      "category": 4,
+      "s2_original_judgment": "no",
+      "finding": "retrieval_gap",
+      "note": "明确日期对应的课程记录在完整事件库中；本题实际事件和综合正文未给出对应报名信息，模型弃答。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": true
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 61,
+      "category": 1,
+      "s2_original_judgment": "no",
+      "finding": "reference_or_inference_boundary",
+      "note": "冻结参考的具体设备型号未被本轮实际输入的文本和图片说明充分支持；未下载原图，不把视觉缺失归为文本记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 53,
+      "category": 2,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 23,
+      "category": 3,
+      "s2_original_judgment": "no",
+      "finding": "reference_or_inference_boundary",
+      "note": "综合保留暂停活动与另一活动计划的对话关系；参考要求进一步推断相对偏好，模型弃答，属推断尺度问题。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 146,
+      "category": 4,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 49,
+      "category": 1,
+      "s2_original_judgment": "no",
+      "finding": "retrieval_gap",
+      "note": "本次捐赠与上一会话的具体烘焙品类分开保存；具体品类未检索到。冻结参考的一条来源 ID 偏移，需看其下一条。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": false
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 66,
+      "category": 2,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 4,
+      "category": 3,
+      "s2_original_judgment": "no",
+      "finding": "evidence_use",
+      "note": "事件第 8 项和综合第 5 项保留与预测冲突的条件句；不能归因为否定或条件已在记忆中丢失。参考推荐也不应扩写成普适事实。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 90,
+      "category": 4,
+      "s2_original_judgment": "no",
+      "finding": "evidence_use",
+      "note": "第一条综合正文已明确保留所问的两项具体主题；回答仍给出更笼统的上位概念。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 6,
+      "category": 1,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 28,
+      "category": 2,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 39,
+      "category": 3,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 133,
+      "category": 4,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 55,
+      "category": 1,
+      "s2_original_judgment": "no",
+      "finding": "evidence_use",
+      "note": "实际事件含参考要求的主要启发来源，回答只保留其中两项；六词软限制是需排除的混杂因素。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 4,
+      "category": 2,
+      "s2_original_judgment": "yes",
+      "finding": "supported_correct",
+      "note": "对照原文、同源事件和实际输入，未发现改变本题答案的明确记忆失真。",
+      "answer_relevant_distortion_observed": false,
+      "optimistic_old_source_plus_one_candidate_reachable": null
+    }
+  ],
+  "event_sample_audit": [
+    {
+      "sample_number": 1,
+      "event_id": "conv-48/event/224a7c65-c040-b87b-2524-98534d4d2439",
+      "source_key": "conv-48/D27:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 2,
+      "event_id": "conv-48/event/37de0289-806f-aeb5-7036-2cfc940acca5",
+      "source_key": "conv-48/D7:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 3,
+      "event_id": "conv-48/event/4009cd95-cd97-deb5-aa8f-f7523fccd296",
+      "source_key": "conv-48/D23:20",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 4,
+      "event_id": "conv-48/event/40414dea-80c2-783b-dbda-a3f60ad29405",
+      "source_key": "conv-48/D17:8",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 5,
+      "event_id": "conv-48/event/51669c11-9e60-a4d3-d5ae-77b834bad9fe",
+      "source_key": "conv-48/D13:11",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 6,
+      "event_id": "conv-48/event/fd746987-d395-28b0-2d73-f07305d795fd",
+      "source_key": "conv-48/D8:10",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 7,
+      "event_id": "conv-48/event/fadfabf5-352f-c055-669e-c167c6414f5c",
+      "source_key": "conv-48/D25:15",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 8,
+      "event_id": "conv-48/event/33b0c435-4a5e-c80d-b8d5-021b349388ff",
+      "source_key": "conv-48/D14:3",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 9,
+      "event_id": "conv-48/event/1484f3ed-7c39-fbf1-3352-8f2eacede92b",
+      "source_key": "conv-48/D5:6",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 10,
+      "event_id": "conv-48/event/d796275c-8cb5-67a5-b54b-2bd8c3dcb407",
+      "source_key": "conv-48/D16:7",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 11,
+      "event_id": "conv-48/event/682301ef-5f6a-44bd-0cd7-a7998881348d",
+      "source_key": "conv-48/D4:3",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 12,
+      "event_id": "conv-48/event/d81d1bf7-f45c-fe35-e71c-df2a8a727de4",
+      "source_key": "conv-48/D9:5",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 13,
+      "event_id": "conv-48/event/d0ec6c03-f93f-b688-1f38-50829957a26b",
+      "source_key": "conv-48/D20:1",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 14,
+      "event_id": "conv-48/event/2c0e96a1-de38-d522-67d1-f196b4474326",
+      "source_key": "conv-48/D12:5",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 15,
+      "event_id": "conv-48/event/48aa4e3e-dbf1-aec9-4293-04af94a10105",
+      "source_key": "conv-48/D20:12",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 16,
+      "event_id": "conv-48/event/ba6c4671-3909-e8bc-0cfc-5e13bc2accbb",
+      "source_key": "conv-48/D3:7",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 17,
+      "event_id": "conv-48/event/4f47235e-701f-67aa-37dc-bf1493202d11",
+      "source_key": "conv-48/D12:11",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 18,
+      "event_id": "conv-48/event/83124b68-3ca2-ed82-aa2a-83463608378d",
+      "source_key": "conv-48/D2:9",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 19,
+      "event_id": "conv-48/event/cdafb017-4335-4dd6-e7b7-3f0c87f36c09",
+      "source_key": "conv-48/D15:1",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 20,
+      "event_id": "conv-48/event/490beeab-eee4-a187-0b62-2f38b66847bc",
+      "source_key": "conv-48/D22:5",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 21,
+      "event_id": "conv-42/event/8f2e77ca-91e7-d8ce-e7b3-52e0b0421cc2",
+      "source_key": "conv-42/D15:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 22,
+      "event_id": "conv-42/event/93aa855f-d464-16ee-ac4d-018de7f2625e",
+      "source_key": "conv-42/D19:19",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 23,
+      "event_id": "conv-42/event/cc81d225-2747-b5f0-12d1-eda4cd167778",
+      "source_key": "conv-42/D23:27",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 24,
+      "event_id": "conv-42/event/9a4454d5-3dea-27fa-5b49-cade0f691512",
+      "source_key": "conv-42/D27:8",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 25,
+      "event_id": "conv-42/event/cbd5f7a6-cd52-ba24-e0f6-52bfd8b4874d",
+      "source_key": "conv-42/D27:13",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 26,
+      "event_id": "conv-42/event/5b7ce862-90f6-801f-4bec-4adae749e647",
+      "source_key": "conv-42/D12:17",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 27,
+      "event_id": "conv-42/event/709e14ac-e230-9304-afd8-25382ff0edd9",
+      "source_key": "conv-42/D17:21",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 28,
+      "event_id": "conv-42/event/ef18c61b-a39a-7885-b307-c5a25009fae7",
+      "source_key": "conv-42/D19:8",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 29,
+      "event_id": "conv-42/event/336cf335-2914-17ff-2f28-0fc44e0d4fb4",
+      "source_key": "conv-42/D15:5",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 30,
+      "event_id": "conv-42/event/0cc5d46a-cb85-0710-9018-36d44e54bfc9",
+      "source_key": "conv-42/D10:11",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 31,
+      "event_id": "conv-42/event/1fe9fbe3-f292-3c82-c3a9-798a595f5210",
+      "source_key": "conv-42/D3:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 32,
+      "event_id": "conv-42/event/8e9f6676-1624-d38e-94be-4dacf34a2ea3",
+      "source_key": "conv-42/D27:16",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 33,
+      "event_id": "conv-42/event/61f22d85-a04b-e235-90d8-0f5b9c2e0037",
+      "source_key": "conv-42/D27:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 34,
+      "event_id": "conv-42/event/ec7ccf02-4f81-89dc-f05b-144e53e6c210",
+      "source_key": "conv-42/D20:18",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 35,
+      "event_id": "conv-42/event/d860fd25-3c49-1ff0-d7e0-23e645e90eac",
+      "source_key": "conv-42/D20:1",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 36,
+      "event_id": "conv-42/event/65caa03d-d63b-22b5-aac1-1a994022adc7",
+      "source_key": "conv-42/D23:10",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 37,
+      "event_id": "conv-42/event/32ccf5a9-8104-4b96-6671-5555dd2aead8",
+      "source_key": "conv-42/D13:10",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 38,
+      "event_id": "conv-42/event/b5140802-0870-7714-8ad4-696ef8cfc3eb",
+      "source_key": "conv-42/D12:13",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 39,
+      "event_id": "conv-42/event/a53f3130-849c-0b66-80da-b1d35eba505c",
+      "source_key": "conv-42/D20:17",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 40,
+      "event_id": "conv-42/event/126a8d75-d04c-bc0c-3a49-d200fa0b8df7",
+      "source_key": "conv-42/D7:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 41,
+      "event_id": "conv-41/event/27fdcf63-49d8-c225-7c2a-6fb3200708b8",
+      "source_key": "conv-41/D14:13",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 42,
+      "event_id": "conv-41/event/c45c0a32-1677-c1cd-2d4e-c07f232078dd",
+      "source_key": "conv-41/D30:3",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 43,
+      "event_id": "conv-41/event/3aaefb13-8e93-7b19-18bd-f1e8803a8a81",
+      "source_key": "conv-41/D18:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 44,
+      "event_id": "conv-41/event/52b3ab2b-5b8a-fedd-046e-5349ca15a77c",
+      "source_key": "conv-41/D14:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 45,
+      "event_id": "conv-41/event/f16240d8-754e-0c29-be3a-e29326f8615a",
+      "source_key": "conv-41/D4:13",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 46,
+      "event_id": "conv-41/event/766ed975-a9a9-dd57-856d-f28eeb7a5cd1",
+      "source_key": "conv-41/D18:7",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 47,
+      "event_id": "conv-41/event/6c95675a-caea-f2c5-11a3-995627891fdf",
+      "source_key": "conv-41/D22:17",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 48,
+      "event_id": "conv-41/event/1642258c-53b6-6166-1d48-bb5e8eac6e4a",
+      "source_key": "conv-41/D22:6",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 49,
+      "event_id": "conv-41/event/eda4fb7a-665c-dadd-a581-54fdc52c9cc9",
+      "source_key": "conv-41/D5:3",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 50,
+      "event_id": "conv-41/event/3270728a-9054-b74a-2d13-60edbe617e89",
+      "source_key": "conv-41/D10:5",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 51,
+      "event_id": "conv-41/event/8cfc9a74-505e-9898-e10f-78603ca3dadd",
+      "source_key": "conv-41/D3:12",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 52,
+      "event_id": "conv-41/event/577b8d96-d9f0-eda9-519f-cc6f0017155e",
+      "source_key": "conv-41/D18:14",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 53,
+      "event_id": "conv-41/event/b220c37d-5407-972c-6ee3-44f2f5815166",
+      "source_key": "conv-41/D28:17",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 54,
+      "event_id": "conv-41/event/5fa3c4d9-080e-ebaf-f627-573aeba90897",
+      "source_key": "conv-41/D2:26",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 55,
+      "event_id": "conv-41/event/c1892e69-8128-866d-2386-7ce7981485c4",
+      "source_key": "conv-41/D27:2",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 56,
+      "event_id": "conv-41/event/0a62d1b2-c00f-bb62-09db-759c725c5b23",
+      "source_key": "conv-41/D24:9",
+      "finding": "unsupported_causal_addition",
+      "note": "记忆额外把活动计划归因为所附图片，原文未陈述这一因果；该事件未进入 30 题回答输入。"
+    },
+    {
+      "sample_number": 57,
+      "event_id": "conv-41/event/f3c9c7ea-fd49-95ce-450f-528cea2c4a5b",
+      "source_key": "conv-41/D32:7",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 58,
+      "event_id": "conv-41/event/c86036b3-c924-5828-c9e5-a1f0c5fee461",
+      "source_key": "conv-41/D23:10",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 59,
+      "event_id": "conv-41/event/4a1b4ea3-b2df-fdac-73af-c8ceb1454b89",
+      "source_key": "conv-41/D26:11",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    },
+    {
+      "sample_number": 60,
+      "event_id": "conv-41/event/13816c98-459b-45b3-d71a-4e14708b2fac",
+      "source_key": "conv-41/D2:1",
+      "finding": "no_clear_distortion_observed",
+      "note": "结合原句、必要的同会话上下文与图片说明，未发现明确失真。"
+    }
+  ],
+  "cue_sample_audit": [
+    {
+      "sample_number": 1,
+      "cue_group": "negation",
+      "source_key": "conv-41/D25:8",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 2,
+      "cue_group": "negation",
+      "source_key": "conv-41/D5:15",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 3,
+      "cue_group": "negation",
+      "source_key": "conv-41/D5:6",
+      "finding": "image_attribution_uncertain",
+      "note": "一条事件从图片说明推到参与者身份及人数，有归属疑点；相关否定和时间命题另有正确事件，该图片事件未被本轮检索。"
+    },
+    {
+      "sample_number": 4,
+      "cue_group": "negation",
+      "source_key": "conv-42/D13:20",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 5,
+      "cue_group": "negation",
+      "source_key": "conv-48/D29:34",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 6,
+      "cue_group": "negation",
+      "source_key": "conv-48/D29:33",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 7,
+      "cue_group": "negation",
+      "source_key": "conv-41/D4:24",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 8,
+      "cue_group": "negation",
+      "source_key": "conv-41/D18:11",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 9,
+      "cue_group": "modality",
+      "source_key": "conv-48/D8:19",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 10,
+      "cue_group": "modality",
+      "source_key": "conv-42/D25:26",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 11,
+      "cue_group": "modality",
+      "source_key": "conv-48/D5:15",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 12,
+      "cue_group": "modality",
+      "source_key": "conv-41/D4:22",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 13,
+      "cue_group": "modality",
+      "source_key": "conv-42/D15:8",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 14,
+      "cue_group": "modality",
+      "source_key": "conv-48/D20:5",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 15,
+      "cue_group": "modality",
+      "source_key": "conv-42/D16:5",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 16,
+      "cue_group": "modality",
+      "source_key": "conv-42/D4:4",
+      "finding": "overgeneralization",
+      "note": "一条事件把饮食限制推广为完全不吃该类食品，同源其他事件保留可接受替代品；这条过度概括事件未被本轮检索。"
+    },
+    {
+      "sample_number": 17,
+      "cue_group": "relative_time",
+      "source_key": "conv-48/D14:6",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 18,
+      "cue_group": "relative_time",
+      "source_key": "conv-42/D26:23",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 19,
+      "cue_group": "relative_time",
+      "source_key": "conv-41/D24:1",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 20,
+      "cue_group": "relative_time",
+      "source_key": "conv-41/D8:1",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 21,
+      "cue_group": "relative_time",
+      "source_key": "conv-41/D8:12",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 22,
+      "cue_group": "relative_time",
+      "source_key": "conv-42/D22:2",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 23,
+      "cue_group": "relative_time",
+      "source_key": "conv-48/D23:4",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    },
+    {
+      "sample_number": 24,
+      "cue_group": "relative_time",
+      "source_key": "conv-48/D4:12",
+      "finding": "no_clear_qualifier_loss_observed",
+      "note": "同源事件集合保留相关否定、条件或时间信息；关键词仅用于抽样。"
+    }
+  ],
+  "limitations": [
+    "The 30-question set has already been used for development, not heldout evaluation.",
+    "Event and source-group samples have different units; do not pool their percentages.",
+    "Absence of observed distortion is not proof that the complete event/synthesis store is distortion-free.",
+    "Preserved source IDs do not establish semantic coverage of synthesis text.",
+    "No answer regeneration, human confirmation or causal repair measurement was performed.",
+    "All original references, predictions, judgments and denominators remain unchanged."
+  ]
+}

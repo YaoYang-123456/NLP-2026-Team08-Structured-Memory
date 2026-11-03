@@ -1,0 +1,13 @@
+{
+  "version": "anchor-packing-v1",
+  "frozen_before_selection": true,
+  "budgets": [2048, 4096],
+  "counter": "cl100k_base",
+  "candidate_scope": "Reuse the previous pilot's common event candidates and original five synthesis documents per question. All packing methods use identical event and synthesis-sentence retrieval units.",
+  "ranking": {"rrf_k": 60, "bm25_k1": 1.2, "bm25_b": 0.75, "mmr_relevance": 0.7, "mmr_redundancy": 0.3},
+  "packing": ["whole", "sentence", "anchor"],
+  "whole": "Selecting a synthesis sentence returns its whole parent synthesis.",
+  "sentence": "Selecting a synthesis sentence returns only that complete sentence.",
+  "anchor": "Close backward dependencies for leading anaphoric expressions and the nearest earlier explicit date sentence when relative time occurs; keep the summary time-range header. Whole dependency bundles must fit the budget. Never rewrite dates or facts.",
+  "evaluation": "Reuse the prior 51 support units unchanged. Compare coverage and context cost, not answer accuracy; report all configurations. No parameter search, paid calls or heldout data."
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-03",
+  "kind": "offline_context_serialization_audit",
+  "baseline_commit": "b307b49",
+  "measurement": "Python len(json.dumps(contexts, ensure_ascii=False)), matching current build_messages context serialization; source IDs counted as len(json.dumps(source_ids, ensure_ascii=False))",
+  "scope": "Characters, not tokens or billing. Metadata removal has not been run against an answering model. No answers, labels, raw conversation text or secrets are included.",
+  "api_calls": 0,
+  "results": [
+    {
+      "method": "S0",
+      "archive_path": "reports/artifacts/s0-predictions-for-E-20261019.zip",
+      "archive_sha256": "62a7f1da68590f7b80f2a753e1c60307a22620b84d0d6c81b92177500d19a3aa",
+      "entry": "predictions.jsonl",
+      "questions": 30,
+      "context_json_characters": 416424,
+      "source_id_arrays_characters": 53922,
+      "source_id_arrays_fraction": 0.129488,
+      "text_characters_before_json_escaping": 281227,
+      "source_id_reference_count": 1800
+    },
+    {
+      "method": "S2",
+      "archive_path": "reports/artifacts/s2-predictions-for-E-20261020.zip",
+      "archive_sha256": "21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6",
+      "entry": "predictions30.jsonl",
+      "questions": 30,
+      "context_json_characters": 1381214,
+      "source_id_arrays_characters": 731060,
+      "source_id_arrays_fraction": 0.529288,
+      "text_characters_before_json_escaping": 553202,
+      "source_id_reference_count": 17896
+    }
+  ]
+}

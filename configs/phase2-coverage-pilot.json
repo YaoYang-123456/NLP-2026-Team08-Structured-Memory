@@ -1,0 +1,19 @@
+{
+  "version": "offline-pilot-v1",
+  "frozen_before_selection": true,
+  "selection": "development30",
+  "dense_top_k": 120,
+  "lexical_top_k": 120,
+  "rrf_k": 60,
+  "bm25_k1": 1.2,
+  "bm25_b": 0.75,
+  "budget": 4096,
+  "counter": "cl100k_base",
+  "counter_scope": "Proxy tokens for complete rendered evidence blocks, including fixed five synthesis blocks; not DeepSeek billing tokens or total request tokens.",
+  "synthesis": "Keep each question's original five S2 synthesis texts identical across selectors. Do not search the incomplete synthesis archive.",
+  "mmr": {"relevance": 0.7, "redundancy": 0.3},
+  "complementary": {"relevance": 0.55, "facet_gain": 0.2, "source_gain": 0.25, "redundancy": 0.3},
+  "facet_weights": {"keyword": 1.0, "entity": 2.0, "explicit_date": 3.0, "temporal_attribute": 1.0},
+  "decision": "Require at least two of the four previously identified missing-support cases to recover, positive paired coverage against both hybrid and MMR, and no systematic loss on the other questions. This is an engineering screen, not significance or generalization evidence.",
+  "tuning": "One configuration only. No question IDs, answers, categories or reference evidence in selector features. No parameter search after results."
+}
