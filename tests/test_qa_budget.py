@@ -45,6 +45,21 @@ class QABudgetTests(unittest.TestCase):
                        variant=variant, tokenizer_cache=self.cache)
         return out, code
 
+    def test_code_manifest_uses_portable_posix_keys_and_checks_hashes(self):
+        from pathlib import PureWindowsPath, PurePosixPath
+        for path in (PureWindowsPath("scripts/run_qa.py"), PurePosixPath("scripts/run_qa.py")):
+            self.assertEqual(path.as_posix(), "scripts/run_qa.py")
+        out, _ = self.execute()
+        manifest = read(out / "run.json")
+        self.assertEqual(set(manifest["code_sha256"]), {
+            "scripts/run_qa.py", "src/llm_client.py", "src/evidence_budget.py",
+            "src/metamem_pilot/data.py"})
+        self.assertTrue(verify_run(out, self.cache)["verified"])
+        manifest["code_sha256"]["scripts/run_qa.py"] = "0" * 64
+        (out / "run.json").write_text(json.dumps(manifest), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "recorded code"):
+            verify_run(out, self.cache)
+
     def test_exact_budget_counts_headers_unicode_and_literal_special_tokens(self):
         contexts = copy.deepcopy(self.rows[0]["contexts"])
         contexts[0]["text"] += "\n日期不改写。 <|endoftext|> {question}"

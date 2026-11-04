@@ -94,7 +94,7 @@ def run(inputs, config_path, method, out, mock, *, variant=None, tokenizer_cache
                 "config_file": str(Path(config_path).resolve()), "config": config, "config_sha256": digest(config),
                 "question_set_sha256": digest([{key: row[key] for key in
                                                ("sample_id", "qa_index", "question", "category")} for row in rows]),
-                "code_sha256": {str(path.relative_to(ROOT)): file_hash(path) for path in
+                "code_sha256": {path.relative_to(ROOT).as_posix(): file_hash(path) for path in
                                 (Path(__file__), ROOT / "src/llm_client.py", ROOT / "src/evidence_budget.py",
                                  ROOT / "src/metamem_pilot/data.py")},
                 "planned_questions": len(rows), "processed_questions": 0,
