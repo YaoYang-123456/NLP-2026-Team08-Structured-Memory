@@ -1,0 +1,530 @@
+{
+  "date": "2026-11-03",
+  "scope": "F offline contract and budget validation only",
+  "answer_posts": 0,
+  "judge_posts": 0,
+  "heldout_questions_used": 0,
+  "human_acceptance": false,
+  "config_sha256": "7af5e6b512a17db6280554427efa4ecee3a22de818726f5ee178bab320b77f62",
+  "anchor_selections_sha256": "2578017003c0a9f150c0f046ac3a2618b1b14fdc924322242318874ef52e8fe1",
+  "baseline_selections_sha256": "adabd469226ee0d2b0b00a6159754fc46b8ac2d90873ece8ea4a805ae9297be9",
+  "question_input_sha256": "8244dff6123ea8479561bfbe6ad5a36d655b2926d4acbf6fdd0d2ddf356abb63",
+  "legacy_4096_recount": {
+    "M": {
+      "questions": 30,
+      "fit_4096": 0,
+      "min_proxy_tokens": 4148,
+      "max_proxy_tokens": 4201,
+      "mean_proxy_tokens": 4173.17,
+      "whole_batch_rejected_before_client": true,
+      "per_question": [
+        {
+          "sample_id": "conv-48",
+          "qa_index": 86,
+          "proxy_tokens": 4173
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 15,
+          "proxy_tokens": 4175
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 41,
+          "proxy_tokens": 4201
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 104,
+          "proxy_tokens": 4150
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 71,
+          "proxy_tokens": 4170
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 20,
+          "proxy_tokens": 4175
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 11,
+          "proxy_tokens": 4158
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 89,
+          "proxy_tokens": 4175
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 36,
+          "proxy_tokens": 4182
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 29,
+          "proxy_tokens": 4163
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 0,
+          "proxy_tokens": 4185
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 94,
+          "proxy_tokens": 4169
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 80,
+          "proxy_tokens": 4153
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 57,
+          "proxy_tokens": 4172
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 45,
+          "proxy_tokens": 4200
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 173,
+          "proxy_tokens": 4186
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 61,
+          "proxy_tokens": 4154
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 53,
+          "proxy_tokens": 4183
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 23,
+          "proxy_tokens": 4188
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 146,
+          "proxy_tokens": 4175
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 49,
+          "proxy_tokens": 4179
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 66,
+          "proxy_tokens": 4150
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 4,
+          "proxy_tokens": 4190
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 90,
+          "proxy_tokens": 4177
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 6,
+          "proxy_tokens": 4148
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 28,
+          "proxy_tokens": 4154
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 39,
+          "proxy_tokens": 4183
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 133,
+          "proxy_tokens": 4181
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 55,
+          "proxy_tokens": 4188
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 4,
+          "proxy_tokens": 4158
+        }
+      ]
+    },
+    "N": {
+      "questions": 30,
+      "fit_4096": 0,
+      "min_proxy_tokens": 4225,
+      "max_proxy_tokens": 4280,
+      "mean_proxy_tokens": 4254.83,
+      "whole_batch_rejected_before_client": true,
+      "per_question": [
+        {
+          "sample_id": "conv-48",
+          "qa_index": 86,
+          "proxy_tokens": 4269
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 15,
+          "proxy_tokens": 4267
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 41,
+          "proxy_tokens": 4263
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 104,
+          "proxy_tokens": 4243
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 71,
+          "proxy_tokens": 4275
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 20,
+          "proxy_tokens": 4249
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 11,
+          "proxy_tokens": 4280
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 89,
+          "proxy_tokens": 4255
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 36,
+          "proxy_tokens": 4261
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 29,
+          "proxy_tokens": 4247
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 0,
+          "proxy_tokens": 4255
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 94,
+          "proxy_tokens": 4264
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 80,
+          "proxy_tokens": 4255
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 57,
+          "proxy_tokens": 4247
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 45,
+          "proxy_tokens": 4274
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 173,
+          "proxy_tokens": 4245
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 61,
+          "proxy_tokens": 4245
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 53,
+          "proxy_tokens": 4249
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 23,
+          "proxy_tokens": 4252
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 146,
+          "proxy_tokens": 4249
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 49,
+          "proxy_tokens": 4248
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 66,
+          "proxy_tokens": 4249
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 4,
+          "proxy_tokens": 4258
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 90,
+          "proxy_tokens": 4257
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 6,
+          "proxy_tokens": 4237
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 28,
+          "proxy_tokens": 4225
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 39,
+          "proxy_tokens": 4263
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 133,
+          "proxy_tokens": 4252
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 55,
+          "proxy_tokens": 4256
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 4,
+          "proxy_tokens": 4256
+        }
+      ]
+    },
+    "A": {
+      "questions": 30,
+      "fit_4096": 0,
+      "min_proxy_tokens": 4224,
+      "max_proxy_tokens": 4275,
+      "mean_proxy_tokens": 4251.07,
+      "whole_batch_rejected_before_client": true,
+      "per_question": [
+        {
+          "sample_id": "conv-48",
+          "qa_index": 86,
+          "proxy_tokens": 4261
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 15,
+          "proxy_tokens": 4267
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 41,
+          "proxy_tokens": 4257
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 104,
+          "proxy_tokens": 4244
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 71,
+          "proxy_tokens": 4275
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 20,
+          "proxy_tokens": 4240
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 11,
+          "proxy_tokens": 4270
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 89,
+          "proxy_tokens": 4256
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 36,
+          "proxy_tokens": 4251
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 29,
+          "proxy_tokens": 4241
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 0,
+          "proxy_tokens": 4254
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 94,
+          "proxy_tokens": 4264
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 80,
+          "proxy_tokens": 4251
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 57,
+          "proxy_tokens": 4244
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 45,
+          "proxy_tokens": 4271
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 173,
+          "proxy_tokens": 4244
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 61,
+          "proxy_tokens": 4234
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 53,
+          "proxy_tokens": 4249
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 23,
+          "proxy_tokens": 4252
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 146,
+          "proxy_tokens": 4242
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 49,
+          "proxy_tokens": 4244
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 66,
+          "proxy_tokens": 4249
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 4,
+          "proxy_tokens": 4266
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 90,
+          "proxy_tokens": 4246
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 6,
+          "proxy_tokens": 4233
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 28,
+          "proxy_tokens": 4224
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 39,
+          "proxy_tokens": 4259
+        },
+        {
+          "sample_id": "conv-48",
+          "qa_index": 133,
+          "proxy_tokens": 4247
+        },
+        {
+          "sample_id": "conv-42",
+          "qa_index": 55,
+          "proxy_tokens": 4249
+        },
+        {
+          "sample_id": "conv-41",
+          "qa_index": 4,
+          "proxy_tokens": 4248
+        }
+      ]
+    }
+  },
+  "contract30": {
+    "verified": true,
+    "run_id": "100ce25b-8bb6-4185-9d24-c6b152dc36d7",
+    "method": "S2",
+    "variant": "A",
+    "status": "simulated",
+    "planned_questions": 30,
+    "processed_questions": 30,
+    "unprocessed_questions": 0,
+    "real_calls": 0,
+    "abstained_questions": 0,
+    "recorded_usage_totals": {},
+    "usage_missing_call_counts": {},
+    "input_scope": "Unchanged anchor_2048 prototype contexts under the new 4096 admission check",
+    "min_proxy_tokens": 2104,
+    "max_proxy_tokens": 2139,
+    "input_snapshot_sha256": "8cf01ab52b630a4208c82ddd9e38d61735a4865c5c9999727d58c365b69a1e0c",
+    "requests_sha256": "26e5ae61e38ab6d5b543b79db107b4ba324d66d544c8bcb678bc2eab505e59c7"
+  },
+  "fixture": {
+    "path": "reports/artifacts/phase2-f-contract-20261103.zip",
+    "bytes": 8272,
+    "sha256": "7b879b26baf6e50077906c71e8a865ed448a63ce5519b61eeb9898f358e20b84",
+    "members": [
+      "input.jsonl",
+      "expected.json",
+      "README.md"
+    ],
+    "sample_id": "conv-48",
+    "qa_index": 86
+  },
+  "limitations": [
+    "No paid smoke, actual provider usage or answer accuracy measured.",
+    "B/D must repack selections with the shared renderer before formal runs.",
+    "E variant/run_id scoring support and member review are outstanding."
+  ]
+}

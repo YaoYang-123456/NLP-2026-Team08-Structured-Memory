@@ -9,6 +9,8 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
+from metamem_pilot.data import digest
+
 API_URL = "https://api.deepseek.com/chat/completions"
 METHODS = ("S0", "S1", "S2")
 
@@ -16,7 +18,7 @@ METHODS = ("S0", "S1", "S2")
 def validate_config(config):
     fields = {"model", "temperature", "top_p", "max_tokens", "timeout_seconds",
               "system_prompt", "method_prompts"}
-    if not isinstance(config, dict) or set(config) != fields:
+    if not isinstance(config, dict) or set(config) not in (fields, fields | {"evidence_budget"}):
         raise ValueError("Expected only the documented QA configuration fields; keep keys in the environment")
     if config["model"] != "deepseek-flash":
         raise ValueError("This experiment uses deepseek-flash for all answering methods")
@@ -41,14 +43,36 @@ def validate_config(config):
         if ({field for field, _, _ in fields} != {"context", "question"} or
                 any(spec or conversion for _, spec, conversion in fields)):
             raise ValueError("Method prompts must contain only plain {context} and {question} placeholders")
+    if "evidence_budget" in config:
+        budget = config["evidence_budget"]
+        if (not isinstance(budget, dict) or set(budget) != {"counter", "max_tokens"} or
+                budget["counter"] != "cl100k_base" or type(budget["max_tokens"]) is not int or
+                budget["max_tokens"] <= 0):
+            raise ValueError("evidence_budget requires cl100k_base and a positive integer max_tokens")
+        if len(set(templates.values())) != 1:
+            raise ValueError("Phase-two methods must share the same user prompt")
+        if any(sum(field == "context" for _, field, _, _ in string.Formatter().parse(template)) != 1
+               for template in templates.values()):
+            raise ValueError("Budgeted prompts must include {context} exactly once")
 
 
-def build_messages(config, method, row):
+def build_messages(config, method, row, *, evidence=None):
     """Render already validated retrieval rows, preserving their order and full text."""
-    context = json.dumps(row["contexts"], ensure_ascii=False)
+    if "evidence_budget" in config:
+        if evidence is None:
+            raise ValueError("Budgeted QA requires prepared evidence")
+        context = evidence["text"]
+    else:
+        context = json.dumps(row["contexts"], ensure_ascii=False)
     return [{"role": "system", "content": config["system_prompt"]},
             {"role": "user", "content": config["method_prompts"][method].format(
                 context=context, question=row["question"])}]
+
+
+def build_request(config, messages):
+    return {"model": config["model"], "messages": messages,
+            "thinking": {"type": "disabled"}, "stream": False,
+            **{key: config[key] for key in ("temperature", "top_p", "max_tokens")}}
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -69,11 +93,11 @@ class Client:
 
     def call(self, messages):
         """Return a recorded ok/failed/interrupted/simulated outcome for one request."""
-        payload = {"model": self.config["model"], "messages": messages,
-                   "thinking": {"type": "disabled"}, "stream": False,
-                   **{key: self.config[key] for key in ("temperature", "top_p", "max_tokens")}}
+        payload = build_request(self.config, messages)
         result = {"started_utc": datetime.now(timezone.utc).isoformat(),
-                  "request": payload, "raw_response": None, "prediction": None,
+                  "request": payload, "request_sha256": digest(payload),
+                  "raw_response": None, "prediction": None,
+                  "abstained": None,
                   "status": "pending", "simulated": self.mock, "usage": None,
                   "returned_model": None, "finish_reason": None, "error": None, "http_status": None}
         start = time.perf_counter()
@@ -107,7 +131,8 @@ class Client:
             elif not isinstance(result["returned_model"], str) or not result["returned_model"].strip():
                 result["error"] = "missing_response_model"
             else:
-                result.update(status="ok", prediction=answer)
+                result.update(status="ok", prediction=answer,
+                              abstained=answer.strip().rstrip(".").casefold() == "i don't know")
             if result["error"]:
                 result["status"] = "failed"
         except KeyboardInterrupt:

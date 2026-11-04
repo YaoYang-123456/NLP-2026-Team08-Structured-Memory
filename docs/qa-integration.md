@@ -1,5 +1,80 @@
 # F：统一回答入口与 B/D/E 交接
 
+**2026-11-03 阶段二更新：** F 的 [#75](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/75) 已提供公共预算/渲染、运行标识、请求快照和离线复核入口，见下节。尚未运行新付费回答/裁判或留出实验；本轮离线检查不等于成员验收，完整进度见[阶段规划](plans/2026-11-03-phase2.md)。后文首阶段记录保留其日期和验收范围。
+
+## 阶段二：公共预算与请求契约
+
+新增配置为 [qa-phase2.json](../configs/qa-phase2.json)，所有方法共用一份提示词，取消统一六词限制，列举/比较题允许完整回答。默认证据额度为 4,096 `cl100k_base` 代理 tokens，输出上限仍为 512。历史配置不改；不带 `evidence_budget` 的旧 S0/S1/S2 命令继续按原 JSON 格式发送。
+
+阶段二维持 `method=S2` 表示结构化记忆检索系列，另用 `--variant M/N/A/U` 区分具体方法。每次运行自动生成独立 `run_id`，记录到运行、请求、调用和预测中。E 的跨方法比较键应包含 `(run_id, variant, method, sample_id, qa_index)`，不能把三个 S2 文件按旧 method 键合并。**现有 `evaluate.py` 的多 variant 支持由 E 在 #74 实现，本次未修改其评分口径。**
+
+### B/D 共用的计数与渲染
+
+```python
+from evidence_budget import EvidenceBudget
+
+budget = EvidenceBudget(max_tokens=4096, tokenizer_cache="data/tokenizer-cache")
+tokens = budget.count(contexts)  # 在完整候选选择上计数，不累加单块估计
+prepared = budget.prepare(contexts)  # 超额明确报错；不裁剪或重新选择
+```
+
+`contexts` 继续使用下文三字段契约。B/D 负责完成依赖闭包、去重和句子顺序后再交 F；F 不改写文本、补依赖或代做选择。`render_evidence` 逐块生成 `[E1] event`、`[E2] synthesis` 等标题并保留完整正文，块间两个换行。这里 E 表示 evidence，实际类型由标题标明；编号仅在单题请求内有效。
+
+证据正文、类型标题、编号和分隔符均计入额度；固定指令、问题及聊天消息封装不属于该证据额度。按完整渲染字符串计数，最后一块没有额外尾换行；空证据为零。长 `source_ids` 不进入模型提示词，在 `requests.jsonl` 的 `evidence.source_map` 保存短编号到来源的映射，原始 contexts 仍保留。正文中的说话人和时间照存。计数器处理文本中的特殊 token 字面量，不将其视为控制 token。
+
+每批在创建客户端和写输出前完成全部输入校验、渲染及预算检查；任何一题超额都拒绝整批，不先发送前面的题。B/D 必须直接使用此模块打包，不能继续各自估计 token。实际测量已发现旧三组 4,096 原型的 90 份上下文在新格式下均超限，需上游重新打包，详见[离线检查](../reports/phase2-f-offline-20261103.md)。原型成绩和配置保持原样。
+
+### 离线准备和真实首样
+
+阶段二新增唯一计数依赖 [requirements-qa.txt](../requirements-qa.txt)；旧配置仍只需要标准库。建议使用独立 Python 3.11 环境，不覆盖成员已有 CUDA/嵌入环境：
+
+```sh
+python3.11 -m venv tmp/qa-env
+tmp/qa-env/bin/python -m pip install -r requirements-qa.txt
+# 仅首次准备静态计数器资源；不是模型回答调用。
+TIKTOKEN_CACHE_DIR=data/tokenizer-cache tmp/qa-env/bin/python -c \
+  'import tiktoken; tiktoken.get_encoding("cl100k_base")'
+```
+
+正式运行只读预备缓存，校验 `cl100k_base` 资源 SHA-256 为 `223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7`；缺失或损坏直接报错，不在选择/回答过程中补下载。
+
+仓库提供[一个真实无标签首样包](../reports/artifacts/phase2-f-contract-20261103.zip)，大小、哈希和包内清单见[交接记录](../reports/artifacts/README.md#f阶段二接口首样2026-11-03)。它直接复用已冻结 `anchor_2048` 上下文，**只是接口样例，不是新检索结果，也不代表正式 A 组 4,096 实验**。不含标准答案、支持注记或预测。
+
+```sh
+tmp/qa-env/bin/python -m zipfile -e reports/artifacts/phase2-f-contract-20261103.zip output/f-contract
+tmp/qa-env/bin/python scripts/run_qa.py --mock --method S2 --variant A \
+  --input output/f-contract/input.jsonl --config configs/qa-phase2.json \
+  --tokenizer-cache data/tokenizer-cache --out output/f-contract-run
+tmp/qa-env/bin/python scripts/verify_qa_run.py --run output/f-contract-run \
+  --tokenizer-cache data/tokenizer-cache
+```
+
+每次使用新输出目录。`--mock` 不需要密钥，不发送 HTTP；所有预测标明 simulated。将生成的 `requests.jsonl` 与包内 `expected.json` 对照，核对请求/上下文哈希和证据 token；`run_id` 每次不同，不属于请求内容哈希。B/D 可从此例直接接选择器，E 可先接离线绑定校验。
+
+### E 可重建的记录
+
+新运行格式标识为 `qa-run-v2`。在第一个调用之前写好全部 `inputs.jsonl` 与 `requests.jsonl`，即使后续失败/中断也保留预定题目及请求；下游不需要依赖可能已移动的原输入路径。
+
+| 文件/字段 | 阶段二新增信息 |
+| --- | --- |
+| `run.json` | run_id、variant、端点/HTTP 方法、planned_posts、输入快照及请求文件哈希、计数器版本、弃答数；原有模型/配置/代码/时间保留 |
+| `inputs.jsonl` | 本次已校验的全部输入行快照；标准答案仍禁止进入 |
+| `requests.jsonl` | 全部题目的完整待发请求、input_row_sha256、contexts_sha256、request_sha256、实际渲染证据、源映射、代理计数及文本哈希 |
+| `calls.jsonl` | 每个已处理题目的真实构造请求与其哈希、原始响应和 usage，关联 run_id/variant/输入/上下文；不含鉴权头 |
+| `predictions.jsonl` | 同样的绑定字段、evidence_proxy_tokens、原始来源及回答状态；`abstained` 单独标记约定的 `I don't know` 回答 |
+
+对象哈希采用已有 `digest`：UTF-8、键排序、紧凑 JSON；文件及证据文本哈希按 UTF-8 原字节。`input_sha256` 指原输入文件，`input_snapshot_sha256` 指重新序列化的本次快照，两者可能因空格不同而不同。`request_sha256` 对实际 HTTP JSON 请求对象计算，不包含 Authorization、run_id 或 variant；同输入同配置的不同 variant 可以得到相同请求哈希。
+
+`verify_qa_run.py` 不发网络请求：校验快照/代码/配置/计数器版本，重新构造每个请求，逐条检查调用、预测、响应与 usage，保留失败和未处理题的预定分母；源码版本变化时需先检出记录版本。它只接受新 v2 格式，不重写或重新解释历史运行。`verified=true` 表示记录与重建一致，不代表回答正确或成员语义验收。
+
+核验结果分别输出已记录 usage 小计和缺失调用数；缺失不是零成本，模拟调用不产生真实 token 用量。`abstained` 只识别配置约定的固定弃答短语，不做语义分类；成功弃答仍保留在原分母中，由 E 评分。失败/中断不生成默认答案。
+
+真实调用仍须显式 `--execute`，每题最多一次 POST、不重试。本轮未执行；待 A/C 的规模与 B/D 正式输入齐备，再登记发送内容、次数和额度，并按执行当日价格估算费用。不依据代理 tokens 虚构提供商计费数。
+
+验证命令：`python -m unittest discover -s tests -p 'test_qa*.py' -v`。预算测试需要已安装计数依赖及缓存，默认 `data/tokenizer-cache`，也可设 `QA_TOKENIZER_CACHE`；缺失时明确跳过。当前实际环境 22 项全部通过、无跳过；网络成功/失败/中断测试使用替身，30 题真实上下文只做离线模拟，详见离线报告。
+
+## 首阶段记录（2026-10-19 至 2026-10-21）
+
 负责人：hycx233；关联 [#19](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/issues/19)。2026-10-19 提供首版入口与离线检查，随后完成 S0 的 30 题真实回答；D 已使用同一入口完成 S2 的 30 题回答。2026-10-20，E 在 [PR #46](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/46) 提交自动评分与案例；2026-10-21，F已逐条核验60个输入指纹并复算原始/裁定后分数，成员本人核查仍待完成。最新证据与审核边界见[项目方案](project-plan.md#10-当前进展与下一步)；构造题、模拟响应和测试均不是实验结果。
 
 ## 交付与下一步
