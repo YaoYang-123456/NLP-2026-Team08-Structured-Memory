@@ -1,0 +1,3 @@
+# Shared lexical ranking; embedding dependencies remain requirements-locomo.txt.
+# EvidenceBudget is supplied by the F public interface (PR #77).
+nltk==3.9.2
