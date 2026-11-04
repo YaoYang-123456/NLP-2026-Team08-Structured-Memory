@@ -18,7 +18,7 @@ B分支从main `1a627bb`建立，不包含F全部改动。运行需要PR #77公�
 - embedding对象必须与A配置完全一致；query_vector与unit.vector为相同384维有限非零向量。正式输入需来自同一C/native导出或同版本缓存，不能混用本轮诊断重新编码的向量。
 - scope说明实际候选范围及向量出处，必须非空。不能把每题原5条综合、归档69条称为原生91条全库。
 - units逐项字段恰为`id, kind, text, vector, source_ids, parent, position`。kind为`event`或`synthesis_sentence`；event的parent/position为null；句子的parent为父综合ID，position为0起始句位。
-- parents是按原检索顺序排列的综合级记录，逐项`id,text,source_ids`；类型隐含为synthesis。text必须保留`Time range: ...`首行及完整父文本。M严格要求原五条；N使用同一份父文本映射，不能为M另挑五条。
+- parents是按原检索顺序排列的综合级记录，逐项`id,text,source_ids`；类型隐含为synthesis。text必须保留`Time range: ...`首行及完整父文本。CLI核对冻结S2交接包哈希并逐题验证原五条完整文本、来源和顺序，拒绝换父文本；M严格要求原五条；N使用同一份父文本映射，不能为M另挑五条。
 - 主ID为source_ids首项；所有ID限定在本题sample_id命名空间。同ID同内容的完全重复候选合并并记日志，同ID冲突报错；同文不同ID不合并。父ID+句位重复报错，不将相似度当成身份去重。
 - `summary_parts`沿用原型完整句切分；每句必须逐字匹配父文本对应句位及来源。引用原父文本不等于已证实原始对话蕴含。
 

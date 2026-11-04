@@ -39,8 +39,8 @@ F原真实无标签首样在新目录mock后，通过原版`verify_qa_run.py`；
 
 ## 给D的首样
 
-- [phase2-b-contract-20261104.zip](artifacts/phase2-b-contract-20261104.zip)：620,560字节。
-- SHA-256：`f63c67fbf3ba0fa2baaea2beb1fb938e7791d256d7f42c1d94642e18833c8fae`。
+- [phase2-b-contract-20261104.zip](artifacts/phase2-b-contract-20261104.zip)：620,558字节。
+- SHA-256：`0290dfeb99d2ec247a8316706421b697d1e75ef78089ea24273748dc72e560e7`。
 - 包含无标签bundle及实际向量、M/N公共输入、完整排序/预算/来源trace、manifest、summary和README；CRC通过。未包含答案、预测、评分标签、密钥、模型或原生数据库。
 - 原始来源包为既有`s2-predictions-for-E-20261020.zip`，只抽取问题/contexts，丢弃预测；原包不改。bundle中的scope和README均声明重新编码、受限范围，不能冒充C原生向量。
 - 完整本地诊断输出位于隔离工作区的`output/mn-development-diagnostic/`，新F首样位于`output/f-contract-windows-fixed/`；不提交完整缓存。
