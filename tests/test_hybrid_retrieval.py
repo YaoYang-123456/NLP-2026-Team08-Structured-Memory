@@ -13,12 +13,12 @@ CFG={'bm25_k1':1.2,'bm25_b':0.75,'rrf_k':60,'mmr_relevance':0.7,'mmr_redundancy'
 
 def event(uid='e1',text='A red apple.'):
     return {'id':uid,'kind':'event','text':text,'vector':[1.,0.],
-            'source_ids':[uid+'/message'],'parent':None,'position':None}
+            'source_ids':[uid,uid+'/message'],'parent':None,'position':None}
 
 
 def fixture():
     parents=[{'id':f'p{i}','text':'Time range: 2026-01-01\nRed apple. Green pear. Blue sky.',
-              'source_ids':[f'p{i}/source']} for i in range(5)]
+              'source_ids':[f'p{i}',f'p{i}/source']} for i in range(5)]
     units=[event(),event('e2','Another red apple.')]
     for p in parents:
         for i,text in enumerate(['Red apple.','Green pear.','Blue sky.']):
@@ -77,8 +77,23 @@ class HybridTests(unittest.TestCase):
         with self.assertRaises(ValueError):select_contexts(r,parents,'M',EvidenceBudget(1,cache),CFG)
         with self.assertRaises(ValueError):select_contexts(r,parents[:4],'M',budget,CFG)
 
+    def test_empty_lexical_documents(self):
+        r=hybrid_rank([event(text='the and')],[1.,0.],'apple',CFG)
+        self.assertEqual(r['scores']['e1']['bm25'],0)
+
+    def test_empty_n_and_missing_m_fixed_parents(self):
+        from evidence_budget import EvidenceBudget
+        budget=EvidenceBudget(4096,Path(os.environ['QA_TOKENIZER_CACHE']))
+        ranked=hybrid_rank([],[1.,0.],'apple',CFG)
+        self.assertEqual(select_contexts(ranked,[],'N',budget,CFG)['contexts'],[])
+        with self.assertRaises(ValueError):select_contexts(ranked,[],'M',budget,CFG)
+
+    def test_primary_source_id_cannot_be_rebound(self):
+        a=event();a['source_ids']=['other']
+        with self.assertRaises(ValueError):canonical_units([a])
+
     def test_zero_lexical_overlap(self):
-        r=hybrid_rank([event('a',''),event('b')],[1.,0.],'unmatched',CFG) if False else hybrid_rank([event()],[1.,0.],'unmatched',CFG)
+        r=hybrid_rank([event()],[1.,0.],'unmatched',CFG)
         self.assertIsNone(r['scores']['e1']['lexical_rank'])
 
 

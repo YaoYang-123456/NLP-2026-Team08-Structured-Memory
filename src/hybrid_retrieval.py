@@ -44,6 +44,8 @@ def canonical_units(units):
         if unit['kind'] == 'event':
             if unit['parent'] is not None or unit['position'] is not None:
                 raise ValueError('Event cannot have a synthesis parent')
+            if unit['id'] != ids[0]:
+                raise ValueError('Event ID must be its primary source ID')
         elif not isinstance(unit['parent'], str) or not unit['parent'] or type(unit['position']) is not int or unit['position'] < 0:
             raise ValueError('Sentence needs parent and position')
         normalize(unit['vector'])
@@ -98,6 +100,8 @@ def validate_parents(units, parents):
     for p in parents:
         if set(p) != {'id','text','source_ids'} or p['id'] in bank or not p['source_ids'] or any(not isinstance(x,str) or not x for x in p['source_ids']):
             raise ValueError('Invalid/duplicate parent synthesis')
+        if p['source_ids'][0] != p['id']:
+            raise ValueError('Parent ID must be its primary source ID')
         header,spans=summary_parts(p['text'])
         bank[p['id']]={**p,'header':header,'spans':spans}
     positions=set()
@@ -173,10 +177,12 @@ def bm25(documents, query, config):
     counts = [Counter(d) for d in documents]
     df = Counter(w for d in documents for w in set(d))
     average = sum(map(len, documents)) / len(documents)
+    if average == 0:
+        return [0.0] * len(documents)
     scores = []
     for terms, doc in zip(counts, documents):
         score = 0.0
-        for word in set(query):
+        for word in sorted(set(query)):
             frequency = terms[word]
             idf = math.log(1 + (len(documents) - df[word] + 0.5) / (df[word] + 0.5))
             denominator = frequency + config["bm25_k1"] * (1 - config["bm25_b"] + config["bm25_b"] * len(doc) / average)

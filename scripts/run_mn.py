@@ -17,6 +17,8 @@ def run(bundle, questions, out, cache, config_path=None, max_tokens=4096):
     config_path=config_path or ROOT/'configs/phase2-anchor-pilot.json'
     config=json.loads(config_path.read_text(encoding='utf-8'))['ranking']
     frozen=json.loads((ROOT/'configs/locomo-smoke.json').read_text(encoding='utf-8'))
+    if hashlib.sha256(questions.read_bytes()).hexdigest()!=frozen['output_sha256'].get(questions.name):
+        raise ValueError('Question file does not match A frozen input hash')
     allowed={(q['sample_id'],q['qa_index']):q for q in load_questions(questions)}
     devkeys={(q['sample_id'],q['qa_index']) for q in frozen['questions']}
     if not set(allowed)<=devkeys:raise ValueError('Only frozen development questions are supported')
@@ -34,6 +36,9 @@ def run(bundle, questions, out, cache, config_path=None, max_tokens=4096):
         if identity!=allowed[key] or row['embedding']!=frozen['embedding']:
             raise ValueError('Frozen question/embedding mismatch')
         if not isinstance(row['scope'],str) or not row['scope'].strip():raise ValueError('Candidate scope required')
+        for item in row['units']+row['parents']:
+            if not item['id'].startswith(row['sample_id']+'/') or any(not sid.startswith(row['sample_id']+'/') for sid in item['source_ids']):
+                raise ValueError('Cross-conversation candidate/source')
         if len(row['query_vector'])!=frozen['embedding']['dimensions']:raise ValueError('Embedding dimension mismatch')
         ranked=hybrid_rank(row['units'],row['query_vector'],row['question'],config)
         results={v:select_contexts(ranked,row['parents'],v,budget,config) for v in outputs}
