@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 import sys
+import zipfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -24,6 +25,17 @@ def run(bundle, questions, out, cache, config_path=None, max_tokens=4096):
     if not set(allowed)<=devkeys:raise ValueError('Only frozen development questions are supported')
     rows=[json.loads(line) for line in bundle.read_text(encoding='utf-8').splitlines()]
     if not rows:raise ValueError('Empty candidate bundle')
+    archive=ROOT/'reports/artifacts/s2-predictions-for-E-20261020.zip'
+    expected=json.loads((ROOT/'reports/phase2-memory-audit-20261103.json').read_text(encoding='utf-8'))['inputs']['prediction_archives'][archive.name]
+    if hashlib.sha256(archive.read_bytes()).hexdigest()!=expected:
+        raise ValueError('Frozen synthesis archive hash mismatch')
+    with zipfile.ZipFile(archive) as z:
+        fixed={}
+        for line in z.read('predictions30.jsonl').splitlines():
+            saved=json.loads(line)
+            fixed[saved['sample_id'],saved['qa_index']]=[
+                {'id':c['source_ids'][0],'text':c['text'],'source_ids':c['source_ids']}
+                for c in saved['contexts'] if c['kind']=='synthesis']
     budget=EvidenceBudget(max_tokens,cache);outputs={'M':[],'N':[]};traces=[];seen=set()
     for row in rows:
         reject_annotations(row)
@@ -32,6 +44,8 @@ def run(bundle, questions, out, cache, config_path=None, max_tokens=4096):
         key=row['sample_id'],row['qa_index']
         if key in seen or key not in allowed:raise ValueError('Duplicate/unknown development identity')
         seen.add(key)
+        if row['parents']!=fixed[key]:
+            raise ValueError('Parents must be the original five complete syntheses in frozen order')
         identity={k:row[k] for k in ('sample_id','qa_index','question','category')}
         if identity!=allowed[key] or row['embedding']!=frozen['embedding']:
             raise ValueError('Frozen question/embedding mismatch')
