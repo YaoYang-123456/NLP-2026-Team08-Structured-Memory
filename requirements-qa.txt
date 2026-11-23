@@ -1,0 +1,2 @@
+# Phase-two evidence counting only. Legacy QA remains standard-library-only.
+tiktoken==0.12.0
