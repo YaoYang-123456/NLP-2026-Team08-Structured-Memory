@@ -4,7 +4,7 @@ Refs #71、#72、#73、#75。B只实现M/N；A的依赖规则、闭包与正式�
 
 ## 版本与依赖
 
-B分支从main `1a627bb`建立，不包含F全部改动。运行需要PR #77公共`evidence_budget.py`；Windows还需协作PR #78的POSIX路径键修复。B实施PR以main为base并保持draft，待公共接口审核合入后重新集成。隔离联调分支`YaoYang-123456/71-mn-integration`组合这两个依赖和B提交，仅供复核，不作为main的替代版本。
+B 的 [PR #79](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/79) 已接入 main `f658cc7`。该版本包含 F 的公共预算与请求核验接口（#77）和 Windows 路径键修复（#78）。Windows 与其他平台使用同一入口。此前的隔离集成分支和受限单题记录保留为 11 月 4 日快照。
 
 复用现有MiniLM规格（`configs/locomo-smoke.json`）；额外离线计数依赖沿用F的`requirements-qa.txt`，词法处理使用`nltk==3.9.2`。不安装训练框架、不新下载模型。原型的`words/bm25`已迁到共享模块，旧脚本改为导入；BM25查询项按排序顺序累加以消除Python哈希遍历差异。
 
@@ -50,8 +50,8 @@ python scripts/verify_qa_run.py --run output/mn-mock-M --tokenizer-cache <固定
 
 N同理使用N文件和variant N。输出目录必须全新。选择输出含两个公共输入、完整bundle快照、trace、manifest；trace含每个候选来源/父级/句位/分数、每步效用/冗余、接受/拒绝和完整试选tokens。manifest记录代码、候选输入哈希、实际scope和零模型调用。相同bundle重跑应逐字节一致；QA run_id每次独立，比较请求哈希而非整个QA目录。
 
-## 当前验收范围
+## 原生开发集联调
 
-本轮真实首样仅`conv-48/86`的已归档S2 top60事件及原五综合：60事件+60综合句，共120候选；使用本地固定MiniLM重新编码展示文本。它是受限候选接口诊断，**不是完整原生候选召回，也不是正式M/N准确率/覆盖实验**。M/N为4071/4095 tokens，五完整综合保留；两次选择及trace一致，两个mock官方核验通过。
+11 月 23 日使用 D 的原生开发包复核了三会话的 3,712 条事件及 91 条综合。对每题在完整同会话事件库取 dense 120 与 lexical 120 的并集，复用事件原生向量，把题目和原五父综合的完整句交给固定 MiniLM 编码。M/N/A 使用同一份 bundle 与排序配置，综合范围仍为每题原五条。数据来源、1/5/30 题验证和预算结果见[原生联调报告](../reports/phase2-b-native-20261123.md)。
 
-首样包与来源见`reports/artifacts/phase2-b-contract-20261104.zip`及`reports/phase2-b-offline-20261104.md`。旧90份超额输入必须用正式共同池重新运行选择，本轮没有把90份都修好或用首样替代它们。5/30题完整正式验证仍需C/D原生事件向量、统一候选/原型缓存及父文本；完整91条综合到齐前明确限定同一原五条范围。E评分与留出工作仍由原负责人推进。
+11 月 4 日 [受限首样](../reports/artifacts/phase2-b-contract-20261104.zip) 使用归档 top-60 事件并重新编码展示文本，结果见[历史报告](../reports/phase2-b-offline-20261104.md)。开发集主预算结果以新的原生联调为准。C/E 仍需审核原型依赖，E 负责正式评价。
