@@ -6,7 +6,9 @@
 
 每个 M、N、A 方案各提供一个真实的 `qa-run-v2` 运行目录。正式汇总前，先按 F 的说明逐个运行 `scripts/verify_qa_run.py`，确认请求、预测、模型响应和用量绑定一致。评价入口会再次要求 F 的核验器可用，并检查三个方案使用同一冻结题单、方法、模型和提示词配置。模拟运行不能计分。
 
-开发集和留出集都通过 `--labels` 读取 E 本地冻结的 JSON 标签文件。留出标签由 A 的确定性准备脚本用 `--with-labels` 在本地生成；**不要把标签文件、DeepSeek 密钥或完整裁判记录提交到 Git**。若复算开发集支持覆盖，可另外传入原始本地 `support-units.json`；该文件必须覆盖同一冻结题单。留出集当前没有这份 51 项开发集支持标注，因此不传 `--support-annotations`。
+开发集和留出集都通过 `--labels` 读取 E 本地冻结的 JSON 标签文件。若答案标签和问题输入分开保存（A 的冻结文件采用这种形式），还要用 `--questions` 提供配对的无答案题目文件；两份文件必须有相同的题目键和类别。留出标签由 A 的确定性准备脚本用 `--with-labels` 在本地生成；**不要把标签文件、DeepSeek 密钥或完整裁判记录提交到 Git**。
+
+收到的开发集 `support-units.json` 覆盖 30 道开发题，共 51 个支持单元。开发集支持覆盖必须和这 30 道题对应的三份 M/N/A 运行、开发标签及开发输入一起计算；不要把它和 100 道留出题的标签或运行混用。留出集不传 `--support-annotations`。
 
 ## 评分命令
 
@@ -18,15 +20,25 @@ python3 scripts/evaluate.py phase2 \
   --run output/qa-phase2-n \
   --run output/qa-phase2-a \
   --labels data/locomo-phase2/scoring/heldout.labels.json \
+  --questions data/locomo-phase2/model/heldout.inputs.json \
   --judgments output/phase2-judgments.json \
   --tokenizer-cache data/tokenizer-cache \
   --out output/phase2-evaluation
 ```
 
-如需开发集离线支持覆盖，在命令中增加：
+开发集支持覆盖需另用 30 题开发集运行和配套文件：
 
 ```sh
---support-annotations output/phase2-coverage-pilot-20261103/support-units.json
+python3 scripts/evaluate.py phase2 \
+  --run output/dev-phase2-m \
+  --run output/dev-phase2-n \
+  --run output/dev-phase2-a \
+  --labels data/evaluation/a/development.labels.json \
+  --questions data/evaluation/a/development.inputs.json \
+  --support-annotations /local/path/support-units.json \
+  --judgments output/dev-phase2-judgments.json \
+  --tokenizer-cache data/tokenizer-cache \
+  --out output/dev-phase2-evaluation
 ```
 
 只有调用额度已登记并批准后，才显式加 `--judge-api` 运行固定裁判。脚本对每条成功回答只发一次裁判请求、不重试，并逐项保存进度；中断后保留裁判文件，评分与汇总可在另一次调用中读取这份文件完成。

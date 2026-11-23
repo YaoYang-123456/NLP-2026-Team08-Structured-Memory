@@ -38,22 +38,56 @@ def composite(run_id, variant, method, key):
     return run_id, variant, method, key[0], key[1]
 
 
-def keyed_labels(path):
+def keyed_labels(path, questions_path=None):
     rows = read_json(path)
     if not isinstance(rows, list) or not rows:
         raise ValueError("The frozen E label file must be a nonempty JSON array")
     out = {}
     for row in rows:
-        if not isinstance(row, dict) or not {"sample_id", "qa_index", "category", "question", "answer"}.issubset(row):
-            raise ValueError("Each frozen label needs sample_id, qa_index, category, question and answer")
+        if not isinstance(row, dict) or not {"sample_id", "qa_index", "category", "answer"}.issubset(row):
+            raise ValueError("Each frozen label needs sample_id, qa_index, category and answer")
         key = qid(row)
         if (not isinstance(key[0], str) or not key[0] or type(key[1]) is not int or key[1] < 0 or
-                type(row["category"]) is not int or not isinstance(row["question"], str) or
+                type(row["category"]) is not int or
                 not isinstance(row["answer"], str)):
             raise ValueError(f"Malformed frozen label: {key}")
+        if "question" in row and (not isinstance(row["question"], str) or not row["question"].strip()):
+            raise ValueError(f"Malformed frozen question: {key}")
         if key in out:
             raise ValueError(f"Duplicate frozen label key: {key}")
-        out[key] = row
+        out[key] = dict(row)
+
+    if questions_path is not None:
+        question_rows = read_json(questions_path)
+        if not isinstance(question_rows, list) or not question_rows:
+            raise ValueError("The frozen question file must be a nonempty JSON array")
+        questions = {}
+        for row in question_rows:
+            if (not isinstance(row, dict) or
+                    not {"sample_id", "qa_index", "category", "question"}.issubset(row)):
+                raise ValueError("Each frozen question needs sample_id, qa_index, category and question")
+            key = qid(row)
+            if (not isinstance(key[0], str) or not key[0] or type(key[1]) is not int or key[1] < 0 or
+                    type(row["category"]) is not int or not isinstance(row["question"], str) or
+                    not row["question"].strip()):
+                raise ValueError(f"Malformed frozen question: {key}")
+            if {"answer", "reference_answer", "gold_answer", "evidence"}.intersection(row):
+                raise ValueError(f"Answer annotations leaked into the frozen question file: {key}")
+            if key in questions:
+                raise ValueError(f"Duplicate frozen question key: {key}")
+            questions[key] = row
+        require(set(questions) == set(out),
+                "Frozen questions and E labels must cover exactly the same QA keys")
+        for key, label in out.items():
+            question = questions[key]
+            require(question["category"] == label["category"],
+                    f"Frozen question and E label category mismatch: {key}")
+            if "question" in label:
+                require(label["question"] == question["question"],
+                        f"Question differs between frozen files: {key}")
+            label["question"] = question["question"]
+    elif any("question" not in row for row in out.values()):
+        raise ValueError("Labels omit question text; supply the matching --questions file")
     return out
 
 
@@ -405,9 +439,10 @@ def _aggregate(rows):
             "sum_judge_call_seconds": sum(judge_seconds) if judge_seconds else None}
 
 
-def evaluate_phase2(run_dirs, labels_path, judgments_path, *, support_annotations_path=None,
+def evaluate_phase2(run_dirs, labels_path, judgments_path, *, questions_path=None,
+                    support_annotations_path=None,
                     adjudications_path=None, tokenizer_cache=None):
-    labels = keyed_labels(labels_path)
+    labels = keyed_labels(labels_path, questions_path)
     runs = load_runs(run_dirs, labels, tokenizer_cache)
     support = load_support_annotations(support_annotations_path, labels)
     judgment_doc, judgments, wanted = _validated_judgments(judgments_path, runs, labels)
@@ -546,6 +581,8 @@ def main(argv=None):
                         help="One verified M, N or A run directory; provide this option three times")
     parser.add_argument("--labels", type=Path, required=True,
                         help="E-only frozen labels JSON; keep it and all judgments local")
+    parser.add_argument("--questions", type=Path,
+                        help="Matching answer-free frozen question JSON when labels omit question text")
     parser.add_argument("--judgments", type=Path, help="Existing phase2-judgments-v1 JSON")
     parser.add_argument("--support-annotations", type=Path,
                         help="Optional E-only support-units.json; not needed for held-out scoring")
@@ -562,13 +599,14 @@ def main(argv=None):
     if args.out.exists() and any(args.out.iterdir()):
         parser.error("Output directory contains existing artifacts; choose a new local directory")
     args.out.mkdir(parents=True, exist_ok=True)
-    labels = keyed_labels(args.labels)
+    labels = keyed_labels(args.labels, args.questions)
     runs = load_runs(args.run, labels, args.tokenizer_cache)
     judgment_path = args.judgments
     if args.judge_api:
         judgment_path = args.out / "phase2-judgments.json"
         run_phase2_judge(runs, labels, judgment_path)
     summary, rows = evaluate_phase2(args.run, args.labels, judgment_path,
+                                    questions_path=args.questions,
                                     support_annotations_path=args.support_annotations,
                                     adjudications_path=args.adjudications,
                                     tokenizer_cache=args.tokenizer_cache)
