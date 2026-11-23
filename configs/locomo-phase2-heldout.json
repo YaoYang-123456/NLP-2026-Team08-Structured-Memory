@@ -1,0 +1,625 @@
+{
+  "schema_version": 1,
+  "seed": 42,
+  "target_per_category": 25,
+  "source": {
+    "repository": "snap-research/locomo",
+    "revision": "cbfbc1dba6bc53d00625212a0f22d55ffee7c1fc",
+    "path": "data/locomo10.json",
+    "url": "https://raw.githubusercontent.com/snap-research/locomo/cbfbc1dba6bc53d00625212a0f22d55ffee7c1fc/data/locomo10.json",
+    "bytes": 2805274,
+    "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "git_blob_sha1": "d95b872480b413d935821fdc3c84f8a8f5f29e73"
+  },
+  "phase1_manifest_sha256": "ec7cfdeca766905be35642d456ff930be843370e7f2abe6dc125491525c3b659",
+  "splits": {
+    "development": [
+      "conv-48",
+      "conv-42",
+      "conv-41"
+    ],
+    "heldout": [
+      "conv-49",
+      "conv-44",
+      "conv-47",
+      "conv-50",
+      "conv-43",
+      "conv-26",
+      "conv-30"
+    ]
+  },
+  "question_count": 100,
+  "category_counts": {
+    "1": 25,
+    "2": 25,
+    "3": 25,
+    "4": 25
+  },
+  "conversations": {
+    "conv-49": {
+      "sessions": 25,
+      "messages": 509,
+      "questions": 14,
+      "by_category": {
+        "1": 4,
+        "2": 3,
+        "3": 4,
+        "4": 3
+      }
+    },
+    "conv-44": {
+      "sessions": 28,
+      "messages": 675,
+      "questions": 15,
+      "by_category": {
+        "1": 4,
+        "2": 4,
+        "3": 4,
+        "4": 3
+      }
+    },
+    "conv-47": {
+      "sessions": 31,
+      "messages": 689,
+      "questions": 16,
+      "by_category": {
+        "1": 4,
+        "2": 4,
+        "3": 5,
+        "4": 3
+      }
+    },
+    "conv-50": {
+      "sessions": 30,
+      "messages": 568,
+      "questions": 16,
+      "by_category": {
+        "1": 4,
+        "2": 4,
+        "3": 4,
+        "4": 4
+      }
+    },
+    "conv-43": {
+      "sessions": 29,
+      "messages": 680,
+      "questions": 15,
+      "by_category": {
+        "1": 3,
+        "2": 4,
+        "3": 4,
+        "4": 4
+      }
+    },
+    "conv-26": {
+      "sessions": 19,
+      "messages": 419,
+      "questions": 14,
+      "by_category": {
+        "1": 3,
+        "2": 3,
+        "3": 4,
+        "4": 4
+      }
+    },
+    "conv-30": {
+      "sessions": 19,
+      "messages": 369,
+      "questions": 10,
+      "by_category": {
+        "1": 3,
+        "2": 3,
+        "3": 0,
+        "4": 4
+      }
+    }
+  },
+  "questions": [
+    {
+      "sample_id": "conv-49",
+      "qa_index": 11,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 10,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 19,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 119,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 14,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 59,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 37,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 167,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 22,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 12,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 28,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 101,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 23,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 64,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 27,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 66,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 49,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 57,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 5,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 91,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 19,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 34,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 52,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 111,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 17,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 35,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 7,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 87,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 1,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 4,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 39,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 106,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 17,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 52,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 3,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 130,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 8,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 68,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 81,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 151,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 30,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 37,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 31,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 56,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 38,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 73,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 20,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 118,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 24,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 28,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 0,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 118,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 29,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 52,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 7,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 127,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 33,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 1,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 8,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 124,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 49,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 66,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 50,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 143,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 38,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 57,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 19,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 120,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 28,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 10,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 44,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 62,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 26,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 41,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 16,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 127,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 38,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 14,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 42,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 122,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 5,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 79,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 27,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 124,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 29,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 16,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 42,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 103,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 24,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 37,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 27,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 149,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 24,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 65,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 19,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 92,
+      "category": 4
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 20,
+      "category": 1
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 69,
+      "category": 2
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 17,
+      "category": 3
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 54,
+      "category": 4
+    }
+  ],
+  "output_sha256": {
+    "model/development.one.inputs.json": "4bbe12c3f0c94b6b60d777e4111e301fc93cfcfcda32ac09c4398a5fec1ffeb5",
+    "model/heldout.inputs.json": "fcdd42ec8016a38c7afb31de3a10276625e104d2393b382000ca45bd396f802e",
+    "model/heldout.conversations.json": "41ed4cb4504c3c422e2b71975e84a21f539d27f02e66f09026a26bc7743202a2",
+    "scoring/heldout.labels.json": "824aff57b136e524d376fb3dc157aaef3e2fcc8a6e764b896e75090fbd4a432b"
+  }
+}
