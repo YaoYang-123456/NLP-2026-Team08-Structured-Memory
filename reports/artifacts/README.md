@@ -35,3 +35,9 @@ D（lanshuheng9-oss）已通过微信发送，F（hycx233）下载后完成以�
 E（onlysonder / #31）将包解压到本地新目录，读取 predictions30.jsonl，按 `(sample_id, qa_index)` 关联 A 同版本 labels；标签不加入回答输入或本仓库。固定分母30、分类8/8/7/7，保留弃答与服务失败状态。S0 评分交接仍见 [PR #42](https://github.com/YaoYang-123456/NLP-2026-Team08-Structured-Memory/pull/42)，两个方法使用同一题单及评分口径。
 
 包内 README 关于“由用户转发、未送达”的文字是打包时快照，以此处已微信接收并入库的状态为准。没有重打包或修改历史记录。包内不含密钥、标准答案标签或 Qdrant 原库；完整原生数据库与91条原始综合调用仍由 D 保存在本地，本次没有独立回放这些文件。E逐题评分及F复算已完成；至少4例成员本人语义核查仍待确认，来源对应核验不替代该项人工验收。新增真实 API 请求为0。
+
+## 阶段二 C 开发首样：2026-11-23
+
+- 文件 [phase2-c-development-sample-20261123.json](phase2-c-development-sample-20261123.json)，143,388 字节。
+- SHA-256 `aea374f358358c35074863f2f1a17be9b4f6f9f82b0cec3bd0c8e0e02883dd2f`。
+- 使用 `conv-48/86` 的原 60 条事件和 5 条综合。字段、复核样例与复跑方法见 [C 首样交接说明](../../docs/phase2-c-development-sample.md)。
