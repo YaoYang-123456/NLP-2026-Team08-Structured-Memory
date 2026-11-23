@@ -1,0 +1,3664 @@
+{
+  "scope": {
+    "sample_id": "conv-48",
+    "qa_index": 86,
+    "subset": "archived_s2_contexts",
+    "archive_sha256": "21a6e76a0f097193cdf5bb746dda76008d4237fae8a5d92028dcce1c51c12de6",
+    "archive_member": "predictions30.jsonl",
+    "event_handoff_manifest_sha256": "0ef4b6f5a87f4b8b822a5966c9a6270650d97e9f30a4d2d7b12e181df206a5ea",
+    "dependency_coverage": "review_cases_only"
+  },
+  "units": [
+    {
+      "id": "conv-48/event/ec7f82ec-253d-eed5-1b87-e11ad992e69c",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-23T16:06:08.000, Mon\nDeborah also has a pendant that reminds her of her mother.",
+      "archive_rank": 1,
+      "source_ids": [
+        "conv-48/event/ec7f82ec-253d-eed5-1b87-e11ad992e69c",
+        "conv-48/D1:9"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-23T16:06:08.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/948431ee-493a-c10a-6c06-e0f087c0a300",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-21T09:11:05.000, Mon\nDeborah's mom really loved flowers and they always made her happy.",
+      "archive_rank": 2,
+      "source_ids": [
+        "conv-48/event/948431ee-493a-c10a-6c06-e0f087c0a300",
+        "conv-48/D20:6"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-21T09:11:05.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/9803a6cb-c4d5-05fb-d469-bddbb38078d5",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-23T16:06:08.000, Mon\nDeborah reciprocated by sharing her own pendant and showed interest in what makes Jolene's jewelry special to her.",
+      "archive_rank": 3,
+      "source_ids": [
+        "conv-48/event/9803a6cb-c4d5-05fb-d469-bddbb38078d5",
+        "conv-48/D1:9"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-23T16:06:08.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/69474c1e-4482-d03f-5925-6a67b9b48a34",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-02-04T09:48:25.000, Sat\nDeborah shared a photo of a bouquet of flowers in a vase on a table, which reminds her of someone special and their grace and strength when they faced hardships.",
+      "archive_rank": 4,
+      "source_ids": [
+        "conv-48/event/69474c1e-4482-d03f-5925-6a67b9b48a34",
+        "conv-48/D4:26"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-04T09:48:25.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/1134bfe7-90a0-c0c8-575c-1693c7c2e7e8",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-21T09:11:05.000, Mon\nDeborah's mom appreciated the simple things in life.",
+      "archive_rank": 5,
+      "source_ids": [
+        "conv-48/event/1134bfe7-90a0-c0c8-575c-1693c7c2e7e8",
+        "conv-48/D20:6"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-21T09:11:05.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/1b4d9fc9-0f32-ef78-61ce-deb921ee4517",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-17T13:24:04.000, Sun\nDeborah has recently been spending time remembering her mom.",
+      "archive_rank": 6,
+      "source_ids": [
+        "conv-48/event/1b4d9fc9-0f32-ef78-61ce-deb921ee4517",
+        "conv-48/D29:5"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-17T13:24:04.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/65942d9c-cc09-52bf-0faa-94530228474f",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-17T13:24:02.000, Sun\nDeborah enjoyed sharing her love of plants and helping people take care of the world.",
+      "archive_rank": 7,
+      "source_ids": [
+        "conv-48/event/65942d9c-cc09-52bf-0faa-94530228474f",
+        "conv-48/D29:3"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-17T13:24:02.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/01dbfc72-8a0c-aeb7-dcf6-0b69b6fbf6cd",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-19T00:52:22.000, Sat\nDeborah is really thankful for all the time she had with her mom.",
+      "archive_rank": 8,
+      "source_ids": [
+        "conv-48/event/01dbfc72-8a0c-aeb7-dcf6-0b69b6fbf6cd",
+        "conv-48/D19:23"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-19T00:52:22.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/d56fdc7a-5a6d-b445-02d9-e6b9b762febd",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-17T13:24:16.000, Sun\nDeborah showed interest by asking what was special about the book or photo.",
+      "archive_rank": 9,
+      "source_ids": [
+        "conv-48/event/d56fdc7a-5a6d-b445-02d9-e6b9b762febd",
+        "conv-48/D29:17"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-17T13:24:16.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/3fa0bd0e-5d10-85f7-55c8-1e5ba839f055",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-27T09:49:06.000, Fri\nDeborah received a letter the day before 2023-01-27, shown in a photo of a note written on a piece of paper.",
+      "archive_rank": 10,
+      "source_ids": [
+        "conv-48/event/3fa0bd0e-5d10-85f7-55c8-1e5ba839f055",
+        "conv-48/D2:7"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-27T09:49:06.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/619fbe8d-9b49-2a49-0bf4-e7ff7f3e1998",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-09-08T19:39:19.000, Fri\nJolene reciprocated Deborah's excitement and wished her well.",
+      "archive_rank": 11,
+      "source_ids": [
+        "conv-48/event/619fbe8d-9b49-2a49-0bf4-e7ff7f3e1998",
+        "conv-48/D26:20"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-08T19:39:19.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/159f18f8-cee5-0c3e-ee9e-7bbbdfae3c93",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-04-09T16:30:02.000, Sun\nDeborah's mom was interested in art.",
+      "archive_rank": 12,
+      "source_ids": [
+        "conv-48/event/159f18f8-cee5-0c3e-ee9e-7bbbdfae3c93",
+        "conv-48/D12:3"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-04-09T16:30:02.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/3fe661c6-f581-2aff-88f1-7f2264609876",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-21T09:11:07.000, Mon\nDeborah's mom taught her to appreciate things by taking it slow, seeing beauty in them, and finding joy.",
+      "archive_rank": 13,
+      "source_ids": [
+        "conv-48/event/3fe661c6-f581-2aff-88f1-7f2264609876",
+        "conv-48/D20:8"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-21T09:11:07.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/f105b0cf-c18c-dc46-a2e3-19d9a6fd8331",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-07-09T19:37:14.000, Sun\nDeborah feels honored to be a part of her workshops and events.",
+      "archive_rank": 14,
+      "source_ids": [
+        "conv-48/event/f105b0cf-c18c-dc46-a2e3-19d9a6fd8331",
+        "conv-48/D15:15"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-07-09T19:37:14.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/7f8d019d-eedc-e5d8-2584-f52773aba26d",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-03-13T11:22:07.000, Mon\nJolene praised Deborah for sharing something she loves and making things better for others.",
+      "archive_rank": 15,
+      "source_ids": [
+        "conv-48/event/7f8d019d-eedc-e5d8-2584-f52773aba26d",
+        "conv-48/D9:8"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-03-13T11:22:07.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/5f44dfb5-a28f-24d2-161f-df301d1eb1af",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-02-04T09:48:25.000, Sat\nDeborah connected Jolene's story to someone special in her life and shared a personal photo of a meaningful bouquet.",
+      "archive_rank": 16,
+      "source_ids": [
+        "conv-48/event/5f44dfb5-a28f-24d2-161f-df301d1eb1af",
+        "conv-48/D4:26"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-04T09:48:25.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/8ee74f4b-5156-a1c5-91cd-ba3f4ff6b519",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-23T16:06:02.000, Mon\nDeborah's mother's old house holds a lot of memories for her.",
+      "archive_rank": 17,
+      "source_ids": [
+        "conv-48/event/8ee74f4b-5156-a1c5-91cd-ba3f4ff6b519",
+        "conv-48/D1:3"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-23T16:06:02.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/7372bf16-4a53-2b4a-bb36-411d8c1ea84d",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-02-22T16:12:07.000, Wed\nDeborah shared a treasured last photo with Karlie and the happy memory attached to it.",
+      "archive_rank": 18,
+      "source_ids": [
+        "conv-48/event/7372bf16-4a53-2b4a-bb36-411d8c1ea84d",
+        "conv-48/D6:8"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-22T16:12:07.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/51332e93-e380-e9c0-035e-945bfcb907fc",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-02-04T09:48:31.000, Sat\nDeborah shared her favorite nature spots and reciprocated by asking Jolene about hers.",
+      "archive_rank": 19,
+      "source_ids": [
+        "conv-48/event/51332e93-e380-e9c0-035e-945bfcb907fc",
+        "conv-48/D4:32"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-04T09:48:31.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/e2b39721-957d-cbe8-f499-d516a1ddfae7",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-02-04T09:48:18.000, Sat\nJolene shared a photo of her bookshelf with Deborah as a way of reciprocating connection.",
+      "archive_rank": 20,
+      "source_ids": [
+        "conv-48/event/e2b39721-957d-cbe8-f499-d516a1ddfae7",
+        "conv-48/D4:19"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-04T09:48:18.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/5e91b592-2db9-1231-4cda-0cbb8d06848f",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-06-26T09:17:04.000, Mon\nDeborah is always drawn to animals and feels they bring so much joy.",
+      "archive_rank": 21,
+      "source_ids": [
+        "conv-48/event/5e91b592-2db9-1231-4cda-0cbb8d06848f",
+        "conv-48/D14:5"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-06-26T09:17:04.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/d926965d-c735-5f0d-57f8-3d598a702549",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-04-09T16:30:02.000, Sun\nDeborah's mom is deceased.",
+      "archive_rank": 22,
+      "source_ids": [
+        "conv-48/event/d926965d-c735-5f0d-57f8-3d598a702549",
+        "conv-48/D12:3"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-04-09T16:30:02.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/16910c5a-8431-55a0-d6c2-1e7b6a63ebdf",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-27T09:49:06.000, Fri\nDeborah values love and openness in her relationship, which have kept her and her husband close all these years.",
+      "archive_rank": 23,
+      "source_ids": [
+        "conv-48/event/16910c5a-8431-55a0-d6c2-1e7b6a63ebdf",
+        "conv-48/D2:7"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-27T09:49:06.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/9b403648-e93f-d82d-144e-41e23ec88a84",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-26T17:33:00.000, Sat\nDeborah believes that remembering those we love is important.",
+      "archive_rank": 24,
+      "source_ids": [
+        "conv-48/event/9b403648-e93f-d82d-144e-41e23ec88a84",
+        "conv-48/D22:1"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-26T17:33:00.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/88aef298-f496-7d3b-e386-067c3760e795",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-30T11:46:03.000, Wed\nDeborah's mom had good and bad times at her house, but it is still a symbol of her strength and the love she shared with Deborah.",
+      "archive_rank": 25,
+      "source_ids": [
+        "conv-48/event/88aef298-f496-7d3b-e386-067c3760e795",
+        "conv-48/D23:4"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-30T11:46:03.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/5cc67964-1bd6-f574-942f-c95b4761a632",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-09-17T13:24:09.000, Sun\nJolene empathetically affirmed why the birthday cake memory made Deborah feel special.",
+      "archive_rank": 26,
+      "source_ids": [
+        "conv-48/event/5cc67964-1bd6-f574-942f-c95b4761a632",
+        "conv-48/D29:10"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-17T13:24:09.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/bf67e015-cd71-0e00-83a0-e6abec8f4333",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-17T13:24:32.000, Sun\nDeborah expressed excitement and asked which day works for Jolene.",
+      "archive_rank": 27,
+      "source_ids": [
+        "conv-48/event/bf67e015-cd71-0e00-83a0-e6abec8f4333",
+        "conv-48/D29:33"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-17T13:24:32.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/0ddfa5b3-098b-335f-a7af-82d19264f3ec",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-03-28T16:03:01.000, Tue\nDeborah bought new props for her yoga class.",
+      "archive_rank": 28,
+      "source_ids": [
+        "conv-48/event/0ddfa5b3-098b-335f-a7af-82d19264f3ec",
+        "conv-48/D11:2"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-03-28T16:03:01.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/6dbdf9a7-52d5-3e6a-2d14-b4ea141fccd6",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-27T09:49:16.000, Fri\nReading was one of Deborah's mother's hobbies.",
+      "archive_rank": 29,
+      "source_ids": [
+        "conv-48/event/6dbdf9a7-52d5-3e6a-2d14-b4ea141fccd6",
+        "conv-48/D2:17"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-27T09:49:16.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/9edcee33-6796-0743-965d-2baea0c3cf21",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-27T09:49:06.000, Fri\nDeborah feels that being there for each other has made her and her husband happy.",
+      "archive_rank": 30,
+      "source_ids": [
+        "conv-48/event/9edcee33-6796-0743-965d-2baea0c3cf21",
+        "conv-48/D2:7"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-27T09:49:06.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/8d8d2d4f-328f-f282-18ef-a1856b840635",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-02-04T09:48:27.000, Sat\nDeborah's friend gave her the bouquet when she was struggling, and it gives her hope and courage; she feels warmth and appreciation when she looks at it.",
+      "archive_rank": 31,
+      "source_ids": [
+        "conv-48/event/8d8d2d4f-328f-f282-18ef-a1856b840635",
+        "conv-48/D4:28"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-04T09:48:27.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/77ccd956-6de1-53ef-d87c-de1fbdc66951",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-08T19:39:16.000, Fri\nDeborah thanks Jolene for her understanding and is waiting.",
+      "archive_rank": 32,
+      "source_ids": [
+        "conv-48/event/77ccd956-6de1-53ef-d87c-de1fbdc66951",
+        "conv-48/D26:17"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-08T19:39:16.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/28d2a285-4615-9196-9011-1e189970f791",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-21T09:11:03.000, Mon\nDeborah felt a mix of nostalgia, longing, and gratitude for the memories at the memorable place.",
+      "archive_rank": 33,
+      "source_ids": [
+        "conv-48/event/28d2a285-4615-9196-9011-1e189970f791",
+        "conv-48/D20:4"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-21T09:11:03.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/3e48c30c-6f6b-7bf1-6afc-9b87dceb46f5",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-26T17:33:20.000, Sat\nDeborah's cats bring lots of joy and peace to her home.",
+      "archive_rank": 34,
+      "source_ids": [
+        "conv-48/event/3e48c30c-6f6b-7bf1-6afc-9b87dceb46f5",
+        "conv-48/D22:21"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-26T17:33:20.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/926bc7eb-8e91-4410-488e-8755ebe035b0",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-30T11:46:03.000, Wed\nDeborah visited her mom's house the month before 2023-08-30, which holds a special place in her heart.",
+      "archive_rank": 35,
+      "source_ids": [
+        "conv-48/event/926bc7eb-8e91-4410-488e-8755ebe035b0",
+        "conv-48/D23:4"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-30T11:46:03.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/54162b3b-d0d3-5f2e-fa2c-726293c64a79",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-27T09:49:12.000, Fri\nDeborah goes to her old home now and then for her mom, who passed away.",
+      "archive_rank": 36,
+      "source_ids": [
+        "conv-48/event/54162b3b-d0d3-5f2e-fa2c-726293c64a79",
+        "conv-48/D2:13"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-27T09:49:12.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/6e69fba1-a1ee-c911-11c0-eee7f371df41",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-07-09T19:37:16.000, Sun\nDeborah appreciates Jolene's support and is there for her too.",
+      "archive_rank": 37,
+      "source_ids": [
+        "conv-48/event/6e69fba1-a1ee-c911-11c0-eee7f371df41",
+        "conv-48/D15:17"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-07-09T19:37:16.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/299b36b4-18b9-7f0c-d06e-04e51cf56897",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-08T19:39:16.000, Fri\nDeborah expressed gratitude for Jolene's understanding.",
+      "archive_rank": 38,
+      "source_ids": [
+        "conv-48/event/299b36b4-18b9-7f0c-d06e-04e51cf56897",
+        "conv-48/D26:17"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-08T19:39:16.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/13ce13f4-06ad-6224-c50c-d120846a6f99",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-03-28T16:03:04.000, Tue\nJolene reciprocated Deborah's curiosity by asking about her favorite scents and rituals.",
+      "archive_rank": 39,
+      "source_ids": [
+        "conv-48/event/13ce13f4-06ad-6224-c50c-d120846a6f99",
+        "conv-48/D11:5"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-03-28T16:03:04.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/eabef9d0-945f-97f9-6a5c-6ef1a7b1c9ba",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-02-22T16:12:03.000, Wed\nDeborah finds peace in roses and dahlias.",
+      "archive_rank": 40,
+      "source_ids": [
+        "conv-48/event/eabef9d0-945f-97f9-6a5c-6ef1a7b1c9ba",
+        "conv-48/D6:4"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-22T16:12:03.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/246e3252-6961-0257-d7ad-28056ec089ba",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-17T13:24:18.000, Sun\nDeborah reciprocated by sharing her own bookshelf and asking if she had shown it before.",
+      "archive_rank": 41,
+      "source_ids": [
+        "conv-48/event/246e3252-6961-0257-d7ad-28056ec089ba",
+        "conv-48/D29:19"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-17T13:24:18.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-26T17:33:12.000, Sat\nDeborah is supportive of Jolene.",
+      "archive_rank": 42,
+      "source_ids": [
+        "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c",
+        "conv-48/D22:13"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-26T17:33:12.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/00d03f0b-bd7b-f406-81fd-56d6b57b9d7f",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-21T09:11:09.000, Mon\nDeborah agreed with Jolene and shared her commitment to appreciating small things together.",
+      "archive_rank": 43,
+      "source_ids": [
+        "conv-48/event/00d03f0b-bd7b-f406-81fd-56d6b57b9d7f",
+        "conv-48/D20:10"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-21T09:11:09.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/e549c524-1549-3766-f973-553897e59f0c",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-16T14:58:13.000, Wed\nDeborah tells Jolene they are in this together and to give her a shout if she needs anything.",
+      "archive_rank": 44,
+      "source_ids": [
+        "conv-48/event/e549c524-1549-3766-f973-553897e59f0c",
+        "conv-48/D18:14"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-16T14:58:13.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/227d7fd7-9ad8-4c2c-18df-cb94ebff7fba",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-09-06T20:31:10.000, Wed\nJolene asked Deborah what she has been doing lately.",
+      "archive_rank": 45,
+      "source_ids": [
+        "conv-48/event/227d7fd7-9ad8-4c2c-18df-cb94ebff7fba",
+        "conv-48/D25:11"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-06T20:31:10.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/c36a8b56-39ec-5de3-afc8-4abcb7e516b7",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-02-01T19:03:12.000, Wed\nJolene expressed gratitude for Deborah's kind words.",
+      "archive_rank": 46,
+      "source_ids": [
+        "conv-48/event/c36a8b56-39ec-5de3-afc8-4abcb7e516b7",
+        "conv-48/D3:13"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-01T19:03:12.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/e83b0a01-148f-e711-d7ff-57c5ab8a3ff5",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-03-28T16:03:03.000, Tue\nDeborah bought a candle for the atmosphere and to improve her yoga practice.",
+      "archive_rank": 47,
+      "source_ids": [
+        "conv-48/event/e83b0a01-148f-e711-d7ff-57c5ab8a3ff5",
+        "conv-48/D11:4"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-03-28T16:03:03.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/8bf64523-396e-9f6d-0606-e0d5f0034f3a",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-01-27T09:49:12.000, Fri\nSitting in the spot by the window at her old home gives Deborah peace.",
+      "archive_rank": 48,
+      "source_ids": [
+        "conv-48/event/8bf64523-396e-9f6d-0606-e0d5f0034f3a",
+        "conv-48/D2:13"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-01-27T09:49:12.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/7507099e-f59d-473c-0881-2f3c6df1e407",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-08-16T14:58:12.000, Wed\nJolene expressed appreciation for Deborah's offer of help.",
+      "archive_rank": 49,
+      "source_ids": [
+        "conv-48/event/7507099e-f59d-473c-0881-2f3c6df1e407",
+        "conv-48/D18:13"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-16T14:58:12.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/b1b744a7-32d7-5aa5-ba8f-55f14dff394f",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-03-02T19:18:19.000, Thu\nJolene expressed appreciation for Deborah's offer of help.",
+      "archive_rank": 50,
+      "source_ids": [
+        "conv-48/event/b1b744a7-32d7-5aa5-ba8f-55f14dff394f",
+        "conv-48/D8:20"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-03-02T19:18:19.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/ce873d04-769f-7efd-ba38-54cb07d60458",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-07-09T19:37:10.000, Sun\nDeborah loves organizing workshops and events to practice mindfulness and self-care, finding it an awesome way to have fun, build relationships, and support each other's growth.",
+      "archive_rank": 51,
+      "source_ids": [
+        "conv-48/event/ce873d04-769f-7efd-ba38-54cb07d60458",
+        "conv-48/D15:11"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-07-09T19:37:10.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/8fd8ea81-e595-cdd5-30ba-a03a27aafade",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-09-17T13:24:29.000, Sun\nJolene shared that she just started learning and invited Deborah to come with her sometime.",
+      "archive_rank": 52,
+      "source_ids": [
+        "conv-48/event/8fd8ea81-e595-cdd5-30ba-a03a27aafade",
+        "conv-48/D29:30"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-17T13:24:29.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/983a3ad8-cbab-6f4a-1222-a804eb8aa479",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-08-21T09:11:03.000, Mon\nDeborah brought flowers to the memorable place and placed a vase of flowers on the ground in a street.",
+      "archive_rank": 53,
+      "source_ids": [
+        "conv-48/event/983a3ad8-cbab-6f4a-1222-a804eb8aa479",
+        "conv-48/D20:4"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-21T09:11:03.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/000fab4d-857f-87ab-60ca-0a6851667fa7",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-03T14:14:14.000, Sun\nDeborah offered to assist Jolene with anything she needs.",
+      "archive_rank": 54,
+      "source_ids": [
+        "conv-48/event/000fab4d-857f-87ab-60ca-0a6851667fa7",
+        "conv-48/D24:15"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-03T14:14:14.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/6b7940ed-7bef-f56f-beb5-0c352d8929dc",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-03-13T11:22:06.000, Mon\nGiving people peace and awareness brings Deborah so much happiness.",
+      "archive_rank": 55,
+      "source_ids": [
+        "conv-48/event/6b7940ed-7bef-f56f-beb5-0c352d8929dc",
+        "conv-48/D9:7"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-03-13T11:22:06.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/469c74dd-2741-076e-4e7a-f2ed2861bc67",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-12T14:18:05.000, Tue\nDeborah aligned with Jolene's perspective, sharing that she too has been thinking about appreciating small moments and gratitude.",
+      "archive_rank": 56,
+      "source_ids": [
+        "conv-48/event/469c74dd-2741-076e-4e7a-f2ed2861bc67",
+        "conv-48/D27:6"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-12T14:18:05.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/c6ac3dd3-b2af-868c-bfc5-7ab224e996f0",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-02-22T16:12:02.000, Wed\nJolene complimented Deborah's flowers and showed curiosity by asking what type they were.",
+      "archive_rank": 57,
+      "source_ids": [
+        "conv-48/event/c6ac3dd3-b2af-868c-bfc5-7ab224e996f0",
+        "conv-48/D6:3"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-02-22T16:12:02.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/b3dfec0d-7b2f-d63f-5f3e-e1eac4c2df6f",
+      "kind": "event",
+      "text": "Speaker: Jolene\nRecorded: 2023-08-19T00:52:15.000, Sat\nJolene aligned with Deborah's love of the outdoors and asked about her special spots.",
+      "archive_rank": 58,
+      "source_ids": [
+        "conv-48/event/b3dfec0d-7b2f-d63f-5f3e-e1eac4c2df6f",
+        "conv-48/D19:16"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-08-19T00:52:15.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/8e514237-2d9c-fe9f-3c78-b5e6ffc405fa",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-09-08T19:39:20.000, Fri\nDeborah asks Jolene to maybe grab her some interesting books.",
+      "archive_rank": 59,
+      "source_ids": [
+        "conv-48/event/8e514237-2d9c-fe9f-3c78-b5e6ffc405fa",
+        "conv-48/D26:21"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-09-08T19:39:20.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/event/6c66a26a-d89f-4be6-360a-680a95b99cfc",
+      "kind": "event",
+      "text": "Speaker: Deborah\nRecorded: 2023-03-28T16:03:05.000, Tue\nDeborah is a big fan of scents like lavender and rosemary.",
+      "archive_rank": 60,
+      "source_ids": [
+        "conv-48/event/6c66a26a-d89f-4be6-360a-680a95b99cfc",
+        "conv-48/D11:6"
+      ],
+      "parent": null,
+      "position": null,
+      "recorded_at": "2023-03-28T16:03:05.000",
+      "source_scope": "event"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/1",
+      "kind": "synthesis",
+      "text": "On February 22, 2023, Jolene opened the conversation by sharing her excitement about a great night out the evening before, complete with dinner, drinks, and a photo of her food and wine, then warmly asked how Deborah was doing.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 1,
+      "char_span": [
+        62,
+        289
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/2",
+      "kind": "synthesis",
+      "text": "Deborah responded in kind, describing a calming, nostalgic visit to a garden and sharing a photo of flowers in buckets.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 2,
+      "char_span": [
+        290,
+        409
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/3",
+      "kind": "synthesis",
+      "text": "Jolene complimented the flowers, found the place peaceful, and asked what type they were—a moment of curiosity that led Deborah to open up about losing a friend the week before and finding comfort in the garden, especially among roses and dahlias.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 3,
+      "char_span": [
+        410,
+        657
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/4",
+      "kind": "synthesis",
+      "text": "Jolene offered sympathy and asked how she was holding up.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 4,
+      "char_span": [
+        658,
+        715
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/5",
+      "kind": "synthesis",
+      "text": "Deborah admitted it had been tough but said remembering her friend reminded her how special life is, and she expressed gratitude for Jolene's kindness.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 5,
+      "char_span": [
+        716,
+        867
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/6",
+      "kind": "synthesis",
+      "text": "Jolene validated that memories can bring comfort and joy.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 6,
+      "char_span": [
+        868,
+        925
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/7",
+      "kind": "synthesis",
+      "text": "Deborah then shared a treasured last photo with Karlie from a hiking trip the previous summer, saying she smiles every time she sees it.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 7,
+      "char_span": [
+        926,
+        1062
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/8",
+      "kind": "synthesis",
+      "text": "Jolene asked where else Deborah had traveled, and Deborah named Bali the year before as a favorite—a gorgeous island that gave her peace and was great for yoga, shown in a beach-swing photo.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 8,
+      "char_span": [
+        1063,
+        1253
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/9",
+      "kind": "synthesis",
+      "text": "Jolene, who had long wanted to try beach yoga, was enthusiastic; Deborah described the wonderful sound of waves and fresh air, and Jolene resolved to give it a go, promising to keep Deborah posted.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 9,
+      "char_span": [
+        1254,
+        1451
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/10",
+      "kind": "synthesis",
+      "text": "This exchange built on earlier warmth—Jolene had thanked Deborah for encouragement on February 4—and their supportive dynamic continued in later months, with Deborah urging Jolene to rest and offering solidarity, and Jolene later sharing how her snake Seraphim brings her peace.",
+      "parent": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "position": 10,
+      "char_span": [
+        1452,
+        1730
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/1",
+      "kind": "synthesis",
+      "text": "On January 27, 2023, Deborah shared with Jolene that her father had passed away just two days earlier—a sudden loss that left her family shell-shocked.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 1,
+      "char_span": [
+        62,
+        213
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/2",
+      "kind": "synthesis",
+      "text": "Jolene responded with sympathy and asked how Deborah and her family were coping.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 2,
+      "char_span": [
+        214,
+        294
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/3",
+      "kind": "synthesis",
+      "text": "Deborah explained she was channeling her grief by spending more time with family and cherishing memories, finding comfort in looking back on great moments and the family album.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 3,
+      "char_span": [
+        295,
+        471
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/4",
+      "kind": "synthesis",
+      "text": "She shared a photo of her parents' 1993 wedding, and Jolene complimented them as a beautiful couple.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 4,
+      "char_span": [
+        472,
+        572
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/5",
+      "kind": "synthesis",
+      "text": "Deborah said she and her husband strive to be as good a family as her parents were; when Jolene asked what she values in the relationship, Deborah cited love and openness, which have kept them close, and said being there for each other has made them happy.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 5,
+      "char_span": [
+        573,
+        829
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/6",
+      "kind": "synthesis",
+      "text": "Deborah also shared a letter she'd received the day before from her yoga group, thanking her for her positive influence—Jolene called the words touching and asked who sent it.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 6,
+      "char_span": [
+        831,
+        1006
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/7",
+      "kind": "synthesis",
+      "text": "Deborah, passionate about yoga, does it in the living room of her old home, where she goes now and then for her late mother.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 7,
+      "char_span": [
+        1007,
+        1131
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/8",
+      "kind": "synthesis",
+      "text": "Sitting by the window there gives her peace and a sense of her mother's presence.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 8,
+      "char_span": [
+        1132,
+        1213
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/9",
+      "kind": "synthesis",
+      "text": "The window seat was one of her mother's favorite places; she would sit there nightly with a book and a smile.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 9,
+      "char_span": [
+        1214,
+        1323
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/10",
+      "kind": "synthesis",
+      "text": "Reading and travel were her mother's passions.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 10,
+      "char_span": [
+        1324,
+        1370
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/11",
+      "kind": "synthesis",
+      "text": "Jolene then shared her own comforts: her snakes, including Susie and Seraphim, who once escaped her cage and coiled up beside Jolene while she gamed.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 11,
+      "char_span": [
+        1372,
+        1521
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/12",
+      "kind": "synthesis",
+      "text": "Jolene bought one snake in Paris a year earlier.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 12,
+      "char_span": [
+        1522,
+        1570
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/13",
+      "kind": "synthesis",
+      "text": "She and her partner both love gaming—they played \"Detroit\" last week and plan to play \"Walking Dead\" next Saturday.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 13,
+      "char_span": [
+        1571,
+        1686
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/14",
+      "kind": "synthesis",
+      "text": "Jolene taught herself to game as a child.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 14,
+      "char_span": [
+        1687,
+        1728
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/15",
+      "kind": "synthesis",
+      "text": "The conversation closed with mutual warm wishes and encouragement to keep spreading good vibes.",
+      "parent": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "position": 15,
+      "char_span": [
+        1729,
+        1824
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/1",
+      "kind": "synthesis",
+      "text": "On August 21, 2023, Jolene and Deborah reconnected after a long time without talking.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 1,
+      "char_span": [
+        62,
+        147
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/2",
+      "kind": "synthesis",
+      "text": "Jolene mentioned she had received Battlefield 1 for her console the week before.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 2,
+      "char_span": [
+        148,
+        228
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/3",
+      "kind": "synthesis",
+      "text": "Deborah warmly shared that she had recently visited a place full of memories, sat on a bench where she used to chat, and was overcome with emotion; she also saw a flower cart on a sidewalk.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 3,
+      "char_span": [
+        229,
+        418
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/4",
+      "kind": "synthesis",
+      "text": "When Jolene gently asked whether her feelings were mostly happy or mixed, Deborah described a blend of nostalgia, longing, and gratitude, and said she had placed a vase of flowers on the ground in the street there.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 4,
+      "char_span": [
+        419,
+        633
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/5",
+      "kind": "synthesis",
+      "text": "Jolene asked whether Deborah's late mother would have liked the flowers, and Deborah said her mom appreciated life's simple things and loved flowers, which always made her happy; she shared a photo of a woman holding a bouquet of red roses.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 5,
+      "char_span": [
+        634,
+        874
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/6",
+      "kind": "synthesis",
+      "text": "Jolene complimented the photo and asked how her mother taught her to appreciate things—Deborah said by taking it slow, seeing beauty, and finding joy.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 6,
+      "char_span": [
+        875,
+        1025
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/7",
+      "kind": "synthesis",
+      "text": "Jolene praised this perspective and agreed people should slow down, and Deborah committed to appreciating small things together.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 7,
+      "char_span": [
+        1026,
+        1154
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/8",
+      "kind": "synthesis",
+      "text": "The conversation then turned to calming habits.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 8,
+      "char_span": [
+        1156,
+        1203
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/9",
+      "kind": "synthesis",
+      "text": "Jolene, who has done yoga for three years and finds it an escape from study and work stress, shared that she is doing more yoga and meditation; Deborah reciprocated with walks, mindfulness, photography (including a sunset over water), and her own yoga and meditation practice, calling walks a \"reboot.\" Jolene compared the feeling to hitting refresh.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 9,
+      "char_span": [
+        1204,
+        1554
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/10",
+      "kind": "synthesis",
+      "text": "Deborah asked about Jolene's favorite pose, and Jolene named savasana, the corpse pose, which helps her let go and surrender; she shared a photo of a green cushion by a window and a funny photo of a person lying on the floor with a paper bag.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 10,
+      "char_span": [
+        1555,
+        1797
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/11",
+      "kind": "synthesis",
+      "text": "Deborah playfully acknowledged the photo, praised Jolene for unwinding, and encouraged her to keep up her practice.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 11,
+      "char_span": [
+        1798,
+        1913
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7/sentence/12",
+      "kind": "synthesis",
+      "text": "Jolene, who feels she is \"really finding her zen again,\" thanked Deborah for her support, and Deborah wished her good luck and asked her to stay in touch.",
+      "parent": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "position": 12,
+      "char_span": [
+        1914,
+        2068
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/1",
+      "kind": "synthesis",
+      "text": "On March 28, 2023, Jolene shared her excitement over an engineering breakthrough from the previous Friday, when she finally solved a problem that had been troubling her; she said it felt great to see her hard work paying off and included a photo of herself holding a pair of scissors.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 1,
+      "char_span": [
+        62,
+        346
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/2",
+      "kind": "synthesis",
+      "text": "Deborah praised Jolene's skills, told her she had truly proven herself, and encouraged her to keep up the hard work.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 2,
+      "char_span": [
+        347,
+        463
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/3",
+      "kind": "synthesis",
+      "text": "Deborah also shared news of her own: she had bought new props for her yoga class and posted a photo of a group doing yoga to show them in action.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 3,
+      "char_span": [
+        464,
+        609
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/4",
+      "kind": "synthesis",
+      "text": "The conversation then shifted to yoga ambiance.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 4,
+      "char_span": [
+        611,
+        658
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/5",
+      "kind": "synthesis",
+      "text": "Jolene asked Deborah to rate new details for a case, sharing a photo of a cardboard mat with a cup of coffee.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 5,
+      "char_span": [
+        659,
+        768
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/6",
+      "kind": "synthesis",
+      "text": "Deborah showed interest by asking what feelings Jolene experiences during practice, and shared a photo of a candle with rosemary, explaining she bought it for atmosphere.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 6,
+      "char_span": [
+        769,
+        939
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/7",
+      "kind": "synthesis",
+      "text": "Jolene reciprocated by asking about Deborah's favorite scents and rituals, saying she loves creating a serene space with lavender and rosemary and feels relaxed during yoga.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 7,
+      "char_span": [
+        940,
+        1113
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/8",
+      "kind": "synthesis",
+      "text": "Deborah agreed that candles and essential oils add warmth and calm, and the two bonded over this shared preference.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 8,
+      "char_span": [
+        1114,
+        1229
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/9",
+      "kind": "synthesis",
+      "text": "Jolene then raised music, asking about Deborah's favorite tracks.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 9,
+      "char_span": [
+        1231,
+        1296
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/10",
+      "kind": "synthesis",
+      "text": "Deborah named \"Savana\" and described her preference for instrumental tracks with mellow melodies, then asked about Jolene's songs and artists.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 10,
+      "char_span": [
+        1297,
+        1439
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/11",
+      "kind": "synthesis",
+      "text": "Jolene cited Nils Frahm and Olafur Arnalds as calming and transporting, and asked for similar recommendations.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 11,
+      "char_span": [
+        1440,
+        1550
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/12",
+      "kind": "synthesis",
+      "text": "Deborah suggested the album \"Sleep\" for meditation and deep relaxation, hoping Jolene would find it as calming as she does.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 12,
+      "char_span": [
+        1551,
+        1674
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62/sentence/13",
+      "kind": "synthesis",
+      "text": "Jolene expressed gratitude and enthusiasm for the new tunes, and Deborah asked her to share her thoughts on the albums before warmly wishing her well and encouraging her to keep up the good work.",
+      "parent": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "position": 13,
+      "char_span": [
+        1675,
+        1870
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/1",
+      "kind": "synthesis",
+      "text": "On August 24, 2023, Deborah shared with Jolene that she had attended a yoga retreat near her mom's place the week before, calling it life-changing—a beautiful place where she \"got to hang with nature and get to know herself,\" illustrated with a photo of a mossy forest trail.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 1,
+      "char_span": [
+        62,
+        337
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/2",
+      "kind": "synthesis",
+      "text": "Jolene responded with genuine happiness, validating Deborah's connection to nature and herself, and noted she relaxes the same way, sharing a photo of a man bending over a blanket in the grass.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 2,
+      "char_span": [
+        338,
+        531
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/3",
+      "kind": "synthesis",
+      "text": "Deborah then reflected that life has felt \"super meaningful\" lately, crediting nature and self-reflection with helping her see how beautiful every moment is (accompanied by a mountain-range sunset photo), and voiced her belief that people grow when they listen to themselves.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 3,
+      "char_span": [
+        532,
+        807
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/4",
+      "kind": "synthesis",
+      "text": "She then turned the conversation to Jolene, asking about her recent experiences.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 4,
+      "char_span": [
+        808,
+        888
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/5",
+      "kind": "synthesis",
+      "text": "Jolene admitted life is hectic but said she's making strides toward her goals—tough but satisfying.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 5,
+      "char_span": [
+        890,
+        989
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/6",
+      "kind": "synthesis",
+      "text": "She's been studying, attending workshops, and networking, and recently presented at a virtual conference where positive feedback confirmed she's on the right track; her goal is to succeed in her field and make a positive impact.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 6,
+      "char_span": [
+        990,
+        1218
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/7",
+      "kind": "synthesis",
+      "text": "Deborah praised her dedication, asked how the feedback felt and what comes next, and Jolene said she was thrilled and rewarded, currently focusing on studying and considering more internships.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 7,
+      "char_span": [
+        1219,
+        1411
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/8",
+      "kind": "synthesis",
+      "text": "Deborah congratulated her, said she was \"super proud,\" and offered help, which Jolene said meant a lot.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 8,
+      "char_span": [
+        1412,
+        1515
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/9",
+      "kind": "synthesis",
+      "text": "Deborah encouraged her to reach for her goals while enjoying the journey and to take time for herself (sharing a sunflower-field sunset photo); Jolene agreed and thanked her, and Deborah affirmed she is \"always by Jolene's side.\"",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 9,
+      "char_span": [
+        1516,
+        1745
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/10",
+      "kind": "synthesis",
+      "text": "This builds on a long pattern: since February 2023 Jolene has shown interest in Deborah's yoga, and on June 26 Deborah had invited Jolene to connect while preparing for this retreat.",
+      "parent": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "position": 10,
+      "char_span": [
+        1747,
+        1929
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf"
+      ],
+      "source_scope": "parent_synthesis"
+    }
+  ],
+  "parents": [
+    {
+      "id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "kind": "synthesis",
+      "text": "Time range: 2023-02-22T16:12:00.000 — 2023-02-22T16:12:14.000\nOn February 22, 2023, Jolene opened the conversation by sharing her excitement about a great night out the evening before, complete with dinner, drinks, and a photo of her food and wine, then warmly asked how Deborah was doing. Deborah responded in kind, describing a calming, nostalgic visit to a garden and sharing a photo of flowers in buckets. Jolene complimented the flowers, found the place peaceful, and asked what type they were—a moment of curiosity that led Deborah to open up about losing a friend the week before and finding comfort in the garden, especially among roses and dahlias. Jolene offered sympathy and asked how she was holding up. Deborah admitted it had been tough but said remembering her friend reminded her how special life is, and she expressed gratitude for Jolene's kindness. Jolene validated that memories can bring comfort and joy. Deborah then shared a treasured last photo with Karlie from a hiking trip the previous summer, saying she smiles every time she sees it. Jolene asked where else Deborah had traveled, and Deborah named Bali the year before as a favorite—a gorgeous island that gave her peace and was great for yoga, shown in a beach-swing photo. Jolene, who had long wanted to try beach yoga, was enthusiastic; Deborah described the wonderful sound of waves and fresh air, and Jolene resolved to give it a go, promising to keep Deborah posted. This exchange built on earlier warmth—Jolene had thanked Deborah for encouragement on February 4—and their supportive dynamic continued in later months, with Deborah urging Jolene to rest and offering solidarity, and Jolene later sharing how her snake Seraphim brings her peace.",
+      "archive_rank": 61,
+      "source_ids": [
+        "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+        "conv-48/event/32887ca5-2eda-8857-eeaa-4f8dad4059fc",
+        "conv-48/D6:1",
+        "conv-48/event/69afafa1-f341-7361-26df-eef79f7ca55e",
+        "conv-48/event/9b5f4af5-f0cf-8406-2737-4a3fcde1863b",
+        "conv-48/D6:2",
+        "conv-48/event/da656885-1381-07c8-9bd0-71f62bc1863b",
+        "conv-48/event/9f43f407-c700-6079-f72d-725c8a9551a9",
+        "conv-48/D6:3",
+        "conv-48/event/c6ac3dd3-b2af-868c-bfc5-7ab224e996f0",
+        "conv-48/event/4af1b988-f30f-3a07-e615-585de8de0954",
+        "conv-48/D6:4",
+        "conv-48/event/6476af80-e94b-dd00-5d5a-13163c4d783f",
+        "conv-48/event/669055dd-ac9d-e189-ed24-a52c8e6da599",
+        "conv-48/event/eabef9d0-945f-97f9-6a5c-6ef1a7b1c9ba",
+        "conv-48/event/9912a4f8-20e3-a7be-5776-2f982a905d40",
+        "conv-48/D6:5",
+        "conv-48/event/ebb3ecc1-e2fb-8090-5f3c-edff3b6d9194",
+        "conv-48/event/0d9aebd9-5c06-a353-c55d-507dc3953f84",
+        "conv-48/D6:6",
+        "conv-48/event/712b8738-b8c3-5c23-0230-a97824a034d4",
+        "conv-48/event/f49cbac0-159d-1e19-d2c4-da7cd9cf757a",
+        "conv-48/event/e417bdca-ddbd-3e00-1fc4-b9742b7724ed",
+        "conv-48/D6:7",
+        "conv-48/event/fa84e14f-859b-c3bf-7dea-5f2fc93a489a",
+        "conv-48/event/3eb61bf0-4f6e-0490-9294-1f8a7d1575f3",
+        "conv-48/D6:8",
+        "conv-48/event/7372bf16-4a53-2b4a-bb36-411d8c1ea84d",
+        "conv-48/event/81e369ab-688c-2233-82d1-ce6aa7588484",
+        "conv-48/event/cc9a5489-c167-f24a-7592-76b263265f2f",
+        "conv-48/event/44834416-38d6-aa9f-1031-5131f1cd69dd",
+        "conv-48/D6:9",
+        "conv-48/event/8ccf8db2-d2c6-b66d-c2d1-56c716b1ec90",
+        "conv-48/event/307b1c7d-e534-134b-d5c0-8a6792390c0a",
+        "conv-48/D6:10",
+        "conv-48/event/5ae23edc-05b2-0857-6aec-aabb0d3622ef",
+        "conv-48/event/6432f595-3b8b-7f4c-f4d3-c2a5bcde0735",
+        "conv-48/event/cb82ce66-703c-a1b7-42b7-ac5802b73c26",
+        "conv-48/D6:11",
+        "conv-48/event/f27bf9ce-f0ca-a491-fd32-14696c88e552",
+        "conv-48/event/2a13816a-025d-b8c3-e70f-88504dbde0f4",
+        "conv-48/D6:12",
+        "conv-48/event/8bdcfdcc-757c-43af-133f-a1fa51b6cd21",
+        "conv-48/event/9e1068a0-731b-d248-a6c0-62eda4e8fe57",
+        "conv-48/D6:13",
+        "conv-48/event/f5ba5be6-1cd8-6789-6454-582433f28123",
+        "conv-48/event/59692ba9-959a-75d2-0670-c8e03de7db8c",
+        "conv-48/D6:14",
+        "conv-48/event/df0a077e-8609-851a-2c17-3efe29f8821e",
+        "conv-48/event/0b0e5c7f-318c-be02-3fb8-43268347a4cd",
+        "conv-48/D6:15",
+        "conv-48/event/a30c98f4-caf5-59f2-755f-e6e3aad106bb",
+        "conv-48/event/3ff33e5e-dc13-3305-d899-e95c97849c98",
+        "conv-48/D4:43",
+        "conv-48/event/440f4379-5ad9-172b-8afd-ca360c8878ad",
+        "conv-48/event/cfdd4000-9e32-0b1f-230f-dd0ca637369d",
+        "conv-48/D8:23",
+        "conv-48/event/61c29ba2-a5af-61c7-982a-211cf1884536",
+        "conv-48/event/9e4fab4b-2409-8c65-a230-fa4aabc5d432",
+        "conv-48/event/3abc9532-477b-c20f-5919-5ee0e8de1810",
+        "conv-48/D14:6",
+        "conv-48/event/09ef040c-8e91-f13a-94b3-1960a7384576",
+        "conv-48/event/0fa1bd89-26e0-2c6e-a1ba-3b32359c9d71",
+        "conv-48/event/e549c524-1549-3766-f973-553897e59f0c",
+        "conv-48/D18:14",
+        "conv-48/event/c38e26bc-e69f-8eaa-4c33-cdea7af95c53",
+        "conv-48/event/8ca7962e-3fb7-7104-e9fb-ef1f24841366",
+        "conv-48/D20:5",
+        "conv-48/event/2a05755a-5b03-c1de-7a8e-d2dd0f2b43c1",
+        "conv-48/D20:11",
+        "conv-48/event/0b7d26c6-aa92-0739-958a-b027b3babb9b",
+        "conv-48/event/b4c1d83d-f1f5-3dde-223e-1dd9590cd95c",
+        "conv-48/event/9c30f5b4-59dc-a994-9666-f60ca8657a4e",
+        "conv-48/D23:7",
+        "conv-48/event/c4e005ce-9db3-43a5-acfe-040f92447e90",
+        "conv-48/event/9edcc5e4-d1e0-94ac-9d6a-0015b061e623",
+        "conv-48/D25:10",
+        "conv-48/event/72eb90ac-5735-e11d-b5d4-096411642f1d",
+        "conv-48/event/03cf68b8-1148-7a73-8208-0222753ef303",
+        "conv-48/D25:19",
+        "conv-48/event/437eac0e-cb35-84f9-ec90-1a8e892bad53",
+        "conv-48/D26:3",
+        "conv-48/event/1e3923d3-3b8e-edd8-56fe-dda9829fd2dc",
+        "conv-48/event/b9831b92-a32a-16f2-ef9a-0312d432aa47",
+        "conv-48/D27:8",
+        "conv-48/event/8b2f5bdc-0423-efc0-8def-4d64de399e2d",
+        "conv-48/event/96c1cf50-0ea8-616f-ba4b-d6d9adeb21ab"
+      ],
+      "time_range": {
+        "start": "2023-02-22T16:12:00.000",
+        "end": "2023-02-22T16:12:14.000"
+      },
+      "available_event_ids": [
+        "conv-48/event/c6ac3dd3-b2af-868c-bfc5-7ab224e996f0",
+        "conv-48/event/eabef9d0-945f-97f9-6a5c-6ef1a7b1c9ba",
+        "conv-48/event/7372bf16-4a53-2b4a-bb36-411d8c1ea84d",
+        "conv-48/event/e549c524-1549-3766-f973-553897e59f0c"
+      ]
+    },
+    {
+      "id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "kind": "synthesis",
+      "text": "Time range: 2023-01-27T09:49:00.000 — 2023-01-27T09:49:31.000\nOn January 27, 2023, Deborah shared with Jolene that her father had passed away just two days earlier—a sudden loss that left her family shell-shocked. Jolene responded with sympathy and asked how Deborah and her family were coping. Deborah explained she was channeling her grief by spending more time with family and cherishing memories, finding comfort in looking back on great moments and the family album. She shared a photo of her parents' 1993 wedding, and Jolene complimented them as a beautiful couple. Deborah said she and her husband strive to be as good a family as her parents were; when Jolene asked what she values in the relationship, Deborah cited love and openness, which have kept them close, and said being there for each other has made them happy.\n\nDeborah also shared a letter she'd received the day before from her yoga group, thanking her for her positive influence—Jolene called the words touching and asked who sent it. Deborah, passionate about yoga, does it in the living room of her old home, where she goes now and then for her late mother. Sitting by the window there gives her peace and a sense of her mother's presence. The window seat was one of her mother's favorite places; she would sit there nightly with a book and a smile. Reading and travel were her mother's passions.\n\nJolene then shared her own comforts: her snakes, including Susie and Seraphim, who once escaped her cage and coiled up beside Jolene while she gamed. Jolene bought one snake in Paris a year earlier. She and her partner both love gaming—they played \"Detroit\" last week and plan to play \"Walking Dead\" next Saturday. Jolene taught herself to game as a child. The conversation closed with mutual warm wishes and encouragement to keep spreading good vibes.",
+      "archive_rank": 62,
+      "source_ids": [
+        "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+        "conv-48/event/39a86861-a095-3d95-8abd-170906e78a92",
+        "conv-48/D2:1",
+        "conv-48/event/3d47434f-1bed-2496-0929-e53711b50fe5",
+        "conv-48/event/85380da2-e8ed-6a28-b6fd-c9792463a2e4",
+        "conv-48/event/a8208962-6d66-986b-6946-28d82972bd62",
+        "conv-48/event/09015685-1e8d-0e33-9460-b12d600c2272",
+        "conv-48/D2:2",
+        "conv-48/event/5fb9261e-71be-bf88-2df8-a3c4b3a663e7",
+        "conv-48/D2:3",
+        "conv-48/event/7d29bbc6-2b59-ad67-9d0f-5c7082090119",
+        "conv-48/event/d446da6a-b8ea-8c9a-cf6d-fe781a64ae93",
+        "conv-48/event/6296ebe4-105c-b1cf-d95c-d553447f4b71",
+        "conv-48/D2:4",
+        "conv-48/event/511815cb-8b8d-b130-d035-64f6f417d83d",
+        "conv-48/D2:5",
+        "conv-48/event/c6c68441-5562-2400-9c1d-ba6144134c06",
+        "conv-48/D2:6",
+        "conv-48/event/16910c5a-8431-55a0-d6c2-1e7b6a63ebdf",
+        "conv-48/D2:7",
+        "conv-48/event/3fa0bd0e-5d10-85f7-55c8-1e5ba839f055",
+        "conv-48/event/9edcee33-6796-0743-965d-2baea0c3cf21",
+        "conv-48/event/9495f60c-a5f6-efd6-5713-33637b86b638",
+        "conv-48/D2:8",
+        "conv-48/event/8183f8ef-3378-fe15-da6c-33de55f1a96e",
+        "conv-48/D2:9",
+        "conv-48/event/83124b68-3ca2-ed82-aa2a-83463608378d",
+        "conv-48/event/54f7d7a1-6686-3832-dd57-66f1ba94dfba",
+        "conv-48/D2:10",
+        "conv-48/event/c25d631f-2a8b-8d6f-de26-9c85a9308b76",
+        "conv-48/D2:11",
+        "conv-48/event/54162b3b-d0d3-5f2e-fa2c-726293c64a79",
+        "conv-48/D2:13",
+        "conv-48/event/8bf64523-396e-9f6d-0606-e0d5f0034f3a",
+        "conv-48/event/995f4f4d-15ef-9806-c140-105661b49de0",
+        "conv-48/event/34416ef1-a935-3faa-f2ed-22a59b020567",
+        "conv-48/D2:14",
+        "conv-48/event/582297df-0b41-1baa-a1f7-d1b9f0054b0d",
+        "conv-48/D2:15",
+        "conv-48/event/890a8246-b9fd-b1d0-f5f9-dc2f34c9d38d",
+        "conv-48/event/d42bbc50-b9ba-3ea6-f516-27dbb9966383",
+        "conv-48/D2:16",
+        "conv-48/event/26a99ac8-608d-ac8e-bd40-a3707e251e40",
+        "conv-48/D2:17",
+        "conv-48/event/6dbdf9a7-52d5-3e6a-2d14-b4ea141fccd6",
+        "conv-48/event/7d102d5e-2b49-8cf3-da2d-acd87a3351e2",
+        "conv-48/event/ec7f6c10-5cf5-3891-844a-4405246ebd8e",
+        "conv-48/event/075e1ea4-99d4-bf3b-c648-94d91dbee5b2",
+        "conv-48/D2:18",
+        "conv-48/event/e1e8323c-9428-1636-c82f-7e41126ade07",
+        "conv-48/D2:19",
+        "conv-48/event/4e4e51a7-00f3-054e-4a80-0839f6677e1d",
+        "conv-48/D2:20",
+        "conv-48/event/6331bdf8-32d6-011d-9f8a-eb8c235837de",
+        "conv-48/event/0a303f69-15d1-1def-916d-fc62fd3a5d05",
+        "conv-48/D2:21",
+        "conv-48/event/c3149011-2e6b-3170-8983-5608a502cef0",
+        "conv-48/D2:22",
+        "conv-48/event/ea7d6f58-c549-44b2-96cf-3cf694e66620",
+        "conv-48/event/20d86d3a-0da0-d700-6a6f-9b217756b31b",
+        "conv-48/D2:23",
+        "conv-48/event/91786f52-d1cc-a425-41b0-8d68b015b611",
+        "conv-48/D2:24",
+        "conv-48/event/dd15e8dc-17ab-453c-31b5-cb70e136c22f",
+        "conv-48/D2:25",
+        "conv-48/event/52430260-436c-d586-e232-89eeeeee4a0b",
+        "conv-48/D2:26",
+        "conv-48/event/8bb192ad-e3e4-993a-5169-697de2201fde",
+        "conv-48/event/ccc92a1e-26e7-b1db-34d8-d2789cf3945a",
+        "conv-48/event/181f3392-ec03-8548-32b1-14bcce292763",
+        "conv-48/D2:27",
+        "conv-48/event/7fef9349-1994-4214-4081-2a6765f52ba3",
+        "conv-48/D2:28",
+        "conv-48/event/dca08a0d-600a-b9d6-7382-c4b432af154f",
+        "conv-48/D2:29",
+        "conv-48/event/249fe33b-f686-0c9b-8476-1aac952c1409",
+        "conv-48/D2:30",
+        "conv-48/event/1f2c97d7-c14d-6a24-e598-ca2cb4726daf",
+        "conv-48/D2:31",
+        "conv-48/event/45ba195e-c9f7-9887-1f0b-27bda34b0fd8",
+        "conv-48/D2:32",
+        "conv-48/event/ee665dd1-b907-cea2-1ce7-e244d7e929a7",
+        "conv-48/D1:3",
+        "conv-48/event/8ee74f4b-5156-a1c5-91cd-ba3f4ff6b519",
+        "conv-48/event/c33ec1e3-79f1-7d6b-e28f-a83dfdb25ac9",
+        "conv-48/event/ef76da56-0b13-ff38-1e14-b643b4322814",
+        "conv-48/D1:5",
+        "conv-48/event/955cf89b-1ee2-d212-c6d9-66003f45dd71",
+        "conv-48/event/f6a7a9d4-f6d2-f1b2-afe4-04c7043eff10",
+        "conv-48/D1:6",
+        "conv-48/event/9dfc52ef-b4ff-e44b-fb5f-9bbf43e57253",
+        "conv-48/event/f1d924c9-ab5a-63a0-be3c-ec3bb1a79518",
+        "conv-48/event/d926965d-c735-5f0d-57f8-3d598a702549",
+        "conv-48/D12:3",
+        "conv-48/event/159f18f8-cee5-0c3e-ee9e-7bbbdfae3c93",
+        "conv-48/event/ae1b7a48-b927-75b9-5469-8299f7db4e37",
+        "conv-48/event/c2a3efb6-9c00-c03f-2b09-4d80c6360448",
+        "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c",
+        "conv-48/D22:13",
+        "conv-48/event/43a41559-efab-9de6-bb14-b39c9218f637",
+        "conv-48/event/e694cbe8-b83a-e765-2cd8-0c57aef6effd",
+        "conv-48/event/f2924efa-b251-e5aa-cf43-6d843d013a9a",
+        "conv-48/event/926bc7eb-8e91-4410-488e-8755ebe035b0",
+        "conv-48/D23:4",
+        "conv-48/event/715c787d-04e4-7f55-17af-07537f8507e0",
+        "conv-48/event/88aef298-f496-7d3b-e386-067c3760e795",
+        "conv-48/event/c7caad7c-bc18-12a9-8085-93085a294af0",
+        "conv-48/event/311b1124-974f-2790-c92a-614de14b9260",
+        "conv-48/D28:1",
+        "conv-48/event/ecc67177-1a13-e83c-d5d2-636bc79b65b0",
+        "conv-48/D28:5",
+        "conv-48/event/1b4d9fc9-0f32-ef78-61ce-deb921ee4517",
+        "conv-48/D29:5",
+        "conv-48/event/51a9b1ed-9525-8cb5-b515-e3a2c9ce7b81",
+        "conv-48/event/73d2c0e2-d96a-29e1-0c37-b04fdfbcf637",
+        "conv-48/event/8a1b399e-ce03-7453-b248-522e634509b4",
+        "conv-48/event/a089fefb-37a4-e1f0-fd6a-3d25772b5087"
+      ],
+      "time_range": {
+        "start": "2023-01-27T09:49:00.000",
+        "end": "2023-01-27T09:49:31.000"
+      },
+      "available_event_ids": [
+        "conv-48/event/16910c5a-8431-55a0-d6c2-1e7b6a63ebdf",
+        "conv-48/event/3fa0bd0e-5d10-85f7-55c8-1e5ba839f055",
+        "conv-48/event/9edcee33-6796-0743-965d-2baea0c3cf21",
+        "conv-48/event/54162b3b-d0d3-5f2e-fa2c-726293c64a79",
+        "conv-48/event/8bf64523-396e-9f6d-0606-e0d5f0034f3a",
+        "conv-48/event/6dbdf9a7-52d5-3e6a-2d14-b4ea141fccd6",
+        "conv-48/event/8ee74f4b-5156-a1c5-91cd-ba3f4ff6b519",
+        "conv-48/event/d926965d-c735-5f0d-57f8-3d598a702549",
+        "conv-48/event/159f18f8-cee5-0c3e-ee9e-7bbbdfae3c93",
+        "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c",
+        "conv-48/event/926bc7eb-8e91-4410-488e-8755ebe035b0",
+        "conv-48/event/88aef298-f496-7d3b-e386-067c3760e795",
+        "conv-48/event/1b4d9fc9-0f32-ef78-61ce-deb921ee4517"
+      ]
+    },
+    {
+      "id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "kind": "synthesis",
+      "text": "Time range: 2023-08-21T09:11:00.000 — 2023-08-21T09:11:25.000\nOn August 21, 2023, Jolene and Deborah reconnected after a long time without talking. Jolene mentioned she had received Battlefield 1 for her console the week before. Deborah warmly shared that she had recently visited a place full of memories, sat on a bench where she used to chat, and was overcome with emotion; she also saw a flower cart on a sidewalk. When Jolene gently asked whether her feelings were mostly happy or mixed, Deborah described a blend of nostalgia, longing, and gratitude, and said she had placed a vase of flowers on the ground in the street there. Jolene asked whether Deborah's late mother would have liked the flowers, and Deborah said her mom appreciated life's simple things and loved flowers, which always made her happy; she shared a photo of a woman holding a bouquet of red roses. Jolene complimented the photo and asked how her mother taught her to appreciate things—Deborah said by taking it slow, seeing beauty, and finding joy. Jolene praised this perspective and agreed people should slow down, and Deborah committed to appreciating small things together.\n\nThe conversation then turned to calming habits. Jolene, who has done yoga for three years and finds it an escape from study and work stress, shared that she is doing more yoga and meditation; Deborah reciprocated with walks, mindfulness, photography (including a sunset over water), and her own yoga and meditation practice, calling walks a \"reboot.\" Jolene compared the feeling to hitting refresh. Deborah asked about Jolene's favorite pose, and Jolene named savasana, the corpse pose, which helps her let go and surrender; she shared a photo of a green cushion by a window and a funny photo of a person lying on the floor with a paper bag. Deborah playfully acknowledged the photo, praised Jolene for unwinding, and encouraged her to keep up her practice. Jolene, who feels she is \"really finding her zen again,\" thanked Deborah for her support, and Deborah wished her good luck and asked her to stay in touch.",
+      "archive_rank": 63,
+      "source_ids": [
+        "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+        "conv-48/event/5822d28a-8eb5-2858-9690-f8ce6cd39bdb",
+        "conv-48/D20:1",
+        "conv-48/event/d0ec6c03-f93f-b688-1f38-50829957a26b",
+        "conv-48/event/25196c82-1095-aa7a-1795-bd51c946c762",
+        "conv-48/D20:2",
+        "conv-48/event/5208bc2f-a251-9de5-4933-fe438a1e526c",
+        "conv-48/event/ff64ba7d-db14-ca38-04b4-73457aa41310",
+        "conv-48/event/7873d8f1-3e8e-445c-66de-cd2432bacdb0",
+        "conv-48/D20:3",
+        "conv-48/event/28d2a285-4615-9196-9011-1e189970f791",
+        "conv-48/D20:4",
+        "conv-48/event/983a3ad8-cbab-6f4a-1222-a804eb8aa479",
+        "conv-48/event/8ca7962e-3fb7-7104-e9fb-ef1f24841366",
+        "conv-48/D20:5",
+        "conv-48/event/1134bfe7-90a0-c0c8-575c-1693c7c2e7e8",
+        "conv-48/D20:6",
+        "conv-48/event/2813ff4e-76c8-07e3-3f06-e604b9a4004e",
+        "conv-48/event/948431ee-493a-c10a-6c06-e0f087c0a300",
+        "conv-48/event/e23175f6-2f04-b91a-12e4-345b54d7f9c5",
+        "conv-48/D20:7",
+        "conv-48/event/3fe661c6-f581-2aff-88f1-7f2264609876",
+        "conv-48/D20:8",
+        "conv-48/event/92e5f388-54de-0795-9e93-7f1045e989d4",
+        "conv-48/D20:9",
+        "conv-48/event/dd6928d2-58ff-488c-7f7c-cfef1b783b3d",
+        "conv-48/event/00d03f0b-bd7b-f406-81fd-56d6b57b9d7f",
+        "conv-48/D20:10",
+        "conv-48/event/558f3d74-9729-9629-9600-32aafa4ac157",
+        "conv-48/event/0b7d26c6-aa92-0739-958a-b027b3babb9b",
+        "conv-48/D20:11",
+        "conv-48/event/2a05755a-5b03-c1de-7a8e-d2dd0f2b43c1",
+        "conv-48/event/b4c1d83d-f1f5-3dde-223e-1dd9590cd95c",
+        "conv-48/event/10837dc9-80a9-2ff1-7c74-0c4dc08ffe5c",
+        "conv-48/D20:12",
+        "conv-48/event/48aa4e3e-dbf1-aec9-4293-04af94a10105",
+        "conv-48/event/64ed672a-2e90-a815-d569-fec9f279a36e",
+        "conv-48/event/8875f5eb-3ed6-922a-796a-1ab9a53aac4f",
+        "conv-48/event/61fe1801-19b7-660c-7738-88b6c8cdb12e",
+        "conv-48/D20:13",
+        "conv-48/event/59b8d941-e454-3c65-db91-0ee3008b81b2",
+        "conv-48/D20:14",
+        "conv-48/event/cfc9d9d7-32eb-0d6b-9a5d-875620c3fd4a",
+        "conv-48/D20:15",
+        "conv-48/event/796cfcbe-03ab-cef5-0d0f-4c4a3022486e",
+        "conv-48/D20:16",
+        "conv-48/event/1bde78de-86a4-117f-c9b2-7fde64b516c0",
+        "conv-48/D20:17",
+        "conv-48/event/5f1cd2c3-6285-5905-295b-d1404965977f",
+        "conv-48/event/c14b55eb-e05c-0b74-53e3-400307f23649",
+        "conv-48/D20:18",
+        "conv-48/event/65233891-4e55-9396-9805-645f9ff6f1ed",
+        "conv-48/D20:19",
+        "conv-48/event/7dad88bc-4ac2-1c4a-4344-1064223b86da",
+        "conv-48/event/e9f1771a-90bc-c8ee-946f-737c18e93c96",
+        "conv-48/event/7ed82920-7887-5905-2ccf-8fdc6772b868",
+        "conv-48/D20:20",
+        "conv-48/event/20b8657d-4fcf-d238-986b-a4ef31943100",
+        "conv-48/D20:21",
+        "conv-48/event/faa52ba0-f1d7-ba06-a649-003d0b05d0fe",
+        "conv-48/event/3ace5000-1f7d-a408-c970-7fa0c3ba521d",
+        "conv-48/D20:22",
+        "conv-48/event/b7dfdf27-b16a-3083-b2f5-90f5c91492bf",
+        "conv-48/D20:23",
+        "conv-48/event/74505e8c-87d8-9bf2-3096-03139653725b",
+        "conv-48/D20:24",
+        "conv-48/event/052ce2fb-4b94-6bbe-ce07-5f680ef19257",
+        "conv-48/D20:25",
+        "conv-48/event/302934db-7fea-8fa8-393c-c8ad81c500ef",
+        "conv-48/event/5839cc0a-cafb-654e-3326-562449bce53e",
+        "conv-48/D20:26",
+        "conv-48/event/81d3a344-57ab-0057-a137-52d3fdbe8943",
+        "conv-48/event/f6a7a9d4-f6d2-f1b2-afe4-04c7043eff10",
+        "conv-48/D1:6",
+        "conv-48/event/9dfc52ef-b4ff-e44b-fb5f-9bbf43e57253",
+        "conv-48/event/f1d924c9-ab5a-63a0-be3c-ec3bb1a79518",
+        "conv-48/event/5f44dfb5-a28f-24d2-161f-df301d1eb1af",
+        "conv-48/D4:26",
+        "conv-48/event/69474c1e-4482-d03f-5925-6a67b9b48a34",
+        "conv-48/event/6f50d3d6-3e06-0a14-eb52-9651976ce690",
+        "conv-48/D4:27",
+        "conv-48/event/e417bdca-ddbd-3e00-1fc4-b9742b7724ed",
+        "conv-48/D6:7",
+        "conv-48/event/fa84e14f-859b-c3bf-7dea-5f2fc93a489a",
+        "conv-48/event/f598eb42-fc65-5f0e-6254-58a75e08a84d",
+        "conv-48/D7:16",
+        "conv-48/event/11411bfb-46a1-5130-789c-05123bc95db8",
+        "conv-48/event/3abc9532-477b-c20f-5919-5ee0e8de1810",
+        "conv-48/D14:6",
+        "conv-48/event/09ef040c-8e91-f13a-94b3-1960a7384576",
+        "conv-48/event/0fa1bd89-26e0-2c6e-a1ba-3b32359c9d71",
+        "conv-48/event/cf61dc00-505f-018d-843f-2f268c940c13",
+        "conv-48/D19:20",
+        "conv-48/event/e9ab3707-e1a1-7f8c-c96b-25046436fe01",
+        "conv-48/event/3fea150a-553d-7dcc-6a1a-5df15867d3e6",
+        "conv-48/D19:22",
+        "conv-48/event/f5629b79-6b9f-45e3-b422-d09bdc91002e",
+        "conv-48/event/bbc56c44-8243-5391-613d-c6f944c768c8",
+        "conv-48/D25:16",
+        "conv-48/event/dd0028ba-b16a-8b98-1adc-713a61ca41ac",
+        "conv-48/event/299b36b4-18b9-7f0c-d06e-04e51cf56897",
+        "conv-48/D26:17",
+        "conv-48/event/77ccd956-6de1-53ef-d87c-de1fbdc66951",
+        "conv-48/event/755579e4-7734-f940-75c7-fc8d1cb3091a",
+        "conv-48/D28:6",
+        "conv-48/event/b79909d8-130a-bc27-59de-645d13392fe5",
+        "conv-48/D29:7",
+        "conv-48/event/79a5b3ab-3586-6018-f9ae-87a12b1faa1d",
+        "conv-48/event/be283e1d-538b-63fb-5d15-3f3a25d64958"
+      ],
+      "time_range": {
+        "start": "2023-08-21T09:11:00.000",
+        "end": "2023-08-21T09:11:25.000"
+      },
+      "available_event_ids": [
+        "conv-48/event/28d2a285-4615-9196-9011-1e189970f791",
+        "conv-48/event/983a3ad8-cbab-6f4a-1222-a804eb8aa479",
+        "conv-48/event/1134bfe7-90a0-c0c8-575c-1693c7c2e7e8",
+        "conv-48/event/948431ee-493a-c10a-6c06-e0f087c0a300",
+        "conv-48/event/3fe661c6-f581-2aff-88f1-7f2264609876",
+        "conv-48/event/00d03f0b-bd7b-f406-81fd-56d6b57b9d7f",
+        "conv-48/event/5f44dfb5-a28f-24d2-161f-df301d1eb1af",
+        "conv-48/event/69474c1e-4482-d03f-5925-6a67b9b48a34",
+        "conv-48/event/299b36b4-18b9-7f0c-d06e-04e51cf56897",
+        "conv-48/event/77ccd956-6de1-53ef-d87c-de1fbdc66951"
+      ]
+    },
+    {
+      "id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "kind": "synthesis",
+      "text": "Time range: 2023-03-28T16:03:00.000 — 2023-03-28T16:03:13.000\nOn March 28, 2023, Jolene shared her excitement over an engineering breakthrough from the previous Friday, when she finally solved a problem that had been troubling her; she said it felt great to see her hard work paying off and included a photo of herself holding a pair of scissors. Deborah praised Jolene's skills, told her she had truly proven herself, and encouraged her to keep up the hard work. Deborah also shared news of her own: she had bought new props for her yoga class and posted a photo of a group doing yoga to show them in action.\n\nThe conversation then shifted to yoga ambiance. Jolene asked Deborah to rate new details for a case, sharing a photo of a cardboard mat with a cup of coffee. Deborah showed interest by asking what feelings Jolene experiences during practice, and shared a photo of a candle with rosemary, explaining she bought it for atmosphere. Jolene reciprocated by asking about Deborah's favorite scents and rituals, saying she loves creating a serene space with lavender and rosemary and feels relaxed during yoga. Deborah agreed that candles and essential oils add warmth and calm, and the two bonded over this shared preference.\n\nJolene then raised music, asking about Deborah's favorite tracks. Deborah named \"Savana\" and described her preference for instrumental tracks with mellow melodies, then asked about Jolene's songs and artists. Jolene cited Nils Frahm and Olafur Arnalds as calming and transporting, and asked for similar recommendations. Deborah suggested the album \"Sleep\" for meditation and deep relaxation, hoping Jolene would find it as calming as she does. Jolene expressed gratitude and enthusiasm for the new tunes, and Deborah asked her to share her thoughts on the albums before warmly wishing her well and encouraging her to keep up the good work.",
+      "archive_rank": 64,
+      "source_ids": [
+        "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+        "conv-48/event/4aabf454-b74a-1c7f-919f-b23817777497",
+        "conv-48/D11:1",
+        "conv-48/event/6b346418-a01f-a2c3-cfa8-3e2b8713c35e",
+        "conv-48/event/738babb9-8001-90d7-3804-f0e9149ea78e",
+        "conv-48/event/e5618ae6-0ce1-2301-0e90-f25d6cdb0d6a",
+        "conv-48/event/0ddfa5b3-098b-335f-a7af-82d19264f3ec",
+        "conv-48/D11:2",
+        "conv-48/event/3c735ba5-6ca4-1497-2efd-07b4e94ae1c1",
+        "conv-48/event/b44f74fb-dc22-8a98-06e7-ac2b71ed4e35",
+        "conv-48/event/cb1afa1e-dca8-900e-55de-7d0ce54f8046",
+        "conv-48/event/756b4b2a-cee4-6bad-82df-aff2f2b59c9d",
+        "conv-48/D11:3",
+        "conv-48/event/b8581113-fe06-f85e-aa7e-ecb9d6961423",
+        "conv-48/event/92521220-edaa-3760-3da4-72967e32112b",
+        "conv-48/D11:4",
+        "conv-48/event/c0886d64-ab63-fdf3-15ba-d8bc4e160280",
+        "conv-48/event/e83b0a01-148f-e711-d7ff-57c5ab8a3ff5",
+        "conv-48/event/13ce13f4-06ad-6224-c50c-d120846a6f99",
+        "conv-48/D11:5",
+        "conv-48/event/5ad4c8c7-458b-cba6-3e21-e2fd4b9f9128",
+        "conv-48/event/d8f45734-cf07-9089-119d-de271febcfb7",
+        "conv-48/event/252ec9b1-a424-c5e7-45c2-5857f270375c",
+        "conv-48/D11:6",
+        "conv-48/event/6c66a26a-d89f-4be6-360a-680a95b99cfc",
+        "conv-48/event/f3f3bbb2-8588-0015-b8a5-e3148954c545",
+        "conv-48/event/4b75e017-9e9f-a940-1938-d4d7ffccdfdc",
+        "conv-48/D11:7",
+        "conv-48/event/7a3aef5f-88ad-7b02-4d71-f60e8389cd25",
+        "conv-48/event/5cdab1a6-15c3-0a40-fe97-f63b31a809bf",
+        "conv-48/D11:8",
+        "conv-48/event/a54647f3-0151-c686-5ff9-a31a5d655809",
+        "conv-48/event/ac13d900-b781-0525-a8b6-8e0bd5832c44",
+        "conv-48/event/79a4885e-1702-0f0c-215f-d9fe6f0e4fb8",
+        "conv-48/D11:9",
+        "conv-48/event/a7e630cc-5a4d-04e5-8a35-7308ea7129aa",
+        "conv-48/event/d4f6d1c8-fc40-0196-8fd0-934ae544cd7e",
+        "conv-48/event/800ae203-226b-9c03-74fd-5bb3ee953edd",
+        "conv-48/D11:10",
+        "conv-48/event/8f8c721f-8166-4492-4283-bf60949a64a0",
+        "conv-48/event/d1cad2f1-f61f-a26b-75d5-5218ad375810",
+        "conv-48/D11:11",
+        "conv-48/event/e0244682-fffc-1c0d-ddf5-e602b7fca7e3",
+        "conv-48/event/00f764c1-27e2-01f0-ade4-363e924f6450",
+        "conv-48/D11:12",
+        "conv-48/event/2d07404c-433d-5827-e2af-dedbb98cc0bd",
+        "conv-48/event/f4dca99c-a55c-a621-efae-1424956c88ed",
+        "conv-48/D11:14",
+        "conv-48/event/e66cda6e-39a3-fbf3-12b5-a404f676ae7e",
+        "conv-48/D4:13",
+        "conv-48/event/1b784502-3c6f-fde0-fe74-0c94702c7f03",
+        "conv-48/D9:4",
+        "conv-48/event/d82ccb3d-0564-2f91-7216-75130ad14f16",
+        "conv-48/D13:18",
+        "conv-48/event/81a2cf71-fb48-ef00-d712-9a25dfe8673d",
+        "conv-48/D16:14",
+        "conv-48/event/75bcf1a4-a2ba-3e8d-d9dd-b0d1eda8b7a9",
+        "conv-48/event/b9b00b87-0064-dcff-b44d-9f329672c784",
+        "conv-48/event/9c7e73a6-be54-7daf-d17a-4a247a169f09",
+        "conv-48/D16:15",
+        "conv-48/event/27595ba0-0183-2c4c-d9cd-0e8b96e31f94",
+        "conv-48/event/701e250d-fa2b-52f0-d4b8-68618b9eb69e",
+        "conv-48/event/16084016-3a04-01fe-bf26-8624e7c13c4b",
+        "conv-48/D16:16",
+        "conv-48/event/2def998b-d6f4-1599-ffd5-ab91bc095b01",
+        "conv-48/event/c14b55eb-e05c-0b74-53e3-400307f23649",
+        "conv-48/D20:18",
+        "conv-48/event/f2924efa-b251-e5aa-cf43-6d843d013a9a",
+        "conv-48/D22:13",
+        "conv-48/event/43a41559-efab-9de6-bb14-b39c9218f637",
+        "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c",
+        "conv-48/event/e694cbe8-b83a-e765-2cd8-0c57aef6effd",
+        "conv-48/event/6fc34c08-2acf-b780-38cd-5d753ab7bbfa",
+        "conv-48/D22:16",
+        "conv-48/event/24973789-6dca-b4a9-5011-f76672ee0006",
+        "conv-48/event/6ae5e78a-ef9e-eca7-34cd-b6e635bc97ed",
+        "conv-48/event/b282e4af-5d70-1a78-5763-9a564fc9e664",
+        "conv-48/event/c3a2f37a-6900-112d-4936-94befb394b91",
+        "conv-48/event/8ae1fe4e-6ea7-430b-28ef-0618dba3665c",
+        "conv-48/D22:17",
+        "conv-48/event/81b51c3d-d571-b5a6-9cd8-8b1daaedbac3",
+        "conv-48/event/390f50d6-58f3-746a-6539-d4c0b12f6a39",
+        "conv-48/D23:2",
+        "conv-48/event/516c7a68-6053-c5da-d696-14912da85269",
+        "conv-48/event/6e08315f-7e48-737e-e559-2837f0197fa3",
+        "conv-48/D28:17",
+        "conv-48/event/f142b8f2-34ae-3ff0-409d-5715bafe0f5c",
+        "conv-48/event/09befc68-2a04-be51-76f8-fd7d639b2be6",
+        "conv-48/D30:4",
+        "conv-48/event/9065c2c0-464f-e01f-43ad-735c5e0cd676",
+        "conv-48/event/9d5d4609-434d-58e5-1ba8-bd629c95ba8c",
+        "conv-48/event/aac92c73-b37a-5953-05ea-bf5a5f5e0884",
+        "conv-48/event/be529b1b-cd8e-817b-58b5-e4321dfc1fb5"
+      ],
+      "time_range": {
+        "start": "2023-03-28T16:03:00.000",
+        "end": "2023-03-28T16:03:13.000"
+      },
+      "available_event_ids": [
+        "conv-48/event/0ddfa5b3-098b-335f-a7af-82d19264f3ec",
+        "conv-48/event/e83b0a01-148f-e711-d7ff-57c5ab8a3ff5",
+        "conv-48/event/13ce13f4-06ad-6224-c50c-d120846a6f99",
+        "conv-48/event/6c66a26a-d89f-4be6-360a-680a95b99cfc",
+        "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c"
+      ]
+    },
+    {
+      "id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "kind": "synthesis",
+      "text": "Time range: 2023-08-24T09:34:00.000 — 2023-08-24T09:34:16.000\nOn August 24, 2023, Deborah shared with Jolene that she had attended a yoga retreat near her mom's place the week before, calling it life-changing—a beautiful place where she \"got to hang with nature and get to know herself,\" illustrated with a photo of a mossy forest trail. Jolene responded with genuine happiness, validating Deborah's connection to nature and herself, and noted she relaxes the same way, sharing a photo of a man bending over a blanket in the grass. Deborah then reflected that life has felt \"super meaningful\" lately, crediting nature and self-reflection with helping her see how beautiful every moment is (accompanied by a mountain-range sunset photo), and voiced her belief that people grow when they listen to themselves. She then turned the conversation to Jolene, asking about her recent experiences.\n\nJolene admitted life is hectic but said she's making strides toward her goals—tough but satisfying. She's been studying, attending workshops, and networking, and recently presented at a virtual conference where positive feedback confirmed she's on the right track; her goal is to succeed in her field and make a positive impact. Deborah praised her dedication, asked how the feedback felt and what comes next, and Jolene said she was thrilled and rewarded, currently focusing on studying and considering more internships. Deborah congratulated her, said she was \"super proud,\" and offered help, which Jolene said meant a lot. Deborah encouraged her to reach for her goals while enjoying the journey and to take time for herself (sharing a sunflower-field sunset photo); Jolene agreed and thanked her, and Deborah affirmed she is \"always by Jolene's side.\"\n\nThis builds on a long pattern: since February 2023 Jolene has shown interest in Deborah's yoga, and on June 26 Deborah had invited Jolene to connect while preparing for this retreat.",
+      "archive_rank": 65,
+      "source_ids": [
+        "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+        "conv-48/event/6a62d613-5caa-2cf7-34c2-0b86f70552e5",
+        "conv-48/D21:1",
+        "conv-48/event/ba78b18c-e9c0-6743-cfd1-4a2ec037c960",
+        "conv-48/event/30395a87-7e53-9978-0bf0-7b74f8476ca2",
+        "conv-48/D21:2",
+        "conv-48/event/58fcfb42-4be5-4372-ba38-b0f02220cca8",
+        "conv-48/event/b920ddf8-8d3c-d47b-bc8e-f5603b9f7816",
+        "conv-48/D21:3",
+        "conv-48/event/d2e41690-2e30-0eb8-f12b-ccd38ec0598c",
+        "conv-48/event/e1134773-9f4d-625f-1f83-4d62cf9f0b78",
+        "conv-48/event/efea18e5-4a39-6d46-e1d7-5090a2365e11",
+        "conv-48/D21:4",
+        "conv-48/event/9de36853-5647-82be-ca17-9dea63307d0d",
+        "conv-48/D21:5",
+        "conv-48/event/4c061d94-4a45-42c7-c1b2-fbf51b916233",
+        "conv-48/D21:6",
+        "conv-48/event/5bad4380-8b55-2a18-b092-7a09763a1c93",
+        "conv-48/event/ea150990-3628-5339-39d4-e2a85230d88d",
+        "conv-48/event/a6cbe5a7-e013-818f-43b9-a20fca7d9260",
+        "conv-48/D21:7",
+        "conv-48/event/033dd9ef-88a2-6b27-4378-9361ff58b632",
+        "conv-48/D21:8",
+        "conv-48/event/b5901e98-1b04-4d02-edb0-d8d8a6ef6846",
+        "conv-48/event/c851885c-b239-ecee-f1ca-efbaad347e9e",
+        "conv-48/event/29dae5ed-587a-1a8d-551b-0edbc64305a6",
+        "conv-48/D21:9",
+        "conv-48/event/688f176f-f66a-4295-9d43-e85ed9143a64",
+        "conv-48/event/3587ee9f-a1b2-87cc-c950-9e6c7b5bddae",
+        "conv-48/D21:10",
+        "conv-48/event/69b7eec6-d387-a2a4-2218-abd2481f3c6b",
+        "conv-48/event/5d40d58e-74d7-d29d-8708-891d22fe2839",
+        "conv-48/D21:11",
+        "conv-48/event/b7380e49-80b9-60b3-922d-b24de01e6fc3",
+        "conv-48/D21:12",
+        "conv-48/event/0126bd5e-b66c-8e9a-7436-1dc18494954c",
+        "conv-48/D21:13",
+        "conv-48/event/6a56ad0e-a959-8771-19b5-4649161e8784",
+        "conv-48/event/07040396-a811-5f7b-dd55-ee65958ae448",
+        "conv-48/D21:14",
+        "conv-48/event/d7e055ca-02ba-03e1-2ede-514d98b6a875",
+        "conv-48/event/5dee88c2-6407-cf1f-c859-d83c522417f2",
+        "conv-48/D21:15",
+        "conv-48/event/960a8cba-df93-6975-65a4-099356601209",
+        "conv-48/event/296118ca-68b7-e0b5-9643-5f1a0e7c51f7",
+        "conv-48/D21:16",
+        "conv-48/event/a6f581dc-ffb1-3276-d1ae-61e1c21664f3",
+        "conv-48/event/19e7c696-d017-241d-4974-9a275db094a9",
+        "conv-48/D21:17",
+        "conv-48/event/91516bf9-2201-cbba-968e-8d992115bbe9",
+        "conv-48/event/e66cda6e-39a3-fbf3-12b5-a404f676ae7e",
+        "conv-48/D4:13",
+        "conv-48/event/f5ba5be6-1cd8-6789-6454-582433f28123",
+        "conv-48/D6:13",
+        "conv-48/event/9e1068a0-731b-d248-a6c0-62eda4e8fe57",
+        "conv-48/event/6447fc76-4d3b-fa25-c791-aced47eb28ff",
+        "conv-48/D9:10",
+        "conv-48/event/b5eea018-6a74-bf76-6152-f3a24f9f3e5f",
+        "conv-48/event/d82ccb3d-0564-2f91-7216-75130ad14f16",
+        "conv-48/D13:18",
+        "conv-48/event/c830c3c8-73a3-24c6-4d2d-9b09e89a5fa7",
+        "conv-48/D14:1",
+        "conv-48/event/806337a6-56f5-6a50-72d3-dc6cd6a91d5c",
+        "conv-48/event/914ec720-a40f-9f05-61f3-09030caa2220",
+        "conv-48/event/b212c35d-d1e8-ece1-fca6-59a28faed39c",
+        "conv-48/event/9c7e73a6-be54-7daf-d17a-4a247a169f09",
+        "conv-48/D16:15",
+        "conv-48/event/27595ba0-0183-2c4c-d9cd-0e8b96e31f94",
+        "conv-48/event/701e250d-fa2b-52f0-d4b8-68618b9eb69e",
+        "conv-48/event/16084016-3a04-01fe-bf26-8624e7c13c4b",
+        "conv-48/D16:16",
+        "conv-48/event/2def998b-d6f4-1599-ffd5-ab91bc095b01",
+        "conv-48/event/48aa4e3e-dbf1-aec9-4293-04af94a10105",
+        "conv-48/D20:12",
+        "conv-48/event/10837dc9-80a9-2ff1-7c74-0c4dc08ffe5c",
+        "conv-48/event/64ed672a-2e90-a815-d569-fec9f279a36e",
+        "conv-48/event/8875f5eb-3ed6-922a-796a-1ab9a53aac4f",
+        "conv-48/event/f2924efa-b251-e5aa-cf43-6d843d013a9a",
+        "conv-48/D22:13",
+        "conv-48/event/43a41559-efab-9de6-bb14-b39c9218f637",
+        "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c",
+        "conv-48/event/e694cbe8-b83a-e765-2cd8-0c57aef6effd",
+        "conv-48/event/6fc34c08-2acf-b780-38cd-5d753ab7bbfa",
+        "conv-48/D22:16",
+        "conv-48/event/24973789-6dca-b4a9-5011-f76672ee0006",
+        "conv-48/event/6ae5e78a-ef9e-eca7-34cd-b6e635bc97ed",
+        "conv-48/event/b282e4af-5d70-1a78-5763-9a564fc9e664",
+        "conv-48/event/c3a2f37a-6900-112d-4936-94befb394b91",
+        "conv-48/event/8ae1fe4e-6ea7-430b-28ef-0618dba3665c",
+        "conv-48/D22:17",
+        "conv-48/event/81b51c3d-d571-b5a6-9cd8-8b1daaedbac3",
+        "conv-48/event/09befc68-2a04-be51-76f8-fd7d639b2be6",
+        "conv-48/D30:4",
+        "conv-48/event/9065c2c0-464f-e01f-43ad-735c5e0cd676",
+        "conv-48/event/9d5d4609-434d-58e5-1ba8-bd629c95ba8c",
+        "conv-48/event/aac92c73-b37a-5953-05ea-bf5a5f5e0884",
+        "conv-48/event/be529b1b-cd8e-817b-58b5-e4321dfc1fb5",
+        "conv-48/event/f8d53b40-3e54-256a-5909-207025dbd77a",
+        "conv-48/D30:6",
+        "conv-48/event/7dcb9122-d87b-16c2-3c00-2860ab74e4fd"
+      ],
+      "time_range": {
+        "start": "2023-08-24T09:34:00.000",
+        "end": "2023-08-24T09:34:16.000"
+      },
+      "available_event_ids": [
+        "conv-48/event/57fe462e-469f-61af-e84a-076022ca106c"
+      ]
+    }
+  ],
+  "source_messages": {
+    "conv-48/D11:1": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 1,
+      "speaker": "Jolene",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:10": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 10,
+      "speaker": "Deborah",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:11": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 11,
+      "speaker": "Jolene",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:12": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 12,
+      "speaker": "Deborah",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:14": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 14,
+      "speaker": "Deborah",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:2": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 2,
+      "speaker": "Deborah",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:3": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 3,
+      "speaker": "Jolene",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:4": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 4,
+      "speaker": "Deborah",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:5": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 5,
+      "speaker": "Jolene",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:6": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 6,
+      "speaker": "Deborah",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:7": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 7,
+      "speaker": "Jolene",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:8": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 8,
+      "speaker": "Deborah",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D11:9": {
+      "path": "inputs/conv-48/session-011.json",
+      "position": 9,
+      "speaker": "Jolene",
+      "session_start": "2023-03-28T16:03:00"
+    },
+    "conv-48/D12:3": {
+      "path": "inputs/conv-48/session-012.json",
+      "position": 3,
+      "speaker": "Deborah",
+      "session_start": "2023-04-09T16:30:00"
+    },
+    "conv-48/D13:18": {
+      "path": "inputs/conv-48/session-013.json",
+      "position": 18,
+      "speaker": "Deborah",
+      "session_start": "2023-06-06T15:56:00"
+    },
+    "conv-48/D14:1": {
+      "path": "inputs/conv-48/session-014.json",
+      "position": 1,
+      "speaker": "Deborah",
+      "session_start": "2023-06-26T09:17:00"
+    },
+    "conv-48/D14:5": {
+      "path": "inputs/conv-48/session-014.json",
+      "position": 5,
+      "speaker": "Deborah",
+      "session_start": "2023-06-26T09:17:00"
+    },
+    "conv-48/D14:6": {
+      "path": "inputs/conv-48/session-014.json",
+      "position": 6,
+      "speaker": "Jolene",
+      "session_start": "2023-06-26T09:17:00"
+    },
+    "conv-48/D15:11": {
+      "path": "inputs/conv-48/session-015.json",
+      "position": 11,
+      "speaker": "Deborah",
+      "session_start": "2023-07-09T19:37:00"
+    },
+    "conv-48/D15:15": {
+      "path": "inputs/conv-48/session-015.json",
+      "position": 15,
+      "speaker": "Deborah",
+      "session_start": "2023-07-09T19:37:00"
+    },
+    "conv-48/D15:17": {
+      "path": "inputs/conv-48/session-015.json",
+      "position": 17,
+      "speaker": "Deborah",
+      "session_start": "2023-07-09T19:37:00"
+    },
+    "conv-48/D16:14": {
+      "path": "inputs/conv-48/session-016.json",
+      "position": 14,
+      "speaker": "Jolene",
+      "session_start": "2023-08-01T09:26:00"
+    },
+    "conv-48/D16:15": {
+      "path": "inputs/conv-48/session-016.json",
+      "position": 15,
+      "speaker": "Deborah",
+      "session_start": "2023-08-01T09:26:00"
+    },
+    "conv-48/D16:16": {
+      "path": "inputs/conv-48/session-016.json",
+      "position": 16,
+      "speaker": "Jolene",
+      "session_start": "2023-08-01T09:26:00"
+    },
+    "conv-48/D18:13": {
+      "path": "inputs/conv-48/session-018.json",
+      "position": 13,
+      "speaker": "Jolene",
+      "session_start": "2023-08-16T14:58:00"
+    },
+    "conv-48/D18:14": {
+      "path": "inputs/conv-48/session-018.json",
+      "position": 14,
+      "speaker": "Deborah",
+      "session_start": "2023-08-16T14:58:00"
+    },
+    "conv-48/D19:16": {
+      "path": "inputs/conv-48/session-019.json",
+      "position": 16,
+      "speaker": "Jolene",
+      "session_start": "2023-08-19T00:52:00"
+    },
+    "conv-48/D19:20": {
+      "path": "inputs/conv-48/session-019.json",
+      "position": 20,
+      "speaker": "Jolene",
+      "session_start": "2023-08-19T00:52:00"
+    },
+    "conv-48/D19:22": {
+      "path": "inputs/conv-48/session-019.json",
+      "position": 22,
+      "speaker": "Jolene",
+      "session_start": "2023-08-19T00:52:00"
+    },
+    "conv-48/D19:23": {
+      "path": "inputs/conv-48/session-019.json",
+      "position": 23,
+      "speaker": "Deborah",
+      "session_start": "2023-08-19T00:52:00"
+    },
+    "conv-48/D1:3": {
+      "path": "inputs/conv-48/session-001.json",
+      "position": 3,
+      "speaker": "Deborah",
+      "session_start": "2023-01-23T16:06:00"
+    },
+    "conv-48/D1:5": {
+      "path": "inputs/conv-48/session-001.json",
+      "position": 5,
+      "speaker": "Deborah",
+      "session_start": "2023-01-23T16:06:00"
+    },
+    "conv-48/D1:6": {
+      "path": "inputs/conv-48/session-001.json",
+      "position": 6,
+      "speaker": "Jolene",
+      "session_start": "2023-01-23T16:06:00"
+    },
+    "conv-48/D1:9": {
+      "path": "inputs/conv-48/session-001.json",
+      "position": 9,
+      "speaker": "Deborah",
+      "session_start": "2023-01-23T16:06:00"
+    },
+    "conv-48/D20:1": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 1,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:10": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 10,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:11": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 11,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:12": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 12,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:13": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 13,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:14": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 14,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:15": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 15,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:16": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 16,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:17": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 17,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:18": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 18,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:19": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 19,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:2": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 2,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:20": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 20,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:21": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 21,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:22": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 22,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:23": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 23,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:24": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 24,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:25": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 25,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:26": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 26,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:3": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 3,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:4": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 4,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:5": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 5,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:6": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 6,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:7": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 7,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:8": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 8,
+      "speaker": "Deborah",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D20:9": {
+      "path": "inputs/conv-48/session-020.json",
+      "position": 9,
+      "speaker": "Jolene",
+      "session_start": "2023-08-21T09:11:00"
+    },
+    "conv-48/D21:1": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 1,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:10": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 10,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:11": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 11,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:12": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 12,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:13": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 13,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:14": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 14,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:15": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 15,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:16": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 16,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:17": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 17,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:2": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 2,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:3": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 3,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:4": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 4,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:5": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 5,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:6": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 6,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:7": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 7,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:8": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 8,
+      "speaker": "Jolene",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D21:9": {
+      "path": "inputs/conv-48/session-021.json",
+      "position": 9,
+      "speaker": "Deborah",
+      "session_start": "2023-08-24T09:34:00"
+    },
+    "conv-48/D22:1": {
+      "path": "inputs/conv-48/session-022.json",
+      "position": 1,
+      "speaker": "Deborah",
+      "session_start": "2023-08-26T17:33:00"
+    },
+    "conv-48/D22:13": {
+      "path": "inputs/conv-48/session-022.json",
+      "position": 13,
+      "speaker": "Deborah",
+      "session_start": "2023-08-26T17:33:00"
+    },
+    "conv-48/D22:16": {
+      "path": "inputs/conv-48/session-022.json",
+      "position": 16,
+      "speaker": "Jolene",
+      "session_start": "2023-08-26T17:33:00"
+    },
+    "conv-48/D22:17": {
+      "path": "inputs/conv-48/session-022.json",
+      "position": 17,
+      "speaker": "Deborah",
+      "session_start": "2023-08-26T17:33:00"
+    },
+    "conv-48/D22:21": {
+      "path": "inputs/conv-48/session-022.json",
+      "position": 21,
+      "speaker": "Deborah",
+      "session_start": "2023-08-26T17:33:00"
+    },
+    "conv-48/D23:2": {
+      "path": "inputs/conv-48/session-023.json",
+      "position": 2,
+      "speaker": "Deborah",
+      "session_start": "2023-08-30T11:46:00"
+    },
+    "conv-48/D23:4": {
+      "path": "inputs/conv-48/session-023.json",
+      "position": 4,
+      "speaker": "Deborah",
+      "session_start": "2023-08-30T11:46:00"
+    },
+    "conv-48/D23:7": {
+      "path": "inputs/conv-48/session-023.json",
+      "position": 7,
+      "speaker": "Jolene",
+      "session_start": "2023-08-30T11:46:00"
+    },
+    "conv-48/D24:15": {
+      "path": "inputs/conv-48/session-024.json",
+      "position": 15,
+      "speaker": "Deborah",
+      "session_start": "2023-09-03T14:14:00"
+    },
+    "conv-48/D25:10": {
+      "path": "inputs/conv-48/session-025.json",
+      "position": 10,
+      "speaker": "Deborah",
+      "session_start": "2023-09-06T20:31:00"
+    },
+    "conv-48/D25:11": {
+      "path": "inputs/conv-48/session-025.json",
+      "position": 11,
+      "speaker": "Jolene",
+      "session_start": "2023-09-06T20:31:00"
+    },
+    "conv-48/D25:16": {
+      "path": "inputs/conv-48/session-025.json",
+      "position": 16,
+      "speaker": "Deborah",
+      "session_start": "2023-09-06T20:31:00"
+    },
+    "conv-48/D25:19": {
+      "path": "inputs/conv-48/session-025.json",
+      "position": 19,
+      "speaker": "Jolene",
+      "session_start": "2023-09-06T20:31:00"
+    },
+    "conv-48/D26:17": {
+      "path": "inputs/conv-48/session-026.json",
+      "position": 17,
+      "speaker": "Deborah",
+      "session_start": "2023-09-08T19:39:00"
+    },
+    "conv-48/D26:20": {
+      "path": "inputs/conv-48/session-026.json",
+      "position": 20,
+      "speaker": "Jolene",
+      "session_start": "2023-09-08T19:39:00"
+    },
+    "conv-48/D26:21": {
+      "path": "inputs/conv-48/session-026.json",
+      "position": 21,
+      "speaker": "Deborah",
+      "session_start": "2023-09-08T19:39:00"
+    },
+    "conv-48/D26:3": {
+      "path": "inputs/conv-48/session-026.json",
+      "position": 3,
+      "speaker": "Deborah",
+      "session_start": "2023-09-08T19:39:00"
+    },
+    "conv-48/D27:6": {
+      "path": "inputs/conv-48/session-027.json",
+      "position": 6,
+      "speaker": "Deborah",
+      "session_start": "2023-09-12T14:18:00"
+    },
+    "conv-48/D27:8": {
+      "path": "inputs/conv-48/session-027.json",
+      "position": 8,
+      "speaker": "Deborah",
+      "session_start": "2023-09-12T14:18:00"
+    },
+    "conv-48/D28:1": {
+      "path": "inputs/conv-48/session-028.json",
+      "position": 1,
+      "speaker": "Deborah",
+      "session_start": "2023-09-15T15:09:00"
+    },
+    "conv-48/D28:17": {
+      "path": "inputs/conv-48/session-028.json",
+      "position": 17,
+      "speaker": "Deborah",
+      "session_start": "2023-09-15T15:09:00"
+    },
+    "conv-48/D28:5": {
+      "path": "inputs/conv-48/session-028.json",
+      "position": 5,
+      "speaker": "Deborah",
+      "session_start": "2023-09-15T15:09:00"
+    },
+    "conv-48/D28:6": {
+      "path": "inputs/conv-48/session-028.json",
+      "position": 6,
+      "speaker": "Jolene",
+      "session_start": "2023-09-15T15:09:00"
+    },
+    "conv-48/D29:10": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 10,
+      "speaker": "Jolene",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D29:17": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 17,
+      "speaker": "Deborah",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D29:19": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 19,
+      "speaker": "Deborah",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D29:3": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 3,
+      "speaker": "Deborah",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D29:30": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 30,
+      "speaker": "Jolene",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D29:33": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 33,
+      "speaker": "Deborah",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D29:5": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 5,
+      "speaker": "Deborah",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D29:7": {
+      "path": "inputs/conv-48/session-029.json",
+      "position": 7,
+      "speaker": "Deborah",
+      "session_start": "2023-09-17T13:24:00"
+    },
+    "conv-48/D2:1": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 1,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:10": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 10,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:11": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 11,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:13": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 13,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:14": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 14,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:15": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 15,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:16": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 16,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:17": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 17,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:18": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 18,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:19": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 19,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:2": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 2,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:20": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 20,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:21": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 21,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:22": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 22,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:23": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 23,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:24": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 24,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:25": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 25,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:26": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 26,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:27": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 27,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:28": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 28,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:29": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 29,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:3": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 3,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:30": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 30,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:31": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 31,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:32": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 32,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:4": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 4,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:5": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 5,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:6": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 6,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:7": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 7,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:8": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 8,
+      "speaker": "Jolene",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D2:9": {
+      "path": "inputs/conv-48/session-002.json",
+      "position": 9,
+      "speaker": "Deborah",
+      "session_start": "2023-01-27T09:49:00"
+    },
+    "conv-48/D30:4": {
+      "path": "inputs/conv-48/session-030.json",
+      "position": 4,
+      "speaker": "Jolene",
+      "session_start": "2023-09-20T10:17:00"
+    },
+    "conv-48/D30:6": {
+      "path": "inputs/conv-48/session-030.json",
+      "position": 6,
+      "speaker": "Jolene",
+      "session_start": "2023-09-20T10:17:00"
+    },
+    "conv-48/D3:13": {
+      "path": "inputs/conv-48/session-003.json",
+      "position": 13,
+      "speaker": "Jolene",
+      "session_start": "2023-02-01T19:03:00"
+    },
+    "conv-48/D4:13": {
+      "path": "inputs/conv-48/session-004.json",
+      "position": 13,
+      "speaker": "Jolene",
+      "session_start": "2023-02-04T09:48:00"
+    },
+    "conv-48/D4:19": {
+      "path": "inputs/conv-48/session-004.json",
+      "position": 19,
+      "speaker": "Jolene",
+      "session_start": "2023-02-04T09:48:00"
+    },
+    "conv-48/D4:26": {
+      "path": "inputs/conv-48/session-004.json",
+      "position": 26,
+      "speaker": "Deborah",
+      "session_start": "2023-02-04T09:48:00"
+    },
+    "conv-48/D4:27": {
+      "path": "inputs/conv-48/session-004.json",
+      "position": 27,
+      "speaker": "Jolene",
+      "session_start": "2023-02-04T09:48:00"
+    },
+    "conv-48/D4:28": {
+      "path": "inputs/conv-48/session-004.json",
+      "position": 28,
+      "speaker": "Deborah",
+      "session_start": "2023-02-04T09:48:00"
+    },
+    "conv-48/D4:32": {
+      "path": "inputs/conv-48/session-004.json",
+      "position": 32,
+      "speaker": "Deborah",
+      "session_start": "2023-02-04T09:48:00"
+    },
+    "conv-48/D4:43": {
+      "path": "inputs/conv-48/session-004.json",
+      "position": 43,
+      "speaker": "Jolene",
+      "session_start": "2023-02-04T09:48:00"
+    },
+    "conv-48/D6:1": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 1,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:10": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 10,
+      "speaker": "Deborah",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:11": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 11,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:12": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 12,
+      "speaker": "Deborah",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:13": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 13,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:14": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 14,
+      "speaker": "Deborah",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:15": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 15,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:2": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 2,
+      "speaker": "Deborah",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:3": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 3,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:4": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 4,
+      "speaker": "Deborah",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:5": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 5,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:6": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 6,
+      "speaker": "Deborah",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:7": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 7,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:8": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 8,
+      "speaker": "Deborah",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D6:9": {
+      "path": "inputs/conv-48/session-006.json",
+      "position": 9,
+      "speaker": "Jolene",
+      "session_start": "2023-02-22T16:12:00"
+    },
+    "conv-48/D7:16": {
+      "path": "inputs/conv-48/session-007.json",
+      "position": 16,
+      "speaker": "Deborah",
+      "session_start": "2023-02-25T16:50:00"
+    },
+    "conv-48/D8:20": {
+      "path": "inputs/conv-48/session-008.json",
+      "position": 20,
+      "speaker": "Jolene",
+      "session_start": "2023-03-02T19:18:00"
+    },
+    "conv-48/D8:23": {
+      "path": "inputs/conv-48/session-008.json",
+      "position": 23,
+      "speaker": "Deborah",
+      "session_start": "2023-03-02T19:18:00"
+    },
+    "conv-48/D9:10": {
+      "path": "inputs/conv-48/session-009.json",
+      "position": 10,
+      "speaker": "Jolene",
+      "session_start": "2023-03-13T11:22:00"
+    },
+    "conv-48/D9:4": {
+      "path": "inputs/conv-48/session-009.json",
+      "position": 4,
+      "speaker": "Jolene",
+      "session_start": "2023-03-13T11:22:00"
+    },
+    "conv-48/D9:7": {
+      "path": "inputs/conv-48/session-009.json",
+      "position": 7,
+      "speaker": "Deborah",
+      "session_start": "2023-03-13T11:22:00"
+    },
+    "conv-48/D9:8": {
+      "path": "inputs/conv-48/session-009.json",
+      "position": 8,
+      "speaker": "Jolene",
+      "session_start": "2023-03-13T11:22:00"
+    }
+  },
+  "dependencies": {
+    "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/4": [
+      "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/3"
+    ],
+    "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/6": [
+      "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/5"
+    ],
+    "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/12": [],
+    "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/10": []
+  },
+  "review_cases": [
+    {
+      "unit_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/4",
+      "considered_unit_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/3",
+      "decision": "keep_antecedent"
+    },
+    {
+      "unit_id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/6",
+      "considered_unit_id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf/sentence/5",
+      "decision": "keep_antecedent"
+    },
+    {
+      "unit_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/12",
+      "considered_unit_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85/sentence/1",
+      "decision": "use_parent_time_range"
+    },
+    {
+      "unit_id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/10",
+      "considered_unit_id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05/sentence/9",
+      "decision": "review_transition"
+    }
+  ]
+}
