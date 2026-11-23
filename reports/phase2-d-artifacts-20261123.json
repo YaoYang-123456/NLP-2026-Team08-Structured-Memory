@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-23",
+  "owner": "lanshuheng9-oss",
+  "issue": 73,
+  "archive": "reports/artifacts/phase2-d-contract-20261123.zip",
+  "bytes": 682265,
+  "sha256": "35f8675878a38a5bc7e8eac94eb6245382f67157e47e129532490810203dce6b",
+  "files": {
+    "A.inputs.jsonl": {
+      "bytes": 42267,
+      "sha256": "12b0c99ccf37c56320748f8c4f76196948a3619e9161b6761e83a8fdd1175d97"
+    },
+    "README.md": {
+      "bytes": 591,
+      "sha256": "36af3c23f67caa6417b8dd9d58ac92652da9143ec7fcce7cda1964aa6f891eda"
+    },
+    "S1.inputs.jsonl": {
+      "bytes": 14180,
+      "sha256": "e42436b16f8df0973658f801d2b02fa2aab737fb86370e7617c22df558215c07"
+    },
+    "controls/M.inputs.jsonl": {
+      "bytes": 41884,
+      "sha256": "04246d67c9a3cf89a0197161635ae9ae5ce9caa22be435e3c662427f7e9b1ae2"
+    },
+    "controls/N.inputs.jsonl": {
+      "bytes": 42279,
+      "sha256": "01e3d98b8daf44450d2bad25f10196df955c765d3191b92f3b70ad7cbfbea5de"
+    },
+    "controls/bundles.jsonl": {
+      "bytes": 1356783,
+      "sha256": "b70bc61ce13bb00fc349b2cf57fd80b7a0f2a8902978152dd3b4181efb632a96"
+    },
+    "controls/manifest.json": {
+      "bytes": 1174,
+      "sha256": "6b6b79ba79fafffce893bfe0dc6f0a3de5a97a5b71b527c1267c3855c56d5ff7"
+    },
+    "controls/trace.json": {
+      "bytes": 733023,
+      "sha256": "516454a1d3f2db6690ae24ee6bd105f3e963e1b39fe217d2e42851e50215dce6"
+    },
+    "dependencies.json": {
+      "bytes": 6541,
+      "sha256": "2ab5098c822b3caba7062ef38a5092a8f933d36b73a1fbf8e40f903bf3293ddc"
+    },
+    "manifest.json": {
+      "bytes": 1863,
+      "sha256": "5654775ae3786972d9c0b4cc7d7a5bf7cba1741515809ad90ec5663bc5897ab2"
+    },
+    "negative-checks.json": {
+      "bytes": 149,
+      "sha256": "873384d642d49f935850adae05bdb0cd9f6781764c48f120eaf77051c8d7a93c"
+    },
+    "summary.json": {
+      "bytes": 799,
+      "sha256": "5fa00b8c68eb7376f90c39a210ff7cae027767ecb95c6942502549ad6f3841c8"
+    },
+    "trace.json": {
+      "bytes": 247545,
+      "sha256": "6ba7c98d149f7506481da6df9d19fd9665ac3de9d8c0c4265f69457c8453b7b6"
+    }
+  },
+  "input_scope": "B archived S2 top60+five synthesis diagnostic only; vectors reencoded by B",
+  "dependency_status": "provisional; legacy pilot rules; not C/E reviewed",
+  "unit_tests_passed": 63,
+  "negative_checks_passed": 9,
+  "mock_request_reconstruction_passed": [
+    "M",
+    "N",
+    "A",
+    "S1"
+  ],
+  "answer_calls": 0,
+  "judge_calls": 0,
+  "heldout_questions_used": 0,
+  "accuracy": null
+}
