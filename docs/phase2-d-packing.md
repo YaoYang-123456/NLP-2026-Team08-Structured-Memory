@@ -6,7 +6,7 @@
 
 任务分支从 main `1a627bb` 创建；运行依赖尚未合并的 #79（B `7126895`）和 #77（F `9e7a8e8`，包含 Windows 路径修复）。本 PR 只包含 D 的新增文件，不把 B/F 的未审核代码带入 main。公共依赖合入后需重新集成验证。
 
-当前只支持原开发题单/原五条综合的受限契约，与 B 的入口一致。正式原生候选、91 条综合导出及 C/E 审核后的依赖规则仍待交接。旧原型的指代/日期规则仅用于本次诊断，标记 `provisional`；不能视为 C/E 已冻结规则。
+当前支持原开发题单/原五条综合的契约，与 B 的入口一致。已补交完整原生 3,712 事件和 91 综合，并以原生事件向量、全会话 dense120/lexical120 并集候选完成固定 1/5/30 题离线验证。综合仍使用每题原五条；C/E 审核后的依赖规则尚待交接。旧原型规则标记 `provisional`，不能视为 C/E 已冻结规则。最新交付见[原生离线报告](../reports/phase2-d-native-20261123.md)。
 
 ## 选择与消融
 
@@ -53,6 +53,30 @@ python scripts/verify_qa_run.py --run output/d-qa-A --tokenizer-cache <固定cl1
 
 输出包括 `A.inputs.jsonl`、`S1.inputs.jsonl`、`trace.json`、依赖快照、manifest 和 `controls/` 下的 M/N。S1 的 mock 使用 `--method S1 --variant A`，表示 A 的配对删除条件；F 当前 variant 枚举不含 S1，未为此更改公共接口。评价时联合使用 method/variant/run_id，不能混为 A 的 S2 回答。
 
-主预算为 4,096。CLI 可用 `--max-tokens 2048` 离线比较，但 QA 需另用相同预算配置；本次没有运行 2,048 或付费回答。
+主预算为 4,096。固定五条综合在 26/30 题上已超过 2,048，因此不能强行把 M 缩到该预算。`scripts/run_d_budget_ablation.py` 从已验证的 4,096 运行读取绑定的候选/依赖快照，核对基线代码与输入哈希，输出 2,048 的 N/A/S1 和 M 的不可行题目；不截断 M 或更换分母。该条件下 90 条 mock 请求已重建，未运行付费回答。
+
+```powershell
+python scripts/run_d_budget_ablation.py --base-run output/d-packing-new `
+  --tokenizer-cache <固定cl100k缓存> --out output/d-2048-new
+```
+
+2,048 的 QA 需另用 `evidence_budget.max_tokens=2048` 的配置，模型与提示词保持一致；原 4,096 配置不覆盖。
+
+## 原生记忆交接与候选准备
+
+`scripts/export_development_memory.py` 核对冻结开发会话、输入源、全部点的向量与来源、六个原生导出文件的 SHA-256，输出可移动索引与原字节导出。它不加载原始数据库、不运行记忆构建。现成包见[原生记忆清单](../reports/phase2-native-memory-20261123.json)，约 14.69 MB，可直接从仓库获取。
+
+```powershell
+python scripts/export_development_memory.py `
+  --memory-index output/structmem-live-20261020/memory-index.json `
+  --archive output/native-development-export.zip
+python scripts/prepare_d_candidates.py --memory-index <解包后的memory-index.json> `
+  --questions data/locomo/development.inputs.json --model-cache data/model-cache `
+  --out output/d-candidates-new
+```
+
+候选准备复用 B 的共享召回，对完整会话事件做 dense120/lexical120 并集；事件向量逐项保留原生值，不重新编码。固定 MiniLM 只编码问题和完整综合句，超长句沿用已有错误通道拒绝，不暗中截断。原五综合须逐字匹配完整 91 条原生库中的对应父文本。输出共同 bundle、原型依赖、召回记录及源哈希；正式选择仍由同一个 B/D 排序器完成。
+
+原生首样包另含全 91 父综合的 1,144 原句和 315 条原型依赖，供 C/E 核对指代、相对日期和过度扩展；审核状态全部保持待核对。完整 30 题缓存、原始响应与数据库继续留在本地。
 
 验证结果及可读取首样见[离线报告](../reports/phase2-d-offline-20261123.md)。

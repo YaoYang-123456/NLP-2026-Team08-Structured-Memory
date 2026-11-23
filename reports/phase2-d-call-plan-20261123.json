@@ -1,0 +1,40 @@
+{
+  "status": "prepared_not_executed",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-flash",
+  "transmitted_data": "frozen development question and selected derived memory contexts; no reference answers or scoring annotations",
+  "answer_owner": "lanshuheng9-oss",
+  "judge_owner": "onlysonder",
+  "currency_budget": null,
+  "preconditions": [
+    "C/E review and freeze dependency rules",
+    "B/F public interface review and main integration",
+    "register monetary ceiling with F before execute"
+  ],
+  "variants": {
+    "A": {
+      "method": "S2",
+      "variant": "A",
+      "planned_answer_posts": 30,
+      "planned_judge_posts_by_E": 30,
+      "required_for_core": true,
+      "max_output_tokens_per_answer": 512,
+      "cl100k_message_content_tokens": 126627,
+      "input_sha256": "c06e16fdac2fc3b6d54ca05690756f2e9ea09f809a7a142973c95b7b2373ffb6"
+    },
+    "S1": {
+      "method": "S1",
+      "variant": "A",
+      "planned_answer_posts": 30,
+      "planned_judge_posts_by_E": 30,
+      "required_for_core": false,
+      "max_output_tokens_per_answer": 512,
+      "cl100k_message_content_tokens": 110280,
+      "input_sha256": "670496a66fb2070e6d87b4e8941dedad0146b0739df2758f800198ce03ce6535"
+    }
+  },
+  "actual_answer_posts": 0,
+  "actual_judge_posts": 0,
+  "heldout_questions": 0,
+  "token_boundary": "cl100k content count excludes provider chat framing; not billing usage or an estimate of actual cost"
+}
