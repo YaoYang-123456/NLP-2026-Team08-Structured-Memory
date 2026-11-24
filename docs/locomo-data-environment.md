@@ -101,3 +101,20 @@ tmp/locomo-venv/Scripts/python.exe scripts/check_locomo_environment.py --local-f
 另一位成员需在自己的环境按第 2/4 节加载数据和模型，提供 GitHub 用户名、实际命令、依赖版本、结果与输出哈希。尚未发生时，#26 的“至少另一位成员能照说明加载”保持未勾选；AI 自查不代替此项。
 
 原始数据 2,805,274 字节，小于大文件阈值；仍留在本地，由固定官方链接获取。模型文件若达到 20 MB，请将该文件发送到小组微信群；不加入 Git 或 PR 附件。群内发送尚未发生时不填写发送日期。密钥、数据、环境、模型与运行原始产物均不入 Git，公开材料只使用 GitHub 用户名。
+
+## 6. 阶段二数据交接（#70，shc00896-sys）
+
+从仓库根目录执行以下命令。第一条取得并核对阶段一固定数据；第二条复建阶段二无标签交接文件。已有原文件时可省略下载参数。
+
+```powershell
+python scripts/prepare_locomo.py --download
+python scripts/prepare_phase2_locomo.py
+python -m unittest discover -s tests -p "*locomo*.py" -v
+```
+
+- B / F 可先取 `data/locomo-phase2/model/development.one.inputs.json` 联调，内容与开发题单首题一致。
+- C / D 使用同目录的 `heldout.conversations.json` 构建完整会话记忆；锁定开发参数后，各方案使用同一份 `heldout.inputs.json`。
+- 仅 E 需要执行 `python scripts/prepare_phase2_locomo.py --with-labels`。本地生成的 `data/locomo-phase2/scoring/heldout.labels.json` 用于核对答案与证据；交给检索或回答程序时仅传所需的 model 文件。
+- 第二次复建可加 `--output-dir output/phase2-a-recheck`，逐文件 SHA-256 见[冻结清单](../configs/locomo-phase2-heldout.json)。组员复跑直接读取清单；`--freeze` 仅用于首次建立清单。
+
+七个会话的规模、问题身份、证据异常与待审核的评分分母见[最终报告的数据与隔离章节](../reports/phase2-data-isolation.md)。
