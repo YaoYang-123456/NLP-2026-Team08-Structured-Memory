@@ -1,0 +1,75 @@
+{
+  "source_memory_index_sha256": "ed685d4f9fa563eb4daf607b690c55dfd04e6043e85ba843a2101dfdf26f601f",
+  "frozen_config_sha256": "ec7cfdeca766905be35642d456ff930be843370e7f2abe6dc125491525c3b659",
+  "counts": {
+    "conv-48": {
+      "event": 1277,
+      "synthesis": 30
+    },
+    "conv-42": {
+      "event": 1160,
+      "synthesis": 29
+    },
+    "conv-41": {
+      "event": 1275,
+      "synthesis": 32
+    }
+  },
+  "files": {
+    "conv-48/event.json": {
+      "bytes": 11723299,
+      "sha256": "74e67ea72503b1f33dc959ec6bb1e31b6ed4ab55ef409a1d2a14827521007bca"
+    },
+    "conv-48/synthesis.json": {
+      "bytes": 410239,
+      "sha256": "c0c9afe44efbd19e545fa81d08baa2e05b1750660d1cc3616347b6d10aef3739"
+    },
+    "conv-42/event.json": {
+      "bytes": 10649648,
+      "sha256": "40fb1c3e30235ec22f3f14d68518dcf9d1c87193906f15bc9e2ed78885caf5e4"
+    },
+    "conv-42/synthesis.json": {
+      "bytes": 389079,
+      "sha256": "10bf7fd72dc0f2df91a5129c54d7fa1fcaa97141cf92a1fc94e7f555208e7475"
+    },
+    "conv-41/event.json": {
+      "bytes": 11708576,
+      "sha256": "513a2f9de38f04ec5fecb7ef4f4fab1a65ceca31babd45f5a54e59575cb47399"
+    },
+    "conv-41/synthesis.json": {
+      "bytes": 426285,
+      "sha256": "dbbb64f66996b9f9583a186f7b7fb32929573e7226e11639a7457f23b27c4abe"
+    }
+  },
+  "scope": "Native derived development memories and vectors, not raw databases or QA labels",
+  "answer_calls": 0,
+  "judge_calls": 0,
+  "memory_build_calls": 0,
+  "archive_bytes": 14690363,
+  "archive_sha256": "1e5efddc3a730375596adb7d099426edac2e26c71aad958dc567db9238aa5955",
+  "archive": "reports/artifacts/phase2-native-memory-20261123.zip",
+  "source_verification": {
+    "source_calls_sha256": "c92bcd45108ee61905de12d27f08a7b81022b6cba2c6cd1ec591d89d29a5cd72",
+    "conversations": {
+      "conv-48": {
+        "events": 1277,
+        "syntheses": 30,
+        "covered_exactly_once": true,
+        "matches_original_raw_response": true
+      },
+      "conv-42": {
+        "events": 1160,
+        "syntheses": 29,
+        "covered_exactly_once": true,
+        "matches_original_raw_response": true
+      },
+      "conv-41": {
+        "events": 1275,
+        "syntheses": 32,
+        "covered_exactly_once": true,
+        "matches_original_raw_response": true
+      }
+    },
+    "new_calls": 0
+  }
+}

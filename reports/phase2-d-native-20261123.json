@@ -1,0 +1,159 @@
+{
+  "archive": "reports/artifacts/phase2-d-native-contract-20261123.zip",
+  "bytes": 1337034,
+  "sha256": "e3a0476c1a3b3ad1e5602497948e6ff7bcaa74ff3e2c8923d066bce944f439b6",
+  "files": {
+    "A.inputs.jsonl": {
+      "bytes": 31097,
+      "sha256": "de59f1055c5a29c66f7a5cf5467dcdf4c1655179b71461b51aac023ef67d7ce0"
+    },
+    "README.txt": {
+      "bytes": 953,
+      "sha256": "e830ff47698b55ad3842b81ca62507cc31773cfa59e304d3dad4853591f02d1a"
+    },
+    "S1.inputs.jsonl": {
+      "bytes": 20522,
+      "sha256": "69ec7979695b5056f49dbb4d5007949b439cd6b5ae1e865a03d7b788371fa0c7"
+    },
+    "candidate-generation-source.json": {
+      "bytes": 1818,
+      "sha256": "87865adf4a865c14bed9b7d1ef089be42745c33c88e23a3903bcd5e5ed0ea54c"
+    },
+    "controls/M.inputs.jsonl": {
+      "bytes": 41755,
+      "sha256": "5d723707226ed0d256e029916ad65ceffaeb7c3f54aa9c95a3430d00589c74f5"
+    },
+    "controls/N.inputs.jsonl": {
+      "bytes": 31169,
+      "sha256": "5de757ead255bf87cfb5b5cad810d640b21c586b37b1202fb9ff9fec6f02a1a4"
+    },
+    "controls/bundles.jsonl": {
+      "bytes": 2665787,
+      "sha256": "69e6a85665dfeb7d274058db4723319fe8edd3e22adb133923b928c562deccb4"
+    },
+    "controls/manifest.json": {
+      "bytes": 1148,
+      "sha256": "e6e22328bcc05bbb1dcdbd33e13e610662c27c1f80f455ae5ec3efd41cda89f2"
+    },
+    "controls/trace.json": {
+      "bytes": 906797,
+      "sha256": "a9db440d38e28ef5ebf5cf14b0572fc3c02a9447fcfb3fc6edec9b0939e57e9b"
+    },
+    "dependencies.json": {
+      "bytes": 6645,
+      "sha256": "1ec67533764858dcf290a87e53f3989736c02a3a16c53444ea6e3daf60cb99da"
+    },
+    "dependency-review.json": {
+      "bytes": 269544,
+      "sha256": "afb9a8693d3ebac9880acca7d3f732b2c00f2d3a90eec10edd00c150f3213779"
+    },
+    "manifest.json": {
+      "bytes": 1837,
+      "sha256": "a37b3d8ff5225b4663fe892f01bd0b3528cbff7dc0b2c656fdf0a3fa26862e28"
+    },
+    "native-source-verification.json": {
+      "bytes": 610,
+      "sha256": "53b26c2e1ef8c76fc8aae6ccce3e6daf0c195246be66d1918659a7463452d3e4"
+    },
+    "summary2048.json": {
+      "bytes": 839,
+      "sha256": "8f26a9b311dc12fcdfd474830dd1cc8a57411ade7ea3674b8351ef17afee7797"
+    },
+    "summary30.json": {
+      "bytes": 1175,
+      "sha256": "fa1b976deada30a25fae92f97bc7c5a4dd1a30ad2aad0a29b2249c53b694187b"
+    },
+    "trace.json": {
+      "bytes": 338323,
+      "sha256": "00a23de91a70d256c6304a47bac3a2b826348d145ef665b90ead25665ddfb7c7"
+    }
+  },
+  "native_memory_archive": "reports/artifacts/phase2-native-memory-20261123.zip",
+  "native_memory_manifest": "reports/phase2-native-memory-20261123.json",
+  "primary_budget": {
+    "questions": 30,
+    "budget": 4096,
+    "dependency_status": "provisional",
+    "repeat_all_files_identical": true,
+    "variants": {
+      "M": {
+        "min_tokens": 4058,
+        "max_tokens": 4096,
+        "total_tokens": 122475,
+        "mean_tokens": 4082.5,
+        "mock_verified": true,
+        "questions": 30
+      },
+      "N": {
+        "min_tokens": 4085,
+        "max_tokens": 4096,
+        "total_tokens": 122766,
+        "mean_tokens": 4092.2,
+        "mock_verified": true,
+        "questions": 30
+      },
+      "A": {
+        "min_tokens": 4080,
+        "max_tokens": 4096,
+        "total_tokens": 122746,
+        "mean_tokens": 4091.53,
+        "mock_verified": true,
+        "questions": 30
+      },
+      "S1": {
+        "min_tokens": 3097,
+        "max_tokens": 3933,
+        "total_tokens": 106399,
+        "mean_tokens": 3546.63,
+        "mock_verified": true,
+        "questions": 30
+      }
+    },
+    "A_vs_N_changed_questions": 25,
+    "answer_calls": 0,
+    "judge_calls": 0,
+    "accuracy": null,
+    "fixed_five_2048_over_budget_questions": 26,
+    "N_declared_dependency_gap_questions": 25,
+    "N_declared_dependency_gap_edges": 68,
+    "A_declared_dependency_gap_edges": 0
+  },
+  "secondary_budget": {
+    "questions": 30,
+    "budget": 2048,
+    "M": "not feasible for 26/30 frozen-five contexts; no trimming or denominator change",
+    "dependency_status": "provisional",
+    "variants": {
+      "N": {
+        "min_tokens": 2023,
+        "max_tokens": 2048,
+        "mean_tokens": 2043.7,
+        "total_tokens": 61311,
+        "mock_verified": true
+      },
+      "A": {
+        "min_tokens": 2023,
+        "max_tokens": 2048,
+        "mean_tokens": 2043.43,
+        "total_tokens": 61303,
+        "mock_verified": true
+      },
+      "S1": {
+        "min_tokens": 1327,
+        "max_tokens": 2023,
+        "mean_tokens": 1693.17,
+        "total_tokens": 50795,
+        "mock_verified": true
+      }
+    },
+    "answer_calls": 0,
+    "judge_calls": 0,
+    "accuracy": null,
+    "bundle_sha256": "ccb1a97b90fdbd10929abfb9c5f46e717da610d21173892ed5f2eb5b884afbf2"
+  },
+  "unit_tests_passed": 67,
+  "answer_posts": 0,
+  "judge_posts": 0,
+  "memory_build_posts": 0,
+  "heldout_questions_used": 0
+}
