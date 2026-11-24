@@ -1,0 +1,2955 @@
+{
+  "status": "assistant_review_pending_C_E",
+  "position_base": 0,
+  "source": {
+    "github_pr": 80,
+    "commit": "11879a0f6c4718f2ed51da8e13bc8eb73b10800b",
+    "archive_path": "reports/artifacts/phase2-d-native-contract-20261123.zip",
+    "archive_sha256": "e3a0476c1a3b3ad1e5602497948e6ff7bcaa74ff3e2c8923d066bce944f439b6",
+    "member": "dependency-review.json",
+    "member_sha256": "afb9a8693d3ebac9880acca7d3f732b2c00f2d3a90eec10edd00c150f3213779",
+    "rule_version": "legacy-anchor-pilot-20261103-unreviewed",
+    "source_memory_index_sha256": "ed685d4f9fa563eb4daf607b690c55dfd04e6043e85ba843a2101dfdf26f601f"
+  },
+  "scope": {
+    "parents": 91,
+    "sentences": 1144,
+    "reviewed_legacy_edges": 315
+  },
+  "counts": {
+    "drop": 172,
+    "keep": 136,
+    "retarget": 7
+  },
+  "reason_counts": {
+    "G": 62,
+    "H": 79,
+    "K": 136,
+    "S": 22,
+    "W": 16
+  },
+  "counts_by_trigger": {
+    "relative_time": {
+      "drop": 109,
+      "keep": 1
+    },
+    "leading_reference": {
+      "drop": 63,
+      "keep": 132,
+      "retarget": 7
+    },
+    "both": {
+      "keep": 3
+    }
+  },
+  "counts_by_conversation": {
+    "conv-48": {
+      "drop": 52,
+      "keep": 44
+    },
+    "conv-42": {
+      "keep": 45,
+      "drop": 53,
+      "retarget": 5
+    },
+    "conv-41": {
+      "keep": 47,
+      "drop": 67,
+      "retarget": 2
+    }
+  },
+  "closure_before": {
+    "sentences_with_dependencies": 298,
+    "total_ancestors": 370,
+    "max_ancestors": 5
+  },
+  "closure_after_suggestions": {
+    "sentences_with_dependencies": 143,
+    "total_ancestors": 153,
+    "max_ancestors": 3
+  },
+  "reason_codes": {
+    "K": "所连前文提供了该句需要的指代对象、具体事件或时间参照。",
+    "H": "父综合时间标题已提供该相对时间的会话参照。保留原句和时间标题即可。",
+    "G": "主要是话题转折、关系概述或告别。候选前句未补充理解当前事实所必需的信息。",
+    "S": "当前句已有时间点或关键事实，或者触发词只表达顺序，候选前句未提供缺少的参照。",
+    "W": "前句的日期、主题或人物与此处真正的参照不匹配，或者缺少可用的先行词。"
+  },
+  "edges": [
+    {
+      "edge_number": 1,
+      "parent_id": "conv-48/synthesis/0787ee70-6fd3-463b-82df-4f08da685362",
+      "sentence_position": 9,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W",
+      "note": "句中已给出 2023-01-23，所连 2023-04-09 属于本次谈话的另一件事。"
+    },
+    {
+      "edge_number": 2,
+      "parent_id": "conv-48/synthesis/0787ee70-6fd3-463b-82df-4f08da685362",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 3,
+      "parent_id": "conv-48/synthesis/0934e52f-f1aa-42bf-ab0c-344484688db7",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 4,
+      "parent_id": "conv-48/synthesis/0934e52f-f1aa-42bf-ab0c-344484688db7",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 5,
+      "parent_id": "conv-48/synthesis/0934e52f-f1aa-42bf-ab0c-344484688db7",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 6,
+      "parent_id": "conv-48/synthesis/0934e52f-f1aa-42bf-ab0c-344484688db7",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 7,
+      "parent_id": "conv-48/synthesis/0934e52f-f1aa-42bf-ab0c-344484688db7",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 8,
+      "parent_id": "conv-48/synthesis/0934e52f-f1aa-42bf-ab0c-344484688db7",
+      "sentence_position": 12,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 9,
+      "parent_id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 10,
+      "parent_id": "conv-48/synthesis/0a4d9d2f-1758-4561-bb07-2c6be8d6c5c7",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 11,
+      "parent_id": "conv-48/synthesis/1e817a84-12b8-4937-a71c-fae56ec41169",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 12,
+      "parent_id": "conv-48/synthesis/1e817a84-12b8-4937-a71c-fae56ec41169",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 13,
+      "parent_id": "conv-48/synthesis/2359c960-1c0c-44b3-a338-588c7cdf1859",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 14,
+      "parent_id": "conv-48/synthesis/25a1c809-de97-4489-bdbe-dc4505153768",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 15,
+      "parent_id": "conv-48/synthesis/25a1c809-de97-4489-bdbe-dc4505153768",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 16,
+      "parent_id": "conv-48/synthesis/25a1c809-de97-4489-bdbe-dc4505153768",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 17,
+      "parent_id": "conv-48/synthesis/323ccb2c-ccfe-4d2d-9c9e-03a34b7a8db0",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 18,
+      "parent_id": "conv-48/synthesis/323ccb2c-ccfe-4d2d-9c9e-03a34b7a8db0",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 19,
+      "parent_id": "conv-48/synthesis/323ccb2c-ccfe-4d2d-9c9e-03a34b7a8db0",
+      "sentence_position": 12,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 20,
+      "parent_id": "conv-48/synthesis/323ccb2c-ccfe-4d2d-9c9e-03a34b7a8db0",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 21,
+      "parent_id": "conv-48/synthesis/3e4e7184-06ec-42e1-aac9-0a01172eda68",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W"
+    },
+    {
+      "edge_number": 22,
+      "parent_id": "conv-48/synthesis/3e4e7184-06ec-42e1-aac9-0a01172eda68",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 23,
+      "parent_id": "conv-48/synthesis/3e4e7184-06ec-42e1-aac9-0a01172eda68",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 24,
+      "parent_id": "conv-48/synthesis/5d053a2f-aede-4338-bafb-601d3e911890",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 25,
+      "parent_id": "conv-48/synthesis/5d053a2f-aede-4338-bafb-601d3e911890",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 26,
+      "parent_id": "conv-48/synthesis/5d053a2f-aede-4338-bafb-601d3e911890",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 27,
+      "parent_id": "conv-48/synthesis/5d053a2f-aede-4338-bafb-601d3e911890",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 28,
+      "parent_id": "conv-48/synthesis/5d053a2f-aede-4338-bafb-601d3e911890",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 29,
+      "parent_id": "conv-48/synthesis/5d053a2f-aede-4338-bafb-601d3e911890",
+      "sentence_position": 12,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 30,
+      "parent_id": "conv-48/synthesis/5d053a2f-aede-4338-bafb-601d3e911890",
+      "sentence_position": 14,
+      "candidate_position": 13,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 31,
+      "parent_id": "conv-48/synthesis/621ee059-0aba-4a2a-b08c-f1aa304a309b",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 32,
+      "parent_id": "conv-48/synthesis/621ee059-0aba-4a2a-b08c-f1aa304a309b",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 33,
+      "parent_id": "conv-48/synthesis/621ee059-0aba-4a2a-b08c-f1aa304a309b",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 34,
+      "parent_id": "conv-48/synthesis/621ee059-0aba-4a2a-b08c-f1aa304a309b",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 35,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 36,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 37,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 38,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 39,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 40,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 41,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 42,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 14,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 43,
+      "parent_id": "conv-48/synthesis/65ec310c-df47-41ce-a104-908808df4d41",
+      "sentence_position": 15,
+      "candidate_position": 14,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 44,
+      "parent_id": "conv-48/synthesis/6845ce15-debc-4922-87b7-c16e09969422",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 45,
+      "parent_id": "conv-48/synthesis/6845ce15-debc-4922-87b7-c16e09969422",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 46,
+      "parent_id": "conv-48/synthesis/6845ce15-debc-4922-87b7-c16e09969422",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 47,
+      "parent_id": "conv-48/synthesis/6845ce15-debc-4922-87b7-c16e09969422",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 48,
+      "parent_id": "conv-48/synthesis/6845ce15-debc-4922-87b7-c16e09969422",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 49,
+      "parent_id": "conv-48/synthesis/69c67297-3dc0-4cbc-a81a-fe97a179ec62",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 50,
+      "parent_id": "conv-48/synthesis/6f804118-7a24-4bce-8b1b-eb1cf7d8577f",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 51,
+      "parent_id": "conv-48/synthesis/6f804118-7a24-4bce-8b1b-eb1cf7d8577f",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 52,
+      "parent_id": "conv-48/synthesis/6f804118-7a24-4bce-8b1b-eb1cf7d8577f",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 53,
+      "parent_id": "conv-48/synthesis/7435d81a-1ef6-4407-8235-9fe2f136977b",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 54,
+      "parent_id": "conv-48/synthesis/7435d81a-1ef6-4407-8235-9fe2f136977b",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 55,
+      "parent_id": "conv-48/synthesis/7435d81a-1ef6-4407-8235-9fe2f136977b",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 56,
+      "parent_id": "conv-48/synthesis/7591210b-68cc-4654-9967-d7fd8efa0e62",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 57,
+      "parent_id": "conv-48/synthesis/7591210b-68cc-4654-9967-d7fd8efa0e62",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 58,
+      "parent_id": "conv-48/synthesis/7591210b-68cc-4654-9967-d7fd8efa0e62",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 59,
+      "parent_id": "conv-48/synthesis/7591210b-68cc-4654-9967-d7fd8efa0e62",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 60,
+      "parent_id": "conv-48/synthesis/7a865e8f-d1c1-4485-8fdd-df726761d103",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "both",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 61,
+      "parent_id": "conv-48/synthesis/7d9ee78e-a587-4f9a-ac37-6d0113ada480",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 62,
+      "parent_id": "conv-48/synthesis/7d9ee78e-a587-4f9a-ac37-6d0113ada480",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K",
+      "note": "在尚未联系学校的句子前保留拟做校方合作与工作坊的计划，使否定的对象和范围可解释。"
+    },
+    {
+      "edge_number": 63,
+      "parent_id": "conv-48/synthesis/7d9ee78e-a587-4f9a-ac37-6d0113ada480",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 64,
+      "parent_id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 65,
+      "parent_id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 66,
+      "parent_id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "sentence_position": 7,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 67,
+      "parent_id": "conv-48/synthesis/8db1069f-1e66-49a3-800e-cd6a9bc82a05",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G",
+      "note": "这是跨月支持关系回顾，前一句主要聊海滩瑜伽。"
+    },
+    {
+      "edge_number": 68,
+      "parent_id": "conv-48/synthesis/ab4f8b72-ef2e-4194-a16f-190d59b7ba4b",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 69,
+      "parent_id": "conv-48/synthesis/be9375dc-9329-460e-873e-b7182d45bb65",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 70,
+      "parent_id": "conv-48/synthesis/be9375dc-9329-460e-873e-b7182d45bb65",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 71,
+      "parent_id": "conv-48/synthesis/c0efa106-8e0a-412d-9365-09a550ff863d",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 72,
+      "parent_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K",
+      "note": "候选前句直接写 Deborah 在谈丧亲与家庭照片，可区分照片是谁分享的。"
+    },
+    {
+      "edge_number": 73,
+      "parent_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 74,
+      "parent_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "sentence_position": 12,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H",
+      "note": "原句的 last week / next Saturday 使用 2023-01-27 会话时间，人物依赖另保留第 11 句。"
+    },
+    {
+      "edge_number": 75,
+      "parent_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 76,
+      "parent_id": "conv-48/synthesis/cd894812-a757-4f32-b718-125c25dfed85",
+      "sentence_position": 14,
+      "candidate_position": 13,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 77,
+      "parent_id": "conv-48/synthesis/d3cfd006-8589-47b3-88ad-2bc37b4539df",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 78,
+      "parent_id": "conv-48/synthesis/d3cfd006-8589-47b3-88ad-2bc37b4539df",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 79,
+      "parent_id": "conv-48/synthesis/d6efe597-db31-470e-8602-68620b0bb9b3",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 80,
+      "parent_id": "conv-48/synthesis/d6efe597-db31-470e-8602-68620b0bb9b3",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 81,
+      "parent_id": "conv-48/synthesis/d6efe597-db31-470e-8602-68620b0bb9b3",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 82,
+      "parent_id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 83,
+      "parent_id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 84,
+      "parent_id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 85,
+      "parent_id": "conv-48/synthesis/dd0ca8fe-3706-4d10-a6a0-f1d7015efccf",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 86,
+      "parent_id": "conv-48/synthesis/e24870e0-9f52-4217-818e-b9ca65e236e9",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 87,
+      "parent_id": "conv-48/synthesis/e24870e0-9f52-4217-818e-b9ca65e236e9",
+      "sentence_position": 10,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 88,
+      "parent_id": "conv-48/synthesis/e47ea6f2-777f-4fd4-b63f-9e4275009e91",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 89,
+      "parent_id": "conv-48/synthesis/e47ea6f2-777f-4fd4-b63f-9e4275009e91",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 90,
+      "parent_id": "conv-48/synthesis/ed30dd98-8f5b-4171-a825-2ac49fc3c6bd",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 91,
+      "parent_id": "conv-48/synthesis/ed30dd98-8f5b-4171-a825-2ac49fc3c6bd",
+      "sentence_position": 10,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 92,
+      "parent_id": "conv-48/synthesis/f5f79898-0403-4924-8f31-df516de164c9",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 93,
+      "parent_id": "conv-48/synthesis/f5f79898-0403-4924-8f31-df516de164c9",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 94,
+      "parent_id": "conv-48/synthesis/f5f79898-0403-4924-8f31-df516de164c9",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 95,
+      "parent_id": "conv-48/synthesis/f5f79898-0403-4924-8f31-df516de164c9",
+      "sentence_position": 7,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 96,
+      "parent_id": "conv-48/synthesis/f5f79898-0403-4924-8f31-df516de164c9",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 97,
+      "parent_id": "conv-42/synthesis/0455facc-9c00-4c87-a01d-8b9594712afe",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 98,
+      "parent_id": "conv-42/synthesis/0455facc-9c00-4c87-a01d-8b9594712afe",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 99,
+      "parent_id": "conv-42/synthesis/0455facc-9c00-4c87-a01d-8b9594712afe",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 100,
+      "parent_id": "conv-42/synthesis/0455facc-9c00-4c87-a01d-8b9594712afe",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 101,
+      "parent_id": "conv-42/synthesis/09b634fd-dbe8-4075-9486-f90f9028a96f",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 102,
+      "parent_id": "conv-42/synthesis/09b634fd-dbe8-4075-9486-f90f9028a96f",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 103,
+      "parent_id": "conv-42/synthesis/09b634fd-dbe8-4075-9486-f90f9028a96f",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 104,
+      "parent_id": "conv-42/synthesis/09b634fd-dbe8-4075-9486-f90f9028a96f",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K",
+      "note": "前句点名 Joanna 并给出她索要食谱的动作。要指明是哪份食谱，可另复核更前的第 5 句。"
+    },
+    {
+      "edge_number": 105,
+      "parent_id": "conv-42/synthesis/09b634fd-dbe8-4075-9486-f90f9028a96f",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 106,
+      "parent_id": "conv-42/synthesis/0a775a46-1ffe-41c1-92f8-fa83bf374786",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 107,
+      "parent_id": "conv-42/synthesis/0a775a46-1ffe-41c1-92f8-fa83bf374786",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "retarget",
+      "reason_code": "W",
+      "suggested_position": 9,
+      "note": "第 10 句只说 Nate 追问她还做什么，第 9 句明确是 Joanna 在分享甜点。"
+    },
+    {
+      "edge_number": 108,
+      "parent_id": "conv-42/synthesis/0a775a46-1ffe-41c1-92f8-fa83bf374786",
+      "sentence_position": 14,
+      "candidate_position": 13,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 109,
+      "parent_id": "conv-42/synthesis/0b0ee9b1-000b-4399-b5c2-992b254a1372",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 110,
+      "parent_id": "conv-42/synthesis/0b0ee9b1-000b-4399-b5c2-992b254a1372",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 111,
+      "parent_id": "conv-42/synthesis/0b0ee9b1-000b-4399-b5c2-992b254a1372",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 112,
+      "parent_id": "conv-42/synthesis/0b0ee9b1-000b-4399-b5c2-992b254a1372",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 113,
+      "parent_id": "conv-42/synthesis/0f0ac26f-1690-47b7-b3b1-ac1c55adffd5",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 114,
+      "parent_id": "conv-42/synthesis/13120d39-43e8-4c04-8f89-4dca1c08d906",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 115,
+      "parent_id": "conv-42/synthesis/13120d39-43e8-4c04-8f89-4dca1c08d906",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 116,
+      "parent_id": "conv-42/synthesis/1e888ad1-209e-4aee-a669-00a64b29440a",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 117,
+      "parent_id": "conv-42/synthesis/1e888ad1-209e-4aee-a669-00a64b29440a",
+      "sentence_position": 9,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 118,
+      "parent_id": "conv-42/synthesis/1e888ad1-209e-4aee-a669-00a64b29440a",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 119,
+      "parent_id": "conv-42/synthesis/4e4e9d75-eeb9-4892-ae43-af84e482b92e",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 120,
+      "parent_id": "conv-42/synthesis/4e4e9d75-eeb9-4892-ae43-af84e482b92e",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 121,
+      "parent_id": "conv-42/synthesis/527d2ddf-f4c6-43bf-a5fe-54647b38b4d9",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 122,
+      "parent_id": "conv-42/synthesis/527d2ddf-f4c6-43bf-a5fe-54647b38b4d9",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 123,
+      "parent_id": "conv-42/synthesis/527d2ddf-f4c6-43bf-a5fe-54647b38b4d9",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 124,
+      "parent_id": "conv-42/synthesis/527d2ddf-f4c6-43bf-a5fe-54647b38b4d9",
+      "sentence_position": 10,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 125,
+      "parent_id": "conv-42/synthesis/527d2ddf-f4c6-43bf-a5fe-54647b38b4d9",
+      "sentence_position": 13,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 126,
+      "parent_id": "conv-42/synthesis/5c1cfd34-27c5-43d9-af23-ea7e4fd28941",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 127,
+      "parent_id": "conv-42/synthesis/5c1cfd34-27c5-43d9-af23-ea7e4fd28941",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 128,
+      "parent_id": "conv-42/synthesis/5c1cfd34-27c5-43d9-af23-ea7e4fd28941",
+      "sentence_position": 16,
+      "candidate_position": 15,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 129,
+      "parent_id": "conv-42/synthesis/5d7e4dd2-3039-4f2b-9aee-98aa021f1a48",
+      "sentence_position": 5,
+      "candidate_position": 2,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W"
+    },
+    {
+      "edge_number": 130,
+      "parent_id": "conv-42/synthesis/6201499f-02e5-4d42-b05b-47191ded755a",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 131,
+      "parent_id": "conv-42/synthesis/6201499f-02e5-4d42-b05b-47191ded755a",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 132,
+      "parent_id": "conv-42/synthesis/6201499f-02e5-4d42-b05b-47191ded755a",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 133,
+      "parent_id": "conv-42/synthesis/6201499f-02e5-4d42-b05b-47191ded755a",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 134,
+      "parent_id": "conv-42/synthesis/6201499f-02e5-4d42-b05b-47191ded755a",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 135,
+      "parent_id": "conv-42/synthesis/69a049e2-1fb2-4691-bdb5-fa19fed76a4a",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 136,
+      "parent_id": "conv-42/synthesis/69a049e2-1fb2-4691-bdb5-fa19fed76a4a",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 137,
+      "parent_id": "conv-42/synthesis/69a049e2-1fb2-4691-bdb5-fa19fed76a4a",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 138,
+      "parent_id": "conv-42/synthesis/715ed51d-2136-47dc-9b0a-1e5496ce6dfb",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 139,
+      "parent_id": "conv-42/synthesis/715ed51d-2136-47dc-9b0a-1e5496ce6dfb",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 140,
+      "parent_id": "conv-42/synthesis/715ed51d-2136-47dc-9b0a-1e5496ce6dfb",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 141,
+      "parent_id": "conv-42/synthesis/715ed51d-2136-47dc-9b0a-1e5496ce6dfb",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 142,
+      "parent_id": "conv-42/synthesis/715ed51d-2136-47dc-9b0a-1e5496ce6dfb",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 143,
+      "parent_id": "conv-42/synthesis/7c8abedb-e4cf-4fbf-94bc-0e36238492d3",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 144,
+      "parent_id": "conv-42/synthesis/7c8abedb-e4cf-4fbf-94bc-0e36238492d3",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 145,
+      "parent_id": "conv-42/synthesis/8449871a-b520-4fba-93cb-fa30b1fe7683",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 146,
+      "parent_id": "conv-42/synthesis/8449871a-b520-4fba-93cb-fa30b1fe7683",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "retarget",
+      "reason_code": "W",
+      "suggested_position": 0,
+      "note": "这个里程碑指 Joanna 开始拍自己的电影，第 11 句只是告别。"
+    },
+    {
+      "edge_number": 147,
+      "parent_id": "conv-42/synthesis/94abd55f-86c0-4502-978f-c8d0be3712ab",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 148,
+      "parent_id": "conv-42/synthesis/94abd55f-86c0-4502-978f-c8d0be3712ab",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 149,
+      "parent_id": "conv-42/synthesis/94abd55f-86c0-4502-978f-c8d0be3712ab",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 150,
+      "parent_id": "conv-42/synthesis/94abd55f-86c0-4502-978f-c8d0be3712ab",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 151,
+      "parent_id": "conv-42/synthesis/94abd55f-86c0-4502-978f-c8d0be3712ab",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "retarget",
+      "reason_code": "W",
+      "suggested_position": 5,
+      "note": "这次邀请指 Joanna 邀 Nate 一起徒步，第 12 句仍在谈食谱。"
+    },
+    {
+      "edge_number": 152,
+      "parent_id": "conv-42/synthesis/96ab4da0-2173-401e-ae37-1b0354e81c1d",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 153,
+      "parent_id": "conv-42/synthesis/96ab4da0-2173-401e-ae37-1b0354e81c1d",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 154,
+      "parent_id": "conv-42/synthesis/96ab4da0-2173-401e-ae37-1b0354e81c1d",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 155,
+      "parent_id": "conv-42/synthesis/96ab4da0-2173-401e-ae37-1b0354e81c1d",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 156,
+      "parent_id": "conv-42/synthesis/9dec5994-1f9a-43a6-9e04-08ee4a2e474d",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 157,
+      "parent_id": "conv-42/synthesis/9dec5994-1f9a-43a6-9e04-08ee4a2e474d",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 158,
+      "parent_id": "conv-42/synthesis/9dec5994-1f9a-43a6-9e04-08ee4a2e474d",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 159,
+      "parent_id": "conv-42/synthesis/9dec5994-1f9a-43a6-9e04-08ee4a2e474d",
+      "sentence_position": 8,
+      "candidate_position": 3,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W"
+    },
+    {
+      "edge_number": 160,
+      "parent_id": "conv-42/synthesis/9dec5994-1f9a-43a6-9e04-08ee4a2e474d",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 161,
+      "parent_id": "conv-42/synthesis/a9f82f74-6b0a-4a69-8074-6f312a610e97",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 162,
+      "parent_id": "conv-42/synthesis/a9f82f74-6b0a-4a69-8074-6f312a610e97",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "keep",
+      "reason_code": "K",
+      "note": "当前句说 Joanna 在 Nate 比赛期间出行，前句写比赛是 7 月 8 日，标题则是 7 月 10 日。"
+    },
+    {
+      "edge_number": 163,
+      "parent_id": "conv-42/synthesis/a9f82f74-6b0a-4a69-8074-6f312a610e97",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 164,
+      "parent_id": "conv-42/synthesis/a9f82f74-6b0a-4a69-8074-6f312a610e97",
+      "sentence_position": 7,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 165,
+      "parent_id": "conv-42/synthesis/a9f82f74-6b0a-4a69-8074-6f312a610e97",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 166,
+      "parent_id": "conv-42/synthesis/a9f82f74-6b0a-4a69-8074-6f312a610e97",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 167,
+      "parent_id": "conv-42/synthesis/b583cda0-d570-474f-8a5f-8f91a838a59b",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 168,
+      "parent_id": "conv-42/synthesis/b583cda0-d570-474f-8a5f-8f91a838a59b",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 169,
+      "parent_id": "conv-42/synthesis/b583cda0-d570-474f-8a5f-8f91a838a59b",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 170,
+      "parent_id": "conv-42/synthesis/b583cda0-d570-474f-8a5f-8f91a838a59b",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 171,
+      "parent_id": "conv-42/synthesis/c36a05a1-a410-4d2b-b563-3c73b3ce1b61",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 172,
+      "parent_id": "conv-42/synthesis/c55bd6b8-1a80-42c4-8f22-3bb11cd4a8ea",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 173,
+      "parent_id": "conv-42/synthesis/c7f2a083-75f7-4094-a059-0de12b778f1d",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "retarget",
+      "reason_code": "W",
+      "suggested_position": 0,
+      "note": "第 4 句回顾 Nate 的比赛获胜，第 3 句在谈宠物。第 0 句写了本次国际比赛获胜。"
+    },
+    {
+      "edge_number": 174,
+      "parent_id": "conv-42/synthesis/c7f2a083-75f7-4094-a059-0de12b778f1d",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W",
+      "note": "当前叙述是 8 月 22 日会话中的 previous week，候选前句回顾 1 月 21 日的比赛。"
+    },
+    {
+      "edge_number": 175,
+      "parent_id": "conv-42/synthesis/c7f2a083-75f7-4094-a059-0de12b778f1d",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 176,
+      "parent_id": "conv-42/synthesis/c7f2a083-75f7-4094-a059-0de12b778f1d",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 177,
+      "parent_id": "conv-42/synthesis/d6f80c2f-e538-4d4f-a715-96757955ea1a",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 178,
+      "parent_id": "conv-42/synthesis/d6f80c2f-e538-4d4f-a715-96757955ea1a",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 179,
+      "parent_id": "conv-42/synthesis/d6f80c2f-e538-4d4f-a715-96757955ea1a",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 180,
+      "parent_id": "conv-42/synthesis/d6f80c2f-e538-4d4f-a715-96757955ea1a",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 181,
+      "parent_id": "conv-42/synthesis/d9b05fe1-6353-41e6-810b-ad43380d837a",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 182,
+      "parent_id": "conv-42/synthesis/d9b05fe1-6353-41e6-810b-ad43380d837a",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 183,
+      "parent_id": "conv-42/synthesis/e8bef209-cb06-48be-83c0-08adf4ee41db",
+      "sentence_position": 8,
+      "candidate_position": 3,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W"
+    },
+    {
+      "edge_number": 184,
+      "parent_id": "conv-42/synthesis/f430c492-d5ca-4efb-a7fe-3db9d262c783",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 185,
+      "parent_id": "conv-42/synthesis/f430c492-d5ca-4efb-a7fe-3db9d262c783",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 186,
+      "parent_id": "conv-42/synthesis/f430c492-d5ca-4efb-a7fe-3db9d262c783",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "retarget",
+      "reason_code": "W",
+      "suggested_position": 3,
+      "note": "第 3 句明确描述作品获得回报，第 4 句只描述最喜欢的片段。"
+    },
+    {
+      "edge_number": 187,
+      "parent_id": "conv-42/synthesis/f430c492-d5ca-4efb-a7fe-3db9d262c783",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 188,
+      "parent_id": "conv-42/synthesis/f430c492-d5ca-4efb-a7fe-3db9d262c783",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 189,
+      "parent_id": "conv-42/synthesis/f430c492-d5ca-4efb-a7fe-3db9d262c783",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 190,
+      "parent_id": "conv-42/synthesis/f430c492-d5ca-4efb-a7fe-3db9d262c783",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 191,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 192,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 193,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 194,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 6,
+      "candidate_position": 3,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W"
+    },
+    {
+      "edge_number": 195,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 196,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 197,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 12,
+      "candidate_position": 3,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W"
+    },
+    {
+      "edge_number": 198,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 199,
+      "parent_id": "conv-42/synthesis/f7b3f2ef-4294-4112-85d6-7c90f2663f6f",
+      "sentence_position": 13,
+      "candidate_position": 3,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "W"
+    },
+    {
+      "edge_number": 200,
+      "parent_id": "conv-41/synthesis/009b5aed-853b-4a06-b087-a2831dacb52f",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "both",
+      "decision": "keep",
+      "reason_code": "K",
+      "note": "日期参照已在标题里，前句仍需保留以指明 She 是 Maria。"
+    },
+    {
+      "edge_number": 201,
+      "parent_id": "conv-41/synthesis/009b5aed-853b-4a06-b087-a2831dacb52f",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 202,
+      "parent_id": "conv-41/synthesis/009b5aed-853b-4a06-b087-a2831dacb52f",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 203,
+      "parent_id": "conv-41/synthesis/009b5aed-853b-4a06-b087-a2831dacb52f",
+      "sentence_position": 14,
+      "candidate_position": 13,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 204,
+      "parent_id": "conv-41/synthesis/029162b2-7215-48cc-89c9-d5311380aa9e",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 205,
+      "parent_id": "conv-41/synthesis/029162b2-7215-48cc-89c9-d5311380aa9e",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 206,
+      "parent_id": "conv-41/synthesis/029162b2-7215-48cc-89c9-d5311380aa9e",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 207,
+      "parent_id": "conv-41/synthesis/029162b2-7215-48cc-89c9-d5311380aa9e",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 208,
+      "parent_id": "conv-41/synthesis/029162b2-7215-48cc-89c9-d5311380aa9e",
+      "sentence_position": 7,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 209,
+      "parent_id": "conv-41/synthesis/029162b2-7215-48cc-89c9-d5311380aa9e",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 210,
+      "parent_id": "conv-41/synthesis/0c1aea4c-3e27-4d20-918d-f095f7f89a2f",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 211,
+      "parent_id": "conv-41/synthesis/0c1aea4c-3e27-4d20-918d-f095f7f89a2f",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 212,
+      "parent_id": "conv-41/synthesis/0c1aea4c-3e27-4d20-918d-f095f7f89a2f",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 213,
+      "parent_id": "conv-41/synthesis/1396a5d0-ed09-4c97-beff-35176fac4858",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 214,
+      "parent_id": "conv-41/synthesis/1396a5d0-ed09-4c97-beff-35176fac4858",
+      "sentence_position": 10,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 215,
+      "parent_id": "conv-41/synthesis/1396a5d0-ed09-4c97-beff-35176fac4858",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 216,
+      "parent_id": "conv-41/synthesis/18a2190a-b10f-4ca1-a1c7-41f57819e017",
+      "sentence_position": 7,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 217,
+      "parent_id": "conv-41/synthesis/18a2190a-b10f-4ca1-a1c7-41f57819e017",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 218,
+      "parent_id": "conv-41/synthesis/18a2190a-b10f-4ca1-a1c7-41f57819e017",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 219,
+      "parent_id": "conv-41/synthesis/1ab20e66-39ab-43a8-9142-b1c818224849",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 220,
+      "parent_id": "conv-41/synthesis/1ab20e66-39ab-43a8-9142-b1c818224849",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 221,
+      "parent_id": "conv-41/synthesis/1ab20e66-39ab-43a8-9142-b1c818224849",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 222,
+      "parent_id": "conv-41/synthesis/1ab20e66-39ab-43a8-9142-b1c818224849",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 223,
+      "parent_id": "conv-41/synthesis/1ab20e66-39ab-43a8-9142-b1c818224849",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 224,
+      "parent_id": "conv-41/synthesis/1cbbe2e0-81c0-4694-b904-2a112b40081a",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 225,
+      "parent_id": "conv-41/synthesis/1cbbe2e0-81c0-4694-b904-2a112b40081a",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 226,
+      "parent_id": "conv-41/synthesis/213687bf-7b5a-40ac-8555-66de70871a2f",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 227,
+      "parent_id": "conv-41/synthesis/213687bf-7b5a-40ac-8555-66de70871a2f",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 228,
+      "parent_id": "conv-41/synthesis/28947d17-2b0a-458b-b115-55434ad68e71",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 229,
+      "parent_id": "conv-41/synthesis/28947d17-2b0a-458b-b115-55434ad68e71",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 230,
+      "parent_id": "conv-41/synthesis/28947d17-2b0a-458b-b115-55434ad68e71",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 231,
+      "parent_id": "conv-41/synthesis/28947d17-2b0a-458b-b115-55434ad68e71",
+      "sentence_position": 9,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 232,
+      "parent_id": "conv-41/synthesis/28947d17-2b0a-458b-b115-55434ad68e71",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 233,
+      "parent_id": "conv-41/synthesis/2cdedf01-fcb7-4ef3-9d1a-aaa376fb3e06",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 234,
+      "parent_id": "conv-41/synthesis/2cdedf01-fcb7-4ef3-9d1a-aaa376fb3e06",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 235,
+      "parent_id": "conv-41/synthesis/2cdedf01-fcb7-4ef3-9d1a-aaa376fb3e06",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 236,
+      "parent_id": "conv-41/synthesis/30f47b9d-56d2-4b09-9703-1613d9062587",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 237,
+      "parent_id": "conv-41/synthesis/30f47b9d-56d2-4b09-9703-1613d9062587",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 238,
+      "parent_id": "conv-41/synthesis/30f47b9d-56d2-4b09-9703-1613d9062587",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 239,
+      "parent_id": "conv-41/synthesis/37774a5b-d418-4522-84c6-1ee417a167d3",
+      "sentence_position": 9,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 240,
+      "parent_id": "conv-41/synthesis/37774a5b-d418-4522-84c6-1ee417a167d3",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 241,
+      "parent_id": "conv-41/synthesis/37774a5b-d418-4522-84c6-1ee417a167d3",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 242,
+      "parent_id": "conv-41/synthesis/3a5f8c8f-a035-47b0-8b00-6d6b39ae72f3",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 243,
+      "parent_id": "conv-41/synthesis/3a5f8c8f-a035-47b0-8b00-6d6b39ae72f3",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 244,
+      "parent_id": "conv-41/synthesis/43068b61-faa9-4c38-9b12-0cc989675b73",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 245,
+      "parent_id": "conv-41/synthesis/43068b61-faa9-4c38-9b12-0cc989675b73",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 246,
+      "parent_id": "conv-41/synthesis/43068b61-faa9-4c38-9b12-0cc989675b73",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K",
+      "note": "补足 The picture 对应的山景照片以及分享人 John。"
+    },
+    {
+      "edge_number": 247,
+      "parent_id": "conv-41/synthesis/43068b61-faa9-4c38-9b12-0cc989675b73",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 248,
+      "parent_id": "conv-41/synthesis/43068b61-faa9-4c38-9b12-0cc989675b73",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 249,
+      "parent_id": "conv-41/synthesis/4e05799d-1f5a-41dc-9713-2b7bdfec63f8",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 250,
+      "parent_id": "conv-41/synthesis/4e05799d-1f5a-41dc-9713-2b7bdfec63f8",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 251,
+      "parent_id": "conv-41/synthesis/550af36d-4e8d-49be-a504-10ee65d35da8",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 252,
+      "parent_id": "conv-41/synthesis/550af36d-4e8d-49be-a504-10ee65d35da8",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 253,
+      "parent_id": "conv-41/synthesis/550af36d-4e8d-49be-a504-10ee65d35da8",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 254,
+      "parent_id": "conv-41/synthesis/6b35a0cb-9cd3-4898-bb3f-7a3a47571da4",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 255,
+      "parent_id": "conv-41/synthesis/6b35a0cb-9cd3-4898-bb3f-7a3a47571da4",
+      "sentence_position": 5,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 256,
+      "parent_id": "conv-41/synthesis/6b35a0cb-9cd3-4898-bb3f-7a3a47571da4",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 257,
+      "parent_id": "conv-41/synthesis/7bba8950-a61d-49c4-9fa6-0a95bb516e76",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 258,
+      "parent_id": "conv-41/synthesis/7bba8950-a61d-49c4-9fa6-0a95bb516e76",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 259,
+      "parent_id": "conv-41/synthesis/7bba8950-a61d-49c4-9fa6-0a95bb516e76",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 260,
+      "parent_id": "conv-41/synthesis/7bba8950-a61d-49c4-9fa6-0a95bb516e76",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 261,
+      "parent_id": "conv-41/synthesis/8ba3d813-7657-485a-9821-1522a0df688e",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 262,
+      "parent_id": "conv-41/synthesis/8ba3d813-7657-485a-9821-1522a0df688e",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 263,
+      "parent_id": "conv-41/synthesis/8ba3d813-7657-485a-9821-1522a0df688e",
+      "sentence_position": 7,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 264,
+      "parent_id": "conv-41/synthesis/8ba3d813-7657-485a-9821-1522a0df688e",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 265,
+      "parent_id": "conv-41/synthesis/930459e2-6017-42c2-a126-186b82991694",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 266,
+      "parent_id": "conv-41/synthesis/930459e2-6017-42c2-a126-186b82991694",
+      "sentence_position": 12,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S",
+      "note": "natural next step 是进展顺序。第 0 句是洪灾背景，合作关系由第 4 句交代。"
+    },
+    {
+      "edge_number": 267,
+      "parent_id": "conv-41/synthesis/930459e2-6017-42c2-a126-186b82991694",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "retarget",
+      "reason_code": "W",
+      "suggested_position": 4,
+      "note": "第 4 句明确 Maria 同意参加会议并一起改善社区，第 11 句在谈晚餐。"
+    },
+    {
+      "edge_number": 268,
+      "parent_id": "conv-41/synthesis/992dfe83-cd1a-44e5-ace8-0d2d6a27bb8e",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 269,
+      "parent_id": "conv-41/synthesis/992dfe83-cd1a-44e5-ace8-0d2d6a27bb8e",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 270,
+      "parent_id": "conv-41/synthesis/992dfe83-cd1a-44e5-ace8-0d2d6a27bb8e",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 271,
+      "parent_id": "conv-41/synthesis/992dfe83-cd1a-44e5-ace8-0d2d6a27bb8e",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 272,
+      "parent_id": "conv-41/synthesis/992dfe83-cd1a-44e5-ace8-0d2d6a27bb8e",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 273,
+      "parent_id": "conv-41/synthesis/99544e0d-ce55-467f-ba47-15ae6246e71e",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "both",
+      "decision": "keep",
+      "reason_code": "K",
+      "note": "日期参照已在标题里，前句仍需保留以指明 She 是 Maria。"
+    },
+    {
+      "edge_number": 274,
+      "parent_id": "conv-41/synthesis/99544e0d-ce55-467f-ba47-15ae6246e71e",
+      "sentence_position": 2,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 275,
+      "parent_id": "conv-41/synthesis/99544e0d-ce55-467f-ba47-15ae6246e71e",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 276,
+      "parent_id": "conv-41/synthesis/9e8b4490-00a9-4ae1-a835-5249b076d91a",
+      "sentence_position": 3,
+      "candidate_position": 2,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 277,
+      "parent_id": "conv-41/synthesis/9e8b4490-00a9-4ae1-a835-5249b076d91a",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 278,
+      "parent_id": "conv-41/synthesis/a0f4b83b-d59a-4f95-adda-63e1b4aadb6c",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 279,
+      "parent_id": "conv-41/synthesis/a0f4b83b-d59a-4f95-adda-63e1b4aadb6c",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 280,
+      "parent_id": "conv-41/synthesis/a0f4b83b-d59a-4f95-adda-63e1b4aadb6c",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 281,
+      "parent_id": "conv-41/synthesis/a2152c8d-30e7-446f-9a87-34b39be4630e",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 282,
+      "parent_id": "conv-41/synthesis/a2152c8d-30e7-446f-9a87-34b39be4630e",
+      "sentence_position": 9,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 283,
+      "parent_id": "conv-41/synthesis/a2152c8d-30e7-446f-9a87-34b39be4630e",
+      "sentence_position": 10,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 284,
+      "parent_id": "conv-41/synthesis/a2152c8d-30e7-446f-9a87-34b39be4630e",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 285,
+      "parent_id": "conv-41/synthesis/a2152c8d-30e7-446f-9a87-34b39be4630e",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "retarget",
+      "reason_code": "W",
+      "suggested_position": 10,
+      "note": "第 10 句点名 Maria，第 11 句的主语仍是 She。保留第 10 句可确认人物。"
+    },
+    {
+      "edge_number": 286,
+      "parent_id": "conv-41/synthesis/b4bd5293-bc49-4aaa-bf6b-1be80e12524b",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 287,
+      "parent_id": "conv-41/synthesis/b4bd5293-bc49-4aaa-bf6b-1be80e12524b",
+      "sentence_position": 3,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 288,
+      "parent_id": "conv-41/synthesis/b4bd5293-bc49-4aaa-bf6b-1be80e12524b",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 289,
+      "parent_id": "conv-41/synthesis/b4bd5293-bc49-4aaa-bf6b-1be80e12524b",
+      "sentence_position": 13,
+      "candidate_position": 12,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 290,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 291,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 292,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 293,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 5,
+      "candidate_position": 4,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 294,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 295,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 296,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 10,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 297,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 298,
+      "parent_id": "conv-41/synthesis/c1eee2fb-d594-4c74-9e08-81f934c9c006",
+      "sentence_position": 12,
+      "candidate_position": 11,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 299,
+      "parent_id": "conv-41/synthesis/ce4d8b91-3b6b-44a9-8a20-7ccbebab9b59",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 300,
+      "parent_id": "conv-41/synthesis/ce4d8b91-3b6b-44a9-8a20-7ccbebab9b59",
+      "sentence_position": 2,
+      "candidate_position": 1,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 301,
+      "parent_id": "conv-41/synthesis/ce4d8b91-3b6b-44a9-8a20-7ccbebab9b59",
+      "sentence_position": 6,
+      "candidate_position": 5,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 302,
+      "parent_id": "conv-41/synthesis/ce4d8b91-3b6b-44a9-8a20-7ccbebab9b59",
+      "sentence_position": 8,
+      "candidate_position": 7,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 303,
+      "parent_id": "conv-41/synthesis/d809f19f-180c-4761-b35a-17d20e751324",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 304,
+      "parent_id": "conv-41/synthesis/d809f19f-180c-4761-b35a-17d20e751324",
+      "sentence_position": 7,
+      "candidate_position": 6,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 305,
+      "parent_id": "conv-41/synthesis/d809f19f-180c-4761-b35a-17d20e751324",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    },
+    {
+      "edge_number": 306,
+      "parent_id": "conv-41/synthesis/d809f19f-180c-4761-b35a-17d20e751324",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 307,
+      "parent_id": "conv-41/synthesis/edfae2a6-3a7c-4bdc-95f3-844c1eea22fb",
+      "sentence_position": 1,
+      "candidate_position": 0,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 308,
+      "parent_id": "conv-41/synthesis/edfae2a6-3a7c-4bdc-95f3-844c1eea22fb",
+      "sentence_position": 4,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "S"
+    },
+    {
+      "edge_number": 309,
+      "parent_id": "conv-41/synthesis/edfae2a6-3a7c-4bdc-95f3-844c1eea22fb",
+      "sentence_position": 4,
+      "candidate_position": 3,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 310,
+      "parent_id": "conv-41/synthesis/edfae2a6-3a7c-4bdc-95f3-844c1eea22fb",
+      "sentence_position": 9,
+      "candidate_position": 8,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 311,
+      "parent_id": "conv-41/synthesis/edfae2a6-3a7c-4bdc-95f3-844c1eea22fb",
+      "sentence_position": 10,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 312,
+      "parent_id": "conv-41/synthesis/edfae2a6-3a7c-4bdc-95f3-844c1eea22fb",
+      "sentence_position": 10,
+      "candidate_position": 9,
+      "legacy_trigger": "leading_reference",
+      "decision": "keep",
+      "reason_code": "K"
+    },
+    {
+      "edge_number": 313,
+      "parent_id": "conv-41/synthesis/f5f1b262-a520-4cea-801c-ce1b8d06823c",
+      "sentence_position": 6,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 314,
+      "parent_id": "conv-41/synthesis/f5f1b262-a520-4cea-801c-ce1b8d06823c",
+      "sentence_position": 8,
+      "candidate_position": 0,
+      "legacy_trigger": "relative_time",
+      "decision": "drop",
+      "reason_code": "H"
+    },
+    {
+      "edge_number": 315,
+      "parent_id": "conv-41/synthesis/f5f1b262-a520-4cea-801c-ce1b8d06823c",
+      "sentence_position": 11,
+      "candidate_position": 10,
+      "legacy_trigger": "leading_reference",
+      "decision": "drop",
+      "reason_code": "G"
+    }
+  ],
+  "possible_missed_edges": [
+    {
+      "parent_id": "conv-42/synthesis/94abd55f-86c0-4502-978f-c8d0be3712ab",
+      "sentence_position": 11,
+      "suggested_position": 10,
+      "note": "exactly that 指前面 Nate 分享的无乳制品冰淇淋食谱，保留该句可说明她为什么正需要它。"
+    },
+    {
+      "parent_id": "conv-42/synthesis/c7f2a083-75f7-4094-a059-0de12b778f1d",
+      "sentence_position": 3,
+      "suggested_position": 2,
+      "note": "them 指 Nate 的宠物，前一句写了他给宠物换鱼缸。句首规则因当前句以 Joanna 开头而漏掉。"
+    }
+  ]
+}

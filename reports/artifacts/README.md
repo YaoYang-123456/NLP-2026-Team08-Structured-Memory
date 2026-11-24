@@ -41,3 +41,9 @@ E（onlysonder / #31）将包解压到本地新目录，读取 predictions30.jso
 - 文件 [phase2-c-development-sample-20261123.json](phase2-c-development-sample-20261123.json)，143,388 字节。
 - SHA-256 `aea374f358358c35074863f2f1a17be9b4f6f9f82b0cec3bd0c8e0e02883dd2f`。
 - 使用 `conv-48/86` 的原 60 条事件和 5 条综合。字段、复核样例与复跑方法见 [C 首样交接说明](../../docs/phase2-c-development-sample.md)。
+
+## 阶段二 C 前文依赖复核：2026-11-24
+
+- 文件 [phase2-c-dependency-review-20261124.json](phase2-c-dependency-review-20261124.json)，90,650 字节。
+- SHA-256 `17749f88dc63e9f45f9501e14c31f843190b9c6ff3ce328e7592b919c8eaf989`。
+- 读取 `edges` 中的父综合 ID 和从 0 开始的句位，在 D 的原核对包中查对应句子。统计、典型案例及复核范围见 [C 前文依赖复核](../phase2-c-dependency-review-20261124.md)。
