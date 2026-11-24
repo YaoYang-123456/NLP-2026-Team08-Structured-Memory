@@ -23,7 +23,8 @@ from audit_development_memory import PointReader, archive_rows, digest, dump, re
 from flat_rag import SentenceTransformerEmbeddings
 from structmem_retrieve import load_questions, memory_text, validate_vector
 
-STOP = set("a an the is are was were be been being do does did has have had can could would should will may might to of in on at by for from with and or but as it its his her their them he she they you your i me my we our what which who when where why how both any kind around currently recently recent get got go went use instead together".split())
+from hybrid_retrieval import words, bm25
+
 MONTHS = "january february march april may june july august september october november december".split()
 TEMPORAL = re.compile(r"\b(?:\d{4}-\d{2}-\d{2}|yesterday|tomorrow|last|next|week|month|year|monday|tuesday|wednesday|thursday|friday|saturday|sunday|" + "|".join(MONTHS) + r")\b", re.I)
 
@@ -36,10 +37,6 @@ def tokenizer(cache):
     os.environ["TIKTOKEN_CACHE_DIR"] = str(cache)
     import tiktoken
     return tiktoken.get_encoding("cl100k_base")
-
-
-def words(text, stemmer):
-    return [stemmer.stem(w) for w in re.findall(r"[a-z]+|\d+", text.lower()) if w not in STOP]
 
 
 def facets(question, names, stemmer, weights):
@@ -76,22 +73,6 @@ def facet_matches(event, features, stemmer):
         else:
             matched.append(bool(TEMPORAL.search(body)))
     return matched
-
-
-def bm25(documents, query, config):
-    counts = [Counter(d) for d in documents]
-    df = Counter(w for d in documents for w in set(d))
-    average = sum(map(len, documents)) / len(documents)
-    scores = []
-    for terms, doc in zip(counts, documents):
-        score = 0.0
-        for word in set(query):
-            frequency = terms[word]
-            idf = math.log(1 + (len(documents) - df[word] + 0.5) / (df[word] + 0.5))
-            denominator = frequency + config["bm25_k1"] * (1 - config["bm25_b"] + config["bm25_b"] * len(doc) / average)
-            score += idf * frequency * (config["bm25_k1"] + 1) / denominator
-        scores.append(score)
-    return scores
 
 
 def select(args):
