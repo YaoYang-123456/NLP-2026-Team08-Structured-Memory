@@ -6,6 +6,7 @@ import hashlib
 import http.client
 import json
 import os
+import sys
 import time
 import urllib.error
 import urllib.request
@@ -345,6 +346,9 @@ def evaluate(prediction_paths, labels_path, judgments_path, adjudications_path=N
 
 
 def main():
+    if sys.argv[1:2] == ["phase2"]:
+        from evaluate_phase2 import main as phase2_main
+        return phase2_main(sys.argv[2:])
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--s0", type=Path, required=True, help="S0 predictions JSONL")
     parser.add_argument("--s2", type=Path, required=True, help="S2 predictions JSONL")
