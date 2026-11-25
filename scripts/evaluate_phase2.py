@@ -28,6 +28,7 @@ VARIANTS = ("M", "N", "A")
 METHOD = "S2"
 USAGE_FIELDS = ("prompt_tokens", "completion_tokens", "total_tokens",
                 "prompt_cache_hit_tokens", "prompt_cache_miss_tokens")
+JUDGE_ATTEMPTED_STATUSES = frozenset(("attempting", "interrupted", "judge_failed", "scored"))
 
 
 def qid(row):
@@ -258,6 +259,24 @@ def _support_for(prediction, annotation):
             "contexts_available": prediction is not None}
 
 
+def _judge_input_and_request(prediction, label):
+    user_data = {"question": prediction["question"], "reference_answer": label["answer"],
+                 "model_answer": prediction["prediction"]}
+    request = {"model": JUDGE_MODEL,
+               "messages": [{"role": "system", "content": JUDGE_SYSTEM},
+                            {"role": "user", "content": json.dumps(user_data, ensure_ascii=False)}],
+               "thinking": {"type": "disabled"}, "temperature": 0, "top_p": 1,
+               "max_tokens": 16, "stream": False}
+    return user_data, request
+
+
+def _normalize_judgment(raw_response):
+    if not isinstance(raw_response, str):
+        return None
+    normalized = raw_response.strip().lower().rstrip(".! ")
+    return normalized if normalized in ("yes", "no") else None
+
+
 def _judge_record(identity, prediction, label):
     if prediction is None:
         return {**identity, "status": "generation_missing", "correct": None, "judgment": None,
@@ -266,13 +285,7 @@ def _judge_record(identity, prediction, label):
         return {**identity, "status": "generation_" + str(prediction.get("status", "unknown")),
                 "correct": None, "judgment": None, "request": None,
                 "usage": None, "generation_usage": prediction.get("usage"), "seconds": None}
-    user_data = {"question": prediction["question"], "reference_answer": label["answer"],
-                 "model_answer": prediction["prediction"]}
-    payload = {"model": JUDGE_MODEL,
-               "messages": [{"role": "system", "content": JUDGE_SYSTEM},
-                            {"role": "user", "content": json.dumps(user_data, ensure_ascii=False)}],
-               "thinking": {"type": "disabled"}, "temperature": 0, "top_p": 1,
-               "max_tokens": 16, "stream": False}
+    user_data, payload = _judge_input_and_request(prediction, label)
     serialized = json.dumps(user_data, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return {**identity, "status": "pending", "correct": None, "judgment": None,
             "raw_response": None, "usage": None, "seconds": None,
@@ -311,6 +324,8 @@ def run_phase2_judge(runs, labels, output_path):
         if result["status"] != "pending":
             continue
         result["started_utc"] = datetime.now(timezone.utc).isoformat()
+        result["status"] = "attempting"
+        save_judgments(output_path, document)
         started = time.perf_counter()
         try:
             payload = result["request"]
@@ -328,10 +343,12 @@ def run_phase2_judge(runs, labels, output_path):
             result["finish_reason"] = choice.get("finish_reason")
             answer = choice["message"].get("content")
             result["raw_response"] = answer
-            normalized = answer.strip().lower().rstrip(".! ") if isinstance(answer, str) else ""
-            if choice.get("finish_reason") != "stop":
+            normalized = _normalize_judgment(answer)
+            if result["returned_model"] != JUDGE_MODEL:
+                result["error"] = "unexpected_model"
+            elif choice.get("finish_reason") != "stop":
                 result["error"] = "non_stop_finish"
-            elif normalized not in ("yes", "no"):
+            elif normalized is None:
                 result["error"] = "invalid_judgment_format"
             else:
                 result.update(status="scored", judgment=normalized, correct=(normalized == "yes"))
@@ -363,6 +380,12 @@ def _validated_judgments(path, runs, labels):
     document = read_json(path)
     require(document.get("schema_version") == "phase2-judgments-v1",
             "Expected phase2-judgments-v1 judgment records")
+    metadata = document.get("metadata")
+    require(isinstance(metadata, dict) and metadata.get("adjudicator") == JUDGE_MODEL and
+            metadata.get("endpoint") == JUDGE_URL and metadata.get("temperature") == 0 and
+            metadata.get("top_p") == 1 and metadata.get("max_tokens") == 16 and
+            metadata.get("thinking") == "disabled" and metadata.get("retries") == 0,
+            "Judgment metadata differs from the fixed E adjudicator configuration")
     expected_run_ids = {variant: runs[variant]["manifest"]["run_id"] for variant in VARIANTS}
     require(document.get("metadata", {}).get("run_ids") == expected_run_ids,
             "Judgment file is bound to different M/N/A runs")
@@ -372,7 +395,10 @@ def _validated_judgments(path, runs, labels):
         for key in labels:
             wanted[composite(run_id, variant, METHOD, key)] = (variant, key)
     found = {}
-    for item in document.get("items", []):
+    items = document.get("items")
+    require(isinstance(items, list), "Judgment items must be an array")
+    for item in items:
+        require(isinstance(item, dict), "Each judgment item must be an object")
         identity = composite(item.get("run_id"), item.get("variant"), item.get("method"),
                              (item.get("sample_id"), item.get("qa_index")))
         if identity in found or identity not in wanted:
@@ -383,12 +409,28 @@ def _validated_judgments(path, runs, labels):
         require(item.get("generation_usage") == (prediction.get("usage") if prediction else None),
                 f"Answer usage differs from the verified run: {identity}")
         if prediction is not None and prediction.get("status") == "ok":
+            require(item.get("status") in ("pending", *JUDGE_ATTEMPTED_STATUSES),
+                    f"Unexpected judgment status for a successful answer: {identity}")
             validate_judgment_input(prediction, label, item)
-            user_data = {"question": prediction["question"], "reference_answer": label["answer"],
-                         "model_answer": prediction["prediction"]}
+            user_data, expected_request = _judge_input_and_request(prediction, label)
+            require(item.get("request") == expected_request,
+                    f"Saved judge request differs from the fixed E request: {identity}")
             serialized = json.dumps(user_data, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
             require(item.get("input_sha256") == hashlib.sha256(serialized.encode("utf-8")).hexdigest(),
                     f"Judgment input hash mismatch: {identity}")
+            raw_judgment = _normalize_judgment(item.get("raw_response"))
+            status = item.get("status")
+            if status == "scored":
+                require(item.get("returned_model") == JUDGE_MODEL,
+                        f"Scored judgment returned an unexpected model: {identity}")
+                require(item.get("finish_reason") == "stop",
+                        f"Scored judgment did not finish naturally: {identity}")
+                require(raw_judgment in ("yes", "no") and item.get("judgment") == raw_judgment and
+                        type(item.get("correct")) is bool and item["correct"] == (raw_judgment == "yes"),
+                        f"Saved judgment differs from its raw natural-stop response: {identity}")
+            elif status == "judge_failed" and item.get("returned_model") == JUDGE_MODEL and \
+                    item.get("finish_reason") == "stop" and raw_judgment in ("yes", "no"):
+                raise ValueError(f"Valid natural-stop judge response is marked failed: {identity}")
         elif prediction is None:
             require(item.get("status") == "generation_missing", f"Missing prediction status mismatch: {identity}")
         else:
@@ -398,8 +440,8 @@ def _validated_judgments(path, runs, labels):
         if status == "scored":
             if type(item.get("correct")) is not bool or item.get("judgment") not in ("yes", "no"):
                 raise ValueError(f"Malformed scored judgment: {identity}")
-        elif item.get("correct") is not None:
-            raise ValueError(f"Unscored judgment has a correctness value: {identity}")
+        elif item.get("correct") is not None or item.get("judgment") is not None:
+            raise ValueError(f"Unscored judgment has a saved yes/no value: {identity}")
         found[identity] = item
     return document, found, wanted
 
@@ -408,17 +450,21 @@ def _aggregate(rows):
     count = len(rows)
     scored = [row for row in rows if row["correct"] is not None]
     correct = sum(row["correct"] is True for row in scored)
-    def usage_summary(name, expected_calls):
-        usage = [row[name] for row in rows if isinstance(row.get(name), dict)]
+    def usage_summary(name, planned_calls, attempted_field):
+        attempted = [row for row in rows if row.get(attempted_field) is True]
+        usage = [row[name] for row in attempted if isinstance(row.get(name), dict)]
         totals = {}
         for field in USAGE_FIELDS:
             values = [item[field] for item in usage
                       if type(item.get(field)) is int and item[field] >= 0]
             totals[field] = sum(values)
             totals[field + "_calls_with_value"] = len(values)
-            totals[field + "_calls_without_value"] = expected_calls - len(values)
-        return {**totals, "calls_with_usage": len(usage),
-                "calls_without_usage": expected_calls - len(usage)}
+            totals[field + "_calls_without_value"] = len(attempted) - len(values)
+        return {**totals, "planned_calls": planned_calls,
+                "attempted_calls": len(attempted),
+                "unattempted_calls": planned_calls - len(attempted),
+                "calls_with_usage": len(usage),
+                "calls_without_usage": len(attempted) - len(usage)}
 
     answer_seconds = [row["answer_seconds"] for row in rows
                       if isinstance(row.get("answer_seconds"), (int, float))]
@@ -432,9 +478,10 @@ def _aggregate(rows):
             "judge_statuses": dict(Counter(row["score_status"] for row in rows)),
             "abstentions": sum(row["abstained"] is True for row in rows),
             "ordinary_wrong": sum(row["correct"] is False and row["abstained"] is not True for row in rows),
-            "answer_usage": usage_summary("usage", count),
+            "answer_usage": usage_summary("usage", count, "answer_attempted"),
             "judge_usage": usage_summary("judge_usage",
-                                         sum(row["generation_status"] == "ok" for row in rows)),
+                                         sum(row["generation_status"] == "ok" for row in rows),
+                                         "judge_attempted"),
             "sum_answer_call_seconds": sum(answer_seconds) if answer_seconds else None,
             "sum_judge_call_seconds": sum(judge_seconds) if judge_seconds else None}
 
@@ -487,6 +534,9 @@ def evaluate_phase2(run_dirs, labels_path, judgments_path, *, questions_path=Non
                     (judgment.get("status", "judge_missing") if judgment else "judge_missing"),
                 "correct": correct, "raw_judge_correct": raw_correct,
                 "abstained": prediction.get("abstained") if prediction else None,
+                "answer_attempted": prediction is not None,
+                "judge_attempted": bool(judgment and
+                                         judgment.get("status") in JUDGE_ATTEMPTED_STATUSES),
                 "usage": prediction.get("usage") if prediction else None,
                 "answer_seconds": prediction.get("seconds") if prediction else None,
                 "judge_usage": judgment.get("usage") if judgment else None,
@@ -549,6 +599,8 @@ def evaluate_phase2(run_dirs, labels_path, judgments_path, *, questions_path=Non
             "category": row["category"], "generation_status": row["generation_status"],
             "score_status": row["score_status"], "correct": row["correct"],
             "raw_judge_correct": row["raw_judge_correct"], "abstained": row["abstained"],
+            "answer_attempted": row["answer_attempted"],
+            "judge_attempted": row["judge_attempted"],
             "answer_support_covered": (len(support_row["covered"]) if support_row and
                                         support_row["scope"] == "answer_support" else None),
             "answer_support_total": (support_row["total"] if support_row and
